@@ -268,6 +268,7 @@ public class GameHub : Hub
         bool isAlreadyAnswered = false;
         bool isAlreadyAnsweredByMe = false;
         bool isCorrect = false;
+        bool wasDouble = false;
         int scoreGain = 0;
         int hpLost = 0;
         int comboCount = 0;
@@ -303,7 +304,7 @@ public class GameHub : Hub
                         var selectedOption = questionData.Options.FirstOrDefault(o => o.OptionId == optionId);
                         isCorrect = selectedOption?.IsCorrect ?? false;
 
-                        bool wasDouble = player.HasDoubleActive;
+                        wasDouble = player.HasDoubleActive;
                         player.HasDoubleActive = false; // consume it
 
                         if (isCorrect)
@@ -395,6 +396,7 @@ public class GameHub : Hub
         if (isCorrect)
         {
             string comboMsg = comboCount > 1 ? $"Chính xác! Combo x{multiplier} 🔥" : "Chính xác! 🎉";
+            if (wasDouble) comboMsg = "🌟 " + comboMsg + " [DOUBLE REWARD!]";
             if (zoneType == "Boss") comboMsg += " [BOSS DEFEATED: x5 SCORE!]";
             if (zoneType == "LootBox" && !string.IsNullOrEmpty(lootReward)) comboMsg += $" [LOOT: {lootReward}]";
 
@@ -402,19 +404,22 @@ public class GameHub : Hub
                 success = true, correct = true,
                 scoreGained = scoreGain,
                 explanation = explanation,
-                message = comboMsg
+                message = comboMsg,
+                wasDouble = wasDouble
             });
         }
         else
         {
             string msg = "Sai rồi! 😢";
+            if (wasDouble) msg = "💀 LỖ NẶNG! " + msg + " [DOUBLE PENALTY!]";
             if (isTrap) msg += " [TRAP ACTIVATED: STUNNED & x2 DAMAGE!]";
 
             await Clients.Caller.SendAsync("AnswerResult", new {
                 success = true, correct = false,
                 hpLost = hpLost,
                 explanation = explanation,
-                message = msg
+                message = msg,
+                wasDouble = wasDouble
             });
         }
         player.HasQuestionShield = false;

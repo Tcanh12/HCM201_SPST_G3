@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function QuestionModal({ question, onSubmit, onClose }) {
+export default function QuestionModal({ question, onSubmit, onClose, isDoubleActive }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [timeLeft, setTimeLeft] = useState(question?.timeLimit || 15);
   const [submitted, setSubmitted] = useState(false);
@@ -27,19 +27,25 @@ export default function QuestionModal({ question, onSubmit, onClose }) {
   return (
     <div style={{
       position: 'absolute', inset: 0,
-      background: 'rgba(0,0,0,0.8)',
+      background: isDoubleActive ? 'rgba(200, 50, 0, 0.4)' : 'rgba(0,0,0,0.8)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       zIndex: 100, pointerEvents: 'auto',
     }}>
       <div style={{
-        background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+        background: isDoubleActive ? 'linear-gradient(135deg, #451a03 0%, #78350f 100%)' : 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
         borderRadius: '20px',
         padding: '32px',
         maxWidth: '600px',
         width: '90%',
-        border: '1px solid rgba(255,255,255,0.15)',
-        boxShadow: '0 25px 50px rgba(0,0,0,0.5)',
+        border: `2px solid ${isDoubleActive ? '#F59E0B' : 'rgba(255,255,255,0.15)'}`,
+        boxShadow: isDoubleActive ? '0 0 50px rgba(245, 158, 11, 0.5)' : '0 25px 50px rgba(0,0,0,0.5)',
+        animation: isDoubleActive ? 'pulse 2s infinite' : 'none'
       }}>
+        {isDoubleActive && (
+          <div style={{ textAlign: 'center', color: '#FCD34D', fontWeight: 900, fontSize: '18px', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '2px', animation: 'flash 1s infinite' }}>
+            ⚠️ LIỀU ĂN NHIỀU ⚠️<br/><span style={{ fontSize: '12px', color: '#FCA5A5' }}>ĐÚNG x2 ĐIỂM - SAI x2 SÁT THƯƠNG</span>
+          </div>
+        )}
         {/* Timer */}
         <div style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px',

@@ -167,9 +167,13 @@ export default function GamePage() {
             style={{
               position: 'absolute', top: '80px', right: '20px',
               padding: '16px 24px', borderRadius: '12px', zIndex: 200, width: '320px',
-              background: answerResult.correct ? 'rgba(16,185,129,0.95)' : 'rgba(239,68,68,0.95)',
+              background: answerResult.correct 
+                ? (answerResult.wasDouble ? 'rgba(245, 158, 11, 0.95)' : 'rgba(16,185,129,0.95)') 
+                : (answerResult.wasDouble ? 'rgba(153, 27, 27, 0.95)' : 'rgba(239,68,68,0.95)'),
               color: 'white',
-              boxShadow: '0 10px 40px rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.2)'
+              boxShadow: answerResult.wasDouble ? '0 10px 40px rgba(245,158,11,0.5)' : '0 10px 40px rgba(0,0,0,0.6)', 
+              border: '2px solid rgba(255,255,255,0.2)',
+              animation: answerResult.wasDouble && !answerResult.correct ? 'shake 0.5s' : 'none'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
@@ -194,4 +198,8 @@ export default function GamePage() {
 
       {/* Question Modal */}
       {question && !answerResult && (
-        <QuestionModal question={question} onSubmit={handleSubmitAnswer} onClose={handleQuestionClose} isDoubleActive={gameState?.pla
+        <QuestionModal question={question} onSubmit={handleSubmitAnswer} onClose={handleQuestionClose} isDoubleActive={gameState?.players?.find(p => p.id === connection?.connectionId)?.hasDouble} />
+      )}
+    </div>
+  );
+}
