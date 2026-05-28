@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\AnimalTheoryRoyale.props" />
+</Project>

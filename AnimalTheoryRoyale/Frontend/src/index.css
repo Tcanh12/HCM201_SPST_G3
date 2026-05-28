@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white overflow-hidden;
+    /* Prevent accidental scrolling in a game */
+    overscroll-behavior: none;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, -20px); }
+}
