@@ -106,6 +106,10 @@ export default function PlayerCharacter({ player, isMe, localOverride }) {
       {player.isInvulnerable && (
         <mesh position={[0, 1.5, 0]}>
           <sphereGeometry args={[2.8, 32, 32]} />
+          <meshStandardMaterial color="#A7F3D0" emissive="#10B981" emissiveIntensity={0.8} transparent opacity={0.4} wireframe />
+        </mesh>
+      )}
+
       {/* Skill: Double Or Nothing Aura */}
       {player.hasDouble && (
         <mesh position={[0, 1.2, 0]}>

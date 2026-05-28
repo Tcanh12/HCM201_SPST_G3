@@ -14,6 +14,7 @@ public class GameState
     public ConcurrentDictionary<string, PlayerState> Players { get; set; } = new();
     public ConcurrentDictionary<string, ProjectileState> Projectiles { get; set; } = new();
     public ConcurrentDictionary<int, KnowledgeZoneState> KnowledgeZones { get; set; } = new();
+    public ConcurrentDictionary<string, ItemState> Items { get; set; } = new();
     public SafeZoneState SafeZone { get; set; } = new();
 
     // Anti-duplicate: "connectionId_questionId" → true

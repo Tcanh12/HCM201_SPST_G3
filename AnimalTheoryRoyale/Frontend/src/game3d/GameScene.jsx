@@ -1,11 +1,12 @@
 import { Sky } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
 import * as THREE from 'three';
 import MapEnvironment from './MapEnvironment';
 import PlayerCharacter from './PlayerCharacter';
 import SafeZone from './SafeZone';
 import KnowledgeZone from './KnowledgeZone';
+import ItemPickup from './ItemPickup';
 import useKeyboard from '../hooks/useKeyboard';
 import useMouse from '../hooks/useMouse';
 
@@ -17,6 +18,7 @@ export default function GameScene({
   const projectiles = gameState?.projectiles || [];
   const safeZone = gameState?.safeZone || { radius: 500, centerX: 0, centerZ: 0 };
   const knowledgeZones = gameState?.knowledgeZones || [];
+  const items = gameState?.items || [];
 
   const keys = useKeyboard();
   const mouse = useMouse();
@@ -34,18 +36,6 @@ export default function GameScene({
   const pushIndRef = useRef();
   const chaosIndRef = useRef();
   const silenceIndRef = useRef();
-
-  useFrame((state, delta) => {
-    if (!connection || !myConnectionId) return;
-    const myPlayer = players.find(p => p.id === myConnectionId);
-    if (!myPlayer) return;
-
-    if (!initialized.current) {
-      localPos.current.set(myPlayer.x, 0, myPlayer.z);
-      initialized.current = true;
-    }
-  }); // End of useFrame (will structure better)
-
   const knockbackVelocity = useRef({ x: 0, z: 0 });
 
   useEffect(() => {
@@ -64,6 +54,11 @@ export default function GameScene({
     if (!connection || !myConnectionId) return;
     const myPlayer = players.find(p => p.id === myConnectionId);
     if (!myPlayer) return;
+
+    if (!initialized.current) {
+      localPos.current.set(myPlayer.x, 0, myPlayer.z);
+      initialized.current = true;
+    }
 
     // === CAMERA ROTATION ===
     if (isMobile) {
@@ -277,6 +272,10 @@ export default function GameScene({
 
       {knowledgeZones.filter(z => z.isActive).map(z => (
         <KnowledgeZone key={z.zoneId} x={z.x} z={z.z} topic={z.topicName} type={z.type} isTrap={z.isTrap} />
+      ))}
+
+      {items.map(item => (
+        <ItemPickup key={item.id} item={item} />
       ))}
 
       {players.map(player => (

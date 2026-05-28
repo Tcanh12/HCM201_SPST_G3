@@ -159,40 +159,46 @@ export default function GamePage() {
       {/* Answer Result Toast */}
       <AnimatePresence>
         {answerResult && !question && (
-          <motion.div 
-            initial={{ opacity: 0, x: 50, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8, x: 50 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            style={{
-              position: 'absolute', top: '80px', right: '20px',
-              padding: '16px 24px', borderRadius: '12px', zIndex: 200, width: '320px',
-              background: answerResult.correct 
-                ? (answerResult.wasDouble ? 'rgba(245, 158, 11, 0.95)' : 'rgba(16,185,129,0.95)') 
-                : (answerResult.wasDouble ? 'rgba(153, 27, 27, 0.95)' : 'rgba(239,68,68,0.95)'),
-              color: 'white',
-              boxShadow: answerResult.wasDouble ? '0 10px 40px rgba(245,158,11,0.5)' : '0 10px 40px rgba(0,0,0,0.6)', 
-              border: '2px solid rgba(255,255,255,0.2)',
-              animation: answerResult.wasDouble && !answerResult.correct ? 'shake 0.5s' : 'none'
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-              <div style={{ fontSize: '32px' }}>{answerResult.correct ? '✅' : '❌'}</div>
-              <div>
-                <div style={{ fontSize: '20px', fontWeight: 900 }}>
-                  {answerResult.message}
+          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 200 }}>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.5, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
+              transition={{ type: "spring", stiffness: 500, damping: 15 }}
+              style={{
+                padding: '30px 40px', borderRadius: '24px', width: '450px',
+                background: answerResult.correct 
+                  ? (answerResult.wasDouble ? 'rgba(245, 158, 11, 0.95)' : 'rgba(16,185,129,0.95)') 
+                  : (answerResult.wasDouble ? 'rgba(153, 27, 27, 0.95)' : 'rgba(239,68,68,0.95)'),
+                color: 'white', textAlign: 'center',
+                boxShadow: answerResult.correct ? '0 20px 60px rgba(16,185,129,0.5), inset 0 0 40px rgba(255,255,255,0.4)' : '0 20px 60px rgba(239,68,68,0.6), inset 0 0 40px rgba(0,0,0,0.5)', 
+                border: '4px solid rgba(255,255,255,0.3)',
+                animation: !answerResult.correct ? 'shake 0.5s' : 'pulse 1s infinite'
+              }}
+            >
+              <div style={{ fontSize: '64px', marginBottom: '10px', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' }}>
+                {answerResult.correct ? '✅' : '❌'}
+              </div>
+              <div style={{ fontSize: '32px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '2px', textShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>
+                {answerResult.correct ? 'CORRECT!' : 'WRONG ANSWER'}
+              </div>
+              <div style={{ fontSize: '18px', fontWeight: 700, margin: '10px 0', color: 'rgba(255,255,255,0.9)' }}>
+                {answerResult.message}
+              </div>
+              
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '16px' }}>
+                {answerResult.correct && <div style={{ fontSize: '24px', fontWeight: '900', color: '#D1FAE5', background: 'rgba(0,0,0,0.3)', padding: '8px 16px', borderRadius: '12px' }}>+{answerResult.scoreGained} SCORE</div>}
+                {!answerResult.correct && <div style={{ fontSize: '24px', fontWeight: '900', color: '#FECACA', background: 'rgba(0,0,0,0.3)', padding: '8px 16px', borderRadius: '12px' }}>-{answerResult.hpLost} HP</div>}
+              </div>
+              
+              {answerResult.explanation && (
+                <div style={{ marginTop: '20px', fontSize: '15px', lineHeight: '1.5', background: 'rgba(0,0,0,0.4)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <strong style={{ color: answerResult.correct ? '#A7F3D0' : '#FECACA', display: 'block', marginBottom: '4px' }}>GIẢI THÍCH / ĐÁP ÁN ĐÚNG:</strong>
+                  {answerResult.explanation}
                 </div>
-                {answerResult.correct && <div style={{ fontSize: '14px', fontWeight: 'bold', color: '#D1FAE5' }}>+{answerResult.scoreGained} điểm</div>}
-                {!answerResult.correct && <div style={{ fontSize: '14px', fontWeight: 'bold', color: '#FEE2E2' }}>-{answerResult.hpLost} HP</div>}
-              </div>
-            </div>
-            
-            {answerResult.explanation && (
-              <div style={{ marginTop: '12px', fontSize: '13px', lineHeight: '1.4', background: 'rgba(0,0,0,0.2)', padding: '10px', borderRadius: '8px' }}>
-                <strong style={{ color: answerResult.correct ? '#A7F3D0' : '#FECACA' }}>Giải thích: </strong>{answerResult.explanation}
-              </div>
-            )}
-          </motion.div>
+              )}
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 

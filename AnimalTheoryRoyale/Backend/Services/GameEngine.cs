@@ -225,6 +225,7 @@ public class GameEngine : BackgroundService
             UpdateStuns(game, now);
             UpdateKnowledgeZones(game, now);
             UpdateQuestionClaims(game, now);
+            UpdateItems(game, now);
 
             // Check game end
             if (game.StartTime.HasValue && (now - game.StartTime.Value).TotalSeconds >= game.Duration)
@@ -263,6 +264,9 @@ public class GameEngine : BackgroundService
                 }),
                 projectiles = game.Projectiles.Values.Where(p => p.IsActive).Select(p => new {
                     id = p.Id, p.X, p.Y, p.Z
+                }),
+                items = game.Items.Values.Where(i => i.IsActive).Select(i => new {
+                    id = i.Id, type = i.Type, x = i.X, z = i.Z, value = i.Value
                 }),
                 safeZone = new {
                     game.SafeZone.CenterX, game.SafeZone.CenterZ,
@@ -320,6 +324,77 @@ public class GameEngine : BackgroundService
             }
             if (p.ChaosEndTime.HasValue && now >= p.ChaosEndTime.Value) p.ChaosEndTime = null;
             if (p.SilenceEndTime.HasValue && now >= p.SilenceEndTime.Value) p.SilenceEndTime = null;
+        }
+    }
+
+    private void UpdateItems(GameState game, DateTime now)
+    {
+        // 1. Spawning items if below limit (max 15 active)
+        int activeItems = game.Items.Values.Count(i => i.IsActive);
+        if (activeItems < 15)
+        {
+            var r = new Random();
+            string[] types = { "HP", "Score", "Speed" };
+            string type = types[r.Next(types.Length)];
+            
+            // Spawn within current safe zone
+            float radius = game.SafeZone.Radius * 0.8f;
+            float angle = (float)(r.NextDouble() * Math.PI * 2);
+            float dist = (float)(r.NextDouble() * radius);
+            float x = game.SafeZone.CenterX + (float)Math.Cos(angle) * dist;
+            float z = game.SafeZone.CenterZ + (float)Math.Sin(angle) * dist;
+
+            int val = 0;
+            if (type == "HP") val = 30; // Heals 30 HP
+            else if (type == "Score") val = 50; // 50 points
+
+            string id = Guid.NewGuid().ToString();
+            game.Items.TryAdd(id, new ItemState { Id = id, Type = type, X = x, Z = z, Value = val });
+        }
+
+        // 2. Pickup Logic
+        foreach (var item in game.Items.Values)
+        {
+            if (!item.IsActive)
+            {
+                if (item.RespawnTime.HasValue && now >= item.RespawnTime.Value)
+                {
+                    game.Items.TryRemove(item.Id, out _); // clean up dead items
+                }
+                continue;
+            }
+
+            foreach (var p in game.Players.Values)
+            {
+                if (p.IsDead) continue;
+                float dx = p.X - item.X;
+                float dz = p.Z - item.Z;
+                float distSq = dx * dx + dz * dz;
+
+                if (distSq < 9.0f) // 3m pickup radius
+                {
+                    item.IsActive = false;
+                    item.RespawnTime = now.AddSeconds(5); // Wait 5s before removal from dictionary
+
+                    if (item.Type == "HP")
+                    {
+                        p.HP = Math.Min(p.MaxHP, p.HP + item.Value);
+                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = $"Nhặt Hồi Máu! +{item.Value} HP" });
+                    }
+                    else if (item.Type == "Score")
+                    {
+                        p.Score += item.Value;
+                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = $"Nhặt Thưởng! +{item.Value} Điểm", scoreGained = item.Value });
+                    }
+                    else if (item.Type == "Speed")
+                    {
+                        p.ActiveBuff = "SpeedBoost";
+                        p.BuffEndTime = now.AddSeconds(15);
+                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = "Nhặt Tốc Độ! Chạy nhanh trong 15s" });
+                    }
+                    break;
+                }
+            }
         }
     }
 
