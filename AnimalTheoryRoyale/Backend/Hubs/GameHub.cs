@@ -18,7 +18,9 @@ public class GameHub : Hub
         var game = _gameEngine.GetOrCreateGame(roomCode, 1, 600);
         await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
         game.HostConnectionId = Context.ConnectionId;
-        await Clients.Caller.SendAsync("LobbyState", game.Players.Values.ToList());
+        await Clients.Caller.SendAsync("LobbyState", game.Players.Values.Select(p => new {
+            connectionId = p.ConnectionId, username = p.Username, characterId = p.CharacterId
+        }).ToArray());
     }
 
     public async Task JoinRoomAsPlayer(string roomCode, string username, int characterId)
@@ -40,9 +42,12 @@ public class GameHub : Hub
         };
 
         game.Players.TryAdd(Context.ConnectionId, player);
-        var playerList = game.Players.Values.ToList();
-        await Clients.Group(roomCode).SendAsync("PlayerJoined", player);
-        await Clients.Group(roomCode).SendAsync("LobbyState", playerList);
+        await Clients.Group(roomCode).SendAsync("PlayerJoined", new {
+            connectionId = player.ConnectionId, username = player.Username, characterId = player.CharacterId
+        });
+        await Clients.Group(roomCode).SendAsync("LobbyState", game.Players.Values.Select(p => new {
+            connectionId = p.ConnectionId, username = p.Username, characterId = p.CharacterId
+        }).ToArray());
     }
 
     public async Task HostStartGame(string roomCode, int questionCount = 20)
@@ -490,7 +495,9 @@ public class GameHub : Hub
                     }
                 }
                 await Clients.Group(game.RoomCode).SendAsync("PlayerLeft", Context.ConnectionId);
-                await Clients.Group(game.RoomCode).SendAsync("LobbyState", game.Players.Values.ToList());
+                await Clients.Group(game.RoomCode).SendAsync("LobbyState", game.Players.Values.Select(p => new {
+                    connectionId = p.ConnectionId, username = p.Username, characterId = p.CharacterId
+                }).ToArray());
                 break;
             }
         }
