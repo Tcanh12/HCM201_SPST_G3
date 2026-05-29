@@ -395,18 +395,18 @@ public class GameEngine : BackgroundService
                     if (item.Type == "HP")
                     {
                         p.HP = Math.Min(p.MaxHP, p.HP + item.Value);
-                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = $"Nhặt Hồi Máu! +{item.Value} HP" });
+                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = $"Nhặt Hồi Máu! +{item.Value} HP", isPickup = true });
                     }
                     else if (item.Type == "Score")
                     {
                         p.Score += item.Value;
-                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = $"Nhặt Thưởng! +{item.Value} Điểm", scoreGained = item.Value });
+                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = $"Nhặt Thưởng! +{item.Value} Điểm", scoreGained = item.Value, isPickup = true });
                     }
                     else if (item.Type == "Speed")
                     {
                         p.ActiveBuff = "SpeedBoost";
                         p.BuffEndTime = now.AddSeconds(15);
-                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = "Nhặt Tốc Độ! Chạy nhanh trong 15s" });
+                        _hubContext.Clients.Client(p.ConnectionId).SendAsync("AnswerResult", new { success = true, correct = true, message = "Nhặt Tốc Độ! Chạy nhanh trong 15s", isPickup = true });
                     }
                     break;
                 }

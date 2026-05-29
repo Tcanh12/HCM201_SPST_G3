@@ -232,18 +232,37 @@ public class GameHub : Hub
             return;
         }
 
-        // Proximity check (must be within 10 units)
+        // Proximity check (must be within 16 units to account for lag)
         float dx = player.X - zone.X;
         float dz = player.Z - zone.Z;
-        if (dx * dx + dz * dz > 100f) return;
+        if (dx * dx + dz * dz > 256f) return;
 
         // Player is now answering
         player.IsAnsweringQuestion = true;
         player.HasQuestionShield = true;
         player.ShieldEndTime = DateTime.UtcNow.AddSeconds(25);
 
+        // Find a question the player hasn't answered yet
+        int chosenQuestionId = zone.QuestionId;
+        string claimKey = $"{Context.ConnectionId}_{chosenQuestionId}";
+
+        if (game.AnsweredQuestions.ContainsKey(claimKey))
+        {
+            var rng = new Random();
+            var unansweredIds = game.QuestionPool.Keys
+                .Where(id => !game.AnsweredQuestions.ContainsKey($"{Context.ConnectionId}_{id}"))
+                .ToList();
+
+            if (unansweredIds.Count > 0)
+            {
+                chosenQuestionId = unansweredIds[rng.Next(unansweredIds.Count)];
+            }
+        }
+        
+        player.CurrentQuestionId = chosenQuestionId;
+
         // Serve question from in-memory pool (NO DB call)
-        if (!game.QuestionPool.TryGetValue(zone.QuestionId, out var questionData))
+        if (!game.QuestionPool.TryGetValue(chosenQuestionId, out var questionData))
         {
             player.IsAnsweringQuestion = false;
             player.HasQuestionShield = false;
@@ -297,14 +316,15 @@ public class GameHub : Hub
             }
             else
             {
-                string answerKey = $"{Context.ConnectionId}_{zone.QuestionId}";
+                int currentQId = player.CurrentQuestionId ?? zone.QuestionId;
+                string answerKey = $"{Context.ConnectionId}_{currentQId}";
                 if (!game.AnsweredQuestions.TryAdd(answerKey, true))
                 {
                     isAlreadyAnsweredByMe = true;
                 }
                 else
                 {
-                    if (game.QuestionPool.TryGetValue(zone.QuestionId, out var questionData))
+                    if (game.QuestionPool.TryGetValue(currentQId, out var questionData))
                     {
                         zoneType = zone.Type;
                         isTrap = zone.IsTrap;

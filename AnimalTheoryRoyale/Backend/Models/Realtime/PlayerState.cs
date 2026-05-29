@@ -20,6 +20,7 @@ public class PlayerState
     public bool HasQuestionShield { get; set; }
     public DateTime? ShieldEndTime { get; set; }
     public DateTime? RespawnTime { get; set; }
+    public int? CurrentQuestionId { get; set; }
 
     // Skill system
     public bool IsStunned { get; set; }

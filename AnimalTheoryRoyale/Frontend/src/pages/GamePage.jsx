@@ -58,7 +58,8 @@ export default function GamePage() {
 
       conn.on('AnswerResult', (result) => {
         setAnswerResult(result);
-        setTimeout(() => { setQuestion(null); setAnswerResult(null); }, 2000);
+        const duration = result.isPickup ? 700 : 2000;
+        setTimeout(() => { setQuestion(null); setAnswerResult(null); }, duration);
       });
 
       conn.on('GameEnded', (finalScores) => {
