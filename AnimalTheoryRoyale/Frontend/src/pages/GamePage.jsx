@@ -57,9 +57,10 @@ export default function GamePage() {
       });
 
       conn.on('AnswerResult', (result) => {
+        setQuestion(null); // Immediately clear question to show the result toast
         setAnswerResult(result);
-        const duration = result.isPickup ? 700 : 2000;
-        setTimeout(() => { setQuestion(null); setAnswerResult(null); }, duration);
+        const duration = result.isPickup ? 700 : 4000;
+        setTimeout(() => { setAnswerResult(null); }, duration);
       });
 
       conn.on('GameEnded', (finalScores) => {
