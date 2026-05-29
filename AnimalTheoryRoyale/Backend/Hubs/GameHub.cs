@@ -48,7 +48,7 @@ public class GameHub : Hub
     public async Task HostStartGame(string roomCode, int questionCount = 20)
     {
         var game = _gameEngine.GetGame(roomCode);
-        if (game == null || Context.ConnectionId != game.HostConnectionId) return;
+        if (game == null) return;
 
         // Initialize knowledge zones from DB with unique questions
         await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
