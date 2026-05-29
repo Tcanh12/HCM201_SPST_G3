@@ -189,7 +189,8 @@ export default function GamePage() {
                 color: 'white', textAlign: 'center',
                 boxShadow: answerResult.correct ? '0 20px 60px rgba(16,185,129,0.5), inset 0 0 40px rgba(255,255,255,0.4)' : '0 20px 60px rgba(239,68,68,0.6), inset 0 0 40px rgba(0,0,0,0.5)', 
                 border: '4px solid rgba(255,255,255,0.3)',
-                animation: !answerResult.correct ? 'shake 0.5s' : 'pulse 1s infinite'
+                animation: !answerResult.correct ? 'shake 0.5s' : 'pulse 1s infinite',
+                pointerEvents: 'auto'
               }}
             >
               <div style={{ fontSize: '64px', marginBottom: '10px', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' }}>
@@ -213,6 +214,21 @@ export default function GamePage() {
                   {answerResult.explanation}
                 </div>
               )}
+
+              {/* OK Button */}
+              <button 
+                onClick={() => setAnswerResult(null)}
+                style={{
+                  marginTop: '20px', padding: '12px 32px', borderRadius: '12px',
+                  background: 'rgba(255,255,255,0.2)', border: '2px solid rgba(255,255,255,0.5)',
+                  color: 'white', fontWeight: 'bold', fontSize: '16px', letterSpacing: '1px',
+                  cursor: 'pointer', transition: 'all 0.2s', width: '100%',
+                }}
+                onMouseOver={(e) => e.target.style.background = 'rgba(255,255,255,0.3)'}
+                onMouseOut={(e) => e.target.style.background = 'rgba(255,255,255,0.2)'}
+              >
+                ĐÃ HIỂU (ĐÓNG)
+              </button>
             </motion.div>
           </div>
         )}
