@@ -45,7 +45,7 @@ export default function JoinRoomPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 glass-panel rounded-2xl p-8 w-full max-w-md"
+        className="relative z-10 glass-panel rounded-2xl p-6 md:p-8 w-full max-w-md"
       >
         {/* Badge */}
         <div className="flex items-center gap-2 mb-6">

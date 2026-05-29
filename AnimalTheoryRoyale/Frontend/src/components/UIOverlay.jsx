@@ -153,24 +153,24 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
     <div className="pointer-events-none text-white font-sans w-full h-full relative">
       
       {/* Top Center: Timer + Zone Info */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-6 glass-panel rounded-2xl px-6 py-2 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+      <div className="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-6 glass-panel rounded-2xl px-3 md:px-6 py-1.5 md:py-2 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] scale-[0.85] md:scale-100 origin-top whitespace-nowrap">
         <div className="text-center">
-          <div className="text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Thời gian</div>
-          <div className={`text-3xl font-black font-mono ${timeRemaining <= 60 ? 'text-red-500 animate-pulse text-glow-danger' : 'text-white'}`}>
+          <div className="text-[8px] md:text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Thời gian</div>
+          <div className={`text-xl md:text-3xl font-black font-mono ${timeRemaining <= 60 ? 'text-red-500 animate-pulse text-glow-danger' : 'text-white'}`}>
             {formatTime(timeRemaining)}
           </div>
         </div>
         
         <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         
-        <div className="text-center min-w-[100px]">
-          <div className="text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Vòng bo</div>
+        <div className="text-center min-w-[70px] md:min-w-[100px]">
+          <div className="text-[8px] md:text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Vòng bo</div>
           {safeZone.isShrinking ? (
-            <div className="text-base font-black text-red-500 animate-pulse flex items-center justify-center gap-1">
+            <div className="text-sm md:text-base font-black text-red-500 animate-pulse flex items-center justify-center gap-1">
               <span>⚠️</span> ĐANG THU
             </div>
           ) : (
-            <div className="text-base font-black text-cyan-400">
+            <div className="text-sm md:text-base font-black text-cyan-400">
               Phase {safeZone.phase || 0}
             </div>
           )}
@@ -184,16 +184,16 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
         <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
         
         <div className="text-center">
-          <div className="text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Còn sống</div>
-          <div className="text-2xl font-black font-mono">
+          <div className="text-[8px] md:text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Còn sống</div>
+          <div className="text-xl md:text-2xl font-black font-mono">
             <span className="text-emerald-400">{players.filter(p => !p.isDead).length}</span>
-            <span className="text-white/30 text-lg">/{players.length}</span>
+            <span className="text-white/30 text-sm md:text-lg">/{players.length}</span>
           </div>
         </div>
       </div>
 
       {/* Bottom Center: Stats HUD */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 glass-panel rounded-3xl p-5 border-white/10 min-w-[480px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      <div className="absolute bottom-2 md:bottom-6 left-1/2 -translate-x-1/2 glass-panel rounded-3xl p-3 md:p-5 border-white/10 w-[95%] max-w-[480px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] pointer-events-auto">
         
         {/* Buff Banner */}
         <AnimatePresence>
@@ -212,21 +212,21 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
 
         <HPBar current={myPlayer.hp} max={myPlayer.maxHP} percent={hpPercent} color={hpColor} />
 
-        <div className="grid grid-cols-4 gap-4 mt-4 pt-4 border-t border-white/5">
+        <div className="grid grid-cols-4 gap-2 md:gap-4 mt-2 md:mt-4 pt-2 md:pt-4 border-t border-white/5">
           {/* Score */}
           <div className="flex flex-col items-center">
-            <span className="text-[10px] text-white/40 font-bold uppercase tracking-widest mb-1">Điểm</span>
-            <span className="text-2xl font-black font-mono text-cyan-400 text-glow-cyan">{myPlayer.score || 0}</span>
+            <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Điểm</span>
+            <span className="text-xl md:text-2xl font-black font-mono text-cyan-400 text-glow-cyan">{myPlayer.score || 0}</span>
           </div>
 
           {/* Combo */}
           <div className="flex flex-col items-center relative">
-            <span className="text-[10px] text-white/40 font-bold uppercase tracking-widest mb-1">Combo</span>
+            <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Combo</span>
             <motion.span 
               key={myPlayer.combo}
               initial={{ scale: 1.5, color: '#FFFFFF' }}
               animate={{ scale: 1, color: '#F97316' }}
-              className={`text-2xl font-black font-mono ${(myPlayer.combo || 0) >= 3 ? 'text-glow-amber' : ''}`}
+              className={`text-xl md:text-2xl font-black font-mono ${(myPlayer.combo || 0) >= 3 ? 'text-glow-amber' : ''}`}
             >
               x{myPlayer.combo || 0}
             </motion.span>
@@ -250,24 +250,24 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
 
           {/* Ammo */}
           <div className="flex flex-col items-center">
-            <span className="text-[10px] text-white/40 font-bold uppercase tracking-widest mb-1">Đạn</span>
-            <span className="text-2xl font-black font-mono text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+            <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Đạn</span>
+            <span className="text-xl md:text-2xl font-black font-mono text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
               {myPlayer.ammo || 0}
             </span>
           </div>
 
           {/* Rank */}
           <div className="flex flex-col items-center">
-            <span className="text-[10px] text-white/40 font-bold uppercase tracking-widest mb-1">Hạng</span>
-            <span className="text-2xl font-black font-mono text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]">
+            <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Hạng</span>
+            <span className="text-xl md:text-2xl font-black font-mono text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]">
               #{myRank}
             </span>
           </div>
         </div>
       </div>
 
-      {/* Right Bottom: Skills */}
-      <div className="absolute bottom-6 right-6 flex gap-3 items-end">
+      {/* Right Bottom (or Top right on Mobile): Skills */}
+      <div className="absolute top-[80px] md:top-auto md:bottom-6 right-2 md:right-6 flex flex-col md:flex-row gap-2 md:gap-3 items-end md:items-end pointer-events-auto scale-75 origin-top-right md:scale-100 md:origin-bottom-right">
         {myPlayer.isSilenced && (
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
@@ -309,8 +309,8 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
       </div>
 
       {/* Top Right: Leaderboard */}
-      <div className="absolute top-4 right-4 glass-panel rounded-xl p-3 border-white/10 w-[220px]">
-        <div className="text-[10px] text-white/50 font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+      <div className="absolute top-[80px] md:top-4 left-2 md:left-auto md:right-4 glass-panel rounded-xl p-2 md:p-3 border-white/10 w-[140px] md:w-[220px] scale-90 origin-top-left md:scale-100 md:origin-top-right pointer-events-auto">
+        <div className="text-[9px] md:text-[10px] text-white/50 font-bold uppercase tracking-widest mb-2 md:mb-3 flex items-center gap-1.5 md:gap-2">
           <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse" />
           Bảng xếp hạng
         </div>

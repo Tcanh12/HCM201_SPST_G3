@@ -129,7 +129,7 @@ export default function HostLobbyPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 glass-panel rounded-2xl p-8 w-full max-w-lg"
+        className="relative z-10 glass-panel rounded-2xl p-5 md:p-8 w-full max-w-lg"
       >
         {/* Room Code Display */}
         <div className="text-center mb-6">
@@ -137,9 +137,9 @@ export default function HostLobbyPage() {
           
           <button
             onClick={handleCopy}
-            className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 rounded-2xl transition-all duration-300"
+            className="group relative inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 rounded-2xl transition-all duration-300"
           >
-            <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-cyan-400 tracking-[0.3em] font-mono">
+            <h1 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-cyan-400 tracking-[0.3em] font-mono">
               {roomCode}
             </h1>
             <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 rounded-lg text-xs font-medium text-white/60 group-hover:text-white transition-colors">

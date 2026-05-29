@@ -157,7 +157,7 @@ export default function PlayerLobbyPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 glass-panel rounded-2xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="relative z-10 glass-panel rounded-2xl p-4 md:p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
       >
         {!joined ? (
           <>
@@ -168,7 +168,7 @@ export default function PlayerLobbyPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
               {characters.map(char => (
                 <CharacterCard
                   key={char.id}

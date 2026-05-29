@@ -76,7 +76,7 @@ function MascotRing() {
   ];
 
   return (
-    <div className="flex gap-5 mb-10">
+    <div className="flex flex-wrap justify-center gap-4 md:gap-5 mb-8 md:mb-10 px-4">
       {mascots.map((m, i) => (
         <motion.div
           key={i}
@@ -121,7 +121,7 @@ function FeatureBadges() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.2, duration: 0.8 }}
-      className="flex gap-3 mt-8"
+      className="flex flex-wrap justify-center gap-2 md:gap-3 mt-8 px-4"
     >
       {features.map((f, i) => (
         <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
@@ -176,7 +176,7 @@ export default function LandingPage() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-center mb-3"
         >
-          <h1 className="text-7xl font-display font-black tracking-tight mb-1">
+          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tight mb-1">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-400">
               ANIMAL THEORY
             </span>
@@ -192,12 +192,12 @@ export default function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-center mb-8"
+          className="text-center mb-6 md:mb-8 px-4"
         >
-          <h2 className="text-xl font-display font-bold text-white/80 uppercase tracking-[0.25em]">
+          <h2 className="text-sm md:text-xl font-display font-bold text-white/80 uppercase tracking-[0.25em]">
             Vòng Bo Tri Thức 3D
           </h2>
-          <p className="mt-3 text-white/40 max-w-md mx-auto text-sm leading-relaxed">
+          <p className="mt-2 md:mt-3 text-white/40 max-w-md mx-auto text-xs md:text-sm leading-relaxed">
             Sinh tồn bằng tri thức. Chạy nhanh chưa đủ, muốn thắng phải hiểu đúng.
           </p>
         </motion.div>
@@ -210,11 +210,11 @@ export default function LandingPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex gap-4"
+          className="flex flex-col md:flex-row gap-3 md:gap-4 w-full max-w-xs md:max-w-none px-6"
         >
           <button
             onClick={() => navigate('/create')}
-            className="group relative px-8 py-4 bg-gradient-to-r from-primary to-primary-light rounded-xl font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow-primary flex items-center gap-3"
+            className="group relative w-full md:w-auto px-6 md:px-8 py-4 bg-gradient-to-r from-primary to-primary-light rounded-xl font-bold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow-primary flex items-center justify-center gap-3"
           >
             {/* Shine effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -224,7 +224,7 @@ export default function LandingPage() {
 
           <button
             onClick={() => navigate('/join')}
-            className="group relative px-8 py-4 bg-white/5 rounded-xl font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/10 border border-white/15 hover:border-white/30 flex items-center gap-3 hover:shadow-lg"
+            className="group relative w-full md:w-auto px-6 md:px-8 py-4 bg-white/5 rounded-xl font-bold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/10 border border-white/15 hover:border-white/30 flex items-center justify-center gap-3 hover:shadow-lg"
           >
             <Users className="w-5 h-5 relative z-10 text-white/70 group-hover:text-white transition-colors" />
             <span className="relative z-10 text-white/80 group-hover:text-white transition-colors">Tham Gia Bằng Mã</span>
