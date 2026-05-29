@@ -246,7 +246,8 @@ public class GameEngine : BackgroundService
                     sortedPlayers.Select(p => new {
                         p.Username, p.CharacterId, p.Score, p.Combo,
                         p.TotalCorrectAnswers, p.TotalWrongAnswers, p.LongestCombo,
-                        p.DamageTaken, p.SurvivalDuration, p.FinalRank, p.IsMVP
+                        p.DamageTaken, p.SurvivalDuration, p.FinalRank, p.IsMVP,
+                        isHost = p.ConnectionId == game.HostConnectionId
                     }));
                 
                 // Allow it to remain in Ended state for a bit before cleanup
