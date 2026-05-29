@@ -246,7 +246,7 @@ public class GameEngine : BackgroundService
                         totalCorrectAnswers = p.TotalCorrectAnswers, totalWrongAnswers = p.TotalWrongAnswers, longestCombo = p.LongestCombo,
                         damageTaken = p.DamageTaken, survivalDuration = p.SurvivalDuration, finalRank = p.FinalRank, isMVP = p.IsMVP,
                         isHost = p.ConnectionId == game.HostConnectionId
-                    }));
+                    }).ToArray());
                 
                 // Allow it to remain in Ended state for a bit before cleanup
                 continue;
@@ -276,13 +276,13 @@ public class GameEngine : BackgroundService
                     hasDouble = p.HasDoubleActive,
                     isChaos = p.ChaosEndTime.HasValue && p.ChaosEndTime.Value > now,
                     isSilenced = p.SilenceEndTime.HasValue && p.SilenceEndTime.Value > now
-                }),
+                }).ToArray(),
                 projectiles = game.Projectiles.Values.Where(p => p.IsActive).Select(p => new {
                     id = p.Id, x = p.X, y = p.Y, z = p.Z
-                }),
+                }).ToArray(),
                 items = game.Items.Values.Where(i => i.IsActive).Select(i => new {
                     id = i.Id, type = i.Type, x = i.X, z = i.Z, value = i.Value
-                }),
+                }).ToArray(),
                 safeZone = new {
                     centerX = game.SafeZone.CenterX, centerZ = game.SafeZone.CenterZ,
                     radius = game.SafeZone.Radius, targetRadius = game.SafeZone.TargetRadius,
@@ -293,7 +293,7 @@ public class GameEngine : BackgroundService
                     zoneId = kz.ZoneId, x = kz.X, z = kz.Z, isActive = kz.IsActive, topicName = kz.TopicName,
                     type = kz.Type, isTrap = kz.IsTrap,
                     isClaimed = kz.ClaimedByConnectionId != null
-                })
+                }).ToArray()
             };
 
             await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameStateUpdate", snapshot);
