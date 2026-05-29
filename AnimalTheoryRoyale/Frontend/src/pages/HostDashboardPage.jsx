@@ -39,7 +39,13 @@ export default function HostDashboardPage() {
     <div className="w-full h-full flex flex-col bg-dark text-white overflow-hidden relative">
       {/* Return Home Button (Overlay) */}
       <button 
-        onClick={() => navigate('/')}
+        onClick={() => {
+          if (connection) {
+            connection.invoke('HostEndGame', roomCode).catch(console.error);
+          } else {
+            navigate('/');
+          }
+        }}
         className="absolute top-4 right-4 z-[999] px-4 py-2 bg-red-500 hover:bg-red-600 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-colors"
       >
         <Home className="w-4 h-4" /> Kết Thúc Trận

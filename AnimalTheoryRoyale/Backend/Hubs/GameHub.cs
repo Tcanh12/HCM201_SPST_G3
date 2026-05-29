@@ -61,6 +61,16 @@ public class GameHub : Hub
         await Clients.GroupExcept(roomCode, Context.ConnectionId).SendAsync("GameStartedForPlayer");
     }
 
+    public async Task HostEndGame(string roomCode)
+    {
+        var game = _gameEngine.GetGame(roomCode);
+        if (game != null && game.Status == "Playing")
+        {
+            // Force the game engine to end the game immediately on the next tick
+            game.Duration = 0;
+        }
+    }
+
     public async Task PlayerMove(string roomCode, float x, float y, float z, float rotationY)
     {
         var game = _gameEngine.GetGame(roomCode);
