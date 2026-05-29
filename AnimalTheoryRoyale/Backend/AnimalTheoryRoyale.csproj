@@ -22,4 +22,10 @@
     <!-- We will use standard SignalR which is included in ASP.NET Core by default -->
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Data\questions_raw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
