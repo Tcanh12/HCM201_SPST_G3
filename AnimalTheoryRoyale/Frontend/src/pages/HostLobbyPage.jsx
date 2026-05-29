@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Copy, Check, Users, Play, X, Settings2, Hash, Wifi } from 'lucide-react';
 import * as signalR from '@microsoft/signalr';
+import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
 
 export default function HostLobbyPage() {
@@ -18,6 +19,7 @@ export default function HostLobbyPage() {
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
       .withUrl(`${API_HOST}/gamehub`)
+      .withHubProtocol(new MessagePackHubProtocol())
       .withAutomaticReconnect()
       .build();
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as signalR from '@microsoft/signalr';
+import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
 import HostDashboard from '../components/HostDashboard';
 import { Home } from 'lucide-react';
@@ -14,6 +15,7 @@ export default function HostDashboardPage() {
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
       .withUrl(`${API_HOST}/gamehub`)
+      .withHubProtocol(new MessagePackHubProtocol())
       .withAutomaticReconnect()
       .build();
 

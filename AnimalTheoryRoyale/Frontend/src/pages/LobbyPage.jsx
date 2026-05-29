@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import * as signalR from '@microsoft/signalr';
+import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config.js';
 
 export default function LobbyPage() {
@@ -32,6 +33,7 @@ export default function LobbyPage() {
 
     const newConnection = new signalR.HubConnectionBuilder()
       .withUrl(`${API_HOST}/gamehub`)
+      .withHubProtocol(new MessagePackHubProtocol())
       .withAutomaticReconnect()
       .build();
 

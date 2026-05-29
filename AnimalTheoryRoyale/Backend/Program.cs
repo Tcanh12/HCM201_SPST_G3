@@ -55,7 +55,7 @@ builder.Services.AddCors(options =>
 builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
 // Add SignalR
-builder.Services.AddSignalR();
+builder.Services.AddSignalR().AddMessagePackProtocol();
 
 // Register GameEngine as a Singleton so the GameHub can access the same state
 builder.Services.AddSingleton<GameEngine>();

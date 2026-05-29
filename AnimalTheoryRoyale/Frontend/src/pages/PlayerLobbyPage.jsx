@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Shield, Zap, Crosshair, CheckCircle2, Wifi } from 'lucide-react';
 import axios from 'axios';
 import * as signalR from '@microsoft/signalr';
+import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
 
 // Stat bar component
@@ -119,6 +120,7 @@ export default function PlayerLobbyPage() {
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
       .withUrl(`${API_HOST}/gamehub`)
+      .withHubProtocol(new MessagePackHubProtocol())
       .withAutomaticReconnect()
       .build();
 

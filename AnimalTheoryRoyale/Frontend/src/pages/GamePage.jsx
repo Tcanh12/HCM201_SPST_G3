@@ -8,6 +8,7 @@ import HostDashboard from '../components/HostDashboard';
 import QuestionModal from '../components/QuestionModal';
 import TouchControls from '../components/TouchControls';
 import * as signalR from '@microsoft/signalr';
+import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import { motion, AnimatePresence } from 'framer-motion';
 import API_HOST from '../config';
 
@@ -38,6 +39,7 @@ export default function GamePage() {
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
       .withUrl(`${API_HOST}/gamehub`)
+      .withHubProtocol(new MessagePackHubProtocol())
       .withAutomaticReconnect()
       .build();
 

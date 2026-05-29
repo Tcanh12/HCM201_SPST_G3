@@ -197,9 +197,7 @@ public class GameEngine : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         _logger.LogInformation("Game Engine Started. Running at 10 ticks/second.");
-        var tickRate = TimeSpan.FromMilliseconds(100);
-        using var timer = new PeriodicTimer(tickRate);
-
+        using var timer = new PeriodicTimer(TimeSpan.FromMilliseconds(100));
         while (await timer.WaitForNextTickAsync(stoppingToken))
         {
             try { await UpdateGamesAsync(); }
