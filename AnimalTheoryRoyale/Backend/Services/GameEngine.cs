@@ -242,9 +242,9 @@ public class GameEngine : BackgroundService
 
                 await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameEnded",
                     sortedPlayers.Select(p => new {
-                        p.Username, p.CharacterId, p.Score, p.Combo,
-                        p.TotalCorrectAnswers, p.TotalWrongAnswers, p.LongestCombo,
-                        p.DamageTaken, p.SurvivalDuration, p.FinalRank, p.IsMVP,
+                        username = p.Username, characterId = p.CharacterId, score = p.Score, combo = p.Combo,
+                        totalCorrectAnswers = p.TotalCorrectAnswers, totalWrongAnswers = p.TotalWrongAnswers, longestCombo = p.LongestCombo,
+                        damageTaken = p.DamageTaken, survivalDuration = p.SurvivalDuration, finalRank = p.FinalRank, isMVP = p.IsMVP,
                         isHost = p.ConnectionId == game.HostConnectionId
                     }));
                 
@@ -262,10 +262,10 @@ public class GameEngine : BackgroundService
                 timeRemaining = (int)remaining,
                 hostConnectionId = game.HostConnectionId,
                 players = game.Players.Values.Select(p => new {
-                    id = p.ConnectionId, p.Username, p.CharacterId,
-                    p.X, p.Y, p.Z, p.RotationY,
-                    p.HP, p.MaxHP, p.Score, p.Combo, p.Ammo,
-                    p.IsDead, p.HasQuestionShield, p.IsStunned,
+                    id = p.ConnectionId, username = p.Username, characterId = p.CharacterId,
+                    x = p.X, y = p.Y, z = p.Z, rotationY = p.RotationY,
+                    hp = p.HP, maxHP = p.MaxHP, score = p.Score, combo = p.Combo, ammo = p.Ammo,
+                    isDead = p.IsDead, hasQuestionShield = p.HasQuestionShield, isStunned = p.IsStunned,
                     isInvulnerable = p.InvulnerableEndTime.HasValue && p.InvulnerableEndTime.Value > now,
                     activeBuff = p.BuffEndTime.HasValue && p.BuffEndTime.Value > now ? p.ActiveBuff : null,
                     scanCD = 0, // removed
@@ -278,20 +278,20 @@ public class GameEngine : BackgroundService
                     isSilenced = p.SilenceEndTime.HasValue && p.SilenceEndTime.Value > now
                 }),
                 projectiles = game.Projectiles.Values.Where(p => p.IsActive).Select(p => new {
-                    id = p.Id, p.X, p.Y, p.Z
+                    id = p.Id, x = p.X, y = p.Y, z = p.Z
                 }),
                 items = game.Items.Values.Where(i => i.IsActive).Select(i => new {
                     id = i.Id, type = i.Type, x = i.X, z = i.Z, value = i.Value
                 }),
                 safeZone = new {
-                    game.SafeZone.CenterX, game.SafeZone.CenterZ,
-                    game.SafeZone.Radius, game.SafeZone.TargetRadius,
-                    game.SafeZone.Phase, game.SafeZone.IsShrinking,
+                    centerX = game.SafeZone.CenterX, centerZ = game.SafeZone.CenterZ,
+                    radius = game.SafeZone.Radius, targetRadius = game.SafeZone.TargetRadius,
+                    phase = game.SafeZone.Phase, isShrinking = game.SafeZone.IsShrinking,
                     nextShrinkIn = Math.Max(0, (game.SafeZone.NextShrinkTime - now).TotalSeconds)
                 },
                 knowledgeZones = game.KnowledgeZones.Values.Select(kz => new {
-                    kz.ZoneId, kz.X, kz.Z, kz.IsActive, kz.TopicName,
-                    kz.Type, kz.IsTrap,
+                    zoneId = kz.ZoneId, x = kz.X, z = kz.Z, isActive = kz.IsActive, topicName = kz.TopicName,
+                    type = kz.Type, isTrap = kz.IsTrap,
                     isClaimed = kz.ClaimedByConnectionId != null
                 })
             };
