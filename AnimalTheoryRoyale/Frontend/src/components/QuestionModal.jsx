@@ -45,8 +45,11 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
   // Countdown timer
   useEffect(() => {
     if (timeLeft <= 0) {
-      // Time expired → auto-close without answering (penalty handled by server claim expiry)
-      onClose();
+      // Time expired → auto-submit wrong answer
+      if (!submitted) {
+          setSubmitted(true);
+          onSubmit(-1);
+      }
       return;
     }
     const timer = setTimeout(() => setTimeLeft(t => t - 1), 1000);

@@ -510,6 +510,7 @@ public class GameEngine : BackgroundService
             {
                 p.HasQuestionShield = false;
                 p.ShieldEndTime = null;
+                p.IsAnsweringQuestion = false;
             }
         }
     }
