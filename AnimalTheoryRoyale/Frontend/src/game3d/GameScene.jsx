@@ -42,8 +42,8 @@ export default function GameScene({
     if (!connection) return;
     const handleSkill = (data) => {
       if (data.type === 'push' && data.targets && data.targets.includes(myConnectionId)) {
-        // We got pushed! Apply strong knockback
-        knockbackVelocity.current = { x: data.dirX * 60, z: data.dirZ * 60 };
+        // We got pushed! Apply strong knockback (increased from 60 to 150)
+        knockbackVelocity.current = { x: data.dirX * 150, z: data.dirZ * 150 };
       }
     };
     connection.on('SkillUsed', handleSkill);
