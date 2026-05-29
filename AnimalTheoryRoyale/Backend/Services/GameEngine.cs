@@ -231,10 +231,25 @@ public class GameEngine : BackgroundService
             if (game.StartTime.HasValue && (now - game.StartTime.Value).TotalSeconds >= game.Duration)
             {
                 game.Status = "Ended";
+                
+                // Finalize stats & ranking
+                var sortedPlayers = game.Players.Values.OrderByDescending(p => p.Score).ToList();
+                for (int i = 0; i < sortedPlayers.Count; i++) 
+                {
+                    sortedPlayers[i].FinalRank = i + 1;
+                    if (i == 0 && sortedPlayers[i].Score > 0) sortedPlayers[i].IsMVP = true;
+                    // Approximate survival time if we haven't tracked respawns perfectly
+                    sortedPlayers[i].SurvivalDuration = game.Duration;
+                }
+
                 await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameEnded",
-                    game.Players.Values.OrderByDescending(p => p.Score).Select(p => new {
-                        p.Username, p.CharacterId, p.Score, p.Combo
+                    sortedPlayers.Select(p => new {
+                        p.Username, p.CharacterId, p.Score, p.Combo,
+                        p.TotalCorrectAnswers, p.TotalWrongAnswers, p.LongestCombo,
+                        p.DamageTaken, p.SurvivalDuration, p.FinalRank, p.IsMVP
                     }));
+                
+                // Allow it to remain in Ended state for a bit before cleanup
                 continue;
             }
 
@@ -246,6 +261,7 @@ public class GameEngine : BackgroundService
             {
                 status = game.Status,
                 timeRemaining = (int)remaining,
+                hostConnectionId = game.HostConnectionId,
                 players = game.Players.Values.Select(p => new {
                     id = p.ConnectionId, p.Username, p.CharacterId,
                     p.X, p.Y, p.Z, p.RotationY,
@@ -410,6 +426,7 @@ public class GameEngine : BackgroundService
             {
                 int damage = Math.Max(1, (int)(sz.DamagePerSecond * dt));
                 p.HP -= damage;
+                p.DamageTaken += damage;
                 if (p.HP <= 0) KillPlayer(p, game, now, "zone");
             }
         }
@@ -442,10 +459,12 @@ public class GameEngine : BackgroundService
                 if (dx * dx + dz * dz < 64f)
                 {
                     player.HP -= proj.Damage;
+                    player.DamageTaken += proj.Damage;
                     if (game.Players.TryGetValue(proj.OwnerConnectionId, out var owner))
                     {
                         owner.Score += 10;
                         owner.Combo++;
+                        if (owner.Combo > owner.LongestCombo) owner.LongestCombo = owner.Combo;
                     }
                     if (player.HP <= 0)
                     {

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import * as signalR from '@microsoft/signalr';
+import API_HOST from '../config.js';
 
 export default function LobbyPage() {
   const { roomCode } = useParams();
@@ -16,7 +17,7 @@ export default function LobbyPage() {
 
   // Load characters
   useEffect(() => {
-    axios.get('http://localhost:5000/api/rooms/characters')
+    axios.get(`${API_HOST}/api/rooms/characters`)
       .then(res => setCharacters(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -30,7 +31,7 @@ export default function LobbyPage() {
     }
 
     const newConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5000/gamehub')
+      .withUrl(`${API_HOST}/gamehub`)
       .withAutomaticReconnect()
       .build();
 
@@ -69,7 +70,7 @@ export default function LobbyPage() {
 
   const handleStartGame = async () => {
     try {
-      await axios.post(`http://localhost:5000/api/rooms/${roomCode}/start`);
+      await axios.post(`${API_HOST}/api/rooms/${roomCode}/start`);
     } catch (err) {
       console.error(err);
       alert('Failed to start game');

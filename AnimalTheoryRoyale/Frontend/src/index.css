@@ -5,16 +5,112 @@
 @layer base {
   body {
     @apply bg-dark text-white overflow-hidden;
-    /* Prevent accidental scrolling in a game */
     overscroll-behavior: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Nice focus ring */
+  input:focus, select:focus, button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5), 0 0 12px rgba(79, 70, 229, 0.2);
+  }
+
+  /* Select option styling for dark mode */
+  select option {
+    background: #1F2937;
+    color: white;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/70 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply relative px-8 py-4 bg-gradient-to-r from-primary to-primary-light rounded-xl font-bold text-lg 
+           overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow-primary 
+           active:scale-95 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply relative px-8 py-4 bg-gradient-to-r from-secondary to-secondary-light rounded-xl font-bold text-lg 
+           text-dark overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow-emerald 
+           active:scale-95 disabled:opacity-50 disabled:hover:scale-100;
+  }
+
+  .btn-ghost {
+    @apply px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 
+           rounded-xl font-medium transition-all duration-300 hover:scale-105;
+  }
+
+  .input-field {
+    @apply w-full bg-dark-lighter/80 border border-white/10 rounded-xl px-4 py-3.5 
+           text-white placeholder-white/30 transition-all duration-300
+           focus:border-primary/50 focus:bg-dark-lighter;
+  }
+
+  .input-with-icon {
+    @apply relative;
+  }
+  .input-with-icon .icon {
+    @apply absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none;
+  }
+  .input-with-icon input,
+  .input-with-icon select {
+    @apply pl-11;
+  }
+
+  .card-interactive {
+    @apply bg-white/5 rounded-xl p-4 border-2 border-white/10 cursor-pointer
+           transition-all duration-300 hover:border-white/25 hover:bg-white/8;
+  }
+  .card-interactive.selected {
+    @apply border-primary bg-primary/15 shadow-glow-primary;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+
+  .text-glow-sm {
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
   }
 }
 
 @layer utilities {
-  .glass-panel {
-    @apply bg-card/80 backdrop-blur-md border border-white/10 shadow-xl;
+  .animate-in {
+    animation: slideUp 0.5s ease-out both;
   }
 }
+
+/* ===== Keyframe Animations ===== */
 
 @keyframes bounce {
   0% { transform: translate(-50%, -10px); }
@@ -44,4 +140,39 @@
   50% { transform: translateX(10px); }
   75% { transform: translateX(-10px); }
   100% { transform: translateX(0); }
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  25% { transform: translateY(-30vh) translateX(10px) scale(1.2); opacity: 0.8; }
+  50% { transform: translateY(-60vh) translateX(-15px) scale(0.8); opacity: 0.4; }
+  75% { transform: translateY(-80vh) translateX(5px) scale(1.1); opacity: 0.6; }
+  100% { transform: translateY(-100vh) translateX(-10px) scale(0.6); opacity: 0; }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.1); }
+  50% { transform: translate(-20px, -40px) scale(0.95); }
+  75% { transform: translate(15px, -15px) scale(1.05); }
+}
+
+@keyframes circularProgress {
+  0% { stroke-dashoffset: 283; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes countdownPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
 }

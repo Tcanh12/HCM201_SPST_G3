@@ -1,18 +1,27 @@
+import { useState } from 'react';
+
 export default function MiniMap({ gameState, myConnectionId }) {
   const players = gameState?.players || [];
   const items = gameState?.items || [];
   const safeZone = gameState?.safeZone || { centerX: 0, centerZ: 0, radius: 500, targetRadius: 500 };
   const zones = gameState?.knowledgeZones || [];
+  
+  const [zoom, setZoom] = useState(1);
   const MAP_SIZE = 1000;
   const isMobile = window.innerWidth < 768;
   const MINIMAP_SIZE = isMobile ? 140 : 220;
-  const scale = MINIMAP_SIZE / MAP_SIZE;
-
-  // We map coordinates from -MAP_SIZE/2 .. MAP_SIZE/2 to 0 .. MINIMAP_SIZE
-  const toMapX = (worldX) => MINIMAP_SIZE / 2 + worldX * scale;
-  const toMapY = (worldZ) => MINIMAP_SIZE / 2 + worldZ * scale;
-
+  
+  // Real scale factors based on zoom
+  const scale = (MINIMAP_SIZE / MAP_SIZE) * zoom;
+  
+  // Center minimap on player, or default center if dead
   const myPlayer = players.find(p => p.id === myConnectionId);
+  const centerX = myPlayer ? myPlayer.x : 0;
+  const centerZ = myPlayer ? myPlayer.z : 0;
+
+  // We map coordinates relative to the player to keep them centered on the minimap
+  const toMapX = (worldX) => MINIMAP_SIZE / 2 + (worldX - centerX) * scale;
+  const toMapY = (worldZ) => MINIMAP_SIZE / 2 + (worldZ - centerZ) * scale;
 
   return (
     <div
@@ -31,13 +40,18 @@ export default function MiniMap({ gameState, myConnectionId }) {
         zIndex: 50,
         backdropFilter: 'blur(8px)',
       }}
+      onWheel={(e) => {
+        // Stop event propagation so it doesn't zoom camera
+        e.stopPropagation();
+        setZoom(z => Math.max(0.5, Math.min(3, z - e.deltaY * 0.002)));
+      }}
     >
       {/* Grid Pattern Background */}
       <div style={{
         position: 'absolute', inset: 0,
         backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-        backgroundSize: '20px 20px',
-        transform: myPlayer ? `translate(${-(myPlayer.x * scale * 0.1)}px, ${-(myPlayer.z * scale * 0.1)}px)` : 'none' // Parallax effect
+        backgroundSize: `${20 * zoom}px ${20 * zoom}px`,
+        backgroundPosition: `${toMapX(0)}px ${toMapY(0)}px`
       }} />
 
       {/* Crosshair Center */}
@@ -115,22 +129,32 @@ export default function MiniMap({ gameState, myConnectionId }) {
 
       {/* Other players */}
       {players.filter(p => p.id !== myConnectionId && !p.isDead).map(p => (
-        <div key={p.id} style={{
-          position: 'absolute',
-          left: `${toMapX(p.x) - 4}px`,
-          top: `${toMapY(p.z) - 4}px`,
-          width: '8px',
-          height: '8px',
-          transform: `rotate(${-(p.rotationY || 0)}rad)`,
-          transformOrigin: 'center',
-        }}>
+        <div key={p.id} style={{ position: 'absolute', left: `${toMapX(p.x)}px`, top: `${toMapY(p.z)}px` }}>
           <div style={{
-            width: 0, height: 0,
-            borderLeft: '4px solid transparent',
-            borderRight: '4px solid transparent',
-            borderBottom: '8px solid #EF4444',
-            filter: 'drop-shadow(0 0 4px #EF4444)',
-          }} />
+            position: 'absolute',
+            left: '-4px', top: '-4px',
+            width: '8px', height: '8px',
+            transform: `rotate(${-(p.rotationY || 0)}rad)`,
+            transformOrigin: 'center',
+          }}>
+            <div style={{
+              width: 0, height: 0,
+              borderLeft: '4px solid transparent',
+              borderRight: '4px solid transparent',
+              borderBottom: '8px solid #EF4444',
+              filter: 'drop-shadow(0 0 4px #EF4444)',
+            }} />
+          </div>
+          {/* Player Name */}
+          <div style={{
+            position: 'absolute',
+            top: '8px', left: '-50px', width: '100px',
+            textAlign: 'center', fontSize: '8px',
+            color: '#FCA5A5', textShadow: '0 1px 2px #000',
+            whiteSpace: 'nowrap', pointerEvents: 'none'
+          }}>
+            {p.username}
+          </div>
         </div>
       ))}
 
@@ -169,11 +193,11 @@ export default function MiniMap({ gameState, myConnectionId }) {
 
       {/* Labels */}
       <div style={{
-        position: 'absolute', top: '16px', left: 0, right: 0,
+        position: 'absolute', top: '8px', left: 0, right: 0,
         textAlign: 'center', fontSize: '10px', color: 'rgba(255,255,255,0.6)',
         fontWeight: 'bold', letterSpacing: '2px', pointerEvents: 'none'
       }}>
-        RADAR
+        RADAR {zoom !== 1 ? `(${zoom.toFixed(1)}x)` : ''}
       </div>
     </div>
   );

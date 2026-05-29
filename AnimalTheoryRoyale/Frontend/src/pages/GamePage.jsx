@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import GameScene from '../game3d/GameScene';
 import UIOverlay from '../components/UIOverlay';
 import MiniMap from '../components/MiniMap';
+import HostDashboard from '../components/HostDashboard';
 import QuestionModal from '../components/QuestionModal';
 import TouchControls from '../components/TouchControls';
 import * as signalR from '@microsoft/signalr';
@@ -57,7 +58,7 @@ export default function GamePage() {
 
       conn.on('AnswerResult', (result) => {
         setAnswerResult(result);
-        setTimeout(() => { setQuestion(null); setAnswerResult(null); }, 4000);
+        setTimeout(() => { setQuestion(null); setAnswerResult(null); }, 2000);
       });
 
       conn.on('GameEnded', (finalScores) => {
@@ -118,6 +119,7 @@ export default function GamePage() {
       </div>
     );
   }
+  const isHost = gameState?.hostConnectionId === myConnectionId;
 
   return (
     <div className="relative w-full h-full bg-black" style={{ touchAction: 'none' }}>
@@ -141,11 +143,18 @@ export default function GamePage() {
         </Canvas>
       </div>
 
-      {/* HUD Layer */}
-      <div className="absolute inset-0 pointer-events-none">
-        <UIOverlay gameState={gameState} myConnectionId={myConnectionId} onSkill={handleSkill} onAiming={handleAiming} />
-        <MiniMap gameState={gameState} myConnectionId={myConnectionId} />
-      </div>
+      {/* Host gets the Tactical Dashboard overlay */}
+      {isHost && (
+        <HostDashboard gameState={gameState} myConnectionId={myConnectionId} connection={connection} roomCode={roomCode} />
+      )}
+
+      {/* Regular players get normal HUD + minimap */}
+      {!isHost && (
+        <div className="absolute inset-0 pointer-events-none">
+          <UIOverlay gameState={gameState} myConnectionId={myConnectionId} onSkill={handleSkill} onAiming={handleAiming} />
+          <MiniMap gameState={gameState} myConnectionId={myConnectionId} />
+        </div>
+      )}
 
       {/* Mobile Touch Controls */}
       {isMobile && (

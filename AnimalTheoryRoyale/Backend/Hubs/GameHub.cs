@@ -309,8 +309,10 @@ public class GameHub : Hub
 
                         if (isCorrect)
                         {
+                            player.TotalCorrectAnswers++;
                             player.Combo++;
                             comboCount = player.Combo;
+                            if (player.Combo > player.LongestCombo) player.LongestCombo = player.Combo;
                             multiplier = comboCount >= 5 ? 4 : (comboCount >= 3 ? 3 : (comboCount >= 2 ? 2 : 1));
                             
                             int baseS = questionData.BaseScore;
@@ -356,6 +358,8 @@ public class GameHub : Hub
                                 scorePenalty = questionData.BaseScore * 2;
                             }
 
+                            player.TotalWrongAnswers++;
+                            player.DamageTaken += hpLost;
                             player.HP -= hpLost;
                             player.Combo = 0;
                             player.Score = Math.Max(0, player.Score - scorePenalty);
@@ -367,6 +371,11 @@ public class GameHub : Hub
                                 player.RespawnTime = DateTime.UtcNow.AddSeconds(8);
                                 playerDied = true;
                             }
+
+                            // Consume the zone ALWAYS! (regardless of correct/wrong)
+                            zone.IsActive = false;
+                            zone.RespawnTime = DateTime.UtcNow.AddSeconds(25);
+                            game.ActiveQuestionIds.TryRemove(zone.QuestionId, out _);
                         }
                     }
                 }

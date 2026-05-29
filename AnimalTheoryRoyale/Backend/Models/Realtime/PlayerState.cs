@@ -37,4 +37,13 @@ public class PlayerState
     // Buff system
     public string? ActiveBuff { get; set; } // SpeedBoost, Scorex2, etc.
     public DateTime? BuffEndTime { get; set; }
+
+    // Match Statistics & Final Result
+    public int TotalCorrectAnswers { get; set; }
+    public int TotalWrongAnswers { get; set; }
+    public int LongestCombo { get; set; }
+    public int DamageTaken { get; set; }
+    public double SurvivalDuration { get; set; }
+    public bool IsMVP { get; set; }
+    public int FinalRank { get; set; }
 }
