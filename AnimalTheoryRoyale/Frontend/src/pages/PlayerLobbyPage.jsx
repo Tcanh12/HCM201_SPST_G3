@@ -127,7 +127,14 @@ export default function PlayerLobbyPage() {
       conn.on('GameStartedForPlayer', () => {
         navigate(`/game/${roomCode}`);
       });
-    });
+
+      conn.onreconnected(() => {
+        const sc = localStorage.getItem('selectedChar');
+        if (sc) {
+          conn.invoke('JoinRoomAsPlayer', roomCode, user.username, parseInt(sc)).catch(console.error);
+        }
+      });
+    }).catch(console.error);
 
     setConnection(conn);
     return () => { conn.stop(); };

@@ -26,8 +26,8 @@ public class GameHub : Hub
         var game = _gameEngine.GetOrCreateGame(roomCode, 1, 600);
         await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
 
-        int maxHp = characterId switch { 1 => 150, 2 => 80, 3 => 100, 4 => 130, _ => 100 };
-        int ammo = characterId switch { 1 => 10, 2 => 8, 3 => 10, 4 => 8, _ => 10 };
+        int maxHp = characterId switch { 1 => 200, 2 => 80, 3 => 100, 4 => 150, _ => 100 };
+        int ammo = characterId switch { 1 => 15, 2 => 6, 3 => 10, 4 => 8, _ => 10 };
         var (spawnX, spawnZ) = _gameEngine.GetRandomSpawnPosition();
 
         var player = new PlayerState
@@ -99,7 +99,7 @@ public class GameHub : Hub
         if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
         if (me.SkillPushCooldown.HasValue && DateTime.UtcNow < me.SkillPushCooldown.Value) return;
 
-        me.SkillPushCooldown = DateTime.UtcNow.AddSeconds(15);
+        me.SkillPushCooldown = DateTime.UtcNow.AddSeconds(8);
         
         float len = MathF.Sqrt(dirX * dirX + dirZ * dirZ);
         if (len > 0) { dirX /= len; dirZ /= len; }
@@ -132,7 +132,7 @@ public class GameHub : Hub
         if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
         if (me.SkillDoubleCooldown.HasValue && DateTime.UtcNow < me.SkillDoubleCooldown.Value) return;
 
-        me.SkillDoubleCooldown = DateTime.UtcNow.AddSeconds(30);
+        me.SkillDoubleCooldown = DateTime.UtcNow.AddSeconds(15);
         me.HasDoubleActive = true;
         await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "double", by = me.ConnectionId, username = me.Username });
     }
@@ -145,7 +145,7 @@ public class GameHub : Hub
         if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
         if (me.SkillChaosCooldown.HasValue && DateTime.UtcNow < me.SkillChaosCooldown.Value) return;
 
-        me.SkillChaosCooldown = DateTime.UtcNow.AddSeconds(15);
+        me.SkillChaosCooldown = DateTime.UtcNow.AddSeconds(10);
         var affected = new List<string>();
         foreach (var o in game.Players.Values)
         {
@@ -169,7 +169,7 @@ public class GameHub : Hub
         if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
         if (me.SkillSilenceCooldown.HasValue && DateTime.UtcNow < me.SkillSilenceCooldown.Value) return;
 
-        me.SkillSilenceCooldown = DateTime.UtcNow.AddSeconds(20);
+        me.SkillSilenceCooldown = DateTime.UtcNow.AddSeconds(12);
         float len = MathF.Sqrt(dirX * dirX + dirZ * dirZ);
         if (len > 0) { dirX /= len; dirZ /= len; }
 

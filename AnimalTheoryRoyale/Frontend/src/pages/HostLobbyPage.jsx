@@ -43,7 +43,11 @@ export default function HostLobbyPage() {
       conn.on('GameStartedForHost', () => {
         navigate(`/host-dashboard/${roomCode}`);
       });
-    });
+
+      conn.onreconnected(() => {
+        conn.invoke('JoinRoomAsHost', roomCode).catch(console.error);
+      });
+    }).catch(console.error);
 
     setConnection(conn);
     return () => { conn.stop(); };

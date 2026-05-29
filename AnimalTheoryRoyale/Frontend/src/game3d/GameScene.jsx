@@ -64,7 +64,7 @@ export default function GameScene({
     if (isMobile) {
       // Touch rotation
       if (touchRotateRef?.current) {
-        cameraAngle.current -= touchRotateRef.current * 0.008;
+        cameraAngle.current -= touchRotateRef.current * 0.015;
         touchRotateRef.current = 0;
       }
     } else {
@@ -80,7 +80,13 @@ export default function GameScene({
     if (myPlayer.isDead || myPlayer.isStunned) { updateCamera(delta); return; }
 
     // === MOVEMENT ===
-    const baseSpeed = myPlayer.activeBuff === 'SpeedBoost' ? 50 : 30;
+    let charSpeed = 30;
+    if (myPlayer.characterId === 1) charSpeed = 20; // Voi (Tanker)
+    else if (myPlayer.characterId === 2) charSpeed = 45; // Thỏ (Speedster)
+    else if (myPlayer.characterId === 3) charSpeed = 35; // Cáo (Strategist)
+    else if (myPlayer.characterId === 4) charSpeed = 25; // Rùa (Defender)
+    
+    const baseSpeed = myPlayer.activeBuff === 'SpeedBoost' ? charSpeed * 1.5 : charSpeed;
     const speed = baseSpeed * delta;
     let mx = 0, mz = 0;
     const fwd = new THREE.Vector3(-Math.sin(cameraAngle.current), 0, -Math.cos(cameraAngle.current));

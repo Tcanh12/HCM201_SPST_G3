@@ -65,6 +65,11 @@ export default function GamePage() {
         localStorage.setItem('finalScores', JSON.stringify(finalScores));
         navigate(`/result/${roomCode}`);
       });
+
+      conn.onreconnected(() => {
+        setMyConnectionId(conn.connectionId);
+        conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar).catch(console.error);
+      });
     }).catch(err => console.error('Connection failed:', err));
 
     setConnection(conn);

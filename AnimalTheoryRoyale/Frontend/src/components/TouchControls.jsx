@@ -7,7 +7,7 @@ export default function TouchControls({ onMove, onRotate, onShoot }) {
   const joystickOrigin = useRef({ x: 0, y: 0 });
   const lastRotateX = useRef(0);
 
-  const JOYSTICK_MAX = 50;
+  const JOYSTICK_MAX = 70;
 
   // ===== LEFT SIDE: JOYSTICK =====
   const handleJoystickStart = useCallback((e) => {
@@ -64,7 +64,7 @@ export default function TouchControls({ onMove, onRotate, onShoot }) {
       <div
         style={{
           position: 'absolute', bottom: '90px', left: '30px',
-          width: '130px', height: '130px',
+          width: '160px', height: '160px',
           borderRadius: '50%',
           background: 'rgba(255,255,255,0.08)',
           border: '2px solid rgba(255,255,255,0.2)',
@@ -78,9 +78,9 @@ export default function TouchControls({ onMove, onRotate, onShoot }) {
         {/* Joystick thumb */}
         <div style={{
           position: 'absolute',
-          left: `calc(50% + ${joystickPos.x}px - 25px)`,
-          top: `calc(50% + ${joystickPos.y}px - 25px)`,
-          width: '50px', height: '50px',
+          left: `calc(50% + ${joystickPos.x}px - 30px)`,
+          top: `calc(50% + ${joystickPos.y}px - 30px)`,
+          width: '60px', height: '60px',
           borderRadius: '50%',
           background: joystickActive
             ? 'rgba(79, 70, 229, 0.8)'

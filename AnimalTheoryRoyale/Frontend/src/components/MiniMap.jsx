@@ -9,7 +9,11 @@ export default function MiniMap({ gameState, myConnectionId }) {
   const [zoom, setZoom] = useState(1);
   const MAP_SIZE = 1000;
   const isMobile = window.innerWidth < 768;
-  const MINIMAP_SIZE = isMobile ? 140 : 220;
+  
+  // Hide radar on mobile entirely to save screen space
+  if (isMobile) return null;
+  
+  const MINIMAP_SIZE = 220;
   
   // Real scale factors based on zoom
   const scale = (MINIMAP_SIZE / MAP_SIZE) * zoom;
