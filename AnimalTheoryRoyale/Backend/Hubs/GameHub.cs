@@ -139,6 +139,7 @@ public class GameHub : Hub
 
         // Initialize knowledge zones from DB with unique questions
         await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
+        _gameEngine.InitializeTraps(game, 15); // Add 15 random traps
 
         game.Status = "Playing";
         game.StartTime = DateTime.UtcNow;
@@ -165,7 +166,22 @@ public class GameHub : Hub
         if (game == null) return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
         if (player.IsDead || player.IsEliminated || player.IsAnsweringQuestion || player.IsStunned || player.IsDizzy) return;
-        player.X = x; player.Y = y; player.Z = z; player.RotationY = rotationY;
+        
+        if (!Backend.Models.MapObstacles.IsPositionBlocked(x, z, 2.5f))
+        {
+            player.X = x; player.Z = z;
+        }
+        else if (!Backend.Models.MapObstacles.IsPositionBlocked(x, player.Z, 2.5f))
+        {
+            player.X = x;
+        }
+        else if (!Backend.Models.MapObstacles.IsPositionBlocked(player.X, z, 2.5f))
+        {
+            player.Z = z;
+        }
+        
+        player.Y = y; 
+        player.RotationY = rotationY;
     }
 
     public async Task ShootProjectile(string roomCode, float dirX, float dirZ)

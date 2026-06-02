@@ -22,6 +22,7 @@ export default function GamePage() {
   const [myConnectionId, setMyConnectionId] = useState(null);
   const [question, setQuestion] = useState(null);
   const [answerResult, setAnswerResult] = useState(null);
+  const [trapMessage, setTrapMessage] = useState(null);
   const [connectionState, setConnectionState] = useState('connecting'); // connecting, connected, reconnecting, disconnected
   const [showSettings, setShowSettings] = useState(false);
 
@@ -74,6 +75,21 @@ export default function GamePage() {
         setAnswerResult(result);
         const duration = result.isPickup ? 700 : 4000;
         setTimeout(() => { setAnswerResult(null); }, duration);
+      });
+
+      conn.on('TrapTriggered', (data) => {
+        if (data.connectionId === conn.connectionId) {
+          let msg = "";
+          switch (data.type) {
+            case 'Stun': msg = "🌀 BẠN ĐÃ ĐẠP TRÚNG BẪY CHOÁNG!"; break;
+            case 'Slow': msg = "❄️ BẠN ĐÃ ĐẠP TRÚNG BẪY LÀM CHẬM!"; break;
+            case 'Damage': msg = "💥 BẠN ĐÃ ĐẠP TRÚNG BẪY NỔ (-20 HP)!"; break;
+            case 'LoseScore': msg = "💸 BẠN ĐÃ ĐẠP TRÚNG BẪY MẤT ĐIỂM (-50 Điểm)!"; break;
+            default: msg = "⚠️ BẠN ĐÃ ĐẠP BẪY!"; break;
+          }
+          setTrapMessage(msg);
+          setTimeout(() => setTrapMessage(null), 3000);
+        }
       });
 
       conn.on('GameEnded', (finalScores) => {
@@ -320,6 +336,22 @@ export default function GamePage() {
       {question && !answerResult && (
         <QuestionModal question={question} onSubmit={handleSubmitAnswer} onClose={handleQuestionClose} isDoubleActive={gameState?.players?.find(p => p.id === connection?.connectionId)?.hasDouble} />
       )}
+
+      {/* Trap Triggered Message */}
+      <AnimatePresence>
+        {trapMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.5 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 z-[300] pointer-events-none"
+          >
+            <div className="bg-red-600/90 text-white font-black text-xl md:text-3xl px-8 py-4 rounded-full border-4 border-red-400 shadow-[0_0_40px_rgba(239,68,68,0.8)] text-center whitespace-nowrap">
+              {trapMessage}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

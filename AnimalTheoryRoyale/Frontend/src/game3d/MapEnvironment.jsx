@@ -1,60 +1,7 @@
 import * as THREE from 'three';
+import { MAP_OBSTACLES, MAP_SIZE } from './MapObstacles';
 
 export default function MapEnvironment() {
-  const MAP_SIZE = 1000; // 1000x1000 map
-
-  // Generate obstacle positions
-  const obstacles = [];
-  const rng = (seed) => {
-    let s = seed;
-    return () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
-  };
-  const rand = rng(42);
-
-  // Rocks (various sizes)
-  for (let i = 0; i < 80; i++) {
-    obstacles.push({
-      type: 'rock',
-      x: (rand() - 0.5) * MAP_SIZE * 0.85,
-      z: (rand() - 0.5) * MAP_SIZE * 0.85,
-      scale: 1 + rand() * 4,
-      rotation: rand() * Math.PI * 2,
-    });
-  }
-
-  // Trees
-  for (let i = 0; i < 60; i++) {
-    obstacles.push({
-      type: 'tree',
-      x: (rand() - 0.5) * MAP_SIZE * 0.8,
-      z: (rand() - 0.5) * MAP_SIZE * 0.8,
-      scale: 2 + rand() * 3,
-    });
-  }
-
-  // Buildings / ruins
-  for (let i = 0; i < 15; i++) {
-    obstacles.push({
-      type: 'building',
-      x: (rand() - 0.5) * MAP_SIZE * 0.7,
-      z: (rand() - 0.5) * MAP_SIZE * 0.7,
-      scale: 3 + rand() * 5,
-      height: 4 + rand() * 8,
-      rotation: rand() * Math.PI * 2,
-    });
-  }
-
-  // Hills (raised terrain)
-  const hills = [];
-  for (let i = 0; i < 25; i++) {
-    hills.push({
-      x: (rand() - 0.5) * MAP_SIZE * 0.9,
-      z: (rand() - 0.5) * MAP_SIZE * 0.9,
-      radius: 20 + rand() * 40,
-      height: 4 + rand() * 12,
-    });
-  }
-
   return (
     <group>
       {/* Main ground plane */}
@@ -73,47 +20,47 @@ export default function MapEnvironment() {
       </mesh>
 
       {/* Hills */}
-      {hills.map((h, i) => (
-        <mesh key={`hill-${i}`} position={[h.x, h.height * 0.4, h.z]} receiveShadow castShadow>
-          <sphereGeometry args={[h.radius, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2]} />
+      {MAP_OBSTACLES.filter(o => o.renderType === 'hill').map((h) => (
+        <mesh key={h.id} position={[h.x, h.renderHeight * 0.4, h.z]} receiveShadow castShadow>
+          <sphereGeometry args={[h.renderRadius, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2]} />
           <meshStandardMaterial color="#3a6b1e" roughness={0.85} />
         </mesh>
       ))}
 
       {/* Rocks */}
-      {obstacles.filter(o => o.type === 'rock').map((o, i) => (
-        <mesh key={`rock-${i}`} position={[o.x, o.scale * 0.5, o.z]} rotation={[0, o.rotation, 0]} castShadow receiveShadow>
-          <dodecahedronGeometry args={[o.scale, 0]} />
+      {MAP_OBSTACLES.filter(o => o.renderType === 'rock').map((o) => (
+        <mesh key={o.id} position={[o.x, o.radius * 0.5, o.z]} rotation={[0, o.rotation || 0, 0]} castShadow receiveShadow>
+          <dodecahedronGeometry args={[o.radius, 0]} />
           <meshStandardMaterial color="#555555" roughness={0.8} />
         </mesh>
       ))}
 
       {/* Trees */}
-      {obstacles.filter(o => o.type === 'tree').map((o, i) => (
-        <group key={`tree-${i}`} position={[o.x, 0, o.z]}>
+      {MAP_OBSTACLES.filter(o => o.renderType === 'tree').map((o) => (
+        <group key={o.id} position={[o.x, 0, o.z]}>
           {/* Trunk */}
-          <mesh position={[0, o.scale * 1.2, 0]} castShadow>
-            <cylinderGeometry args={[0.3, 0.5, o.scale * 2.5, 6]} />
+          <mesh position={[0, o.renderScale * 1.2, 0]} castShadow>
+            <cylinderGeometry args={[0.3, 0.5, o.renderScale * 2.5, 6]} />
             <meshStandardMaterial color="#5C4033" roughness={0.9} />
           </mesh>
           {/* Canopy */}
-          <mesh position={[0, o.scale * 2.8, 0]} castShadow>
-            <coneGeometry args={[o.scale * 1.5, o.scale * 2, 6]} />
+          <mesh position={[0, o.renderScale * 2.8, 0]} castShadow>
+            <coneGeometry args={[o.renderScale * 1.5, o.renderScale * 2, 6]} />
             <meshStandardMaterial color="#228B22" roughness={0.8} />
           </mesh>
         </group>
       ))}
 
       {/* Buildings */}
-      {obstacles.filter(o => o.type === 'building').map((o, i) => (
-        <group key={`bldg-${i}`} position={[o.x, 0, o.z]} rotation={[0, o.rotation, 0]}>
+      {MAP_OBSTACLES.filter(o => o.renderType === 'building').map((o) => (
+        <group key={o.id} position={[o.x, 0, o.z]} rotation={[0, o.rotation, 0]}>
           <mesh position={[0, o.height / 2, 0]} castShadow receiveShadow>
-            <boxGeometry args={[o.scale * 2, o.height, o.scale * 2]} />
+            <boxGeometry args={[o.width, o.height, o.depth]} />
             <meshStandardMaterial color="#8B7355" roughness={0.7} />
           </mesh>
           {/* Roof */}
           <mesh position={[0, o.height + 1, 0]} castShadow>
-            <coneGeometry args={[o.scale * 1.5, 3, 4]} />
+            <coneGeometry args={[o.renderScale * 1.5, 3, 4]} />
             <meshStandardMaterial color="#654321" roughness={0.8} />
           </mesh>
         </group>

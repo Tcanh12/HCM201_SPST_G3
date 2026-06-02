@@ -3,19 +3,10 @@ import { motion } from 'framer-motion';
 
 export default function SettingsModal({ onClose }) {
   const [activeTab, setActiveTab] = useState('camera');
-  const [mouseSensitivity, setMouseSensitivity] = useState(parseFloat(localStorage.getItem('mouseSensitivity') || '1.0'));
-  const [invertY, setInvertY] = useState(localStorage.getItem('invertY') === 'true');
-
   useEffect(() => {
-    // Make sure we release pointer lock when opening settings
-    if (document.pointerLockElement) {
-      document.exitPointerLock();
-    }
   }, []);
 
   const saveSettings = () => {
-    localStorage.setItem('mouseSensitivity', mouseSensitivity);
-    localStorage.setItem('invertY', invertY);
     onClose();
   };
 
@@ -45,25 +36,9 @@ export default function SettingsModal({ onClose }) {
           
           {activeTab === 'camera' && (
             <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-bold text-gray-400 mb-2">ĐỘ NHẠY CHUỘT (SENSITIVITY)</label>
-                <div className="flex items-center gap-4">
-                  <input type="range" min="0.1" max="3" step="0.1" value={mouseSensitivity} onChange={(e) => setMouseSensitivity(e.target.value)} className="w-full accent-yellow-400" />
-                  <span className="font-mono bg-gray-800 px-3 py-1 rounded text-yellow-400 w-16 text-center">{mouseSensitivity}</span>
-                </div>
-              </div>
-
-              <div>
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" checked={invertY} onChange={(e) => setInvertY(e.target.checked)} className="w-5 h-5 accent-yellow-400 rounded" />
-                  <span className="font-bold text-lg">ĐẢO NGƯỢC TRỤC Y (INVERT Y)</span>
-                </label>
-                <p className="text-gray-400 text-sm mt-1 ml-8">Xoay chuột lên sẽ cúi camera xuống, và ngược lại.</p>
-              </div>
-              
-              <div className="bg-gray-800 p-4 rounded-lg mt-6 border border-gray-700">
-                <h4 className="font-bold text-yellow-400 mb-2">💡 Gợi ý (Góc nhìn thứ nhất)</h4>
-                <p className="text-sm leading-relaxed">Hãy click chuột vào bất kỳ đâu trên màn hình game để khoá trỏ chuột (Pointer Lock). Chuột sẽ đóng vai trò xoay camera y như các game bắn súng FPS. Nhấn phím <kbd className="bg-gray-700 px-2 rounded">ESC</kbd> để thoát chế độ này.</p>
+              <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <h4 className="font-bold text-yellow-400 mb-2">💡 Gợi ý Camera (Góc nhìn thứ ba)</h4>
+                <p className="text-sm leading-relaxed">Sử dụng chuột trái và kéo thả để xoay camera xung quanh nhân vật. Sử dụng con lăn chuột để phóng to/thu nhỏ tầm nhìn. Camera sẽ tự động theo dõi nhân vật của bạn.</p>
               </div>
             </div>
           )}

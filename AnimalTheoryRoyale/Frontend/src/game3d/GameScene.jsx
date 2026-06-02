@@ -7,8 +7,10 @@ import PlayerCharacter from './PlayerCharacter';
 import SafeZone from './SafeZone';
 import KnowledgeZone from './KnowledgeZone';
 import ItemPickup from './ItemPickup';
+import TrapHazard from './TrapHazard';
 import useKeyboard from '../hooks/useKeyboard';
 import useMouse from '../hooks/useMouse';
+import { isPositionBlocked } from './MapObstacles';
 
 export default function GameScene({
   gameState, connection, roomCode, myConnectionId, onClaimQuestion,
@@ -19,6 +21,7 @@ export default function GameScene({
   const safeZone = gameState?.safeZone || { radius: 500, centerX: 0, centerZ: 0 };
   const knowledgeZones = gameState?.knowledgeZones || [];
   const items = gameState?.items || [];
+  const traps = gameState?.traps || [];
 
   const keys = useKeyboard();
   const mouse = useMouse();
@@ -63,34 +66,23 @@ export default function GameScene({
     }
 
     // === CAMERA ROTATION ===
-    const sensitivity = parseFloat(localStorage.getItem('mouseSensitivity') || '1.0');
-    const invertY = localStorage.getItem('invertY') === 'true' ? -1 : 1;
-
     if (isMobile) {
       // Touch rotation
       if (touchRotateRef?.current) {
-        cameraAngle.current -= touchRotateRef.current * 0.015 * sensitivity;
+        cameraAngle.current -= touchRotateRef.current * 0.015;
         touchRotateRef.current = 0;
       }
     } else {
+      // Mouse orbit (hold to rotate)
       const m = mouse.current;
-      const isLocked = document.pointerLockElement !== null;
-      const isFPS = gameState?.cameraMode === 'FirstPerson';
-
-      // In FPS, if locked, we rotate freely. Otherwise, click-drag (ThirdPerson or unlocked FPS).
-      if ((isFPS && isLocked) || (!isFPS && m.isDown) || (isFPS && m.isDown)) {
-        cameraAngle.current -= m.dx * 0.002 * sensitivity;
-        
-        let newPitch = cameraPitch.current - (m.dy * 0.002 * sensitivity * invertY);
-        // Wider pitch range for FPS mode
-        const minPitch = isFPS ? -1.5 : 0.2; 
-        const maxPitch = isFPS ? 1.5 : 1.2;
-        cameraPitch.current = Math.max(minPitch, Math.min(maxPitch, newPitch));
+      if (m.isDown) {
+        cameraAngle.current -= m.dx * 0.005;
+        cameraPitch.current = Math.max(0.2, Math.min(1.2, cameraPitch.current - m.dy * 0.005));
       }
       m.dx = 0; m.dy = 0;
     }
 
-    if (myPlayer.isDead || myPlayer.isEliminated || myPlayer.isStunned) { updateCamera(delta, myPlayer, gameState?.cameraMode); return; }
+    if (myPlayer.isDead || myPlayer.isEliminated || myPlayer.isStunned) { updateCamera(delta, myPlayer); return; }
 
     // === MOVEMENT ===
     let charSpeed = 30;
@@ -129,16 +121,36 @@ export default function GameScene({
 
     const len = Math.sqrt(mx * mx + mz * mz);
     if (len > 0) {
-      mx = (mx / len) * speed;
-      mz = (mz / len) * speed;
-      localPos.current.x += mx;
-      localPos.current.z += mz;
+      const stepX = (mx / len) * speed;
+      const stepZ = (mz / len) * speed;
+      
+      const nextX = localPos.current.x + stepX;
+      const nextZ = localPos.current.z + stepZ;
+
+      if (!isPositionBlocked(nextX, nextZ, 2.5)) {
+        localPos.current.x = nextX;
+        localPos.current.z = nextZ;
+      } else if (!isPositionBlocked(nextX, localPos.current.z, 2.5)) {
+        localPos.current.x = nextX;
+      } else if (!isPositionBlocked(localPos.current.x, nextZ, 2.5)) {
+        localPos.current.z = nextZ;
+      }
     }
 
     // Apply knockback
     if (Math.abs(knockbackVelocity.current.x) > 0.1 || Math.abs(knockbackVelocity.current.z) > 0.1) {
-      localPos.current.x += knockbackVelocity.current.x * delta;
-      localPos.current.z += knockbackVelocity.current.z * delta;
+      const kx = knockbackVelocity.current.x * delta;
+      const kz = knockbackVelocity.current.z * delta;
+      
+      if (!isPositionBlocked(localPos.current.x + kx, localPos.current.z + kz, 2.5)) {
+        localPos.current.x += kx;
+        localPos.current.z += kz;
+      } else {
+        // hit a wall
+        knockbackVelocity.current.x = 0;
+        knockbackVelocity.current.z = 0;
+      }
+      
       knockbackVelocity.current.x *= 0.9; // friction damping
       knockbackVelocity.current.z *= 0.9;
     }
@@ -248,7 +260,7 @@ export default function GameScene({
       }
     }
 
-    updateCamera(delta, myPlayer, gameState?.cameraMode);
+    updateCamera(delta, myPlayer);
 
     // Knowledge zone proximity claim
     const now = Date.now();
@@ -266,29 +278,18 @@ export default function GameScene({
     }
   });
 
-  function updateCamera(delta, myPlayer, mode) {
+  function updateCamera(delta, myPlayer) {
     const angle = cameraAngle.current;
     
-    if (mode === 'FirstPerson') {
-      const cx = localPos.current.x;
-      const cy = localPos.current.y + 2.5; // eye level respects jump
-      const cz = localPos.current.z;
-      camera.position.lerp(new THREE.Vector3(cx, cy, cz), 20 * delta);
-      
-      // Look direction
-      const lx = cx - Math.sin(angle);
-      const ly = cy - Math.sin(cameraPitch.current - 0.6) * 2; // adjust look pitch
-      const lz = cz - Math.cos(angle);
-      camera.lookAt(lx, ly, lz);
-    } else {
-      const dist = cameraDistance.current;
-      const pitch = cameraPitch.current;
-      const cx = localPos.current.x + dist * Math.sin(angle) * Math.cos(pitch);
-      const cy = localPos.current.y + dist * Math.sin(pitch);
-      const cz = localPos.current.z + dist * Math.cos(angle) * Math.cos(pitch);
-      camera.position.lerp(new THREE.Vector3(cx, cy, cz), 8 * delta);
-      camera.lookAt(localPos.current.x, localPos.current.y + 1, localPos.current.z);
-    }
+    // Smooth third-person camera follow
+    const dist = cameraDistance.current;
+    const pitch = cameraPitch.current;
+    const cx = localPos.current.x + dist * Math.sin(angle) * Math.cos(pitch);
+    const cy = localPos.current.y + dist * Math.sin(pitch);
+    const cz = localPos.current.z + dist * Math.cos(angle) * Math.cos(pitch);
+    
+    camera.position.lerp(new THREE.Vector3(cx, cy, cz), 8 * delta);
+    camera.lookAt(localPos.current.x, localPos.current.y + 1, localPos.current.z);
   }
 
   // Desktop: click to shoot
@@ -307,20 +308,6 @@ export default function GameScene({
     cameraDistance.current = Math.max(15, Math.min(80, cameraDistance.current + e.deltaY * 0.05));
   }, []);
 
-  // Helper to request pointer lock on click if FPS mode
-  useEffect(() => {
-    if (isMobile || gameState?.cameraMode !== 'FirstPerson') return;
-    
-    const handleClick = (e) => {
-      if (document.pointerLockElement !== document.body) {
-        document.body.requestPointerLock().catch(() => {});
-      }
-    };
-    
-    // We add it to the canvas container (or window)
-    window.addEventListener('click', handleClick);
-    return () => window.removeEventListener('click', handleClick);
-  }, [isMobile, gameState?.cameraMode]);
 
   return (
     <group onPointerDown={handleShoot} onWheel={handleWheel}>
@@ -341,6 +328,10 @@ export default function GameScene({
 
       {items.map(item => (
         <ItemPickup key={item.id} item={item} />
+      ))}
+
+      {traps.filter(t => t.isActive).map(trap => (
+        <TrapHazard key={`trap_${trap.id}`} trap={trap} />
       ))}
 
       {players.map(player => (

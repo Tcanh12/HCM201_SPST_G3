@@ -159,6 +159,27 @@ public class GameEngine : BackgroundService
             targetZoneCount, allQuestions.Count);
     }
 
+    public void InitializeTraps(GameState game, int count)
+    {
+        var rng = new Random();
+        game.Traps.Clear();
+        string[] types = { "Stun", "Slow", "Damage", "LoseScore" };
+        
+        for (int i = 0; i < count; i++)
+        {
+            var (x, z) = GetRandomSpawnPosition(); // Ensure traps don't spawn inside obstacles
+            game.Traps.TryAdd(i, new TrapState
+            {
+                Id = i,
+                X = x,
+                Z = z,
+                Type = types[rng.Next(types.Length)],
+                IsActive = true,
+                RespawnTime = DateTime.UtcNow.AddSeconds(999) // don't respawn initially
+            });
+        }
+    }
+
     /// <summary>
     /// Pick a random question that is NOT currently active on any zone.
     /// </summary>
@@ -190,9 +211,19 @@ public class GameEngine : BackgroundService
     public (float x, float z) GetRandomSpawnPosition()
     {
         var rng = new Random();
-        float angle = (float)(rng.NextDouble() * Math.PI * 2);
-        float dist = (float)(rng.NextDouble() * SPAWN_RADIUS * 0.6f + SPAWN_RADIUS * 0.2f);
-        return (MathF.Cos(angle) * dist, MathF.Sin(angle) * dist);
+        for (int i = 0; i < 50; i++)
+        {
+            float angle = (float)(rng.NextDouble() * Math.PI * 2);
+            float dist = (float)(rng.NextDouble() * SPAWN_RADIUS * 0.6f + SPAWN_RADIUS * 0.2f);
+            float px = MathF.Cos(angle) * dist;
+            float pz = MathF.Sin(angle) * dist;
+            if (!Backend.Models.MapObstacles.IsPositionBlocked(px, pz, 4f)) 
+            {
+                return (px, pz);
+            }
+        }
+        // Fallback if we somehow can't find a spot
+        return (0, 0);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -225,6 +256,7 @@ public class GameEngine : BackgroundService
             UpdateKnowledgeZones(game, now);
             UpdateQuestionClaims(game, now);
             UpdateItems(game, now);
+            UpdateTraps(game, now);
 
             // Check game end
             if (game.StartTime.HasValue && (now - game.StartTime.Value).TotalSeconds >= game.Duration)
@@ -295,6 +327,9 @@ public class GameEngine : BackgroundService
                     zoneId = kz.ZoneId, x = kz.X, z = kz.Z, isActive = kz.IsActive, topicName = kz.TopicName,
                     type = kz.Type, isTrap = kz.IsTrap,
                     isClaimed = kz.ClaimedByConnectionId != null
+                }).ToArray(),
+                traps = game.Traps.Values.Select(t => new {
+                    id = t.Id, x = t.X, z = t.Z, type = t.Type, isActive = t.IsActive
                 }).ToArray()
             };
 
