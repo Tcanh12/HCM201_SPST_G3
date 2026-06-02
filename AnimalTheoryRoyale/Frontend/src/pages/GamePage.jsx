@@ -23,6 +23,7 @@ export default function GamePage() {
   const [answerResult, setAnswerResult] = useState(null);
 
   const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const role = localStorage.getItem('role') || 'player';
   const selectedChar = parseInt(localStorage.getItem('selectedChar') || '1');
   const connRef = useRef(null);
 
@@ -47,9 +48,15 @@ export default function GamePage() {
       setMyConnectionId(conn.connectionId);
       connRef.current = conn;
 
-      conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar)
-        .then(() => setConnected(true))
-        .catch(err => console.error('Failed to re-join:', err));
+      if (role === 'host') {
+        conn.invoke('JoinRoomAsHost', roomCode)
+          .then(() => setConnected(true))
+          .catch(err => console.error('Host failed to re-join:', err));
+      } else {
+        conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar)
+          .then(() => setConnected(true))
+          .catch(err => console.error('Failed to re-join:', err));
+      }
 
       conn.on('GameStateUpdate', (snapshot) => setGameState(snapshot));
 
@@ -72,7 +79,11 @@ export default function GamePage() {
 
       conn.onreconnected(() => {
         setMyConnectionId(conn.connectionId);
-        conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar).catch(console.error);
+        if (role === 'host') {
+          conn.invoke('JoinRoomAsHost', roomCode).catch(console.error);
+        } else {
+          conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar).catch(console.error);
+        }
       });
     }).catch(err => console.error('Connection failed:', err));
 

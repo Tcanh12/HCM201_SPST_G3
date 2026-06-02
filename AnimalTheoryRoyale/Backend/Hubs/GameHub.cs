@@ -26,7 +26,9 @@ public class GameHub : Hub
     public async Task JoinRoomAsPlayer(string roomCode, string username, int characterId)
     {
         var game = _gameEngine.GetOrCreateGame(roomCode, 1, 600);
-        if (game.Status == "Playing")
+        bool isReconnecting = game.Players.Values.Any(p => p.Username == username);
+        
+        if (game.Status == "Playing" && !isReconnecting)
         {
             await Clients.Caller.SendAsync("JoinRejected", "Trận đấu đã bắt đầu. Vui lòng xin phép chủ phòng để tham gia.");
             return;
@@ -589,8 +591,30 @@ public class GameHub : Hub
         foreach (var gameKvp in _gameEngine.GetAllGames())
         {
             var game = gameKvp.Value;
-            if (game.Players.TryRemove(Context.ConnectionId, out _))
+            
+            if (game.Status == "Waiting")
             {
+                if (game.Players.TryRemove(Context.ConnectionId, out _))
+                {
+                    foreach (var kz in game.KnowledgeZones.Values)
+                    {
+                        if (kz.ClaimedByConnectionId == Context.ConnectionId)
+                        {
+                            kz.ClaimedByConnectionId = null;
+                            kz.ClaimExpiry = null;
+                        }
+                    }
+                    await Clients.Group(game.RoomCode).SendAsync("PlayerLeft", Context.ConnectionId);
+                    await Clients.Group(game.RoomCode).SendAsync("LobbyState", game.Players.Values.Select(p => new {
+                        connectionId = p.ConnectionId, username = p.Username, characterId = p.CharacterId
+                    }).ToArray());
+                    break;
+                }
+            }
+            else
+            {
+                // Game is playing, DO NOT remove the player from the game state!
+                // This allows them to reconnect and resume their character.
                 foreach (var kz in game.KnowledgeZones.Values)
                 {
                     if (kz.ClaimedByConnectionId == Context.ConnectionId)
@@ -599,11 +623,6 @@ public class GameHub : Hub
                         kz.ClaimExpiry = null;
                     }
                 }
-                await Clients.Group(game.RoomCode).SendAsync("PlayerLeft", Context.ConnectionId);
-                await Clients.Group(game.RoomCode).SendAsync("LobbyState", game.Players.Values.Select(p => new {
-                    connectionId = p.ConnectionId, username = p.Username, characterId = p.CharacterId
-                }).ToArray());
-                break;
             }
         }
         await base.OnDisconnectedAsync(exception);
