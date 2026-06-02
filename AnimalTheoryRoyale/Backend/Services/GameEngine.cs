@@ -371,12 +371,12 @@ public class GameEngine : BackgroundService
                     if (trap.Type == "Stun")
                     {
                         player.IsStunned = true;
-                        player.StunExpiry = now.AddSeconds(3);
+                        player.StunEndTime = now.AddSeconds(3);
                     }
                     else if (trap.Type == "Slow")
                     {
                         player.ActiveBuff = "CHẬM";
-                        player.BuffExpiry = now.AddSeconds(5);
+                        player.BuffEndTime = now.AddSeconds(5);
                     }
                     else if (trap.Type == "Damage")
                     {
@@ -384,7 +384,7 @@ public class GameEngine : BackgroundService
                         player.DamageTaken += 20;
                         if (player.HP <= 0)
                         {
-                            HandlePlayerDeath(game, player, null, now, "Trap");
+                            KillPlayer(player, game, now, "trap");
                         }
                     }
                     else if (trap.Type == "LoseScore")
