@@ -337,6 +337,72 @@ public class GameEngine : BackgroundService
         }
     }
 
+    private void UpdateTraps(GameState game, DateTime now)
+    {
+        foreach (var trapKvp in game.Traps)
+        {
+            var trap = trapKvp.Value;
+            if (!trap.IsActive && now >= trap.RespawnTime)
+            {
+                // Respawn trap at a new position
+                var (nx, nz) = GetRandomSpawnPosition();
+                trap.X = nx;
+                trap.Z = nz;
+                trap.IsActive = true;
+                _hubContext.Clients.Group(game.RoomCode).SendAsync("TrapRespawned", trap);
+            }
+            
+            if (!trap.IsActive) continue;
+
+            // Check if any player steps on the trap
+            foreach (var pKvp in game.Players)
+            {
+                var player = pKvp.Value;
+                if (player.IsDead || player.IsEliminated || player.IsStunned) continue;
+
+                float dx = player.X - trap.X;
+                float dz = player.Z - trap.Z;
+                if (dx * dx + dz * dz < 16) // radius 4
+                {
+                    // Trigger trap
+                    trap.IsActive = false;
+                    trap.RespawnTime = now.AddSeconds(30); // 30s cooldown
+                    
+                    if (trap.Type == "Stun")
+                    {
+                        player.IsStunned = true;
+                        player.StunExpiry = now.AddSeconds(3);
+                    }
+                    else if (trap.Type == "Slow")
+                    {
+                        player.ActiveBuff = "CHẬM";
+                        player.BuffExpiry = now.AddSeconds(5);
+                    }
+                    else if (trap.Type == "Damage")
+                    {
+                        player.HP -= 20;
+                        player.DamageTaken += 20;
+                        if (player.HP <= 0)
+                        {
+                            HandlePlayerDeath(game, player, null, now, "Trap");
+                        }
+                    }
+                    else if (trap.Type == "LoseScore")
+                    {
+                        player.Score = Math.Max(0, player.Score - 50);
+                    }
+
+                    _hubContext.Clients.Group(game.RoomCode).SendAsync("TrapTriggered", new { 
+                        trapId = trap.Id, 
+                        connectionId = player.ConnectionId,
+                        type = trap.Type
+                    });
+                    break;
+                }
+            }
+        }
+    }
+
     private void UpdateSafeZone(GameState game, DateTime now, float dt)
     {
         var sz = game.SafeZone;
