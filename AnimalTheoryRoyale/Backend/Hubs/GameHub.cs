@@ -85,21 +85,43 @@ public class GameHub : Hub
     private async Task PerformJoin(GameState game, string roomCode, string username, int characterId, string connectionId)
     {
         await Groups.AddToGroupAsync(connectionId, roomCode);
+        PlayerState player;
 
-        int maxHp = characterId switch { 1 => 200, 2 => 80, 3 => 100, 4 => 150, _ => 100 };
-        int ammo = characterId switch { 1 => 15, 2 => 6, 3 => 10, 4 => 8, _ => 10 };
-        var (spawnX, spawnZ) = _gameEngine.GetRandomSpawnPosition();
-
-        var player = new PlayerState
+        // Resume existing player session if they reconnect
+        var existingPlayer = game.Players.Values.FirstOrDefault(p => p.Username == username);
+        if (existingPlayer != null)
         {
-            ConnectionId = Context.ConnectionId,
-            Username = username,
-            CharacterId = characterId,
-            X = spawnX, Y = 0, Z = spawnZ,
-            HP = maxHp, MaxHP = maxHp, Ammo = ammo, Lives = 3
-        };
+            // If they are taking over an existing character, just update connection mapping
+            string oldConnectionId = existingPlayer.ConnectionId;
+            existingPlayer.ConnectionId = connectionId;
+            existingPlayer.CharacterId = characterId; // Update character selection just in case they were in lobby
+            if (oldConnectionId != connectionId)
+            {
+                game.Players.TryRemove(oldConnectionId, out _);
+                game.Players.TryAdd(connectionId, existingPlayer);
+            }
+            
+            player = existingPlayer;
+            await Clients.Caller.SendAsync("JoinSuccess", existingPlayer);
+        }
+        else
+        {
+            int maxHp = characterId switch { 1 => 200, 2 => 80, 3 => 100, 4 => 150, _ => 100 };
+            int ammo = characterId switch { 1 => 15, 2 => 6, 3 => 10, 4 => 8, _ => 10 };
+            var (spawnX, spawnZ) = _gameEngine.GetRandomSpawnPosition();
 
-        game.Players.TryAdd(connectionId, player);
+            player = new PlayerState
+            {
+                ConnectionId = connectionId,
+                Username = username,
+                CharacterId = characterId,
+                X = spawnX, Y = 0, Z = spawnZ,
+                HP = maxHp, MaxHP = maxHp, Ammo = ammo, Lives = 3
+            };
+
+            game.Players.TryAdd(connectionId, player);
+            await Clients.Caller.SendAsync("JoinSuccess", player);
+        }
         await Clients.Group(roomCode).SendAsync("PlayerJoined", new {
             connectionId = player.ConnectionId, username = player.Username, characterId = player.CharacterId
         });
