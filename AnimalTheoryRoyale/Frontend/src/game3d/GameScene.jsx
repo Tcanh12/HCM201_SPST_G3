@@ -34,8 +34,8 @@ export default function GameScene({
   
   const lastAim = useRef(null);
   const pushIndRef = useRef();
-  const chaosIndRef = useRef();
-  const silenceIndRef = useRef();
+  const dizzyIndRef = useRef();
+  const ultIndRef = useRef();
   const knockbackVelocity = useRef({ x: 0, z: 0 });
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function GameScene({
       m.dx = 0; m.dy = 0;
     }
 
-    if (myPlayer.isDead || myPlayer.isStunned) { updateCamera(delta); return; }
+    if (myPlayer.isDead || myPlayer.isEliminated || myPlayer.isStunned) { updateCamera(delta, myPlayer, gameState?.cameraMode); return; }
 
     // === MOVEMENT ===
     let charSpeed = 30;
@@ -92,10 +92,10 @@ export default function GameScene({
     const fwd = new THREE.Vector3(-Math.sin(cameraAngle.current), 0, -Math.cos(cameraAngle.current));
     const right = new THREE.Vector3(Math.cos(cameraAngle.current), 0, -Math.sin(cameraAngle.current));
 
-    if (myPlayer.isChaos) {
+    if (myPlayer.isDizzy) {
       fwd.negate();
       right.negate();
-      cameraAngle.current += delta * 3; // dizzy spin
+      cameraAngle.current += delta * 6; // dizzy spin
     }
 
     if (isMobile) {
@@ -157,8 +157,8 @@ export default function GameScene({
       // Keyboard aiming
       if (keys['1']) currentAim = 'push';
       else if (keys['2']) currentAim = 'double';
-      else if (keys['3']) currentAim = 'chaos';
-      else if (keys['4']) currentAim = 'silence';
+      else if (keys['3']) currentAim = 'dizzy';
+      else if (keys['4']) currentAim = 'ult';
     }
 
     // 2. Check if we released an aim (cast skill)
@@ -170,11 +170,11 @@ export default function GameScene({
         connection.invoke('UseSkillPush', roomCode, dirX, dirZ).catch(() => {});
       }
       else if (skillToCast === 'double') connection.invoke('UseSkillDouble', roomCode).catch(() => {});
-      else if (skillToCast === 'chaos') connection.invoke('UseSkillChaos', roomCode).catch(() => {});
-      else if (skillToCast === 'silence') {
+      else if (skillToCast === 'dizzy') connection.invoke('UseSkillDizzySpin', roomCode).catch(() => {});
+      else if (skillToCast === 'ult') {
         const dirX = -Math.sin(cameraAngle.current);
         const dirZ = -Math.cos(cameraAngle.current);
-        connection.invoke('UseSkillSilence', roomCode, dirX, dirZ).catch(() => {});
+        connection.invoke('UseSkillUltimate', roomCode, dirX, dirZ).catch(() => {});
       }
     }
     
@@ -188,11 +188,11 @@ export default function GameScene({
         connection.invoke('UseSkillPush', roomCode, dirX, dirZ).catch(() => {});
       }
       else if (instantSkill === 'double') connection.invoke('UseSkillDouble', roomCode).catch(() => {});
-      else if (instantSkill === 'chaos') connection.invoke('UseSkillChaos', roomCode).catch(() => {});
-      else if (instantSkill === 'silence') {
+      else if (instantSkill === 'dizzy') connection.invoke('UseSkillDizzySpin', roomCode).catch(() => {});
+      else if (instantSkill === 'ult') {
         const dirX = -Math.sin(cameraAngle.current);
         const dirZ = -Math.cos(cameraAngle.current);
-        connection.invoke('UseSkillSilence', roomCode, dirX, dirZ).catch(() => {});
+        connection.invoke('UseSkillUltimate', roomCode, dirX, dirZ).catch(() => {});
       }
     }
 
@@ -206,19 +206,19 @@ export default function GameScene({
         pushIndRef.current.rotation.y = cameraAngle.current;
       }
     }
-    if (chaosIndRef.current) {
-      chaosIndRef.current.visible = currentAim === 'chaos';
-      if (currentAim === 'chaos') chaosIndRef.current.position.set(localPos.current.x, 0.2, localPos.current.z);
+    if (dizzyIndRef.current) {
+      dizzyIndRef.current.visible = currentAim === 'dizzy';
+      if (currentAim === 'dizzy') dizzyIndRef.current.position.set(localPos.current.x, 0.2, localPos.current.z);
     }
-    if (silenceIndRef.current) {
-      silenceIndRef.current.visible = currentAim === 'silence';
-      if (currentAim === 'silence') {
-        silenceIndRef.current.position.set(localPos.current.x, 0.2, localPos.current.z);
-        silenceIndRef.current.rotation.y = cameraAngle.current; // Point forward
+    if (ultIndRef.current) {
+      ultIndRef.current.visible = currentAim === 'ult';
+      if (currentAim === 'ult') {
+        ultIndRef.current.position.set(localPos.current.x, 0.2, localPos.current.z);
+        ultIndRef.current.rotation.y = cameraAngle.current; // Point forward
       }
     }
 
-    updateCamera(delta);
+    updateCamera(delta, myPlayer, gameState?.cameraMode);
 
     // Knowledge zone proximity claim
     const now = Date.now();
@@ -236,15 +236,29 @@ export default function GameScene({
     }
   });
 
-  function updateCamera(delta) {
-    const dist = cameraDistance.current;
-    const pitch = cameraPitch.current;
+  function updateCamera(delta, myPlayer, mode) {
     const angle = cameraAngle.current;
-    const cx = localPos.current.x + dist * Math.sin(angle) * Math.cos(pitch);
-    const cy = dist * Math.sin(pitch);
-    const cz = localPos.current.z + dist * Math.cos(angle) * Math.cos(pitch);
-    camera.position.lerp(new THREE.Vector3(cx, cy, cz), 8 * delta);
-    camera.lookAt(localPos.current.x, 1, localPos.current.z);
+    
+    if (mode === 'FirstPerson') {
+      const cx = localPos.current.x;
+      const cy = 2.5; // eye level
+      const cz = localPos.current.z;
+      camera.position.lerp(new THREE.Vector3(cx, cy, cz), 20 * delta);
+      
+      // Look direction
+      const lx = cx - Math.sin(angle);
+      const ly = cy - Math.sin(cameraPitch.current - 0.6) * 2; // adjust look pitch
+      const lz = cz - Math.cos(angle);
+      camera.lookAt(lx, ly, lz);
+    } else {
+      const dist = cameraDistance.current;
+      const pitch = cameraPitch.current;
+      const cx = localPos.current.x + dist * Math.sin(angle) * Math.cos(pitch);
+      const cy = dist * Math.sin(pitch);
+      const cz = localPos.current.z + dist * Math.cos(angle) * Math.cos(pitch);
+      camera.position.lerp(new THREE.Vector3(cx, cy, cz), 8 * delta);
+      camera.lookAt(localPos.current.x, 1, localPos.current.z);
+    }
   }
 
   // Desktop: click to shoot
@@ -289,6 +303,7 @@ export default function GameScene({
           key={player.id} player={player}
           isMe={player.id === myConnectionId}
           localOverride={player.id === myConnectionId ? localPos.current : null}
+          hideModel={player.id === myConnectionId && gameState?.cameraMode === 'FirstPerson'}
         />
       ))}
 
@@ -308,26 +323,25 @@ export default function GameScene({
         </mesh>
       </group>
 
-      <group ref={chaosIndRef} visible={false}>
+      <group ref={dizzyIndRef} visible={false}>
         <mesh rotation={[-Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[19, 20, 64]} />
+          <ringGeometry args={[24, 25, 64]} />
           <meshBasicMaterial color="#9333EA" transparent opacity={0.6} side={THREE.DoubleSide} />
         </mesh>
         <mesh rotation={[-Math.PI / 2, 0, 0]}>
-          <circleGeometry args={[19, 32]} />
+          <circleGeometry args={[24, 32]} />
           <meshBasicMaterial color="#9333EA" transparent opacity={0.15} side={THREE.DoubleSide} />
         </mesh>
       </group>
 
-      <group ref={silenceIndRef} visible={false}>
-        <mesh position={[0, 0, -25]} rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[2, 50]} />
-          <meshBasicMaterial color="#64748B" transparent opacity={0.4} side={THREE.DoubleSide} />
+      <group ref={ultIndRef} visible={false}>
+        <mesh position={[0, 0, -20]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[6, 40]} />
+          <meshBasicMaterial color="#F59E0B" transparent opacity={0.4} side={THREE.DoubleSide} />
         </mesh>
-        {/* Arrow head */}
-        <mesh position={[0, 0, -50]} rotation={[-Math.PI / 2, 0, 0]}>
-          <coneGeometry args={[3, 6, 3]} />
-          <meshBasicMaterial color="#64748B" transparent opacity={0.6} side={THREE.DoubleSide} />
+        <mesh position={[0, 0, -40]} rotation={[-Math.PI / 2, 0, 0]}>
+          <coneGeometry args={[6, 8, 3]} />
+          <meshBasicMaterial color="#F59E0B" transparent opacity={0.6} side={THREE.DoubleSide} />
         </mesh>
       </group>
     </group>

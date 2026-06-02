@@ -26,7 +26,65 @@ public class GameHub : Hub
     public async Task JoinRoomAsPlayer(string roomCode, string username, int characterId)
     {
         var game = _gameEngine.GetOrCreateGame(roomCode, 1, 600);
+        if (game.Status == "Playing")
+        {
+            await Clients.Caller.SendAsync("JoinRejected", "Trận đấu đã bắt đầu. Vui lòng xin phép chủ phòng để tham gia.");
+            return;
+        }
+        await PerformJoin(game, roomCode, username, characterId, Context.ConnectionId);
+    }
+
+    public async Task RequestJoinInProgressRoom(string roomCode, string username, int characterId)
+    {
+        var game = _gameEngine.GetGame(roomCode);
+        if (game == null || game.Status != "Playing") return;
+        
+        var request = new PendingJoinRequest 
+        {
+            ConnectionId = Context.ConnectionId,
+            Username = username,
+            CharacterId = characterId,
+            RequestTime = DateTime.UtcNow
+        };
+        game.PendingJoins[Context.ConnectionId] = request;
+        
         await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
+        await Clients.Client(game.HostConnectionId).SendAsync("LateJoinRequested", request);
+    }
+
+    public async Task ApproveLateJoin(string roomCode, string connectionId)
+    {
+        var game = _gameEngine.GetGame(roomCode);
+        if (game == null || Context.ConnectionId != game.HostConnectionId) return;
+
+        if (game.PendingJoins.TryRemove(connectionId, out var req))
+        {
+            await PerformJoin(game, roomCode, req.Username, req.CharacterId, connectionId);
+            if (game.Players.TryGetValue(connectionId, out var p))
+            {
+                p.Lives = 3;
+                p.Score = 0;
+            }
+            await Clients.Client(connectionId).SendAsync("LateJoinApproved", game);
+            await Clients.Client(game.HostConnectionId).SendAsync("LatePlayerJoined", connectionId);
+        }
+    }
+
+    public async Task RejectLateJoin(string roomCode, string connectionId)
+    {
+        var game = _gameEngine.GetGame(roomCode);
+        if (game == null || Context.ConnectionId != game.HostConnectionId) return;
+
+        if (game.PendingJoins.TryRemove(connectionId, out _))
+        {
+            await Groups.RemoveFromGroupAsync(connectionId, roomCode);
+            await Clients.Client(connectionId).SendAsync("LateJoinRejected");
+        }
+    }
+
+    private async Task PerformJoin(GameState game, string roomCode, string username, int characterId, string connectionId)
+    {
+        await Groups.AddToGroupAsync(connectionId, roomCode);
 
         int maxHp = characterId switch { 1 => 200, 2 => 80, 3 => 100, 4 => 150, _ => 100 };
         int ammo = characterId switch { 1 => 15, 2 => 6, 3 => 10, 4 => 8, _ => 10 };
@@ -38,10 +96,10 @@ public class GameHub : Hub
             Username = username,
             CharacterId = characterId,
             X = spawnX, Y = 0, Z = spawnZ,
-            HP = maxHp, MaxHP = maxHp, Ammo = ammo
+            HP = maxHp, MaxHP = maxHp, Ammo = ammo, Lives = 3
         };
 
-        game.Players.TryAdd(Context.ConnectionId, player);
+        game.Players.TryAdd(connectionId, player);
         await Clients.Group(roomCode).SendAsync("PlayerJoined", new {
             connectionId = player.ConnectionId, username = player.Username, characterId = player.CharacterId
         });
@@ -50,7 +108,7 @@ public class GameHub : Hub
         }).ToArray());
     }
 
-    public async Task HostStartGame(string roomCode, int questionCount = 20)
+    public async Task HostStartGame(string roomCode, int questionCount = 20, string cameraMode = "ThirdPerson")
     {
         var game = _gameEngine.GetGame(roomCode);
         if (game == null) return;
@@ -60,6 +118,7 @@ public class GameHub : Hub
 
         game.Status = "Playing";
         game.StartTime = DateTime.UtcNow;
+        game.CameraMode = cameraMode;
         game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
 
         await Clients.Caller.SendAsync("GameStartedForHost");
@@ -81,7 +140,7 @@ public class GameHub : Hub
         var game = _gameEngine.GetGame(roomCode);
         if (game == null) return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
-        if (player.IsDead || player.IsAnsweringQuestion || player.IsStunned) return;
+        if (player.IsDead || player.IsEliminated || player.IsAnsweringQuestion || player.IsStunned || player.IsDizzy) return;
         player.X = x; player.Y = y; player.Z = z; player.RotationY = rotationY;
     }
 
@@ -90,7 +149,7 @@ public class GameHub : Hub
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
-        if (player.IsDead || player.HasQuestionShield || player.IsStunned || player.Ammo <= 0) return;
+        if (player.IsDead || player.IsEliminated || player.HasQuestionShield || player.IsStunned || player.IsDizzy || player.Ammo <= 0) return;
 
         player.Ammo--;
         float length = MathF.Sqrt(dirX * dirX + dirZ * dirZ);
@@ -111,7 +170,7 @@ public class GameHub : Hub
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var me)) return;
-        if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
+        if (me.IsDead || me.IsEliminated || me.IsStunned || me.IsDizzy) return;
         if (me.SkillPushCooldown.HasValue && DateTime.UtcNow < me.SkillPushCooldown.Value) return;
 
         me.SkillPushCooldown = DateTime.UtcNow.AddSeconds(8);
@@ -127,7 +186,7 @@ public class GameHub : Hub
             float dist = MathF.Sqrt(dx * dx + dz * dz);
             
             // Cone check (angle & distance)
-            if (dist < 25f && dist > 0.1f)
+            if (dist < 30f && dist > 0.1f)
             {
                 float dot = (dx / dist) * dirX + (dz / dist) * dirZ;
                 if (dot > 0.5f) // Roughly 60 degrees cone
@@ -144,7 +203,7 @@ public class GameHub : Hub
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var me)) return;
-        if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
+        if (me.IsDead || me.IsEliminated || me.IsStunned || me.IsDizzy) return;
         if (me.SkillDoubleCooldown.HasValue && DateTime.UtcNow < me.SkillDoubleCooldown.Value) return;
 
         me.SkillDoubleCooldown = DateTime.UtcNow.AddSeconds(15);
@@ -152,67 +211,85 @@ public class GameHub : Hub
         await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "double", by = me.ConnectionId, username = me.Username });
     }
 
-    public async Task UseSkillChaos(string roomCode)
+    public async Task UseSkillDizzySpin(string roomCode)
     {
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var me)) return;
-        if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
-        if (me.SkillChaosCooldown.HasValue && DateTime.UtcNow < me.SkillChaosCooldown.Value) return;
+        if (me.IsDead || me.IsEliminated || me.IsStunned || me.IsDizzy) return;
+        if (me.SkillDizzyCooldown.HasValue && DateTime.UtcNow < me.SkillDizzyCooldown.Value) return;
 
-        me.SkillChaosCooldown = DateTime.UtcNow.AddSeconds(10);
+        me.SkillDizzyCooldown = DateTime.UtcNow.AddSeconds(15);
         var affected = new List<string>();
         foreach (var o in game.Players.Values)
         {
-            if (o.ConnectionId == me.ConnectionId || o.IsDead || o.HasQuestionShield || (o.InvulnerableEndTime.HasValue && o.InvulnerableEndTime.Value > DateTime.UtcNow)) continue;
+            if (o.ConnectionId == me.ConnectionId || o.IsDead || o.IsEliminated || o.HasQuestionShield || (o.InvulnerableEndTime.HasValue && o.InvulnerableEndTime.Value > DateTime.UtcNow)) continue;
             float dx = o.X - me.X, dz = o.Z - me.Z;
             float dist = MathF.Sqrt(dx * dx + dz * dz);
-            if (dist < 20f)
+            if (dist < 25f)
             {
-                o.ChaosEndTime = DateTime.UtcNow.AddSeconds(3);
+                o.IsDizzy = true;
+                o.DizzyEndTime = DateTime.UtcNow.AddSeconds(5);
                 affected.Add(o.ConnectionId);
             }
         }
-        await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "chaos", by = me.ConnectionId, username = me.Username, targets = affected });
+        await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "dizzyspin", by = me.ConnectionId, username = me.Username, targets = affected });
     }
 
-    public async Task UseSkillSilence(string roomCode, float dirX, float dirZ)
+    public async Task UseSkillUltimate(string roomCode, float dirX, float dirZ)
     {
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var me)) return;
-        if (me.IsDead || me.IsStunned || (me.SilenceEndTime.HasValue && me.SilenceEndTime.Value > DateTime.UtcNow)) return;
-        if (me.SkillSilenceCooldown.HasValue && DateTime.UtcNow < me.SkillSilenceCooldown.Value) return;
+        if (me.IsDead || me.IsEliminated || me.IsStunned || me.IsDizzy) return;
+        if (me.UltimateCooldown.HasValue && DateTime.UtcNow < me.UltimateCooldown.Value) return;
 
-        me.SkillSilenceCooldown = DateTime.UtcNow.AddSeconds(12);
         float len = MathF.Sqrt(dirX * dirX + dirZ * dirZ);
         if (len > 0) { dirX /= len; dirZ /= len; }
 
-        PlayerState? hitPlayer = null;
-        for (float d = 5; d < 80; d += 3)
+        int cd = 25;
+        if (me.CharacterId == 1) // Voi: Earth Stomp
         {
-            float px = me.X + dirX * d, pz = me.Z + dirZ * d;
+            cd = 25;
+            var affected = new List<string>();
             foreach (var o in game.Players.Values)
             {
-                if (o.ConnectionId == me.ConnectionId || o.IsDead || o.HasQuestionShield || (o.InvulnerableEndTime.HasValue && o.InvulnerableEndTime.Value > DateTime.UtcNow)) continue;
-                if ((o.X - px) * (o.X - px) + (o.Z - pz) * (o.Z - pz) < 36f)
+                if (o.ConnectionId == me.ConnectionId || o.IsDead || o.IsEliminated || o.HasQuestionShield || (o.InvulnerableEndTime.HasValue && o.InvulnerableEndTime.Value > DateTime.UtcNow)) continue;
+                float dx = o.X - me.X, dz = o.Z - me.Z;
+                if (dx * dx + dz * dz < 900f) // radius 30
                 {
-                    hitPlayer = o;
-                    break;
+                    o.HP -= 30;
+                    o.DamageTaken += 30;
+                    o.IsStunned = true;
+                    o.StunEndTime = DateTime.UtcNow.AddSeconds(2);
+                    affected.Add(o.ConnectionId);
                 }
             }
-            if (hitPlayer != null) break;
+            await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "ult_voi", by = me.ConnectionId, username = me.Username, targets = affected });
+        }
+        else if (me.CharacterId == 2) // Thỏ: Blink Dash
+        {
+            cd = 22;
+            me.X += dirX * 40;
+            me.Z += dirZ * 40;
+            me.InvulnerableEndTime = DateTime.UtcNow.AddSeconds(0.5);
+            await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "ult_tho", by = me.ConnectionId, username = me.Username, x = me.X, z = me.Z });
+        }
+        else if (me.CharacterId == 3) // Cáo: Trick Trap
+        {
+            cd = 24;
+            string trapId = Guid.NewGuid().ToString();
+            game.Items.TryAdd(trapId, new ItemState { Id = trapId, Type = "TrickTrap", X = me.X, Z = me.Z, Value = 30, IsActive = true, RespawnTime = DateTime.UtcNow.AddSeconds(20) });
+            await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "ult_cao", by = me.ConnectionId, username = me.Username, trapId = trapId });
+        }
+        else if (me.CharacterId == 4) // Rùa: Shell Shield
+        {
+            cd = 28;
+            me.DamageReductionEndTime = DateTime.UtcNow.AddSeconds(5);
+            await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "ult_rua", by = me.ConnectionId, username = me.Username });
         }
 
-        if (hitPlayer != null)
-        {
-            hitPlayer.SilenceEndTime = DateTime.UtcNow.AddSeconds(4);
-            await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "silence", by = me.ConnectionId, username = me.Username, target = hitPlayer.ConnectionId, targetName = hitPlayer.Username });
-        }
-        else
-        {
-            await Clients.Caller.SendAsync("SkillUsed", new { type = "silence_miss", by = me.ConnectionId, username = me.Username });
-        }
+        me.UltimateCooldown = DateTime.UtcNow.AddSeconds(cd);
     }
 
     /// <summary>
@@ -224,7 +301,8 @@ public class GameHub : Hub
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
-        if (player.IsDead || player.IsAnsweringQuestion) return;
+        if (player.IsDead || player.IsEliminated || player.IsAnsweringQuestion || player.IsDizzy || player.IsStunned) return;
+        if (player.NextQuestionTime.HasValue && DateTime.UtcNow < player.NextQuestionTime.Value) return;
         if (!game.KnowledgeZones.TryGetValue(zoneId, out var zone)) return;
 
         // Zone must be active
@@ -403,7 +481,11 @@ public class GameHub : Hub
                             {
                                 player.HP = 0;
                                 player.IsDead = true;
-                                player.RespawnTime = DateTime.UtcNow.AddSeconds(8);
+                                player.Lives--;
+                                if (player.Lives > 0)
+                                    player.RespawnTime = DateTime.UtcNow.AddSeconds(8);
+                                else
+                                    player.IsEliminated = true;
                                 playerDied = true;
                             }
 
@@ -416,6 +498,7 @@ public class GameHub : Hub
                 }
             }
 
+            player.NextQuestionTime = DateTime.UtcNow.AddSeconds(4);
             player.IsAnsweringQuestion = false;
             player.HasQuestionShield = false;
             player.ShieldEndTime = null;

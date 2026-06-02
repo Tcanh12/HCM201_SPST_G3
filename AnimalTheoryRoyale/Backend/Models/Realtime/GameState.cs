@@ -10,6 +10,7 @@ public class GameState
     public DateTime? StartTime { get; set; }
     public int Duration { get; set; }
     public string HostConnectionId { get; set; } = string.Empty;
+    public string CameraMode { get; set; } = "ThirdPerson";
 
     public ConcurrentDictionary<string, PlayerState> Players { get; set; } = new();
     public ConcurrentDictionary<string, ProjectileState> Projectiles { get; set; } = new();
@@ -25,6 +26,16 @@ public class GameState
 
     // Track which question IDs are currently active on the map
     public ConcurrentDictionary<int, bool> ActiveQuestionIds { get; set; } = new();
+
+    public ConcurrentDictionary<string, PendingJoinRequest> PendingJoins { get; set; } = new();
+}
+
+public class PendingJoinRequest
+{
+    public string ConnectionId { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public int CharacterId { get; set; }
+    public DateTime RequestTime { get; set; }
 }
 
 /// <summary>

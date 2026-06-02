@@ -10,7 +10,7 @@ import ResultPage from './pages/ResultPage';
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-dark text-white overflow-hidden">
+    <div className="w-screen h-screen bg-dark text-white">
       <Routes>
         {/* Landing */}
         <Route path="/" element={<LandingPage />} />

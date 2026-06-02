@@ -21,18 +21,21 @@ public class PlayerState
     public DateTime? ShieldEndTime { get; set; }
     public DateTime? RespawnTime { get; set; }
     public int? CurrentQuestionId { get; set; }
-
+    public int Lives { get; set; } = 3;
+    public bool IsEliminated { get; set; }
+    public DateTime? NextQuestionTime { get; set; }
     // Skill system
     public bool IsStunned { get; set; }
+    public bool IsDizzy { get; set; }
     public DateTime? StunEndTime { get; set; }
     public DateTime? SkillPushCooldown { get; set; }
     public DateTime? SkillDoubleCooldown { get; set; }
-    public DateTime? SkillChaosCooldown { get; set; }
-    public DateTime? SkillSilenceCooldown { get; set; }
+    public DateTime? SkillDizzyCooldown { get; set; }
+    public DateTime? UltimateCooldown { get; set; }
 
     public bool HasDoubleActive { get; set; }
-    public DateTime? ChaosEndTime { get; set; }
-    public DateTime? SilenceEndTime { get; set; }
+    public DateTime? DizzyEndTime { get; set; }
+    public DateTime? DamageReductionEndTime { get; set; }
     public DateTime? InvulnerableEndTime { get; set; }
 
     // Buff system

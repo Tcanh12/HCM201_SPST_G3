@@ -17,15 +17,16 @@ public class GameEngine : BackgroundService
     private const float MAP_RADIUS = 500f;
     private const float SPAWN_RADIUS = 350f;
     // REBALANCED: (wait_seconds_before_shrink, target_radius, damage_per_second)
-    // Total game ~10 min. Each phase: WAIT (no shrink) → SHRINK (over 20s) → next WAIT
+    // 10 minute game (600s).
     private static readonly (int delay, float radius, float dps)[] ShrinkPhases = new[]
     {
-        (90,  400f,  2f),   // Phase 1: wait 90s, shrink to 400 (gentle)
-        (75,  300f,  3f),   // Phase 2: wait 75s, shrink to 300
-        (60,  200f,  5f),   // Phase 3: wait 60s, shrink to 200
-        (45,  120f,  8f),   // Phase 4: wait 45s, shrink to 120
-        (30,   60f, 12f),   // Phase 5: wait 30s, shrink to 60 (intense)
-        (20,   25f, 20f),   // Phase 6: final, shrink to 25 (endgame)
+        (60, 500f, 0f),     // Phase 0: 0-60s, no shrink
+        (60, 400f, 2f),     // Phase 1: 60-120s, shrink to 400
+        (90, 300f, 4f),     // Phase 2: 120-210s, shrink to 300
+        (90, 200f, 6f),     // Phase 3: 210-300s, shrink to 200
+        (90, 100f, 10f),    // Phase 4: 300-390s, shrink to 100
+        (60, 40f, 15f),     // Phase 5: 390-450s, shrink to 40
+        (60, 10f, 25f),     // Phase 6: 450-510s, shrink to 10
     };
 
     public GameEngine(IHubContext<GameHub> hubContext, ILogger<GameEngine> logger, IServiceScopeFactory scopeFactory)
@@ -242,7 +243,7 @@ public class GameEngine : BackgroundService
 
                 await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameEnded",
                     sortedPlayers.Select(p => new {
-                        username = p.Username, characterId = p.CharacterId, score = p.Score, combo = p.Combo,
+                        username = p.Username, characterId = p.CharacterId, score = p.Score, combo = p.Combo, lives = p.Lives, isEliminated = p.IsEliminated,
                         totalCorrectAnswers = p.TotalCorrectAnswers, totalWrongAnswers = p.TotalWrongAnswers, longestCombo = p.LongestCombo,
                         damageTaken = p.DamageTaken, survivalDuration = p.SurvivalDuration, finalRank = p.FinalRank, isMVP = p.IsMVP,
                         isHost = p.ConnectionId == game.HostConnectionId
@@ -261,21 +262,22 @@ public class GameEngine : BackgroundService
                 status = game.Status,
                 timeRemaining = (int)remaining,
                 hostConnectionId = game.HostConnectionId,
+                cameraMode = game.CameraMode,
                 players = game.Players.Values.Select(p => new {
                     id = p.ConnectionId, username = p.Username, characterId = p.CharacterId,
                     x = p.X, y = p.Y, z = p.Z, rotationY = p.RotationY,
                     hp = p.HP, maxHP = p.MaxHP, score = p.Score, combo = p.Combo, ammo = p.Ammo,
+                    lives = p.Lives, isEliminated = p.IsEliminated,
                     isDead = p.IsDead, hasQuestionShield = p.HasQuestionShield, isStunned = p.IsStunned,
                     isInvulnerable = p.InvulnerableEndTime.HasValue && p.InvulnerableEndTime.Value > now,
                     activeBuff = p.BuffEndTime.HasValue && p.BuffEndTime.Value > now ? p.ActiveBuff : null,
-                    scanCD = 0, // removed
                     pushCD = p.SkillPushCooldown.HasValue ? Math.Max(0, (p.SkillPushCooldown.Value - now).TotalSeconds) : 0,
                     doubleCD = p.SkillDoubleCooldown.HasValue ? Math.Max(0, (p.SkillDoubleCooldown.Value - now).TotalSeconds) : 0,
-                    chaosCD = p.SkillChaosCooldown.HasValue ? Math.Max(0, (p.SkillChaosCooldown.Value - now).TotalSeconds) : 0,
-                    silenceCD = p.SkillSilenceCooldown.HasValue ? Math.Max(0, (p.SkillSilenceCooldown.Value - now).TotalSeconds) : 0,
+                    dizzyCD = p.SkillDizzyCooldown.HasValue ? Math.Max(0, (p.SkillDizzyCooldown.Value - now).TotalSeconds) : 0,
+                    ultCD = p.UltimateCooldown.HasValue ? Math.Max(0, (p.UltimateCooldown.Value - now).TotalSeconds) : 0,
                     hasDouble = p.HasDoubleActive,
-                    isChaos = p.ChaosEndTime.HasValue && p.ChaosEndTime.Value > now,
-                    isSilenced = p.SilenceEndTime.HasValue && p.SilenceEndTime.Value > now
+                    isDizzy = p.IsDizzy,
+                    hasShield = p.DamageReductionEndTime.HasValue && p.DamageReductionEndTime.Value > now
                 }).ToArray(),
                 projectiles = game.Projectiles.Values.Where(p => p.IsActive).Select(p => new {
                     id = p.Id, x = p.X, y = p.Y, z = p.Z
@@ -337,8 +339,12 @@ public class GameEngine : BackgroundService
                 p.IsStunned = false;
                 p.StunEndTime = null;
             }
-            if (p.ChaosEndTime.HasValue && now >= p.ChaosEndTime.Value) p.ChaosEndTime = null;
-            if (p.SilenceEndTime.HasValue && now >= p.SilenceEndTime.Value) p.SilenceEndTime = null;
+            if (p.IsDizzy && p.DizzyEndTime.HasValue && now >= p.DizzyEndTime.Value)
+            {
+                p.IsDizzy = false;
+                p.DizzyEndTime = null;
+            }
+            if (p.DamageReductionEndTime.HasValue && now >= p.DamageReductionEndTime.Value) p.DamageReductionEndTime = null;
         }
     }
 
@@ -381,10 +387,26 @@ public class GameEngine : BackgroundService
 
             foreach (var p in game.Players.Values)
             {
-                if (p.IsDead) continue;
+                if (p.IsDead || p.IsEliminated) continue;
                 float dx = p.X - item.X;
                 float dz = p.Z - item.Z;
                 float distSq = dx * dx + dz * dz;
+
+                if (item.Type == "TrickTrap")
+                {
+                    if (distSq < 4.0f) // 2m trap trigger
+                    {
+                        item.IsActive = false;
+                        p.HP -= item.Value;
+                        p.DamageTaken += item.Value;
+                        p.IsStunned = true;
+                        p.StunEndTime = now.AddSeconds(2);
+                        if (p.HP <= 0) KillPlayer(p, game, now, "trap");
+                        _hubContext.Clients.Group(game.RoomCode).SendAsync("AnswerResult", new { success = false, correct = false, message = "Bạn đã dẫm phải bẫy của Cáo!" });
+                        break;
+                    }
+                    continue; // don't process as normal item
+                }
 
                 if (distSq < 9.0f) // 3m pickup radius
                 {
@@ -418,12 +440,13 @@ public class GameEngine : BackgroundService
         var sz = game.SafeZone;
         foreach (var p in game.Players.Values)
         {
-            if (p.IsDead || p.HasQuestionShield || (p.InvulnerableEndTime.HasValue && p.InvulnerableEndTime.Value > now)) continue;
+            if (p.IsDead || p.IsEliminated || p.HasQuestionShield || (p.InvulnerableEndTime.HasValue && p.InvulnerableEndTime.Value > now)) continue;
             float dx = p.X - sz.CenterX;
             float dz = p.Z - sz.CenterZ;
             if (dx * dx + dz * dz > sz.Radius * sz.Radius)
             {
                 int damage = Math.Max(1, (int)(sz.DamagePerSecond * dt));
+                if (p.DamageReductionEndTime.HasValue && p.DamageReductionEndTime.Value > now) damage = (int)(damage * 0.3f);
                 p.HP -= damage;
                 p.DamageTaken += damage;
                 if (p.HP <= 0) KillPlayer(p, game, now, "zone");
@@ -449,7 +472,7 @@ public class GameEngine : BackgroundService
 
             foreach (var player in game.Players.Values)
             {
-                if (player.ConnectionId == proj.OwnerConnectionId || player.IsDead || player.HasQuestionShield)
+                if (player.ConnectionId == proj.OwnerConnectionId || player.IsDead || player.IsEliminated || player.HasQuestionShield)
                     continue;
                 if (player.InvulnerableEndTime.HasValue && player.InvulnerableEndTime.Value > now)
                     continue;
@@ -457,8 +480,10 @@ public class GameEngine : BackgroundService
                 float dz = player.Z - proj.Z;
                 if (dx * dx + dz * dz < 64f)
                 {
-                    player.HP -= proj.Damage;
-                    player.DamageTaken += proj.Damage;
+                    int dmg = proj.Damage;
+                    if (player.DamageReductionEndTime.HasValue && player.DamageReductionEndTime.Value > now) dmg = (int)(dmg * 0.3f);
+                    player.HP -= dmg;
+                    player.DamageTaken += dmg;
                     if (game.Players.TryGetValue(proj.OwnerConnectionId, out var owner))
                     {
                         owner.Score += 10;
@@ -483,7 +508,12 @@ public class GameEngine : BackgroundService
     {
         player.HP = 0;
         player.IsDead = true;
-        player.RespawnTime = now.AddSeconds(8);
+        player.Lives--;
+        if (player.Lives > 0)
+            player.RespawnTime = now.AddSeconds(8);
+        else
+            player.IsEliminated = true;
+            
         player.Combo = 0;
         if (cause == "combat") player.Score = Math.Max(0, player.Score - 50);
     }
@@ -492,7 +522,7 @@ public class GameEngine : BackgroundService
     {
         foreach (var p in game.Players.Values)
         {
-            if (p.IsDead && p.RespawnTime.HasValue && p.RespawnTime <= now)
+            if (p.IsDead && !p.IsEliminated && p.RespawnTime.HasValue && p.RespawnTime <= now)
             {
                 p.IsDead = false;
                 p.HP = (int)(p.MaxHP * 0.5f);
@@ -516,10 +546,16 @@ public class GameEngine : BackgroundService
 
     private void UpdateKnowledgeZones(GameState game, DateTime now)
     {
+        int maxZones = game.SafeZone.Radius < 150 ? 5 : 15;
+        int activeZones = game.KnowledgeZones.Values.Count(z => z.IsActive);
+
         foreach (var kz in game.KnowledgeZones.Values)
         {
             if (!kz.IsActive && kz.ClaimedByConnectionId == null && now >= kz.RespawnTime)
             {
+                if (activeZones >= maxZones) continue;
+                activeZones++;
+
                 // Respawn with a NEW unique question
                 int newQuestionId = PickUnusedQuestion(game);
 

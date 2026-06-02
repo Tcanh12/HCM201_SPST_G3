@@ -12,7 +12,8 @@ export default function CreateRoomPage() {
   const [settings, setSettings] = useState({
     duration: 10,
     maxPlayers: 50,
-    difficulty: 'Mixed'
+    difficulty: 'Mixed',
+    cameraMode: 'ThirdPerson'
   });
 
   const handleCreate = async () => {
@@ -27,6 +28,7 @@ export default function CreateRoomPage() {
       const user = authRes.data;
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('role', 'host');
+      localStorage.setItem('cameraMode', settings.cameraMode);
 
       // 2. Create Room via API
       const res = await axios.post(`${API_HOST}/api/rooms/create`, {
@@ -130,6 +132,30 @@ export default function CreateRoomPage() {
                   <div className="text-xl mb-1">{opt.icon}</div>
                   <div className="text-xs font-bold">{opt.label}</div>
                   <div className="text-[10px] text-white/40 mt-0.5">{opt.desc}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Camera Mode */}
+          <div>
+            <label className="block text-xs font-bold text-white/50 mb-2 uppercase tracking-wider">Góc nhìn Camera</label>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { value: 'ThirdPerson', label: 'Góc nhìn thứ ba', desc: 'Dễ quan sát xung quanh' },
+                { value: 'FirstPerson', label: 'Góc nhìn thứ nhất', desc: 'Góc nhìn nhập vai' }
+              ].map(opt => (
+                <button
+                  key={opt.value}
+                  onClick={() => setSettings({ ...settings, cameraMode: opt.value })}
+                  className={`p-3 rounded-xl border-2 transition-all duration-200 text-center ${
+                    settings.cameraMode === opt.value
+                      ? 'border-primary bg-primary/15 shadow-glow-primary'
+                      : 'border-white/10 bg-white/5 hover:border-white/20'
+                  }`}
+                >
+                  <div className="text-xs font-bold mb-1">{opt.label}</div>
+                  <div className="text-[10px] text-white/40">{opt.desc}</div>
                 </button>
               ))}
             </div>

@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { Text, Billboard } from '@react-three/drei';
 import * as THREE from 'three';
 
-export default function PlayerCharacter({ player, isMe, localOverride }) {
+export default function PlayerCharacter({ player, isMe, localOverride, hideModel }) {
   const meshRef = useRef();
   const stunRef = useRef();
 
@@ -23,7 +23,7 @@ export default function PlayerCharacter({ player, isMe, localOverride }) {
     }
   });
 
-  if (player.isDead) return null;
+  if (player.isDead || player.isEliminated) return null;
 
   const renderAnimalModel = () => {
     switch(player.characterId) {
@@ -78,9 +78,11 @@ export default function PlayerCharacter({ player, isMe, localOverride }) {
   return (
     <group ref={meshRef} position={[player.x, player.y, player.z]}>
       {/* Animal Model */}
-      <group rotation={[0, player.rotationY || 0, 0]}>
-        {renderAnimalModel()}
-      </group>
+      {!hideModel && (
+        <group rotation={[0, player.rotationY || 0, 0]}>
+          {renderAnimalModel()}
+        </group>
+      )}
       
       {/* Question Shield Aura */}
       {player.hasQuestionShield && (
@@ -118,18 +120,22 @@ export default function PlayerCharacter({ player, isMe, localOverride }) {
         </mesh>
       )}
 
-      {/* Skill: Chaos */}
-      {player.isChaos && (
+      {/* Skill: Dizzy Spin */}
+      {player.isDizzy && (
         <group position={[0, 3, 0]}>
           <Text position={[-1, 0, 0]} fontSize={1} color="#9333EA">🌀</Text>
           <Text position={[1, 0, 0]} fontSize={1} color="#9333EA">🌀</Text>
         </group>
       )}
 
-      {/* Skill: Silence */}
-      {player.isSilenced && (
-        <Text position={[0, 3.5, 0]} fontSize={1.5} color="#64748B" outlineWidth={0.1}>🔇</Text>
+      {/* Rùa: Shell Shield */}
+      {player.hasShield && (
+        <mesh position={[0, 1.5, 0]}>
+          <sphereGeometry args={[2.5, 32, 32]} />
+          <meshStandardMaterial color="#10B981" transparent opacity={0.3} emissive="#34D399" emissiveIntensity={0.8} />
+        </mesh>
       )}
+      {!hideModel && (
       <Billboard position={[0, 5, 0]}>
         <Text
           position={[0, 0.5, 0]}
@@ -155,6 +161,7 @@ export default function PlayerCharacter({ player, isMe, localOverride }) {
           <meshBasicMaterial color={player.hp > 50 ? "#10B981" : "#EF4444"} />
         </mesh>
       </Billboard>
+      )}
     </group>
   );
 }

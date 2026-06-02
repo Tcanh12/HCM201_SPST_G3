@@ -12,6 +12,7 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
   const [focusPlayer, setFocusPlayer] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [showHeatmap, setShowHeatmap] = useState(false);
+  const [pendingJoins, setPendingJoins] = useState([]);
   const dragStart = useRef({ x: 0, y: 0, ox: 0, oy: 0 });
   const mapRef = useRef(null);
 
@@ -29,6 +30,22 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
       if (p) setPanOffset({ x: -p.x * scale + MAP_PX / 2, y: -p.z * scale + MAP_PX / 2 });
     }
   }, [focusPlayer, players, scale]);
+
+  useEffect(() => {
+    if (!connection) return;
+    const onRequested = (req) => {
+      setPendingJoins(prev => [...prev.filter(p => p.connectionId !== req.connectionId), req]);
+    };
+    const onJoined = (connId) => {
+      setPendingJoins(prev => prev.filter(p => p.connectionId !== connId));
+    };
+    connection.on('LateJoinRequested', onRequested);
+    connection.on('LatePlayerJoined', onJoined);
+    return () => {
+      connection.off('LateJoinRequested', onRequested);
+      connection.off('LatePlayerJoined', onJoined);
+    };
+  }, [connection]);
 
   const toX = (wx) => MAP_PX / 2 + wx * scale + panOffset.x;
   const toY = (wz) => MAP_PX / 2 + wz * scale + panOffset.y;
@@ -171,6 +188,27 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
 
       {/* ===== RIGHT PANEL ===== */}
       <div style={{ width: '340px', display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }}>
+
+        {/* Pending Joins */}
+        {pendingJoins.length > 0 && (
+          <div style={{ padding: '12px 16px', background: 'rgba(59,130,246,0.1)', borderBottom: '1px solid rgba(59,130,246,0.3)' }}>
+            <div style={{ fontSize: '11px', color: '#3B82F6', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px' }}>🔔 PENDING LATE JOINS ({pendingJoins.length})</div>
+            <div style={{ maxHeight: '150px', overflowY: 'auto' }}>
+              {pendingJoins.map(req => (
+                <div key={req.connectionId} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '6px', marginBottom: '4px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 'bold' }}>{req.username}</div>
+                  <div style={{ display: 'flex', gap: '4px' }}>
+                    <button onClick={() => connection.invoke('ApproveLateJoin', roomCode, req.connectionId)} style={{ background: '#10B981', color: '#fff', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px', fontWeight: 'bold' }}>Approve</button>
+                    <button onClick={() => {
+                      connection.invoke('RejectLateJoin', roomCode, req.connectionId);
+                      setPendingJoins(prev => prev.filter(p => p.connectionId !== req.connectionId));
+                    }} style={{ background: '#EF4444', color: '#fff', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px', fontWeight: 'bold' }}>Reject</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Focused Player Detail */}
         {focusedPlayer && (

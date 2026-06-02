@@ -134,12 +134,12 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
 
   const handlePointerDown = (e, type, cd) => {
     e.preventDefault();
-    if (cd <= 0 && !myPlayer.isSilenced && onAiming) onAiming(type);
+    if (cd <= 0 && !myPlayer.isStunned && !myPlayer.isDizzy && onAiming) onAiming(type);
   };
 
   const handlePointerUp = (e, type, cd) => {
     e.preventDefault();
-    if (cd <= 0 && !myPlayer.isSilenced) {
+    if (cd <= 0 && !myPlayer.isStunned && !myPlayer.isDizzy) {
       if (onAiming) onAiming(null);
       if (onSkill) onSkill(type);
     }
@@ -212,7 +212,17 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
 
         <HPBar current={myPlayer.hp} max={myPlayer.maxHP} percent={hpPercent} color={hpColor} />
 
-        <div className="grid grid-cols-4 gap-2 md:gap-4 mt-2 md:mt-4 pt-2 md:pt-4 border-t border-white/5">
+        <div className="grid grid-cols-5 gap-2 md:gap-4 mt-2 md:mt-4 pt-2 md:pt-4 border-t border-white/5">
+          {/* Lives */}
+          <div className="flex flex-col items-center">
+            <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Mạng</span>
+            <div className="flex gap-1 mt-1">
+              {[...Array(3)].map((_, i) => (
+                <span key={i} className={`text-sm md:text-lg ${i < myPlayer.lives ? 'text-rose-500' : 'text-white/20'}`}>❤️</span>
+              ))}
+            </div>
+          </div>
+
           {/* Score */}
           <div className="flex flex-col items-center">
             <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Điểm</span>
@@ -268,13 +278,13 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
 
       {/* Right Bottom (or Top right on Mobile): Skills */}
       <div className="absolute top-[80px] md:top-auto md:bottom-6 right-2 md:right-6 flex flex-col md:flex-row gap-2 md:gap-3 items-end md:items-end pointer-events-auto scale-75 origin-top-right md:scale-100 md:origin-bottom-right">
-        {myPlayer.isSilenced && (
+        {myPlayer.isDizzy && (
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="absolute -top-12 right-0 bg-red-500/20 border border-red-500/50 text-red-500 font-bold text-sm px-4 py-1.5 rounded-lg whitespace-nowrap shadow-[0_0_20px_rgba(239,68,68,0.4)] backdrop-blur-sm animate-pulse"
+            className="absolute -top-12 right-0 bg-purple-500/20 border border-purple-500/50 text-purple-400 font-bold text-sm px-4 py-1.5 rounded-lg whitespace-nowrap shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-sm animate-pulse"
           >
-            🚫 BỊ CẤM CHIÊU!
+            🌀 CHÓANG VÁNG!
           </motion.div>
         )}
         
@@ -293,17 +303,17 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
         <SkillButton
-          name="Chaos" icon="🌀" cd={myPlayer.chaosCD || 0} keyBind="3" type="chaos" isSilenced={myPlayer.isSilenced}
-          tooltip="Làm lộn xộn camera và đảo ngược phím di chuyển của tất cả kẻ địch xung quanh trong 3s."
-          onPointerDown={(e) => handlePointerDown(e, 'chaos', myPlayer.chaosCD || 0)}
-          onPointerUp={(e) => handlePointerUp(e, 'chaos', myPlayer.chaosCD || 0)}
+          name="Dizzy Spin" icon="🌀" cd={myPlayer.dizzyCD || 0} keyBind="3" type="dizzy" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
+          tooltip="Gây choáng váng cho kẻ địch xung quanh trong 5s. Không thể di chuyển hoặc dùng kỹ năng."
+          onPointerDown={(e) => handlePointerDown(e, 'dizzy', myPlayer.dizzyCD || 0)}
+          onPointerUp={(e) => handlePointerUp(e, 'dizzy', myPlayer.dizzyCD || 0)}
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
         <SkillButton
-          name="Silence" icon="🔇" cd={myPlayer.silenceCD || 0} keyBind="4" type="silence" isSilenced={myPlayer.isSilenced}
-          tooltip="Bắn luồng sóng cấm chiêu. Kẻ địch trúng phải không thể dùng kỹ năng trong 4s."
-          onPointerDown={(e) => handlePointerDown(e, 'silence', myPlayer.silenceCD || 0)}
-          onPointerUp={(e) => handlePointerUp(e, 'silence', myPlayer.silenceCD || 0)}
+          name="Ultimate" icon="🔥" cd={myPlayer.ultCD || 0} keyBind="4" type="ult" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
+          tooltip="Kỹ năng tối thượng riêng biệt của từng loài động vật."
+          onPointerDown={(e) => handlePointerDown(e, 'ult', myPlayer.ultCD || 0)}
+          onPointerUp={(e) => handlePointerUp(e, 'ult', myPlayer.ultCD || 0)}
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
       </div>
@@ -347,9 +357,9 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
         </div>
       </div>
 
-      {/* Dramatic Death Screen */}
+      {/* Dramatic Death / Eliminated Screen */}
       <AnimatePresence>
-        {myPlayer.isDead && (
+        {(myPlayer.isDead || myPlayer.isEliminated) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -369,12 +379,14 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
               >
                 <div className="text-8xl mb-4 filter drop-shadow-[0_0_20px_rgba(220,38,38,0.8)]">💀</div>
                 <h1 className="text-7xl font-display font-black text-red-500 tracking-widest text-glow-danger uppercase mb-4">
-                  BỊ HẠ GỤC
+                  {myPlayer.isEliminated ? 'ĐÃ BỊ LOẠI' : 'BỊ HẠ GỤC'}
                 </h1>
                 
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-black/50 border border-red-500/30 rounded-xl backdrop-blur-md">
-                  <div className="w-5 h-5 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />
-                  <span className="text-xl text-red-200 font-medium">Đang chờ hồi sinh...</span>
+                  {!myPlayer.isEliminated && <div className="w-5 h-5 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />}
+                  <span className="text-xl text-red-200 font-medium">
+                    {myPlayer.isEliminated ? 'Bạn đã hết mạng và chính thức rời cuộc chơi.' : 'Đang chờ hồi sinh...'}
+                  </span>
                 </div>
               </motion.div>
             </div>

@@ -91,7 +91,8 @@ export default function HostLobbyPage() {
     setCountdown('GO!');
     
     if (connection) {
-      await connection.invoke('HostStartGame', roomCode, questionCount);
+      const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
+      await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
     }
   };
 

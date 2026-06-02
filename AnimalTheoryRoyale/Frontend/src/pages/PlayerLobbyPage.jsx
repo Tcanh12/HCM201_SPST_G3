@@ -104,7 +104,7 @@ export default function PlayerLobbyPage() {
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [selectedChar, setSelectedChar] = useState(null);
-  const [joined, setJoined] = useState(false);
+  const [joinStatus, setJoinStatus] = useState('idle'); // idle, waiting, joined, requesting, rejected
   const [connection, setConnection] = useState(null);
 
   const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -130,6 +130,28 @@ export default function PlayerLobbyPage() {
         navigate(`/game/${roomCode}`);
       });
 
+      conn.on('JoinRejected', (msg) => {
+        if (window.confirm(msg + "\n\nBạn có muốn gửi yêu cầu tham gia muộn đến Host không?")) {
+          setJoinStatus('requesting');
+          conn.invoke('RequestJoinInProgressRoom', roomCode, user.username, parseInt(localStorage.getItem('selectedChar'))).catch(console.error);
+        } else {
+          setJoinStatus('idle');
+        }
+      });
+
+      conn.on('LateJoinApproved', (game) => {
+        navigate(`/game/${roomCode}`);
+      });
+
+      conn.on('LateJoinRejected', () => {
+        alert("Chủ phòng đã từ chối yêu cầu tham gia của bạn.");
+        setJoinStatus('idle');
+      });
+
+      conn.on('PlayerJoined', (p) => {
+        if (p.connectionId === conn.connectionId) setJoinStatus('joined');
+      });
+
       conn.onreconnected(() => {
         const sc = localStorage.getItem('selectedChar');
         if (sc) {
@@ -150,8 +172,8 @@ export default function PlayerLobbyPage() {
     localStorage.setItem('selectedChar', String(selectedChar));
 
     // Player joins the room as an active player (creates PlayerState on server)
+    setJoinStatus('waiting');
     await connection.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar);
-    setJoined(true);
   };
 
   const emojiMap = { 1: '🐘', 2: '🐇', 3: '🦊', 4: '🐢' };
@@ -168,7 +190,7 @@ export default function PlayerLobbyPage() {
         animate={{ opacity: 1, y: 0 }}
         className="relative z-10 glass-panel rounded-2xl p-4 md:p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
       >
-        {!joined ? (
+        {joinStatus === 'idle' ? (
           <>
             <div className="text-center mb-6">
               <h2 className="text-2xl font-display font-bold mb-1">Chọn Nhân Vật</h2>
@@ -197,6 +219,16 @@ export default function PlayerLobbyPage() {
               {selectedChar ? 'Xác Nhận & Vào Phòng Chờ' : 'Chọn nhân vật trước'}
             </button>
           </>
+        ) : joinStatus === 'requesting' ? (
+          <div className="text-center py-12">
+            <h2 className="text-3xl font-display font-bold mb-2">Đang xin phép...</h2>
+            <p className="text-white/40 mb-2">Đang gửi yêu cầu tham gia đến Host.</p>
+            <div className="mt-8 flex justify-center gap-1.5">
+              {[0, 1, 2].map(i => (
+                <motion.div key={i} animate={{ scale: [1, 1.4, 1], opacity: [0.3, 1, 0.3] }} transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }} className="w-2 h-2 bg-primary rounded-full" />
+              ))}
+            </div>
+          </div>
         ) : (
           <div className="text-center py-12">
             <motion.div
