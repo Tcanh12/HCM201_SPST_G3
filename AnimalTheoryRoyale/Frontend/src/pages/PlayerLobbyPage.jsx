@@ -39,6 +39,13 @@ function CharacterCard({ char, selected, onClick }) {
   };
   const colors = colorMap[char.id] || colorMap[1];
 
+  const descMap = {
+    1: "Vai trò: Tanker. Máu cao, chậm. Chiêu cuối: Dậm Đất - tạo sóng chấn động, làm chậm và gây sát thương xung quanh.",
+    2: "Vai trò: Tốc độ. Máu thấp, cực nhanh. Chiêu cuối: Lướt Nhanh - lướt cực nhanh theo hướng nhìn để né tránh.",
+    3: "Vai trò: Chiến thuật. Chỉ số cân bằng. Chiêu cuối: Bẫy Ảo Ảnh - đặt bẫy tàng hình gây mất máu và làm chậm.",
+    4: "Vai trò: Phòng thủ. Máu và giáp cao. Chiêu cuối: Mai Rùa - tạo khiên bảo vệ giảm sát thương nhận vào."
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -82,10 +89,13 @@ function CharacterCard({ char, selected, onClick }) {
           </div>
         </div>
 
-        {/* Skill name */}
-        <div className="flex items-center gap-1.5 mb-3 px-2.5 py-1.5 bg-white/5 rounded-lg border border-white/5">
-          <Zap className="w-3 h-3 text-amber-400" />
-          <span className="text-xs font-bold text-amber-400">{char.skillName}</span>
+        {/* Skill name & Description */}
+        <div className="mb-3 p-2 bg-white/5 rounded-lg border border-white/5">
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <Zap className="w-3 h-3 text-amber-400" />
+            <span className="text-xs font-bold text-amber-400">{char.skillName}</span>
+          </div>
+          <p className="text-[10px] text-gray-400 leading-snug">{descMap[char.id]}</p>
         </div>
 
         {/* Stat bars */}

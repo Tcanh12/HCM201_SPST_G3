@@ -11,6 +11,7 @@ import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import { motion, AnimatePresence } from 'framer-motion';
 import API_HOST from '../config';
+import SettingsModal from '../components/SettingsModal';
 
 export default function GamePage() {
   const { roomCode } = useParams();
@@ -21,6 +22,8 @@ export default function GamePage() {
   const [myConnectionId, setMyConnectionId] = useState(null);
   const [question, setQuestion] = useState(null);
   const [answerResult, setAnswerResult] = useState(null);
+  const [connectionState, setConnectionState] = useState('connecting'); // connecting, connected, reconnecting, disconnected
+  const [showSettings, setShowSettings] = useState(false);
 
   const user = JSON.parse(localStorage.getItem('user') || '{}');
   const role = localStorage.getItem('role') || 'player';
@@ -34,6 +37,7 @@ export default function GamePage() {
   const touchMoveRef = useRef({ x: 0, y: 0 });
   const touchRotateRef = useRef(0);
   const touchShootRef = useRef(false);
+  const touchJumpRef = useRef(false);
   const touchSkillRef = useRef(null);
   const aimingSkillRef = useRef(null);
 
@@ -50,11 +54,11 @@ export default function GamePage() {
 
       if (role === 'host') {
         conn.invoke('JoinRoomAsHost', roomCode)
-          .then(() => setConnected(true))
+          .then(() => { setConnected(true); setConnectionState('connected'); })
           .catch(err => console.error('Host failed to re-join:', err));
       } else {
         conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar)
-          .then(() => setConnected(true))
+          .then(() => { setConnected(true); setConnectionState('connected'); })
           .catch(err => console.error('Failed to re-join:', err));
       }
 
@@ -77,13 +81,25 @@ export default function GamePage() {
         navigate(`/result/${roomCode}`);
       });
 
+      conn.onreconnecting((error) => {
+        console.warn('Connection lost, attempting to reconnect...', error);
+        setConnectionState('reconnecting');
+      });
+
       conn.onreconnected(() => {
+        console.log('Reconnected successfully.');
+        setConnectionState('connected');
         setMyConnectionId(conn.connectionId);
         if (role === 'host') {
           conn.invoke('JoinRoomAsHost', roomCode).catch(console.error);
         } else {
           conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar).catch(console.error);
         }
+      });
+
+      conn.onclose((error) => {
+        console.error('Connection permanently closed', error);
+        setConnectionState('disconnected');
       });
     }).catch(err => console.error('Connection failed:', err));
 
@@ -121,6 +137,10 @@ export default function GamePage() {
     touchShootRef.current = true;
   }, []);
 
+  const handleTouchJump = useCallback(() => {
+    touchJumpRef.current = true;
+  }, []);
+
   const handleSkill = useCallback((type) => {
     touchSkillRef.current = type;
   }, []);
@@ -129,7 +149,7 @@ export default function GamePage() {
     aimingSkillRef.current = type;
   }, []);
 
-  if (!connected) {
+  if (!connected || connectionState === 'connecting') {
     return (
       <div className="w-full h-full flex items-center justify-center bg-dark">
         <div className="text-center">
@@ -143,6 +163,40 @@ export default function GamePage() {
 
   return (
     <div className="relative w-full h-full bg-black" style={{ touchAction: 'none' }}>
+      {/* Reconnecting Overlay */}
+      <AnimatePresence>
+        {connectionState === 'reconnecting' && (
+          <motion.div 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="absolute inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          >
+            <div className="text-center text-white">
+              <div className="text-6xl mb-4 animate-spin">🔄</div>
+              <h2 className="text-3xl font-black mb-2 text-yellow-400">ĐANG KẾT NỐI LẠI...</h2>
+              <p className="text-gray-300">Vui lòng chờ, hệ thống đang khôi phục phiên của bạn.</p>
+            </div>
+          </motion.div>
+        )}
+        {connectionState === 'disconnected' && (
+          <motion.div 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="absolute inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          >
+            <div className="text-center text-white">
+              <div className="text-6xl mb-4">❌</div>
+              <h2 className="text-3xl font-black mb-2 text-red-500">MẤT KẾT NỐI</h2>
+              <p className="text-gray-300 mb-6">Không thể duy trì kết nối với máy chủ.</p>
+              <button 
+                onClick={() => window.location.reload()}
+                className="px-6 py-3 bg-red-600 hover:bg-red-500 rounded-xl font-bold text-lg transition-all"
+              >
+                TẢI LẠI TRANG
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* 3D Canvas */}
       <div className="absolute inset-0">
         <Canvas shadows={!isMobile} dpr={isMobile ? [1, 1.2] : [1, 2]} gl={{ powerPreference: "high-performance", antialias: !isMobile }} camera={{ position: [0, 40, 40], fov: 50 }}>
@@ -157,6 +211,7 @@ export default function GamePage() {
             touchMoveRef={touchMoveRef}
             touchRotateRef={touchRotateRef}
             touchShootRef={touchShootRef}
+            touchJumpRef={touchJumpRef}
             touchSkillRef={touchSkillRef}
             aimingSkillRef={aimingSkillRef}
           />
@@ -182,8 +237,22 @@ export default function GamePage() {
           onMove={handleTouchMove}
           onRotate={handleTouchRotate}
           onShoot={handleTouchShoot}
+          onJump={handleTouchJump}
         />
       )}
+
+      {/* Settings Button */}
+      <button 
+        onClick={(e) => { e.stopPropagation(); setShowSettings(true); }}
+        className="absolute top-4 right-4 z-[200] bg-black/60 hover:bg-black text-white p-3 rounded-full backdrop-blur-sm border border-white/20 transition-all shadow-lg"
+      >
+        <span className="text-xl">⚙️</span>
+      </button>
+
+      {/* Settings Modal */}
+      <AnimatePresence>
+        {showSettings && <SettingsModal onClose={() => setShowSettings(false)} />}
+      </AnimatePresence>
 
       {/* Answer Result Toast */}
       <AnimatePresence>

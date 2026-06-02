@@ -132,6 +132,16 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
   const hpPercent = Math.max(0, myPlayer.hp / (myPlayer.maxHP || 100) * 100);
   const hpColor = hpPercent > 60 ? '#10B981' : hpPercent > 30 ? '#F59E0B' : '#EF4444';
 
+  const getUltTooltip = (charId) => {
+    switch(charId) {
+      case 1: return "Dậm Đất (Voi): Tạo sóng chấn động gây sát thương và làm chậm đối thủ.";
+      case 2: return "Lướt Nhanh (Thỏ): Lao nhanh theo hướng nhìn để né đòn.";
+      case 3: return "Bẫy Ảo Ảnh (Cáo): Đặt bẫy tàng hình, địch dẫm phải sẽ mất máu và bị làm chậm.";
+      case 4: return "Mai Rùa (Rùa): Tạo khiên bảo vệ chặn sát thương nhận vào trong vài giây.";
+      default: return "Kỹ năng tối thượng riêng biệt của từng loài động vật.";
+    }
+  };
+
   const handlePointerDown = (e, type, cd) => {
     e.preventDefault();
     if (cd <= 0 && !myPlayer.isStunned && !myPlayer.isDizzy && onAiming) onAiming(type);
@@ -311,7 +321,7 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
         />
         <SkillButton
           name="Ultimate" icon="🔥" cd={myPlayer.ultCD || 0} keyBind="4" type="ult" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
-          tooltip="Kỹ năng tối thượng riêng biệt của từng loài động vật."
+          tooltip={getUltTooltip(myPlayer.characterId)}
           onPointerDown={(e) => handlePointerDown(e, 'ult', myPlayer.ultCD || 0)}
           onPointerUp={(e) => handlePointerUp(e, 'ult', myPlayer.ultCD || 0)}
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}

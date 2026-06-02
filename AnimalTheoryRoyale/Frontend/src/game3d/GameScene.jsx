@@ -12,7 +12,7 @@ import useMouse from '../hooks/useMouse';
 
 export default function GameScene({
   gameState, connection, roomCode, myConnectionId, onClaimQuestion,
-  isMobile, touchMoveRef, touchRotateRef, touchShootRef, touchSkillRef, aimingSkillRef
+  isMobile, touchMoveRef, touchRotateRef, touchShootRef, touchJumpRef, touchSkillRef, aimingSkillRef
 }) {
   const players = gameState?.players || [];
   const projectiles = gameState?.projectiles || [];
@@ -37,6 +37,8 @@ export default function GameScene({
   const dizzyIndRef = useRef();
   const ultIndRef = useRef();
   const knockbackVelocity = useRef({ x: 0, z: 0 });
+  const verticalVelocity = useRef(0);
+  const isGrounded = useRef(true);
 
   useEffect(() => {
     if (!connection) return;
@@ -56,23 +58,34 @@ export default function GameScene({
     if (!myPlayer) return;
 
     if (!initialized.current) {
-      localPos.current.set(myPlayer.x, 0, myPlayer.z);
+      localPos.current.set(myPlayer.x, myPlayer.y || 0, myPlayer.z);
       initialized.current = true;
     }
 
     // === CAMERA ROTATION ===
+    const sensitivity = parseFloat(localStorage.getItem('mouseSensitivity') || '1.0');
+    const invertY = localStorage.getItem('invertY') === 'true' ? -1 : 1;
+
     if (isMobile) {
       // Touch rotation
       if (touchRotateRef?.current) {
-        cameraAngle.current -= touchRotateRef.current * 0.015;
+        cameraAngle.current -= touchRotateRef.current * 0.015 * sensitivity;
         touchRotateRef.current = 0;
       }
     } else {
-      // Mouse orbit (hold to rotate)
       const m = mouse.current;
-      if (m.isDown) {
-        cameraAngle.current -= m.dx * 0.005;
-        cameraPitch.current = Math.max(0.2, Math.min(1.2, cameraPitch.current - m.dy * 0.005));
+      const isLocked = document.pointerLockElement !== null;
+      const isFPS = gameState?.cameraMode === 'FirstPerson';
+
+      // In FPS, if locked, we rotate freely. Otherwise, click-drag (ThirdPerson or unlocked FPS).
+      if ((isFPS && isLocked) || (!isFPS && m.isDown) || (isFPS && m.isDown)) {
+        cameraAngle.current -= m.dx * 0.002 * sensitivity;
+        
+        let newPitch = cameraPitch.current - (m.dy * 0.002 * sensitivity * invertY);
+        // Wider pitch range for FPS mode
+        const minPitch = isFPS ? -1.5 : 0.2; 
+        const maxPitch = isFPS ? 1.5 : 1.2;
+        cameraPitch.current = Math.max(minPitch, Math.min(maxPitch, newPitch));
       }
       m.dx = 0; m.dy = 0;
     }
@@ -130,10 +143,27 @@ export default function GameScene({
       knockbackVelocity.current.z *= 0.9;
     }
 
-    if (len > 0 || Math.abs(knockbackVelocity.current.x) > 1) {
+    // === JUMPING & GRAVITY ===
+    if (!isGrounded.current) {
+      verticalVelocity.current -= 60 * delta; // gravity
+      localPos.current.y += verticalVelocity.current * delta;
+      if (localPos.current.y <= 0) {
+        localPos.current.y = 0;
+        verticalVelocity.current = 0;
+        isGrounded.current = true;
+      }
+    }
+
+    if ((keys[' '] || (isMobile && touchJumpRef?.current)) && isGrounded.current && !myPlayer.isStunned && !myPlayer.isDizzy) {
+      verticalVelocity.current = 25; // jump strength
+      isGrounded.current = false;
+      if (touchJumpRef) touchJumpRef.current = false; // reset
+    }
+
+    if (len > 0 || Math.abs(knockbackVelocity.current.x) > 1 || !isGrounded.current) {
       const now = Date.now();
       if (now - lastMoveSent.current > 100) {
-        connection.invoke('PlayerMove', roomCode, localPos.current.x, 0, localPos.current.z, cameraAngle.current)
+        connection.invoke('PlayerMove', roomCode, localPos.current.x, localPos.current.y, localPos.current.z, cameraAngle.current)
           .catch(() => {});
         lastMoveSent.current = now;
       }
@@ -241,7 +271,7 @@ export default function GameScene({
     
     if (mode === 'FirstPerson') {
       const cx = localPos.current.x;
-      const cy = 2.5; // eye level
+      const cy = localPos.current.y + 2.5; // eye level respects jump
       const cz = localPos.current.z;
       camera.position.lerp(new THREE.Vector3(cx, cy, cz), 20 * delta);
       
@@ -254,10 +284,10 @@ export default function GameScene({
       const dist = cameraDistance.current;
       const pitch = cameraPitch.current;
       const cx = localPos.current.x + dist * Math.sin(angle) * Math.cos(pitch);
-      const cy = dist * Math.sin(pitch);
+      const cy = localPos.current.y + dist * Math.sin(pitch);
       const cz = localPos.current.z + dist * Math.cos(angle) * Math.cos(pitch);
       camera.position.lerp(new THREE.Vector3(cx, cy, cz), 8 * delta);
-      camera.lookAt(localPos.current.x, 1, localPos.current.z);
+      camera.lookAt(localPos.current.x, localPos.current.y + 1, localPos.current.z);
     }
   }
 
@@ -276,6 +306,21 @@ export default function GameScene({
   const handleWheel = useCallback((e) => {
     cameraDistance.current = Math.max(15, Math.min(80, cameraDistance.current + e.deltaY * 0.05));
   }, []);
+
+  // Helper to request pointer lock on click if FPS mode
+  useEffect(() => {
+    if (isMobile || gameState?.cameraMode !== 'FirstPerson') return;
+    
+    const handleClick = (e) => {
+      if (document.pointerLockElement !== document.body) {
+        document.body.requestPointerLock().catch(() => {});
+      }
+    };
+    
+    // We add it to the canvas container (or window)
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, [isMobile, gameState?.cameraMode]);
 
   return (
     <group onPointerDown={handleShoot} onWheel={handleWheel}>

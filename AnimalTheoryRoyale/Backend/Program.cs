@@ -39,15 +39,23 @@ if (!string.IsNullOrEmpty(connectionString))
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-// Configure CORS for Frontend (allow LAN access)
+// Configure CORS for Frontend (allow LAN access and Vercel production)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.SetIsOriginAllowed(_ => true) // Allow any origin for LAN play
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        policy
+            .WithOrigins(
+                "https://battle-of-knowledge-sable.vercel.app",
+                "https://battle-of-knowledge.vercel.app",
+                "http://localhost:5173",
+                "http://localhost:3000",
+                "http://127.0.0.1:5173"
+            )
+            .SetIsOriginAllowed(origin => true) // Keep this for local IP LAN play, reflects origin
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
     });
 });
 

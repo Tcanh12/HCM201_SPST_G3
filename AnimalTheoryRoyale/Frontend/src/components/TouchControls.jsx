@@ -1,6 +1,6 @@
 import { useRef, useCallback, useState } from 'react';
 
-export default function TouchControls({ onMove, onRotate, onShoot }) {
+export default function TouchControls({ onMove, onRotate, onShoot, onJump }) {
   const joystickRef = useRef(null);
   const [joystickActive, setJoystickActive] = useState(false);
   const [joystickPos, setJoystickPos] = useState({ x: 0, y: 0 });
@@ -122,6 +122,25 @@ export default function TouchControls({ onMove, onRotate, onShoot }) {
         🎯
       </div>
 
+      {/* Jump button */}
+      <div
+        style={{
+          position: 'absolute', bottom: '200px', right: '50px',
+          width: '60px', height: '60px',
+          borderRadius: '50%',
+          background: 'rgba(16, 185, 129, 0.4)',
+          border: '3px solid rgba(16, 185, 129, 0.7)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          pointerEvents: 'auto',
+          touchAction: 'none',
+          fontSize: '24px',
+          userSelect: 'none',
+        }}
+        onTouchStart={(e) => { e.preventDefault(); if (onJump) onJump(); }}
+      >
+        🚀
+      </div>
+
       {/* Labels */}
       <div style={{
         position: 'absolute', bottom: '70px', left: '55px',
@@ -131,6 +150,10 @@ export default function TouchControls({ onMove, onRotate, onShoot }) {
         position: 'absolute', bottom: '80px', right: '35px',
         color: 'rgba(255,255,255,0.3)', fontSize: '10px', pointerEvents: 'none',
       }}>BẮN</div>
+      <div style={{
+        position: 'absolute', bottom: '180px', right: '65px',
+        color: 'rgba(255,255,255,0.3)', fontSize: '10px', pointerEvents: 'none',
+      }}>NHẢY</div>
     </div>
   );
 }

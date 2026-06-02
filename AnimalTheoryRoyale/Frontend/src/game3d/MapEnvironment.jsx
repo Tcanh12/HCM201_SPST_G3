@@ -46,19 +46,19 @@ export default function MapEnvironment() {
 
   // Hills (raised terrain)
   const hills = [];
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 25; i++) {
     hills.push({
-      x: (rand() - 0.5) * MAP_SIZE * 0.7,
-      z: (rand() - 0.5) * MAP_SIZE * 0.7,
-      radius: 15 + rand() * 30,
-      height: 3 + rand() * 6,
+      x: (rand() - 0.5) * MAP_SIZE * 0.9,
+      z: (rand() - 0.5) * MAP_SIZE * 0.9,
+      radius: 20 + rand() * 40,
+      height: 4 + rand() * 12,
     });
   }
 
   return (
     <group>
       {/* Main ground plane */}
-      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]}>
+      <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
         <planeGeometry args={[MAP_SIZE, MAP_SIZE, 100, 100]} />
         <meshStandardMaterial color="#2d5016" roughness={0.9} />
       </mesh>
@@ -119,15 +119,38 @@ export default function MapEnvironment() {
         </group>
       ))}
 
-      {/* Water features */}
-      <mesh position={[150, 0.05, -150]} rotation={[-Math.PI / 2, 0, 0]}>
-        <circleGeometry args={[40, 32]} />
-        <meshStandardMaterial color="#1E6F8E" transparent opacity={0.7} roughness={0.1} metalness={0.3} />
+      {/* === RIVER === */}
+      <mesh position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 4]} receiveShadow>
+        <planeGeometry args={[MAP_SIZE * 1.5, 60, 32, 4]} />
+        <meshStandardMaterial color="#0284c7" transparent opacity={0.8} roughness={0.1} metalness={0.4} />
       </mesh>
-      <mesh position={[-200, 0.05, 200]} rotation={[-Math.PI / 2, 0, 0]}>
-        <circleGeometry args={[30, 32]} />
-        <meshStandardMaterial color="#1E6F8E" transparent opacity={0.7} roughness={0.1} metalness={0.3} />
-      </mesh>
+
+      {/* === BRIDGE === */}
+      <group position={[0, 0, 0]} rotation={[0, Math.PI / 4, 0]}>
+        {/* Bridge floor */}
+        <mesh position={[0, 1, 0]} castShadow receiveShadow>
+          <boxGeometry args={[16, 1, 80]} />
+          <meshStandardMaterial color="#5C4033" roughness={0.9} />
+        </mesh>
+        {/* Bridge railings */}
+        <mesh position={[-7.5, 2, 0]} castShadow>
+          <boxGeometry args={[1, 1, 80]} />
+          <meshStandardMaterial color="#4a332a" />
+        </mesh>
+        <mesh position={[7.5, 2, 0]} castShadow>
+          <boxGeometry args={[1, 1, 80]} />
+          <meshStandardMaterial color="#4a332a" />
+        </mesh>
+        {/* Pillars */}
+        <mesh position={[0, -5, 30]} castShadow>
+          <cylinderGeometry args={[2, 2, 12, 16]} />
+          <meshStandardMaterial color="#555555" />
+        </mesh>
+        <mesh position={[0, -5, -30]} castShadow>
+          <cylinderGeometry args={[2, 2, 12, 16]} />
+          <meshStandardMaterial color="#555555" />
+        </mesh>
+      </group>
 
       {/* Ambient lighting */}
       <fog attach="fog" args={['#1a1a2e', 200, 600]} />
