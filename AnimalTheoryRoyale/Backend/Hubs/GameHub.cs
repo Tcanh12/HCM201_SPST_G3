@@ -167,15 +167,15 @@ public class GameHub : Hub
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
         if (player.IsDead || player.IsEliminated || player.IsAnsweringQuestion || player.IsStunned || player.IsDizzy) return;
         
-        if (!Backend.Models.MapObstacles.IsPositionBlocked(x, z, 2.5f))
+        if (!Backend.Models.MapObstacles.IsPositionBlocked(x, z, 1.0f))
         {
             player.X = x; player.Z = z;
         }
-        else if (!Backend.Models.MapObstacles.IsPositionBlocked(x, player.Z, 2.5f))
+        else if (!Backend.Models.MapObstacles.IsPositionBlocked(x, player.Z, 1.0f))
         {
             player.X = x;
         }
-        else if (!Backend.Models.MapObstacles.IsPositionBlocked(player.X, z, 2.5f))
+        else if (!Backend.Models.MapObstacles.IsPositionBlocked(player.X, z, 1.0f))
         {
             player.Z = z;
         }

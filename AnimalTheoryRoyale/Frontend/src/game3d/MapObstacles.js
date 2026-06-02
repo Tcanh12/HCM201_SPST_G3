@@ -149,7 +149,7 @@ for (let i = 0; i < 25; i++) {
 export const MAP_OBSTACLES = obstacles;
 
 // Basic collision logic for Frontend
-export function isPositionBlocked(x, z, playerRadius = 2) {
+export function isPositionBlocked(x, z, playerRadius = 1.0) {
   // Map bounds
   if (Math.abs(x) > MAP_SIZE / 2 - 2 || Math.abs(z) > MAP_SIZE / 2 - 2) return true;
 

@@ -127,12 +127,12 @@ export default function GameScene({
       const nextX = localPos.current.x + stepX;
       const nextZ = localPos.current.z + stepZ;
 
-      if (!isPositionBlocked(nextX, nextZ, 2.5)) {
+      if (!isPositionBlocked(nextX, nextZ, 1.0)) {
         localPos.current.x = nextX;
         localPos.current.z = nextZ;
-      } else if (!isPositionBlocked(nextX, localPos.current.z, 2.5)) {
+      } else if (!isPositionBlocked(nextX, localPos.current.z, 1.0)) {
         localPos.current.x = nextX;
-      } else if (!isPositionBlocked(localPos.current.x, nextZ, 2.5)) {
+      } else if (!isPositionBlocked(localPos.current.x, nextZ, 1.0)) {
         localPos.current.z = nextZ;
       }
     }
@@ -142,7 +142,7 @@ export default function GameScene({
       const kx = knockbackVelocity.current.x * delta;
       const kz = knockbackVelocity.current.z * delta;
       
-      if (!isPositionBlocked(localPos.current.x + kx, localPos.current.z + kz, 2.5)) {
+      if (!isPositionBlocked(localPos.current.x + kx, localPos.current.z + kz, 1.0)) {
         localPos.current.x += kx;
         localPos.current.z += kz;
       } else {

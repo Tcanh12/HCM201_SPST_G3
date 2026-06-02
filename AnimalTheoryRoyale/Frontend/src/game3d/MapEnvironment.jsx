@@ -40,7 +40,7 @@ export default function MapEnvironment() {
         <group key={o.id} position={[o.x, 0, o.z]}>
           {/* Trunk */}
           <mesh position={[0, o.renderScale * 1.2, 0]} castShadow>
-            <cylinderGeometry args={[0.3, 0.5, o.renderScale * 2.5, 6]} />
+            <cylinderGeometry args={[0.3 * o.renderScale, 0.5 * o.renderScale, o.renderScale * 2.5, 6]} />
             <meshStandardMaterial color="#5C4033" roughness={0.9} />
           </mesh>
           {/* Canopy */}

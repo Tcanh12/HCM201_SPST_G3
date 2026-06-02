@@ -95,7 +95,7 @@ namespace Backend.Models
             return Math.Abs(localX) <= 8 && Math.Abs(localZ) <= 40;
         }
 
-        public static bool IsPositionBlocked(float x, float z, float playerRadius = 2.5f)
+        public static bool IsPositionBlocked(float x, float z, float playerRadius = 1.0f)
         {
             if (Math.Abs(x) > MAP_SIZE / 2 - 2 || Math.Abs(z) > MAP_SIZE / 2 - 2) return true;
 
