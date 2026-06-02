@@ -319,7 +319,7 @@ public class GameHub : Hub
         {
             cd = 24;
             string trapId = Guid.NewGuid().ToString();
-            game.Items.TryAdd(trapId, new ItemState { Id = trapId, Type = "TrickTrap", X = me.X, Z = me.Z, Value = 30, IsActive = true, RespawnTime = DateTime.UtcNow.AddSeconds(20) });
+            game.Items.TryAdd(trapId, new ItemState { Id = trapId, Type = "TrickTrap", X = me.X, Z = me.Z, Value = 30, IsActive = true, RespawnTime = DateTime.UtcNow.AddSeconds(20), OwnerConnectionId = me.ConnectionId });
             await Clients.Group(roomCode).SendAsync("SkillUsed", new { type = "ult_cao", by = me.ConnectionId, username = me.Username, trapId = trapId });
         }
         else if (me.CharacterId == 4) // Rùa: Shell Shield

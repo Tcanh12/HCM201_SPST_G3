@@ -495,6 +495,8 @@ public class GameEngine : BackgroundService
 
                 if (item.Type == "TrickTrap")
                 {
+                    if (item.OwnerConnectionId == p.ConnectionId) continue; // Fox doesn't trigger its own trap
+
                     if (distSq < 4.0f) // 2m trap trigger
                     {
                         item.IsActive = false;
