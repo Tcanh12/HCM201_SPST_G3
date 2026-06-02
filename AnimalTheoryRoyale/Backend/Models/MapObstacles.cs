@@ -99,40 +99,7 @@ namespace Backend.Models
         {
             if (Math.Abs(x) > MAP_SIZE / 2 - 2 || Math.Abs(z) > MAP_SIZE / 2 - 2) return true;
 
-            foreach (var obs in Obstacles)
-            {
-                if (!obs.Blocking) continue;
-
-                if (obs.Type == "circle")
-                {
-                    float dx = x - obs.X;
-                    float dz = z - obs.Z;
-                    float dist = MathF.Sqrt(dx * dx + dz * dz);
-                    if (dist < obs.Radius + playerRadius) return true;
-                }
-                else if (obs.Type == "box")
-                {
-                    float rot = obs.Rotation;
-                    float cosA = MathF.Cos(-rot);
-                    float sinA = MathF.Sin(-rot);
-
-                    float dx = x - obs.X;
-                    float dz = z - obs.Z;
-
-                    float localX = dx * cosA - dz * sinA;
-                    float localZ = dx * sinA + dz * cosA;
-
-                    float halfW = obs.Width / 2 + playerRadius;
-                    float halfD = obs.Depth / 2 + playerRadius;
-
-                    if (Math.Abs(localX) < halfW && Math.Abs(localZ) < halfD)
-                    {
-                        if (obs.IsWater && IsOnBridge(x, z)) continue;
-                        return true;
-                    }
-                }
-            }
-
+            // USER REQUEST: Disable object collision, let players walk through objects
             return false;
         }
     }

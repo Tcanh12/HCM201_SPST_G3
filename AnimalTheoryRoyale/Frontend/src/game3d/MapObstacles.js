@@ -153,42 +153,6 @@ export function isPositionBlocked(x, z, playerRadius = 1.0) {
   // Map bounds
   if (Math.abs(x) > MAP_SIZE / 2 - 2 || Math.abs(z) > MAP_SIZE / 2 - 2) return true;
 
-  // Check each obstacle
-  for (const obs of MAP_OBSTACLES) {
-    if (!obs.blocking) continue;
-
-    if (obs.type === 'circle') {
-      const dx = x - obs.x;
-      const dz = z - obs.z;
-      const dist = Math.sqrt(dx * dx + dz * dz);
-      if (dist < obs.radius + playerRadius) {
-        return true;
-      }
-    } 
-    else if (obs.type === 'box') {
-      // Un-rotate player point around box center
-      const rot = obs.rotation || 0;
-      const cosA = Math.cos(-rot);
-      const sinA = Math.sin(-rot);
-      
-      const dx = x - obs.x;
-      const dz = z - obs.z;
-      
-      const localX = dx * cosA - dz * sinA;
-      const localZ = dx * sinA + dz * cosA;
-      
-      const halfW = obs.width / 2 + playerRadius;
-      const halfD = obs.depth / 2 + playerRadius;
-      
-      if (Math.abs(localX) < halfW && Math.abs(localZ) < halfD) {
-        // Exception: Water block but we are on the bridge
-        if (obs.isWater && isOnBridge(x, z)) {
-          continue; // Allow moving over water IF on bridge
-        }
-        return true;
-      }
-    }
-  }
-  
+  // USER REQUEST: Disable object collision, let players walk through objects
   return false;
 }
