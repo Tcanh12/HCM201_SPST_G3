@@ -14,6 +14,7 @@ import TheoryHomePage from './pages/theory/HomePage';
 import AboutPage from './pages/theory/AboutPage';
 import ChaptersPage from './pages/theory/ChaptersPage';
 import ChapterDetailPage from './pages/theory/ChapterDetailPage';
+import ConceptMapPage from './pages/theory/ConceptMapPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="chapters" element={<ChaptersPage />} />
           <Route path="chapters/:chapterId" element={<ChapterDetailPage />} />
+          <Route path="concept-map" element={<ConceptMapPage />} />
           {/* We will add more theory routes here later */}
         </Route>
 

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "tu-tuong-ho-chi-minh",
+    "title": "Tư tưởng Hồ Chí Minh",
+    "chapter": "chuong-1",
+    "shortDescription": "Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam.",
+    "content": "Tư tưởng Hồ Chí Minh là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác – Lênin vào điều kiện cụ thể của Việt Nam, đồng thời kế thừa truyền thống dân tộc và tiếp thu tinh hoa văn hóa nhân loại.",
+    "relatedConcepts": ["chu-nghia-mac-lenin", "truyen-thong-dan-toc"],
+    "level": 0
+  },
+  {
+    "id": "phuong-phap-nghien-cuu",
+    "title": "Khái niệm & Phương pháp",
+    "chapter": "chuong-1",
+    "shortDescription": "Đối tượng và phương pháp nghiên cứu tư tưởng Hồ Chí Minh.",
+    "content": "Gồm các nguyên tắc: Thống nhất lý luận thực tiễn, quan điểm lịch sử cụ thể, toàn diện và hệ thống.",
+    "relatedConcepts": [],
+    "level": 1,
+    "parentId": "tu-tuong-ho-chi-minh"
+  },
+  {
+    "id": "co-so-hinh-thanh",
+    "title": "Cơ sở hình thành",
+    "chapter": "chuong-2",
+    "shortDescription": "Các nguồn gốc hình thành tư tưởng Hồ Chí Minh.",
+    "content": "Hình thành từ truyền thống dân tộc, tinh hoa văn hóa nhân loại, chủ nghĩa Mác-Lênin và phẩm chất cá nhân xuất chúng.",
+    "relatedConcepts": ["chu-nghia-mac-lenin"],
+    "level": 1,
+    "parentId": "tu-tuong-ho-chi-minh"
+  },
+  {
+    "id": "doc-lap-dan-toc-cnxh",
+    "title": "Độc lập dân tộc & CNXH",
+    "chapter": "chuong-3",
+    "shortDescription": "Mối quan hệ giữa độc lập dân tộc và con đường đi lên CNXH.",
+    "content": "Độc lập dân tộc là tiền đề, CNXH là con đường bảo đảm vững chắc cho độc lập dân tộc. Cả hai gắn bó mật thiết.",
+    "relatedConcepts": [],
+    "level": 1,
+    "parentId": "tu-tuong-ho-chi-minh"
+  },
+  {
+    "id": "dang-nha-nuoc",
+    "title": "Đảng & Nhà nước",
+    "chapter": "chuong-4",
+    "shortDescription": "Xây dựng Đảng trong sạch, Nhà nước của dân, do dân, vì dân.",
+    "content": "Đảng lãnh đạo cách mạng, Nhà nước là công cụ quyền lực của nhân dân, phục vụ nhân dân.",
+    "relatedConcepts": [],
+    "level": 1,
+    "parentId": "tu-tuong-ho-chi-minh"
+  },
+  {
+    "id": "dai-doan-ket",
+    "title": "Đại đoàn kết",
+    "chapter": "chuong-5",
+    "shortDescription": "Đoàn kết dân tộc và đoàn kết quốc tế.",
+    "content": "Đoàn kết là sức mạnh vô địch. Đoàn kết toàn dân trên cơ sở liên minh công-nông-trí, kết hợp sức mạnh dân tộc và thời đại.",
+    "relatedConcepts": [],
+    "level": 1,
+    "parentId": "tu-tuong-ho-chi-minh"
+  },
+  {
+    "id": "van-hoa-dao-duc",
+    "title": "Văn hóa, Đạo đức, Con người",
+    "chapter": "chuong-6",
+    "shortDescription": "Quan điểm về văn hóa và đạo đức cách mạng.",
+    "content": "Văn hóa là mặt trận, con người là trung tâm. Đạo đức cách mạng cần: Cần, kiệm, liêm, chính, chí công vô tư.",
+    "relatedConcepts": ["can", "kiem", "liem", "chinh"],
+    "level": 1,
+    "parentId": "tu-tuong-ho-chi-minh"
+  },
+  {
+    "id": "chu-nghia-mac-lenin",
+    "title": "Chủ nghĩa Mác - Lênin",
+    "chapter": "chuong-2",
+    "shortDescription": "Cơ sở lý luận quan trọng nhất.",
+    "content": "Cung cấp thế giới quan và phương pháp luận khoa học để Hồ Chí Minh tìm ra con đường cứu nước.",
+    "relatedConcepts": [],
+    "level": 2,
+    "parentId": "co-so-hinh-thanh"
+  },
+  {
+    "id": "truyen-thong-dan-toc",
+    "title": "Truyền thống dân tộc",
+    "chapter": "chuong-2",
+    "shortDescription": "Chủ nghĩa yêu nước Việt Nam.",
+    "content": "Là cội nguồn sâu xa nhất, động lực mạnh mẽ nhất thúc đẩy Hồ Chí Minh ra đi tìm đường cứu nước.",
+    "relatedConcepts": [],
+    "level": 2,
+    "parentId": "co-so-hinh-thanh"
+  },
+  {
+    "id": "can",
+    "title": "Cần",
+    "chapter": "chuong-6",
+    "shortDescription": "Lao động cần cù, siêng năng.",
+    "content": "Lao động có kế hoạch, sáng tạo, năng suất cao vì lợi ích chung.",
+    "relatedConcepts": [],
+    "level": 2,
+    "parentId": "van-hoa-dao-duc"
+  },
+  {
+    "id": "kiem",
+    "title": "Kiệm",
+    "chapter": "chuong-6",
+    "shortDescription": "Tiết kiệm, không xa xỉ.",
+    "content": "Tiết kiệm thời gian, sức lao động, của cải của dân và nước.",
+    "relatedConcepts": [],
+    "level": 2,
+    "parentId": "van-hoa-dao-duc"
+  },
+  {
+    "id": "liem",
+    "title": "Liêm",
+    "chapter": "chuong-6",
+    "shortDescription": "Trong sạch, không tham lam.",
+    "content": "Không tham địa vị, tiền tài, danh vọng. Quang minh chính đại.",
+    "relatedConcepts": [],
+    "level": 2,
+    "parentId": "van-hoa-dao-duc"
+  },
+  {
+    "id": "chinh",
+    "title": "Chính",
+    "chapter": "chuong-6",
+    "shortDescription": "Thẳng thắn, đứng đắn.",
+    "content": "Đối với mình không tự kiêu; đối với người không nịnh hót, khinh khi; đối với việc để việc công lên trên hết.",
+    "relatedConcepts": [],
+    "level": 2,
+    "parentId": "van-hoa-dao-duc"
+  }
+]
