@@ -48,6 +48,7 @@ builder.Services.AddCors(options =>
             .WithOrigins(
                 "https://battle-of-knowledge-sable.vercel.app",
                 "https://battle-of-knowledge.vercel.app",
+                "https://hcm-201-spst-g3.vercel.app",
                 "http://localhost:5173",
                 "http://localhost:3000",
                 "http://127.0.0.1:5173"
@@ -60,7 +61,8 @@ builder.Services.AddCors(options =>
 });
 
 // Listen on all interfaces for LAN play
-builder.WebHost.UseUrls("http://0.0.0.0:5000");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 // Add SignalR
 builder.Services.AddSignalR().AddMessagePackProtocol();

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnimalTheoryRoyale")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b72f8c885c2246d87e29ff7989e25e63835041a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47bc50fa11166b341b2070d7b438369cfa57675e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnimalTheoryRoyale")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnimalTheoryRoyale")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
