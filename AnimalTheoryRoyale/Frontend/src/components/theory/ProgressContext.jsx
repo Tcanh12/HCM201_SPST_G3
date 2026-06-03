@@ -8,6 +8,7 @@ const initialProgress = {
   completedChapters: [],
   completedSections: {},
   viewedConcepts: [],
+  viewedTimelineEvents: [],
   completedCaseFiles: [],
   completedQuizzes: [],
   totalProgress: 0,
@@ -86,6 +87,16 @@ export function ProgressProvider({ children }) {
     });
   };
 
+  const markTimelineEventViewed = (eventId) => {
+    setProgress(prev => {
+      const viewedEvents = prev.viewedTimelineEvents || [];
+      if (!viewedEvents.includes(eventId)) {
+        return { ...prev, viewedTimelineEvents: [...viewedEvents, eventId] };
+      }
+      return prev;
+    });
+  };
+
   const markQuizCompleted = (quizId) => {
     setProgress(prev => {
       if (!prev.completedQuizzes.includes(quizId)) {
@@ -119,6 +130,7 @@ export function ProgressProvider({ children }) {
     markChapterCompleted,
     markConceptViewed,
     markCaseCompleted,
+    markTimelineEventViewed,
     markQuizCompleted,
     resetProgress,
     calculateChapterProgress,
