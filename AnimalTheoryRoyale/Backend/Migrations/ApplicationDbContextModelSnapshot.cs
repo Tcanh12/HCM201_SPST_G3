@@ -112,6 +112,72 @@ namespace AnimalTheoryRoyale.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Characters", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AnimalType = "Tanker",
+                            HitboxSize = 2,
+                            IconPath = "",
+                            InitialAmmo = 10,
+                            MaxHP = 150,
+                            ModelPath = "",
+                            MoveSpeed = 60,
+                            Name = "Voi",
+                            SkillCooldown = 30,
+                            SkillDescription = "",
+                            SkillDuration = 0,
+                            SkillName = "Lá Chắn Đại Ngàn"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AnimalType = "Speedster",
+                            HitboxSize = 1,
+                            IconPath = "",
+                            InitialAmmo = 8,
+                            MaxHP = 80,
+                            ModelPath = "",
+                            MoveSpeed = 130,
+                            Name = "Thỏ",
+                            SkillCooldown = 25,
+                            SkillDescription = "",
+                            SkillDuration = 0,
+                            SkillName = "Bứt Tốc"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AnimalType = "Strategist",
+                            HitboxSize = 1,
+                            IconPath = "",
+                            InitialAmmo = 10,
+                            MaxHP = 100,
+                            ModelPath = "",
+                            MoveSpeed = 110,
+                            Name = "Cáo",
+                            SkillCooldown = 45,
+                            SkillDescription = "",
+                            SkillDuration = 0,
+                            SkillName = "Mưu Trí"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AnimalType = "Defender",
+                            HitboxSize = 2,
+                            IconPath = "",
+                            InitialAmmo = 8,
+                            MaxHP = 130,
+                            ModelPath = "",
+                            MoveSpeed = 65,
+                            Name = "Rùa",
+                            SkillCooldown = 35,
+                            SkillDescription = "",
+                            SkillDuration = 0,
+                            SkillName = "Mai Rùa Bảo Vệ"
+                        });
                 });
 
             modelBuilder.Entity("AnimalTheoryRoyale.Models.GameResult", b =>
