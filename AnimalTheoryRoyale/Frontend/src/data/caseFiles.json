@@ -2,46 +2,89 @@
   {
     "id": "hoc-that-thi-that",
     "title": "Học thật, thi thật",
-    "summary": "Một ví dụ hiện đại về đạo đức cách mạng trong học tập.",
-    "tags": ["Đạo đức", "Trung thực", "Chống thành tích"],
-    "situation": "Một sinh viên không gian lận trong thi cử, không sao chép bài làm bằng AI để gian dối, và dám chịu trách nhiệm với kết quả học tập của mình dù điểm số có thể không hoàn hảo.",
-    "knowledge": "Biểu hiện của đạo đức cách mạng trong môi trường học đường. Thực hành chữ 'Chính' và 'Nói đi đôi với làm' của tư tưởng Hồ Chí Minh.",
-    "question": "Bạn sẽ làm gì nếu bạn bè xung quanh đều gian lận thi cử và được điểm cao hơn bạn?"
+    "summary": "Một tình huống về trung thực trong học tập.",
+    "tags": ["Đạo đức cách mạng", "Nói đi đôi với làm", "Trung thực"],
+    "situation": "Một sinh viên chuẩn bị thi cuối kỳ. Bạn bè gửi đáp án và rủ sử dụng tài liệu trái quy định. Sinh viên đứng trước lựa chọn: làm theo để có điểm cao hoặc trung thực với kết quả học tập của mình.",
+    "relatedConcepts": ["dao-duc-cach-mang", "noi-di-doi-voi-lam"],
+    "analysis": "Theo tư tưởng Hồ Chí Minh về đạo đức cách mạng, người học cần rèn luyện sự trung thực, trách nhiệm và tự giác. Học thật, thi thật là biểu hiện cụ thể của việc nói đi đôi với làm, không chạy theo thành tích giả. Chạy theo điểm số bằng cách gian lận là biểu hiện của sự suy thoái về đạo đức cá nhân.",
+    "lesson": "Trung thực trong học tập là nền tảng để hình thành nhân cách, năng lực thật và trách nhiệm với bản thân, gia đình, xã hội.",
+    "reflectionQuestion": "Nếu là sinh viên trong tình huống này, bạn sẽ chọn cách xử lý nào? Vì sao?"
   },
   {
     "id": "doan-ket-thoi-dai-so",
     "title": "Đoàn kết trong thời đại số",
-    "summary": "Tinh thần đại đoàn kết dân tộc trên môi trường mạng xã hội.",
-    "tags": ["Đại đoàn kết", "Văn hóa số", "Trách nhiệm công dân"],
-    "situation": "Trên môi trường mạng, tinh thần đại đoàn kết thể hiện qua việc không lan truyền thông tin chia rẽ, không kích động thù ghét, biết tôn trọng sự khác biệt vùng miền và cùng lan tỏa giá trị tích cực cho cộng đồng.",
-    "knowledge": "Trong tư tưởng Hồ Chí Minh, đại đoàn kết lấy lợi ích chung của dân tộc làm điểm tương đồng. Trên không gian mạng, bảo vệ hình ảnh đất nước và gắn kết cộng đồng mạng chính là yêu cầu mới.",
-    "question": "Khi thấy một tin đồn thất thiệt gây chia rẽ vùng miền, bạn nên phản ứng như thế nào?"
+    "summary": "Mạng xã hội và những thách thức về tinh thần đại đoàn kết.",
+    "tags": ["Đại đoàn kết toàn dân tộc", "Văn hóa số", "Trách nhiệm công dân"],
+    "situation": "Trên mạng xã hội xuất hiện một bài viết gây chia rẽ vùng miền và kích động tranh cãi. Nhiều người hùa theo, bình luận công kích và chia sẻ lại mà không kiểm chứng thông tin, gây hoang mang trong dư luận.",
+    "relatedConcepts": ["dai-doan-ket", "van-hoa-so"],
+    "analysis": "Tinh thần đại đoàn kết trong thời đại số thể hiện qua việc tôn trọng khác biệt, không lan truyền thông tin gây chia rẽ, không kích động thù ghét và biết xây dựng môi trường mạng tích cực. Việc hùa theo các nội dung kích động là vi phạm nghiêm trọng nguyên tắc xây dựng khối đại đoàn kết của Hồ Chí Minh.",
+    "lesson": "Đoàn kết không chỉ thể hiện trong đời sống trực tiếp, mà còn thể hiện qua cách mỗi người hành xử trên không gian mạng.",
+    "reflectionQuestion": "Bạn nên làm gì khi gặp nội dung có khả năng gây chia rẽ cộng đồng?"
   },
   {
     "id": "can-bo-phuc-vu",
     "title": "Cán bộ phục vụ nhân dân",
-    "summary": "Nhà nước của dân, do dân, vì dân áp dụng vào thủ tục hành chính.",
-    "tags": ["Nhà nước", "Cán bộ", "Đạo đức công vụ"],
-    "situation": "Một cán bộ hành chính tiếp dân cần giải quyết công việc minh bạch, nhanh chóng qua cổng dịch vụ công trực tuyến, không gây khó dễ, không đòi hối lộ và luôn giữ thái độ hòa nhã với người dân.",
-    "knowledge": "Cán bộ là 'đầy tớ trung thành của nhân dân'. Cải cách hành chính và số hóa thủ tục chính là cách thực thi cụ thể nhất tư tưởng 'vì dân' hiện nay.",
-    "question": "Theo bạn, thái độ 'ban phát' của một số người làm dịch vụ công xuất phát từ đâu?"
+    "summary": "Tình huống về thái độ làm việc của cán bộ công chức.",
+    "tags": ["Nhà nước của dân", "Đạo đức công vụ", "Cán bộ"],
+    "situation": "Một người dân đến làm thủ tục hành chính nhưng bị cán bộ hướng dẫn qua loa, gây khó dễ và yêu cầu bổ sung giấy tờ không rõ ràng. Người dân cảm thấy bức xúc và mất niềm tin vào cơ quan công quyền.",
+    "relatedConcepts": ["nha-nuoc-cua-dan", "can-bo"],
+    "analysis": "Theo tư tưởng Hồ Chí Minh, cán bộ là người phục vụ nhân dân, không phải người đứng trên nhân dân. Cán bộ cần gần dân, hiểu dân, trọng dân và giải quyết công việc minh bạch, đúng quy định. Thái độ quan liêu, hách dịch là căn bệnh nguy hiểm làm suy yếu mối quan hệ giữa Đảng, Nhà nước và nhân dân.",
+    "lesson": "Tinh thần phục vụ nhân dân phải được thể hiện qua trách nhiệm, thái độ và hiệu quả công việc.",
+    "reflectionQuestion": "Một cán bộ đúng tinh thần 'vì dân' cần xử lý tình huống này như thế nào?"
   },
   {
     "id": "chong-chu-nghia-ca-nhan",
     "title": "Chống chủ nghĩa cá nhân",
-    "summary": "Căn bệnh 'mẹ' đẻ ra mọi thói hư tật xấu theo Bác Hồ.",
-    "tags": ["Đạo đức", "Xây dựng Đảng", "Nêu gương"],
-    "situation": "Chủ nghĩa cá nhân hiện nay biểu hiện qua việc 'chạy chức chạy quyền', lợi dụng kẽ hở pháp luật để tham ô, lãng phí ngân sách nhà nước, hoặc lối sống ích kỷ, vô cảm trước cộng đồng.",
-    "knowledge": "Hồ Chí Minh chỉ rõ chủ nghĩa cá nhân là 'kẻ thù hung ác', 'vi trùng' làm hỏng Đảng và Nhà nước. Chống chủ nghĩa cá nhân phải đi đôi với xây dựng đạo đức cách mạng.",
-    "question": "Chủ nghĩa cá nhân khác với việc bảo vệ 'lợi ích cá nhân chính đáng' như thế nào?"
+    "summary": "Làm việc nhóm và sự trốn tránh trách nhiệm.",
+    "tags": ["Đạo đức cách mạng", "Chống chủ nghĩa cá nhân", "Trách nhiệm tập thể"],
+    "situation": "Trong một nhóm làm việc đại học, một thành viên chỉ muốn nhận phần việc dễ, thường xuyên lấy lý do cá nhân để né tránh trách nhiệm nhưng đến khi nộp bài lại muốn được ghi tên ở vị trí đóng góp cao nhất.",
+    "relatedConcepts": ["dao-duc-cach-mang", "chu-nghia-ca-nhan"],
+    "analysis": "Chủ nghĩa cá nhân biểu hiện ở lối sống ích kỷ, đặt lợi ích riêng lên trên lợi ích chung và thiếu trách nhiệm với tập thể. Hồ Chí Minh coi chủ nghĩa cá nhân là 'kẻ thù hung ác', là mẹ đẻ ra mọi thói hư tật xấu. Chống chủ nghĩa cá nhân là yêu cầu quan trọng trong rèn luyện đạo đức.",
+    "lesson": "Mỗi cá nhân cần biết đặt lợi ích chung lên trên lợi ích riêng, có trách nhiệm với tập thể và trung thực với kết quả chung.",
+    "reflectionQuestion": "Nếu bạn là nhóm trưởng, bạn sẽ xử lý tình huống này như thế nào?"
   },
   {
-    "id": "giu-ban-sac-van-hoa",
-    "title": "Giữ gìn bản sắc thời đại số",
-    "summary": "Tiếp thu tinh hoa văn hóa mà không đánh mất chính mình.",
-    "tags": ["Văn hóa", "Bản sắc", "Hội nhập"],
-    "situation": "Giới trẻ ngày nay sử dụng TikTok, Reels để quảng bá áo tạc, áo ngũ thân, các điệu múa truyền thống và âm nhạc dân tộc kết hợp EDM, tạo ra trào lưu văn hóa Việt Nam vươn ra thế giới.",
-    "knowledge": "Theo Bác, giữ gìn bản sắc không phải là khép kín, bảo thủ mà là 'hòa nhập không hòa tan', biết dùng phương tiện hiện đại để phát huy hồn cốt dân tộc.",
-    "question": "Làm thế nào để tránh tình trạng 'lai căng' khi tiếp thu văn hóa nước ngoài?"
+    "id": "ban-sac-van-hoa-so",
+    "title": "Giữ gìn bản sắc văn hóa trong thời đại số",
+    "summary": "Xung đột giữa việc tiếp thu văn hóa nước ngoài và giữ gìn văn hóa truyền thống.",
+    "tags": ["Văn hóa", "Bản sắc dân tộc", "Tiếp thu tinh hoa"],
+    "situation": "Nhiều bạn trẻ sử dụng mạng xã hội để chạy theo xu hướng, trào lưu của các nước phương Tây và Hàn Quốc, nhưng lại tỏ ra thờ ơ, ít quan tâm đến ngôn ngữ, lịch sử, văn hóa và các giá trị truyền thống của dân tộc Việt Nam.",
+    "relatedConcepts": ["van-hoa", "ban-sac-dan-toc"],
+    "analysis": "Hồ Chí Minh chỉ rõ: Giữ gìn bản sắc văn hóa không có nghĩa là khép kín với thế giới. Điều quan trọng là biết trân trọng giá trị cốt lõi của dân tộc (yêu nước, nhân nghĩa, hiếu học), đồng thời tiếp thu cái mới của nhân loại một cách có chọn lọc, không mù quáng, lai căng.",
+    "lesson": "Trong thời đại số, mỗi người có thể góp phần lan tỏa văn hóa Việt Nam bằng cách sử dụng công nghệ một cách sáng tạo và có trách nhiệm.",
+    "reflectionQuestion": "Bạn có thể làm gì để lan tỏa văn hóa Việt Nam trên môi trường số?"
+  },
+  {
+    "id": "noi-di-doi-voi-lam",
+    "title": "Nói đi đôi với làm",
+    "summary": "Lời hứa và thực hiện cam kết trong môi trường học thuật.",
+    "tags": ["Nói đi đôi với làm", "Đạo đức cách mạng", "Trách nhiệm cá nhân"],
+    "situation": "Một sinh viên thường xuyên hứa trước tập thể lớp sẽ hoàn thành phần việc được giao đúng hạn và đạt chất lượng tốt, nhưng liên tục trễ deadline, viện cớ và cuối cùng nộp một sản phẩm rất cẩu thả, khiến cả nhóm bị trừ điểm.",
+    "relatedConcepts": ["noi-di-doi-voi-lam", "dao-duc-cach-mang"],
+    "analysis": "Nói đi đôi với làm là một trong những nguyên tắc quan trọng nhất trong rèn luyện đạo đức theo tư tưởng Hồ Chí Minh. Lời nói chỉ có giá trị khi đi cùng hành động cụ thể và trách nhiệm thực hiện. Việc hứa suông là biểu hiện của sự thiếu trung thực và vô trách nhiệm.",
+    "lesson": "Uy tín cá nhân được xây dựng từ việc giữ lời hứa và có trách nhiệm với cam kết của chính mình.",
+    "reflectionQuestion": "Bạn sẽ làm gì để thể hiện tinh thần 'nói đi đôi với làm' trong học tập và công việc hàng ngày?"
+  },
+  {
+    "id": "trach-nhiem-cong-dan",
+    "title": "Sinh viên và trách nhiệm công dân",
+    "summary": "Ứng xử trước thông tin sai lệch về xã hội.",
+    "tags": ["Trách nhiệm công dân", "Tư duy lý luận", "Lòng yêu nước"],
+    "situation": "Một nhóm sinh viên chứng kiến một đoạn video chứa thông tin sai lệch, xuyên tạc về một chính sách xã hội được lan truyền trên mạng. Một số người chọn im lặng cho qua, một số người vì tò mò nên chia sẻ lại mà không hề kiểm chứng nguồn tin.",
+    "relatedConcepts": ["trach-nhiem-cong-dan", "long-yeu-nuoc"],
+    "analysis": "Trách nhiệm công dân không chỉ thể hiện qua những hành động vĩ mô, mà còn qua cách tiếp nhận, kiểm chứng và chia sẻ thông tin. Theo tư tưởng Hồ Chí Minh, lòng yêu nước đi liền với việc bảo vệ lẽ phải. Việc chia sẻ thông tin sai lệch là đang tiếp tay cho cái xấu làm hại đất nước.",
+    "lesson": "Một công dân có trách nhiệm cần biết kiểm chứng thông tin, không lan truyền tin giả và góp phần xây dựng môi trường xã hội thông tin lành mạnh.",
+    "reflectionQuestion": "Khi gặp một thông tin nhạy cảm chưa được kiểm chứng, bạn nên làm gì trước khi nhấn nút chia sẻ?"
+  },
+  {
+    "id": "van-hoa-ung-xu-mang",
+    "title": "Văn hóa ứng xử trên mạng xã hội",
+    "summary": "Tranh luận trên mạng và ranh giới của sự xúc phạm.",
+    "tags": ["Văn hóa", "Đạo đức", "Con người", "Văn hóa số"],
+    "situation": "Trong một cuộc tranh luận về một chủ đề đời sống trên Facebook, thay vì phân tích vấn đề bằng lý lẽ và dẫn chứng, nhiều người bắt đầu dùng lời lẽ xúc phạm, miệt thị ngoại hình và công kích cá nhân đối phương.",
+    "relatedConcepts": ["van-hoa", "dao-duc"],
+    "analysis": "Văn hóa ứng xử thể hiện qua cách con người giao tiếp, tôn trọng người khác và xử lý sự khác biệt. Hồ Chí Minh dạy 'Đối với người, phải khoan dung, nhân ái'. Trên không gian mạng ảo, đạo đức và văn hóa càng cần được thể hiện qua sự bình tĩnh, sự tôn trọng và chịu trách nhiệm với phát ngôn của mình.",
+    "lesson": "Ứng xử văn minh, lịch sự trên mạng là một biểu hiện rõ nét của văn hóa và đạo đức con người trong thời đại số.",
+    "reflectionQuestion": "Bạn sẽ phản ứng thế nào khi gặp một bình luận xúc phạm cá nhân trên mạng xã hội?"
   }
 ]

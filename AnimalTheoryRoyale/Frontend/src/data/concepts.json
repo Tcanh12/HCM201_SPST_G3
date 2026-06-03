@@ -1,131 +1,227 @@
 [
   {
-    "id": "tu-tuong-ho-chi-minh",
-    "title": "Tư tưởng Hồ Chí Minh",
-    "chapter": "chuong-1",
-    "shortDescription": "Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam.",
-    "content": "Tư tưởng Hồ Chí Minh là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác – Lênin vào điều kiện cụ thể của Việt Nam, đồng thời kế thừa truyền thống dân tộc và tiếp thu tinh hoa văn hóa nhân loại.",
-    "relatedConcepts": ["chu-nghia-mac-lenin", "truyen-thong-dan-toc"],
-    "level": 0
+    "id": "root",
+    "label": "Tư tưởng Hồ Chí Minh",
+    "type": "root",
+    "x": 400,
+    "y": 300,
+    "connections": ["chuong-1", "chuong-2", "chuong-3", "chuong-4", "chuong-5", "chuong-6"],
+    "description": "Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam."
   },
   {
-    "id": "phuong-phap-nghien-cuu",
-    "title": "Khái niệm & Phương pháp",
-    "chapter": "chuong-1",
-    "shortDescription": "Đối tượng và phương pháp nghiên cứu tư tưởng Hồ Chí Minh.",
-    "content": "Gồm các nguyên tắc: Thống nhất lý luận thực tiễn, quan điểm lịch sử cụ thể, toàn diện và hệ thống.",
-    "relatedConcepts": [],
-    "level": 1,
-    "parentId": "tu-tuong-ho-chi-minh"
+    "id": "chuong-1",
+    "label": "Khái niệm & Phương pháp",
+    "type": "chapter",
+    "x": 400,
+    "y": 150,
+    "connections": ["khai-niem", "doi-tuong-nc", "phuong-phap-nc"],
+    "description": "Chương 1: Khái niệm, đối tượng, phương pháp nghiên cứu."
   },
   {
-    "id": "co-so-hinh-thanh",
-    "title": "Cơ sở hình thành",
-    "chapter": "chuong-2",
-    "shortDescription": "Các nguồn gốc hình thành tư tưởng Hồ Chí Minh.",
-    "content": "Hình thành từ truyền thống dân tộc, tinh hoa văn hóa nhân loại, chủ nghĩa Mác-Lênin và phẩm chất cá nhân xuất chúng.",
-    "relatedConcepts": ["chu-nghia-mac-lenin"],
-    "level": 1,
-    "parentId": "tu-tuong-ho-chi-minh"
+    "id": "chuong-2",
+    "label": "Cơ sở hình thành",
+    "type": "chapter",
+    "x": 650,
+    "y": 200,
+    "connections": ["truyen-thong-dan-toc", "chu-nghia-mac-lenin", "nhan-to-chu-quan"],
+    "description": "Chương 2: Cơ sở, quá trình hình thành và phát triển."
   },
   {
-    "id": "doc-lap-dan-toc-cnxh",
-    "title": "Độc lập dân tộc & CNXH",
-    "chapter": "chuong-3",
-    "shortDescription": "Mối quan hệ giữa độc lập dân tộc và con đường đi lên CNXH.",
-    "content": "Độc lập dân tộc là tiền đề, CNXH là con đường bảo đảm vững chắc cho độc lập dân tộc. Cả hai gắn bó mật thiết.",
-    "relatedConcepts": [],
-    "level": 1,
-    "parentId": "tu-tuong-ho-chi-minh"
+    "id": "chuong-3",
+    "label": "Độc lập dân tộc & CNXH",
+    "type": "chapter",
+    "x": 700,
+    "y": 400,
+    "connections": ["doc-lap-dan-toc", "chu-nghia-xa-hoi", "giai-phong-dan-toc"],
+    "description": "Chương 3: Tư tưởng Hồ Chí Minh về độc lập dân tộc và chủ nghĩa xã hội."
   },
   {
-    "id": "dang-nha-nuoc",
-    "title": "Đảng & Nhà nước",
-    "chapter": "chuong-4",
-    "shortDescription": "Xây dựng Đảng trong sạch, Nhà nước của dân, do dân, vì dân.",
-    "content": "Đảng lãnh đạo cách mạng, Nhà nước là công cụ quyền lực của nhân dân, phục vụ nhân dân.",
-    "relatedConcepts": [],
-    "level": 1,
-    "parentId": "tu-tuong-ho-chi-minh"
+    "id": "chuong-4",
+    "label": "Đảng & Nhà nước",
+    "type": "chapter",
+    "x": 400,
+    "y": 480,
+    "connections": ["dang-cong-san", "nha-nuoc-cua-dan", "can-bo"],
+    "description": "Chương 4: Về Đảng Cộng sản và Nhà nước của nhân dân, do nhân dân, vì nhân dân."
   },
   {
-    "id": "dai-doan-ket",
-    "title": "Đại đoàn kết",
-    "chapter": "chuong-5",
-    "shortDescription": "Đoàn kết dân tộc và đoàn kết quốc tế.",
-    "content": "Đoàn kết là sức mạnh vô địch. Đoàn kết toàn dân trên cơ sở liên minh công-nông-trí, kết hợp sức mạnh dân tộc và thời đại.",
-    "relatedConcepts": [],
-    "level": 1,
-    "parentId": "tu-tuong-ho-chi-minh"
+    "id": "chuong-5",
+    "label": "Đại đoàn kết",
+    "type": "chapter",
+    "x": 150,
+    "y": 400,
+    "connections": ["luc-luong-doan-ket", "mat-tran-dan-toc", "doan-ket-quoc-te"],
+    "description": "Chương 5: Đại đoàn kết toàn dân tộc và đoàn kết quốc tế."
   },
   {
-    "id": "van-hoa-dao-duc",
-    "title": "Văn hóa, Đạo đức, Con người",
-    "chapter": "chuong-6",
-    "shortDescription": "Quan điểm về văn hóa và đạo đức cách mạng.",
-    "content": "Văn hóa là mặt trận, con người là trung tâm. Đạo đức cách mạng cần: Cần, kiệm, liêm, chính, chí công vô tư.",
-    "relatedConcepts": ["can", "kiem", "liem", "chinh"],
-    "level": 1,
-    "parentId": "tu-tuong-ho-chi-minh"
+    "id": "chuong-6",
+    "label": "Văn hóa, Đạo đức",
+    "type": "chapter",
+    "x": 150,
+    "y": 200,
+    "connections": ["van-hoa", "dao-duc-cach-mang", "con-nguoi"],
+    "description": "Chương 6: Tư tưởng về văn hóa, đạo đức, con người."
   },
   {
-    "id": "chu-nghia-mac-lenin",
-    "title": "Chủ nghĩa Mác - Lênin",
-    "chapter": "chuong-2",
-    "shortDescription": "Cơ sở lý luận quan trọng nhất.",
-    "content": "Cung cấp thế giới quan và phương pháp luận khoa học để Hồ Chí Minh tìm ra con đường cứu nước.",
-    "relatedConcepts": [],
-    "level": 2,
-    "parentId": "co-so-hinh-thanh"
+    "id": "khai-niem",
+    "label": "Hệ thống quan điểm",
+    "type": "concept",
+    "x": 300,
+    "y": 80,
+    "connections": [],
+    "description": "Hệ thống quan điểm toàn diện, sâu sắc về cách mạng Việt Nam."
+  },
+  {
+    "id": "doi-tuong-nc",
+    "label": "Đối tượng nghiên cứu",
+    "type": "concept",
+    "x": 400,
+    "y": 60,
+    "connections": [],
+    "description": "Di sản tư tưởng, bài viết, bài nói và hoạt động thực tiễn."
+  },
+  {
+    "id": "phuong-phap-nc",
+    "label": "Phương pháp luận",
+    "type": "concept",
+    "x": 500,
+    "y": 80,
+    "connections": [],
+    "description": "Thống nhất lý luận và thực tiễn, quan điểm lịch sử cụ thể."
   },
   {
     "id": "truyen-thong-dan-toc",
-    "title": "Truyền thống dân tộc",
-    "chapter": "chuong-2",
-    "shortDescription": "Chủ nghĩa yêu nước Việt Nam.",
-    "content": "Là cội nguồn sâu xa nhất, động lực mạnh mẽ nhất thúc đẩy Hồ Chí Minh ra đi tìm đường cứu nước.",
-    "relatedConcepts": [],
-    "level": 2,
-    "parentId": "co-so-hinh-thanh"
+    "label": "Truyền thống VN",
+    "type": "concept",
+    "x": 750,
+    "y": 100,
+    "connections": [],
+    "description": "Yêu nước, nhân nghĩa, đoàn kết."
   },
   {
-    "id": "can",
-    "title": "Cần",
-    "chapter": "chuong-6",
-    "shortDescription": "Lao động cần cù, siêng năng.",
-    "content": "Lao động có kế hoạch, sáng tạo, năng suất cao vì lợi ích chung.",
-    "relatedConcepts": [],
-    "level": 2,
-    "parentId": "van-hoa-dao-duc"
+    "id": "chu-nghia-mac-lenin",
+    "label": "Mác - Lênin",
+    "type": "concept",
+    "x": 800,
+    "y": 200,
+    "connections": [],
+    "description": "Cơ sở thế giới quan, phương pháp luận khoa học."
   },
   {
-    "id": "kiem",
-    "title": "Kiệm",
-    "chapter": "chuong-6",
-    "shortDescription": "Tiết kiệm, không xa xỉ.",
-    "content": "Tiết kiệm thời gian, sức lao động, của cải của dân và nước.",
-    "relatedConcepts": [],
-    "level": 2,
-    "parentId": "van-hoa-dao-duc"
+    "id": "nhan-to-chu-quan",
+    "label": "Phẩm chất cá nhân",
+    "type": "concept",
+    "x": 750,
+    "y": 280,
+    "connections": [],
+    "description": "Lòng yêu nước, tư duy độc lập, tự học."
   },
   {
-    "id": "liem",
-    "title": "Liêm",
-    "chapter": "chuong-6",
-    "shortDescription": "Trong sạch, không tham lam.",
-    "content": "Không tham địa vị, tiền tài, danh vọng. Quang minh chính đại.",
-    "relatedConcepts": [],
-    "level": 2,
-    "parentId": "van-hoa-dao-duc"
+    "id": "doc-lap-dan-toc",
+    "label": "Độc lập dân tộc",
+    "type": "concept",
+    "x": 850,
+    "y": 380,
+    "connections": ["chu-nghia-xa-hoi"],
+    "description": "Quyền thiêng liêng, bất khả xâm phạm. Gắn với tự do hạnh phúc."
   },
   {
-    "id": "chinh",
-    "title": "Chính",
-    "chapter": "chuong-6",
-    "shortDescription": "Thẳng thắn, đứng đắn.",
-    "content": "Đối với mình không tự kiêu; đối với người không nịnh hót, khinh khi; đối với việc để việc công lên trên hết.",
-    "relatedConcepts": [],
-    "level": 2,
-    "parentId": "van-hoa-dao-duc"
+    "id": "chu-nghia-xa-hoi",
+    "label": "Chủ nghĩa xã hội",
+    "type": "concept",
+    "x": 800,
+    "y": 480,
+    "connections": [],
+    "description": "Nhân dân làm chủ, kinh tế phát triển, xã hội công bằng."
+  },
+  {
+    "id": "giai-phong-dan-toc",
+    "label": "Cách mạng giải phóng",
+    "type": "concept",
+    "x": 700,
+    "y": 520,
+    "connections": [],
+    "description": "Đi theo con đường cách mạng vô sản."
+  },
+  {
+    "id": "dang-cong-san",
+    "label": "Đảng Cộng sản",
+    "type": "concept",
+    "x": 500,
+    "y": 580,
+    "connections": [],
+    "description": "Nhân tố lãnh đạo quyết định thắng lợi."
+  },
+  {
+    "id": "nha-nuoc-cua-dan",
+    "label": "Nhà nước của dân",
+    "type": "concept",
+    "x": 400,
+    "y": 600,
+    "connections": [],
+    "description": "Nhà nước của nhân dân, do nhân dân, vì nhân dân."
+  },
+  {
+    "id": "can-bo",
+    "label": "Đạo đức công vụ",
+    "type": "concept",
+    "x": 300,
+    "y": 580,
+    "connections": [],
+    "description": "Cán bộ là công bộc của dân."
+  },
+  {
+    "id": "luc-luong-doan-ket",
+    "label": "Toàn dân tộc",
+    "type": "concept",
+    "x": 50,
+    "y": 500,
+    "connections": [],
+    "description": "Công, nông, trí thức, các dân tộc, tôn giáo."
+  },
+  {
+    "id": "mat-tran-dan-toc",
+    "label": "Mặt trận thống nhất",
+    "type": "concept",
+    "x": 50,
+    "y": 400,
+    "connections": [],
+    "description": "Hình thức tổ chức khối đại đoàn kết."
+  },
+  {
+    "id": "doan-ket-quoc-te",
+    "label": "Đoàn kết quốc tế",
+    "type": "concept",
+    "x": 80,
+    "y": 300,
+    "connections": [],
+    "description": "Kết hợp sức mạnh dân tộc và sức mạnh thời đại."
+  },
+  {
+    "id": "van-hoa",
+    "label": "Mặt trận văn hóa",
+    "type": "concept",
+    "x": 50,
+    "y": 150,
+    "connections": [],
+    "description": "Văn hóa phải soi đường cho quốc dân đi."
+  },
+  {
+    "id": "dao-duc-cach-mang",
+    "label": "Cần, kiệm, liêm, chính",
+    "type": "concept",
+    "x": 100,
+    "y": 80,
+    "connections": [],
+    "description": "Đạo đức là gốc của người cách mạng."
+  },
+  {
+    "id": "con-nguoi",
+    "label": "Con người mới",
+    "type": "concept",
+    "x": 200,
+    "y": 60,
+    "connections": [],
+    "description": "Mục tiêu và động lực của cách mạng."
   }
 ]

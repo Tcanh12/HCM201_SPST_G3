@@ -3,136 +3,115 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle2, Search, ArrowRight, Lightbulb, Compass, Globe } from 'lucide-react';
 import timelineData from '../../data/timeline.json';
 
+const IconMap = { Lightbulb, Compass, Globe, Search, Clock, CheckCircle2 };
+
 export default function TimelinePage() {
-  const [activeId, setActiveId] = useState(timelineData[0].id);
-  const activeEvent = timelineData.find(t => t.id === activeId);
+  const [selectedEventId, setSelectedEventId] = useState(timelineData[0].id);
+  const selectedEvent = timelineData.find(e => e.id === selectedEventId);
 
   return (
-    <div className="w-full min-h-screen bg-[#050508] flex flex-col xl:flex-row pb-20 xl:pb-0 overflow-x-hidden">
+    <div className="w-full min-h-[calc(100vh-4rem)] flex flex-col xl:flex-row bg-[#F8FAFC]">
       
-      {/* LEFT: TIMELINE NAVIGATION */}
-      <div className="w-full xl:w-2/5 p-6 md:p-12 lg:pl-20 flex flex-col border-r border-white/10 relative z-10">
-        <div className="mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 rounded-full text-sm font-bold uppercase tracking-widest mb-4">
-            <Clock className="w-4 h-4" /> Dòng thời gian lịch sử
+      {/* 1. Sidebar - Timeline Navigation */}
+      <aside className="w-full xl:w-96 flex-shrink-0 border-r border-gray-200 bg-white p-6 h-[50vh] xl:h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#DBEAFE] text-[#1E3A8A] rounded-full text-sm font-bold uppercase tracking-widest mb-4">
+            <Clock className="w-4 h-4" /> Dòng thời gian
           </div>
-          <h1 className="text-4xl md:text-5xl font-display font-black text-white leading-tight">
-            Quá trình hình thành & phát triển
-          </h1>
+          <h2 className="text-2xl font-bold text-[#1F2937] leading-tight">Quá trình hình thành & phát triển tư tưởng HCM</h2>
         </div>
 
-        <div className="relative flex-1">
-          {/* Vertical Line */}
-          <div className="absolute left-6 top-0 bottom-0 w-1 bg-white/5 rounded-full" />
+        <div className="relative border-l-2 border-gray-200 ml-4 space-y-8 pb-8">
+          {timelineData.map((event, index) => {
+            const isActive = event.id === selectedEventId;
+            return (
+              <div 
+                key={event.id}
+                onClick={() => setSelectedEventId(event.id)}
+                className="relative pl-6 cursor-pointer group"
+              >
+                {/* Timeline dot */}
+                <div className={`absolute -left-[9px] top-1 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
+                  isActive 
+                    ? 'bg-[#1E3A8A] border-[#1E3A8A] scale-125' 
+                    : 'bg-white border-gray-300 group-hover:border-[#1E3A8A]'
+                }`} />
 
-          <div className="space-y-10 relative">
-            {timelineData.map((item, index) => {
-              const isActive = activeId === item.id;
-              
-              return (
-                <div 
-                  key={item.id} 
-                  className="flex gap-8 items-start cursor-pointer group"
-                  onClick={() => setActiveId(item.id)}
-                >
-                  {/* Timeline Dot */}
-                  <div className={`relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xl ${
-                    isActive ? 'bg-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.5)] scale-110' : 'bg-dark border border-white/20 group-hover:border-cyan-400'
-                  }`}>
-                    <span className={`font-bold text-sm ${isActive ? 'text-dark' : 'text-white/50'}`}>
-                      {index + 1}
-                    </span>
-                  </div>
-
-                  {/* Title & Summary */}
-                  <div className={`pt-2 transition-all duration-300 ${isActive ? 'opacity-100 translate-x-2' : 'opacity-50 group-hover:opacity-80'}`}>
-                    <div className={`text-sm font-black mb-1 ${isActive ? 'text-cyan-400' : 'text-white/40'}`}>
-                      {item.year}
-                    </div>
-                    <h3 className={`text-xl font-bold mb-2 leading-snug ${isActive ? 'text-white' : 'text-white/80'}`}>
-                      {item.title}
-                    </h3>
-                    {isActive && (
-                      <motion.p 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        className="text-white/60 text-sm leading-relaxed"
-                      >
-                        {item.summary}
-                      </motion.p>
-                    )}
-                  </div>
+                <div className={`p-4 rounded-2xl transition-all duration-300 ${
+                  isActive 
+                    ? 'bg-[#DBEAFE] border border-[#1E3A8A]/30 shadow-sm' 
+                    : 'bg-white border border-transparent hover:bg-gray-50 hover:border-gray-200'
+                }`}>
+                  <span className={`text-sm font-bold block mb-1 ${isActive ? 'text-[#1E3A8A]' : 'text-gray-500'}`}>
+                    {event.period}
+                  </span>
+                  <h3 className={`font-bold line-clamp-2 ${isActive ? 'text-[#1F2937]' : 'text-gray-700'}`}>
+                    {event.title}
+                  </h3>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
-      </div>
+      </aside>
 
-      {/* RIGHT: STORY LAYER (DETAILS) */}
-      <div className="w-full xl:w-3/5 p-6 md:p-12 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0a0f] to-[#12121a]">
+      {/* 2. Main Content - Event Details */}
+      <main className="flex-1 p-6 md:p-12 xl:p-16 h-auto xl:h-[calc(100vh-4rem)] overflow-y-auto relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-[#F8FAFC] z-0 pointer-events-none" />
         
-        {/* Background Decorative */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
-
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activeEvent.id}
-            initial={{ opacity: 0, x: 20, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: -20, scale: 0.95 }}
-            transition={{ duration: 0.4, type: "spring" }}
-            className="w-full max-w-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] relative z-10 shadow-2xl"
-          >
-            <div className="text-cyan-400 font-black text-2xl mb-6">{activeEvent.year}</div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-10 leading-snug">
-              {activeEvent.title}
-            </h2>
-
-            <div className="space-y-6">
-              
-              {/* Context */}
-              <div className="bg-dark/50 border border-white/5 p-6 rounded-2xl flex gap-4">
-                <Globe className="w-8 h-8 text-white/30 shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-white/40 uppercase tracking-widest mb-2">Bối cảnh lịch sử</h4>
-                  <p className="text-white/80 leading-relaxed text-sm md:text-base">{activeEvent.details.context}</p>
-                </div>
+          {selectedEvent && (
+            <motion.div
+              key={selectedEvent.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              className="relative z-10 max-w-4xl mx-auto"
+            >
+              <div className="mb-10">
+                <span className="text-[#1E3A8A] font-black text-6xl md:text-8xl opacity-10 block mb-2 -ml-2 tracking-tighter">
+                  {selectedEvent.period}
+                </span>
+                <h1 className="text-3xl md:text-5xl font-display font-black text-[#1F2937] leading-tight mb-6">
+                  {selectedEvent.title}
+                </h1>
+                <p className="text-xl text-gray-500 leading-relaxed">
+                  {selectedEvent.summary}
+                </p>
               </div>
 
-              {/* Problem */}
-              <div className="bg-red-500/10 border border-red-500/20 p-6 rounded-2xl flex gap-4">
-                <Search className="w-8 h-8 text-red-400 shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest mb-2">Vấn đề đặt ra</h4>
-                  <p className="text-white/90 leading-relaxed font-medium text-sm md:text-base">{activeEvent.details.problem}</p>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {selectedEvent.details.map((detail, idx) => {
+                  const Icon = IconMap[detail.icon] || Search;
+                  return (
+                    <div key={idx} className="bg-white border border-gray-200 p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow">
+                      <div className="w-12 h-12 bg-[#F8FAFC] rounded-2xl flex items-center justify-center mb-6">
+                        <Icon className="w-6 h-6 text-[#1E3A8A]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#1F2937] mb-4">{detail.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {detail.content}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
 
-              {/* Ideology */}
-              <div className="bg-yellow-500/10 border border-yellow-500/20 p-6 rounded-2xl flex gap-4">
-                <Lightbulb className="w-8 h-8 text-yellow-400 shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-yellow-400 uppercase tracking-widest mb-2">Tư tưởng hình thành</h4>
-                  <p className="text-white/90 leading-relaxed font-medium text-sm md:text-base">{activeEvent.details.ideology}</p>
-                </div>
+              <div className="bg-[#1E3A8A] text-white p-8 md:p-10 rounded-[2rem] shadow-lg relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+                <h3 className="text-2xl font-bold mb-4 relative z-10 flex items-center gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-[#FEF3C7]" /> Ý nghĩa giai đoạn
+                </h3>
+                <p className="text-white/90 text-lg leading-relaxed relative z-10 font-medium">
+                  {selectedEvent.significance}
+                </p>
               </div>
-
-              {/* Impact */}
-              <div className="bg-cyan-500/10 border border-cyan-500/20 p-6 rounded-2xl flex gap-4">
-                <Compass className="w-8 h-8 text-cyan-400 shrink-0" />
-                <div>
-                  <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Ý nghĩa</h4>
-                  <p className="text-white/90 leading-relaxed font-medium text-sm md:text-base">{activeEvent.details.impact}</p>
-                </div>
-              </div>
-
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
         </AnimatePresence>
+      </main>
 
-      </div>
     </div>
   );
 }

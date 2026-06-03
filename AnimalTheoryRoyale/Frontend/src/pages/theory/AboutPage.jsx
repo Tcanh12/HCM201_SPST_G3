@@ -6,112 +6,98 @@ export default function AboutPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-full pb-20">
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-16 px-4">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-950/20 to-transparent pointer-events-none" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500 mb-6"
+    <div className="w-full min-h-[calc(100vh-4rem)] flex flex-col items-center py-12 px-4 relative bg-[#F8FAFC]">
+      
+      {/* Background Decorative */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FEE2E2] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DBEAFE] rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="w-full max-w-5xl relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#DCFCE7] text-[#15803d] rounded-full text-sm font-bold uppercase tracking-widest mb-4">
+            <BookOpen className="w-4 h-4" /> Giới thiệu môn học
+          </div>
+          <h1 className="text-4xl md:text-6xl font-display font-black text-[#1F2937] mb-6 leading-tight">
+            Tư tưởng Hồ Chí Minh
+          </h1>
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="bg-white border border-gray-200 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow"
           >
-            Giới thiệu môn học
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-white/70 leading-relaxed"
+            <div className="w-14 h-14 bg-[#FEF3C7] rounded-2xl flex items-center justify-center mb-6">
+              <Target className="w-7 h-7 text-[#F59E0B]" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#1F2937] mb-4">Mục tiêu môn học</h3>
+            <ul className="space-y-3 text-gray-600">
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-2 flex-shrink-0" />
+                Trang bị hệ thống tri thức cơ bản về tư tưởng Hồ Chí Minh.
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-2 flex-shrink-0" />
+                Nâng cao năng lực tư duy lý luận và phương pháp công tác.
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-2 flex-shrink-0" />
+                Bồi dưỡng đạo đức cách mạng, bản lĩnh chính trị.
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="bg-white border border-gray-200 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow"
           >
-            Hiểu tư tưởng Hồ Chí Minh như một hệ thống tri thức có nguồn gốc, nội dung, giá trị và khả năng vận dụng trong thực tiễn.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Section 1: Môn học là gì? */}
-      <section className="py-12 px-4 max-w-6xl mx-auto">
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
-          <div className="flex-1">
-            <h2 className="text-3xl font-display font-bold mb-6 text-white">Môn Tư tưởng Hồ Chí Minh là gì?</h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-6">
-              Môn Tư tưởng Hồ Chí Minh nghiên cứu hệ thống quan điểm toàn diện và sâu sắc của Hồ Chí Minh về những vấn đề cơ bản của cách mạng Việt Nam. Nội dung môn học giúp người học hiểu khái niệm, nguồn gốc, quá trình hình thành, nội dung cốt lõi và giá trị của tư tưởng Hồ Chí Minh đối với cách mạng Việt Nam.
-            </p>
-          </div>
-          <div className="flex-1 grid grid-cols-2 gap-4 w-full">
-            <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-xl text-center">
-              <span className="font-bold text-red-400">Khái niệm</span>
+            <div className="w-14 h-14 bg-[#DBEAFE] rounded-2xl flex items-center justify-center mb-6">
+              <Brain className="w-7 h-7 text-[#1E3A8A]" />
             </div>
-            <div className="bg-yellow-500/10 border border-yellow-500/20 p-4 rounded-xl text-center">
-              <span className="font-bold text-yellow-400">Nguồn gốc</span>
-            </div>
-            <div className="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-xl text-center">
-              <span className="font-bold text-emerald-400">Nội dung</span>
-            </div>
-            <div className="bg-cyan-500/10 border border-cyan-500/20 p-4 rounded-xl text-center">
-              <span className="font-bold text-cyan-400">Giá trị & Vận dụng</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Học để làm gì? */}
-      <section className="py-12 px-4 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-display font-bold mb-10 text-center">Học môn này để làm gì?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-b from-white/10 to-transparent border border-white/10 p-8 rounded-3xl">
-            <BookOpen className="w-10 h-10 text-cyan-400 mb-6" />
-            <h3 className="text-xl font-bold mb-4 text-white">Về kiến thức</h3>
-            <p className="text-white/60 leading-relaxed">Người học nắm được những nội dung cơ bản về khái niệm, cơ sở hình thành, quá trình phát triển và các nội dung lớn trong tư tưởng Hồ Chí Minh.</p>
-          </div>
-          <div className="bg-gradient-to-b from-white/10 to-transparent border border-white/10 p-8 rounded-3xl">
-            <Brain className="w-10 h-10 text-yellow-400 mb-6" />
-            <h3 className="text-xl font-bold mb-4 text-white">Về kỹ năng</h3>
-            <p className="text-white/60 leading-relaxed">Hình thành năng lực phân tích, liên hệ lý luận với thực tiễn, biết nhìn nhận vấn đề xã hội bằng tư duy hệ thống và lịch sử.</p>
-          </div>
-          <div className="bg-gradient-to-b from-white/10 to-transparent border border-white/10 p-8 rounded-3xl">
-            <Flag className="w-10 h-10 text-red-400 mb-6" />
-            <h3 className="text-xl font-bold mb-4 text-white">Về tư tưởng</h3>
-            <p className="text-white/60 leading-relaxed">Bồi dưỡng lòng yêu nước, niềm tin vào độc lập dân tộc và chủ nghĩa xã hội, ý thức rèn luyện đạo đức, trách nhiệm công dân.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: So sánh */}
-      <section className="py-16 px-4 max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-display font-bold mb-4">Concept Explorer có gì khác biệt?</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-dark border border-white/10 p-8 rounded-3xl opacity-70">
-            <h3 className="text-xl font-bold text-white/50 mb-6 flex items-center gap-2">Cách học truyền thống</h3>
-            <ul className="space-y-4 text-white/50">
-              <li>- Đọc văn bản dài</li>
-              <li>- Ghi nhớ bullet point</li>
-              <li>- Học theo thứ tự cố định</li>
-              <li>- Khó thấy mối liên hệ giữa các nội dung</li>
+            <h3 className="text-2xl font-bold text-[#1F2937] mb-4">Đối tượng nghiên cứu</h3>
+            <ul className="space-y-3 text-gray-600">
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
+                Hệ thống quan điểm của Hồ Chí Minh trong di sản của Người.
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
+                Quá trình vận dụng tư tưởng đó trong thực tiễn cách mạng Việt Nam.
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
+                Sự phát triển sáng tạo của Đảng qua các thời kỳ.
+              </li>
             </ul>
-          </div>
-          <div className="bg-gradient-to-br from-red-900/40 to-yellow-900/20 border border-red-500/30 p-8 rounded-3xl shadow-[0_0_30px_rgba(217,28,28,0.15)] relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/20 blur-3xl rounded-full" />
-            <h3 className="text-xl font-bold text-yellow-400 mb-6 flex items-center gap-2 relative z-10">
-              <Target className="w-5 h-5" /> Cách học trên Concept Explorer
-            </h3>
-            <ul className="space-y-4 text-white/90 relative z-10 font-medium">
-              <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400"/> Xem bản đồ tri thức</li>
-              <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400"/> Click vào từng khái niệm để khám phá</li>
-              <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400"/> Học qua timeline và case file thực tế</li>
-              <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-yellow-400"/> Làm quiz ngắn để tự ôn tập</li>
-            </ul>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="bg-[#1E3A8A] rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <Flag className="w-16 h-16 text-[#FEF3C7] mx-auto mb-6 relative z-10" />
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 relative z-10">
+            Sẵn sàng khám phá?
+          </h2>
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto relative z-10">
+            Trải nghiệm phương pháp học tập trực quan mới lạ với bản đồ tri thức, dòng thời gian và các hồ sơ tình huống thực tế.
+          </p>
           <button 
             onClick={() => navigate('/theory/chapters')}
-            className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-xl font-bold shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-105 transition-all flex items-center justify-center gap-2 mx-auto"
+            className="px-8 py-4 bg-white text-[#1E3A8A] hover:bg-gray-50 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-md flex items-center justify-center gap-2 mx-auto relative z-10"
           >
-            Bắt đầu học ngay <ChevronRight className="w-5 h-5" />
+            Vào bài học ngay <ChevronRight className="w-5 h-5" />
           </button>
         </div>
-      </section>
+
+      </div>
     </div>
   );
 }

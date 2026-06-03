@@ -1,259 +1,249 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Network, X, BookOpen, FileText, ChevronRight, Maximize, Minimize } from 'lucide-react';
+import { Network, X, BookOpen, ChevronRight, Maximize, Minimize, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useLearningProgress } from '../../components/theory/ProgressContext';
 import conceptsData from '../../data/concepts.json';
-
-// Helper to draw a curved SVG path between two points
-const BezierCurve = ({ startX, startY, endX, endY, isActive }) => {
-  const controlPointX = startX + (endX - startX) / 2;
-  const path = `M ${startX} ${startY} C ${controlPointX} ${startY}, ${controlPointX} ${endY}, ${endX} ${endY}`;
-  
-  return (
-    <svg className="absolute inset-0 pointer-events-none w-full h-full" style={{ zIndex: 0 }}>
-      <motion.path
-        d={path}
-        fill="transparent"
-        stroke={isActive ? '#ef4444' : 'rgba(255,255,255,0.1)'}
-        strokeWidth={isActive ? 3 : 1.5}
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        className={isActive ? 'drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]' : ''}
-      />
-    </svg>
-  );
-};
 
 export default function ConceptMapPage() {
   const navigate = useNavigate();
-  const [selectedNodeId, setSelectedNodeId] = useState('tu-tuong-ho-chi-minh');
-  const [isPanelOpen, setIsPanelOpen] = useState(true);
+  const { progress, markConceptViewed } = useLearningProgress();
+  const [selectedNode, setSelectedNode] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef(null);
+  
+  const width = 900;
+  const height = 700;
 
-  // Parse data
-  const rootNode = conceptsData.find(c => c.level === 0);
-  const level1Nodes = conceptsData.filter(c => c.level === 1);
-  const level2Nodes = conceptsData.filter(c => c.level === 2);
-
-  const selectedNode = conceptsData.find(c => c.id === selectedNodeId) || rootNode;
-
-  // We will use a fixed coordinate system in a large virtual container, and handle scrolling if needed.
-  // Virtual space: 1200x800
-  const nodesWithPositions = useMemo(() => {
-    let result = {};
-    
-    // Root
-    result[rootNode.id] = { ...rootNode, x: 100, y: 400 };
-
-    // Level 1
-    const l1Spacing = 600 / Math.max(1, level1Nodes.length - 1);
-    level1Nodes.forEach((node, i) => {
-      const y = 100 + i * l1Spacing;
-      result[node.id] = { ...node, x: 450, y };
-    });
-
-    // Level 2 (Positioned near their parents)
-    const childrenByParent = {};
-    level2Nodes.forEach(n => {
-      if (!childrenByParent[n.parentId]) childrenByParent[n.parentId] = [];
-      childrenByParent[n.parentId].push(n);
-    });
-
-    Object.keys(childrenByParent).forEach(parentId => {
-      const parent = result[parentId];
-      const children = childrenByParent[parentId];
-      const l2Spacing = 100;
-      const startY = parent.y - ((children.length - 1) * l2Spacing) / 2;
-      
-      children.forEach((child, i) => {
-        result[child.id] = { ...child, x: 800, y: startY + i * l2Spacing };
-      });
-    });
-
-    return result;
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
-  // Compute edges
-  const edges = useMemo(() => {
-    const list = [];
-    conceptsData.forEach(node => {
-      if (node.parentId && nodesWithPositions[node.parentId] && nodesWithPositions[node.id]) {
-        list.push({
-          id: `${node.parentId}-${node.id}`,
-          source: nodesWithPositions[node.parentId],
-          target: nodesWithPositions[node.id],
-          // Active if either source or target is selected, or if target is a child of selected
-          isActive: selectedNodeId === node.parentId || selectedNodeId === node.id || 
-                    (nodesWithPositions[selectedNodeId]?.parentId === node.parentId)
-        });
-      }
-    });
-    return list;
-  }, [nodesWithPositions, selectedNodeId]);
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      containerRef.current?.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
+  const getNodeColor = (node) => {
+    if (selectedNode && selectedNode.id === node.id) return '#B91C1C';
+    if (selectedNode && (selectedNode.connections.includes(node.id) || node.connections?.includes(selectedNode.id))) return '#F59E0B';
+    if (progress.viewedConcepts.includes(node.id)) return '#15803d'; // Green for viewed concepts
+    if (node.type === 'root') return '#B91C1C';
+    if (node.type === 'chapter') return '#F59E0B';
+    return '#6B7280';
+  };
+
+  const getNodeSize = (type) => {
+    if (type === 'root') return 24;
+    if (type === 'chapter') return 18;
+    return 12;
+  };
+
+  const handleNodeClick = (node) => {
+    setSelectedNode(node);
+  };
+
+  const handleMarkUnderstood = () => {
+    if (selectedNode) {
+      markConceptViewed(selectedNode.id);
+    }
+  };
 
   return (
-    <div className={`w-full flex bg-[#050508] overflow-hidden ${isFullscreen ? 'fixed inset-0 z-50' : 'h-[calc(100vh-4rem)]'}`}>
+    <div className="w-full min-h-[calc(100vh-4rem)] flex flex-col md:flex-row bg-[#F8FAFC]">
       
       {/* MAP AREA */}
-      <div className="flex-1 relative overflow-auto border-r border-white/10 custom-scrollbar">
-        
-        {/* Controls */}
-        <div className="absolute top-4 left-4 z-20 flex gap-2">
-          <div className="px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl font-bold text-white/80 flex items-center gap-2">
-            <Network className="w-4 h-4 text-yellow-400" />
-            Bản đồ Tri thức
+      <div 
+        ref={containerRef}
+        className={`relative ${isFullscreen ? 'w-full h-screen bg-white' : 'flex-1 h-[calc(100vh-4rem)]'} overflow-hidden border-r border-gray-200 bg-[#F8FAFC]`}
+      >
+        <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 pointer-events-none">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 shadow-sm rounded-full text-sm font-bold uppercase tracking-widest pointer-events-auto">
+            <Network className="w-4 h-4 text-[#B91C1C]" /> Bản đồ tri thức
           </div>
-          <button 
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            className="p-2 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 rounded-xl text-white/80 transition-colors"
-          >
-            {isFullscreen ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
-          </button>
+          {!isFullscreen && (
+            <p className="text-gray-500 text-sm max-w-xs pointer-events-auto bg-white/80 p-3 rounded-xl border border-gray-200 backdrop-blur-sm">
+              Khám phá mối liên hệ giữa các khái niệm. Click vào một node để xem chi tiết.
+            </p>
+          )}
         </div>
 
-        {/* Virtual Canvas (Minimum size to allow scrolling) */}
-        <div className="relative min-w-[1100px] min-h-[800px] w-full h-full" ref={containerRef}>
-          
+        <button 
+          onClick={toggleFullscreen}
+          className="absolute top-4 right-4 z-10 p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-[#1F2937] hover:bg-gray-50 shadow-sm transition-all"
+        >
+          {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}
+        </button>
+
+        {/* Legend */}
+        <div className="absolute bottom-4 left-4 z-10 bg-white border border-gray-200 p-3 rounded-xl shadow-sm text-xs text-gray-600 flex flex-col gap-2">
+           <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-[#B91C1C]"></div> Tư tưởng / Đang chọn</div>
+           <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-[#F59E0B]"></div> Chương / Liên quan</div>
+           <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-[#15803d]"></div> Đã hiểu</div>
+           <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-gray-500"></div> Khái niệm</div>
+        </div>
+
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-full cursor-grab active:cursor-grabbing">
           {/* Edges */}
-          {edges.map(edge => (
-            <BezierCurve
-              key={edge.id}
-              startX={edge.source.x + 180} // Node width offset
-              startY={edge.source.y + 35}  // Node height offset
-              endX={edge.target.x}
-              endY={edge.target.y + 35}
-              isActive={edge.isActive}
-            />
-          ))}
+          {conceptsData.map(node => 
+            node.connections.map(targetId => {
+              const targetNode = conceptsData.find(n => n.id === targetId);
+              if (!targetNode) return null;
+              
+              const isHighlighted = selectedNode && (
+                (selectedNode.id === node.id && selectedNode.connections.includes(targetId)) ||
+                (selectedNode.id === targetId && node.connections.includes(selectedNode.id)) ||
+                (selectedNode.connections.includes(node.id) && selectedNode.connections.includes(targetId))
+              );
+
+              return (
+                <line
+                  key={`${node.id}-${targetId}`}
+                  x1={node.x} y1={node.y} x2={targetNode.x} y2={targetNode.y}
+                  stroke={isHighlighted ? "#F59E0B" : "#E5E7EB"}
+                  strokeWidth={isHighlighted ? 2.5 : 1}
+                  className="transition-all duration-300"
+                />
+              );
+            })
+          )}
 
           {/* Nodes */}
-          {Object.values(nodesWithPositions).map(node => {
-            const isSelected = selectedNodeId === node.id;
-            const isRelated = selectedNode?.relatedConcepts?.includes(node.id) || 
-                              node.relatedConcepts?.includes(selectedNode?.id);
-            const isParentOrChild = node.parentId === selectedNodeId || selectedNode?.parentId === node.id;
+          {conceptsData.map(node => {
+            const isSelected = selectedNode?.id === node.id;
+            const isViewed = progress.viewedConcepts.includes(node.id);
             
-            // Dim nodes that are not related when something is selected
-            const isDimmed = selectedNodeId && !isSelected && !isRelated && !isParentOrChild && node.id !== 'tu-tuong-ho-chi-minh';
-
             return (
-              <motion.button
-                key={node.id}
-                onClick={() => {
-                  setSelectedNodeId(node.id);
-                  setIsPanelOpen(true);
-                }}
-                className={`absolute w-[180px] h-[70px] flex flex-col items-center justify-center text-center p-3 rounded-2xl border transition-all z-10 
-                  ${isSelected ? 'bg-red-500 border-red-400 shadow-[0_0_30px_rgba(239,68,68,0.5)] z-20 scale-110' : 
-                    isParentOrChild ? 'bg-yellow-500/20 border-yellow-500/50 text-white shadow-[0_0_15px_rgba(234,179,8,0.2)]' :
-                    'bg-white/5 border-white/10 text-white/70 hover:bg-white/10 hover:border-white/30'}
-                `}
-                style={{ 
-                  left: node.x, top: node.y,
-                  opacity: isDimmed ? 0.3 : 1
-                }}
-                whileHover={{ scale: isSelected ? 1.1 : 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <g 
+                key={node.id} 
+                className="cursor-pointer group"
+                onClick={() => handleNodeClick(node)}
               >
-                <span className={`text-xs font-bold leading-tight ${isSelected ? 'text-white' : ''}`}>
-                  {node.title}
-                </span>
-                {node.level === 0 && (
-                  <div className="absolute -inset-1 bg-red-500/30 rounded-2xl blur-md -z-10 animate-pulse" />
+                {/* Glow for selected */}
+                {isSelected && (
+                  <circle cx={node.x} cy={node.y} r={getNodeSize(node.type) + 8} fill="rgba(185,28,28,0.1)" />
                 )}
-              </motion.button>
+                
+                <circle
+                  cx={node.x} cy={node.y} r={getNodeSize(node.type)}
+                  fill={getNodeColor(node)}
+                  className="transition-colors duration-300"
+                  stroke={isSelected ? "#fff" : "none"}
+                  strokeWidth={isSelected ? 2 : 0}
+                />
+                
+                {isViewed && !isSelected && (
+                  <circle cx={node.x + 8} cy={node.y - 8} r={4} fill="#fff" stroke="#15803d" strokeWidth={1.5} />
+                )}
+
+                <text
+                  x={node.x} y={node.y + getNodeSize(node.type) + 16}
+                  textAnchor="middle"
+                  fill={isSelected ? "#1F2937" : "#6B7280"}
+                  className={`text-xs md:text-sm transition-all duration-300 ${isSelected ? 'font-bold' : 'font-medium'}`}
+                  style={{ pointerEvents: 'none', userSelect: 'none' }}
+                >
+                  {node.label}
+                </text>
+              </g>
             );
           })}
-        </div>
+        </svg>
       </div>
 
-      {/* DETAIL PANEL (Right) */}
+      {/* DETAIL PANEL */}
       <AnimatePresence>
-        {isPanelOpen && (
-          <motion.aside
+        {selectedNode ? (
+          <motion.div
             initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 380, opacity: 1 }}
+            animate={{ width: 'auto', opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
-            className="h-full bg-[#0a0a0f] border-l border-white/10 shrink-0 overflow-y-auto relative"
+            className="w-full md:w-96 bg-white border-l border-gray-200 overflow-y-auto h-[calc(100vh-4rem)] shadow-lg z-20 flex-shrink-0"
           >
-            {selectedNode && (
-              <div className="p-6 w-[380px]">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="px-3 py-1 bg-white/10 text-white/50 text-xs font-bold rounded-full uppercase tracking-wider">
-                    Node Chi Tiết
-                  </div>
-                  <button 
-                    onClick={() => setIsPanelOpen(false)}
-                    className="p-2 text-white/50 hover:bg-white/10 hover:text-white rounded-xl transition-colors"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
+            <div className="p-6 h-full flex flex-col">
+              <div className="flex items-center justify-between mb-6">
+                <div className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full ${
+                  selectedNode.type === 'root' ? 'bg-[#FEE2E2] text-[#B91C1C]' :
+                  selectedNode.type === 'chapter' ? 'bg-[#FEF3C7] text-[#F59E0B]' :
+                  'bg-gray-100 text-gray-600'
+                }`}>
+                  {selectedNode.type === 'root' ? 'Hệ tư tưởng' :
+                   selectedNode.type === 'chapter' ? 'Chương học' : 'Khái niệm'}
                 </div>
-
-                <motion.div
-                  key={selectedNode.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3 }}
+                <button 
+                  onClick={() => setSelectedNode(null)}
+                  className="p-2 text-gray-400 hover:text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors"
                 >
-                  <h2 className="text-2xl font-display font-black text-white mb-2 leading-snug">
-                    {selectedNode.title}
-                  </h2>
-                  <p className="text-yellow-400 font-medium text-sm mb-6 pb-6 border-b border-white/10">
-                    {selectedNode.shortDescription}
-                  </p>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xs font-bold text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <BookOpen className="w-4 h-4" /> Nội dung cốt lõi
-                      </h3>
-                      <p className="text-white/80 leading-relaxed text-sm bg-white/5 p-4 rounded-xl border border-white/5">
-                        {selectedNode.content}
-                      </p>
-                    </div>
-
-                    {selectedNode.relatedConcepts && selectedNode.relatedConcepts.length > 0 && (
-                      <div>
-                        <h3 className="text-xs font-bold text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
-                          <Network className="w-4 h-4" /> Khái niệm liên quan
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedNode.relatedConcepts.map(rId => {
-                            const rel = conceptsData.find(c => c.id === rId);
-                            if (!rel) return null;
-                            return (
-                              <button 
-                                key={rId}
-                                onClick={() => setSelectedNodeId(rId)}
-                                className="px-3 py-1.5 bg-dark border border-white/10 text-white/70 text-xs font-medium rounded-lg hover:border-yellow-400 hover:text-yellow-400 transition-colors"
-                              >
-                                {rel.title}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="pt-6 border-t border-white/10 mt-8">
-                      <button 
-                        onClick={() => navigate(`/theory/chapters/${selectedNode.chapter}`)}
-                        className="w-full py-4 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:scale-[1.02] transition-transform"
-                      >
-                        <FileText className="w-4 h-4" /> Xem chương chi tiết <ChevronRight className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
+                  <X className="w-5 h-5" />
+                </button>
               </div>
-            )}
-          </motion.aside>
+
+              <h2 className="text-2xl font-bold text-[#1F2937] mb-4">{selectedNode.label}</h2>
+              <p className="text-gray-600 leading-relaxed mb-8 border-l-4 border-[#F59E0B] pl-4">
+                {selectedNode.description}
+              </p>
+
+              {selectedNode.connections.length > 0 && (
+                <div className="mb-8">
+                  <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Liên kết với</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedNode.connections.map(id => {
+                      const relatedNode = conceptsData.find(n => n.id === id);
+                      return relatedNode ? (
+                        <button
+                          key={id}
+                          onClick={() => setSelectedNode(relatedNode)}
+                          className="px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-gray-600 hover:bg-[#FEE2E2] hover:text-[#B91C1C] hover:border-[#B91C1C]/30 text-sm rounded-lg transition-colors text-left"
+                        >
+                          {relatedNode.label}
+                        </button>
+                      ) : null;
+                    })}
+                  </div>
+                </div>
+              )}
+
+              <div className="mt-auto pt-6 border-t border-gray-100 space-y-3">
+                {selectedNode.type === 'chapter' && (
+                  <button 
+                    onClick={() => navigate(`/theory/chapters/${selectedNode.id}`)}
+                    className="w-full py-3 bg-[#B91C1C] hover:bg-red-700 text-white rounded-xl font-bold transition-all shadow-md flex items-center justify-center gap-2"
+                  >
+                    <BookOpen className="w-5 h-5" /> Xem trong giáo trình <ChevronRight className="w-4 h-4" />
+                  </button>
+                )}
+                
+                <button 
+                  onClick={handleMarkUnderstood}
+                  disabled={progress.viewedConcepts.includes(selectedNode.id)}
+                  className={`w-full py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2 ${
+                    progress.viewedConcepts.includes(selectedNode.id)
+                      ? 'bg-[#DCFCE7] text-[#15803d] cursor-default border border-[#15803d]/30'
+                      : 'bg-white border border-gray-300 text-[#1F2937] hover:bg-gray-50'
+                  }`}
+                >
+                  <CheckCircle className="w-5 h-5" /> 
+                  {progress.viewedConcepts.includes(selectedNode.id) ? 'Đã hiểu khái niệm này' : 'Đánh dấu đã hiểu'}
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <div className="hidden md:flex w-96 bg-white border-l border-gray-200 h-[calc(100vh-4rem)] flex-col items-center justify-center p-8 text-center text-gray-500">
+            <Network className="w-16 h-16 text-gray-200 mb-4" />
+            <p>Chọn một node trên bản đồ để xem chi tiết, mối liên hệ và đánh dấu tiến độ.</p>
+          </div>
         )}
       </AnimatePresence>
-
     </div>
   );
 }

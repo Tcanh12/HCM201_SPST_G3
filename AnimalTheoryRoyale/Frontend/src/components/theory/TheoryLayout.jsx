@@ -1,8 +1,15 @@
 import { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import TheoryHeader from './TheoryHeader';
 
 export default function TheoryLayout() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useEffect(() => {
     // Allow scrolling for theory pages (overrides body overflow-hidden from index.css)
     document.body.style.overflow = 'auto';
@@ -16,7 +23,7 @@ export default function TheoryLayout() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0a0a0f] text-white font-sans selection:bg-primary/30 selection:text-white">
+    <div className="flex flex-col min-h-screen bg-[#F8FAFC] text-[#1F2937] font-sans selection:bg-[#B91C1C]/20 selection:text-[#B91C1C]">
       <TheoryHeader />
       <main className="flex-1 mt-16 w-full relative z-0">
         <Outlet />

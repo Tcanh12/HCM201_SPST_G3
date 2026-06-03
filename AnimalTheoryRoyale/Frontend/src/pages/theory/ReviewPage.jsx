@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, XCircle, ArrowRight, RefreshCcw, HelpCircle } from 'lucide-react';
+import { useLearningProgress } from '../../components/theory/ProgressContext';
 
 const quizData = [
   {
@@ -59,6 +60,7 @@ export default function ReviewPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
+  const { markQuizCompleted } = useLearningProgress();
 
   const handleSelect = (index) => {
     if (!isSubmitted) setSelectedOption(index);
@@ -79,6 +81,9 @@ export default function ReviewPage() {
       setIsSubmitted(false);
     } else {
       setShowResult(true);
+      if (score + (selectedOption === quizData[currentQuestion].correctAnswer ? 1 : 0) >= 3) {
+        markQuizCompleted('quiz-general');
+      }
     }
   };
 
@@ -91,18 +96,18 @@ export default function ReviewPage() {
   };
 
   return (
-    <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 relative overflow-hidden bg-[#050508]">
+    <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 relative overflow-hidden bg-[#F8FAFC]">
       
       {/* Background Decorative */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FEE2E2] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="w-full max-w-3xl relative z-10">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 rounded-full text-sm font-bold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#FEF3C7] text-[#F59E0B] rounded-full text-sm font-bold uppercase tracking-widest mb-4">
             <HelpCircle className="w-4 h-4" /> Ôn tập nhanh
           </div>
-          <h1 className="text-4xl font-display font-black text-white">
+          <h1 className="text-4xl font-display font-black text-[#1F2937]">
             Kiểm tra Kiến thức
           </h1>
         </div>
@@ -114,36 +119,36 @@ export default function ReviewPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative"
+              className="bg-white border border-gray-200 p-8 md:p-12 rounded-[2.5rem] shadow-lg relative"
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-white/50 font-bold">Câu hỏi {currentQuestion + 1} / {quizData.length}</span>
+                <span className="text-gray-500 font-bold">Câu hỏi {currentQuestion + 1} / {quizData.length}</span>
                 <div className="flex gap-1">
                   {quizData.map((_, i) => (
                     <div 
                       key={i} 
-                      className={`w-8 h-2 rounded-full ${i === currentQuestion ? 'bg-yellow-400' : i < currentQuestion ? 'bg-white/30' : 'bg-white/5'}`} 
+                      className={`w-8 h-2 rounded-full ${i === currentQuestion ? 'bg-[#F59E0B]' : i < currentQuestion ? 'bg-gray-300' : 'bg-gray-100'}`} 
                     />
                   ))}
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-8 leading-snug">
+              <h2 className="text-2xl font-bold text-[#1F2937] mb-8 leading-snug">
                 {quizData[currentQuestion].question}
               </h2>
 
               <div className="space-y-4 mb-8">
                 {quizData[currentQuestion].options.map((opt, i) => {
-                  let btnClass = "bg-white/5 border-white/10 text-white hover:bg-white/10";
+                  let btnClass = "bg-[#F8FAFC] border-gray-200 text-[#1F2937] hover:bg-gray-50";
                   
                   if (isSubmitted) {
                     if (i === quizData[currentQuestion].correctAnswer) {
-                      btnClass = "bg-emerald-500/20 border-emerald-500/50 text-emerald-400";
+                      btnClass = "bg-[#DCFCE7] border-[#15803d]/50 text-[#15803d]";
                     } else if (i === selectedOption) {
-                      btnClass = "bg-red-500/20 border-red-500/50 text-red-400";
+                      btnClass = "bg-[#FEE2E2] border-[#B91C1C]/50 text-[#B91C1C]";
                     }
                   } else if (selectedOption === i) {
-                    btnClass = "bg-yellow-500/20 border-yellow-500/50 text-yellow-400";
+                    btnClass = "bg-[#FEF3C7] border-[#F59E0B]/50 text-[#b45309]";
                   }
 
                   return (
@@ -154,8 +159,8 @@ export default function ReviewPage() {
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all font-medium ${btnClass} flex items-center justify-between`}
                     >
                       <span>{opt}</span>
-                      {isSubmitted && i === quizData[currentQuestion].correctAnswer && <CheckCircle className="w-5 h-5 text-emerald-400" />}
-                      {isSubmitted && i === selectedOption && i !== quizData[currentQuestion].correctAnswer && <XCircle className="w-5 h-5 text-red-400" />}
+                      {isSubmitted && i === quizData[currentQuestion].correctAnswer && <CheckCircle className="w-5 h-5 text-[#15803d]" />}
+                      {isSubmitted && i === selectedOption && i !== quizData[currentQuestion].correctAnswer && <XCircle className="w-5 h-5 text-[#B91C1C]" />}
                     </button>
                   );
                 })}
@@ -166,27 +171,27 @@ export default function ReviewPage() {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="mb-8 p-4 bg-white/5 border border-white/10 rounded-xl"
+                    className="mb-8 p-4 bg-[#F8FAFC] border border-gray-200 rounded-xl"
                   >
-                    <span className="text-sm font-bold text-yellow-400 block mb-2">Giải thích:</span>
-                    <p className="text-white/80 text-sm leading-relaxed">{quizData[currentQuestion].explanation}</p>
+                    <span className="text-sm font-bold text-[#F59E0B] block mb-2">Giải thích:</span>
+                    <p className="text-gray-600 text-sm leading-relaxed">{quizData[currentQuestion].explanation}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              <div className="flex justify-end pt-6 border-t border-white/10">
+              <div className="flex justify-end pt-6 border-t border-gray-100">
                 {!isSubmitted ? (
                   <button
                     onClick={handleSubmit}
                     disabled={selectedOption === null}
-                    className="px-8 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-xl font-bold disabled:opacity-50 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:scale-105"
+                    className="px-8 py-3 bg-[#B91C1C] text-white rounded-xl font-bold disabled:opacity-50 transition-all flex items-center gap-2 shadow-md hover:scale-105"
                   >
                     Kiểm tra
                   </button>
                 ) : (
                   <button
                     onClick={handleNext}
-                    className="px-8 py-3 bg-white text-dark rounded-xl font-bold transition-all flex items-center gap-2 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                    className="px-8 py-3 bg-[#1F2937] text-white rounded-xl font-bold transition-all flex items-center gap-2 hover:scale-105 shadow-md"
                   >
                     {currentQuestion < quizData.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả'} <ArrowRight className="w-4 h-4" />
                   </button>
@@ -198,20 +203,20 @@ export default function ReviewPage() {
               key="result"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-gradient-to-br from-[#1a1a24] to-[#0a0a0f] border border-white/10 p-12 rounded-[2.5rem] shadow-2xl text-center relative overflow-hidden"
+              className="bg-white border border-gray-200 p-12 rounded-[2.5rem] shadow-xl text-center relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 blur-[100px] rounded-full pointer-events-none" />
-              <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mx-auto flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(245,158,11,0.4)]">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#FEF3C7] blur-[100px] rounded-full pointer-events-none" />
+              <div className="w-24 h-24 bg-[#15803d] rounded-full mx-auto flex items-center justify-center mb-8 shadow-md">
                 <CheckCircle className="w-12 h-12 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4">Kết quả ôn tập</h2>
-              <p className="text-white/60 text-lg mb-8">Bạn đã trả lời đúng</p>
-              <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-8">
+              <h2 className="text-3xl font-bold text-[#1F2937] mb-4">Kết quả ôn tập</h2>
+              <p className="text-gray-500 text-lg mb-8">Bạn đã trả lời đúng</p>
+              <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-amber-500 mb-8">
                 {score} / {quizData.length}
               </div>
               <button
                 onClick={restartQuiz}
-                className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl font-bold transition-all flex items-center gap-2 mx-auto"
+                className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-[#1F2937] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto"
               >
                 <RefreshCcw className="w-5 h-5" /> Làm lại từ đầu
               </button>

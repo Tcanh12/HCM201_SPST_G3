@@ -9,6 +9,7 @@ import GamePage from './pages/GamePage';
 import ResultPage from './pages/ResultPage';
 
 // Concept Explorer (Theory Website)
+import { ProgressProvider } from './components/theory/ProgressContext';
 import TheoryLayout from './components/theory/TheoryLayout';
 import TheoryHomePage from './pages/theory/HomePage';
 import AboutPage from './pages/theory/AboutPage';
@@ -17,6 +18,7 @@ import ChapterDetailPage from './pages/theory/ChapterDetailPage';
 import ConceptMapPage from './pages/theory/ConceptMapPage';
 import TimelinePage from './pages/theory/TimelinePage';
 import CaseFilesPage from './pages/theory/CaseFilesPage';
+import CaseFileDetailPage from './pages/theory/CaseFileDetailPage';
 import ReviewPage from './pages/theory/ReviewPage';
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
     <div className="w-screen h-screen bg-dark text-white">
       <Routes>
         {/* Concept Explorer (Theory Website) */}
-        <Route path="/theory" element={<TheoryLayout />}>
+        <Route path="/theory" element={<ProgressProvider><TheoryLayout /></ProgressProvider>}>
           <Route index element={<TheoryHomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="chapters" element={<ChaptersPage />} />
@@ -32,8 +34,8 @@ function App() {
           <Route path="concept-map" element={<ConceptMapPage />} />
           <Route path="timeline" element={<TimelinePage />} />
           <Route path="case-files" element={<CaseFilesPage />} />
+          <Route path="case-files/:caseId" element={<CaseFileDetailPage />} />
           <Route path="review" element={<ReviewPage />} />
-          {/* We will add more theory routes here later */}
         </Route>
 
         {/* Game Mode (Landing) */}

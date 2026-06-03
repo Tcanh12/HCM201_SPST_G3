@@ -1,315 +1,319 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronRight, BookOpen, Target, ArrowLeft, 
-  CheckCircle2, Brain, Flag, Globe, LayoutList, CheckCircle
+  CheckCircle2, Brain, Flag, Globe, LayoutList, CheckCircle, 
+  Heart, Users, Compass, ShieldCheck
 } from 'lucide-react';
+import { useLearningProgress } from '../../components/theory/ProgressContext';
 import { chapterDetails } from '../../data/chapterDetails';
 import chapters from '../../data/chapters.json';
 
-// Helper component to render icons by string name
-const IconByName = ({ name, className }) => {
-  const icons = { BookOpen, Flag, Globe, Brain };
-  const Icon = icons[name] || CheckCircle2;
-  return <Icon className={className} />;
+const IconMap = {
+  BookOpen, Brain, Flag, Globe, Target, Heart, Users, Compass, ShieldCheck
 };
 
 export default function ChapterDetailPage() {
   const { chapterId } = useParams();
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState('muc-1');
-  const [quizScores, setQuizScores] = useState({});
-  const [showQuizResult, setShowQuizResult] = useState(false);
+  const { 
+    progress, 
+    saveLastVisited, 
+    markSectionCompleted, 
+    markChapterCompleted,
+    calculateChapterProgress
+  } = useLearningProgress();
 
-  // Fallback to basic info if deep content is missing (for Ch 2-6 currently)
-  const basicInfo = chapters.find(c => c.id === chapterId);
-  const detailedInfo = chapterDetails[chapterId];
+  const chapterData = chapterDetails[chapterId];
+  const chapterMeta = chapters.find(c => c.id === chapterId);
+  const [activeSection, setActiveSection] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [chapterId]);
+    if (chapterId) {
+      saveLastVisited(`/theory/chapters/${chapterId}`, chapterId);
+    }
+  }, [chapterId, saveLastVisited]);
 
-  if (!basicInfo) {
-    return <div className="text-center py-20 text-white">Chương không tồn tại.</div>;
+  if (!chapterData || !chapterMeta) {
+    return (
+      <div className="w-full min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-8 bg-[#F8FAFC]">
+        <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+          <BookOpen className="w-10 h-10 text-gray-400" />
+        </div>
+        <h2 className="text-2xl font-bold text-[#1F2937] mb-2">Không tìm thấy nội dung chương này.</h2>
+        <p className="text-gray-500 mb-8">Nội dung đang được cập nhật hoặc đường dẫn không hợp lệ.</p>
+        <button 
+          onClick={() => navigate('/theory/chapters')}
+          className="px-6 py-3 bg-[#B91C1C] text-white rounded-xl font-bold flex items-center gap-2 hover:bg-red-700"
+        >
+          <ArrowLeft className="w-4 h-4" /> Quay lại danh sách chương
+        </button>
+      </div>
+    );
   }
 
-  // Calculate Progress
-  const totalSections = detailedInfo?.sections?.length || 0;
-  // Simplistic progress logic based on active section index
-  const activeIndex = detailedInfo?.sections?.findIndex(s => s.id === activeSection) || 0;
-  const progressPercent = totalSections > 0 ? Math.round(((activeIndex + 1) / totalSections) * 100) : 0;
+  const completedSections = progress.completedSections[chapterId] || [];
+  const isChapterCompleted = progress.completedChapters.includes(chapterId);
+  const chapterProgress = calculateChapterProgress(chapterId, chapterData.sections.length);
 
-  const handleQuizAnswer = (qIndex, oIndex) => {
-    setQuizScores(prev => ({ ...prev, [qIndex]: oIndex }));
+  const handleSectionComplete = (sectionId) => {
+    markSectionCompleted(chapterId, sectionId);
   };
 
-  const calculateQuizResult = () => {
-    if (!detailedInfo?.quiz) return 0;
-    let score = 0;
-    detailedInfo.quiz.forEach((q, i) => {
-      if (quizScores[i] === q.correctIndex) score++;
-    });
-    return score;
+  const handleChapterComplete = () => {
+    markChapterCompleted(chapterId);
+  };
+
+  const renderSection = (section) => {
+    const isCompleted = completedSections.includes(section.id);
+
+    return (
+      <div id={section.id} key={section.id} className="mb-12 scroll-mt-24">
+        <h3 className="text-2xl font-bold text-[#1F2937] mb-6 flex items-center gap-3 border-b border-gray-200 pb-4">
+          <div className="w-8 h-8 rounded-full bg-[#FEE2E2] flex items-center justify-center">
+            <div className="w-3 h-3 rounded-full bg-[#B91C1C]" />
+          </div>
+          {section.title}
+        </h3>
+        
+        <div className="text-gray-700 leading-relaxed text-lg mb-8 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+          {section.content}
+        </div>
+
+        {/* Dynamic Graphic Rendering based on section type */}
+        {section.type === 'concept-card-with-diagram' && section.diagram && (
+          <div className="bg-[#F8FAFC] border border-gray-200 p-8 rounded-2xl mb-8">
+            <h4 className="text-center font-bold text-[#1E3A8A] mb-8">{section.diagram.title}</h4>
+            <div className="flex flex-wrap justify-center gap-6">
+              {section.diagram.nodes.map((node, i) => {
+                const Icon = IconMap[node.icon] || BookOpen;
+                return (
+                  <div key={i} className="flex flex-col items-center bg-white p-6 rounded-xl border border-gray-200 shadow-sm w-40 text-center relative">
+                    <div className="w-12 h-12 rounded-full bg-[#DBEAFE] flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-[#1E3A8A]" />
+                    </div>
+                    <span className="font-bold text-sm text-[#1F2937]">{node.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {section.type === 'mindmap' && section.diagram && (
+          <div className="bg-[#F8FAFC] border border-gray-200 p-8 rounded-2xl mb-8 flex flex-col items-center">
+            <div className="px-6 py-3 bg-[#B91C1C] text-white font-bold rounded-xl shadow-md mb-8 z-10">
+              {section.diagram.center}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl">
+              {section.diagram.branches.map((branch, i) => (
+                <div key={i} className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center font-medium text-[#1F2937] flex items-center justify-center relative">
+                  {branch}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {section.type === 'infographic-list' && section.items && (
+          <div className="grid gap-4 mb-8">
+            {section.items.map((item, i) => (
+              <div key={i} className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-[#FEF3C7] text-[#F59E0B] flex items-center justify-center font-bold flex-shrink-0">
+                  {i + 1}
+                </div>
+                <div>
+                  <h5 className="font-bold text-[#1F2937] mb-1">{item.title}</h5>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {section.type === 'three-pillars' && section.pillars && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {section.pillars.map((pillar, i) => (
+              <div key={i} className="bg-white border-t-4 border-[#B91C1C] p-6 rounded-b-xl border-x border-b border-gray-200 shadow-sm text-center">
+                <h5 className="font-bold text-[#1F2937] mb-3">{pillar.title}</h5>
+                <p className="text-gray-600 text-sm">{pillar.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Section Completion Button */}
+        <div className="flex justify-end">
+          <button
+            onClick={() => handleSectionComplete(section.id)}
+            disabled={isCompleted}
+            className={`px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 ${
+              isCompleted 
+                ? 'bg-[#DCFCE7] text-[#15803d] cursor-default border border-[#15803d]/30' 
+                : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 shadow-sm'
+            }`}
+          >
+            {isCompleted ? (
+              <><CheckCircle2 className="w-5 h-5" /> Đã học phần này</>
+            ) : (
+              <><CheckCircle className="w-5 h-5" /> Đánh dấu đã học</>
+            )}
+          </button>
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div className="w-full min-h-screen pb-20 flex flex-col md:flex-row relative max-w-[1600px] mx-auto">
+    <div className="w-full min-h-[calc(100vh-4rem)] flex flex-col xl:flex-row bg-[#F8FAFC]">
       
-      {/* 1. SIDEBAR (Left) */}
-      <aside className="w-full md:w-64 lg:w-80 border-r border-white/10 p-6 flex flex-col h-auto md:h-[calc(100vh-4rem)] md:sticky md:top-16 bg-[#0a0a0f] z-10 shrink-0 overflow-y-auto hidden md:flex">
+      {/* 1. Sidebar - Navigation */}
+      <aside className="w-full xl:w-80 flex-shrink-0 border-r border-gray-200 bg-white p-6 hidden xl:block overflow-y-auto h-[calc(100vh-4rem)] sticky top-16">
         <button 
           onClick={() => navigate('/theory/chapters')}
-          className="flex items-center gap-2 text-white/50 hover:text-white transition-colors mb-8 font-medium text-sm"
+          className="flex items-center gap-2 text-gray-500 hover:text-[#B91C1C] font-medium text-sm mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" /> Quay lại danh sách
         </button>
 
-        <div className="text-xs font-bold text-red-400 uppercase tracking-widest mb-2">Chương {basicInfo.chapterNumber}</div>
-        <h2 className="text-xl font-bold mb-8 text-white leading-snug">{basicInfo.title}</h2>
-
-        <div className="space-y-2 flex-1">
-          <div className="text-xs text-white/40 font-bold uppercase tracking-wider mb-4">Nội dung chương</div>
-          {detailedInfo ? detailedInfo.sections.map((sec, idx) => (
-            <button
-              key={sec.id}
-              onClick={() => {
-                setActiveSection(sec.id);
-                document.getElementById(sec.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              className={`w-full text-left px-4 py-3 rounded-xl transition-all text-sm font-medium flex items-start gap-3 ${
-                activeSection === sec.id 
-                  ? 'bg-red-500/10 text-red-400 border border-red-500/20 shadow-[0_0_15px_rgba(220,38,38,0.1)]' 
-                  : 'text-white/60 hover:bg-white/5 hover:text-white'
-              }`}
-            >
-              <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5 ${
-                activeSection === sec.id ? 'bg-red-500 text-white' : 'bg-white/10 text-white/50'
-              }`}>
-                {idx + 1}
-              </span>
-              <span className="leading-snug">{sec.title.replace(/^[0-9.]+\s/, '')}</span>
-            </button>
-          )) : (
-             <div className="text-white/40 text-sm">Nội dung chi tiết đang được cập nhật...</div>
-          )}
+        <h3 className="font-bold text-xs uppercase tracking-widest text-gray-400 mb-4">Các chương học</h3>
+        <div className="space-y-2">
+          {chapters.map(c => {
+            const isActive = c.id === chapterId;
+            const isDone = progress.completedChapters.includes(c.id);
+            return (
+              <div 
+                key={c.id} 
+                onClick={() => navigate(`/theory/chapters/${c.id}`)}
+                className={`p-3 rounded-xl cursor-pointer transition-colors border ${
+                  isActive 
+                    ? 'bg-[#FEE2E2] border-[#B91C1C]/30' 
+                    : 'bg-white border-transparent hover:bg-gray-50 hover:border-gray-200'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className={`text-xs font-bold ${isActive ? 'text-[#B91C1C]' : 'text-gray-500'}`}>
+                    Chương {c.chapterNumber}
+                  </span>
+                  {isDone && <CheckCircle2 className="w-4 h-4 text-[#15803d]" />}
+                </div>
+                <h4 className={`text-sm font-medium line-clamp-2 ${isActive ? 'text-[#B91C1C]' : 'text-[#1F2937]'}`}>
+                  {c.title}
+                </h4>
+              </div>
+            );
+          })}
         </div>
       </aside>
 
-      {/* 2. MAIN CONTENT (Center) */}
-      <main className="flex-1 px-4 md:px-12 lg:px-20 py-8 md:py-12 overflow-x-hidden">
-        
-        {/* Mobile Header */}
-        <div className="md:hidden mb-8">
-          <button onClick={() => navigate('/theory/chapters')} className="flex items-center gap-2 text-white/50 mb-4 text-sm"><ArrowLeft className="w-4 h-4" /> Quay lại</button>
-          <div className="text-xs font-bold text-red-400 uppercase tracking-widest mb-2">Chương {basicInfo.chapterNumber}</div>
-          <h1 className="text-3xl font-display font-black text-white">{basicInfo.title}</h1>
+      {/* 2. Main Content */}
+      <main className="flex-1 max-w-4xl mx-auto p-4 md:p-8 lg:p-12 w-full">
+        {/* Hero */}
+        <div className="mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#FEE2E2] text-[#B91C1C] rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+            Chương {chapterData.chapterNumber}
+          </div>
+          <h1 className="text-3xl md:text-5xl font-display font-black text-[#1F2937] leading-tight mb-6">
+            {chapterData.title}
+          </h1>
+          
+          <div className="bg-white border-l-4 border-[#F59E0B] p-6 rounded-r-2xl border-y border-r border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3">
+              <Target className="w-6 h-6 text-[#F59E0B] flex-shrink-0 mt-1" />
+              <div>
+                <h4 className="font-bold text-[#1F2937] mb-2">Mục tiêu học tập</h4>
+                <p className="text-gray-600 leading-relaxed">{chapterData.objective}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Hero / Objective */}
-        <div className="bg-gradient-to-br from-red-900/20 to-yellow-900/10 border border-red-500/20 rounded-3xl p-6 md:p-10 mb-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/10 blur-[100px] rounded-full pointer-events-none" />
-          <Target className="w-12 h-12 text-red-400 mb-6 relative z-10" />
-          <h2 className="text-2xl font-bold mb-4 text-white relative z-10">Mục tiêu cần nắm</h2>
-          <p className="text-white/80 text-lg leading-relaxed relative z-10">
-            {detailedInfo?.objective || basicInfo.summary}
+        {/* Content Sections */}
+        <div className="space-y-4">
+          {chapterData.sections.map(renderSection)}
+        </div>
+
+        {/* Chapter Summary */}
+        {chapterData.summary && (
+          <div className="mt-16 p-8 bg-[#1E3A8A] rounded-[2rem] text-white text-center shadow-lg relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+            <h3 className="text-2xl font-bold mb-4 relative z-10">Tóm tắt cuối chương</h3>
+            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto relative z-10">
+              {chapterData.summary}
+            </p>
+          </div>
+        )}
+      </main>
+
+      {/* 3. Right Panel - Progress & Tools */}
+      <aside className="w-full xl:w-80 flex-shrink-0 border-l border-gray-200 bg-white p-6 xl:block sticky top-16 h-auto xl:h-[calc(100vh-4rem)] overflow-y-auto">
+        <h3 className="font-bold text-[#1F2937] text-lg mb-6 flex items-center gap-2">
+          <LayoutList className="w-5 h-5 text-[#B91C1C]" /> Tiến độ chương
+        </h3>
+        
+        <div className="bg-[#F8FAFC] border border-gray-200 rounded-2xl p-5 mb-8">
+          <div className="flex justify-between items-end mb-2">
+            <span className="text-sm font-bold text-gray-600">Hoàn thành</span>
+            <span className="text-2xl font-black text-[#B91C1C]">{chapterProgress}%</span>
+          </div>
+          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-4">
+            <motion.div 
+              className="h-full bg-[#B91C1C] rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${chapterProgress}%` }}
+            />
+          </div>
+          <p className="text-xs text-gray-500 text-center">
+            {completedSections.length} / {chapterData.sections.length} phần đã học
           </p>
         </div>
 
-        {/* Sections Content */}
-        {detailedInfo ? detailedInfo.sections.map((sec) => (
-          <section 
-            key={sec.id} 
-            id={sec.id}
-            className="mb-20 scroll-mt-24"
-            onMouseEnter={() => setActiveSection(sec.id)}
-          >
-            <h3 className="text-2xl md:text-3xl font-display font-bold mb-6 text-white">{sec.title}</h3>
-            
-            <p className="text-white/70 text-lg leading-relaxed mb-8 bg-white/5 p-6 rounded-2xl border border-white/10">
-              {sec.content}
-            </p>
-
-            {/* Dynamic Diagrams based on Type */}
-            {sec.type === 'concept-card-with-diagram' && (
-              <div className="mt-8 border border-white/10 rounded-3xl p-8 bg-gradient-to-b from-[#0a0a0f] to-[#12121a]">
-                <h4 className="text-center text-yellow-400 font-bold mb-8 text-xl">{sec.diagram.title}</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {sec.diagram.nodes.map((node, i) => (
-                    <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-yellow-400/50 transition-colors">
-                      <div className="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center border border-yellow-400/20 shrink-0">
-                        <IconByName name={node.icon} className="w-6 h-6 text-yellow-400" />
-                      </div>
-                      <span className="font-bold text-white/90">{node.label}</span>
-                    </div>
-                  ))}
-                </div>
+        <h3 className="font-bold text-[#1F2937] mb-4">Mục lục</h3>
+        <div className="space-y-2 mb-8">
+          {chapterData.sections.map((sec, i) => (
+            <a 
+              key={sec.id}
+              href={`#${sec.id}`}
+              className="flex items-center gap-3 text-sm p-2 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
+                completedSections.includes(sec.id) ? 'bg-[#DCFCE7] text-[#15803d]' : 'bg-gray-100 text-gray-400'
+              }`}>
+                {completedSections.includes(sec.id) ? <CheckCircle2 className="w-4 h-4" /> : i + 1}
               </div>
-            )}
-
-            {sec.type === 'mindmap' && (
-              <div className="mt-8 relative py-12 flex flex-col items-center">
-                <div className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-500 rounded-2xl font-black text-xl shadow-[0_0_30px_rgba(220,38,38,0.3)] z-10 text-center">
-                  {sec.diagram.center}
-                </div>
-                <div className="w-0.5 h-12 bg-red-500/50" />
-                <div className="w-full max-w-2xl h-0.5 bg-red-500/50 relative">
-                  <div className="absolute left-0 right-0 top-0 flex justify-between">
-                    <div className="w-0.5 h-6 bg-red-500/50" />
-                    <div className="w-0.5 h-6 bg-red-500/50" />
-                    <div className="w-0.5 h-6 bg-red-500/50" />
-                    <div className="w-0.5 h-6 bg-red-500/50" />
-                  </div>
-                </div>
-                <div className="w-full max-w-[48rem] grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-                  {sec.diagram.branches.map((branch, i) => (
-                    <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center text-sm font-bold text-white/80 hover:bg-white/10 hover:-translate-y-1 transition-transform">
-                      {branch}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {sec.type === 'infographic-list' && (
-              <div className="mt-8 space-y-4">
-                {sec.items.map((item, i) => (
-                  <div key={i} className="flex gap-4 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center shrink-0 border border-cyan-500/30">
-                      {i + 1}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-white mb-2">{item.title}</h4>
-                      <p className="text-white/60">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {sec.type === 'three-pillars' && (
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {sec.pillars.map((pillar, i) => (
-                  <div key={i} className="bg-gradient-to-b from-white/10 to-transparent border border-white/10 p-6 rounded-2xl flex flex-col items-center text-center hover:border-white/30 transition-colors">
-                    <div className="w-14 h-14 bg-emerald-500/10 rounded-full flex items-center justify-center mb-4 border border-emerald-500/20">
-                      <LayoutList className="w-6 h-6 text-emerald-400" />
-                    </div>
-                    <h4 className="font-bold text-white mb-3">{pillar.title}</h4>
-                    <p className="text-sm text-white/60">{pillar.description}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-          </section>
-        )) : (
-          <div className="py-20 text-center text-white/40">
-            Nội dung chi tiết của chương này sẽ được bổ sung sau.
-          </div>
-        )}
-
-      </main>
-
-      {/* 3. RIGHT PANEL (Concepts + Progress + Quiz) */}
-      <aside className="w-full lg:w-80 border-l border-white/10 p-6 flex flex-col h-auto md:h-[calc(100vh-4rem)] md:sticky md:top-16 bg-[#0a0a0f] z-10 shrink-0 overflow-y-auto">
-        
-        {/* Progress Box */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 mb-8">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-sm font-bold text-white/80">Tiến độ bài học</span>
-            <span className="text-sm font-black text-red-400">{progressPercent}%</span>
-          </div>
-          <div className="w-full h-2 bg-dark rounded-full overflow-hidden">
-            <motion.div 
-              className="h-full bg-gradient-to-r from-red-500 to-yellow-400"
-              initial={{ width: 0 }}
-              animate={{ width: `${progressPercent}%` }}
-              transition={{ duration: 0.5 }}
-            />
-          </div>
-        </div>
-
-        {/* Key Concepts Box */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 mb-8">
-          <h3 className="text-sm font-bold text-white/60 uppercase tracking-widest mb-4 flex items-center gap-2">
-            <BookOpen className="w-4 h-4" /> Khái niệm chính
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {basicInfo.tags.map(tag => (
-              <span key={tag} className="px-3 py-1.5 bg-dark border border-white/5 text-white/80 text-xs rounded-lg hover:border-yellow-400/50 hover:text-yellow-400 transition-colors cursor-pointer">
-                {tag}
+              <span className={`line-clamp-2 ${completedSections.includes(sec.id) ? 'text-gray-700' : 'text-gray-500'}`}>
+                {sec.title}
               </span>
-            ))}
-          </div>
+            </a>
+          ))}
         </div>
 
-        {/* Quick Quiz Box */}
-        {detailedInfo?.quiz && (
-          <div className="bg-gradient-to-br from-[#1a1a24] to-[#12121a] border border-cyan-500/20 rounded-2xl p-5 flex-1 flex flex-col relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl rounded-full" />
-            <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-4 flex items-center gap-2 relative z-10">
-              <CheckCircle className="w-4 h-4" /> Quiz Ôn Tập
-            </h3>
-            
-            <div className="space-y-6 flex-1 overflow-y-auto pr-2 relative z-10">
-              {detailedInfo.quiz.map((q, qIndex) => (
-                <div key={qIndex} className="bg-dark/50 border border-white/5 rounded-xl p-4">
-                  <p className="text-sm font-bold text-white mb-3">{qIndex + 1}. {q.question}</p>
-                  <div className="space-y-2">
-                    {q.options.map((opt, oIndex) => {
-                      const isSelected = quizScores[qIndex] === oIndex;
-                      const isSubmitted = showQuizResult;
-                      const isCorrect = isSubmitted && oIndex === q.correctIndex;
-                      const isWrong = isSubmitted && isSelected && oIndex !== q.correctIndex;
-
-                      let btnStyle = "bg-white/5 border-white/10 text-white/70 hover:bg-white/10";
-                      if (isSelected && !isSubmitted) btnStyle = "bg-cyan-500/20 border-cyan-500/50 text-cyan-400";
-                      if (isCorrect) btnStyle = "bg-emerald-500/20 border-emerald-500/50 text-emerald-400";
-                      if (isWrong) btnStyle = "bg-red-500/20 border-red-500/50 text-red-400";
-
-                      return (
-                        <button
-                          key={oIndex}
-                          disabled={isSubmitted}
-                          onClick={() => handleQuizAnswer(qIndex, oIndex)}
-                          className={`w-full text-left p-3 rounded-lg border text-xs font-medium transition-all ${btnStyle}`}
-                        >
-                          {opt}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-4 mt-4 border-t border-white/10 relative z-10">
-              {!showQuizResult ? (
-                <button
-                  onClick={() => setShowQuizResult(true)}
-                  disabled={Object.keys(quizScores).length < detailedInfo.quiz.length}
-                  className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-dark font-bold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Kiểm tra đáp án
-                </button>
-              ) : (
-                <div className="text-center p-3 bg-white/5 rounded-xl border border-white/10">
-                  <div className="text-sm text-white/60 mb-1">Kết quả của bạn</div>
-                  <div className="text-2xl font-black text-cyan-400">
-                    {calculateQuizResult()} / {detailedInfo.quiz.length}
-                  </div>
-                  <button 
-                    onClick={() => { setShowQuizResult(false); setQuizScores({}); }}
-                    className="mt-3 text-xs text-white/40 hover:text-white underline"
-                  >
-                    Làm lại
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
+        {/* Complete Chapter Action */}
+        <div className="pt-6 border-t border-gray-200">
+          <button
+            onClick={handleChapterComplete}
+            disabled={isChapterCompleted || chapterProgress < 100}
+            className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-sm ${
+              isChapterCompleted
+                ? 'bg-[#15803d] text-white shadow-md'
+                : chapterProgress === 100
+                  ? 'bg-[#B91C1C] text-white hover:bg-red-700 hover:shadow-md'
+                  : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            {isChapterCompleted ? (
+              <><CheckCircle className="w-5 h-5" /> Đã hoàn thành chương</>
+            ) : (
+              'Đánh dấu hoàn thành chương'
+            )}
+          </button>
+          {chapterProgress < 100 && !isChapterCompleted && (
+             <p className="text-xs text-center text-gray-500 mt-3">
+               Bạn cần đọc và đánh dấu hoàn thành tất cả các mục để kết thúc chương.
+             </p>
+          )}
+        </div>
       </aside>
 
     </div>
