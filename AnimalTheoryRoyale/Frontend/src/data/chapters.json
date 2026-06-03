@@ -1,0 +1,50 @@
+[
+  {
+    "id": "chuong-1",
+    "chapterNumber": 1,
+    "title": "Khái niệm, đối tượng, phương pháp nghiên cứu và ý nghĩa học tập môn Tư tưởng Hồ Chí Minh",
+    "summary": "Chương này giúp người học hiểu tư tưởng Hồ Chí Minh là gì, môn học nghiên cứu đối tượng nào, cần tiếp cận bằng phương pháp gì và việc học môn này có ý nghĩa như thế nào.",
+    "tags": ["Khái niệm", "Đối tượng nghiên cứu", "Phương pháp", "Ý nghĩa học tập"],
+    "conceptCount": 4
+  },
+  {
+    "id": "chuong-2",
+    "chapterNumber": 2,
+    "title": "Cơ sở, quá trình hình thành và phát triển tư tưởng Hồ Chí Minh",
+    "summary": "Chương này trình bày các nguồn gốc hình thành tư tưởng Hồ Chí Minh, bao gồm truyền thống dân tộc, tinh hoa văn hóa nhân loại, chủ nghĩa Mác – Lênin và phẩm chất cá nhân.",
+    "tags": ["Cơ sở hình thành", "Truyền thống dân tộc", "Mác – Lênin", "Quá trình phát triển"],
+    "conceptCount": 5
+  },
+  {
+    "id": "chuong-3",
+    "chapterNumber": 3,
+    "title": "Tư tưởng Hồ Chí Minh về độc lập dân tộc và chủ nghĩa xã hội",
+    "summary": "Chương này làm rõ tư tưởng Hồ Chí Minh về vấn đề dân tộc, cách mạng giải phóng dân tộc, chủ nghĩa xã hội và mối quan hệ giữa độc lập dân tộc với chủ nghĩa xã hội.",
+    "tags": ["Độc lập dân tộc", "Giải phóng dân tộc", "Chủ nghĩa xã hội", "Quá độ"],
+    "conceptCount": 6
+  },
+  {
+    "id": "chuong-4",
+    "chapterNumber": 4,
+    "title": "Tư tưởng Hồ Chí Minh về Đảng Cộng sản Việt Nam và Nhà nước của nhân dân, do nhân dân, vì nhân dân",
+    "summary": "Chương này trình bày tư tưởng Hồ Chí Minh về vai trò của Đảng, xây dựng Đảng trong sạch vững mạnh và xây dựng Nhà nước phục vụ nhân dân.",
+    "tags": ["Đảng Cộng sản Việt Nam", "Nhà nước của dân", "Dân chủ", "Cán bộ"],
+    "conceptCount": 5
+  },
+  {
+    "id": "chuong-5",
+    "chapterNumber": 5,
+    "title": "Tư tưởng Hồ Chí Minh về đại đoàn kết toàn dân tộc và đoàn kết quốc tế",
+    "summary": "Chương này làm rõ vai trò của đại đoàn kết dân tộc, lực lượng đoàn kết, hình thức tổ chức đoàn kết và tinh thần đoàn kết quốc tế trong tư tưởng Hồ Chí Minh.",
+    "tags": ["Đại đoàn kết", "Mặt trận dân tộc", "Nhân dân", "Đoàn kết quốc tế"],
+    "conceptCount": 4
+  },
+  {
+    "id": "chuong-6",
+    "chapterNumber": 6,
+    "title": "Tư tưởng Hồ Chí Minh về văn hóa, đạo đức, con người",
+    "summary": "Chương này trình bày tư tưởng Hồ Chí Minh về văn hóa, đạo đức cách mạng, chuẩn mực đạo đức và xây dựng con người mới.",
+    "tags": ["Văn hóa", "Đạo đức cách mạng", "Cần Kiệm Liêm Chính", "Con người"],
+    "conceptCount": 5
+  }
+]

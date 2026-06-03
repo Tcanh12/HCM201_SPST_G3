@@ -227,7 +227,15 @@ export default function LandingPage() {
             className="group relative w-full md:w-auto px-6 md:px-8 py-4 bg-white/5 rounded-xl font-bold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/10 border border-white/15 hover:border-white/30 flex items-center justify-center gap-3 hover:shadow-lg"
           >
             <Users className="w-5 h-5 relative z-10 text-white/70 group-hover:text-white transition-colors" />
-            <span className="relative z-10 text-white/80 group-hover:text-white transition-colors">Tham Gia Bằng Mã</span>
+            <span className="relative z-10 text-white/80 group-hover:text-white transition-colors">Tham Gia</span>
+          </button>
+
+          <button
+            onClick={() => navigate('/theory')}
+            className="group relative w-full md:w-auto px-6 md:px-8 py-4 bg-yellow-500/10 rounded-xl font-bold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-yellow-500/20 border border-yellow-500/30 flex items-center justify-center gap-3 hover:shadow-lg"
+          >
+            <BookOpen className="w-5 h-5 relative z-10 text-yellow-400" />
+            <span className="relative z-10 text-yellow-400">Học Lý Thuyết</span>
           </button>
         </motion.div>
 

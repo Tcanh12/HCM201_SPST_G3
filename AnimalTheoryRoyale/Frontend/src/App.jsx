@@ -8,11 +8,25 @@ import HostDashboardPage from './pages/HostDashboardPage';
 import GamePage from './pages/GamePage';
 import ResultPage from './pages/ResultPage';
 
+// Concept Explorer (Theory Website)
+import TheoryLayout from './components/theory/TheoryLayout';
+import TheoryHomePage from './pages/theory/HomePage';
+import AboutPage from './pages/theory/AboutPage';
+import ChaptersPage from './pages/theory/ChaptersPage';
+
 function App() {
   return (
     <div className="w-screen h-screen bg-dark text-white">
       <Routes>
-        {/* Landing */}
+        {/* Concept Explorer (Theory Website) */}
+        <Route path="/theory" element={<TheoryLayout />}>
+          <Route index element={<TheoryHomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="chapters" element={<ChaptersPage />} />
+          {/* We will add more theory routes here later */}
+        </Route>
+
+        {/* Game Mode (Landing) */}
         <Route path="/" element={<LandingPage />} />
 
         {/* Host Flow: Create Room → Host Lobby → Host Dashboard */}
