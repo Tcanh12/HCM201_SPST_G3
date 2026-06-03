@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FULearning\\SUMMER 2026 Final\\gemaDongVat\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj": {}
+    "D:\\FULearning\\SUMMER 2026 Final\\HCM201_SPST_G3\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj": {}
   },
   "projects": {
-    "D:\\FULearning\\SUMMER 2026 Final\\gemaDongVat\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj": {
+    "D:\\FULearning\\SUMMER 2026 Final\\HCM201_SPST_G3\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FULearning\\SUMMER 2026 Final\\gemaDongVat\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj",
+        "projectUniqueName": "D:\\FULearning\\SUMMER 2026 Final\\HCM201_SPST_G3\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj",
         "projectName": "AnimalTheoryRoyale",
-        "projectPath": "D:\\FULearning\\SUMMER 2026 Final\\gemaDongVat\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj",
+        "projectPath": "D:\\FULearning\\SUMMER 2026 Final\\HCM201_SPST_G3\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\FULearning\\SUMMER 2026 Final\\gemaDongVat\\AnimalTheoryRoyale\\Backend\\obj\\",
+        "outputPath": "D:\\FULearning\\SUMMER 2026 Final\\HCM201_SPST_G3\\AnimalTheoryRoyale\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

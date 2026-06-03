@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qeRzXYWYUAE=",
+  "dgSpecHash": "I9ZrktaQfeM=",
   "success": true,
-  "projectFilePath": "D:\\FULearning\\SUMMER 2026 Final\\gemaDongVat\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj",
+  "projectFilePath": "D:\\FULearning\\SUMMER 2026 Final\\HCM201_SPST_G3\\AnimalTheoryRoyale\\Backend\\AnimalTheoryRoyale.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nguye\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\messagepack\\2.5.187\\messagepack.2.5.187.nupkg.sha512",
