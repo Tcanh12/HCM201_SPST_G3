@@ -38,6 +38,7 @@ public class GameEngine : BackgroundService
 
     public GameState GetOrCreateGame(string roomCode, int roomId, int duration)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         return _activeGames.GetOrAdd(roomCode, _ =>
         {
             var game = new GameState
@@ -202,6 +203,7 @@ public class GameEngine : BackgroundService
 
     public GameState? GetGame(string roomCode)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         _activeGames.TryGetValue(roomCode, out var game);
         return game;
     }

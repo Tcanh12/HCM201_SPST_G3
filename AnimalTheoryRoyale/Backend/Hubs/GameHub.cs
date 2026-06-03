@@ -15,6 +15,7 @@ public class GameHub : Hub
 
     public async Task JoinRoomAsHost(string roomCode)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetOrCreateGame(roomCode, 1, 600);
         await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
         game.HostConnectionId = Context.ConnectionId;
@@ -25,6 +26,7 @@ public class GameHub : Hub
 
     public async Task JoinRoomAsPlayer(string roomCode, string username, int characterId)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetOrCreateGame(roomCode, 1, 600);
         bool isReconnecting = game.Players.Values.Any(p => p.Username == username);
         
@@ -38,6 +40,7 @@ public class GameHub : Hub
 
     public async Task RequestJoinInProgressRoom(string roomCode, string username, int characterId)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         
@@ -56,6 +59,7 @@ public class GameHub : Hub
 
     public async Task ApproveLateJoin(string roomCode, string connectionId)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || Context.ConnectionId != game.HostConnectionId) return;
 
@@ -74,6 +78,7 @@ public class GameHub : Hub
 
     public async Task RejectLateJoin(string roomCode, string connectionId)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || Context.ConnectionId != game.HostConnectionId) return;
 
@@ -134,6 +139,7 @@ public class GameHub : Hub
 
     public async Task HostStartGame(string roomCode, int questionCount = 20, string cameraMode = "ThirdPerson")
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null) return;
 
@@ -240,6 +246,7 @@ public class GameHub : Hub
 
     public async Task UseSkillDouble(string roomCode)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var me)) return;
@@ -338,6 +345,7 @@ public class GameHub : Hub
     /// </summary>
     public async Task ClaimQuestion(string roomCode, int zoneId)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null || game.Status != "Playing") return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
@@ -412,6 +420,7 @@ public class GameHub : Hub
     /// </summary>
     public async Task SubmitAnswer(string roomCode, int zoneId, int optionId)
     {
+        roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
         if (game == null) return;
         if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;

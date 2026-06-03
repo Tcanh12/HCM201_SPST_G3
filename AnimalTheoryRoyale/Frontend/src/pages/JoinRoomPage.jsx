@@ -26,7 +26,7 @@ export default function JoinRoomPage() {
       localStorage.setItem('role', 'player');
 
       // Navigate to Player Lobby (character selection)
-      navigate(`/player-lobby/${code.toUpperCase()}`);
+      navigate(`/player-lobby/${code.trim().toUpperCase()}`);
     } catch (err) {
       console.error(err);
       alert('Không thể tham gia. Vui lòng thử lại.');
@@ -70,7 +70,7 @@ export default function JoinRoomPage() {
                 type="text"
                 placeholder="VD: A7K2Q"
                 value={code}
-                onChange={e => setCode(e.target.value.toUpperCase())}
+                onChange={e => setCode(e.target.value.trim().toUpperCase())}
                 className="input-field pl-11 text-center text-xl font-black tracking-[0.3em] uppercase"
                 maxLength={5}
               />
