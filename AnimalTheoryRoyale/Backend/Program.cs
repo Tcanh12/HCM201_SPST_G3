@@ -31,7 +31,9 @@ if (!string.IsNullOrEmpty(connectionString))
             Database = uri.LocalPath.TrimStart('/'),
             Username = userInfo[0],
             Password = userInfo.Length > 1 ? userInfo[1] : "",
-            SslMode = Npgsql.SslMode.Prefer
+            SslMode = Npgsql.SslMode.Require,
+            TrustServerCertificate = true,
+            Pooling = false // Disable Npgsql pooling to avoid conflicts with Supabase Pooler
         };
         connectionString = builderDb.ConnectionString;
     }
