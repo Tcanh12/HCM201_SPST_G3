@@ -1,0 +1,74 @@
+[
+  {
+    "id": "moc-1",
+    "year": "Trước 1911",
+    "title": "Cội nguồn quê hương, gia đình và truyền thống dân tộc",
+    "summary": "Tư tưởng Hồ Chí Minh bắt đầu hình thành từ truyền thống yêu nước, nhân nghĩa, đoàn kết của dân tộc Việt Nam, từ môi trường gia đình, quê hương và bối cảnh đất nước bị xâm lược.",
+    "details": {
+      "context": "Việt Nam cuối thế kỷ XIX, đầu thế kỷ XX bị thực dân Pháp đô hộ. Các phong trào đấu tranh yêu nước nổ ra mạnh mẽ nhưng đều thất bại do thiếu đường lối đúng đắn.",
+      "problem": "Phải làm sao để đánh đuổi thực dân Pháp, giải phóng dân tộc khi con đường phong kiến và dân chủ tư sản đều bế tắc?",
+      "ideology": "Hình thành lòng yêu nước thương dân sâu sắc và chí hướng cứu nước mới.",
+      "impact": "Là nền tảng vững chắc nhất để Hồ Chí Minh tiếp thu những tư tưởng tiến bộ của nhân loại sau này."
+    }
+  },
+  {
+    "id": "moc-2",
+    "year": "1911 - 1920",
+    "title": "Ra đi tìm đường cứu nước",
+    "summary": "Trước yêu cầu giải phóng dân tộc, Nguyễn Tất Thành ra đi tìm con đường cứu nước mới. Đây là bước mở đầu quan trọng trong quá trình hình thành tư tưởng Hồ Chí Minh.",
+    "details": {
+      "context": "Ngày 5/6/1911, Nguyễn Tất Thành ra đi tìm đường cứu nước. Người đã đi qua nhiều châu lục, khảo sát cuộc sống của người dân lao động và các cuộc cách mạng trên thế giới.",
+      "problem": "Khảo nghiệm các cuộc cách mạng (Mỹ, Pháp) để tìm ra bản chất của chủ nghĩa đế quốc và tự do, dân chủ thực sự.",
+      "ideology": "Nhận thức rõ bản chất của chủ nghĩa tư bản, đế quốc và tình cảnh chung của nhân dân bị áp bức trên toàn thế giới.",
+      "impact": "Vượt qua sự hạn chế của các bậc tiền bối, xác định đúng hướng đi cho cách mạng Việt Nam."
+    }
+  },
+  {
+    "id": "moc-3",
+    "year": "1920",
+    "title": "Tiếp cận chủ nghĩa Mác – Lênin",
+    "summary": "Khi tiếp cận chủ nghĩa Mác – Lênin, Hồ Chí Minh tìm thấy con đường giải phóng dân tộc đúng đắn, gắn độc lập dân tộc với cách mạng vô sản.",
+    "details": {
+      "context": "Tháng 7/1920, Hồ Chí Minh đọc Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và vấn đề thuộc địa của V.I. Lênin.",
+      "problem": "Đường lối nào có thể giải phóng triệt để các dân tộc thuộc địa và nhân dân lao động?",
+      "ideology": "Khẳng định con đường cứu nước duy nhất đúng: Con đường cách mạng vô sản. Gắn giải phóng dân tộc với giải phóng giai cấp, độc lập dân tộc với chủ nghĩa xã hội.",
+      "impact": "Tạo ra bước ngoặt vĩ đại trong tư tưởng, chuyển từ chủ nghĩa yêu nước sang chủ nghĩa cộng sản."
+    }
+  },
+  {
+    "id": "moc-4",
+    "year": "1921 - 1930",
+    "title": "Chuẩn bị thành lập Đảng",
+    "summary": "Tư tưởng về vai trò của Đảng, lực lượng cách mạng, phương pháp cách mạng và con đường giải phóng dân tộc được hình thành rõ nét.",
+    "details": {
+      "context": "Hoạt động mạnh mẽ tại Pháp, Liên Xô, Trung Quốc; tích cực truyền bá chủ nghĩa Mác - Lênin về Việt Nam thông qua tổ chức Hội Việt Nam Cách mạng Thanh niên.",
+      "problem": "Làm thế nào để kết hợp phong trào công nhân và phong trào yêu nước ở một nước thuộc địa phong kiến?",
+      "ideology": "Xây dựng Cương lĩnh chính trị đầu tiên của Đảng, xác định lực lượng cách mạng là toàn dân, lãnh đạo là Đảng Cộng sản.",
+      "impact": "Dẫn đến sự ra đời của Đảng Cộng sản Việt Nam (3/2/1930), chấm dứt thời kỳ khủng hoảng về đường lối cứu nước."
+    }
+  },
+  {
+    "id": "moc-5",
+    "year": "1930 - 1969",
+    "title": "Lãnh đạo cách mạng Việt Nam",
+    "summary": "Tư tưởng Hồ Chí Minh tiếp tục được phát triển trong thực tiễn lãnh đạo cách mạng, xây dựng Nhà nước mới, xây dựng khối đại đoàn kết và phát triển văn hóa, đạo đức, con người.",
+    "details": {
+      "context": "Đảng lãnh đạo Cách mạng tháng Tám thành công (1945), lập ra nước VNDCCH, và trải qua 2 cuộc kháng chiến chống Pháp, chống Mỹ vĩ đại.",
+      "problem": "Bảo vệ nền độc lập mới giành được, tiến hành kháng chiến kiến quốc và xây dựng CNXH ở miền Bắc, đấu tranh thống nhất nước nhà.",
+      "ideology": "Phát triển tư tưởng về Chiến tranh nhân dân, Nhà nước pháp quyền của dân, do dân, vì dân, và tư tưởng Đại đoàn kết toàn dân tộc.",
+      "impact": "Làm nên những thắng lợi vĩ đại của cách mạng Việt Nam trong thế kỷ 20, để lại di sản tư tưởng đồ sộ."
+    }
+  },
+  {
+    "id": "moc-6",
+    "year": "Hiện nay",
+    "title": "Giá trị vận dụng hiện nay",
+    "summary": "Tư tưởng Hồ Chí Minh tiếp tục có giá trị trong xây dựng đất nước, giáo dục đạo đức, phát triển con người, giữ gìn bản sắc văn hóa và nâng cao trách nhiệm công dân trong thời đại số.",
+    "details": {
+      "context": "Việt Nam đẩy mạnh công cuộc đổi mới, hội nhập quốc tế toàn diện sâu rộng trong bối cảnh toàn cầu hóa và Cách mạng công nghiệp lần thứ tư.",
+      "problem": "Làm sao để giữ vững định hướng XHCN, phát triển kinh tế nhanh và bền vững, chống suy thoái đạo đức?",
+      "ideology": "Kiên định chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh; lấy con người làm trung tâm, xây dựng Đảng trong sạch, vững mạnh.",
+      "impact": "Là ngọn cờ tư tưởng dẫn dắt dân tộc Việt Nam tiến tới mục tiêu dân giàu, nước mạnh, dân chủ, công bằng, văn minh."
+    }
+  }
+]

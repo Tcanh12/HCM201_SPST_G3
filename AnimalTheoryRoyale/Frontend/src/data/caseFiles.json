@@ -1,0 +1,47 @@
+[
+  {
+    "id": "hoc-that-thi-that",
+    "title": "Học thật, thi thật",
+    "summary": "Một ví dụ hiện đại về đạo đức cách mạng trong học tập.",
+    "tags": ["Đạo đức", "Trung thực", "Chống thành tích"],
+    "situation": "Một sinh viên không gian lận trong thi cử, không sao chép bài làm bằng AI để gian dối, và dám chịu trách nhiệm với kết quả học tập của mình dù điểm số có thể không hoàn hảo.",
+    "knowledge": "Biểu hiện của đạo đức cách mạng trong môi trường học đường. Thực hành chữ 'Chính' và 'Nói đi đôi với làm' của tư tưởng Hồ Chí Minh.",
+    "question": "Bạn sẽ làm gì nếu bạn bè xung quanh đều gian lận thi cử và được điểm cao hơn bạn?"
+  },
+  {
+    "id": "doan-ket-thoi-dai-so",
+    "title": "Đoàn kết trong thời đại số",
+    "summary": "Tinh thần đại đoàn kết dân tộc trên môi trường mạng xã hội.",
+    "tags": ["Đại đoàn kết", "Văn hóa số", "Trách nhiệm công dân"],
+    "situation": "Trên môi trường mạng, tinh thần đại đoàn kết thể hiện qua việc không lan truyền thông tin chia rẽ, không kích động thù ghét, biết tôn trọng sự khác biệt vùng miền và cùng lan tỏa giá trị tích cực cho cộng đồng.",
+    "knowledge": "Trong tư tưởng Hồ Chí Minh, đại đoàn kết lấy lợi ích chung của dân tộc làm điểm tương đồng. Trên không gian mạng, bảo vệ hình ảnh đất nước và gắn kết cộng đồng mạng chính là yêu cầu mới.",
+    "question": "Khi thấy một tin đồn thất thiệt gây chia rẽ vùng miền, bạn nên phản ứng như thế nào?"
+  },
+  {
+    "id": "can-bo-phuc-vu",
+    "title": "Cán bộ phục vụ nhân dân",
+    "summary": "Nhà nước của dân, do dân, vì dân áp dụng vào thủ tục hành chính.",
+    "tags": ["Nhà nước", "Cán bộ", "Đạo đức công vụ"],
+    "situation": "Một cán bộ hành chính tiếp dân cần giải quyết công việc minh bạch, nhanh chóng qua cổng dịch vụ công trực tuyến, không gây khó dễ, không đòi hối lộ và luôn giữ thái độ hòa nhã với người dân.",
+    "knowledge": "Cán bộ là 'đầy tớ trung thành của nhân dân'. Cải cách hành chính và số hóa thủ tục chính là cách thực thi cụ thể nhất tư tưởng 'vì dân' hiện nay.",
+    "question": "Theo bạn, thái độ 'ban phát' của một số người làm dịch vụ công xuất phát từ đâu?"
+  },
+  {
+    "id": "chong-chu-nghia-ca-nhan",
+    "title": "Chống chủ nghĩa cá nhân",
+    "summary": "Căn bệnh 'mẹ' đẻ ra mọi thói hư tật xấu theo Bác Hồ.",
+    "tags": ["Đạo đức", "Xây dựng Đảng", "Nêu gương"],
+    "situation": "Chủ nghĩa cá nhân hiện nay biểu hiện qua việc 'chạy chức chạy quyền', lợi dụng kẽ hở pháp luật để tham ô, lãng phí ngân sách nhà nước, hoặc lối sống ích kỷ, vô cảm trước cộng đồng.",
+    "knowledge": "Hồ Chí Minh chỉ rõ chủ nghĩa cá nhân là 'kẻ thù hung ác', 'vi trùng' làm hỏng Đảng và Nhà nước. Chống chủ nghĩa cá nhân phải đi đôi với xây dựng đạo đức cách mạng.",
+    "question": "Chủ nghĩa cá nhân khác với việc bảo vệ 'lợi ích cá nhân chính đáng' như thế nào?"
+  },
+  {
+    "id": "giu-ban-sac-van-hoa",
+    "title": "Giữ gìn bản sắc thời đại số",
+    "summary": "Tiếp thu tinh hoa văn hóa mà không đánh mất chính mình.",
+    "tags": ["Văn hóa", "Bản sắc", "Hội nhập"],
+    "situation": "Giới trẻ ngày nay sử dụng TikTok, Reels để quảng bá áo tạc, áo ngũ thân, các điệu múa truyền thống và âm nhạc dân tộc kết hợp EDM, tạo ra trào lưu văn hóa Việt Nam vươn ra thế giới.",
+    "knowledge": "Theo Bác, giữ gìn bản sắc không phải là khép kín, bảo thủ mà là 'hòa nhập không hòa tan', biết dùng phương tiện hiện đại để phát huy hồn cốt dân tộc.",
+    "question": "Làm thế nào để tránh tình trạng 'lai căng' khi tiếp thu văn hóa nước ngoài?"
+  }
+]

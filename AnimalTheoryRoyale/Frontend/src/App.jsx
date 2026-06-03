@@ -15,6 +15,8 @@ import AboutPage from './pages/theory/AboutPage';
 import ChaptersPage from './pages/theory/ChaptersPage';
 import ChapterDetailPage from './pages/theory/ChapterDetailPage';
 import ConceptMapPage from './pages/theory/ConceptMapPage';
+import TimelinePage from './pages/theory/TimelinePage';
+import CaseFilesPage from './pages/theory/CaseFilesPage';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="chapters" element={<ChaptersPage />} />
           <Route path="chapters/:chapterId" element={<ChapterDetailPage />} />
           <Route path="concept-map" element={<ConceptMapPage />} />
+          <Route path="timeline" element={<TimelinePage />} />
+          <Route path="case-files" element={<CaseFilesPage />} />
           {/* We will add more theory routes here later */}
         </Route>
 
