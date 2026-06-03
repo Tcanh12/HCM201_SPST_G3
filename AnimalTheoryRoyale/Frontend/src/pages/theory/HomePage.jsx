@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Network, Map, Clock, FileText, ChevronRight, BookOpen, BrainCircuit } from 'lucide-react';
+import { Network, Map, Clock, FileText, ChevronRight, BookOpen, BrainCircuit, Gamepad2 } from 'lucide-react';
 import chapters from '../../data/chapters.json';
 
 export default function TheoryHomePage() {
