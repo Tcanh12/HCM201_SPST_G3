@@ -74,32 +74,31 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
       style={{
-        position: 'absolute', inset: 0,
-        background: isDoubleActive ? 'rgba(200, 50, 0, 0.4)' : 'rgba(0,0,0,0.85)',
-        backdropFilter: 'blur(8px)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        zIndex: 100, pointerEvents: 'auto',
+        position: 'absolute', top: '5%', right: '2%',
+        zIndex: 100, pointerEvents: 'none',
+        display: 'flex', justifyContent: 'flex-end',
       }}
     >
       <motion.div
-        initial={{ scale: 0.9, y: 20, opacity: 0 }}
-        animate={{ scale: 1, y: 0, opacity: 1 }}
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 300, damping: 25 }}
         style={{
+          pointerEvents: 'auto',
           background: isDoubleActive
             ? 'linear-gradient(135deg, #451a03 0%, #78350f 50%, #451a03 100%)'
-            : 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            : 'linear-gradient(135deg, rgba(11,15,26,0.95) 0%, rgba(30,41,59,0.95) 100%)',
+          backdropFilter: 'blur(12px)',
           borderRadius: '20px',
-          padding: '28px 32px',
-          maxWidth: '600px',
-          width: '90%',
-          border: `2px solid ${isDoubleActive ? 'rgba(245,158,11,0.4)' : 'rgba(255,255,255,0.1)'}`,
+          padding: '24px',
+          width: '380px',
+          border: `2px solid ${isDoubleActive ? 'rgba(245,158,11,0.4)' : 'rgba(217,28,28,0.4)'}`,
           boxShadow: isDoubleActive
-            ? '0 0 60px rgba(245, 158, 11, 0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
-            : '0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
+            ? '0 0 60px rgba(245, 158, 11, 0.3)'
+            : '0 25px 60px rgba(0,0,0,0.5), 0 0 20px rgba(217,28,28,0.2)',
         }}
       >
         {/* Double active warning */}
@@ -130,14 +129,14 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
             <div style={{ fontSize: '11px', color: '#9CA3AF', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1px', marginBottom: '2px' }}>
               📖 Câu hỏi tri thức
             </div>
-            <div style={{ width: '40px', height: '3px', borderRadius: '2px', background: 'linear-gradient(90deg, #4F46E5, #06B6D4)' }} />
+            <div style={{ width: '40px', height: '3px', borderRadius: '2px', background: 'linear-gradient(90deg, #D91C1C, #F5C542)' }} />
           </div>
           <CircularTimer timeLeft={timeLeft} maxTime={maxTime} />
         </div>
 
         {/* Question */}
         <h2 style={{
-          fontSize: '18px', fontWeight: 700, color: 'white', lineHeight: 1.6, marginBottom: '20px',
+          fontSize: '16px', fontWeight: 700, color: 'white', lineHeight: 1.5, marginBottom: '20px',
         }}>
           {question.content}
         </h2>
@@ -145,34 +144,38 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
         {/* Options with letter badges */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '18px' }}>
           {question.options?.map((opt, idx) => {
-            const colors = optionColors[idx % optionColors.length];
             const isSelected = selectedOption === opt.id;
+            // Uniform colors using primary/secondary theme
+            const colors = {
+              border: isSelected ? '#F5C542' : 'rgba(255,255,255,0.1)',
+              bg: isSelected ? 'rgba(245,197,66,0.15)' : 'rgba(255,255,255,0.03)',
+            };
             return (
               <motion.button
                 key={opt.id}
-                whileHover={!submitted ? { scale: 1.01 } : {}}
-                whileTap={!submitted ? { scale: 0.99 } : {}}
+                whileHover={!submitted ? { scale: 1.02 } : {}}
+                whileTap={!submitted ? { scale: 0.98 } : {}}
                 onClick={() => !submitted && setSelectedOption(opt.id)}
                 disabled={submitted}
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px',
-                  padding: '12px 16px', borderRadius: '12px',
-                  background: isSelected ? colors.selected : 'rgba(255,255,255,0.03)',
-                  border: `2px solid ${isSelected ? colors.border : 'rgba(255,255,255,0.08)'}`,
-                  color: 'white', fontSize: '14px', textAlign: 'left',
+                  padding: '10px 14px', borderRadius: '12px',
+                  background: colors.bg,
+                  border: `2px solid ${colors.border}`,
+                  color: 'white', fontSize: '13px', textAlign: 'left',
                   cursor: submitted ? 'not-allowed' : 'pointer',
                   transition: 'all 0.2s',
                   opacity: submitted ? 0.6 : 1,
                   pointerEvents: submitted ? 'none' : 'auto',
-                  boxShadow: isSelected ? `0 0 15px ${colors.border}30` : 'none',
+                  boxShadow: isSelected ? `0 0 15px rgba(245,197,66,0.3)` : 'none',
                 }}
               >
                 <div style={{
-                  width: '32px', height: '32px', borderRadius: '8px',
+                  width: '28px', height: '28px', borderRadius: '8px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontWeight: 800, fontSize: '14px', flexShrink: 0,
-                  background: isSelected ? colors.border : 'rgba(255,255,255,0.1)',
-                  color: isSelected ? 'white' : 'rgba(255,255,255,0.5)',
+                  fontWeight: 800, fontSize: '13px', flexShrink: 0,
+                  background: isSelected ? '#F5C542' : 'rgba(255,255,255,0.1)',
+                  color: isSelected ? '#000' : 'rgba(255,255,255,0.5)',
                   transition: 'all 0.2s',
                 }}>
                   {isSelected ? '✓' : optionLetters[idx]}
@@ -190,16 +193,16 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
           onClick={handleSubmit}
           disabled={selectedOption === null || submitted}
           style={{
-            width: '100%', padding: '14px',
-            borderRadius: '12px', fontWeight: 700, fontSize: '15px',
+            width: '100%', padding: '12px',
+            borderRadius: '12px', fontWeight: 700, fontSize: '14px',
             background: selectedOption !== null && !submitted
-              ? 'linear-gradient(135deg, #4F46E5, #6366F1)'
+              ? 'linear-gradient(135deg, #D91C1C, #E10600)'
               : '#374151',
             color: selectedOption !== null && !submitted ? 'white' : '#6B7280',
             border: 'none',
             cursor: selectedOption !== null && !submitted ? 'pointer' : 'not-allowed',
             transition: 'all 0.2s',
-            boxShadow: selectedOption !== null && !submitted ? '0 0 20px rgba(79,70,229,0.3)' : 'none',
+            boxShadow: selectedOption !== null && !submitted ? '0 0 20px rgba(217,28,28,0.4)' : 'none',
           }}
         >
           {submitted ? 'Đang xử lý...' : 'Xác Nhận Đáp Án'}

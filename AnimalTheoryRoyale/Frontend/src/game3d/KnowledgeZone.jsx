@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
+import { Text, Billboard } from '@react-three/drei';
 import * as THREE from 'three';
 
 export default function KnowledgeZone({ x, z, topic, type, isTrap }) {
@@ -48,18 +48,33 @@ export default function KnowledgeZone({ x, z, topic, type, isTrap }) {
         <meshBasicMaterial color={color} />
       </mesh>
 
-      {/* Topic Text */}
-      <Text
-        position={[0, type === "Boss" ? 10 : 8, 0]}
-        fontSize={textScale}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-        outlineWidth={0.1}
-        outlineColor="black"
+      {/* Topic Text with Billboard to always face camera and stay readable */}
+      <Billboard
+        follow={true}
+        lockX={false}
+        lockY={false}
+        lockZ={false}
+        position={[0, type === "Boss" ? 12 : 9, 0]}
       >
-        {label}
-      </Text>
+        {/* Background plate for contrast */}
+        <mesh position={[0, 0, -0.1]}>
+          <planeGeometry args={[label.length * 0.6 * textScale, 1.5 * textScale]} />
+          <meshBasicMaterial color="#0B0F1A" transparent opacity={0.6} depthTest={false} />
+        </mesh>
+        
+        <Text
+          fontSize={textScale}
+          color="#ffffff"
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={0.05}
+          outlineColor="#000000"
+          depthTest={false}
+          renderOrder={10}
+        >
+          {label}
+        </Text>
+      </Billboard>
     </group>
   );
 }

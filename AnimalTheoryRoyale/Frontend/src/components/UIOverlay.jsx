@@ -367,38 +367,27 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
         </div>
       </div>
 
-      {/* Dramatic Death / Eliminated Screen */}
+      {/* Compact Death / Eliminated Notification (No full screen block) */}
       <AnimatePresence>
         {(myPlayer.isDead || myPlayer.isEliminated) && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 pointer-events-auto z-[999]"
+            initial={{ opacity: 0, y: -50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 100, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.9 }}
+            className="absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none"
           >
-            {/* Blood splatter vignette */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(153,27,27,0.8)_100%)] mix-blend-multiply" />
-            <div className="absolute inset-0 bg-red-950/40 backdrop-blur-[2px]" />
-            
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <motion.div
-                initial={{ scale: 0.5, y: 50 }}
-                animate={{ scale: 1, y: 0 }}
-                transition={{ type: 'spring', damping: 12, stiffness: 200 }}
-                className="text-center"
-              >
-                <div className="text-8xl mb-4 filter drop-shadow-[0_0_20px_rgba(220,38,38,0.8)]">💀</div>
-                <h1 className="text-7xl font-display font-black text-red-500 tracking-widest text-glow-danger uppercase mb-4">
-                  {myPlayer.isEliminated ? 'ĐÃ BỊ LOẠI' : 'BỊ HẠ GỤC'}
-                </h1>
-                
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-black/50 border border-red-500/30 rounded-xl backdrop-blur-md">
-                  {!myPlayer.isEliminated && <div className="w-5 h-5 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />}
-                  <span className="text-xl text-red-200 font-medium">
-                    {myPlayer.isEliminated ? 'Bạn đã hết mạng và chính thức rời cuộc chơi.' : 'Đang chờ hồi sinh...'}
-                  </span>
-                </div>
-              </motion.div>
+            <div className="glass-panel border-red-500/50 bg-red-950/80 rounded-2xl p-6 shadow-[0_10px_40px_rgba(220,38,38,0.3)] flex flex-col items-center min-w-[320px]">
+              <div className="text-4xl mb-2 filter drop-shadow-[0_0_10px_rgba(220,38,38,0.8)]">💀</div>
+              <h1 className="text-2xl font-display font-black text-red-500 tracking-wider text-glow-danger uppercase mb-3 text-center">
+                {myPlayer.isEliminated ? 'ĐÃ BỊ LOẠI' : 'BỊ HẠ GỤC'}
+              </h1>
+              
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 border border-red-500/20 rounded-lg">
+                {!myPlayer.isEliminated && <div className="w-4 h-4 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />}
+                <span className="text-sm text-red-200 font-medium">
+                  {myPlayer.isEliminated ? 'Bạn đã rời cuộc chơi.' : 'Đang chờ hồi sinh...'}
+                </span>
+              </div>
             </div>
           </motion.div>
         )}

@@ -142,7 +142,7 @@ export default function LandingPage() {
       <div className="absolute inset-0 bg-grid-pattern opacity-100" />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-950/50 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-950/30 via-transparent to-transparent" />
 
       {/* Floating orbs */}
       <FloatingOrbs />
@@ -176,12 +176,12 @@ export default function LandingPage() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-center mb-3"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tight mb-1">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-400">
+          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tight mb-1 drop-shadow-md">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-yellow-500">
               ANIMAL THEORY
             </span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-300 to-white">
               ROYALE
             </span>
           </h1>

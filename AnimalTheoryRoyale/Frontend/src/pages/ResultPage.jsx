@@ -250,7 +250,7 @@ export default function ResultPage() {
     <div className="relative flex flex-col items-center w-full min-h-screen p-4 md:p-8 overflow-y-auto overflow-x-hidden bg-black text-white">
       {/* Background */}
       <div className="fixed inset-0 bg-dark z-0" />
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-950/80 via-dark to-dark z-0" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/60 via-dark to-dark z-0" />
       <div className="fixed inset-0 bg-grid-pattern opacity-100 z-0" />
 
       {/* Glowing orbs */}
@@ -316,7 +316,7 @@ export default function ResultPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.5 }}
               onClick={() => navigate('/')}
-              className="btn-primary flex items-center justify-center gap-3 px-8 py-4 text-lg w-full md:w-auto shadow-[0_0_20px_rgba(79,70,229,0.5)]"
+              className="btn-primary flex items-center justify-center gap-3 px-8 py-4 text-lg w-full md:w-auto shadow-[0_0_20px_rgba(217,28,28,0.5)]"
             >
               <Home className="w-5 h-5" />
               Trở về Trang Chủ
