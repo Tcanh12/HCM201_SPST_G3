@@ -181,6 +181,7 @@ export default function HostLobbyPage() {
               className="input-field pl-11 cursor-pointer appearance-none text-sm"
             >
               <option value={10}>10 Câu hỏi (Map nhỏ)</option>
+              <option value={15}>15 Câu hỏi (Cơ bản)</option>
               <option value={20}>20 Câu hỏi (Tiêu chuẩn)</option>
               <option value={50}>50 Câu hỏi (Map lớn)</option>
               <option value={100}>100 Câu hỏi (Siêu hỗn loạn)</option>

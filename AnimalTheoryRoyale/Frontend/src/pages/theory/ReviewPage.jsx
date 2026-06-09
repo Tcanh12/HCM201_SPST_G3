@@ -1,66 +1,33 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, XCircle, ArrowRight, RefreshCcw, HelpCircle } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowRight, RefreshCcw, HelpCircle, Settings } from 'lucide-react';
 import { useLearningProgress } from '../../components/theory/ProgressContext';
-
-const quizData = [
-  {
-    id: 1,
-    question: "Tư tưởng Hồ Chí Minh là gì?",
-    options: [
-      "Là sự sao chép nguyên xi chủ nghĩa Mác - Lênin",
-      "Là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam",
-      "Là sự tổng hợp các luồng tư tưởng phương Đông",
-      "Là chủ trương của Đảng Cộng sản Đông Dương"
-    ],
-    correctAnswer: 1,
-    explanation: "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta."
-  },
-  {
-    id: 2,
-    question: "Nội dung nào thể hiện đúng tư tưởng Nhà nước của dân, do dân, vì dân?",
-    options: [
-      "Nhà nước là công cụ trấn áp giai cấp bóc lột",
-      "Nhà nước do nhân dân làm chủ và phục vụ lợi ích của nhân dân",
-      "Nhà nước tập trung toàn bộ quyền lực vào trung ương",
-      "Nhà nước hoạt động độc lập với sự giám sát của nhân dân"
-    ],
-    correctAnswer: 1,
-    explanation: "Nhà nước trong tư tưởng Hồ Chí Minh là Nhà nước của nhân dân, do nhân dân xây dựng, kiểm soát và hoạt động vì lợi ích của nhân dân."
-  },
-  {
-    id: 3,
-    question: "Cần, kiệm, liêm, chính thuộc nội dung nào trong tư tưởng Hồ Chí Minh?",
-    options: [
-      "Tư tưởng về văn hóa",
-      "Tư tưởng về xây dựng Đảng",
-      "Tư tưởng về đạo đức cách mạng",
-      "Tư tưởng về đại đoàn kết toàn dân tộc"
-    ],
-    correctAnswer: 2,
-    explanation: "Cần, kiệm, liêm, chính, chí công vô tư là những chuẩn mực đạo đức cốt lõi của người cách mạng theo tư tưởng Hồ Chí Minh."
-  },
-  {
-    id: 4,
-    question: "Đại đoàn kết toàn dân tộc có vai trò gì trong tư tưởng Hồ Chí Minh?",
-    options: [
-      "Tạo nên sức mạnh tổng hợp để thực hiện mục tiêu chung của dân tộc",
-      "Giúp giải quyết các mâu thuẫn nội bộ trong một đảng",
-      "Là phương pháp để duy trì quyền lực nhà nước",
-      "Là hình thức ngoại giao để kêu gọi quốc tế ủng hộ"
-    ],
-    correctAnswer: 0,
-    explanation: "Đoàn kết là sức mạnh vô địch. 'Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công'."
-  }
-];
+import { reviewQuestions } from '../../data/reviewQuestions';
 
 export default function ReviewPage() {
+  const [isSetup, setIsSetup] = useState(true);
+  const [questionLimit, setQuestionLimit] = useState(5);
+  const [activeQuizData, setActiveQuizData] = useState([]);
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const { markQuizCompleted } = useLearningProgress();
+
+  const startQuiz = () => {
+    // Lấy random số lượng câu hỏi từ ngân hàng 15 câu
+    const shuffled = [...reviewQuestions].sort(() => 0.5 - Math.random());
+    setActiveQuizData(shuffled.slice(0, questionLimit));
+    
+    setCurrentQuestion(0);
+    setSelectedOption(null);
+    setIsSubmitted(false);
+    setScore(0);
+    setShowResult(false);
+    setIsSetup(false);
+  };
 
   const handleSelect = (index) => {
     if (!isSubmitted) setSelectedOption(index);
@@ -69,30 +36,28 @@ export default function ReviewPage() {
   const handleSubmit = () => {
     if (selectedOption === null) return;
     setIsSubmitted(true);
-    if (selectedOption === quizData[currentQuestion].correctAnswer) {
+    if (selectedOption === activeQuizData[currentQuestion].correctAnswer) {
       setScore(score + 1);
     }
   };
 
   const handleNext = () => {
-    if (currentQuestion < quizData.length - 1) {
+    if (currentQuestion < activeQuizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
       setIsSubmitted(false);
     } else {
       setShowResult(true);
-      if (score + (selectedOption === quizData[currentQuestion].correctAnswer ? 1 : 0) >= 3) {
+      // Đánh dấu hoàn thành nếu đúng trên 60%
+      const finalScore = score + (selectedOption === activeQuizData[currentQuestion].correctAnswer ? 1 : 0);
+      if (finalScore >= Math.ceil(activeQuizData.length * 0.6)) {
         markQuizCompleted('quiz-general');
       }
     }
   };
 
   const restartQuiz = () => {
-    setCurrentQuestion(0);
-    setSelectedOption(null);
-    setIsSubmitted(false);
-    setScore(0);
-    setShowResult(false);
+    setIsSetup(true); // Quay lại màn hình chọn số lượng
   };
 
   return (
@@ -113,7 +78,39 @@ export default function ReviewPage() {
         </div>
 
         <AnimatePresence mode="wait">
-          {!showResult ? (
+          {isSetup ? (
+            <motion.div
+              key="setup"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="bg-white border border-gray-200 p-8 md:p-12 rounded-[2.5rem] shadow-lg text-center"
+            >
+              <Settings className="w-16 h-16 text-gray-300 mx-auto mb-6" />
+              <h2 className="text-2xl font-bold text-[#1F2937] mb-6">Tùy chỉnh số lượng câu hỏi</h2>
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                {[5, 10, 15].map(num => (
+                  <button
+                    key={num}
+                    onClick={() => setQuestionLimit(num)}
+                    className={`px-8 py-4 rounded-2xl font-bold text-lg border-2 transition-all ${
+                      questionLimit === num 
+                        ? 'border-[#B91C1C] bg-[#FEE2E2] text-[#B91C1C] scale-105 shadow-md' 
+                        : 'border-gray-200 text-gray-500 hover:border-gray-300 hover:bg-gray-50'
+                    }`}
+                  >
+                    {num} Câu
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={startQuiz}
+                className="px-10 py-4 bg-[#B91C1C] text-white rounded-xl font-bold transition-all shadow-md hover:scale-105 text-lg w-full max-w-sm"
+              >
+                Bắt đầu làm bài
+              </button>
+            </motion.div>
+          ) : !showResult ? (
             <motion.div
               key="quiz"
               initial={{ opacity: 0, y: 20 }}
@@ -122,9 +119,9 @@ export default function ReviewPage() {
               className="bg-white border border-gray-200 p-8 md:p-12 rounded-[2.5rem] shadow-lg relative"
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-gray-500 font-bold">Câu hỏi {currentQuestion + 1} / {quizData.length}</span>
+                <span className="text-gray-500 font-bold">Câu hỏi {currentQuestion + 1} / {activeQuizData.length}</span>
                 <div className="flex gap-1">
-                  {quizData.map((_, i) => (
+                  {activeQuizData.map((_, i) => (
                     <div 
                       key={i} 
                       className={`w-8 h-2 rounded-full ${i === currentQuestion ? 'bg-[#F59E0B]' : i < currentQuestion ? 'bg-gray-300' : 'bg-gray-100'}`} 
@@ -134,15 +131,15 @@ export default function ReviewPage() {
               </div>
 
               <h2 className="text-2xl font-bold text-[#1F2937] mb-8 leading-snug">
-                {quizData[currentQuestion].question}
+                {activeQuizData[currentQuestion].question}
               </h2>
 
               <div className="space-y-4 mb-8">
-                {quizData[currentQuestion].options.map((opt, i) => {
+                {activeQuizData[currentQuestion].options.map((opt, i) => {
                   let btnClass = "bg-[#F8FAFC] border-gray-200 text-[#1F2937] hover:bg-gray-50";
                   
                   if (isSubmitted) {
-                    if (i === quizData[currentQuestion].correctAnswer) {
+                    if (i === activeQuizData[currentQuestion].correctAnswer) {
                       btnClass = "bg-[#DCFCE7] border-[#15803d]/50 text-[#15803d]";
                     } else if (i === selectedOption) {
                       btnClass = "bg-[#FEE2E2] border-[#B91C1C]/50 text-[#B91C1C]";
@@ -159,8 +156,8 @@ export default function ReviewPage() {
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all font-medium ${btnClass} flex items-center justify-between`}
                     >
                       <span>{opt}</span>
-                      {isSubmitted && i === quizData[currentQuestion].correctAnswer && <CheckCircle className="w-5 h-5 text-[#15803d]" />}
-                      {isSubmitted && i === selectedOption && i !== quizData[currentQuestion].correctAnswer && <XCircle className="w-5 h-5 text-[#B91C1C]" />}
+                      {isSubmitted && i === activeQuizData[currentQuestion].correctAnswer && <CheckCircle className="w-5 h-5 text-[#15803d]" />}
+                      {isSubmitted && i === selectedOption && i !== activeQuizData[currentQuestion].correctAnswer && <XCircle className="w-5 h-5 text-[#B91C1C]" />}
                     </button>
                   );
                 })}
@@ -174,7 +171,7 @@ export default function ReviewPage() {
                     className="mb-8 p-4 bg-[#F8FAFC] border border-gray-200 rounded-xl"
                   >
                     <span className="text-sm font-bold text-[#F59E0B] block mb-2">Giải thích:</span>
-                    <p className="text-gray-600 text-sm leading-relaxed">{quizData[currentQuestion].explanation}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{activeQuizData[currentQuestion].explanation}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -193,7 +190,7 @@ export default function ReviewPage() {
                     onClick={handleNext}
                     className="px-8 py-3 bg-[#1F2937] text-white rounded-xl font-bold transition-all flex items-center gap-2 hover:scale-105 shadow-md"
                   >
-                    {currentQuestion < quizData.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả'} <ArrowRight className="w-4 h-4" />
+                    {currentQuestion < activeQuizData.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả'} <ArrowRight className="w-4 h-4" />
                   </button>
                 )}
               </div>
@@ -212,13 +209,13 @@ export default function ReviewPage() {
               <h2 className="text-3xl font-bold text-[#1F2937] mb-4">Kết quả ôn tập</h2>
               <p className="text-gray-500 text-lg mb-8">Bạn đã trả lời đúng</p>
               <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-amber-500 mb-8">
-                {score} / {quizData.length}
+                {score} / {activeQuizData.length}
               </div>
               <button
                 onClick={restartQuiz}
                 className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-[#1F2937] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto"
               >
-                <RefreshCcw className="w-5 h-5" /> Làm lại từ đầu
+                <RefreshCcw className="w-5 h-5" /> Về trang cài đặt
               </button>
             </motion.div>
           )}

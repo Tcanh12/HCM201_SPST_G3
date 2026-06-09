@@ -30,7 +30,7 @@ Hệ thống lý thuyết được xây dựng thành một trung tâm tương t
 Đấu trường 3D tích hợp cơ chế đồng bộ Multiplayer, mang lại một trận chiến tri thức hấp dẫn và công bằng trên đa nền tảng:
 - **Đồ họa & Môi trường 3D:** Môi trường hiển thị 3D được tối ưu hóa tối đa, hoạt động ổn định trên cả thiết bị di động. Các trạm kiến thức được đánh dấu bằng các cột sáng "Chương X" nổi bật có chiều không gian, giúp người chơi dễ dàng định hướng trong bản đồ rông lớn.
 - **Hệ thống bẫy rập chuẩn Server (Server-Validated Traps):** Người chơi phải linh hoạt di chuyển để né tránh các bẫy cảnh báo sát thương hiện dưới mặt đất. Logic va chạm và trừ máu được tính toán và đồng bộ trực tiếp từ Engine vật lý phía máy chủ (C# Ammo Backend), đảm bảo môi trường công bằng, chống gian lận tuyệt đối giữa tất cả người chơi.
-- **Kho tàng Câu hỏi Học thuật:** Trò chơi sở hữu ngân hàng dữ liệu đồ sộ với hơn 75 câu hỏi chuyên sâu về **Tư tưởng Hồ Chí Minh**. Hệ thống kết nối trực tiếp với cơ sở dữ liệu Supabase PostgreSQL qua API để nạp câu hỏi, đảm bảo tính ngẫu nhiên, hạn chế lặp lại và cân bằng chặt chẽ giữa mức độ khó, điểm thưởng sinh tồn.
+- **Kho tàng Câu hỏi Học thuật:** Trò chơi sở hữu ngân hàng dữ liệu đồ sộ với hơn 75 câu hỏi chuyên sâu về **Tư tưởng Hồ Chí Minh**. Chủ phòng (Host) có quyền tùy chỉnh linh hoạt số lượng câu hỏi xuất hiện trong mỗi trận đấu (10, 15, 20 hoặc 50 câu) thông qua giao diện phòng chờ. Hệ thống sẽ tự động gọi API từ Supabase PostgreSQL để nạp ngẫu nhiên đúng số lượng câu hỏi được chọn, hạn chế lặp lại và cân bằng chặt chẽ giữa mức độ khó, điểm thưởng sinh tồn.
 
 ---
 
