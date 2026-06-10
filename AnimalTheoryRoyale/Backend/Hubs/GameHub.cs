@@ -169,8 +169,19 @@ public class GameHub : Hub
 
             _logger.LogInformation("Players count: {Count}", game.Players.Count);
 
+            _logger.LogInformation("Initializing knowledge zones for room {RoomCode}", normalizedRoomCode);
             // Initialize knowledge zones from DB with unique questions
             await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
+            _logger.LogInformation("Knowledge zones initialized for room {RoomCode}", normalizedRoomCode);
+
+            if (game.KnowledgeZones.Count == 0)
+            {
+                await Clients.Caller.SendAsync("GameStartFailed", new
+                {
+                    message = "Không thể bắt đầu vì ngân hàng câu hỏi đang trống."
+                });
+                return;
+            }
             _gameEngine.InitializeTraps(game, 15); // Add 15 random traps
 
             game.Status = "Playing";

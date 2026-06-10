@@ -20,12 +20,12 @@ export default function HostLobbyPage() {
   const [showMapPicker, setShowMapPicker] = useState(false);
   const [error, setError] = useState("");
 
-  const canStartGame =
-    Boolean(roomCode) &&
-    Boolean(connection) &&
-    connection.state === signalR.HubConnectionState.Connected &&
-    players.length >= 1 &&
-    !starting;
+  const playerCount = Array.isArray(players) ? players.length : 0;
+  const signalRConnected = connection?.state === "Connected" || connection?.state === signalR.HubConnectionState?.Connected;
+  const hasRoomCode = Boolean(roomCode && (typeof roomCode === 'string' ? roomCode.trim() : roomCode));
+  const hasPlayers = playerCount >= 1;
+
+  const canStartGame = hasRoomCode && signalRConnected && hasPlayers && !starting;
 
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
@@ -54,7 +54,19 @@ export default function HostLobbyPage() {
       });
 
       conn.on('GameStarted', (payload) => {
-        navigate(`/game/${payload.roomCode}`);
+        console.log("[SignalR] GameStarted received:", payload);
+        const nextRoomCode = payload?.roomCode || roomCode;
+        setStarting(false);
+        setError("");
+        sessionStorage.setItem("roomCode", nextRoomCode);
+        navigate(`/game/${nextRoomCode}`);
+      });
+
+      conn.on('GameStartFailed', (payload) => {
+        console.error("[SignalR] GameStartFailed:", payload);
+        const message = typeof payload === "string" ? payload : payload?.message || "Không thể bắt đầu trận.";
+        setStarting(false);
+        setError(message);
       });
 
       conn.onreconnected(() => {
@@ -84,17 +96,17 @@ export default function HostLobbyPage() {
   };
 
   const handleStartGame = async () => {
-    if (!roomCode) {
+    if (!hasRoomCode) {
       setError("Không tìm thấy mã phòng.");
       return;
     }
 
-    if (!connection || connection.state !== signalR.HubConnectionState.Connected) {
-      setError("Chưa kết nối tới máy chủ. Vui lòng đợi hoặc tải lại trang.");
+    if (!signalRConnected) {
+      setError("Chưa kết nối máy chủ. Vui lòng đợi hoặc tải lại trang.");
       return;
     }
 
-    if (!players || players.length === 0) {
+    if (!hasPlayers) {
       setError("Cần ít nhất 1 người chơi để bắt đầu trận.");
       return;
     }
@@ -102,13 +114,27 @@ export default function HostLobbyPage() {
     try {
       setStarting(true);
       setError("");
-      console.log("Invoking HostStartGame with roomCode:", roomCode);
+
+      console.log("[HostLobby] Starting game", {
+        roomCode,
+        playerCount,
+        connectionState: connection?.state,
+      });
+
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
       localStorage.setItem('selectedMap', selectedMap);
-      await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
-      console.log("HostStartGame invoked successfully");
+      
+      const startPromise = connection.invoke('HostStartGame', roomCode, questionCount, camMode);
+      
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Start game timeout sau 10 giây.")), 10000)
+      );
+
+      await Promise.race([startPromise, timeoutPromise]);
+
+      console.log("[HostLobby] HostStartGame invoked successfully");
     } catch (err) {
-      console.error('HostStartGame failed:', err);
+      console.error("[HostLobby] HostStartGame failed:", err);
       setError(err?.message || "Không thể bắt đầu trận. Vui lòng kiểm tra backend logs.");
       setStarting(false);
     }
@@ -358,11 +384,38 @@ export default function HostLobbyPage() {
           </div>
         )}
 
-        {!canStartGame && !error && (
+        {!hasRoomCode && !error && (
           <p className="mt-3 text-sm text-amber-500/80 text-center">
-            Cần ít nhất 1 người chơi và kết nối máy chủ ổn định để bắt đầu trận.
+            Không tìm thấy mã phòng.
           </p>
         )}
+
+        {hasRoomCode && !signalRConnected && !error && (
+          <p className="mt-3 text-sm text-amber-500/80 text-center">
+            Chưa kết nối máy chủ. Vui lòng đợi vài giây hoặc tải lại trang.
+          </p>
+        )}
+
+        {hasRoomCode && signalRConnected && !hasPlayers && !error && (
+          <p className="mt-3 text-sm text-amber-500/80 text-center">
+            Cần ít nhất 1 người chơi để bắt đầu trận.
+          </p>
+        )}
+
+        {starting && !error && (
+          <p className="mt-3 text-sm text-amber-500/80 text-center">
+            Đang gửi yêu cầu bắt đầu trận...
+          </p>
+        )}
+
+        {/* Debug panel */}
+        <div className="mt-4 text-[10px] text-white/20 font-mono text-center flex flex-wrap gap-3 justify-center">
+          <span>roomCode: {roomCode || "missing"}</span>
+          <span>players: {playerCount}</span>
+          <span>connection: {connection?.state || "unknown"}</span>
+          <span>starting: {String(starting)}</span>
+          <span>canStartGame: {String(canStartGame)}</span>
+        </div>
 
         <button
           onClick={() => navigate('/')}
