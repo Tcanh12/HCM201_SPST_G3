@@ -5,14 +5,6 @@ using AnimalTheoryRoyale.Services;
 
 namespace AnimalTheoryRoyale.Hubs;
 
-public class StartGameRequest
-{
-    public string RoomCode { get; set; } = "";
-    public int QuestionCount { get; set; } = 20;
-    public string CameraMode { get; set; } = "ThirdPerson";
-    public string MapId { get; set; } = "academy";
-    public bool DynamicLighting { get; set; } = true;
-}
 
 public class GameHub : Hub
 {
@@ -149,12 +141,8 @@ public class GameHub : Hub
         }).ToArray());
     }
 
-    public async Task<object> HostStartGame(StartGameRequest request)
+    public async Task<object> HostStartGame(string roomCode, int questionCount, string cameraMode, string mapId, bool dynamicLighting)
     {
-        var roomCode = request.RoomCode;
-        var questionCount = request.QuestionCount;
-        var cameraMode = request.CameraMode;
-        var mapId = request.MapId;
 
         try
         {
@@ -213,7 +201,7 @@ public class GameHub : Hub
             game.StartTime = DateTime.UtcNow;
             game.CameraMode = cameraMode;
             game.MapId = mapId ?? "academy";
-            game.DynamicLighting = request.DynamicLighting;
+            game.DynamicLighting = dynamicLighting;
             game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
 
             await Clients.Group(normalizedRoomCode).SendAsync("GameStarted", new

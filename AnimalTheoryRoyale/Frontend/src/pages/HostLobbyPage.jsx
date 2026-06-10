@@ -136,13 +136,7 @@ export default function HostLobbyPage() {
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
       sessionStorage.setItem('activeMapId', selectedMap);
       
-      const startPromise = connection.invoke('HostStartGame', {
-        roomCode,
-        questionCount,
-        cameraMode: camMode,
-        mapId: selectedMap,
-        dynamicLighting
-      });
+      const startPromise = connection.invoke('HostStartGame', roomCode, questionCount, camMode, selectedMap, dynamicLighting);
       
       const timeoutPromise = new Promise((_, reject) =>
         setTimeout(() => reject(new Error("Start game timeout sau 10 giây.")), 10000)
