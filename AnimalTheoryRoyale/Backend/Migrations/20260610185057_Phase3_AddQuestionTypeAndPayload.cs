@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -10,30 +10,22 @@ namespace AnimalTheoryRoyale.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "ChallengePayloadJson",
-                table: "Questions",
-                type: "text",
-                nullable: true);
+            migrationBuilder.Sql(@"
+                ALTER TABLE ""Questions"" 
+                ADD COLUMN IF NOT EXISTS ""ChallengePayloadJson"" text NULL;
 
-            migrationBuilder.AddColumn<string>(
-                name: "Type",
-                table: "Questions",
-                type: "text",
-                nullable: false,
-                defaultValue: "");
+                ALTER TABLE ""Questions"" 
+                ADD COLUMN IF NOT EXISTS ""Type"" text NOT NULL DEFAULT '';
+            ");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "ChallengePayloadJson",
-                table: "Questions");
-
-            migrationBuilder.DropColumn(
-                name: "Type",
-                table: "Questions");
+            migrationBuilder.Sql(@"
+                ALTER TABLE ""Questions"" DROP COLUMN IF EXISTS ""ChallengePayloadJson"";
+                ALTER TABLE ""Questions"" DROP COLUMN IF EXISTS ""Type"";
+            ");
         }
     }
 }
