@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Logging;
 using AnimalTheoryRoyale.Models.Realtime;
 using AnimalTheoryRoyale.Services;
 
@@ -7,10 +8,12 @@ namespace AnimalTheoryRoyale.Hubs;
 public class GameHub : Hub
 {
     private readonly GameEngine _gameEngine;
+    private readonly ILogger<GameHub> _logger;
 
-    public GameHub(GameEngine gameEngine)
+    public GameHub(GameEngine gameEngine, ILogger<GameHub> logger)
     {
         _gameEngine = gameEngine;
+        _logger = logger;
     }
 
     public async Task JoinRoomAsHost(string roomCode)
@@ -141,9 +144,30 @@ public class GameHub : Hub
     {
         try
         {
-            roomCode = roomCode?.Trim().ToUpper() ?? "";
-            var game = _gameEngine.GetGame(roomCode);
-            if (game == null) return;
+            _logger.LogInformation("HostStartGame called. RoomCode = {RoomCode}", roomCode);
+            
+            if (string.IsNullOrWhiteSpace(roomCode))
+            {
+                await Clients.Caller.SendAsync("GameStartFailed", "Room code is empty.");
+                return;
+            }
+
+            var normalizedRoomCode = roomCode.Trim().ToUpperInvariant();
+            var game = _gameEngine.GetGame(normalizedRoomCode);
+            
+            if (game == null)
+            {
+                await Clients.Caller.SendAsync("GameStartFailed", "Game not found.");
+                return;
+            }
+
+            if (game.Players.Count == 0)
+            {
+                await Clients.Caller.SendAsync("GameStartFailed", "Cannot start game because there are no players in the room.");
+                return;
+            }
+
+            _logger.LogInformation("Players count: {Count}", game.Players.Count);
 
             // Initialize knowledge zones from DB with unique questions
             await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
@@ -154,17 +178,22 @@ public class GameHub : Hub
             game.CameraMode = cameraMode;
             game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
 
-            await Clients.Group(roomCode).SendAsync("GameStarted", new
+            await Clients.Group(normalizedRoomCode).SendAsync("GameStarted", new
             {
-                roomCode = roomCode,
+                roomCode = normalizedRoomCode,
                 status = "Playing",
                 startedAt = game.StartTime
             });
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[HostStartGame Error]: {ex.Message}\n{ex.StackTrace}");
-            await Clients.Caller.SendAsync("GameStartFailed", ex.Message);
+            _logger.LogError(ex, "HostStartGame failed for room {RoomCode}", roomCode);
+
+            await Clients.Caller.SendAsync("GameStartFailed", new
+            {
+                message = ex.Message,
+                detail = ex.InnerException?.Message
+            });
         }
     }
 

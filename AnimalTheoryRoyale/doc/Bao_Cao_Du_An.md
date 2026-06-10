@@ -1,11 +1,11 @@
 # TÀI LIỆU PHÂN TÍCH VÀ GIỚI THIỆU SẢN PHẨM SÁNG TẠO
-**Dự án:** Animal Theory Royale – Vòng Bo Tri Thức 3D  
-**Môn học ứng dụng:** Tư tưởng Hồ Chí Minh (HCM201) / Chủ nghĩa xã hội khoa học  
+**Dự án:** Muông Thú Thông Thái – Vòng Bo Tri Thức 3D  
+**Môn học ứng dụng:** Tư tưởng Hồ Chí Minh (HCM202) / Chủ nghĩa xã hội khoa học  
 
 ---
 
 ## 1. GIỚI THIỆU TỔNG QUAN HỆ THỐNG
-* **Tên hệ thống/sản phẩm:** Animal Theory Royale – Vòng Bo Tri Thức 3D.
+* **Tên hệ thống/sản phẩm:** Muông Thú Thông Thái – Vòng Bo Tri Thức 3D.
 * **Mô tả tổng quan:** Đây là một hệ sinh thái học tập ứng dụng công nghệ Gamification (trò chơi hóa giáo dục) đa nền tảng. Hệ thống kết hợp giữa nền tảng học lý thuyết trực quan 3D (Knowledge Campus) và một tựa game đấu trường sinh tồn nhiều người chơi (Theory Royale). 
 * **Mục tiêu xây dựng:** Chuyển hóa việc học các môn lý luận chính trị từ phương pháp đọc – chép thụ động sang môi trường thi đấu sinh tồn hấp dẫn, kích thích sự chủ động của người học.
 * **Ý tưởng hình thành:** Lấy cảm hứng từ sự hấp dẫn của các tựa game sinh tồn Battle Royale (như PUBG, Free Fire), nhóm quyết định "game hóa" (gamify) ngân hàng câu hỏi học thuật. Triết lý của hệ thống là: *"Sinh tồn bằng tri thức. Chạy nhanh chưa đủ, muốn chiến thắng phải hiểu đúng"*.
@@ -78,7 +78,7 @@
 * **Lý do chọn công nghệ:** Đảm bảo đồ họa 3D mượt mà nhưng không yêu cầu người dùng phải cài đặt ứng dụng (hoạt động trực tiếp trên Web Browser, tương thích mọi thiết bị từ Mobile đến PC). Áp dụng tính toán vật lý trên server (Server-validated) để chống gian lận tuyệt đối.
 
 ## 11. ĐIỂM SÁNG TẠO VÀ NỔI BẬT CỦA SẢN PHẨM
-* **Khác biệt cốt lõi:** Các giải pháp hiện tại chỉ là bài test 2D tĩnh. Animal Theory Royale mang đến một thế giới tương tác không gian chiều sâu, nơi kiến thức là công cụ duy nhất để sinh tồn.
+* **Khác biệt cốt lõi:** Các giải pháp hiện tại chỉ là bài test 2D tĩnh. Muông Thú Thông Thái mang đến một thế giới tương tác không gian chiều sâu, nơi kiến thức là công cụ duy nhất để sinh tồn.
 * **Tính đổi mới:** Áp dụng kỹ thuật *Interpolation* (nội suy) và chống giật lag mạng thường chỉ thấy ở các game e-sports chuyên nghiệp vào một ứng dụng giáo dục.
 * **Trải nghiệm người dùng (UX):** Hệ thống tracking thông minh đo lường chuyên cần bằng mức độ tương tác thực tế chứ không chỉ dựa trên thời gian online. Giao diện sang trọng, phá bỏ định kiến "app học tập thì nhàm chán".
 
@@ -98,4 +98,4 @@
 * **Thương mại hóa:** Đóng gói sản phẩm dưới dạng SaaS (Software as a Service) cung cấp bản quyền cho các trường Đại học/Cao đẳng khác trên toàn quốc làm công cụ ôn luyện lý luận, pháp luật, lịch sử.
 
 ## 15. KẾT LUẬN
-**Animal Theory Royale** không chỉ là một bài tập kết thúc môn, mà là một giải pháp EdTech hoàn chỉnh giải quyết đúng "nỗi đau" (pain-point) của sinh viên hiện nay khi học các môn lý luận chính trị. Bằng sự kết hợp hoàn hảo giữa giao diện 3D trực quan, công nghệ Web Realtime mạnh mẽ và nền tảng kiến thức học thuật vững chắc, sản phẩm minh chứng cho sự đổi mới sáng tạo không giới hạn của sinh viên, mở ra một phương pháp tiếp cận tri thức hoàn toàn mới: Hiện đại, Kịch tính và Đậm chất thực tiễn.
+**Muông Thú Thông Thái** không chỉ là một bài tập kết thúc môn, mà là một giải pháp EdTech hoàn chỉnh giải quyết đúng "nỗi đau" (pain-point) của sinh viên hiện nay khi học các môn lý luận chính trị. Bằng sự kết hợp hoàn hảo giữa giao diện 3D trực quan, công nghệ Web Realtime mạnh mẽ và nền tảng kiến thức học thuật vững chắc, sản phẩm minh chứng cho sự đổi mới sáng tạo không giới hạn của sinh viên, mở ra một phương pháp tiếp cận tri thức hoàn toàn mới: Hiện đại, Kịch tính và Đậm chất thực tiễn.

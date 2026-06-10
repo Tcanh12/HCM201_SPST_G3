@@ -18,6 +18,14 @@ export default function HostLobbyPage() {
   const [starting, setStarting] = useState(false);
   const [countdown, setCountdown] = useState(null);
   const [showMapPicker, setShowMapPicker] = useState(false);
+  const [error, setError] = useState("");
+
+  const canStartGame =
+    Boolean(roomCode) &&
+    Boolean(connection) &&
+    connection.state === signalR.HubConnectionState.Connected &&
+    players.length >= 1 &&
+    !starting;
 
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
@@ -76,24 +84,33 @@ export default function HostLobbyPage() {
   };
 
   const handleStartGame = async () => {
-    if (players.length === 0) {
-      alert('Chưa có người chơi nào tham gia!');
+    if (!roomCode) {
+      setError("Không tìm thấy mã phòng.");
       return;
     }
-    
-    setStarting(true);
-    
-    if (connection) {
+
+    if (!connection || connection.state !== signalR.HubConnectionState.Connected) {
+      setError("Chưa kết nối tới máy chủ. Vui lòng đợi hoặc tải lại trang.");
+      return;
+    }
+
+    if (!players || players.length === 0) {
+      setError("Cần ít nhất 1 người chơi để bắt đầu trận.");
+      return;
+    }
+
+    try {
+      setStarting(true);
+      setError("");
+      console.log("Invoking HostStartGame with roomCode:", roomCode);
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
-      // Store selected map for GamePage to use
       localStorage.setItem('selectedMap', selectedMap);
-      try {
-        await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
-      } catch (err) {
-        console.error('Failed to start game:', err);
-        alert('Có lỗi xảy ra khi bắt đầu trận: ' + err.message);
-        setStarting(false);
-      }
+      await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
+      console.log("HostStartGame invoked successfully");
+    } catch (err) {
+      console.error('HostStartGame failed:', err);
+      setError(err?.message || "Không thể bắt đầu trận. Vui lòng kiểm tra backend logs.");
+      setStarting(false);
     }
   };
 
@@ -112,8 +129,8 @@ export default function HostLobbyPage() {
       style={{ background: 'linear-gradient(180deg, #0A0E1A 0%, #111827 50%, #0A0E1A 100%)' }}
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-60" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/10 via-transparent to-transparent pointer-events-none" />
 
 
 
@@ -320,20 +337,32 @@ export default function HostLobbyPage() {
         {/* Start Button */}
         <button
           onClick={handleStartGame}
-          disabled={players.length === 0 || starting}
+          disabled={!canStartGame}
           className="w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:hover:scale-100 flex items-center justify-center gap-2"
           style={{
-            background: players.length > 0
+            background: canStartGame
               ? 'linear-gradient(135deg, #1B8C5A, #10B981)'
               : '#1F2937',
-            color: players.length > 0 ? 'white' : '#6B7280',
-            boxShadow: players.length > 0 ? '0 0 30px rgba(16,185,129,0.3)' : 'none',
-            cursor: players.length > 0 && !starting ? 'pointer' : 'not-allowed',
+            color: canStartGame ? 'white' : '#6B7280',
+            boxShadow: canStartGame ? '0 0 30px rgba(16,185,129,0.3)' : 'none',
+            cursor: canStartGame ? 'pointer' : 'not-allowed',
           }}
         >
           <Play className="w-5 h-5" />
-          {players.length === 0 ? 'Chờ người chơi...' : `BẮT ĐẦU TRẬN (${players.length} người)`}
+          {starting ? "Đang bắt đầu..." : (players.length === 0 ? 'Chờ người chơi...' : `BẮT ĐẦU TRẬN (${players.length} người)`)}
         </button>
+
+        {error && (
+          <div className="mt-4 rounded-xl border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-200 text-center">
+            {error}
+          </div>
+        )}
+
+        {!canStartGame && !error && (
+          <p className="mt-3 text-sm text-amber-500/80 text-center">
+            Cần ít nhất 1 người chơi và kết nối máy chủ ổn định để bắt đầu trận.
+          </p>
+        )}
 
         <button
           onClick={() => navigate('/')}

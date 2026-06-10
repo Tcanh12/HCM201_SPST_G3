@@ -116,7 +116,7 @@ function MainHeader() {
     >
       <div className="flex items-center gap-2">
         <BookOpen className="w-6 h-6 text-yellow-400" />
-        <span className="font-bold text-white text-lg tracking-wide">HCM201</span>
+        <span className="font-bold text-white text-lg tracking-wide">HCM202</span>
       </div>
       <nav className="hidden md:flex gap-6 items-center">
         <button onClick={() => navigate('/theory')} className="text-sm font-medium text-white/90 hover:text-yellow-400 transition-colors">Lý thuyết</button>
@@ -148,10 +148,10 @@ export default function LandingPage() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="mb-4"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tight mb-2 drop-shadow-xl" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
-            <span className="text-white">VÒNG BO </span>
-            <span className="text-yellow-400">TRI THỨC 3D</span>
-          </h1>
+        <h1 className="text-5xl md:text-7xl font-display font-black tracking-tight mb-2 drop-shadow-xl" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
+          <span className="text-white">MUÔNG THÚ </span>
+          <span className="text-yellow-400">THÔNG THÁI</span>
+        </h1>
         </motion.div>
 
         {/* Subtitle */}
@@ -162,7 +162,7 @@ export default function LandingPage() {
           className="mb-10 px-4 max-w-2xl"
         >
           <p className="text-base md:text-lg text-white/90 leading-relaxed font-medium">
-            Học Tư tưởng Hồ Chí Minh qua đấu trường sinh tồn, thử thách kiến thức và tương tác 3D.
+            Đấu trường 3D học tập HCM202 – Tư tưởng Hồ Chí Minh
           </p>
         </motion.div>
 
