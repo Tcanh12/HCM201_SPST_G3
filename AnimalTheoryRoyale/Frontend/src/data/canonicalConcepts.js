@@ -621,3 +621,12 @@ export const canonicalConcepts = [
     requiresVerification: true
   }
 ];
+
+export function getConceptTitle(id) {
+  const concept = canonicalConcepts.find(c => c.id === id);
+  if (!concept) {
+    console.warn(`Khái niệm chưa được kiểm chứng: ${id}`);
+    return "Khái niệm cần kiểm chứng";
+  }
+  return concept.title;
+}

@@ -1,43 +1,71 @@
 import React, { useState } from 'react';
-import { Target, BookOpen, Brain, Lightbulb, Activity, CheckCircle, Flag, ChevronDown, ChevronUp } from 'lucide-react';
+import { Target, BookOpen, Brain, Lightbulb, Activity, CheckCircle, CheckCircle2, Flag, ChevronDown, ChevronUp } from 'lucide-react';
+import { getConceptTitle } from '../../data/canonicalConcepts';
 
-export default function LessonDetailView({ lesson }) {
+export default function LessonDetailView({ lesson, completedSections, onSectionComplete }) {
   const [activeAccordion, setActiveAccordion] = useState('beginner');
+  const [selectedVisual, setSelectedVisual] = useState(null);
+
+  const renderCompletionButton = (sectionId) => {
+    const isCompleted = completedSections.includes(sectionId);
+    return (
+      <div className="flex justify-end mt-6">
+        <button
+          onClick={() => onSectionComplete(sectionId)}
+          disabled={isCompleted}
+          className={`px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 ${
+            isCompleted 
+              ? 'bg-[#DCFCE7] text-[#15803d] cursor-default border border-[#15803d]/30' 
+              : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 shadow-sm'
+          }`}
+        >
+          {isCompleted ? (
+            <><CheckCircle2 className="w-5 h-5" /> Đã học phần này</>
+          ) : (
+            <><CheckCircle className="w-5 h-5" /> Đánh dấu đã học</>
+          )}
+        </button>
+      </div>
+    );
+  };
 
   return (
-    <div className="space-y-12">
-      {/* 1. Header is already rendered partially by parent, but we can add Lesson specific meta */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Độ khó: {lesson.difficulty}</span>
-        <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Thời lượng: {lesson.durationMinutes} phút</span>
-        {lesson.tags.map(tag => (
-          <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">#{tag}</span>
-        ))}
-      </div>
+    <div className="space-y-12 pb-16">
+      
+      {/* SECTION: OVERVIEW */}
+      <div id="overview" className="scroll-mt-24 space-y-6">
+        <div className="flex flex-wrap gap-2 mb-4">
+          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Độ khó: {lesson.difficulty}</span>
+          <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Thời lượng: {lesson.durationMinutes} phút</span>
+          {lesson.tags.map(tag => (
+            <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">#{tag}</span>
+          ))}
+        </div>
 
-      {/* 2. Learning Objectives */}
-      <div className="bg-white border-l-4 border-[#F59E0B] p-6 rounded-r-2xl shadow-sm">
-        <div className="flex items-start gap-3">
-          <Target className="w-6 h-6 text-[#F59E0B] flex-shrink-0 mt-1" />
-          <div>
-            <h4 className="font-bold text-[#1F2937] mb-3">Mục tiêu học tập</h4>
-            <ul className="list-disc list-inside text-gray-600 space-y-2">
-              {lesson.learningObjectives.map((obj, i) => <li key={i}>{obj}</li>)}
-            </ul>
+        <div className="bg-white border-l-4 border-[#F59E0B] p-6 rounded-r-2xl shadow-sm">
+          <div className="flex items-start gap-3">
+            <Target className="w-6 h-6 text-[#F59E0B] flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold text-[#1F2937] mb-3">Mục tiêu học tập</h4>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                {lesson.learningObjectives.map((obj, i) => <li key={i}>{obj}</li>)}
+              </ul>
+            </div>
           </div>
         </div>
+
+        <div className="bg-[#F8FAFC] border border-gray-200 p-6 rounded-2xl">
+          <h4 className="font-bold text-[#1F2937] mb-3 flex items-center gap-2">
+            <Lightbulb className="w-5 h-5 text-yellow-500" /> Tổng quan nhanh
+          </h4>
+          <p className="text-gray-700 leading-relaxed">{lesson.quickOverview}</p>
+        </div>
+
+        {renderCompletionButton('overview')}
       </div>
 
-      {/* 3. Quick Overview */}
-      <div className="bg-[#F8FAFC] border border-gray-200 p-6 rounded-2xl">
-        <h4 className="font-bold text-[#1F2937] mb-3 flex items-center gap-2">
-          <Lightbulb className="w-5 h-5 text-yellow-500" /> Tổng quan nhanh
-        </h4>
-        <p className="text-gray-700 leading-relaxed">{lesson.quickOverview}</p>
-      </div>
-
-      {/* 4. Core Theory */}
-      <div>
+      {/* SECTION: THEORY */}
+      <div id="theory" className="scroll-mt-24">
         <h3 className="text-2xl font-bold text-[#1F2937] mb-6 flex items-center gap-3 border-b border-gray-200 pb-4">
           <BookOpen className="w-6 h-6 text-[#B91C1C]" /> Lý thuyết cốt lõi
         </h3>
@@ -59,17 +87,21 @@ export default function LessonDetailView({ lesson }) {
             </div>
           ))}
         </div>
+
+        {renderCompletionButton('theory')}
       </div>
 
-      {/* 5. Concept Breakdown */}
-      <div>
+      {/* SECTION: CONCEPTS */}
+      <div id="concepts" className="scroll-mt-24">
         <h3 className="text-2xl font-bold text-[#1F2937] mb-6 flex items-center gap-3 border-b border-gray-200 pb-4">
           <Brain className="w-6 h-6 text-[#B91C1C]" /> Phân tích Khái niệm
         </h3>
         <div className="grid gap-6">
           {lesson.conceptBreakdown.map((concept, i) => (
             <div key={i} className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
-              <h4 className="font-bold text-lg text-[#1E3A8A] mb-4 border-b pb-2">Khái niệm: {concept.conceptId}</h4>
+              <h4 className="font-bold text-lg text-[#1E3A8A] mb-4 border-b pb-2">
+                Khái niệm: {getConceptTitle(concept.conceptId)}
+              </h4>
               <div className="space-y-3 text-sm">
                 <p><strong className="text-gray-800">Định nghĩa:</strong> {concept.definition}</p>
                 <p><strong className="text-gray-800">Giải thích:</strong> {concept.explanation}</p>
@@ -90,28 +122,36 @@ export default function LessonDetailView({ lesson }) {
             </div>
           ))}
         </div>
+
+        {renderCompletionButton('concepts')}
       </div>
 
-      {/* 6. Visual Learning Placeholder */}
-      <div>
+      {/* SECTION: VISUAL LEARNING */}
+      <div id="visual" className="scroll-mt-24">
         <h3 className="text-2xl font-bold text-[#1F2937] mb-6 flex items-center gap-3 border-b border-gray-200 pb-4">
           <Activity className="w-6 h-6 text-[#B91C1C]" /> Sơ đồ tư duy & Hình ảnh
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
           {lesson.visualLearning.map((vl, i) => (
-            <div key={i} className="bg-[#F8FAFC] border border-gray-200 p-6 rounded-2xl text-center">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
+            <button 
+              key={i} 
+              onClick={() => setSelectedVisual(vl)}
+              className="bg-white border border-gray-200 p-6 rounded-2xl text-center hover:border-blue-400 hover:shadow-md transition-all group"
+            >
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
                 {vl.type}
               </div>
               <h5 className="font-bold text-[#1F2937] mb-2">{vl.title}</h5>
-              <p className="text-sm text-gray-500">{vl.purpose}</p>
-            </div>
+              <p className="text-sm text-gray-500 line-clamp-2">{vl.purpose}</p>
+            </button>
           ))}
         </div>
+
+        {renderCompletionButton('visual')}
       </div>
 
-      {/* 7. Key Takeaways */}
-      <div className="bg-[#1E3A8A] p-8 rounded-3xl text-white shadow-lg">
+      {/* Key Takeaways - Doesn't need its own tracker, can be part of visual or just extra */}
+      <div className="bg-[#1E3A8A] p-8 rounded-3xl text-white shadow-lg mt-12">
         <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
           <Flag className="w-6 h-6 text-yellow-400" /> Bài học rút ra (Key Takeaways)
         </h3>
@@ -125,6 +165,66 @@ export default function LessonDetailView({ lesson }) {
         </ul>
       </div>
 
+      {/* VISUAL MODAL */}
+      {selectedVisual && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onClick={() => setSelectedVisual(null)}>
+          <div className="bg-white rounded-2xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-[#1F2937]">{selectedVisual.title}</h3>
+              <button onClick={() => setSelectedVisual(null)} className="text-gray-500 hover:text-gray-800">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+            
+            <div className="bg-blue-50 p-4 rounded-xl mb-6 border border-blue-100">
+              <span className="font-bold text-blue-800 text-sm uppercase block mb-1">Mục đích</span>
+              <p className="text-blue-900">{selectedVisual.purpose}</p>
+            </div>
+
+            {selectedVisual.type === 'Mindmap' && (
+              <div className="bg-[#F8FAFC] border border-gray-200 p-8 rounded-2xl flex flex-col items-center">
+                <div className="px-6 py-3 bg-[#B91C1C] text-white font-bold rounded-xl shadow-md mb-8 z-10 text-center">
+                  {selectedVisual.center}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                  {selectedVisual.branches?.map((branch, i) => (
+                    <div key={i} className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center font-medium text-[#1F2937]">
+                      {branch}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedVisual.type === 'Diagram' && (
+              <div className="bg-[#F8FAFC] border border-gray-200 p-6 rounded-2xl">
+                <div className="flex flex-col gap-4">
+                  {selectedVisual.components?.map((comp, i) => (
+                    <div key={i} className="bg-white p-4 rounded-xl border-l-4 border-[#F59E0B] shadow-sm font-medium text-[#1F2937]">
+                      {comp}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedVisual.type === 'Flowchart' && (
+              <div className="bg-[#F8FAFC] border border-gray-200 p-6 rounded-2xl flex flex-col items-center gap-2">
+                {selectedVisual.flow?.map((step, i) => (
+                  <React.Fragment key={i}>
+                    <div className="bg-white p-4 rounded-xl border-2 border-blue-200 shadow-sm font-bold text-blue-900 text-center w-full max-w-sm">
+                      {i + 1}. {step}
+                    </div>
+                    {i < selectedVisual.flow.length - 1 && (
+                      <div className="w-1 h-6 bg-blue-300"></div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

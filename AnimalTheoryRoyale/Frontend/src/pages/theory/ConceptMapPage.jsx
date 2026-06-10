@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Network, X, BookOpen, ChevronRight, Maximize, Minimize, CheckCircle, Search, Filter } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLearningProgress } from '../../components/theory/ProgressContext';
-import { conceptNodes, conceptEdges } from '../../data/conceptMapData';
+import { canonicalConcepts, getConceptTitle } from '../../data/canonicalConcepts';
 
 export default function ConceptMapPage() {
   const navigate = useNavigate();
@@ -40,8 +40,22 @@ export default function ConceptMapPage() {
   };
 
   // Layout Algorithm
+  const conceptEdges = useMemo(() => {
+    const edges = [];
+    canonicalConcepts.forEach(node => {
+      if (node.relatedConceptIds) {
+        node.relatedConceptIds.forEach(targetId => {
+          if (canonicalConcepts.some(c => c.id === targetId)) {
+            edges.push({ source: node.id, target: targetId });
+          }
+        });
+      }
+    });
+    return edges;
+  }, []);
+
   const nodesWithPositions = useMemo(() => {
-    const positioned = JSON.parse(JSON.stringify(conceptNodes));
+    const positioned = JSON.parse(JSON.stringify(canonicalConcepts));
     
     // Root
     const root = positioned.find(n => n.level === 0);
@@ -332,20 +346,22 @@ export default function ConceptMapPage() {
 
                 <div>
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Nội dung cốt lõi</h4>
-                  <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.coreContent}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.definition || selectedNode.coreContent}</p>
                 </div>
 
-                <div>
-                  <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Vì sao quan trọng?</h4>
-                  <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.importance}</p>
-                </div>
+                {selectedNode.importance && (
+                  <div>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Vì sao quan trọng?</h4>
+                    <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.importance}</p>
+                  </div>
+                )}
 
-                {selectedNode.relatedConcepts && selectedNode.relatedConcepts.length > 0 && (
+                {selectedNode.relatedConceptIds && selectedNode.relatedConceptIds.length > 0 && (
                   <div>
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Liên kết với</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedNode.relatedConcepts.map(id => {
-                        const relatedNode = conceptNodes.find(n => n.id === id);
+                      {selectedNode.relatedConceptIds.map(id => {
+                        const relatedNode = canonicalConcepts.find(n => n.id === id);
                         return relatedNode ? (
                           <button
                             key={id}

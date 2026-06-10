@@ -4,6 +4,7 @@ import { Clock, CheckCircle2, Flag, ArrowRight, Map, BookOpen, Search, Info } fr
 import { useNavigate } from 'react-router-dom';
 import { useLearningProgress } from '../../components/theory/ProgressContext';
 import { timelineEvents } from '../../data/timelineData';
+import { getConceptTitle } from '../../data/canonicalConcepts';
 import chapters from '../../data/chapters.json';
 
 export default function TimelinePage() {
@@ -185,7 +186,7 @@ export default function TimelinePage() {
                         onClick={() => navigate('/theory/concept-map')}
                         className="px-3 py-1.5 bg-[#FEF3C7]/50 text-[#b45309] hover:bg-[#FEF3C7] rounded-lg text-sm font-medium transition-colors border border-[#F59E0B]/20"
                       >
-                        #{conceptId.replace(/-/g, ' ')}
+                        #{getConceptTitle(conceptId)}
                       </button>
                     ))}
                   </div>

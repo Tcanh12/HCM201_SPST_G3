@@ -56,9 +56,18 @@ export default function ChapterDetailPage() {
     );
   }
 
+  const displaySections = newLessonData 
+    ? [
+        { id: 'overview', title: 'Tổng quan & Mục tiêu' },
+        { id: 'theory', title: 'Lý thuyết cốt lõi' },
+        { id: 'concepts', title: 'Phân tích Khái niệm' },
+        { id: 'visual', title: 'Sơ đồ tư duy & Hình ảnh' }
+      ]
+    : chapterData.sections || [];
+
   const completedSections = progress.completedSections[chapterId] || [];
   const isChapterCompleted = progress.completedChapters.includes(chapterId);
-  const chapterProgress = calculateChapterProgress(chapterId, chapterData.sections.length);
+  const chapterProgress = calculateChapterProgress(chapterId, displaySections.length);
 
   const handleSectionComplete = (sectionId) => {
     markSectionCompleted(chapterId, sectionId);
@@ -222,7 +231,11 @@ export default function ChapterDetailPage() {
           </h1>
           
           {newLessonData ? (
-            <LessonDetailView lesson={newLessonData} />
+            <LessonDetailView 
+              lesson={newLessonData} 
+              completedSections={completedSections}
+              onSectionComplete={handleSectionComplete}
+            />
           ) : (
             <>
               <div className="bg-white border-l-4 border-[#F59E0B] p-6 rounded-r-2xl border-y border-r border-gray-200 shadow-sm mb-12">
@@ -274,17 +287,20 @@ export default function ChapterDetailPage() {
             />
           </div>
           <p className="text-xs text-gray-500 text-center">
-            {completedSections.length} / {chapterData.sections.length} phần đã học
+            {completedSections.length} / {displaySections.length} phần đã học
           </p>
         </div>
 
         <h3 className="font-bold text-[#1F2937] mb-4">Mục lục</h3>
         <div className="space-y-2 mb-8">
-          {chapterData.sections.map((sec, i) => (
+          {displaySections.map((sec, i) => (
             <a 
               key={sec.id}
               href={`#${sec.id}`}
-              className="flex items-center gap-3 text-sm p-2 rounded-lg hover:bg-gray-50 transition-colors"
+              onClick={() => setActiveSection(sec.id)}
+              className={`flex items-center gap-3 text-sm p-2 rounded-lg transition-colors ${
+                activeSection === sec.id ? 'bg-[#FEE2E2] border border-[#B91C1C]/30' : 'hover:bg-gray-50'
+              }`}
             >
               <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
                 completedSections.includes(sec.id) ? 'bg-[#DCFCE7] text-[#15803d]' : 'bg-gray-100 text-gray-400'
