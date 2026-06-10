@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import LandingPage from './pages/LandingPage';
 import CreateRoomPage from './pages/CreateRoomPage';
 import JoinRoomPage from './pages/JoinRoomPage';
@@ -20,8 +21,13 @@ import TimelinePage from './pages/theory/TimelinePage';
 import CaseFilesPage from './pages/theory/CaseFilesPage';
 import CaseFileDetailPage from './pages/theory/CaseFileDetailPage';
 import ReviewPage from './pages/theory/ReviewPage';
+import { ensureUniqueTabId } from './utils/tabIdentity';
 
 function App() {
+  useEffect(() => {
+    ensureUniqueTabId();
+  }, []);
+
   return (
     <div className="w-screen h-screen bg-dark text-white">
       <Routes>

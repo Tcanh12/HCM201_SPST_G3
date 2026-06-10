@@ -182,7 +182,7 @@ export default function PlayerLobbyPage() {
   const [joinStatus, setJoinStatus] = useState('idle');
   const [connection, setConnection] = useState(null);
 
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const user = JSON.parse(sessionStorage.getItem('user') || '{}');
 
   // Load character list from API
   useEffect(() => {
@@ -207,7 +207,7 @@ export default function PlayerLobbyPage() {
       conn.on('JoinRejected', (msg) => {
         if (window.confirm(msg + "\n\nBạn có muốn gửi yêu cầu tham gia muộn đến Host không?")) {
           setJoinStatus('requesting');
-          conn.invoke('RequestJoinInProgressRoom', roomCode, user.username, parseInt(localStorage.getItem('selectedChar'))).catch(console.error);
+          conn.invoke('RequestJoinInProgressRoom', roomCode, user.username, parseInt(sessionStorage.getItem('selectedChar'))).catch(console.error);
         } else {
           setJoinStatus('idle');
         }
@@ -227,7 +227,7 @@ export default function PlayerLobbyPage() {
       });
 
       conn.onreconnected(() => {
-        const sc = localStorage.getItem('selectedChar');
+        const sc = sessionStorage.getItem('selectedChar');
         if (sc) {
           conn.invoke('JoinRoomAsPlayer', roomCode, user.username, parseInt(sc)).catch(console.error);
         }
@@ -242,7 +242,7 @@ export default function PlayerLobbyPage() {
     if (!selectedChar) return alert('Vui lòng chọn nhân vật!');
     if (!connection) return;
 
-    localStorage.setItem('selectedChar', String(selectedChar));
+    sessionStorage.setItem('selectedChar', String(selectedChar));
     setJoinStatus('waiting');
     await connection.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar);
   };

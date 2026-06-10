@@ -32,9 +32,9 @@ export default function GamePage() {
   const [gamePhase, setGamePhase] = useState('loading'); // loading, countdown, playing
   const [countdownNum, setCountdownNum] = useState(null);
 
-  const user = JSON.parse(sessionStorage.getItem('user') || localStorage.getItem('user') || '{}');
-  const role = sessionStorage.getItem('role') || localStorage.getItem('role') || 'player';
-  const selectedChar = parseInt(sessionStorage.getItem('selectedChar') || localStorage.getItem('selectedChar') || '1');
+  const user = JSON.parse(sessionStorage.getItem('user') || '{}');
+  const role = sessionStorage.getItem('role') || 'player';
+  const selectedChar = parseInt(sessionStorage.getItem('selectedChar') || '1');
   const connRef = useRef(null);
 
   // Detect if user is on a touch device (phone/tablet)

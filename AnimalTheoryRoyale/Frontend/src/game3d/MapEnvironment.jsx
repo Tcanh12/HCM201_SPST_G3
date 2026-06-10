@@ -1,96 +1,81 @@
 import * as THREE from 'three';
+import { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
 import { MAP_OBSTACLES, MAP_SIZE } from './MapObstacles';
+import { getMapConfig } from '../data/mapData';
 
-/**
- * Renders the map environment based on the mapKey.
- * Modifies ground textures, colors, lighting, and water effects
- * to match the selected theme while preserving the same collision obstacles.
- */
-export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
-  // Map-specific configurations
-  const getThemeConfig = () => {
-    switch(mapKey) {
-      case 'pac_bo_forest':
-        return {
-          groundColor: '#1A3320', // Darker green
-          gridColor: '#0F2414',
-          hillColor: '#2B5E33',
-          rockColor: '#4B5563',
-          treeColor: '#14532D',
-          waterColor: '#059669',
-          ambientLight: '#10B981',
-          fogColor: '#022C22',
-          hasRiver: true,
-          riverTexture: 'rough',
-          buildingColor: '#3F2E23'
-        };
-      case 'nha_rong_harbor':
-        return {
-          groundColor: '#1E293B', // Navy slate
-          gridColor: '#0F172A',
-          hillColor: '#334155',
-          rockColor: '#475569',
-          treeColor: '#064E3B',
-          waterColor: '#0284C7', // Bright blue
-          ambientLight: '#0EA5E9',
-          fogColor: '#082F49',
-          hasRiver: true,
-          riverTexture: 'smooth',
-          buildingColor: '#7C2D12' // Wood/Brick
-        };
-      case 'viet_bac_mountain':
-        return {
-          groundColor: '#2E1A33', // Deep purple
-          gridColor: '#1A0F1F',
-          hillColor: '#4C1D95',
-          rockColor: '#581C87',
-          treeColor: '#3B0764',
-          waterColor: '#7C3AED',
-          ambientLight: '#8B5CF6',
-          fogColor: '#2E1065',
-          hasRiver: false,
-          buildingColor: '#451A03'
-        };
-      case 'ba_dinh_square':
-        return {
-          groundColor: '#3F1515', // Dark red
-          gridColor: '#2A0E0E',
-          hillColor: '#7F1D1D',
-          rockColor: '#991B1B',
-          treeColor: '#B91C1C',
-          waterColor: '#DC2626',
-          ambientLight: '#EF4444',
-          fogColor: '#450A0A',
-          hasRiver: false,
-          buildingColor: '#7F1D1D'
-        };
-      case 'knowledge_campus':
-      default:
-        return {
-          groundColor: '#1A2E1A', // Standard dark green
-          gridColor: '#112211',
-          hillColor: '#2B4A2B',
-          rockColor: '#555555',
-          treeColor: '#228B22',
-          waterColor: '#0284C7',
-          ambientLight: '#D4A843',
-          fogColor: '#0A0E1A',
-          hasRiver: true,
-          riverTexture: 'smooth',
-          buildingColor: '#8B7355'
-        };
+function DynamicLighting({ mapConfig, enabled = true, startedAt }) {
+  const ambientRef = useRef(null);
+  const dirRef = useRef(null);
+
+  useFrame(() => {
+    if (!enabled) return;
+
+    const cycleDuration = 120000;
+    const elapsed = Date.now() - (startedAt ? new Date(startedAt).getTime() : Date.now());
+    const t = (elapsed % cycleDuration) / cycleDuration;
+
+    const wave = (Math.sin(t * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+
+    const ambientMin = 0.5;
+    const ambientMax = mapConfig.ambientLight ?? 1.25;
+
+    const dirMin = 0.5;
+    const dirMax = mapConfig.directionalLight ?? 1.75;
+
+    const ambientIntensity = ambientMin + (ambientMax - ambientMin) * wave;
+    const dirIntensity = dirMin + (dirMax - dirMin) * wave;
+
+    if (ambientRef.current) {
+      ambientRef.current.intensity = ambientIntensity;
     }
-  };
 
-  const theme = getThemeConfig();
+    if (dirRef.current) {
+      dirRef.current.intensity = dirIntensity;
+      dirRef.current.position.x = Math.cos(t * Math.PI * 2) * 100;
+      dirRef.current.position.z = Math.sin(t * Math.PI * 2) * 100;
+      dirRef.current.position.y = 150;
+    }
+  });
 
   return (
     <group>
-      {/* Dynamic Lighting based on Map */}
-      <ambientLight intensity={0.4} color={theme.ambientLight} />
-      <directionalLight position={[100, 200, 100]} intensity={0.8} color="#FFFFFF" castShadow shadow-mapSize={[2048, 2048]} />
+      <ambientLight ref={ambientRef} intensity={mapConfig.ambientLight ?? 1.2} color={mapConfig.accentColor || '#ffffff'} />
+      <directionalLight
+        ref={dirRef}
+        position={[100, 200, 100]}
+        intensity={mapConfig.directionalLight ?? 1.7}
+        color="#FFFFFF"
+        castShadow
+        shadow-mapSize={[2048, 2048]}
+      />
+    </group>
+  );
+}
+
+export default function MapEnvironment({ mapKey = 'academy', dynamicLighting = true, startedAt }) {
+  const config = getMapConfig(mapKey);
+
+  const theme = {
+    groundColor: config.groundColor || '#1A2E1A',
+    gridColor: config.fogColor || '#112211',
+    hillColor: config.accentColor || '#2B4A2B',
+    rockColor: '#555555',
+    treeColor: config.theme === 'forest' ? '#14532D' : '#228B22',
+    waterColor: config.theme === 'harbor' ? '#0284C7' : '#0284C7',
+    ambientLight: config.ambientLight || 1.2,
+    fogColor: config.fogColor || '#0A0E1A',
+    hasRiver: config.theme === 'harbor' || config.theme === 'forest' || config.theme === 'academy',
+    riverTexture: config.theme === 'harbor' ? 'smooth' : 'rough',
+    buildingColor: config.theme === 'academy' ? '#8B7355' : '#3F2E23'
+  };
+
+  return (
+    <group>
+      {/* Dynamic Lighting */}
+      <DynamicLighting mapConfig={config} enabled={dynamicLighting} startedAt={startedAt} />
       
-      {/* Fog based on map */}
+      {/* Fog */}
       <fog attach="fog" args={[theme.fogColor, 200, 600]} />
 
       {/* Main ground plane */}
@@ -99,10 +84,10 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
         <meshStandardMaterial color={theme.groundColor} roughness={0.9} />
       </mesh>
 
-      {/* Grid overlay for spatial awareness */}
+      {/* Grid overlay */}
       <gridHelper args={[MAP_SIZE, 50, theme.gridColor, theme.gridColor]} position={[0, 0.01, 0]} />
 
-      {/* Darker border around playable area */}
+      {/* Playable area border */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.2, 0]}>
         <ringGeometry args={[MAP_SIZE * 0.5, MAP_SIZE * 0.8, 64]} />
         <meshStandardMaterial color={theme.gridColor} roughness={1} />
@@ -127,12 +112,10 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
       {/* Trees */}
       {MAP_OBSTACLES.filter(o => o.renderType === 'tree').map((o) => (
         <group key={o.id} position={[o.x, 0, o.z]}>
-          {/* Trunk */}
           <mesh position={[0, o.renderScale * 1.2, 0]} castShadow>
             <cylinderGeometry args={[0.3 * o.renderScale, 0.5 * o.renderScale, o.renderScale * 2.5, 6]} />
             <meshStandardMaterial color="#3E2723" roughness={0.9} />
           </mesh>
-          {/* Canopy */}
           <mesh position={[0, o.renderScale * 2.8, 0]} castShadow>
             <coneGeometry args={[o.renderScale * 1.5, o.renderScale * 2, 6]} />
             <meshStandardMaterial color={theme.treeColor} roughness={0.8} />
@@ -147,7 +130,6 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
             <boxGeometry args={[o.width, o.height, o.depth]} />
             <meshStandardMaterial color={theme.buildingColor} roughness={0.7} />
           </mesh>
-          {/* Roof */}
           <mesh position={[0, o.height + 1, 0]} castShadow>
             <coneGeometry args={[o.renderScale * 1.5, 3, 4]} />
             <meshStandardMaterial color="#27272A" roughness={0.8} />
@@ -157,8 +139,7 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
 
       {/* === RIVER & BRIDGE === */}
       {theme.hasRiver && (
-        <>
-          {/* River */}
+        <group>
           <mesh position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 4]} receiveShadow>
             <planeGeometry args={[MAP_SIZE * 1.5, 60, 32, 4]} />
             <meshStandardMaterial 
@@ -170,14 +151,11 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
             />
           </mesh>
 
-          {/* Bridge */}
           <group position={[0, 0, 0]} rotation={[0, Math.PI / 4, 0]}>
-            {/* Bridge floor */}
             <mesh position={[0, 1, 0]} castShadow receiveShadow>
               <boxGeometry args={[16, 1, 80]} />
               <meshStandardMaterial color="#451A03" roughness={0.9} />
             </mesh>
-            {/* Bridge railings */}
             <mesh position={[-7.5, 2, 0]} castShadow>
               <boxGeometry args={[1, 1, 80]} />
               <meshStandardMaterial color="#291202" />
@@ -186,7 +164,6 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
               <boxGeometry args={[1, 1, 80]} />
               <meshStandardMaterial color="#291202" />
             </mesh>
-            {/* Pillars */}
             <mesh position={[0, -5, 30]} castShadow>
               <cylinderGeometry args={[2, 2, 12, 16]} />
               <meshStandardMaterial color={theme.rockColor} />
@@ -196,11 +173,11 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
               <meshStandardMaterial color={theme.rockColor} />
             </mesh>
           </group>
-        </>
+        </group>
       )}
 
-      {/* Ba Dinh Square specific central monument */}
-      {mapKey === 'ba_dinh_square' && (
+      {/* Map Specific Overlays */}
+      {mapKey === 'badinh' && (
         <group position={[0, 0, 0]}>
           <mesh position={[0, 0.5, 0]} receiveShadow>
             <boxGeometry args={[40, 1, 40]} />
@@ -213,8 +190,7 @@ export default function MapEnvironment({ mapKey = 'knowledge_campus' }) {
         </group>
       )}
 
-      {/* Pac Bo specific cave entrance */}
-      {mapKey === 'pac_bo_forest' && (
+      {mapKey === 'pacbo' && (
         <group position={[MAP_SIZE * 0.3, 0, MAP_SIZE * 0.3]}>
           <mesh position={[0, 5, 0]} receiveShadow castShadow>
             <dodecahedronGeometry args={[12, 0]} />

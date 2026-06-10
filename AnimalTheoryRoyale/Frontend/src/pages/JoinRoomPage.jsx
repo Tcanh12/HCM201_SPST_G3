@@ -22,8 +22,9 @@ export default function JoinRoomPage() {
         password: '123'
       });
 
-      localStorage.setItem('user', JSON.stringify(authRes.data));
-      localStorage.setItem('role', 'player');
+      sessionStorage.setItem('user', JSON.stringify(authRes.data));
+      sessionStorage.setItem('role', 'player');
+      sessionStorage.setItem('roomCode', code.trim().toUpperCase());
 
       // Navigate to Player Lobby (character selection)
       navigate(`/player-lobby/${code.trim().toUpperCase()}`);

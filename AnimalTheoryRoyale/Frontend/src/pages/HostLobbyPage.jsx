@@ -18,6 +18,7 @@ export default function HostLobbyPage() {
   const [starting, setStarting] = useState(false);
   const [countdown, setCountdown] = useState(null);
   const [showMapPicker, setShowMapPicker] = useState(false);
+  const [dynamicLighting, setDynamicLighting] = useState(true);
   const [error, setError] = useState("");
 
   const playerCount = Array.isArray(players) ? players.length : 0;
@@ -133,9 +134,15 @@ export default function HostLobbyPage() {
       });
 
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
-      localStorage.setItem('selectedMap', selectedMap);
+      sessionStorage.setItem('activeMapId', selectedMap);
       
-      const startPromise = connection.invoke('HostStartGame', roomCode, questionCount, camMode);
+      const startPromise = connection.invoke('HostStartGame', {
+        roomCode,
+        questionCount,
+        cameraMode: camMode,
+        mapId: selectedMap,
+        dynamicLighting
+      });
       
       const timeoutPromise = new Promise((_, reject) =>
         setTimeout(() => reject(new Error("Start game timeout sau 10 giây.")), 10000)
@@ -250,7 +257,9 @@ export default function HostLobbyPage() {
               className="w-full flex items-center justify-between p-3 rounded-xl bg-white/3 border border-white/8 hover:border-white/15 transition-all text-left"
             >
               <div className="flex items-center gap-2">
-                <span className="text-lg">{currentMap.icon}</span>
+                <span className="text-lg" style={{ color: currentMap.color }}>
+                  {currentMap.icon && <currentMap.icon size={22} strokeWidth={2} />}
+                </span>
                 <div>
                   <div className="text-sm font-bold text-white/80">{currentMap.nameVi}</div>
                   <div className="text-[10px] text-white/30">{currentMap.difficulty} · {currentMap.knowledgeDensity} cột tri thức</div>
@@ -276,7 +285,9 @@ export default function HostLobbyPage() {
                         selectedMap === map.key ? 'bg-white/8' : ''
                       }`}
                     >
-                      <span className="text-xl">{map.icon}</span>
+                      <span className="text-xl" style={{ color: map.color }}>
+                        {map.icon && <map.icon size={22} strokeWidth={2} />}
+                      </span>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-bold" style={{ color: selectedMap === map.key ? map.color : 'rgba(255,255,255,0.7)' }}>
                           {map.nameVi}
@@ -297,6 +308,18 @@ export default function HostLobbyPage() {
                 </motion.div>
               )}
             </AnimatePresence>
+            
+            <div className="mt-3 flex items-center gap-2 p-3 rounded-xl bg-white/2 border border-white/6">
+              <label className="flex items-center gap-2 cursor-pointer text-sm text-white/80">
+                <input
+                  type="checkbox"
+                  checked={dynamicLighting}
+                  onChange={(e) => setDynamicLighting(e.target.checked)}
+                  className="rounded bg-white/10 border-white/20 text-emerald-500 focus:ring-emerald-500"
+                />
+                Bật chu kỳ Sáng/Tối (Dynamic Lighting)
+              </label>
+            </div>
           </div>
         </div>
 

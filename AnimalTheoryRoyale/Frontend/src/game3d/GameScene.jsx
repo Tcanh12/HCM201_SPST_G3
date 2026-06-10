@@ -361,7 +361,11 @@ export default function GameScene({
   return (
     <group onPointerDown={handleShoot} onWheel={handleWheel}>
       {/* Dynamic Environment (Lights, Fog, Ground) based on selected map */}
-      <MapEnvironment mapKey={localStorage.getItem('selectedMap') || 'knowledge_campus'} />
+      <MapEnvironment 
+        mapKey={gameState?.mapId || sessionStorage.getItem('activeMapId') || 'academy'} 
+        dynamicLighting={gameState?.dynamicLighting !== false}
+        startedAt={gameState?.startedAt}
+      />
       <SafeZone radius={safeZone.radius} x={safeZone.centerX || 0} z={safeZone.centerZ || 0} />
 
       {knowledgeZones.filter(z => z.isActive).map(z => (

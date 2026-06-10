@@ -5,6 +5,15 @@ using AnimalTheoryRoyale.Services;
 
 namespace AnimalTheoryRoyale.Hubs;
 
+public class StartGameRequest
+{
+    public string RoomCode { get; set; } = "";
+    public int QuestionCount { get; set; } = 20;
+    public string CameraMode { get; set; } = "ThirdPerson";
+    public string MapId { get; set; } = "academy";
+    public bool DynamicLighting { get; set; } = true;
+}
+
 public class GameHub : Hub
 {
     private readonly GameEngine _gameEngine;
@@ -140,8 +149,13 @@ public class GameHub : Hub
         }).ToArray());
     }
 
-    public async Task<object> HostStartGame(string roomCode, int questionCount = 20, string cameraMode = "ThirdPerson")
+    public async Task<object> HostStartGame(StartGameRequest request)
     {
+        var roomCode = request.RoomCode;
+        var questionCount = request.QuestionCount;
+        var cameraMode = request.CameraMode;
+        var mapId = request.MapId;
+
         try
         {
             _logger.LogInformation("HostStartGame called. RoomCode = {RoomCode}", roomCode);
@@ -198,13 +212,19 @@ public class GameHub : Hub
             game.Status = "Playing";
             game.StartTime = DateTime.UtcNow;
             game.CameraMode = cameraMode;
+            game.MapId = mapId ?? "academy";
+            game.DynamicLighting = request.DynamicLighting;
             game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
 
             await Clients.Group(normalizedRoomCode).SendAsync("GameStarted", new
             {
                 roomCode = normalizedRoomCode,
                 status = "Playing",
-                startedAt = game.StartTime
+                startedAt = game.StartTime,
+                mapId = game.MapId,
+                dynamicLighting = game.DynamicLighting,
+                cameraMode = game.CameraMode,
+                questionCount = questionCount
             });
 
             _logger.LogInformation("GameStarted sent to group {RoomCode}", normalizedRoomCode);

@@ -11,6 +11,8 @@ public class GameState
     public int Duration { get; set; }
     public string HostConnectionId { get; set; } = string.Empty;
     public string CameraMode { get; set; } = "ThirdPerson";
+    public string MapId { get; set; } = "academy";
+    public bool DynamicLighting { get; set; } = true;
 
     public ConcurrentDictionary<string, PlayerState> Players { get; set; } = new();
     public ConcurrentDictionary<string, ProjectileState> Projectiles { get; set; } = new();

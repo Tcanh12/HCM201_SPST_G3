@@ -26,9 +26,9 @@ export default function CreateRoomPage() {
         password: '123'
       });
       const user = authRes.data;
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('role', 'host');
-      localStorage.setItem('cameraMode', settings.cameraMode);
+      sessionStorage.setItem('user', JSON.stringify(user));
+      sessionStorage.setItem('role', 'host');
+      sessionStorage.setItem('cameraMode', settings.cameraMode);
 
       // 2. Create Room via API
       const res = await axios.post(`${API_HOST}/api/rooms/create`, {

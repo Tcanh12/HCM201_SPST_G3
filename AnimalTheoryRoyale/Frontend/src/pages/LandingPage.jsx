@@ -4,20 +4,119 @@ import { Swords, Users, BookOpen, Compass, Shield, BookMarked, Map, ChevronRight
 import { useState, useEffect, useMemo } from 'react';
 import { CHARACTER_DATA } from '../data/characterData';
 
-// Background with HCM colors
-function HCMBackground() {
+function VietnamFlagBackground({ children }) {
   return (
-    <div 
-      className="absolute inset-0 overflow-hidden"
-      style={{
-        background: `
-          radial-gradient(circle at 20% 20%, rgba(250, 204, 21, 0.22), transparent 40%),
-          radial-gradient(circle at 80% 10%, rgba(185, 28, 28, 0.32), transparent 40%),
-          linear-gradient(135deg, #7F1D1D 0%, #B91C1C 42%, #F5E6C8 100%)
-        `
-      }}
-    >
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{ mixBlendMode: 'overlay' }} />
+    <div className="vn-flag-bg absolute inset-0 overflow-hidden z-0">
+      <div className="vn-flag-wave vn-flag-wave-1" />
+      <div className="vn-flag-wave vn-flag-wave-2" />
+      <div className="vn-flag-star" />
+      <div className="vn-flag-overlay" />
+      <div className="vn-flag-content absolute inset-0">
+        {children}
+      </div>
+      <style>{`
+        .vn-flag-bg {
+          background:
+            radial-gradient(circle at 50% 42%, rgba(255, 222, 0, 0.18), transparent 14%),
+            linear-gradient(135deg, #7f0000 0%, #d71920 45%, #8b0000 100%);
+        }
+
+        .vn-flag-wave {
+          position: absolute;
+          inset: -10%;
+          pointer-events: none;
+          opacity: 0.55;
+          background:
+            linear-gradient(
+              115deg,
+              rgba(255, 255, 255, 0.10) 0%,
+              transparent 18%,
+              rgba(255, 255, 255, 0.06) 32%,
+              transparent 52%,
+              rgba(0, 0, 0, 0.10) 72%,
+              transparent 100%
+            );
+          transform-origin: center;
+          animation: vietnamFlagWave 9s ease-in-out infinite;
+        }
+
+        .vn-flag-wave-2 {
+          opacity: 0.35;
+          animation-duration: 13s;
+          animation-delay: -4s;
+          transform: rotate(4deg);
+        }
+
+        .vn-flag-star {
+          position: absolute;
+          width: min(26vw, 260px);
+          aspect-ratio: 1;
+          left: 50%;
+          top: 38%;
+          transform: translate(-50%, -50%);
+          background: #ffde00;
+          clip-path: polygon(
+            50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%
+          );
+          opacity: 0.18;
+          filter: blur(0.2px);
+          animation: starFloat 8s ease-in-out infinite;
+        }
+
+        .vn-flag-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.28) 72%),
+            linear-gradient(to bottom, rgba(15, 23, 42, 0.20), rgba(15, 23, 42, 0.58));
+          pointer-events: none;
+        }
+
+        .vn-flag-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        @keyframes vietnamFlagWave {
+          0% {
+            transform: translate3d(-1.5%, 0, 0) skewY(-1deg) scale(1.03);
+            filter: brightness(0.96);
+          }
+          50% {
+            transform: translate3d(1.5%, -0.5%, 0) skewY(1.2deg) scale(1.05);
+            filter: brightness(1.08);
+          }
+          100% {
+            transform: translate3d(-1.5%, 0, 0) skewY(-1deg) scale(1.03);
+            filter: brightness(0.96);
+          }
+        }
+
+        @keyframes starFloat {
+          0%, 100% {
+            transform: translate(-50%, -50%) rotate(-1deg) scale(1);
+          }
+          50% {
+            transform: translate(-50%, -51.5%) rotate(1deg) scale(1.03);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .vn-flag-wave,
+          .vn-flag-star {
+            animation: none;
+          }
+        }
+      `}</style>
     </div>
   );
 }
@@ -134,7 +233,7 @@ export default function LandingPage() {
 
   return (
     <div className="relative flex flex-col items-center justify-start min-h-screen w-full overflow-y-auto overflow-x-hidden font-sans pt-24 pb-12">
-      <HCMBackground />
+      <VietnamFlagBackground />
       <AcademicFloaters />
       <MainHeader />
 
