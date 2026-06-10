@@ -182,6 +182,40 @@ async function validateData() {
       }
     }
 
+    // Visual Learning Constraints
+    const chaptersVisualMap = {};
+    for (const l of lessons) {
+      if (!chaptersVisualMap[l.chapterId]) chaptersVisualMap[l.chapterId] = [];
+      if (l.visualLearning && Array.isArray(l.visualLearning)) {
+        chaptersVisualMap[l.chapterId].push(...l.visualLearning);
+        
+        for (const vl of l.visualLearning) {
+          if (!vl.id || !vl.chapterId || !vl.type || !vl.title || !vl.purpose || !vl.learningValue || !vl.keyTakeaways) {
+            error(`Visual learning item missing required fields (id, chapterId, type, title, purpose, learningValue, keyTakeaways): ${vl.id}`);
+          }
+          if (vl.requiresVerification === undefined) {
+            warn(`requiresVerification missing in visual learning item ${vl.id}`);
+          }
+          if (vl.relatedConceptIds) {
+            for (const cid of vl.relatedConceptIds) {
+              if (!conceptIds.has(cid)) {
+                error(`Visual learning item ${vl.id} references missing conceptId: ${cid}`);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    for (let i = 1; i <= 6; i++) {
+      const chapterId = `chuong-${i}`;
+      const count = chaptersVisualMap[chapterId]?.length || 0;
+      if (count < 3) {
+        error(`Chapter ${chapterId} must have at least 3 visual learning items. Found: ${count}`);
+      }
+    }
+
+
     if (hasErrors) {
       console.log("\n❌ Knowledge data validation failed");
       process.exit(1);
