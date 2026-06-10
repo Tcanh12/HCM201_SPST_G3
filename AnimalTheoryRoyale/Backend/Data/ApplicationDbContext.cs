@@ -90,12 +90,6 @@ public class ApplicationDbContext : DbContext
             .HasForeignKey(al => al.QuestionId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        // Seed initial Characters
-        modelBuilder.Entity<Character>().HasData(
-            new Character { Id = 1, Name = "Voi", AnimalType = "Tanker", MaxHP = 150, MoveSpeed = 60, HitboxSize = 2, InitialAmmo = 10, SkillName = "Lá Chắn Đại Ngàn", SkillCooldown = 30 },
-            new Character { Id = 2, Name = "Thỏ", AnimalType = "Speedster", MaxHP = 80, MoveSpeed = 130, HitboxSize = 1, InitialAmmo = 8, SkillName = "Bứt Tốc", SkillCooldown = 25 },
-            new Character { Id = 3, Name = "Cáo", AnimalType = "Strategist", MaxHP = 100, MoveSpeed = 110, HitboxSize = 1, InitialAmmo = 10, SkillName = "Mưu Trí", SkillCooldown = 45 },
-            new Character { Id = 4, Name = "Rùa", AnimalType = "Defender", MaxHP = 130, MoveSpeed = 65, HitboxSize = 2, InitialAmmo = 8, SkillName = "Mai Rùa Bảo Vệ", SkillCooldown = 35 }
-        );
+        // Character seeding is moved to Program.cs to avoid duplicate key issues during migration
     }
 }

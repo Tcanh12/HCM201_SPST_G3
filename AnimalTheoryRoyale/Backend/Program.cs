@@ -80,15 +80,36 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
+    var logger = services.GetRequiredService<ILogger<Program>>();
     try
     {
         var context = services.GetRequiredService<ApplicationDbContext>();
         context.Database.Migrate();
+        logger.LogInformation("Database migrated successfully.");
+        
+        // Seed characters safely
+        if (!context.Characters.Any(c => c.Id == 1))
+        {
+            context.Characters.Add(new AnimalTheoryRoyale.Models.Character { Id = 1, Name = "Voi", AnimalType = "Tanker", MaxHP = 150, MoveSpeed = 60, HitboxSize = 2, InitialAmmo = 10, SkillName = "Lá Chắn Đại Ngàn", SkillCooldown = 30, IconPath = "", ModelPath = "", SkillDescription = "" });
+        }
+        if (!context.Characters.Any(c => c.Id == 2))
+        {
+            context.Characters.Add(new AnimalTheoryRoyale.Models.Character { Id = 2, Name = "Thỏ", AnimalType = "Speedster", MaxHP = 80, MoveSpeed = 130, HitboxSize = 1, InitialAmmo = 8, SkillName = "Bứt Tốc", SkillCooldown = 25, IconPath = "", ModelPath = "", SkillDescription = "" });
+        }
+        if (!context.Characters.Any(c => c.Id == 3))
+        {
+            context.Characters.Add(new AnimalTheoryRoyale.Models.Character { Id = 3, Name = "Cáo", AnimalType = "Strategist", MaxHP = 100, MoveSpeed = 110, HitboxSize = 1, InitialAmmo = 10, SkillName = "Mưu Trí", SkillCooldown = 45, IconPath = "", ModelPath = "", SkillDescription = "" });
+        }
+        if (!context.Characters.Any(c => c.Id == 4))
+        {
+            context.Characters.Add(new AnimalTheoryRoyale.Models.Character { Id = 4, Name = "Rùa", AnimalType = "Defender", MaxHP = 130, MoveSpeed = 65, HitboxSize = 2, InitialAmmo = 8, SkillName = "Mai Rùa Bảo Vệ", SkillCooldown = 35, IconPath = "", ModelPath = "", SkillDescription = "" });
+        }
+        context.SaveChanges();
+        logger.LogInformation("Characters seeded successfully.");
     }
     catch (Exception ex)
     {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred migrating the DB.");
+        logger.LogError(ex, "An error occurred migrating the DB or seeding data.");
     }
 }
 
