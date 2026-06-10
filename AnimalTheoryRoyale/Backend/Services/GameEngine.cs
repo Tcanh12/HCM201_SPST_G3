@@ -97,7 +97,7 @@ public class GameEngine : BackgroundService
                 BaseScore = q.BaseScore,
                 PenaltyHP = q.PenaltyHP,
                 TimeLimit = q.TimeLimit,
-                Type = q.Type,
+                Type = q.QuestionType ?? "MultipleChoice",
                 ChallengePayloadJson = q.ChallengePayloadJson,
                 Options = q.Options.Select(o => new QuestionOptionData
                 {
