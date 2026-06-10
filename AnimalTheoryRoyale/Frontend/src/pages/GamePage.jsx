@@ -30,10 +30,11 @@ export default function GamePage() {
   const [connectionState, setConnectionState] = useState('connecting'); // connecting, connected, reconnecting, disconnected
   const [showSettings, setShowSettings] = useState(false);
   const [gamePhase, setGamePhase] = useState('loading'); // loading, countdown, playing
+  const [countdownNum, setCountdownNum] = useState(null);
 
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
-  const role = localStorage.getItem('role') || 'player';
-  const selectedChar = parseInt(localStorage.getItem('selectedChar') || '1');
+  const user = JSON.parse(sessionStorage.getItem('user') || localStorage.getItem('user') || '{}');
+  const role = sessionStorage.getItem('role') || localStorage.getItem('role') || 'player';
+  const selectedChar = parseInt(sessionStorage.getItem('selectedChar') || localStorage.getItem('selectedChar') || '1');
   const connRef = useRef(null);
 
   // Detect if user is on a touch device (phone/tablet)
@@ -60,11 +61,11 @@ export default function GamePage() {
 
       if (role === 'host') {
         conn.invoke('JoinRoomAsHost', roomCode)
-          .then(() => { setConnected(true); setConnectionState('connected'); setGamePhase('playing'); })
+          .then(() => { setConnected(true); setConnectionState('connected'); startCountdownSequence(); })
           .catch(err => console.error('Host failed to re-join:', err));
       } else {
         conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar)
-          .then(() => { setConnected(true); setConnectionState('connected'); setGamePhase('playing'); })
+          .then(() => { setConnected(true); setConnectionState('connected'); startCountdownSequence(); })
           .catch(err => console.error('Failed to re-join:', err));
       }
 
@@ -149,6 +150,20 @@ export default function GamePage() {
     setConnection(conn);
     return () => { conn.stop(); };
   }, [roomCode]);
+
+  const startCountdownSequence = async () => {
+    setGamePhase('countdown');
+    setCountdownNum(3);
+    await new Promise(r => setTimeout(r, 1000));
+    setCountdownNum(2);
+    await new Promise(r => setTimeout(r, 1000));
+    setCountdownNum(1);
+    await new Promise(r => setTimeout(r, 1000));
+    setCountdownNum('GO!');
+    await new Promise(r => setTimeout(r, 800));
+    setCountdownNum(null);
+    setGamePhase('playing');
+  };
 
   const handleClaimQuestion = useCallback((zoneId) => {
     if (connRef.current && !question) {
@@ -401,6 +416,35 @@ export default function GamePage() {
             >
               {trapMessage}
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Countdown Overlay */}
+      <AnimatePresence>
+        {gamePhase === 'countdown' && countdownNum !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.2 } }}
+            className="fixed inset-0 z-[500] flex items-center justify-center pointer-events-none"
+            style={{ background: 'rgba(10,14,26,0.5)', backdropFilter: 'blur(4px)' }}
+          >
+            <motion.div
+              key={countdownNum}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 2, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+              className={`text-8xl md:text-9xl font-display font-black ${
+                countdownNum === 'GO!' 
+                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400' 
+                  : 'text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-white'
+              }`}
+              style={{ textShadow: '0 0 30px rgba(0,0,0,0.5)' }}
+            >
+              {countdownNum}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

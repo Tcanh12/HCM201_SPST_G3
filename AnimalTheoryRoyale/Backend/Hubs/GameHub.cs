@@ -154,8 +154,12 @@ public class GameHub : Hub
             game.CameraMode = cameraMode;
             game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
 
-            await Clients.Caller.SendAsync("GameStartedForHost");
-            await Clients.GroupExcept(roomCode, Context.ConnectionId).SendAsync("GameStartedForPlayer");
+            await Clients.Group(roomCode).SendAsync("GameStarted", new
+            {
+                roomCode = roomCode,
+                status = "Playing",
+                startedAt = game.StartTime
+            });
         }
         catch (Exception ex)
         {

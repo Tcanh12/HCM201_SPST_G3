@@ -45,8 +45,8 @@ export default function HostLobbyPage() {
         setPlayers(prev => prev.filter(p => p.connectionId !== connectionId));
       });
 
-      conn.on('GameStartedForHost', () => {
-        navigate(`/host-dashboard/${roomCode}`);
+      conn.on('GameStarted', (payload) => {
+        navigate(`/game/${payload.roomCode}`);
       });
 
       conn.onreconnected(() => {
@@ -81,18 +81,7 @@ export default function HostLobbyPage() {
       return;
     }
     
-    // Countdown sequence
     setStarting(true);
-    setCountdown(3);
-    
-    await new Promise(r => setTimeout(r, 1000));
-    setCountdown(2);
-    await new Promise(r => setTimeout(r, 1000));
-    setCountdown(1);
-    await new Promise(r => setTimeout(r, 1000));
-    setCountdown('GO!');
-    await new Promise(r => setTimeout(r, 800));
-    setCountdown(null);
     
     if (connection) {
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
@@ -126,33 +115,7 @@ export default function HostLobbyPage() {
       <div className="absolute inset-0 bg-grid-pattern opacity-60" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/10 via-transparent to-transparent" />
 
-      {/* Countdown overlay */}
-      <AnimatePresence>
-        {countdown !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center"
-            style={{ background: 'rgba(10,14,26,0.9)', backdropFilter: 'blur(8px)' }}
-          >
-            <motion.div
-              key={countdown}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 2, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-              className={`text-8xl md:text-9xl font-display font-black ${
-                countdown === 'GO!' 
-                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 text-glow' 
-                  : 'text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-white text-glow'
-              }`}
-            >
-              {countdown}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

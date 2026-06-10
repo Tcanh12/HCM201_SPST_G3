@@ -200,8 +200,8 @@ export default function PlayerLobbyPage() {
       .build();
 
     conn.start().then(() => {
-      conn.on('GameStartedForPlayer', () => {
-        navigate(`/game/${roomCode}`);
+      conn.on('GameStarted', (payload) => {
+        navigate(`/game/${payload.roomCode}`);
       });
 
       conn.on('JoinRejected', (msg) => {
