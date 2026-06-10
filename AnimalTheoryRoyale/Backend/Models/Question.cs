@@ -5,12 +5,12 @@ public class Question
     public int Id { get; set; }
     public int TopicId { get; set; }
     public Topic? Topic { get; set; }
-    public string Difficulty { get; set; } = "Easy"; // Easy, Medium, Hard
+    public string Difficulty { get; set; } = "Normal";
     public string Content { get; set; } = string.Empty;
-    public string Explanation { get; set; } = string.Empty;
+    public string? Explanation { get; set; }
     public int BaseScore { get; set; }
     public int PenaltyHP { get; set; }
-    public int TimeLimit { get; set; } // in seconds
+    public int TimeLimit { get; set; } = 20;
 
     // Phase 3 Extensions: Support for multi-type challenges
     public string QuestionType { get; set; } = "MultipleChoice"; // MultipleChoice, TrueFalse, FillBlank, CaseStudy, etc.

@@ -220,7 +220,7 @@ public class GameHub : Hub
                 success = false,
                 message = ex.Message,
                 detail = ex.InnerException?.Message,
-                code = "UNKNOWN_ERROR"
+                code = "HOST_START_GAME_FAILED"
             };
         }
     }
