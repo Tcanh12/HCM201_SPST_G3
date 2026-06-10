@@ -25,8 +25,20 @@ export default function ConceptMapPage() {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
+    
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedNode(null);
+      }
+    };
+
     document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   const toggleFullscreen = () => {
@@ -310,137 +322,177 @@ export default function ConceptMapPage() {
 
       {/* DETAIL PANEL */}
       <AnimatePresence>
-        {selectedNode ? (
-          <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 'auto', opacity: 1 }}
-            exit={{ width: 0, opacity: 0 }}
-            className="w-full md:w-[400px] bg-white border-l border-gray-200 overflow-y-auto h-[calc(100vh-4rem)] shadow-lg z-20 flex-shrink-0"
-          >
-            <div className="p-6 h-full flex flex-col">
-              <div className="flex items-center justify-between mb-6">
-                <div className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full ${
-                  selectedNode.level === 0 ? 'bg-[#FEE2E2] text-[#B91C1C]' :
-                  selectedNode.level === 1 ? 'bg-[#DBEAFE] text-[#1E3A8A]' :
-                  'bg-gray-100 text-gray-600'
-                }`}>
-                  {selectedNode.level === 0 ? 'Hệ tư tưởng' :
-                   selectedNode.level === 1 ? 'Chương học' : 'Khái niệm'}
-                </div>
-                <button 
-                  onClick={() => setSelectedNode(null)}
-                  className="p-2 text-gray-400 hover:text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+        {selectedNode && (
+          <>
+            {/* Mobile Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedNode(null)}
+              className="md:hidden fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-30"
+            />
+            
+            {/* Detail Panel */}
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              className="fixed md:absolute bottom-0 md:bottom-auto md:right-0 md:top-0 w-full md:w-[480px] max-h-[85vh] md:h-full bg-white border-t md:border-t-0 md:border-l border-gray-200 shadow-2xl z-40 overflow-y-auto flex flex-col rounded-t-3xl md:rounded-none"
+            >
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
+                {/* Mobile drag handle */}
+                <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-4 md:hidden" />
 
-              <h2 className="text-2xl font-bold text-[#1F2937] mb-2">{selectedNode.title}</h2>
-              <p className="text-sm font-bold text-[#F59E0B] mb-6">Chương liên quan: {selectedNode.chapterId}</p>
-              
-              <div className="space-y-6 flex-1">
-                <div className="bg-[#F8FAFC] border-l-4 border-[#1E3A8A] p-4 rounded-r-xl border-y border-r border-gray-200">
-                  <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Mô tả ngắn</h4>
-                  <p className="text-[#1F2937] font-medium">{selectedNode.shortDescription}</p>
-                </div>
-
-                <div>
-                  <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Nội dung cốt lõi</h4>
-                  <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.definition || selectedNode.explanation}</p>
-                </div>
-
-                {selectedNode.cognitiveValue && (
+                {/* Header */}
+                <div className="flex items-start justify-between gap-4 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Giá trị nhận thức</h4>
-                    <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.cognitiveValue}</p>
-                  </div>
-                )}
-
-                {selectedNode.keyIdeas?.length > 0 && (
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Ý chính cần nhớ</h4>
-                    <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                      {selectedNode.keyIdeas.map((idea, idx) => (
-                        <li key={idx}>{idea}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {selectedNode.commonMisconceptions?.length > 0 && (
-                  <div>
-                    <h4 className="text-xs font-bold text-[#B91C1C] uppercase tracking-widest mb-2">Hiểu sai thường gặp</h4>
-                    <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                      {selectedNode.commonMisconceptions.map((mis, idx) => (
-                        <li key={idx}>{mis}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {selectedNode.reflectionQuestions?.length > 0 && (
-                  <div className="bg-[#FEF3C7] p-4 rounded-xl border border-[#F59E0B]/30">
-                    <h4 className="text-xs font-bold text-[#b45309] uppercase tracking-widest mb-2">Câu hỏi suy ngẫm</h4>
-                    <ul className="list-disc pl-5 text-sm text-[#b45309] space-y-1">
-                      {selectedNode.reflectionQuestions.map((q, idx) => (
-                        <li key={idx}>{q}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {selectedNode.relatedConceptIds && selectedNode.relatedConceptIds.length > 0 && (
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Liên kết với</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedNode.relatedConceptIds.map(id => {
-                        const relatedNode = canonicalConcepts.find(n => n.id === id);
-                        return relatedNode ? (
-                          <button
-                            key={id}
-                            onClick={() => setSelectedNode(relatedNode)}
-                            className="px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-[#FEF3C7] hover:text-[#b45309] hover:border-[#F59E0B]/30 text-xs rounded-lg transition-colors font-medium"
-                          >
-                            {relatedNode.title}
-                          </button>
-                        ) : null;
-                      })}
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md ${
+                        selectedNode.level === 0 ? 'bg-[#FEE2E2] text-[#B91C1C]' :
+                        selectedNode.level === 1 ? 'bg-[#DBEAFE] text-[#1E3A8A]' :
+                        'bg-gray-100 text-gray-600'
+                      }`}>
+                        {selectedNode.level === 0 ? 'Hệ tư tưởng' : selectedNode.level === 1 ? 'Chương học' : 'Khái niệm'}
+                      </span>
+                      {selectedNode.chapterId !== 'core' && (
+                        <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md bg-[#FEF3C7] text-[#B45309]">
+                          {selectedNode.chapterId}
+                        </span>
+                      )}
+                      {selectedNode.requiresVerification && (
+                        <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md bg-yellow-100 text-yellow-700">
+                          Chưa kiểm chứng
+                        </span>
+                      )}
                     </div>
+                    <h2 className="text-2xl font-bold text-[#1F2937] leading-tight">{selectedNode.title}</h2>
                   </div>
-                )}
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-gray-100 space-y-3">
-                {selectedNode.chapterId !== 'core' && (
+                  
                   <button 
-                    onClick={() => navigate(`/theory/chapters/${selectedNode.chapterId}`)}
-                    className="w-full py-3 bg-[#B91C1C] hover:bg-red-700 text-white rounded-xl font-bold transition-all shadow-sm flex items-center justify-center gap-2 text-sm"
+                    onClick={() => setSelectedNode(null)}
+                    className="p-2 shrink-0 text-gray-400 hover:text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors"
                   >
-                    <BookOpen className="w-4 h-4" /> Xem trong giáo trình <ChevronRight className="w-4 h-4" />
+                    <X className="w-5 h-5" />
                   </button>
-                )}
-                
-                <button 
-                  onClick={handleMarkUnderstood}
-                  disabled={progress.viewedConcepts?.includes(selectedNode.id)}
-                  className={`w-full py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-sm ${
-                    progress.viewedConcepts?.includes(selectedNode.id)
-                      ? 'bg-[#DCFCE7] text-[#15803d] cursor-default border border-[#15803d]/30 shadow-none'
-                      : 'bg-white border border-gray-300 text-[#1F2937] hover:bg-gray-50 shadow-sm'
-                  }`}
-                >
-                  <CheckCircle className="w-4 h-4" /> 
-                  {progress.viewedConcepts?.includes(selectedNode.id) ? 'Đã hiểu khái niệm này' : 'Đánh dấu đã hiểu'}
-                </button>
+                </div>
+
+                {/* Content Sections */}
+                <div className="space-y-6 flex-1">
+                  {selectedNode.shortDescription && (
+                    <div className="bg-[#F8FAFC] border-l-4 border-[#1E3A8A] p-4 rounded-r-xl border-y border-r border-gray-200">
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5">Hiểu nhanh</h4>
+                      <p className="text-[#1F2937] font-medium leading-relaxed">{selectedNode.shortDescription}</p>
+                    </div>
+                  )}
+
+                  {(selectedNode.definition || selectedNode.explanation) && (
+                    <div>
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <BookOpen className="w-4 h-4 text-[#1E3A8A]" /> Định nghĩa / Nội dung cốt lõi
+                      </h4>
+                      <p className="text-gray-600 leading-[1.6] text-sm">{selectedNode.definition || selectedNode.explanation}</p>
+                    </div>
+                  )}
+
+                  {selectedNode.whyImportant && (
+                    <div>
+                      <h4 className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest mb-2">Vì sao quan trọng?</h4>
+                      <p className="text-gray-600 leading-[1.6] text-sm">{selectedNode.whyImportant}</p>
+                    </div>
+                  )}
+
+                  {selectedNode.keyIdeas?.length > 0 && (
+                    <div>
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Ý chính cần nhớ</h4>
+                      <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1.5 leading-[1.6]">
+                        {selectedNode.keyIdeas.map((idea, idx) => (
+                          <li key={idx}>{idea}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedNode.applications?.length > 0 && (
+                    <div>
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Ứng dụng / Liên hệ thực tế</h4>
+                      <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1.5 leading-[1.6]">
+                        {selectedNode.applications.map((app, idx) => (
+                          <li key={idx}>{app}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedNode.commonMisconceptions?.length > 0 && (
+                    <div className="bg-[#FEE2E2]/30 p-4 rounded-xl border border-[#B91C1C]/10">
+                      <h4 className="text-xs font-bold text-[#B91C1C] uppercase tracking-widest mb-2">Lỗi hiểu sai thường gặp</h4>
+                      <ul className="list-disc pl-5 text-sm text-[#B91C1C] space-y-1.5 leading-[1.6]">
+                        {selectedNode.commonMisconceptions.map((mis, idx) => (
+                          <li key={idx}>{mis}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedNode.reflectionQuestions?.length > 0 && (
+                    <div className="bg-[#FEF3C7] p-4 rounded-xl border border-[#F59E0B]/30">
+                      <h4 className="text-xs font-bold text-[#B45309] uppercase tracking-widest mb-2">Câu hỏi tự suy ngẫm</h4>
+                      <ul className="list-disc pl-5 text-sm text-[#B45309] space-y-1.5 leading-[1.6] font-medium">
+                        {selectedNode.reflectionQuestions.map((q, idx) => (
+                          <li key={idx}>{q}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {selectedNode.relatedConceptIds && selectedNode.relatedConceptIds.length > 0 && (
+                    <div className="pt-2">
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Khái niệm liên quan</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedNode.relatedConceptIds.map(id => {
+                          const relatedNode = canonicalConcepts.find(n => n.id === id);
+                          return relatedNode ? (
+                            <button
+                              key={id}
+                              onClick={() => setSelectedNode(relatedNode)}
+                              className="px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 hover:bg-[#DBEAFE] hover:text-[#1E3A8A] hover:border-[#1E3A8A]/30 text-xs rounded-lg transition-colors font-medium flex items-center gap-1.5"
+                            >
+                              <Network className="w-3 h-3" /> {relatedNode.title}
+                            </button>
+                          ) : null;
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-100 space-y-3 pb-8 md:pb-0">
+                  {selectedNode.chapterId !== 'core' && (
+                    <button 
+                      onClick={() => navigate(`/theory/chapters/${selectedNode.chapterId}`)}
+                      className="w-full py-3.5 bg-[#1F2937] hover:bg-[#111827] text-white rounded-xl font-bold transition-all shadow-sm flex items-center justify-center gap-2 text-sm"
+                    >
+                      <BookOpen className="w-4 h-4" /> Xem trong giáo trình <ChevronRight className="w-4 h-4" />
+                    </button>
+                  )}
+                  
+                  <button 
+                    onClick={handleMarkUnderstood}
+                    disabled={progress.viewedConcepts?.includes(selectedNode.id)}
+                    className={`w-full py-3.5 rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-sm ${
+                      progress.viewedConcepts?.includes(selectedNode.id)
+                        ? 'bg-[#DCFCE7] text-[#15803d] cursor-default border border-[#15803d]/30 shadow-none'
+                        : 'bg-white border border-gray-300 text-[#1F2937] hover:bg-gray-50 shadow-sm'
+                    }`}
+                  >
+                    <CheckCircle className="w-4 h-4" /> 
+                    {progress.viewedConcepts?.includes(selectedNode.id) ? 'Đã hiểu khái niệm này' : 'Đánh dấu đã hiểu'}
+                  </button>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ) : (
-          <div className="hidden md:flex w-[400px] bg-white border-l border-gray-200 h-[calc(100vh-4rem)] flex-col items-center justify-center p-8 text-center text-gray-500">
-            <Filter className="w-16 h-16 text-gray-200 mb-4" />
-            <h3 className="font-bold text-[#1F2937] mb-2 text-lg">Bản đồ tri thức</h3>
-            <p className="text-sm">Chọn một node trên bản đồ để xem chi tiết, mối liên hệ và đánh dấu tiến độ.</p>
-          </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>

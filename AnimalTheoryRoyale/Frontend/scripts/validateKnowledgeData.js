@@ -157,8 +157,8 @@ async function validateData() {
     }
 
     for (const c of canonicalConcepts) {
-      if (!c.id || !c.title || !c.chapterId || !c.shortDescription || (!c.definition && !c.explanation)) {
-        error(`Concept missing required fields (id, title, chapterId, shortDescription, definition/explanation): ${c.id}`);
+      if (!c.id || !c.title || !c.chapterId || !c.shortDescription || (!c.definition && !c.explanation) || !c.whyImportant) {
+        error(`Concept missing required fields (id, title, chapterId, shortDescription, definition/explanation, whyImportant): ${c.id}`);
       }
     }
 
