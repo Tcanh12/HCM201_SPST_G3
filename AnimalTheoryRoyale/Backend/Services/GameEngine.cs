@@ -97,8 +97,8 @@ public class GameEngine : BackgroundService
                 BaseScore = q.BaseScore,
                 PenaltyHP = q.PenaltyHP,
                 TimeLimit = q.TimeLimit,
-                Type = q.QuestionType ?? "MultipleChoice",
-                ChallengePayloadJson = q.ChallengePayloadJson,
+                Type = string.IsNullOrWhiteSpace(q.QuestionType) ? "MultipleChoice" : q.QuestionType,
+                ChallengePayloadJson = q.ChallengePayloadJson ?? "{}",
                 Options = q.Options.Select(o => new QuestionOptionData
                 {
                     OptionId = o.Id,
@@ -252,94 +252,101 @@ public class GameEngine : BackgroundService
             var game = gameKvp.Value;
             if (game.Status != "Playing") continue;
 
-            float dt = 0.1f;
-
-            UpdateSafeZone(game, now, dt);
-            ApplySafeZoneDamage(game, now, dt);
-            UpdateProjectiles(game, now, dt);
-            UpdateRespawns(game, now);
-            UpdateStuns(game, now);
-            UpdateKnowledgeZones(game, now);
-            UpdateQuestionClaims(game, now);
-            UpdateItems(game, now);
-            UpdateTraps(game, now);
-
-            // Check game end
-            if (game.StartTime.HasValue && (now - game.StartTime.Value).TotalSeconds >= game.Duration)
+            try
             {
-                game.Status = "Ended";
-                
-                // Finalize stats & ranking
-                var sortedPlayers = game.Players.Values.OrderByDescending(p => p.Score).ToList();
-                for (int i = 0; i < sortedPlayers.Count; i++) 
+                float dt = 0.1f;
+
+                UpdateSafeZone(game, now, dt);
+                ApplySafeZoneDamage(game, now, dt);
+                UpdateProjectiles(game, now, dt);
+                UpdateRespawns(game, now);
+                UpdateStuns(game, now);
+                UpdateKnowledgeZones(game, now);
+                UpdateQuestionClaims(game, now);
+                UpdateItems(game, now);
+                UpdateTraps(game, now);
+
+                // Check game end
+                if (game.StartTime.HasValue && (now - game.StartTime.Value).TotalSeconds >= game.Duration)
                 {
-                    sortedPlayers[i].FinalRank = i + 1;
-                    if (i == 0 && sortedPlayers[i].Score > 0) sortedPlayers[i].IsMVP = true;
-                    // Approximate survival time if we haven't tracked respawns perfectly
-                    sortedPlayers[i].SurvivalDuration = game.Duration;
+                    game.Status = "Ended";
+                    
+                    // Finalize stats & ranking
+                    var sortedPlayers = game.Players.Values.OrderByDescending(p => p.Score).ToList();
+                    for (int i = 0; i < sortedPlayers.Count; i++) 
+                    {
+                        sortedPlayers[i].FinalRank = i + 1;
+                        if (i == 0 && sortedPlayers[i].Score > 0) sortedPlayers[i].IsMVP = true;
+                        // Approximate survival time if we haven't tracked respawns perfectly
+                        sortedPlayers[i].SurvivalDuration = game.Duration;
+                    }
+
+                    await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameEnded",
+                        sortedPlayers.Select(p => new {
+                            username = p.Username, characterId = p.CharacterId, score = p.Score, combo = p.Combo, lives = p.Lives, isEliminated = p.IsEliminated,
+                            totalCorrectAnswers = p.TotalCorrectAnswers, totalWrongAnswers = p.TotalWrongAnswers, longestCombo = p.LongestCombo,
+                            damageTaken = p.DamageTaken, survivalDuration = p.SurvivalDuration, finalRank = p.FinalRank, isMVP = p.IsMVP,
+                            isHost = p.ConnectionId == game.HostConnectionId
+                        }).ToArray());
+                    
+                    // Allow it to remain in Ended state for a bit before cleanup
+                    continue;
                 }
 
-                await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameEnded",
-                    sortedPlayers.Select(p => new {
-                        username = p.Username, characterId = p.CharacterId, score = p.Score, combo = p.Combo, lives = p.Lives, isEliminated = p.IsEliminated,
-                        totalCorrectAnswers = p.TotalCorrectAnswers, totalWrongAnswers = p.TotalWrongAnswers, longestCombo = p.LongestCombo,
-                        damageTaken = p.DamageTaken, survivalDuration = p.SurvivalDuration, finalRank = p.FinalRank, isMVP = p.IsMVP,
-                        isHost = p.ConnectionId == game.HostConnectionId
-                    }).ToArray());
-                
-                // Allow it to remain in Ended state for a bit before cleanup
-                continue;
+                // Broadcast snapshot
+                var elapsed = game.StartTime.HasValue ? (now - game.StartTime.Value).TotalSeconds : 0;
+                var remaining = Math.Max(0, game.Duration - elapsed);
+
+                var snapshot = new
+                {
+                    status = game.Status,
+                    timeRemaining = (int)remaining,
+                    hostConnectionId = game.HostConnectionId,
+                    cameraMode = game.CameraMode,
+                    players = game.Players.Values.Select(p => new {
+                        id = p.ConnectionId, username = p.Username, characterId = p.CharacterId,
+                        x = p.X, y = p.Y, z = p.Z, rotationY = p.RotationY,
+                        hp = p.HP, maxHP = p.MaxHP, score = p.Score, combo = p.Combo, ammo = p.Ammo,
+                        lives = p.Lives, isEliminated = p.IsEliminated,
+                        isDead = p.IsDead, hasQuestionShield = p.HasQuestionShield, isStunned = p.IsStunned,
+                        isInvulnerable = p.InvulnerableEndTime.HasValue && p.InvulnerableEndTime.Value > now,
+                        activeBuff = p.BuffEndTime.HasValue && p.BuffEndTime.Value > now ? p.ActiveBuff : null,
+                        pushCD = p.SkillPushCooldown.HasValue ? Math.Max(0, (p.SkillPushCooldown.Value - now).TotalSeconds) : 0,
+                        doubleCD = p.SkillDoubleCooldown.HasValue ? Math.Max(0, (p.SkillDoubleCooldown.Value - now).TotalSeconds) : 0,
+                        dizzyCD = p.SkillDizzyCooldown.HasValue ? Math.Max(0, (p.SkillDizzyCooldown.Value - now).TotalSeconds) : 0,
+                        ultCD = p.UltimateCooldown.HasValue ? Math.Max(0, (p.UltimateCooldown.Value - now).TotalSeconds) : 0,
+                        hasDouble = p.HasDoubleActive,
+                        isDizzy = p.IsDizzy,
+                        hasShield = p.DamageReductionEndTime.HasValue && p.DamageReductionEndTime.Value > now
+                    }).ToArray(),
+                    projectiles = game.Projectiles.Values.Where(p => p.IsActive).Select(p => new {
+                        id = p.Id, x = p.X, y = p.Y, z = p.Z
+                    }).ToArray(),
+                    items = game.Items.Values.Where(i => i.IsActive).Select(i => new {
+                        id = i.Id, type = i.Type, x = i.X, z = i.Z, value = i.Value
+                    }).ToArray(),
+                    safeZone = new {
+                        centerX = game.SafeZone.CenterX, centerZ = game.SafeZone.CenterZ,
+                        radius = game.SafeZone.Radius, targetRadius = game.SafeZone.TargetRadius,
+                        phase = game.SafeZone.Phase, isShrinking = game.SafeZone.IsShrinking,
+                        nextShrinkIn = Math.Max(0, (game.SafeZone.NextShrinkTime - now).TotalSeconds)
+                    },
+                    knowledgeZones = game.KnowledgeZones.Values.Select(kz => new {
+                        zoneId = kz.ZoneId, x = kz.X, z = kz.Z, isActive = kz.IsActive, topicName = kz.TopicName,
+                        type = kz.Type, isTrap = kz.IsTrap,
+                        isClaimed = kz.ClaimedByConnectionId != null
+                    }).ToArray(),
+                    traps = game.Traps.Values.Select(t => new {
+                        id = t.Id, x = t.X, z = t.Z, type = t.Type, isActive = t.IsActive
+                    }).ToArray()
+                };
+
+                await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameStateUpdate", snapshot);
             }
-
-            // Broadcast snapshot
-            var elapsed = game.StartTime.HasValue ? (now - game.StartTime.Value).TotalSeconds : 0;
-            var remaining = Math.Max(0, game.Duration - elapsed);
-
-            var snapshot = new
+            catch (Exception ex)
             {
-                status = game.Status,
-                timeRemaining = (int)remaining,
-                hostConnectionId = game.HostConnectionId,
-                cameraMode = game.CameraMode,
-                players = game.Players.Values.Select(p => new {
-                    id = p.ConnectionId, username = p.Username, characterId = p.CharacterId,
-                    x = p.X, y = p.Y, z = p.Z, rotationY = p.RotationY,
-                    hp = p.HP, maxHP = p.MaxHP, score = p.Score, combo = p.Combo, ammo = p.Ammo,
-                    lives = p.Lives, isEliminated = p.IsEliminated,
-                    isDead = p.IsDead, hasQuestionShield = p.HasQuestionShield, isStunned = p.IsStunned,
-                    isInvulnerable = p.InvulnerableEndTime.HasValue && p.InvulnerableEndTime.Value > now,
-                    activeBuff = p.BuffEndTime.HasValue && p.BuffEndTime.Value > now ? p.ActiveBuff : null,
-                    pushCD = p.SkillPushCooldown.HasValue ? Math.Max(0, (p.SkillPushCooldown.Value - now).TotalSeconds) : 0,
-                    doubleCD = p.SkillDoubleCooldown.HasValue ? Math.Max(0, (p.SkillDoubleCooldown.Value - now).TotalSeconds) : 0,
-                    dizzyCD = p.SkillDizzyCooldown.HasValue ? Math.Max(0, (p.SkillDizzyCooldown.Value - now).TotalSeconds) : 0,
-                    ultCD = p.UltimateCooldown.HasValue ? Math.Max(0, (p.UltimateCooldown.Value - now).TotalSeconds) : 0,
-                    hasDouble = p.HasDoubleActive,
-                    isDizzy = p.IsDizzy,
-                    hasShield = p.DamageReductionEndTime.HasValue && p.DamageReductionEndTime.Value > now
-                }).ToArray(),
-                projectiles = game.Projectiles.Values.Where(p => p.IsActive).Select(p => new {
-                    id = p.Id, x = p.X, y = p.Y, z = p.Z
-                }).ToArray(),
-                items = game.Items.Values.Where(i => i.IsActive).Select(i => new {
-                    id = i.Id, type = i.Type, x = i.X, z = i.Z, value = i.Value
-                }).ToArray(),
-                safeZone = new {
-                    centerX = game.SafeZone.CenterX, centerZ = game.SafeZone.CenterZ,
-                    radius = game.SafeZone.Radius, targetRadius = game.SafeZone.TargetRadius,
-                    phase = game.SafeZone.Phase, isShrinking = game.SafeZone.IsShrinking,
-                    nextShrinkIn = Math.Max(0, (game.SafeZone.NextShrinkTime - now).TotalSeconds)
-                },
-                knowledgeZones = game.KnowledgeZones.Values.Select(kz => new {
-                    zoneId = kz.ZoneId, x = kz.X, z = kz.Z, isActive = kz.IsActive, topicName = kz.TopicName,
-                    type = kz.Type, isTrap = kz.IsTrap,
-                    isClaimed = kz.ClaimedByConnectionId != null
-                }).ToArray(),
-                traps = game.Traps.Values.Select(t => new {
-                    id = t.Id, x = t.X, z = t.Z, type = t.Type, isActive = t.IsActive
-                }).ToArray()
-            };
-
-            await _hubContext.Clients.Group(game.RoomCode).SendAsync("GameStateUpdate", snapshot);
+                _logger.LogError(ex, "Game loop crashed for room {RoomCode}", game.RoomCode);
+            }
         }
     }
 

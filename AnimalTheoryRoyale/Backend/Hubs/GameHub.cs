@@ -139,21 +139,29 @@ public class GameHub : Hub
 
     public async Task HostStartGame(string roomCode, int questionCount = 20, string cameraMode = "ThirdPerson")
     {
-        roomCode = roomCode?.Trim().ToUpper() ?? "";
-        var game = _gameEngine.GetGame(roomCode);
-        if (game == null) return;
+        try
+        {
+            roomCode = roomCode?.Trim().ToUpper() ?? "";
+            var game = _gameEngine.GetGame(roomCode);
+            if (game == null) return;
 
-        // Initialize knowledge zones from DB with unique questions
-        await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
-        _gameEngine.InitializeTraps(game, 15); // Add 15 random traps
+            // Initialize knowledge zones from DB with unique questions
+            await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
+            _gameEngine.InitializeTraps(game, 15); // Add 15 random traps
 
-        game.Status = "Playing";
-        game.StartTime = DateTime.UtcNow;
-        game.CameraMode = cameraMode;
-        game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
+            game.Status = "Playing";
+            game.StartTime = DateTime.UtcNow;
+            game.CameraMode = cameraMode;
+            game.SafeZone.NextShrinkTime = DateTime.UtcNow.AddSeconds(60);
 
-        await Clients.Caller.SendAsync("GameStartedForHost");
-        await Clients.GroupExcept(roomCode, Context.ConnectionId).SendAsync("GameStartedForPlayer");
+            await Clients.Caller.SendAsync("GameStartedForHost");
+            await Clients.GroupExcept(roomCode, Context.ConnectionId).SendAsync("GameStartedForPlayer");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[HostStartGame Error]: {ex.Message}\n{ex.StackTrace}");
+            await Clients.Caller.SendAsync("GameStartFailed", ex.Message);
+        }
     }
 
     public Task HostEndGame(string roomCode)

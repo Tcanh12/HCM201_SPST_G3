@@ -91,12 +91,20 @@ export default function HostLobbyPage() {
     setCountdown(1);
     await new Promise(r => setTimeout(r, 1000));
     setCountdown('GO!');
+    await new Promise(r => setTimeout(r, 800));
+    setCountdown(null);
     
     if (connection) {
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
       // Store selected map for GamePage to use
       localStorage.setItem('selectedMap', selectedMap);
-      await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
+      try {
+        await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
+      } catch (err) {
+        console.error('Failed to start game:', err);
+        alert('Có lỗi xảy ra khi bắt đầu trận: ' + err.message);
+        setStarting(false);
+      }
     }
   };
 
