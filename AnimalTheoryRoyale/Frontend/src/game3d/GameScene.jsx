@@ -68,6 +68,7 @@ export default function GameScene({
   const { camera } = useThree();
 
   const localPos = useRef(new THREE.Vector3(0, 0, 0));
+  const playerRotation = useRef(0);
   const cameraAngle = useRef(0);
   const cameraPitch = useRef(0.6);
   const cameraDistance = useRef(isMobile ? 16 : 14);
@@ -165,6 +166,7 @@ export default function GameScene({
 
     const len = Math.sqrt(mx * mx + mz * mz);
     if (len > 0) {
+      playerRotation.current = Math.atan2(mx, mz);
       const stepX = (mx / len) * speed;
       const stepZ = (mz / len) * speed;
       
@@ -218,8 +220,8 @@ export default function GameScene({
 
     if (len > 0 || Math.abs(knockbackVelocity.current.x) > 1 || !isGrounded.current) {
       const now = Date.now();
-      if (now - lastMoveSent.current > 100) {
-        connection.invoke('PlayerMove', roomCode, localPos.current.x, localPos.current.y, localPos.current.z, cameraAngle.current)
+      if (now - lastMoveSent.current > 33) {
+        connection.invoke('PlayerMove', roomCode, localPos.current.x, localPos.current.y, localPos.current.z, playerRotation.current)
           .catch(() => {});
         lastMoveSent.current = now;
       }
@@ -379,6 +381,7 @@ export default function GameScene({
           key={player.id} player={player}
           isMe={player.id === myConnectionId}
           localOverride={player.id === myConnectionId ? localPos.current : null}
+          localRotationOverride={player.id === myConnectionId ? playerRotation.current : null}
           hideModel={player.id === myConnectionId && gameState?.cameraMode === 'FirstPerson'}
         />
       ))}

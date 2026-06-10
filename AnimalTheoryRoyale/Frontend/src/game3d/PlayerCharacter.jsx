@@ -3,18 +3,33 @@ import { useFrame } from '@react-three/fiber';
 import { Text, Billboard } from '@react-three/drei';
 import * as THREE from 'three';
 
-export default function PlayerCharacter({ player, isMe, localOverride, hideModel }) {
+export default function PlayerCharacter({ player, isMe, localOverride, localRotationOverride, hideModel }) {
   const meshRef = useRef();
+  const modelRef = useRef();
   const stunRef = useRef();
   const floatRef = useRef(0);
+  const currentRotation = useRef(player.rotationY || 0);
+
+  function lerpAngle(a, b, t) {
+    let diff = ((b - a + Math.PI) % (Math.PI * 2)) - Math.PI;
+    return a + diff * t;
+  }
 
   useFrame((state, delta) => {
     if (meshRef.current) {
       if (localOverride) {
-        meshRef.current.position.lerp(localOverride, 10 * delta);
+        meshRef.current.position.lerp(localOverride, 20 * delta);
       } else {
         const targetPos = new THREE.Vector3(player.x, player.y, player.z);
-        meshRef.current.position.lerp(targetPos, 10 * delta);
+        meshRef.current.position.lerp(targetPos, 15 * delta);
+      }
+      
+      if (modelRef.current && !hideModel) {
+        const targetRot = (isMe && localRotationOverride !== null) ? localRotationOverride : (player.rotationY || 0);
+        currentRotation.current = lerpAngle(currentRotation.current, targetRot, 15 * delta);
+        
+        const MODEL_FORWARD_OFFSET = 0; // The animal models face +Z naturally, and atan2 gives PI for -Z movement, which perfectly rotates it to face -Z
+        modelRef.current.rotation.y = currentRotation.current + MODEL_FORWARD_OFFSET;
       }
       
       // Rotate if stunned
@@ -267,7 +282,7 @@ export default function PlayerCharacter({ player, isMe, localOverride, hideModel
     <group ref={meshRef} position={[player.x, player.y, player.z]}>
       {/* Animal Model */}
       {!hideModel && (
-        <group rotation={[0, player.rotationY || 0, 0]}>
+        <group ref={modelRef}>
           {renderAnimalModel()}
         </group>
       )}
