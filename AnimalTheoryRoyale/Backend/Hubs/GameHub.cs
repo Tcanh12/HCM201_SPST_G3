@@ -140,7 +140,7 @@ public class GameHub : Hub
         }).ToArray());
     }
 
-    public async Task HostStartGame(string roomCode, int questionCount = 20, string cameraMode = "ThirdPerson")
+    public async Task<object> HostStartGame(string roomCode, int questionCount = 20, string cameraMode = "ThirdPerson")
     {
         try
         {
@@ -148,8 +148,7 @@ public class GameHub : Hub
             
             if (string.IsNullOrWhiteSpace(roomCode))
             {
-                await Clients.Caller.SendAsync("GameStartFailed", "Room code is empty.");
-                return;
+                return new { success = false, message = "Room code is empty.", code = "ROOM_CODE_EMPTY" };
             }
 
             var normalizedRoomCode = roomCode.Trim().ToUpperInvariant();
@@ -157,31 +156,43 @@ public class GameHub : Hub
             
             if (game == null)
             {
-                await Clients.Caller.SendAsync("GameStartFailed", "Game not found.");
-                return;
+                return new { success = false, message = $"Game not found for room {normalizedRoomCode}.", code = "GAME_NOT_FOUND" };
             }
 
             if (game.Players.Count == 0)
             {
-                await Clients.Caller.SendAsync("GameStartFailed", "Cannot start game because there are no players in the room.");
-                return;
+                return new { success = false, message = "Cannot start game because there are no players in the room.", code = "NO_PLAYERS", playerCount = 0 };
             }
 
             _logger.LogInformation("Players count: {Count}", game.Players.Count);
 
-            _logger.LogInformation("Initializing knowledge zones for room {RoomCode}", normalizedRoomCode);
-            // Initialize knowledge zones from DB with unique questions
-            await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
-            _logger.LogInformation("Knowledge zones initialized for room {RoomCode}", normalizedRoomCode);
+            _logger.LogInformation(
+                "Initializing knowledge zones. RoomCode={RoomCode}, QuestionCount={QuestionCount}",
+                normalizedRoomCode,
+                questionCount
+            );
 
-            if (game.KnowledgeZones.Count == 0)
+            await _gameEngine.InitializeKnowledgeZonesFromDB(game, questionCount);
+
+            _logger.LogInformation(
+                "Knowledge zones initialized. RoomCode={RoomCode}, Zones={ZoneCount}, Questions={QuestionPoolCount}",
+                normalizedRoomCode,
+                game.KnowledgeZones.Count,
+                game.QuestionPool.Count
+            );
+
+            if (game.QuestionPool.Count == 0 || game.KnowledgeZones.Count == 0)
             {
-                await Clients.Caller.SendAsync("GameStartFailed", new
+                return new
                 {
-                    message = "Không thể bắt đầu vì ngân hàng câu hỏi đang trống."
-                });
-                return;
+                    success = false,
+                    message = "Không thể bắt đầu vì ngân hàng câu hỏi hoặc cột tri thức đang trống.",
+                    code = "QUESTION_POOL_EMPTY",
+                    questionPoolCount = game.QuestionPool.Count,
+                    knowledgeZoneCount = game.KnowledgeZones.Count
+                };
             }
+
             _gameEngine.InitializeTraps(game, 15); // Add 15 random traps
 
             game.Status = "Playing";
@@ -195,16 +206,22 @@ public class GameHub : Hub
                 status = "Playing",
                 startedAt = game.StartTime
             });
+
+            _logger.LogInformation("GameStarted sent to group {RoomCode}", normalizedRoomCode);
+            
+            return new { success = true, roomCode = normalizedRoomCode, status = "Playing" };
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "HostStartGame failed for room {RoomCode}", roomCode);
 
-            await Clients.Caller.SendAsync("GameStartFailed", new
+            return new
             {
+                success = false,
                 message = ex.Message,
-                detail = ex.InnerException?.Message
-            });
+                detail = ex.InnerException?.Message,
+                code = "UNKNOWN_ERROR"
+            };
         }
     }
 

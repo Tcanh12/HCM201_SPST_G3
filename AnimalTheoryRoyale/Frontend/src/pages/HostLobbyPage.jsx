@@ -63,10 +63,21 @@ export default function HostLobbyPage() {
       });
 
       conn.on('GameStartFailed', (payload) => {
-        console.error("[SignalR] GameStartFailed:", payload);
-        const message = typeof payload === "string" ? payload : payload?.message || "Không thể bắt đầu trận.";
+        console.error("[SignalR] GameStartFailed raw:", payload);
+        console.error("[SignalR] GameStartFailed JSON:", JSON.stringify(payload, null, 2));
+
+        const message =
+          typeof payload === "string"
+            ? payload
+            : payload?.message || payload?.Message || "Không thể bắt đầu trận.";
+
+        const detail =
+          typeof payload === "object"
+            ? payload?.detail || payload?.Detail || payload?.error || ""
+            : "";
+
         setStarting(false);
-        setError(message);
+        setError(detail ? `${message} (${detail})` : message);
       });
 
       conn.onreconnected(() => {
@@ -115,7 +126,7 @@ export default function HostLobbyPage() {
       setStarting(true);
       setError("");
 
-      console.log("[HostLobby] Starting game", {
+      console.log("[HostLobby] Invoking HostStartGame", {
         roomCode,
         playerCount,
         connectionState: connection?.state,
@@ -130,12 +141,18 @@ export default function HostLobbyPage() {
         setTimeout(() => reject(new Error("Start game timeout sau 10 giây.")), 10000)
       );
 
-      await Promise.race([startPromise, timeoutPromise]);
+      const result = await Promise.race([startPromise, timeoutPromise]);
 
-      console.log("[HostLobby] HostStartGame invoked successfully");
+      if (result && !result.success) {
+        setStarting(false);
+        setError(result.message || "Không thể bắt đầu trận.");
+        return;
+      }
+
+      console.log("[HostLobby] HostStartGame invoke completed. Waiting for GameStarted event...");
     } catch (err) {
-      console.error("[HostLobby] HostStartGame failed:", err);
-      setError(err?.message || "Không thể bắt đầu trận. Vui lòng kiểm tra backend logs.");
+      console.error("[HostLobby] HostStartGame invoke failed:", err);
+      setError(err?.message || "Không gọi được HostStartGame.");
       setStarting(false);
     }
   };
