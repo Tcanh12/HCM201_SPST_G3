@@ -9,6 +9,8 @@ import {
 import { useLearningProgress } from '../../components/theory/ProgressContext';
 import { chapterDetails } from '../../data/chapterDetails';
 import chapters from '../../data/chapters.json';
+import { lessons } from '../../data/lessons';
+import LessonDetailView from '../../components/theory/LessonDetailView';
 
 const IconMap = {
   BookOpen, Brain, Flag, Globe, Target, Heart, Users, Compass, ShieldCheck
@@ -27,6 +29,7 @@ export default function ChapterDetailPage() {
 
   const chapterData = chapterDetails[chapterId];
   const chapterMeta = chapters.find(c => c.id === chapterId);
+  const newLessonData = lessons.find(l => l.chapterId === chapterId);
   const [activeSection, setActiveSection] = useState(null);
 
   useEffect(() => {
@@ -218,32 +221,38 @@ export default function ChapterDetailPage() {
             {chapterData.title}
           </h1>
           
-          <div className="bg-white border-l-4 border-[#F59E0B] p-6 rounded-r-2xl border-y border-r border-gray-200 shadow-sm">
-            <div className="flex items-start gap-3">
-              <Target className="w-6 h-6 text-[#F59E0B] flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-bold text-[#1F2937] mb-2">Mục tiêu học tập</h4>
-                <p className="text-gray-600 leading-relaxed">{chapterData.objective}</p>
+          {newLessonData ? (
+            <LessonDetailView lesson={newLessonData} />
+          ) : (
+            <>
+              <div className="bg-white border-l-4 border-[#F59E0B] p-6 rounded-r-2xl border-y border-r border-gray-200 shadow-sm mb-12">
+                <div className="flex items-start gap-3">
+                  <Target className="w-6 h-6 text-[#F59E0B] flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-[#1F2937] mb-2">Mục tiêu học tập</h4>
+                    <p className="text-gray-600 leading-relaxed">{chapterData.objective}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Content Sections */}
-        <div className="space-y-4">
-          {chapterData.sections.map(renderSection)}
-        </div>
+              {/* Content Sections */}
+              <div className="space-y-4">
+                {chapterData.sections.map(renderSection)}
+              </div>
 
-        {/* Chapter Summary */}
-        {chapterData.summary && (
-          <div className="mt-16 p-8 bg-[#1E3A8A] rounded-[2rem] text-white text-center shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-            <h3 className="text-2xl font-bold mb-4 relative z-10">Tóm tắt cuối chương</h3>
-            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto relative z-10">
-              {chapterData.summary}
-            </p>
-          </div>
-        )}
+              {/* Chapter Summary */}
+              {chapterData.summary && (
+                <div className="mt-16 p-8 bg-[#1E3A8A] rounded-[2rem] text-white text-center shadow-lg relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+                  <h3 className="text-2xl font-bold mb-4 relative z-10">Tóm tắt cuối chương</h3>
+                  <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto relative z-10">
+                    {chapterData.summary}
+                  </p>
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </main>
 
       {/* 3. Right Panel - Progress & Tools */}

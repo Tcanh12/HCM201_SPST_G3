@@ -1,7 +1,8 @@
 export const reviewQuestions = [
   {
-    id: 1,
+    id: "q-hcm-ch01-001",
     question: "Tư tưởng Hồ Chí Minh là gì?",
+    type: "multiple-choice",
     options: [
       "Là sự sao chép nguyên xi chủ nghĩa Mác - Lênin",
       "Là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam",
@@ -9,11 +10,22 @@ export const reviewQuestions = [
       "Là chủ trương của Đảng Cộng sản Đông Dương"
     ],
     correctAnswer: 1,
-    explanation: "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta."
+    explanation: "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta.",
+    chapterId: "chuong-1",
+    lessonId: "hcm-ch01-khai-niem-tu-tuong-hcm",
+    conceptIds: ["khai-niem-tu-tuong-ho-chi-minh"],
+    difficulty: "easy",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Chính xác. Đây là định nghĩa nền tảng của môn học.",
+    feedbackIncorrect: "Chưa đúng. Cần nhớ Tư tưởng Hồ Chí Minh là một hệ thống quan điểm, không phải sự sao chép hoặc tập hợp rời rạc.",
+    requiresVerification: false
   },
   {
-    id: 2,
+    id: "q-hcm-ch04-001",
     question: "Nội dung nào thể hiện đúng tư tưởng Nhà nước của dân, do dân, vì dân?",
+    type: "multiple-choice",
     options: [
       "Nhà nước là công cụ trấn áp giai cấp bóc lột",
       "Nhà nước do nhân dân làm chủ và phục vụ lợi ích của nhân dân",
@@ -21,11 +33,22 @@ export const reviewQuestions = [
       "Nhà nước hoạt động độc lập với sự giám sát của nhân dân"
     ],
     correctAnswer: 1,
-    explanation: "Nhà nước trong tư tưởng Hồ Chí Minh là Nhà nước của nhân dân, do nhân dân xây dựng, kiểm soát và hoạt động vì lợi ích của nhân dân."
+    explanation: "Nhà nước trong tư tưởng Hồ Chí Minh là Nhà nước của nhân dân, do nhân dân xây dựng, kiểm soát và hoạt động vì lợi ích của nhân dân.",
+    chapterId: "chuong-4",
+    lessonId: "hcm-ch04-nha-nuoc",
+    conceptIds: ["nha-nuoc-cua-dan", "nha-nuoc-do-dan", "nha-nuoc-vi-dan"],
+    difficulty: "medium",
+    bloomLevel: "understand",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng. Nhân dân là người làm chủ Nhà nước.",
+    feedbackIncorrect: "Sai. Nhà nước của dân, do dân, vì dân có nghĩa là nhân dân làm chủ và nhà nước phục vụ lợi ích của nhân dân.",
+    requiresVerification: false
   },
   {
-    id: 3,
+    id: "q-hcm-ch06-001",
     question: "Cần, kiệm, liêm, chính thuộc nội dung nào trong tư tưởng Hồ Chí Minh?",
+    type: "multiple-choice",
     options: [
       "Tư tưởng về văn hóa",
       "Tư tưởng về xây dựng Đảng",
@@ -33,11 +56,22 @@ export const reviewQuestions = [
       "Tư tưởng về đại đoàn kết toàn dân tộc"
     ],
     correctAnswer: 2,
-    explanation: "Cần, kiệm, liêm, chính, chí công vô tư là những chuẩn mực đạo đức cốt lõi của người cách mạng theo tư tưởng Hồ Chí Minh."
+    explanation: "Cần, kiệm, liêm, chính, chí công vô tư là những chuẩn mực đạo đức cốt lõi của người cách mạng theo tư tưởng Hồ Chí Minh.",
+    chapterId: "chuong-6",
+    lessonId: "hcm-ch06-dao-duc-cach-mang",
+    conceptIds: ["dao-duc-cach-mang", "can-kiem-liem-chinh"],
+    difficulty: "easy",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Chưa đúng. Đây là những chuẩn mực đạo đức.",
+    requiresVerification: false
   },
   {
-    id: 4,
+    id: "q-hcm-ch05-001",
     question: "Đại đoàn kết toàn dân tộc có vai trò gì trong tư tưởng Hồ Chí Minh?",
+    type: "multiple-choice",
     options: [
       "Tạo nên sức mạnh tổng hợp để thực hiện mục tiêu chung của dân tộc",
       "Giúp giải quyết các mâu thuẫn nội bộ trong một đảng",
@@ -45,11 +79,22 @@ export const reviewQuestions = [
       "Là hình thức ngoại giao để kêu gọi quốc tế ủng hộ"
     ],
     correctAnswer: 0,
-    explanation: "Đoàn kết là sức mạnh vô địch. 'Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công'."
+    explanation: "Đoàn kết là sức mạnh vô địch. 'Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công'.",
+    chapterId: "chuong-5",
+    lessonId: "hcm-ch05-dai-doan-ket",
+    conceptIds: ["dai-doan-ket", "luc-luong-dai-doan-ket"],
+    difficulty: "medium",
+    bloomLevel: "understand",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng. Đoàn kết tạo nên sức mạnh vô địch.",
+    feedbackIncorrect: "Sai. Đoàn kết toàn dân tộc là sức mạnh tổng hợp để thực hiện mục tiêu chung.",
+    requiresVerification: false
   },
   {
-    id: 5,
+    id: "q-hcm-ch02-001",
     question: "Theo Hồ Chí Minh, ưu điểm lớn nhất của chủ nghĩa Mác - Lênin là gì?",
+    type: "multiple-choice",
     options: [
       "Phương pháp làm việc biện chứng",
       "Bản chất nhân đạo",
@@ -57,11 +102,22 @@ export const reviewQuestions = [
       "Cốt lõi lịch sử"
     ],
     correctAnswer: 0,
-    explanation: "Hồ Chí Minh từng khẳng định: Ưu điểm lớn nhất của chủ nghĩa Mác là phương pháp làm việc biện chứng."
+    explanation: "Hồ Chí Minh từng khẳng định: Ưu điểm lớn nhất của chủ nghĩa Mác là phương pháp làm việc biện chứng.",
+    chapterId: "chuong-2",
+    lessonId: "hcm-ch02-co-so-hinh-thanh",
+    conceptIds: ["chu-nghia-mac-lenin"],
+    difficulty: "hard",
+    bloomLevel: "analyze",
+    points: 15,
+    timeLimit: 30,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Chưa đúng. Hồ Chí Minh nhấn mạnh ưu điểm lớn nhất là phương pháp làm việc biện chứng.",
+    requiresVerification: false
   },
   {
-    id: 6,
+    id: "q-hcm-ch02-002",
     question: "Hồ Chí Minh đã tiếp thu những giá trị văn hóa nào của phương Đông?",
+    type: "multiple-choice",
     options: [
       "Khoa học tự nhiên và công nghệ",
       "Chủ nghĩa duy lý",
@@ -69,11 +125,22 @@ export const reviewQuestions = [
       "Tư tưởng tự do cá nhân tuyệt đối"
     ],
     correctAnswer: 2,
-    explanation: "Bác đã gạn đục khơi trong, tiếp thu tinh thần từ bi hỉ xả của Phật giáo và tinh thần tu thân tề gia của Nho giáo để làm giàu tư tưởng của mình."
+    explanation: "Bác đã gạn đục khơi trong, tiếp thu tinh thần từ bi hỉ xả của Phật giáo và tinh thần tu thân tề gia của Nho giáo để làm giàu tư tưởng của mình.",
+    chapterId: "chuong-2",
+    lessonId: "hcm-ch02-co-so-hinh-thanh",
+    conceptIds: ["tinh-hoa-van-hoa-nhan-loai"],
+    difficulty: "medium",
+    bloomLevel: "understand",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng. Nho giáo và Phật giáo là những nguồn tư tưởng phương Đông tiêu biểu.",
+    feedbackIncorrect: "Sai. Bác tiếp thu những mặt tích cực của Nho giáo và Phật giáo.",
+    requiresVerification: false
   },
   {
-    id: 7,
+    id: "q-hcm-ch05-002",
     question: "Theo tư tưởng Hồ Chí Minh, lực lượng nòng cốt của khối đại đoàn kết dân tộc là khối liên minh:",
+    type: "multiple-choice",
     options: [
       "Công nhân, nông dân và trí thức",
       "Giai cấp công nhân và tư sản dân tộc",
@@ -81,11 +148,22 @@ export const reviewQuestions = [
       "Thanh niên, sinh viên và học sinh"
     ],
     correctAnswer: 0,
-    explanation: "Hồ Chí Minh luôn nhấn mạnh: Đại đoàn kết phải lấy liên minh công - nông - trí thức làm nền tảng."
+    explanation: "Hồ Chí Minh luôn nhấn mạnh: Đại đoàn kết phải lấy liên minh công - nông - trí thức làm nền tảng.",
+    chapterId: "chuong-5",
+    lessonId: "hcm-ch05-dai-doan-ket",
+    conceptIds: ["luc-luong-dai-doan-ket", "mat-tran-dan-toc-thong-nhat"],
+    difficulty: "medium",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Sai. Liên minh công - nông - trí thức là nòng cốt.",
+    requiresVerification: false
   },
   {
-    id: 8,
+    id: "q-hcm-ch02-003",
     question: "Hồ Chí Minh xác định con đường cứu nước của dân tộc Việt Nam là con đường nào?",
+    type: "multiple-choice",
     options: [
       "Con đường cách mạng tư sản",
       "Con đường cách mạng vô sản",
@@ -93,11 +171,22 @@ export const reviewQuestions = [
       "Con đường thỏa hiệp với đế quốc"
     ],
     correctAnswer: 1,
-    explanation: "Năm 1920, Bác đọc Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và thuộc địa của V.I.Lênin và tìm ra con đường cứu nước: Cách mạng vô sản."
+    explanation: "Năm 1920, Bác đọc Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và thuộc địa của V.I.Lênin và tìm ra con đường cứu nước: Cách mạng vô sản.",
+    chapterId: "chuong-2",
+    lessonId: "hcm-ch02-co-so-hinh-thanh",
+    conceptIds: ["qua-trinh-hinh-thanh-phat-trien", "chu-nghia-mac-lenin"],
+    difficulty: "easy",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng.",
+    feedbackIncorrect: "Sai. Bác đã chọn con đường cách mạng vô sản.",
+    requiresVerification: false
   },
   {
-    id: 9,
+    id: "q-hcm-ch05-003",
     question: "\"Non sông gấm vóc Việt Nam do phụ nữ ta, trẻ cũng như già, ra sức dệt thêu mà thêm tốt đẹp, rực rỡ\". Câu nói này của Bác đề cao vai trò của ai?",
+    type: "multiple-choice",
     options: [
       "Thanh niên",
       "Phụ nữ",
@@ -105,11 +194,22 @@ export const reviewQuestions = [
       "Trí thức"
     ],
     correctAnswer: 1,
-    explanation: "Đây là lời Bác tôn vinh vai trò và sự đóng góp to lớn của phụ nữ Việt Nam trong công cuộc xây dựng và bảo vệ Tổ quốc."
+    explanation: "Đây là lời Bác tôn vinh vai trò và sự đóng góp to lớn của phụ nữ Việt Nam trong công cuộc xây dựng và bảo vệ Tổ quốc.",
+    chapterId: "chuong-5",
+    lessonId: "hcm-ch05-dai-doan-ket",
+    conceptIds: ["luc-luong-dai-doan-ket"],
+    difficulty: "easy",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Sai. Câu nói nhắc trực tiếp đến phụ nữ.",
+    requiresVerification: false
   },
   {
-    id: 10,
+    id: "q-hcm-ch03-001",
     question: "Mục tiêu cao nhất của chủ nghĩa xã hội theo tư tưởng Hồ Chí Minh là gì?",
+    type: "multiple-choice",
     options: [
       "Xây dựng quân đội hùng mạnh nhất khu vực",
       "Mở rộng lãnh thổ quốc gia",
@@ -117,11 +217,22 @@ export const reviewQuestions = [
       "Phát triển công nghiệp nặng vượt bậc"
     ],
     correctAnswer: 2,
-    explanation: "Theo Bác, CNXH không có gì khác hơn là làm cho nhân dân lao động thoát nạn bần cùng, có công ăn việc làm, được ấm no và sống một đời hạnh phúc."
+    explanation: "Theo Bác, CNXH không có gì khác hơn là làm cho nhân dân lao động thoát nạn bần cùng, có công ăn việc làm, được ấm no và sống một đời hạnh phúc.",
+    chapterId: "chuong-3",
+    lessonId: "hcm-ch03-cnxh",
+    conceptIds: ["chu-nghia-xa-hoi"],
+    difficulty: "medium",
+    bloomLevel: "understand",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng.",
+    feedbackIncorrect: "Sai. Mục tiêu cao nhất là cuộc sống của nhân dân.",
+    requiresVerification: false
   },
   {
-    id: 11,
+    id: "q-hcm-ch03-002",
     question: "Đâu là đặc trưng cơ bản về chính trị của chủ nghĩa xã hội trong tư tưởng Hồ Chí Minh?",
+    type: "multiple-choice",
     options: [
       "Do giai cấp tư sản làm chủ",
       "Do nhân dân lao động làm chủ",
@@ -129,11 +240,22 @@ export const reviewQuestions = [
       "Nhà nước được kiểm soát bởi tầng lớp tinh hoa"
     ],
     correctAnswer: 1,
-    explanation: "Hồ Chí Minh chỉ rõ: Chủ nghĩa xã hội là một xã hội do nhân dân lao động làm chủ."
+    explanation: "Hồ Chí Minh chỉ rõ: Chủ nghĩa xã hội là một xã hội do nhân dân lao động làm chủ.",
+    chapterId: "chuong-3",
+    lessonId: "hcm-ch03-cnxh",
+    conceptIds: ["chu-nghia-xa-hoi", "nhan-dan-lam-chu"],
+    difficulty: "easy",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Sai. Xã hội XHCN do nhân dân làm chủ.",
+    requiresVerification: false
   },
   {
-    id: 12,
+    id: "q-hcm-ch06-002",
     question: "Động lực quan trọng và quyết định nhất để xây dựng chủ nghĩa xã hội theo Hồ Chí Minh là gì?",
+    type: "multiple-choice",
     options: [
       "Viện trợ và sự giúp đỡ của quốc tế",
       "Nguồn tài nguyên thiên nhiên dồi dào",
@@ -141,11 +263,22 @@ export const reviewQuestions = [
       "Vị trí địa lý thuận lợi của đất nước"
     ],
     correctAnswer: 2,
-    explanation: "Con người vừa là mục tiêu, vừa là động lực quan trọng nhất của sự nghiệp xây dựng chủ nghĩa xã hội."
+    explanation: "Con người vừa là mục tiêu, vừa là động lực quan trọng nhất của sự nghiệp xây dựng chủ nghĩa xã hội.",
+    chapterId: "chuong-6",
+    lessonId: "hcm-ch06-con-nguoi",
+    conceptIds: ["con-nguoi"],
+    difficulty: "medium",
+    bloomLevel: "understand",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng.",
+    feedbackIncorrect: "Sai. Con người mới là động lực quan trọng nhất.",
+    requiresVerification: false
   },
   {
-    id: 13,
+    id: "q-hcm-ch06-003",
     question: "Chữ \"Người\" trong tư tưởng Hồ Chí Minh được hiểu theo nghĩa rộng nhất là gì?",
+    type: "multiple-choice",
     options: [
       "Gia đình, anh em, họ hàng",
       "Chỉ những người cùng giai cấp vô sản",
@@ -153,11 +286,22 @@ export const reviewQuestions = [
       "Đồng bào cả nước và cả nhân loại bị áp bức"
     ],
     correctAnswer: 3,
-    explanation: "Chữ Người (viết hoa) trong tư tưởng Bác mang ý nghĩa nhân văn sâu sắc, bao hàm tình yêu thương đồng bào và nhân loại tiến bộ."
+    explanation: "Chữ Người (viết hoa) trong tư tưởng Bác mang ý nghĩa nhân văn sâu sắc, bao hàm tình yêu thương đồng bào và nhân loại tiến bộ.",
+    chapterId: "chuong-6",
+    lessonId: "hcm-ch06-con-nguoi",
+    conceptIds: ["con-nguoi"],
+    difficulty: "hard",
+    bloomLevel: "analyze",
+    points: 15,
+    timeLimit: 30,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Sai. Chữ Người bao hàm ý nghĩa nhân văn sâu sắc với cả nhân loại bị áp bức.",
+    requiresVerification: false
   },
   {
-    id: 14,
+    id: "q-hcm-ch06-004",
     question: "Chức năng cơ bản của văn hóa theo Hồ Chí Minh là gì?",
+    type: "multiple-choice",
     options: [
       "Bồi dưỡng tư tưởng đúng đắn và tình cảm cao đẹp",
       "Mở rộng quan hệ ngoại giao",
@@ -165,11 +309,22 @@ export const reviewQuestions = [
       "Tăng cường sức mạnh quân sự"
     ],
     correctAnswer: 0,
-    explanation: "Bác cho rằng văn hóa phải thiết thực phục vụ nhân dân, góp phần bồi dưỡng con người có tư tưởng và tình cảm đúng đắn."
+    explanation: "Bác cho rằng văn hóa phải thiết thực phục vụ nhân dân, góp phần bồi dưỡng con người có tư tưởng và tình cảm đúng đắn.",
+    chapterId: "chuong-6",
+    lessonId: "hcm-ch06-van-hoa",
+    conceptIds: ["van-hoa"],
+    difficulty: "medium",
+    bloomLevel: "understand",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Đúng.",
+    feedbackIncorrect: "Sai. Chức năng chính của văn hóa là bồi dưỡng tư tưởng và tình cảm.",
+    requiresVerification: false
   },
   {
-    id: 15,
+    id: "q-hcm-ch06-005",
     question: "Hồ Chí Minh cho rằng, muốn xây dựng chủ nghĩa xã hội, trước hết cần có gì?",
+    type: "multiple-choice",
     options: [
       "Cơ sở vật chất kỹ thuật hiện đại",
       "Nguồn vốn đầu tư khổng lồ từ nước ngoài",
@@ -177,6 +332,16 @@ export const reviewQuestions = [
       "Sự ủng hộ tuyệt đối của các cường quốc"
     ],
     correctAnswer: 2,
-    explanation: "Câu nói nổi tiếng: 'Muốn xây dựng chủ nghĩa xã hội, trước hết cần có những con người xã hội chủ nghĩa'."
+    explanation: "Câu nói nổi tiếng: 'Muốn xây dựng chủ nghĩa xã hội, trước hết cần có những con người xã hội chủ nghĩa'.",
+    chapterId: "chuong-6",
+    lessonId: "hcm-ch06-con-nguoi",
+    conceptIds: ["con-nguoi", "chu-nghia-xa-hoi"],
+    difficulty: "easy",
+    bloomLevel: "remember",
+    points: 10,
+    timeLimit: 20,
+    feedbackCorrect: "Chính xác.",
+    feedbackIncorrect: "Sai. Cần có con người xã hội chủ nghĩa trước.",
+    requiresVerification: false
   }
 ];
