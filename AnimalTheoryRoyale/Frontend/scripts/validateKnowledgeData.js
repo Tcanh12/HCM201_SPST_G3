@@ -28,7 +28,6 @@ async function validateData() {
     // Read JSON files
     const chapters = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'chapters.json'), 'utf-8'));
     const caseFiles = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'caseFiles.json'), 'utf-8'));
-    const timelineEvents = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'timeline.json'), 'utf-8'));
 
     // Read JS files via string parsing (since they are ES modules and running this as a script might have module issues)
     // We'll use dynamic import since we set "type": "module" in package.json
@@ -139,6 +138,47 @@ async function validateData() {
 
       if (q.requiresVerification === undefined) {
         warn(`requiresVerification missing in question ${q.id}`);
+      }
+    }
+
+    // 5. Additional Validation Rules
+    
+    // Concept Map Constraints
+    if (canonicalConcepts.length <= 1) {
+      error(`Concept map must have more than 1 node.`);
+    }
+    const rootNode = canonicalConcepts.find(c => c.level === 0);
+    if (!rootNode) {
+      error(`Concept map must have a root node (level 0).`);
+    }
+    const chapterNodes = canonicalConcepts.filter(c => c.level === 1);
+    if (chapterNodes.length < 6) {
+      error(`Concept map must have at least 6 chapter nodes (level 1).`);
+    }
+
+    for (const c of canonicalConcepts) {
+      if (!c.id || !c.title || !c.chapterId || !c.shortDescription || (!c.definition && !c.explanation)) {
+        error(`Concept missing required fields (id, title, chapterId, shortDescription, definition/explanation): ${c.id}`);
+      }
+    }
+
+    // Timeline Constraints
+    const { timelineEvents } = await import(pathToFileURL(path.join(DATA_DIR, 'timelineData.js')).href);
+    if (timelineEvents.length < 12) {
+      error(`Timeline must have at least 12 events. Current count: ${timelineEvents.length}`);
+    }
+
+    for (const e of timelineEvents) {
+      if (!e.id || !e.period || !e.title || !e.shortDescription || !e.historicalContext || !e.problem || !e.ideologicalDevelopment || !e.impact || !e.learningValue) {
+        error(`Timeline event missing required fields: ${e.id}`);
+      }
+      for (const cid of e.relatedConceptIds || []) {
+        if (!conceptIds.has(cid)) {
+          error(`Timeline event ${e.id} references missing conceptId: ${cid}`);
+        }
+      }
+      if (e.requiresVerification === undefined) {
+        warn(`requiresVerification missing in timeline event ${e.id}`);
       }
     }
 

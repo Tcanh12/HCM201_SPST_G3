@@ -346,13 +346,46 @@ export default function ConceptMapPage() {
 
                 <div>
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Nội dung cốt lõi</h4>
-                  <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.definition || selectedNode.coreContent}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.definition || selectedNode.explanation}</p>
                 </div>
 
-                {selectedNode.importance && (
+                {selectedNode.cognitiveValue && (
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Vì sao quan trọng?</h4>
-                    <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.importance}</p>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Giá trị nhận thức</h4>
+                    <p className="text-gray-600 leading-relaxed text-sm">{selectedNode.cognitiveValue}</p>
+                  </div>
+                )}
+
+                {selectedNode.keyIdeas?.length > 0 && (
+                  <div>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Ý chính cần nhớ</h4>
+                    <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                      {selectedNode.keyIdeas.map((idea, idx) => (
+                        <li key={idx}>{idea}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selectedNode.commonMisconceptions?.length > 0 && (
+                  <div>
+                    <h4 className="text-xs font-bold text-[#B91C1C] uppercase tracking-widest mb-2">Hiểu sai thường gặp</h4>
+                    <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                      {selectedNode.commonMisconceptions.map((mis, idx) => (
+                        <li key={idx}>{mis}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selectedNode.reflectionQuestions?.length > 0 && (
+                  <div className="bg-[#FEF3C7] p-4 rounded-xl border border-[#F59E0B]/30">
+                    <h4 className="text-xs font-bold text-[#b45309] uppercase tracking-widest mb-2">Câu hỏi suy ngẫm</h4>
+                    <ul className="list-disc pl-5 text-sm text-[#b45309] space-y-1">
+                      {selectedNode.reflectionQuestions.map((q, idx) => (
+                        <li key={idx}>{q}</li>
+                      ))}
+                    </ul>
                   </div>
                 )}
 

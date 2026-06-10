@@ -122,7 +122,7 @@ export default function TimelinePage() {
                     <h3 className="text-lg font-bold text-[#1F2937]">Bối cảnh lịch sử</h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed">
-                    {selectedEvent.context}
+                    {selectedEvent.historicalContext}
                   </p>
                 </div>
 
@@ -139,8 +139,8 @@ export default function TimelinePage() {
                   </p>
                 </div>
 
-                {/* Insight */}
-                <div className="bg-white border border-[#B91C1C]/20 p-8 rounded-3xl shadow-sm md:col-span-2">
+                {/* Ideological Development */}
+                <div className="bg-white border border-[#B91C1C]/20 p-8 rounded-3xl shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-[#FEE2E2] rounded-xl flex items-center justify-center">
                       <Flag className="w-5 h-5 text-[#B91C1C]" />
@@ -148,8 +148,34 @@ export default function TimelinePage() {
                     <h3 className="text-lg font-bold text-[#1F2937]">Tư tưởng hình thành & Phát triển</h3>
                   </div>
                   <p className="text-gray-700 leading-relaxed text-lg">
-                    {selectedEvent.insight}
+                    {selectedEvent.ideologicalDevelopment}
                   </p>
+                </div>
+
+                {/* Impact & Learning Value */}
+                <div className="bg-white border border-gray-200 p-8 rounded-3xl shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-[#DBEAFE] rounded-xl flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-[#1E3A8A]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1F2937]">Tác động & Giá trị</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    <strong>Ý nghĩa:</strong> {selectedEvent.impact}
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    <strong>Bài học:</strong> {selectedEvent.learningValue}
+                  </p>
+                </div>
+
+                {/* Key Questions */}
+                <div className="bg-[#FEF3C7] border border-[#F59E0B]/30 p-8 rounded-3xl shadow-sm md:col-span-2">
+                  <h3 className="text-lg font-bold text-[#b45309] mb-4">Câu hỏi suy ngẫm:</h3>
+                  <ul className="list-disc pl-5 text-[#b45309] font-medium space-y-2">
+                    {selectedEvent.keyQuestions?.map((q, idx) => (
+                      <li key={idx}>{q}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
@@ -162,7 +188,7 @@ export default function TimelinePage() {
                 <div className="mb-6">
                   <h4 className="text-sm font-bold text-[#1F2937] mb-3">Chương liên quan:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {selectedEvent.relatedChapters.map(chId => {
+                    {selectedEvent.relatedChapterIds?.map(chId => {
                       const chapter = chapters.find(c => c.id === chId);
                       return chapter ? (
                         <button
@@ -170,7 +196,7 @@ export default function TimelinePage() {
                           onClick={() => navigate(`/theory/chapters/${chId}`)}
                           className="px-4 py-2 bg-[#F8FAFC] border border-gray-200 hover:border-[#1E3A8A]/30 hover:bg-[#DBEAFE] hover:text-[#1E3A8A] text-gray-600 rounded-xl text-sm font-medium transition-colors flex items-center gap-2"
                         >
-                          <BookOpen className="w-4 h-4" /> Chương {chapter.chapterNumber}
+                          <BookOpen className="w-4 h-4" /> {chapter.title || `Chương ${chapter.chapterNumber}`}
                         </button>
                       ) : null;
                     })}
@@ -180,7 +206,7 @@ export default function TimelinePage() {
                 <div>
                   <h4 className="text-sm font-bold text-[#1F2937] mb-3">Khái niệm cốt lõi:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {selectedEvent.relatedConcepts.map(conceptId => (
+                    {selectedEvent.relatedConceptIds?.map(conceptId => (
                       <button
                         key={conceptId}
                         onClick={() => navigate('/theory/concept-map')}
