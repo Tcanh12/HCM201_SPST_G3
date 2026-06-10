@@ -12,9 +12,49 @@ import useKeyboard from '../hooks/useKeyboard';
 import useMouse from '../hooks/useMouse';
 import { isPositionBlocked } from './MapObstacles';
 
+function SkillEffect({ skill, actorX, actorZ }) {
+  const meshRef = useRef();
+  
+  useFrame((state, delta) => {
+    if (!meshRef.current) return;
+    const age = (Date.now() - skill.timestamp) / 1000;
+    
+    if (skill.type === 'ult_voi') {
+      // Expanding shockwave
+      const scale = 1 + age * 25;
+      meshRef.current.scale.set(scale, scale, scale);
+      meshRef.current.material.opacity = Math.max(0, 1 - age * 1.5);
+    } else if (skill.type === 'ult_tho') {
+      // Dash trail dissipation
+      meshRef.current.scale.set(1 + age * 5, 1 + age * 5, 1 + age * 5);
+      meshRef.current.material.opacity = Math.max(0, 1 - age * 2);
+    }
+  });
+
+  if (skill.type === 'ult_voi') {
+    return (
+      <mesh ref={meshRef} position={[actorX, 0.5, actorZ]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0.8, 1, 32]} />
+        <meshBasicMaterial color="#EF4444" transparent opacity={1} side={THREE.DoubleSide} blending={THREE.AdditiveBlending} />
+      </mesh>
+    );
+  }
+
+  if (skill.type === 'ult_tho') {
+    return (
+      <mesh ref={meshRef} position={[actorX, 1.5, actorZ]}>
+        <sphereGeometry args={[1.5, 16, 16]} />
+        <meshBasicMaterial color="#34D399" transparent opacity={0.6} blending={THREE.AdditiveBlending} />
+      </mesh>
+    );
+  }
+
+  return null;
+}
+
 export default function GameScene({
   gameState, connection, roomCode, myConnectionId, onClaimQuestion,
-  isMobile, touchMoveRef, touchRotateRef, touchShootRef, touchJumpRef, touchSkillRef, aimingSkillRef
+  isMobile, touchMoveRef, touchRotateRef, touchShootRef, touchJumpRef, touchSkillRef, aimingSkillRef, activeSkills
 }) {
   const players = gameState?.players || [];
   const projectiles = gameState?.projectiles || [];
@@ -30,7 +70,11 @@ export default function GameScene({
   const localPos = useRef(new THREE.Vector3(0, 0, 0));
   const cameraAngle = useRef(0);
   const cameraPitch = useRef(0.6);
-  const cameraDistance = useRef(isMobile ? 45 : 35);
+  const cameraDistance = useRef(isMobile ? 16 : 14);
+  const targetCameraDistance = useRef(isMobile ? 16 : 14);
+  const MIN_ZOOM = 8;
+  const MAX_ZOOM = 18;
+  const SCROLL_SPEED = 0.02;
   const initialized = useRef(false);
   const lastMoveSent = useRef(0);
   const lastZoneClaim = useRef(0);
@@ -281,6 +325,9 @@ export default function GameScene({
   function updateCamera(delta, myPlayer) {
     const angle = cameraAngle.current;
     
+    // Smooth zoom damping — lerp actual distance toward target
+    cameraDistance.current += (targetCameraDistance.current - cameraDistance.current) * 5 * delta;
+    
     // Smooth third-person camera follow
     const dist = cameraDistance.current;
     const pitch = cameraPitch.current;
@@ -305,21 +352,14 @@ export default function GameScene({
   }, [connection, myConnectionId, players, roomCode, isMobile]);
 
   const handleWheel = useCallback((e) => {
-    cameraDistance.current = Math.max(15, Math.min(80, cameraDistance.current + e.deltaY * 0.05));
+    targetCameraDistance.current = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, targetCameraDistance.current + e.deltaY * SCROLL_SPEED));
   }, []);
 
 
   return (
     <group onPointerDown={handleShoot} onWheel={handleWheel}>
-      <Sky sunPosition={[100, 40, 100]} turbidity={0.3} rayleigh={0.5} />
-      <ambientLight intensity={0.4} />
-      <directionalLight castShadow position={[80, 100, 40]} intensity={1.2}
-        shadow-mapSize-width={2048} shadow-mapSize-height={2048}
-        shadow-camera-far={500} shadow-camera-left={-200} shadow-camera-right={200}
-        shadow-camera-top={200} shadow-camera-bottom={-200}
-      />
-
-      <MapEnvironment />
+      {/* Dynamic Environment (Lights, Fog, Ground) based on selected map */}
+      <MapEnvironment mapKey={localStorage.getItem('selectedMap') || 'knowledge_campus'} />
       <SafeZone radius={safeZone.radius} x={safeZone.centerX || 0} z={safeZone.centerZ || 0} />
 
       {knowledgeZones.filter(z => z.isActive).map(z => (
@@ -349,6 +389,14 @@ export default function GameScene({
           <meshStandardMaterial color="#00FFFF" emissive="#00FFFF" emissiveIntensity={3} />
         </mesh>
       ))}
+
+      {/* Transient Skill Effects */}
+      {activeSkills?.map(skill => {
+        const actor = players.find(p => p.id === skill.by);
+        const x = skill.x ?? actor?.x ?? 0;
+        const z = skill.z ?? actor?.z ?? 0;
+        return <SkillEffect key={skill.effectId} skill={skill} actorX={x} actorZ={z} />;
+      })}
 
       {/* Target / Aim Indicators */}
       <group ref={pushIndRef} visible={false}>

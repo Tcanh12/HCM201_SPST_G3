@@ -1,109 +1,174 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Shield, Zap, Crosshair, CheckCircle2, Wifi } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Shield, Zap, Crosshair, CheckCircle2, Wifi, Star, Swords, Eye } from 'lucide-react';
 import axios from 'axios';
 import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
+import { CHARACTER_DATA, getCharacterData } from '../data/characterData';
 
 // Stat bar component
 function StatBar({ label, value, max, color, icon: Icon }) {
   const percent = Math.min(100, (value / max) * 100);
   return (
     <div className="flex items-center gap-2">
-      <Icon className={`w-3.5 h-3.5 ${color} shrink-0`} />
-      <span className="text-xs text-white/40 w-12 shrink-0">{label}</span>
-      <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+      <Icon className="w-3.5 h-3.5 shrink-0" style={{ color }} />
+      <span className="text-[10px] text-white/35 w-10 shrink-0 font-bold uppercase tracking-wider">{label}</span>
+      <div className="flex-1 h-2 bg-white/8 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percent}%` }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className={`h-full rounded-full`}
-          style={{ background: `linear-gradient(90deg, ${color.replace('text-', '').includes('red') ? '#EF4444' : color.includes('yellow') ? '#F59E0B' : color.includes('cyan') ? '#06B6D4' : '#10B981'}, transparent)` }}
+          className="h-full rounded-full"
+          style={{ background: `linear-gradient(90deg, ${color}, ${color}40)` }}
         />
       </div>
-      <span className="text-xs font-mono font-bold text-white/60 w-6 text-right">{value}</span>
+      <span className="text-xs font-mono font-bold text-white/50 w-6 text-right">{value}</span>
     </div>
   );
 }
 
-// Character card component
-function CharacterCard({ char, selected, onClick }) {
-  const emojiMap = { 1: '🐘', 2: '🐇', 3: '🦊', 4: '🐢' };
-  const colorMap = {
-    1: { border: '#6366F1', bg: 'rgba(99,102,241,0.12)', glow: 'rgba(99,102,241,0.3)' },
-    2: { border: '#10B981', bg: 'rgba(16,185,129,0.12)', glow: 'rgba(16,185,129,0.3)' },
-    3: { border: '#F59E0B', bg: 'rgba(245,158,11,0.12)', glow: 'rgba(245,158,11,0.3)' },
-    4: { border: '#06B6D4', bg: 'rgba(6,182,212,0.12)', glow: 'rgba(6,182,212,0.3)' },
-  };
-  const colors = colorMap[char.id] || colorMap[1];
+// Skill preview pill
+function SkillPill({ skill }) {
+  return (
+    <div className="flex items-center gap-1.5 px-2 py-1 bg-white/5 rounded-lg border border-white/5">
+      <span className="text-sm">{skill.icon}</span>
+      <div>
+        <div className="text-[9px] font-bold text-amber-400/80">{skill.name}</div>
+        <div className="text-[8px] text-white/30 leading-tight">{skill.desc}</div>
+      </div>
+    </div>
+  );
+}
 
-  const descMap = {
-    1: "Vai trò: Tanker. Máu cao, chậm. Chiêu cuối: Dậm Đất - tạo sóng chấn động, làm chậm và gây sát thương xung quanh.",
-    2: "Vai trò: Tốc độ. Máu thấp, cực nhanh. Chiêu cuối: Lướt Nhanh - lướt cực nhanh theo hướng nhìn để né tránh.",
-    3: "Vai trò: Chiến thuật. Chỉ số cân bằng. Chiêu cuối: Bẫy Ảo Ảnh - đặt bẫy tàng hình gây mất máu và làm chậm.",
-    4: "Vai trò: Phòng thủ. Máu và giáp cao. Chiêu cuối: Mai Rùa - tạo khiên bảo vệ giảm sát thương nhận vào."
-  };
+// Premium Character Card with pedestal style
+function CharacterCard({ char, charMeta, selected, onClick, index }) {
+  const meta = charMeta || getCharacterData(char.id);
 
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      whileHover={{ scale: 1.02, y: -4 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="relative cursor-pointer rounded-xl overflow-hidden transition-all duration-300"
+      className="relative cursor-pointer rounded-2xl overflow-hidden transition-all duration-400"
       style={{
-        border: `2px solid ${selected ? colors.border : 'rgba(255,255,255,0.1)'}`,
-        background: selected ? colors.bg : 'rgba(255,255,255,0.03)',
-        boxShadow: selected ? `0 0 25px ${colors.glow}` : 'none',
+        border: `2px solid ${selected ? meta.colors.border : 'rgba(255,255,255,0.06)'}`,
+        background: selected
+          ? `linear-gradient(135deg, ${meta.colors.bg}, rgba(10,14,26,0.9))`
+          : 'rgba(255,255,255,0.02)',
+        boxShadow: selected
+          ? `0 0 30px ${meta.colors.glow}, inset 0 1px 0 rgba(255,255,255,0.05)`
+          : '0 2px 8px rgba(0,0,0,0.2)',
       }}
     >
       {/* Selected indicator */}
-      {selected && (
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          className="absolute top-2 right-2 z-10"
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            className="absolute top-2 right-2 z-10"
+          >
+            <CheckCircle2 className="w-5 h-5" style={{ color: meta.colors.border }} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Role badge */}
+      <div className="absolute top-2 left-2 z-10">
+        <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md border"
+          style={{
+            color: meta.colors.border,
+            background: `${meta.colors.primary}20`,
+            borderColor: `${meta.colors.border}30`,
+          }}
         >
-          <CheckCircle2 className="w-5 h-5" style={{ color: colors.border }} />
-        </motion.div>
-      )}
+          {meta.roleVi}
+        </span>
+      </div>
 
       <div className="p-4">
-        {/* Character header */}
-        <div className="flex items-center gap-3 mb-3">
+        {/* Character avatar + info */}
+        <div className="flex items-center gap-3 mb-3 mt-3">
           <motion.div
-            animate={selected ? { y: [0, -4, 0] } : {}}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+            animate={selected ? { y: [0, -5, 0], rotate: [0, 2, -2, 0] } : {}}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shrink-0"
             style={{
-              background: `${colors.border}20`,
-              border: `1px solid ${colors.border}40`,
+              background: `${meta.colors.primary}20`,
+              border: `2px solid ${meta.colors.border}40`,
+              boxShadow: selected ? `0 0 20px ${meta.colors.glow}` : 'none',
             }}
           >
-            {emojiMap[char.id]}
+            {meta.emoji}
           </motion.div>
-          <div>
-            <h3 className="font-bold text-base">{char.name}</h3>
-            <p className="text-xs text-white/40">{char.animalType}</p>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-black text-lg" style={{ color: selected ? meta.colors.border : 'white' }}>
+              {char.name}
+            </h3>
+            <p className="text-[10px] text-white/30">{char.animalType}</p>
           </div>
         </div>
 
-        {/* Skill name & Description */}
-        <div className="mb-3 p-2 bg-white/5 rounded-lg border border-white/5">
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <Zap className="w-3 h-3 text-amber-400" />
-            <span className="text-xs font-bold text-amber-400">{char.skillName}</span>
+        {/* Description */}
+        <p className="text-[10px] text-white/35 leading-snug mb-3 line-clamp-2">
+          {meta.shortDesc}
+        </p>
+
+        {/* Ultimate Skill Preview */}
+        <div className="mb-3 p-2.5 rounded-xl border transition-all duration-300"
+          style={{
+            background: selected ? `${meta.colors.primary}10` : 'rgba(255,255,255,0.02)',
+            borderColor: selected ? `${meta.colors.border}20` : 'rgba(255,255,255,0.05)',
+          }}
+        >
+          <div className="flex items-center gap-1.5 mb-1">
+            <Star className="w-3 h-3 text-amber-400" />
+            <span className="text-[10px] font-black text-amber-400 uppercase tracking-wider">
+              {meta.skills.ultimate.name}
+            </span>
           </div>
-          <p className="text-[10px] text-gray-400 leading-snug">{descMap[char.id]}</p>
+          <p className="text-[9px] text-white/35 leading-snug">
+            {meta.skills.ultimate.desc}
+          </p>
+          {selected && meta.skills.ultimate.visualDesc && (
+            <p className="text-[8px] mt-1 flex items-center gap-1" style={{ color: `${meta.colors.border}80` }}>
+              <Eye className="w-2.5 h-2.5" />
+              {meta.skills.ultimate.visualDesc}
+            </p>
+          )}
         </div>
 
         {/* Stat bars */}
-        <div className="space-y-2">
-          <StatBar label="HP" value={char.maxHP} max={200} color="text-emerald-400" icon={Shield} />
-          <StatBar label="Speed" value={char.moveSpeed} max={15} color="text-cyan-400" icon={Zap} />
-          <StatBar label="Ammo" value={char.initialAmmo} max={10} color="text-amber-400" icon={Crosshair} />
+        <div className="space-y-1.5">
+          <StatBar label="HP" value={char.maxHP} max={200} color="#10B981" icon={Shield} />
+          <StatBar label="SPD" value={char.moveSpeed} max={15} color="#06B6D4" icon={Zap} />
+          <StatBar label="ATK" value={char.initialAmmo} max={10} color="#F59E0B" icon={Crosshair} />
         </div>
+
+        {/* Accessories hint (shown when selected) */}
+        <AnimatePresence>
+          {selected && meta.accessories && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="mt-3 pt-3 border-t border-white/5"
+            >
+              <div className="text-[9px] text-white/25 uppercase tracking-wider mb-1">Phụ kiện</div>
+              {meta.accessories.map((acc, i) => (
+                <div key={i} className="text-[9px] text-white/30 flex items-center gap-1">
+                  <span style={{ color: meta.colors.border }}>•</span> {acc}
+                </div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );
@@ -114,7 +179,7 @@ export default function PlayerLobbyPage() {
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [selectedChar, setSelectedChar] = useState(null);
-  const [joinStatus, setJoinStatus] = useState('idle'); // idle, waiting, joined, requesting, rejected
+  const [joinStatus, setJoinStatus] = useState('idle');
   const [connection, setConnection] = useState(null);
 
   const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -135,7 +200,6 @@ export default function PlayerLobbyPage() {
       .build();
 
     conn.start().then(() => {
-      // Listen for game start event from Host
       conn.on('GameStartedForPlayer', () => {
         navigate(`/game/${roomCode}`);
       });
@@ -178,100 +242,138 @@ export default function PlayerLobbyPage() {
     if (!selectedChar) return alert('Vui lòng chọn nhân vật!');
     if (!connection) return;
 
-    // Save selection so GamePage can re-join with correct character
     localStorage.setItem('selectedChar', String(selectedChar));
-
-    // Player joins the room as an active player (creates PlayerState on server)
     setJoinStatus('waiting');
     await connection.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar);
   };
 
-  const emojiMap = { 1: '🐘', 2: '🐇', 3: '🦊', 4: '🐢' };
+  const selectedMeta = selectedChar ? getCharacterData(selectedChar) : null;
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full h-full p-8 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center w-full h-full p-4 md:p-8 overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #0A0E1A 0%, #111827 50%, #0A0E1A 100%)' }}
+    >
       {/* Background */}
-      <div className="absolute inset-0 bg-dark" />
-      <div className="absolute inset-0 bg-grid-pattern" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-red-950/10 via-transparent to-transparent" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 glass-panel rounded-2xl p-4 md:p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="relative z-10 glass-panel rounded-2xl p-4 md:p-6 w-full max-w-3xl max-h-[95vh] overflow-y-auto"
+        style={{ borderColor: selectedMeta ? `${selectedMeta.colors.border}15` : 'rgba(255,255,255,0.08)' }}
       >
         {joinStatus === 'idle' ? (
           <>
-            <div className="text-center mb-6">
-              <h2 className="text-2xl font-display font-bold mb-1">Chọn Nhân Vật</h2>
-              <p className="text-white/40 text-sm">
-                Phòng: <span className="text-primary font-bold font-mono">{roomCode}</span> · Chào <span className="text-white font-medium">{user.username}</span>
+            {/* Header */}
+            <div className="text-center mb-5">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <Swords className="w-4 h-4 text-amber-400/50" />
+                <h2 className="text-xl md:text-2xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+                  Chọn Chiến Binh
+                </h2>
+                <Swords className="w-4 h-4 text-amber-400/50" />
+              </div>
+              <p className="text-white/30 text-xs">
+                Phòng: <span className="text-amber-400 font-bold font-mono tracking-wider">{roomCode}</span>
+                <span className="mx-2 text-white/10">|</span>
+                Chào <span className="text-white font-medium">{user.username}</span>
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              {characters.map(char => (
+            {/* Character Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+              {characters.map((char, i) => (
                 <CharacterCard
                   key={char.id}
                   char={char}
+                  charMeta={CHARACTER_DATA[char.id]}
                   selected={selectedChar === char.id}
                   onClick={() => setSelectedChar(char.id)}
+                  index={i}
                 />
               ))}
             </div>
 
-            <button
+            {/* Confirm Button */}
+            <motion.button
+              whileHover={selectedChar ? { scale: 1.02 } : {}}
+              whileTap={selectedChar ? { scale: 0.97 } : {}}
               onClick={handleJoinRoom}
               disabled={!selectedChar}
-              className="btn-primary w-full flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all duration-300"
+              style={{
+                background: selectedChar
+                  ? `linear-gradient(135deg, ${selectedMeta?.colors.primary || '#8B1A1A'}, ${selectedMeta?.colors.border || '#D4A843'})`
+                  : '#1F2937',
+                color: selectedChar ? 'white' : '#6B7280',
+                cursor: selectedChar ? 'pointer' : 'not-allowed',
+                boxShadow: selectedChar ? `0 0 25px ${selectedMeta?.colors.glow || 'transparent'}` : 'none',
+              }}
             >
               <CheckCircle2 className="w-5 h-5" />
-              {selectedChar ? 'Xác Nhận & Vào Phòng Chờ' : 'Chọn nhân vật trước'}
-            </button>
+              {selectedChar ? `Xác Nhận ${selectedMeta?.name} & Vào Phòng Chờ` : 'Chọn nhân vật trước'}
+            </motion.button>
           </>
         ) : joinStatus === 'requesting' ? (
           <div className="text-center py-12">
-            <h2 className="text-3xl font-display font-bold mb-2">Đang xin phép...</h2>
-            <p className="text-white/40 mb-2">Đang gửi yêu cầu tham gia đến Host.</p>
-            <div className="mt-8 flex justify-center gap-1.5">
+            <h2 className="text-2xl font-display font-bold mb-2 text-amber-400">Đang xin phép...</h2>
+            <p className="text-white/40 mb-4">Đang gửi yêu cầu tham gia đến Host.</p>
+            <div className="flex justify-center gap-1.5">
               {[0, 1, 2].map(i => (
-                <motion.div key={i} animate={{ scale: [1, 1.4, 1], opacity: [0.3, 1, 0.3] }} transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }} className="w-2 h-2 bg-primary rounded-full" />
+                <motion.div key={i} animate={{ scale: [1, 1.4, 1], opacity: [0.3, 1, 0.3] }} transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }} className="w-2 h-2 bg-amber-400 rounded-full" />
               ))}
             </div>
           </div>
         ) : (
-          <div className="text-center py-12">
+          /* Waiting for host to start */
+          <div className="text-center py-10">
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
+              animate={{ y: [0, -12, 0], rotate: [0, 3, -3, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               className="text-6xl mb-6"
             >
-              {emojiMap[selectedChar] || '🎮'}
+              {selectedMeta?.emoji || '🎮'}
             </motion.div>
 
-            <h2 className="text-3xl font-display font-bold mb-2">Đã Sẵn Sàng!</h2>
-            <p className="text-white/40 mb-2">Đang chờ Host bắt đầu trận đấu...</p>
-            <p className="text-sm text-white/30">
-              Phòng: <span className="text-primary font-bold font-mono">{roomCode}</span>
+            <h2 className="text-2xl font-display font-black mb-2"
+              style={{ color: selectedMeta?.colors.border || '#D4A843' }}
+            >
+              Đã Sẵn Sàng!
+            </h2>
+            <p className="text-white/40 mb-1 text-sm">Đang chờ Host bắt đầu trận đấu...</p>
+            <p className="text-xs text-white/25">
+              Phòng: <span className="text-amber-400 font-bold font-mono">{roomCode}</span>
+              <span className="mx-2 text-white/10">|</span>
+              {selectedMeta?.name} — {selectedMeta?.roleVi}
             </p>
 
-            <div className="mt-8 flex flex-col items-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/15 text-emerald-400 rounded-full border border-emerald-500/25">
+            <div className="mt-6 flex flex-col items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">
                 <Wifi className="w-3.5 h-3.5" />
                 <span className="text-sm font-medium">Đã kết nối</span>
                 <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
               </div>
 
-              {/* Waiting animation - 3 pulsing dots */}
-              <div className="flex gap-1.5 mt-4">
+              {/* Waiting dots */}
+              <div className="flex gap-1.5 mt-3">
                 {[0, 1, 2].map(i => (
                   <motion.div
                     key={i}
                     animate={{ scale: [1, 1.4, 1], opacity: [0.3, 1, 0.3] }}
                     transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }}
-                    className="w-2 h-2 bg-primary rounded-full"
+                    className="w-2 h-2 rounded-full"
+                    style={{ background: selectedMeta?.colors.border || '#D4A843' }}
                   />
                 ))}
+              </div>
+
+              {/* Knowledge tip while waiting */}
+              <div className="mt-4 max-w-xs p-3 rounded-xl bg-white/3 border border-white/5 text-center">
+                <span className="text-[10px] text-amber-400/50 uppercase tracking-wider font-bold">💡 Mẹo</span>
+                <p className="text-[11px] text-white/30 mt-1 leading-snug">
+                  Trả lời đúng liên tiếp sẽ tăng combo và nhân điểm thưởng. Combo cao nhất sẽ được vinh danh!
+                </p>
               </div>
             </div>
           </div>

@@ -12,6 +12,10 @@ public class Question
     public int PenaltyHP { get; set; }
     public int TimeLimit { get; set; } // in seconds
 
+    // Phase 3 Extensions: Support for multi-type challenges
+    public string Type { get; set; } = "MultipleChoice"; // MultipleChoice, TrueFalse, FillBlank, CaseStudy, etc.
+    public string? ChallengePayloadJson { get; set; } // JSON string for complex question payload (e.g. blanks array, matching pairs)
+
     // Navigation Properties
     public ICollection<QuestionOption> Options { get; set; } = new List<QuestionOption>();
 }

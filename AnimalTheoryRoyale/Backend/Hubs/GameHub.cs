@@ -156,7 +156,7 @@ public class GameHub : Hub
         await Clients.GroupExcept(roomCode, Context.ConnectionId).SendAsync("GameStartedForPlayer");
     }
 
-    public async Task HostEndGame(string roomCode)
+    public Task HostEndGame(string roomCode)
     {
         var game = _gameEngine.GetGame(roomCode);
         if (game != null && game.Status == "Playing")
@@ -164,14 +164,15 @@ public class GameHub : Hub
             // Force the game engine to end the game immediately on the next tick
             game.Duration = 0;
         }
+        return Task.CompletedTask;
     }
 
-    public async Task PlayerMove(string roomCode, float x, float y, float z, float rotationY)
+    public Task PlayerMove(string roomCode, float x, float y, float z, float rotationY)
     {
         var game = _gameEngine.GetGame(roomCode);
-        if (game == null) return;
-        if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
-        if (player.IsDead || player.IsEliminated || player.IsAnsweringQuestion || player.IsStunned || player.IsDizzy) return;
+        if (game == null) return Task.CompletedTask;
+        if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return Task.CompletedTask;
+        if (player.IsDead || player.IsEliminated || player.IsAnsweringQuestion || player.IsStunned || player.IsDizzy) return Task.CompletedTask;
         
         if (!Backend.Models.MapObstacles.IsPositionBlocked(x, z, 1.0f))
         {
@@ -188,6 +189,7 @@ public class GameHub : Hub
         
         player.Y = y; 
         player.RotationY = rotationY;
+        return Task.CompletedTask;
     }
 
     public async Task ShootProjectile(string roomCode, float dirX, float dirZ)
@@ -410,6 +412,8 @@ public class GameHub : Hub
             difficulty = questionData.Difficulty,
             timeLimit = questionData.TimeLimit,
             topicName = questionData.TopicName,
+            type = questionData.Type,
+            payloadJson = questionData.ChallengePayloadJson,
             options = optionsToSend
         });
     }
@@ -434,7 +438,6 @@ public class GameHub : Hub
         int hpLost = 0;
         int comboCount = 0;
         int multiplier = 1;
-        bool playerDied = false;
         string explanation = "";
         string zoneType = "Normal";
         bool isTrap = false;
@@ -535,7 +538,6 @@ public class GameHub : Hub
                                     player.RespawnTime = DateTime.UtcNow.AddSeconds(8);
                                 else
                                     player.IsEliminated = true;
-                                playerDied = true;
                             }
 
                             // Consume the zone ALWAYS! (regardless of correct/wrong)

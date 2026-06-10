@@ -97,6 +97,8 @@ public class GameEngine : BackgroundService
                 BaseScore = q.BaseScore,
                 PenaltyHP = q.PenaltyHP,
                 TimeLimit = q.TimeLimit,
+                Type = q.Type,
+                ChallengePayloadJson = q.ChallengePayloadJson,
                 Options = q.Options.Select(o => new QuestionOptionData
                 {
                     OptionId = o.Id,
@@ -187,6 +189,8 @@ public class GameEngine : BackgroundService
     private int PickUnusedQuestion(GameState game)
     {
         var rng = new Random();
+        if (game.QuestionPool.Count == 0) return -1; // Safe fallback if DB is empty
+
         var candidates = game.QuestionPool.Keys
             .Where(id => !game.ActiveQuestionIds.ContainsKey(id))
             .ToList();

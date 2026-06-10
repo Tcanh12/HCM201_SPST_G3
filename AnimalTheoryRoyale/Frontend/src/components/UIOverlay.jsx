@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import TrollFeed from './TrollFeed';
 
 // Striped HP Bar Component
 function HPBar({ current, max, percent, color }) {
@@ -99,7 +100,7 @@ function SkillButton({ name, icon, cd, keyBind, type, tooltip, isSilenced, onPoi
   );
 }
 
-export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming }) {
+export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming, feedEvents }) {
   const [hoveredSkill, setHoveredSkill] = useState(null);
   const players = gameState?.players || [];
   const safeZone = gameState?.safeZone || {};
@@ -327,6 +328,9 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
       </div>
+
+      {/* Kill/Skill Feed */}
+      <TrollFeed events={feedEvents || []} />
 
       {/* Top Right: Leaderboard */}
       <div className="absolute top-[80px] md:top-4 left-2 md:left-auto md:right-4 glass-panel rounded-xl p-2 md:p-3 border-white/10 w-[140px] md:w-[220px] scale-90 origin-top-left md:scale-100 md:origin-top-right pointer-events-auto">

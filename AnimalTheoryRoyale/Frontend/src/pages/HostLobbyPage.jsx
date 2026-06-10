@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Copy, Check, Users, Play, X, Settings2, Hash, Wifi } from 'lucide-react';
+import { Copy, Check, Users, Play, X, Settings2, Hash, Wifi, Map, Shield, ChevronDown } from 'lucide-react';
 import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
+import { MAPS, getDefaultMap } from '../data/mapData';
 
 export default function HostLobbyPage() {
   const { roomCode } = useParams();
@@ -12,9 +13,11 @@ export default function HostLobbyPage() {
   const [players, setPlayers] = useState([]);
   const [connection, setConnection] = useState(null);
   const [questionCount, setQuestionCount] = useState(20);
+  const [selectedMap, setSelectedMap] = useState(getDefaultMap().key);
   const [copied, setCopied] = useState(false);
   const [starting, setStarting] = useState(false);
   const [countdown, setCountdown] = useState(null);
+  const [showMapPicker, setShowMapPicker] = useState(false);
 
   useEffect(() => {
     const conn = new signalR.HubConnectionBuilder()
@@ -61,7 +64,6 @@ export default function HostLobbyPage() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback
       const el = document.createElement('textarea');
       el.value = roomCode;
       document.body.appendChild(el);
@@ -92,19 +94,29 @@ export default function HostLobbyPage() {
     
     if (connection) {
       const camMode = localStorage.getItem('cameraMode') || 'ThirdPerson';
+      // Store selected map for GamePage to use
+      localStorage.setItem('selectedMap', selectedMap);
       await connection.invoke('HostStartGame', roomCode, questionCount, camMode);
     }
   };
 
   const characterNames = { 1: 'Voi 🐘', 2: 'Thỏ 🐇', 3: 'Cáo 🦊', 4: 'Rùa 🐢' };
-  const playerColors = ['#6366F1', '#10B981', '#F59E0B', '#06B6D4', '#EC4899', '#8B5CF6', '#14B8A6', '#F97316'];
+  const characterColors = {
+    1: '#8B1A1A',
+    2: '#1B8C5A',
+    3: '#D97706',
+    4: '#1E3A5F',
+  };
+
+  const currentMap = MAPS.find(m => m.key === selectedMap) || MAPS[0];
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full h-full p-8 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center w-full h-full p-4 md:p-8 overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #0A0E1A 0%, #111827 50%, #0A0E1A 100%)' }}
+    >
       {/* Background */}
-      <div className="absolute inset-0 bg-dark" />
-      <div className="absolute inset-0 bg-grid-pattern" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/10 via-transparent to-transparent" />
 
       {/* Countdown overlay */}
       <AnimatePresence>
@@ -113,7 +125,8 @@ export default function HostLobbyPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center"
+            style={{ background: 'rgba(10,14,26,0.9)', backdropFilter: 'blur(8px)' }}
           >
             <motion.div
               key={countdown}
@@ -121,10 +134,10 @@ export default function HostLobbyPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 2, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-              className={`text-9xl font-display font-black ${
+              className={`text-8xl md:text-9xl font-display font-black ${
                 countdown === 'GO!' 
                   ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 text-glow' 
-                  : 'text-white text-glow'
+                  : 'text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-white text-glow'
               }`}
             >
               {countdown}
@@ -136,20 +149,24 @@ export default function HostLobbyPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 glass-panel rounded-2xl p-5 md:p-8 w-full max-w-lg"
+        className="relative z-10 glass-panel rounded-2xl p-5 md:p-8 w-full max-w-xl max-h-[95vh] overflow-y-auto"
       >
         {/* Room Code Display */}
         <div className="text-center mb-6">
-          <p className="text-xs text-white/40 uppercase tracking-widest font-bold mb-3">Mã Phòng</p>
+          <p className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold mb-3">
+            Mã Phòng — Chiếu lên màn hình lớp
+          </p>
           
           <button
             onClick={handleCopy}
-            className="group relative inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 rounded-2xl transition-all duration-300"
+            className="group relative inline-flex items-center gap-2 md:gap-3 px-5 md:px-8 py-3 md:py-4 bg-white/3 hover:bg-white/6 border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300"
           >
-            <h1 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-cyan-400 tracking-[0.3em] font-mono">
+            <h1 className="text-4xl md:text-6xl font-black tracking-[0.4em] font-mono"
+              style={{ color: '#D4A843', textShadow: '0 0 30px rgba(212,168,67,0.3)' }}
+            >
               {roomCode}
             </h1>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 rounded-lg text-xs font-medium text-white/60 group-hover:text-white transition-colors">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/8 rounded-lg text-xs font-medium text-white/50 group-hover:text-white transition-colors">
               {copied ? (
                 <>
                   <Check className="w-3.5 h-3.5 text-emerald-400" />
@@ -164,28 +181,91 @@ export default function HostLobbyPage() {
             </div>
           </button>
 
-          <p className="text-white/30 text-xs mt-3">Chia sẻ mã này cho sinh viên để họ tham gia</p>
+          <p className="text-white/20 text-[11px] mt-3">Chia sẻ mã này cho sinh viên</p>
         </div>
 
         {/* Room Settings */}
-        <div className="mb-5 p-4 rounded-xl bg-white/3 border border-white/8">
+        <div className="mb-5 p-4 rounded-xl bg-white/2 border border-white/6">
           <div className="flex items-center gap-2 mb-3">
-            <Settings2 className="w-4 h-4 text-white/40" />
-            <label className="text-xs font-bold text-white/50 uppercase tracking-wider">Cài đặt trận đấu</label>
+            <Settings2 className="w-4 h-4 text-white/30" />
+            <label className="text-xs font-bold text-white/40 uppercase tracking-wider">Cài đặt trận đấu</label>
           </div>
-          <div className="input-with-icon">
-            <Hash className="icon w-4 h-4" />
-            <select
-              value={questionCount}
-              onChange={(e) => setQuestionCount(Number(e.target.value))}
-              className="input-field pl-11 cursor-pointer appearance-none text-sm"
+
+          {/* Question Count */}
+          <div className="mb-3">
+            <div className="input-with-icon">
+              <Hash className="icon w-4 h-4" />
+              <select
+                value={questionCount}
+                onChange={(e) => setQuestionCount(Number(e.target.value))}
+                className="input-field pl-11 cursor-pointer appearance-none text-sm"
+              >
+                <option value={10}>10 Câu hỏi (Nhanh)</option>
+                <option value={15}>15 Câu hỏi (Cơ bản)</option>
+                <option value={20}>20 Câu hỏi (Tiêu chuẩn)</option>
+                <option value={50}>50 Câu hỏi (Hỗn loạn)</option>
+                <option value={100}>100 Câu hỏi (Siêu hỗn loạn)</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Map Selection */}
+          <div className="relative">
+            <label className="text-[10px] text-white/30 uppercase tracking-wider font-bold mb-1.5 flex items-center gap-1">
+              <Map className="w-3 h-3" /> Bản đồ
+            </label>
+            <button
+              onClick={() => setShowMapPicker(!showMapPicker)}
+              className="w-full flex items-center justify-between p-3 rounded-xl bg-white/3 border border-white/8 hover:border-white/15 transition-all text-left"
             >
-              <option value={10}>10 Câu hỏi (Map nhỏ)</option>
-              <option value={15}>15 Câu hỏi (Cơ bản)</option>
-              <option value={20}>20 Câu hỏi (Tiêu chuẩn)</option>
-              <option value={50}>50 Câu hỏi (Map lớn)</option>
-              <option value={100}>100 Câu hỏi (Siêu hỗn loạn)</option>
-            </select>
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{currentMap.icon}</span>
+                <div>
+                  <div className="text-sm font-bold text-white/80">{currentMap.nameVi}</div>
+                  <div className="text-[10px] text-white/30">{currentMap.difficulty} · {currentMap.knowledgeDensity} cột tri thức</div>
+                </div>
+              </div>
+              <ChevronDown className={`w-4 h-4 text-white/30 transition-transform ${showMapPicker ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* Map picker dropdown */}
+            <AnimatePresence>
+              {showMapPicker && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10, height: 0 }}
+                  animate={{ opacity: 1, y: 0, height: 'auto' }}
+                  exit={{ opacity: 0, y: -10, height: 0 }}
+                  className="mt-2 rounded-xl border border-white/10 bg-dark-lighter/95 backdrop-blur-xl overflow-hidden"
+                >
+                  {MAPS.map(map => (
+                    <button
+                      key={map.key}
+                      onClick={() => { setSelectedMap(map.key); setShowMapPicker(false); }}
+                      className={`w-full flex items-center gap-3 p-3 hover:bg-white/5 transition-all text-left ${
+                        selectedMap === map.key ? 'bg-white/8' : ''
+                      }`}
+                    >
+                      <span className="text-xl">{map.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-bold" style={{ color: selectedMap === map.key ? map.color : 'rgba(255,255,255,0.7)' }}>
+                          {map.nameVi}
+                        </div>
+                        <div className="text-[10px] text-white/30 truncate">{map.description}</div>
+                      </div>
+                      <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border"
+                        style={{
+                          color: map.color,
+                          background: `${map.color}10`,
+                          borderColor: `${map.color}20`,
+                        }}
+                      >
+                        {map.difficulty}
+                      </span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
@@ -193,10 +273,18 @@ export default function HostLobbyPage() {
         <div className="mb-6">
           <div className="flex justify-between items-center mb-3">
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-white/40" />
-              <h3 className="font-bold text-sm">Người chơi đã vào</h3>
+              <Users className="w-4 h-4 text-white/30" />
+              <h3 className="font-bold text-sm text-white/80">Sinh viên đã vào</h3>
             </div>
-            <span className="text-xs font-mono font-bold px-2.5 py-1 bg-primary/15 text-primary-light rounded-lg">{players.length}</span>
+            <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-lg border"
+              style={{
+                background: players.length > 0 ? 'rgba(212,168,67,0.1)' : 'rgba(255,255,255,0.05)',
+                color: players.length > 0 ? '#D4A843' : 'rgba(255,255,255,0.3)',
+                borderColor: players.length > 0 ? 'rgba(212,168,67,0.2)' : 'rgba(255,255,255,0.08)',
+              }}
+            >
+              {players.length}
+            </span>
           </div>
 
           <div className="space-y-1.5 max-h-60 overflow-y-auto pr-1">
@@ -208,11 +296,12 @@ export default function HostLobbyPage() {
                       key={i}
                       animate={{ scale: [1, 1.4, 1], opacity: [0.3, 1, 0.3] }}
                       transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }}
-                      className="w-2 h-2 bg-white/30 rounded-full"
+                      className="w-2 h-2 bg-white/20 rounded-full"
                     />
                   ))}
                 </div>
-                <p className="text-white/30 text-sm">Đang chờ sinh viên tham gia...</p>
+                <p className="text-white/25 text-sm">Đang chờ sinh viên tham gia...</p>
+                <p className="text-white/15 text-[10px] mt-1">Sinh viên truy cập web → Tham Gia → Nhập mã phòng</p>
               </div>
             )}
             <AnimatePresence>
@@ -222,24 +311,33 @@ export default function HostLobbyPage() {
                   initial={{ opacity: 0, x: -20, height: 0 }}
                   animate={{ opacity: 1, x: 0, height: 'auto' }}
                   exit={{ opacity: 0, x: 20 }}
-                  className="flex justify-between items-center p-3 rounded-xl bg-white/3 border border-white/8"
+                  className="flex justify-between items-center p-3 rounded-xl bg-white/2 border border-white/6"
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black text-white"
-                      style={{ background: `${playerColors[i % playerColors.length]}30`, border: `1px solid ${playerColors[i % playerColors.length]}50` }}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-black text-white"
+                      style={{
+                        background: `${characterColors[p.characterId] || '#6366F1'}20`,
+                        border: `1px solid ${characterColors[p.characterId] || '#6366F1'}40`,
+                      }}
                     >
                       {i + 1}
                     </div>
                     <div>
-                      <span className="font-medium text-sm">{p.username}</span>
+                      <span className="font-medium text-sm text-white/80">{p.username}</span>
                       <div className="flex items-center gap-1 mt-0.5">
                         <Wifi className="w-2.5 h-2.5 text-emerald-400" />
-                        <span className="text-[10px] text-emerald-400/70">Online</span>
+                        <span className="text-[9px] text-emerald-400/60">Online</span>
                       </div>
                     </div>
                   </div>
-                  <span className="text-xs px-2.5 py-1 bg-white/5 rounded-lg text-white/50 font-medium">
+                  <span className="text-xs px-2.5 py-1 rounded-lg text-white/40 font-medium border"
+                    style={{
+                      background: `${characterColors[p.characterId] || '#6366F1'}10`,
+                      borderColor: `${characterColors[p.characterId] || '#6366F1'}20`,
+                      color: characterColors[p.characterId] || '#6366F1',
+                    }}
+                  >
                     {characterNames[p.characterId] || 'Chưa chọn'}
                   </span>
                 </motion.div>
@@ -252,8 +350,15 @@ export default function HostLobbyPage() {
         <button
           onClick={handleStartGame}
           disabled={players.length === 0 || starting}
-          className="w-full py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 disabled:from-gray-700 disabled:to-gray-600 disabled:text-gray-500 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:hover:scale-100 flex items-center justify-center gap-2"
-          style={{ boxShadow: players.length > 0 ? '0 0 30px rgba(16,185,129,0.3)' : 'none' }}
+          className="w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:hover:scale-100 flex items-center justify-center gap-2"
+          style={{
+            background: players.length > 0
+              ? 'linear-gradient(135deg, #1B8C5A, #10B981)'
+              : '#1F2937',
+            color: players.length > 0 ? 'white' : '#6B7280',
+            boxShadow: players.length > 0 ? '0 0 30px rgba(16,185,129,0.3)' : 'none',
+            cursor: players.length > 0 && !starting ? 'pointer' : 'not-allowed',
+          }}
         >
           <Play className="w-5 h-5" />
           {players.length === 0 ? 'Chờ người chơi...' : `BẮT ĐẦU TRẬN (${players.length} người)`}
@@ -261,7 +366,7 @@ export default function HostLobbyPage() {
 
         <button
           onClick={() => navigate('/')}
-          className="w-full py-3 mt-2 flex items-center justify-center gap-2 text-white/30 hover:text-white/60 rounded-xl font-medium transition-colors text-sm"
+          className="w-full py-3 mt-2 flex items-center justify-center gap-2 text-white/20 hover:text-white/50 rounded-xl font-medium transition-colors text-sm"
         >
           <X className="w-4 h-4" />
           Hủy phòng

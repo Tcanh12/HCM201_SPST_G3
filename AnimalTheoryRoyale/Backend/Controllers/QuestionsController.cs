@@ -57,7 +57,7 @@ public class QuestionsController : ControllerBase
         var currentCorrect = "";
         var currentOptions = new List<QuestionOption>();
 
-        Topic topic1 = await _context.Topics.FirstOrDefaultAsync(t => t.Name == "Sự ra đời của CNXH khoa học");
+        Topic? topic1 = await _context.Topics.FirstOrDefaultAsync(t => t.Name == "Sự ra đời của CNXH khoa học");
         if (topic1 == null) { topic1 = new Topic { Name = "Sự ra đời của CNXH khoa học" }; _context.Topics.Add(topic1); }
         await _context.SaveChangesAsync();
 

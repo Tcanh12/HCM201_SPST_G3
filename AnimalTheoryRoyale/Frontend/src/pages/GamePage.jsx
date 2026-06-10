@@ -5,8 +5,10 @@ import GameScene from '../game3d/GameScene';
 import UIOverlay from '../components/UIOverlay';
 import MiniMap from '../components/MiniMap';
 import HostDashboard from '../components/HostDashboard';
-import QuestionModal from '../components/QuestionModal';
+import ChallengeModal from '../components/ChallengeModal';
 import TouchControls from '../components/TouchControls';
+import LoadingScreen from '../components/LoadingScreen';
+import DamageVignette from '../components/DamageVignette';
 import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -23,8 +25,11 @@ export default function GamePage() {
   const [question, setQuestion] = useState(null);
   const [answerResult, setAnswerResult] = useState(null);
   const [trapMessage, setTrapMessage] = useState(null);
+  const [feedEvents, setFeedEvents] = useState([]);
+  const [activeSkills, setActiveSkills] = useState([]); // Transient skill visuals
   const [connectionState, setConnectionState] = useState('connecting'); // connecting, connected, reconnecting, disconnected
   const [showSettings, setShowSettings] = useState(false);
+  const [gamePhase, setGamePhase] = useState('loading'); // loading, countdown, playing
 
   const user = JSON.parse(localStorage.getItem('user') || '{}');
   const role = localStorage.getItem('role') || 'player';
@@ -55,11 +60,11 @@ export default function GamePage() {
 
       if (role === 'host') {
         conn.invoke('JoinRoomAsHost', roomCode)
-          .then(() => { setConnected(true); setConnectionState('connected'); })
+          .then(() => { setConnected(true); setConnectionState('connected'); setGamePhase('playing'); })
           .catch(err => console.error('Host failed to re-join:', err));
       } else {
         conn.invoke('JoinRoomAsPlayer', roomCode, user.username, selectedChar)
-          .then(() => { setConnected(true); setConnectionState('connected'); })
+          .then(() => { setConnected(true); setConnectionState('connected'); setGamePhase('playing'); })
           .catch(err => console.error('Failed to re-join:', err));
       }
 
@@ -90,6 +95,28 @@ export default function GamePage() {
           setTrapMessage(msg);
           setTimeout(() => setTrapMessage(null), 3000);
         }
+      });
+
+      conn.on('SkillUsed', (data) => {
+        // Log to feed
+        setFeedEvents(prev => {
+           const newEvent = {
+             id: Date.now().toString() + Math.random(),
+             type: data.type,
+             actorName: data.username,
+             targetName: data.targets?.length ? `${data.targets.length} mục tiêu` : (data.type === 'double' ? 'Tự thân' : 'Khu vực')
+           };
+           return [...prev.slice(-4), newEvent]; // Keep max 5 events
+        });
+
+        // Trigger visual effect in GameScene
+        const effectId = Date.now() + Math.random();
+        setActiveSkills(prev => [...prev, { ...data, effectId, timestamp: Date.now() }]);
+        
+        // Remove after 2 seconds
+        setTimeout(() => {
+          setActiveSkills(prev => prev.filter(s => s.effectId !== effectId));
+        }, 2000);
       });
 
       conn.on('GameEnded', (finalScores) => {
@@ -165,17 +192,21 @@ export default function GamePage() {
     aimingSkillRef.current = type;
   }, []);
 
+  // Premium Loading Screen
   if (!connected || connectionState === 'connecting') {
-    return (
-      <div className="w-full h-full flex items-center justify-center bg-dark">
-        <div className="text-center">
-          <div className="text-4xl mb-4 animate-spin">⏳</div>
-          <p className="text-xl font-bold">Đang kết nối vào trận đấu...</p>
-        </div>
-      </div>
-    );
+    return <LoadingScreen status="connecting" roomCode={roomCode} />;
   }
+
   const isHost = gameState?.hostConnectionId === myConnectionId;
+  const myPlayer = gameState?.players?.find(p => p.id === myConnectionId);
+  const hpPercent = myPlayer ? Math.max(0, myPlayer.hp / (myPlayer.maxHP || 100) * 100) : 100;
+
+  // Check if player is outside safe zone
+  const isOutsideZone = myPlayer && gameState?.safeZone ? (() => {
+    const dx = myPlayer.x - (gameState.safeZone.centerX || 0);
+    const dz = myPlayer.z - (gameState.safeZone.centerZ || 0);
+    return Math.sqrt(dx * dx + dz * dz) > (gameState.safeZone.radius || 500);
+  })() : false;
 
   return (
     <div className="relative w-full h-full bg-black" style={{ touchAction: 'none' }}>
@@ -184,27 +215,33 @@ export default function GamePage() {
         {connectionState === 'reconnecting' && (
           <motion.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="absolute inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 z-[9999] flex items-center justify-center"
+            style={{ background: 'rgba(10,14,26,0.9)', backdropFilter: 'blur(8px)' }}
           >
             <div className="text-center text-white">
-              <div className="text-6xl mb-4 animate-spin">🔄</div>
-              <h2 className="text-3xl font-black mb-2 text-yellow-400">ĐANG KẾT NỐI LẠI...</h2>
-              <p className="text-gray-300">Vui lòng chờ, hệ thống đang khôi phục phiên của bạn.</p>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                className="text-5xl mb-4 inline-block"
+              >🔄</motion.div>
+              <h2 className="text-2xl font-black mb-2 text-amber-400">ĐANG KẾT NỐI LẠI...</h2>
+              <p className="text-white/50 text-sm">Vui lòng chờ, hệ thống đang khôi phục phiên của bạn.</p>
             </div>
           </motion.div>
         )}
         {connectionState === 'disconnected' && (
           <motion.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="absolute inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            className="absolute inset-0 z-[9999] flex items-center justify-center"
+            style={{ background: 'rgba(10,14,26,0.95)', backdropFilter: 'blur(8px)' }}
           >
             <div className="text-center text-white">
-              <div className="text-6xl mb-4">❌</div>
-              <h2 className="text-3xl font-black mb-2 text-red-500">MẤT KẾT NỐI</h2>
-              <p className="text-gray-300 mb-6">Không thể duy trì kết nối với máy chủ.</p>
+              <div className="text-5xl mb-4">❌</div>
+              <h2 className="text-2xl font-black mb-2 text-red-500">MẤT KẾT NỐI</h2>
+              <p className="text-white/50 mb-6 text-sm">Không thể duy trì kết nối với máy chủ.</p>
               <button 
                 onClick={() => window.location.reload()}
-                className="px-6 py-3 bg-red-600 hover:bg-red-500 rounded-xl font-bold text-lg transition-all"
+                className="px-6 py-3 bg-red-600 hover:bg-red-500 rounded-xl font-bold text-base transition-all"
               >
                 TẢI LẠI TRANG
               </button>
@@ -216,7 +253,7 @@ export default function GamePage() {
       {/* 3D Canvas */}
       <div className="absolute inset-0">
         <Canvas shadows={!isMobile} dpr={isMobile ? [1, 1.2] : [1, 2]} gl={{ powerPreference: "high-performance", antialias: !isMobile }} camera={{ position: [0, 40, 40], fov: 50 }}>
-          <color attach="background" args={['#1a1a2e']} />
+          <color attach="background" args={['#0A0E1A']} />
           <GameScene
             gameState={gameState}
             connection={connection}
@@ -230,9 +267,17 @@ export default function GamePage() {
             touchJumpRef={touchJumpRef}
             touchSkillRef={touchSkillRef}
             aimingSkillRef={aimingSkillRef}
+            activeSkills={activeSkills}
           />
         </Canvas>
       </div>
+
+      {/* Damage Vignette (HP-based visual feedback) */}
+      <DamageVignette
+        hpPercent={hpPercent}
+        isOutsideZone={isOutsideZone}
+        isDead={myPlayer?.isDead || myPlayer?.isEliminated}
+      />
 
       {/* Host gets the Tactical Dashboard overlay */}
       {isHost && (
@@ -242,7 +287,7 @@ export default function GamePage() {
       {/* Regular players get normal HUD + minimap */}
       {!isHost && (
         <div className="absolute inset-0 pointer-events-none">
-          <UIOverlay gameState={gameState} myConnectionId={myConnectionId} onSkill={handleSkill} onAiming={handleAiming} />
+          <UIOverlay gameState={gameState} myConnectionId={myConnectionId} onSkill={handleSkill} onAiming={handleAiming} feedEvents={feedEvents} />
           <MiniMap gameState={gameState} myConnectionId={myConnectionId} />
         </div>
       )}
@@ -260,9 +305,9 @@ export default function GamePage() {
       {/* Settings Button */}
       <button 
         onClick={(e) => { e.stopPropagation(); setShowSettings(true); }}
-        className="absolute top-4 right-4 z-[200] bg-black/60 hover:bg-black text-white p-3 rounded-full backdrop-blur-sm border border-white/20 transition-all shadow-lg"
+        className="absolute top-4 right-4 z-[200] bg-black/60 hover:bg-black text-white p-2.5 rounded-xl backdrop-blur-sm border border-white/10 transition-all shadow-lg hover:border-white/20"
       >
-        <span className="text-xl">⚙️</span>
+        <span className="text-lg">⚙️</span>
       </button>
 
       {/* Settings Modal */}
@@ -280,62 +325,63 @@ export default function GamePage() {
               exit={{ opacity: 0, scale: 1.2, filter: 'blur(10px)' }}
               transition={{ type: "spring", stiffness: 500, damping: 15 }}
               style={{
-                padding: '30px 40px', borderRadius: '24px', width: '450px',
+                padding: '24px 32px', borderRadius: '20px', width: '420px', maxWidth: '95vw',
                 background: answerResult.correct 
-                  ? (answerResult.wasDouble ? 'rgba(245, 158, 11, 0.95)' : 'rgba(16,185,129,0.95)') 
-                  : (answerResult.wasDouble ? 'rgba(153, 27, 27, 0.95)' : 'rgba(239,68,68,0.95)'),
+                  ? (answerResult.wasDouble ? 'rgba(212,168,67,0.95)' : 'rgba(27,140,90,0.95)') 
+                  : (answerResult.wasDouble ? 'rgba(139,26,26,0.95)' : 'rgba(220,38,38,0.95)'),
                 color: 'white', textAlign: 'center',
-                boxShadow: answerResult.correct ? '0 20px 60px rgba(16,185,129,0.5), inset 0 0 40px rgba(255,255,255,0.4)' : '0 20px 60px rgba(239,68,68,0.6), inset 0 0 40px rgba(0,0,0,0.5)', 
-                border: '4px solid rgba(255,255,255,0.3)',
+                boxShadow: answerResult.correct ? '0 20px 60px rgba(27,140,90,0.5)' : '0 20px 60px rgba(220,38,38,0.6)', 
+                border: '2px solid rgba(255,255,255,0.2)',
                 animation: !answerResult.correct ? 'shake 0.5s' : 'pulse 1s infinite',
                 pointerEvents: 'auto'
               }}
             >
-              <div style={{ fontSize: '64px', marginBottom: '10px', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' }}>
+              <div style={{ fontSize: '52px', marginBottom: '8px', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' }}>
                 {answerResult.correct ? '✅' : '❌'}
               </div>
-              <div style={{ fontSize: '32px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '2px', textShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>
-                {answerResult.correct ? 'CORRECT!' : 'WRONG ANSWER'}
+              <div style={{ fontSize: '24px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '2px', textShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>
+                {answerResult.correct ? 'CHÍNH XÁC!' : 'SAI RỒI!'}
               </div>
-              <div style={{ fontSize: '18px', fontWeight: 700, margin: '10px 0', color: 'rgba(255,255,255,0.9)' }}>
+              <div style={{ fontSize: '14px', fontWeight: 700, margin: '8px 0', color: 'rgba(255,255,255,0.9)' }}>
                 {answerResult.message}
               </div>
               
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '16px' }}>
-                {answerResult.correct && <div style={{ fontSize: '24px', fontWeight: '900', color: '#D1FAE5', background: 'rgba(0,0,0,0.3)', padding: '8px 16px', borderRadius: '12px' }}>+{answerResult.scoreGained} SCORE</div>}
-                {!answerResult.correct && <div style={{ fontSize: '24px', fontWeight: '900', color: '#FECACA', background: 'rgba(0,0,0,0.3)', padding: '8px 16px', borderRadius: '12px' }}>-{answerResult.hpLost} HP</div>}
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '12px' }}>
+                {answerResult.correct && <div style={{ fontSize: '20px', fontWeight: '900', color: '#D1FAE5', background: 'rgba(0,0,0,0.3)', padding: '6px 14px', borderRadius: '10px' }}>+{answerResult.scoreGained} ĐIỂM</div>}
+                {!answerResult.correct && <div style={{ fontSize: '20px', fontWeight: '900', color: '#FECACA', background: 'rgba(0,0,0,0.3)', padding: '6px 14px', borderRadius: '10px' }}>-{answerResult.hpLost} HP</div>}
               </div>
               
               {answerResult.explanation && (
-                <div style={{ marginTop: '20px', fontSize: '15px', lineHeight: '1.5', background: 'rgba(0,0,0,0.4)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <strong style={{ color: answerResult.correct ? '#A7F3D0' : '#FECACA', display: 'block', marginBottom: '4px' }}>GIẢI THÍCH / ĐÁP ÁN ĐÚNG:</strong>
+                <div style={{ marginTop: '16px', fontSize: '13px', lineHeight: '1.5', background: 'rgba(0,0,0,0.4)', padding: '12px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <strong style={{ color: answerResult.correct ? '#A7F3D0' : '#FECACA', display: 'block', marginBottom: '4px', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Giải thích:</strong>
                   {answerResult.explanation}
                 </div>
               )}
 
-              {/* OK Button */}
               <button 
                 onClick={() => setAnswerResult(null)}
                 style={{
-                  marginTop: '20px', padding: '12px 32px', borderRadius: '12px',
-                  background: 'rgba(255,255,255,0.2)', border: '2px solid rgba(255,255,255,0.5)',
-                  color: 'white', fontWeight: 'bold', fontSize: '16px', letterSpacing: '1px',
+                  marginTop: '14px', padding: '10px 24px', borderRadius: '10px',
+                  background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)',
+                  color: 'white', fontWeight: 'bold', fontSize: '13px',
                   cursor: 'pointer', transition: 'all 0.2s', width: '100%',
                 }}
-                onMouseOver={(e) => e.target.style.background = 'rgba(255,255,255,0.3)'}
-                onMouseOut={(e) => e.target.style.background = 'rgba(255,255,255,0.2)'}
+                onMouseOver={(e) => e.target.style.background = 'rgba(255,255,255,0.25)'}
+                onMouseOut={(e) => e.target.style.background = 'rgba(255,255,255,0.15)'}
               >
-                ĐÃ HIỂU (ĐÓNG)
+                ĐÃ HIỂU ✓
               </button>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
 
-      {/* Question Modal */}
-      {question && !answerResult && (
-        <QuestionModal question={question} onSubmit={handleSubmitAnswer} onClose={handleQuestionClose} isDoubleActive={gameState?.players?.find(p => p.id === connection?.connectionId)?.hasDouble} />
-      )}
+      {/* Challenge Modal (replaces old QuestionModal) */}
+      <AnimatePresence>
+        {question && !answerResult && (
+          <ChallengeModal question={question} onSubmit={handleSubmitAnswer} onClose={handleQuestionClose} isDoubleActive={myPlayer?.hasDouble} />
+        )}
+      </AnimatePresence>
 
       {/* Trap Triggered Message */}
       <AnimatePresence>
@@ -346,7 +392,13 @@ export default function GamePage() {
             exit={{ opacity: 0, scale: 0.8 }}
             className="absolute top-1/4 left-1/2 -translate-x-1/2 z-[300] pointer-events-none"
           >
-            <div className="bg-red-600/90 text-white font-black text-xl md:text-3xl px-8 py-4 rounded-full border-4 border-red-400 shadow-[0_0_40px_rgba(239,68,68,0.8)] text-center whitespace-nowrap">
+            <div className="text-white font-black text-lg md:text-2xl px-6 py-3 rounded-2xl border-2 text-center whitespace-nowrap"
+              style={{
+                background: 'rgba(220,38,38,0.9)',
+                borderColor: 'rgba(239,68,68,0.5)',
+                boxShadow: '0 0 40px rgba(239,68,68,0.6)',
+              }}
+            >
               {trapMessage}
             </div>
           </motion.div>

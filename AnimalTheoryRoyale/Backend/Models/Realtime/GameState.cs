@@ -52,6 +52,8 @@ public class QuestionData
     public int BaseScore { get; set; } = 100;
     public int PenaltyHP { get; set; } = 10;
     public int TimeLimit { get; set; } = 15;
+    public string Type { get; set; } = "MultipleChoice";
+    public string? ChallengePayloadJson { get; set; }
     public List<QuestionOptionData> Options { get; set; } = new();
 }
 
