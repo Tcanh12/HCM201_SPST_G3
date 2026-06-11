@@ -75,7 +75,7 @@ public class GameHub : Hub
                 p.Lives = 3;
                 p.Score = 0;
             }
-            await Clients.Client(connectionId).SendAsync("LateJoinApproved", game);
+            await Clients.Client(connectionId).SendAsync("LateJoinApproved", new { roomCode = roomCode });
             await Clients.Client(game.HostConnectionId).SendAsync("LatePlayerJoined", connectionId);
         }
     }
