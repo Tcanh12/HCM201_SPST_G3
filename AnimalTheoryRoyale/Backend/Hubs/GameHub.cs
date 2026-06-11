@@ -58,38 +58,69 @@ public class GameHub : Hub
         game.PendingJoins[Context.ConnectionId] = request;
         
         await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
-        await Clients.Client(game.HostConnectionId).SendAsync("LateJoinRequested", request);
+        await Clients.Client(game.HostConnectionId).SendAsync("LateJoinRequested", new {
+            connectionId = request.ConnectionId,
+            username = request.Username,
+            characterId = request.CharacterId,
+            requestTime = request.RequestTime
+        });
     }
 
     public async Task ApproveLateJoin(string roomCode, string connectionId)
     {
-        roomCode = roomCode?.Trim().ToUpper() ?? "";
-        var game = _gameEngine.GetGame(roomCode);
-        if (game == null || Context.ConnectionId != game.HostConnectionId) return;
-
-        if (game.PendingJoins.TryRemove(connectionId, out var req))
+        try 
         {
-            await PerformJoin(game, roomCode, req.Username, req.CharacterId, connectionId);
-            if (game.Players.TryGetValue(connectionId, out var p))
+            if (string.IsNullOrWhiteSpace(roomCode)) throw new HubException("Room code is required.");
+            if (string.IsNullOrWhiteSpace(connectionId)) throw new HubException("Connection ID is required.");
+
+            roomCode = roomCode.Trim().ToUpper();
+            var game = _gameEngine.GetGame(roomCode);
+            if (game == null) throw new HubException("Trận đấu không tồn tại hoặc đã kết thúc.");
+            if (Context.ConnectionId != game.HostConnectionId) throw new HubException("Chỉ chủ phòng mới có quyền duyệt.");
+
+            if (game.PendingJoins.TryRemove(connectionId, out var req))
             {
-                p.Lives = 3;
-                p.Score = 0;
+                await PerformJoin(game, roomCode, req.Username, req.CharacterId, connectionId);
+                if (game.Players.TryGetValue(connectionId, out var p))
+                {
+                    p.Lives = 3;
+                    p.Score = 0;
+                }
+                await Clients.Client(connectionId).SendAsync("LateJoinApproved", new { roomCode = roomCode });
+                await Clients.Client(game.HostConnectionId).SendAsync("LatePlayerJoined", connectionId);
             }
-            await Clients.Client(connectionId).SendAsync("LateJoinApproved", new { roomCode = roomCode });
-            await Clients.Client(game.HostConnectionId).SendAsync("LatePlayerJoined", connectionId);
+            else 
+            {
+                throw new HubException("Không tìm thấy yêu cầu tham gia. Người chơi có thể đã thoát.");
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi ApproveLateJoin. Room: {RoomCode}, ConnectionId: {ConnectionId}", roomCode, connectionId);
+            throw new HubException(ex.Message);
         }
     }
 
     public async Task RejectLateJoin(string roomCode, string connectionId)
     {
-        roomCode = roomCode?.Trim().ToUpper() ?? "";
-        var game = _gameEngine.GetGame(roomCode);
-        if (game == null || Context.ConnectionId != game.HostConnectionId) return;
-
-        if (game.PendingJoins.TryRemove(connectionId, out _))
+        try 
         {
-            await Groups.RemoveFromGroupAsync(connectionId, roomCode);
-            await Clients.Client(connectionId).SendAsync("LateJoinRejected");
+            if (string.IsNullOrWhiteSpace(roomCode) || string.IsNullOrWhiteSpace(connectionId)) return;
+
+            roomCode = roomCode.Trim().ToUpper();
+            var game = _gameEngine.GetGame(roomCode);
+            if (game == null || Context.ConnectionId != game.HostConnectionId) return;
+
+            if (game.PendingJoins.TryRemove(connectionId, out _))
+            {
+                await Groups.RemoveFromGroupAsync(connectionId, roomCode);
+                await Clients.Client(connectionId).SendAsync("LateJoinRejected");
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi RejectLateJoin");
+            throw new HubException(ex.Message);
         }
     }
 
