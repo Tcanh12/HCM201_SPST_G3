@@ -1,12 +1,12 @@
-# BÁO CÁO DỰ ÁN CUỐI KỲ
+# BÁO CÁO DỰ ÁN SẢN PHẨM SÁNG TẠO
 
 **Tên trường:** Đại học FPT  
 **Tên môn học:** HCM202 – Tư tưởng Hồ Chí Minh  
 **Tên dự án:** Website học tập và trò chơi tương tác môn Tư tưởng Hồ Chí Minh (Muông Thú Thông Thái - Animal Theory Royale)  
-**Tên nhóm:** [Điền tên nhóm của bạn]  
-**Lớp:** [Điền tên lớp của bạn]  
-**Giảng viên:** [Điền tên giảng viên]  
-**Ngày thực hiện:** [Điền ngày nộp báo cáo]  
+**Tên nhóm:** HCM202 - Group 3
+**Lớp:** SU 26_HCM202_MKT1833-DIG 
+**Giảng viên:** Kiều Văn Nam
+**Ngày thực hiện:** May 29, 2026
 
 ---
 
