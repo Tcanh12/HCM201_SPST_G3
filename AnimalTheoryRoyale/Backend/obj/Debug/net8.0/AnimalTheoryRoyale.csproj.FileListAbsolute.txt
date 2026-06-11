@@ -244,3 +244,4 @@ D:\FULearning\SUMMER 2026 Final\HCM201_SPST_G3\AnimalTheoryRoyale\Backend\obj\De
 D:\FULearning\SUMMER 2026 Final\HCM201_SPST_G3\AnimalTheoryRoyale\Backend\obj\Debug\net8.0\AnimalTheoryRoyale.pdb
 D:\FULearning\SUMMER 2026 Final\HCM201_SPST_G3\AnimalTheoryRoyale\Backend\obj\Debug\net8.0\AnimalTheoryRoyale.genruntimeconfig.cache
 D:\FULearning\SUMMER 2026 Final\HCM201_SPST_G3\AnimalTheoryRoyale\Backend\obj\Debug\net8.0\ref\AnimalTheoryRoyale.dll
+D:\FULearning\SUMMER 2026 Final\HCM201_SPST_G3\AnimalTheoryRoyale\Backend\bin\Debug\net8.0\Data\advanced_questions.json

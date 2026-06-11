@@ -1,0 +1,1042 @@
+[
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Tư tưởng Hồ Chí Minh là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta. Đúng hay Sai?",
+    "Explanation": "Nhận định đúng.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Hồ Chí Minh sinh ngày 19/5/1890. Đúng hay Sai?",
+    "Explanation": "Nhận định đúng.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Bác Hồ ra đi tìm đường cứu nước tại bến Nhà Rồng năm 1912. Đúng hay Sai?",
+    "Explanation": "Nhận định sai.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Đảng Cộng sản Việt Nam được thành lập vào ngày 3/2/1930. Đúng hay Sai?",
+    "Explanation": "Nhận định đúng.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Theo Hồ Chí Minh, cách mạng giải phóng dân tộc phải phụ thuộc vào cách mạng vô sản ở chính quốc. Đúng hay Sai?",
+    "Explanation": "Nhận định sai.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Tư tưởng cốt lõi của Hồ Chí Minh là độc lập dân tộc gắn liền với chủ nghĩa xã hội. Đúng hay Sai?",
+    "Explanation": "Nhận định đúng.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Bản Tuyên ngôn Độc lập được Bác Hồ đọc tại Quảng trường Ba Đình vào ngày 2/9/1945. Đúng hay Sai?",
+    "Explanation": "Nhận định đúng.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Hồ Chí Minh cho rằng: Học để làm việc, làm người, làm cán bộ. Đúng hay Sai?",
+    "Explanation": "Nhận định đúng.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Đại đoàn kết dân tộc không bao gồm những người Việt kiều ở nước ngoài. Đúng hay Sai?",
+    "Explanation": "Nhận định sai.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Lịch sử và Tư tưởng HCM",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Easy",
+    "Content": "Đạo đức cách mạng theo Hồ Chí Minh chỉ bao gồm hai phẩm chất: Cần và Kiệm. Đúng hay Sai?",
+    "Explanation": "Nhận định sai.",
+    "ChallengePayloadJson": null,
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Không có gì quý hơn ... và tự do'",
+    "Explanation": "Đáp án là: độc lập",
+    "ChallengePayloadJson": "[\"độc lập\",\"độc lập\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: '... soi đường cho quốc dân đi.'",
+    "Explanation": "Đáp án là: văn hóa",
+    "ChallengePayloadJson": "[\"văn hóa\",\"văn hóa\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Đoàn kết, đoàn kết, ... / Thành công, thành công, đại thành công'",
+    "Explanation": "Đáp án là: đại đoàn kết",
+    "ChallengePayloadJson": "[\"đại đoàn kết\",\"đại đoàn kết\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng ...'",
+    "Explanation": "Đáp án là: người",
+    "ChallengePayloadJson": "[\"người\",\"người\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Một dân tộc dốt là một dân tộc ...'",
+    "Explanation": "Đáp án là: yếu",
+    "ChallengePayloadJson": "[\"yếu\",\"yếu\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: '... là cái gốc của người cách mạng'",
+    "Explanation": "Đáp án là: đạo đức",
+    "ChallengePayloadJson": "[\"đạo đức\",\"đạo đức\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Cán bộ là cái ... của mọi công việc.'",
+    "Explanation": "Đáp án là: gốc",
+    "ChallengePayloadJson": "[\"gốc\",\"gốc\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Nước lấy ... làm gốc.'",
+    "Explanation": "Đáp án là: dân",
+    "ChallengePayloadJson": "[\"dân\",\"dân\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Các Vua Hùng đã có công dựng nước, Bác cháu ta phải cùng nhau ... lấy nước.'",
+    "Explanation": "Đáp án là: giữ",
+    "ChallengePayloadJson": "[\"giữ\",\"giữ\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Lời dạy của Bác",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Điền từ còn thiếu: 'Dễ mười lần không dân cũng chịu, khó trăm lần ... liệu cũng xong.'",
+    "Explanation": "Đáp án là: dân",
+    "ChallengePayloadJson": "[\"dân\",\"dân\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối các năm với sự kiện tương ứng",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"1911\":\"Ra đi tìm đường cứu nước\",\"1930\":\"Thành lập Đảng\",\"1941\":\"Bác Hồ về nước\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối tác phẩm với năm sáng tác",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Bản án chế độ thực dân Pháp\":\"1925\",\"Đường Kách mệnh\":\"1927\",\"Nhật ký trong tù\":\"1942-1943\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối địa danh với sự kiện",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Bến Nhà Rồng\":\"Bác ra đi tìm đường cứu nước\",\"Pác Bó\":\"Bác về nước hoạt động\",\"Ba Đình\":\"Đọc Tuyên ngôn độc lập\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối các bí danh của Bác",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Nguyễn Tất Thành\":\"Lúc thanh niên\",\"Nguyễn Ái Quốc\":\"Thời kỳ ở Pháp\",\"Hồ Chí Minh\":\"Từ năm 1942\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối các giá trị đạo đức",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Cần\":\"Lao động chăm chỉ\",\"Kiệm\":\"Tiết kiệm\",\"Liêm\":\"Trong sạch, không tham lam\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối chức vụ với năm",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Chủ tịch nước VNDCCH\":\"1945\",\"Chủ tịch BCH T.Ư Đảng\":\"1951\",\"Tổng bí thư\":\"1956\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối quốc gia với hoạt động của Bác",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Pháp\":\"Sáng lập Đảng CS Pháp\",\"Nga\":\"Dự Đại hội Quốc tế Cộng sản\",\"Trung Quốc\":\"Lập Hội VN Cách mạng Thanh niên\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối văn bản với nội dung",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Tuyên ngôn độc lập\":\"Khẳng định chủ quyền\",\"Lời kêu gọi TQ Kháng chiến\":\"Chống thực dân Pháp\",\"Di chúc\":\"Lời căn dặn cuối cùng\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối tên gọi với ý nghĩa",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Việt Nam Độc lập Đồng minh\":\"Mặt trận Việt Minh\",\"Việt Nam Tuyên truyền Giải phóng quân\":\"Tiền thân của QĐND\",\"An Nam Cộng sản Đảng\":\"Tổ chức cộng sản ở miền Nam\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Kiến thức tổng hợp",
+    "QuestionType": "Matching",
+    "Difficulty": "Hard",
+    "Content": "Nối đặc điểm tư tưởng",
+    "Explanation": "Ghép nối đúng lịch sử.",
+    "ChallengePayloadJson": "{\"Dân tộc\":\"Giải phóng dân tộc\",\"Giai cấp\":\"Cách mạng vô sản\",\"Nhân loại\":\"Đoàn kết quốc tế\"}",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp thời gian ra đời của các tác phẩm:",
+    "Explanation": "Thứ tự: Bản án chế độ thực dân Pháp -> Đường Kách mệnh -> Tuyên ngôn Độc lập -> Di chúc",
+    "ChallengePayloadJson": "[\"Bản án chế độ thực dân Pháp\",\"Đường Kách mệnh\",\"Tuyên ngôn Độc lập\",\"Di chúc\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp các mốc lịch sử theo thứ tự:",
+    "Explanation": "Thứ tự: Ra đi tìm đường cứu nước -> Lập Đảng Cộng sản -> Cách mạng tháng Tám -> Chiến thắng Điện Biên Phủ",
+    "ChallengePayloadJson": "[\"Ra đi tìm đường cứu nước\",\"Lập Đảng Cộng sản\",\"Cách mạng tháng Tám\",\"Chiến thắng Điện Biên Phủ\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp hành trình của Bác Hồ:",
+    "Explanation": "Thứ tự: Pháp -> Liên Xô -> Trung Quốc -> Việt Nam",
+    "ChallengePayloadJson": "[\"Pháp\",\"Liên Xô\",\"Trung Quốc\",\"Việt Nam\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp quá trình phát triển của Đảng:",
+    "Explanation": "Thứ tự: Hội VN Cách mạng Thanh niên -> Đông Dương CS Đảng -> Đảng Cộng sản Việt Nam -> Đảng Lao động Việt Nam",
+    "ChallengePayloadJson": "[\"Hội VN Cách mạng Thanh niên\",\"Đông Dương CS Đảng\",\"Đảng Cộng sản Việt Nam\",\"Đảng Lao động Việt Nam\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp các tổ chức mặt trận:",
+    "Explanation": "Thứ tự: Hội Phản đế Đồng minh -> Mặt trận Việt Minh -> Mặt trận Liên Việt -> Mặt trận Tổ quốc Việt Nam",
+    "ChallengePayloadJson": "[\"Hội Phản đế Đồng minh\",\"Mặt trận Việt Minh\",\"Mặt trận Liên Việt\",\"Mặt trận Tổ quốc Việt Nam\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp 4 chữ trong Tứ đức:",
+    "Explanation": "Thứ tự: Cần -> Kiệm -> Liêm -> Chính",
+    "ChallengePayloadJson": "[\"Cần\",\"Kiệm\",\"Liêm\",\"Chính\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp tên gọi của Bác theo thời gian:",
+    "Explanation": "Thứ tự: Nguyễn Sinh Cung -> Nguyễn Tất Thành -> Nguyễn Ái Quốc -> Hồ Chí Minh",
+    "ChallengePayloadJson": "[\"Nguyễn Sinh Cung\",\"Nguyễn Tất Thành\",\"Nguyễn Ái Quốc\",\"Hồ Chí Minh\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp các sự kiện năm 1945:",
+    "Explanation": "Thứ tự: Nhật đảo chính Pháp -> Quốc dân đại hội Tân Trào -> Khởi nghĩa Hà Nội -> Đọc Tuyên ngôn độc lập",
+    "ChallengePayloadJson": "[\"Nhật đảo chính Pháp\",\"Quốc dân đại hội Tân Trào\",\"Khởi nghĩa Hà Nội\",\"Đọc Tuyên ngôn độc lập\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp đại hội Đảng thời Bác:",
+    "Explanation": "Thứ tự: Đại hội I (Macao) -> Đại hội II (Tuyên Quang) -> Đại hội III (Hà Nội)",
+    "ChallengePayloadJson": "[\"Đại hội I (Macao)\",\"Đại hội II (Tuyên Quang)\",\"Đại hội III (Hà Nội)\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Trình tự Lịch sử",
+    "QuestionType": "Ordering",
+    "Difficulty": "Hard",
+    "Content": "Sắp xếp cấp bậc lực lượng vũ trang:",
+    "Explanation": "Thứ tự: Du kích -> Địa phương quân -> Bộ đội chủ lực",
+    "ChallengePayloadJson": "[\"Du kích\",\"Địa phương quân\",\"Bộ đội chủ lực\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Tên khai sinh của Chủ tịch Hồ Chí Minh là gì?",
+    "Explanation": "Đáp án là: Nguyễn Sinh Cung",
+    "ChallengePayloadJson": "[\"Nguyễn Sinh Cung\",\"nguyen sinh cung\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Bác Hồ ra đi tìm đường cứu nước trên con tàu mang tên gì?",
+    "Explanation": "Đáp án là: Amiral Latouche-Treville",
+    "ChallengePayloadJson": "[\"Amiral Latouche-Treville\",\"Amiral Latouche Treville\",\"Latouche Treville\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Nguyễn Ái Quốc gửi Bản Yêu sách của nhân dân An Nam tới Hội nghị nào?",
+    "Explanation": "Đáp án là: Hội nghị Versailles",
+    "ChallengePayloadJson": "[\"Hội nghị Versailles\",\"Versailles\",\"Hội nghị Véc-xai\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Cơ quan ngôn luận của Hội Việt Nam Cách mạng Thanh niên là tờ báo nào?",
+    "Explanation": "Đáp án là: Báo Thanh niên",
+    "ChallengePayloadJson": "[\"Báo Thanh niên\",\"Thanh niên\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Tác phẩm lý luận chính trị quan trọng xuất bản năm 1927 của Bác là gì?",
+    "Explanation": "Đáp án là: Đường Kách mệnh",
+    "ChallengePayloadJson": "[\"Đường Kách mệnh\",\"Đường Cách mệnh\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Mặt trận Việt Minh được thành lập vào năm nào?",
+    "Explanation": "Đáp án là: 1941",
+    "ChallengePayloadJson": "[\"1941\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Bài thơ chúc Tết đầu tiên Bác viết trên đài phát thanh vào năm nào?",
+    "Explanation": "Đáp án là: 1946",
+    "ChallengePayloadJson": "[\"1946\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Hồ Chí Minh đã dùng bí danh gì khi viết Nhật ký trong tù?",
+    "Explanation": "Đáp án là: Hồ Chí Minh",
+    "ChallengePayloadJson": "[\"Hồ Chí Minh\",\"Ho Chi Minh\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Theo Bác, yếu tố nào quyết định sự thành bại của cách mạng?",
+    "Explanation": "Đáp án là: Sự lãnh đạo của Đảng",
+    "ChallengePayloadJson": "[\"Sự lãnh đạo của Đảng\",\"Đảng Cộng sản\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Hỏi đáp nhanh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Văn kiện nào được coi là bản Tuyên ngôn Độc lập thứ hai của nước ta?",
+    "Explanation": "Đáp án là: Bình Ngô đại cáo",
+    "ChallengePayloadJson": "[\"Bình Ngô đại cáo\",\"Nam quốc sơn hà\"]",
+    "Options": []
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 1: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 2: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 3: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 4: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 5: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 6: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 7: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 8: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 9: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tình huống Tư tưởng HCM",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Tình huống 10: Một cán bộ có tài nhưng kiêu ngạo, thiếu tôn trọng đồng nghiệp. Theo tư tưởng Hồ Chí Minh về đạo đức, cán bộ này vi phạm nguyên tắc nào?",
+    "Explanation": "Có tài mà không có đức là người vô dụng.",
+    "ChallengePayloadJson": "{\"scenario\":\"Cán bộ A làm việc rất giỏi nhưng thường xuyên chê bai người khác.\",\"options\":[\"Thiếu Liêm\",\"Thiếu Chính\",\"Thiếu Cần\",\"Thiếu Kiệm\"],\"correctAnswer\":\"Thiếu Chính\"}",
+    "Options": [
+      {
+        "Text": "Thiếu Liêm",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Chính",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thiếu Cần",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thiếu Kiệm",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Tốc độ",
+    "QuestionType": "SpeedChallenge",
+    "Difficulty": "Easy",
+    "Content": "Trả lời CỰC NHANH trong 5 giây! Năm Bác Hồ sinh ra là?",
+    "Explanation": "1890",
+    "ChallengePayloadJson": "{\"timeLimit\":5,\"expected\":\"1890\"}",
+    "Options": [
+      {
+        "Text": "1890",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1891",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Tốc độ",
+    "QuestionType": "SpeedChallenge",
+    "Difficulty": "Easy",
+    "Content": "Trả lời CỰC NHANH trong 5 giây! Năm Bác Hồ sinh ra là?",
+    "Explanation": "1890",
+    "ChallengePayloadJson": "{\"timeLimit\":5,\"expected\":\"1890\"}",
+    "Options": [
+      {
+        "Text": "1890",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1891",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Tốc độ",
+    "QuestionType": "SpeedChallenge",
+    "Difficulty": "Easy",
+    "Content": "Trả lời CỰC NHANH trong 5 giây! Năm Bác Hồ sinh ra là?",
+    "Explanation": "1890",
+    "ChallengePayloadJson": "{\"timeLimit\":5,\"expected\":\"1890\"}",
+    "Options": [
+      {
+        "Text": "1890",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1891",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Tốc độ",
+    "QuestionType": "SpeedChallenge",
+    "Difficulty": "Easy",
+    "Content": "Trả lời CỰC NHANH trong 5 giây! Năm Bác Hồ sinh ra là?",
+    "Explanation": "1890",
+    "ChallengePayloadJson": "{\"timeLimit\":5,\"expected\":\"1890\"}",
+    "Options": [
+      {
+        "Text": "1890",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1891",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Tốc độ",
+    "QuestionType": "SpeedChallenge",
+    "Difficulty": "Easy",
+    "Content": "Trả lời CỰC NHANH trong 5 giây! Năm Bác Hồ sinh ra là?",
+    "Explanation": "1890",
+    "ChallengePayloadJson": "{\"timeLimit\":5,\"expected\":\"1890\"}",
+    "Options": [
+      {
+        "Text": "1890",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1891",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Trí nhớ",
+    "QuestionType": "MemoryChallenge",
+    "Difficulty": "Hard",
+    "Content": "Hãy ghi nhớ 3 sự kiện sau: 1911 (Tìm đường), 1930 (Lập Đảng), 1945 (Độc lập). Sự kiện ở giữa là gì?",
+    "Explanation": "Lập Đảng năm 1930",
+    "ChallengePayloadJson": "{\"facts\":[\"1911\",\"1930\",\"1945\"],\"question\":\"Sự kiện ở giữa là gì?\",\"correctAnswer\":\"1930\"}",
+    "Options": [
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1945",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Trí nhớ",
+    "QuestionType": "MemoryChallenge",
+    "Difficulty": "Hard",
+    "Content": "Hãy ghi nhớ 3 sự kiện sau: 1911 (Tìm đường), 1930 (Lập Đảng), 1945 (Độc lập). Sự kiện ở giữa là gì?",
+    "Explanation": "Lập Đảng năm 1930",
+    "ChallengePayloadJson": "{\"facts\":[\"1911\",\"1930\",\"1945\"],\"question\":\"Sự kiện ở giữa là gì?\",\"correctAnswer\":\"1930\"}",
+    "Options": [
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1945",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Trí nhớ",
+    "QuestionType": "MemoryChallenge",
+    "Difficulty": "Hard",
+    "Content": "Hãy ghi nhớ 3 sự kiện sau: 1911 (Tìm đường), 1930 (Lập Đảng), 1945 (Độc lập). Sự kiện ở giữa là gì?",
+    "Explanation": "Lập Đảng năm 1930",
+    "ChallengePayloadJson": "{\"facts\":[\"1911\",\"1930\",\"1945\"],\"question\":\"Sự kiện ở giữa là gì?\",\"correctAnswer\":\"1930\"}",
+    "Options": [
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1945",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Trí nhớ",
+    "QuestionType": "MemoryChallenge",
+    "Difficulty": "Hard",
+    "Content": "Hãy ghi nhớ 3 sự kiện sau: 1911 (Tìm đường), 1930 (Lập Đảng), 1945 (Độc lập). Sự kiện ở giữa là gì?",
+    "Explanation": "Lập Đảng năm 1930",
+    "ChallengePayloadJson": "{\"facts\":[\"1911\",\"1930\",\"1945\"],\"question\":\"Sự kiện ở giữa là gì?\",\"correctAnswer\":\"1930\"}",
+    "Options": [
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1945",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Thử thách Trí nhớ",
+    "QuestionType": "MemoryChallenge",
+    "Difficulty": "Hard",
+    "Content": "Hãy ghi nhớ 3 sự kiện sau: 1911 (Tìm đường), 1930 (Lập Đảng), 1945 (Độc lập). Sự kiện ở giữa là gì?",
+    "Explanation": "Lập Đảng năm 1930",
+    "ChallengePayloadJson": "{\"facts\":[\"1911\",\"1930\",\"1945\"],\"question\":\"Sự kiện ở giữa là gì?\",\"correctAnswer\":\"1930\"}",
+    "Options": [
+      {
+        "Text": "1911",
+        "IsCorrect": false
+      },
+      {
+        "Text": "1930",
+        "IsCorrect": true
+      },
+      {
+        "Text": "1945",
+        "IsCorrect": false
+      }
+    ]
+  }
+]

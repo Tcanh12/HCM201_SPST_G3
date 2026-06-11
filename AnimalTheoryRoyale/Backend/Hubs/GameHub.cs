@@ -233,16 +233,29 @@ public class GameHub : Hub
         }
     }
 
-    public Task HostEndGame(string roomCode)
+    public async Task HostEndGame(string roomCode)
     {
         var game = _gameEngine.GetGame(roomCode);
         if (game != null && game.Status == "Playing")
         {
-            // Force the game engine to end the game immediately on the next tick
-            game.Duration = 0;
+            game.Status = "Ended";
+            game.Duration = 0; // stop engine loop
+            
+            var scores = game.Players.Values.Select(p => new {
+                username = p.Username,
+                score = p.Score,
+                totalCorrect = p.TotalCorrectAnswers,
+                totalWrong = p.TotalWrongAnswers,
+                damageTaken = p.DamageTaken,
+                longestCombo = p.LongestCombo,
+                isDead = p.IsDead
+            }).OrderByDescending(p => p.score).ToList();
+
+            _logger.LogInformation("Host forced EndGame for room {RoomCode}", roomCode);
+            await Clients.Group(roomCode).SendAsync("GameEnded", scores);
         }
-        return Task.CompletedTask;
     }
+
 
     public Task PlayerMove(string roomCode, float x, float y, float z, float rotationY)
     {

@@ -10,10 +10,12 @@ namespace AnimalTheoryRoyale.Controllers;
 public class QuestionsController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
+    private readonly IWebHostEnvironment _env;
 
-    public QuestionsController(ApplicationDbContext context)
+    public QuestionsController(ApplicationDbContext context, IWebHostEnvironment env)
     {
         _context = context;
+        _env = env;
     }
 
     [HttpGet]
@@ -66,89 +68,88 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpGet("seed")]
-    public async Task<IActionResult> SeedSampleData()
+    public async Task<IActionResult> SeedSampleData([FromQuery] string adminSecret)
     {
+        if (adminSecret != "HCM201_SECRET" && !_env.IsDevelopment())
+        {
+            return Unauthorized(new { message = "Invalid admin secret." });
+        }
+
         try
         {
+            int newlyAdded = 0;
+            int ignoredDuplicates = 0;
+            var typeBreakdown = new Dictionary<string, int>();
+
             var rawPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "questions_raw.txt");
-            if (!System.IO.File.Exists(rawPath)) return BadRequest("Could not find questions_raw.txt");
-
-            var lines = await System.IO.File.ReadAllLinesAsync(rawPath);
-            var currentTopic = "";
-            var currentDifficulty = "Easy";
-            var currentContent = "";
-            var currentExplanation = "";
-            var currentCorrect = "";
-            var currentOptions = new List<QuestionOption>();
-
-            Topic? topic1 = await _context.Topics.FirstOrDefaultAsync(t => t.Name == "Sự ra đời của CNXH khoa học");
-            if (topic1 == null) { topic1 = new Topic { Name = "Sự ra đời của CNXH khoa học" }; _context.Topics.Add(topic1); }
-            await _context.SaveChangesAsync();
-
-            foreach (var line in lines)
+            if (System.IO.File.Exists(rawPath))
             {
-                var l = line.Trim();
-                if (string.IsNullOrEmpty(l)) continue;
-                
-                if (l.StartsWith("### Câu"))
+                var lines = await System.IO.File.ReadAllLinesAsync(rawPath);
+                var currentTopic = "";
+                var currentDifficulty = "Easy";
+                var currentContent = "";
+                var currentExplanation = "";
+                var currentCorrect = "";
+                var currentOptions = new List<QuestionOption>();
+
+                Topic? topic1 = await _context.Topics.FirstOrDefaultAsync(t => t.Name == "Sự ra đời của CNXH khoa học");
+                if (topic1 == null) { topic1 = new Topic { Name = "Sự ra đời của CNXH khoa học" }; _context.Topics.Add(topic1); }
+                await _context.SaveChangesAsync();
+
+                foreach (var line in lines)
                 {
-                    if (!string.IsNullOrEmpty(currentContent) && currentOptions.Count > 0)
+                    var l = line.Trim();
+                    if (string.IsNullOrEmpty(l)) continue;
+                    
+                    if (l.StartsWith("### Câu"))
                     {
-                        await AddParsedQuestion(currentTopic, currentDifficulty, currentContent, currentExplanation, currentCorrect, currentOptions);
+                        if (!string.IsNullOrEmpty(currentContent) && currentOptions.Count > 0)
+                        {
+                            bool added = await AddParsedQuestion(currentTopic, currentDifficulty, currentContent, currentExplanation, currentCorrect, currentOptions);
+                            if (added) { newlyAdded++; IncrementStat(typeBreakdown, "MultipleChoice"); } else ignoredDuplicates++;
+                        }
+                        currentOptions = new List<QuestionOption>();
+                        currentTopic = ""; currentDifficulty = "Easy"; currentContent = ""; currentExplanation = ""; currentCorrect = "";
                     }
-                    currentOptions = new List<QuestionOption>();
-                    currentTopic = ""; currentDifficulty = "Easy"; currentContent = ""; currentExplanation = ""; currentCorrect = "";
+                    else if (l.StartsWith("**Chủ đề:**")) currentTopic = l.Replace("**Chủ đề:**", "").Trim();
+                    else if (l.StartsWith("**Độ khó:**")) 
+                    {
+                        var d = l.Replace("**Độ khó:**", "").Trim();
+                        if (d == "Dễ") currentDifficulty = "Easy";
+                        else if (d == "Trung bình") currentDifficulty = "Medium";
+                        else if (d == "Khó") currentDifficulty = "Hard";
+                    }
+                    else if (l.StartsWith("**Câu hỏi:**")) currentContent = l.Replace("**Câu hỏi:**", "").Trim();
+                    else if (l.StartsWith("**Đáp án đúng:**")) currentCorrect = l.Replace("**Đáp án đúng:**", "").Trim();
+                    else if (l.StartsWith("**Giải thích:**")) currentExplanation = l.Replace("**Giải thích:**", "").Trim();
+                    else if (l.StartsWith("A.") || l.StartsWith("B.") || l.StartsWith("C.") || l.StartsWith("D."))
+                    {
+                        var text = l.Substring(2).Trim();
+                        currentOptions.Add(new QuestionOption { Text = text, IsCorrect = (l[0].ToString() == currentCorrect) });
+                    }
                 }
-                else if (l.StartsWith("**Chủ đề:**")) currentTopic = l.Replace("**Chủ đề:**", "").Trim();
-                else if (l.StartsWith("**Độ khó:**")) 
+                if (!string.IsNullOrEmpty(currentContent) && currentOptions.Count > 0)
                 {
-                    var d = l.Replace("**Độ khó:**", "").Trim();
-                    if (d == "Dễ") currentDifficulty = "Easy";
-                    else if (d == "Trung bình") currentDifficulty = "Medium";
-                    else if (d == "Khó") currentDifficulty = "Hard";
-                }
-                else if (l.StartsWith("**Câu hỏi:**")) currentContent = l.Replace("**Câu hỏi:**", "").Trim();
-                else if (l.StartsWith("**Đáp án đúng:**")) currentCorrect = l.Replace("**Đáp án đúng:**", "").Trim();
-                else if (l.StartsWith("**Giải thích:**")) currentExplanation = l.Replace("**Giải thích:**", "").Trim();
-                else if (l.StartsWith("A.") || l.StartsWith("B.") || l.StartsWith("C.") || l.StartsWith("D."))
-                {
-                    var text = l.Substring(2).Trim();
-                    currentOptions.Add(new QuestionOption { Text = text, IsCorrect = (l[0].ToString() == currentCorrect) });
+                    bool added = await AddParsedQuestion(currentTopic, currentDifficulty, currentContent, currentExplanation, currentCorrect, currentOptions);
+                    if (added) { newlyAdded++; IncrementStat(typeBreakdown, "MultipleChoice"); } else ignoredDuplicates++;
                 }
             }
-            if (!string.IsNullOrEmpty(currentContent) && currentOptions.Count > 0)
+
+            // --- SEED 70 ADVANCED QUESTIONS FROM JSON ---
+            string advancedPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "advanced_questions.json");
+            if (System.IO.File.Exists(advancedPath))
             {
-                await AddParsedQuestion(currentTopic, currentDifficulty, currentContent, currentExplanation, currentCorrect, currentOptions);
+                var jsonStr = await System.IO.File.ReadAllTextAsync(advancedPath);
+                var advancedData = System.Text.Json.JsonSerializer.Deserialize<List<AdvancedQuestionDto>>(jsonStr);
+                if (advancedData != null)
+                {
+                    foreach(var aq in advancedData)
+                    {
+                        bool added = await AddAdvancedQuestion(aq.TopicName, aq.QuestionType, aq.Difficulty, aq.Content, aq.ChallengePayloadJson, aq.Options, aq.Explanation);
+                        if (added) { newlyAdded++; IncrementStat(typeBreakdown, aq.QuestionType); } else ignoredDuplicates++;
+                    }
+                }
             }
-
-            // --- SEED ADVANCED QUESTION TYPES ---
-            var advancedTopic = "Advanced HCM Theory";
-
-            // True/False
-            await AddAdvancedQuestion(advancedTopic, "TrueFalse", "Easy", "Hồ Chí Minh ra đi tìm đường cứu nước vào ngày 5 tháng 6 năm 1911 đúng hay sai?", "", 
-                new List<QuestionOption> { new QuestionOption{Text="Đúng", IsCorrect=true}, new QuestionOption{Text="Sai", IsCorrect=false} }, "Đúng. Tại bến Nhà Rồng.");
-            await AddAdvancedQuestion(advancedTopic, "TrueFalse", "Medium", "Tư tưởng Hồ Chí Minh là sự sao chép nguyên xi chủ nghĩa Mác-Lênin?", "", 
-                new List<QuestionOption> { new QuestionOption{Text="Đúng", IsCorrect=false}, new QuestionOption{Text="Sai", IsCorrect=true} }, "Sai. Là sự vận dụng sáng tạo.");
-
-            // Ordering
-            await AddAdvancedQuestion(advancedTopic, "Ordering", "Medium", "Sắp xếp các sự kiện sau theo thứ tự thời gian:", 
-                "[\"Bác Hồ ra đi tìm đường cứu nước\", \"Thành lập Đảng Cộng sản Việt Nam\", \"Đọc Tuyên ngôn Độc lập\", \"Chiến thắng Điện Biên Phủ\"]", 
-                new List<QuestionOption> { new QuestionOption{Text="Đúng", IsCorrect=true}, new QuestionOption{Text="Sai", IsCorrect=false} }, "1911 -> 1930 -> 1945 -> 1954");
-
-            // FillBlank
-            await AddAdvancedQuestion(advancedTopic, "FillBlank", "Hard", "Điền từ còn thiếu: 'Không có gì quý hơn ... và tự do'", 
-                "[\"Độc lập\", \"độc lập\", \"Doc lap\", \"doc lap\"]", 
-                new List<QuestionOption>(), "Độc lập là đáp án đúng.");
-
-            // Matching
-            await AddAdvancedQuestion(advancedTopic, "Matching", "Hard", "Nối các năm với sự kiện tương ứng:", 
-                "{\"1911\": \"Tìm đường cứu nước\", \"1930\": \"Thành lập Đảng\", \"1945\": \"Quốc khánh\"}", 
-                new List<QuestionOption>(), "Năm 1911 Bác ra đi, 1930 lập Đảng, 1945 Quốc khánh.");
-
-            // ShortAnswer
-            await AddAdvancedQuestion(advancedTopic, "ShortAnswer", "Medium", "Tên con tàu Pháp mà Bác Hồ đã làm phụ bếp khi ra đi tìm đường cứu nước là gì?", 
-                "[\"Amiral Latouche Tréville\", \"Latouche Treville\", \"Amiral\"]", 
-                new List<QuestionOption>(), "Đó là tàu Amiral Latouche Tréville.");
 
             // Add Characters
             if (!await _context.Characters.AnyAsync())
@@ -161,7 +162,15 @@ public class QuestionsController : ControllerBase
                 await _context.SaveChangesAsync();
             }
 
-            return Ok("Seeded successfully");
+            int totalCurrent = await _context.Questions.CountAsync();
+
+            return Ok(new {
+                message = "Seeding completed.",
+                totalCurrentQuestions = totalCurrent,
+                newlyAdded = newlyAdded,
+                ignoredDuplicates = ignoredDuplicates,
+                typeBreakdown = typeBreakdown
+            });
         }
         catch (Exception ex)
         {
@@ -174,7 +183,24 @@ public class QuestionsController : ControllerBase
         }
     }
 
-    private async Task AddParsedQuestion(string topicName, string diff, string content, string explanation, string correctLet, List<QuestionOption> opts)
+    private void IncrementStat(Dictionary<string, int> dict, string key)
+    {
+        if (dict.ContainsKey(key)) dict[key]++;
+        else dict[key] = 1;
+    }
+
+    public class AdvancedQuestionDto
+    {
+        public string TopicName { get; set; } = string.Empty;
+        public string QuestionType { get; set; } = string.Empty;
+        public string Difficulty { get; set; } = "Medium";
+        public string Content { get; set; } = string.Empty;
+        public string Explanation { get; set; } = string.Empty;
+        public string? ChallengePayloadJson { get; set; }
+        public List<QuestionOption> Options { get; set; } = new();
+    }
+
+    private async Task<bool> AddParsedQuestion(string topicName, string diff, string content, string explanation, string correctLet, List<QuestionOption> opts)
     {
         var topic = await _context.Topics.FirstOrDefaultAsync(t => t.Name == topicName);
         if (topic == null)
@@ -184,16 +210,8 @@ public class QuestionsController : ControllerBase
             await _context.SaveChangesAsync();
         }
 
-        if (await _context.Questions.AnyAsync(q => q.Content == content)) return;
+        if (await _context.Questions.AnyAsync(q => q.Content == content)) return false;
 
-        foreach (var opt in opts)
-        {
-            var letter = opt.Text; // Just temp
-        }
-        // Correct options based on the correctLet parsed (A, B, C, D)
-        // Actually, we parsed them on the fly if currentCorrect was set, but currentCorrect comes AFTER options in the text!
-        // Oh! "Đáp án đúng" comes after options in the text file!
-        // We need to fix IsCorrect based on currentCorrect!
         if (opts.Count >= 4)
         {
             if (correctLet == "A") opts[0].IsCorrect = true;
@@ -221,9 +239,10 @@ public class QuestionsController : ControllerBase
         };
         _context.Questions.Add(q);
         await _context.SaveChangesAsync();
+        return true;
     }
 
-    private async Task AddAdvancedQuestion(string topicName, string qType, string diff, string content, string payload, List<QuestionOption> opts, string explanation)
+    private async Task<bool> AddAdvancedQuestion(string topicName, string qType, string diff, string content, string payload, List<QuestionOption> opts, string explanation)
     {
         var topic = await _context.Topics.FirstOrDefaultAsync(t => t.Name == topicName);
         if (topic == null)
@@ -233,10 +252,12 @@ public class QuestionsController : ControllerBase
             await _context.SaveChangesAsync();
         }
 
-        if (await _context.Questions.AnyAsync(q => q.Content == content)) return;
+        if (await _context.Questions.AnyAsync(q => q.Content == content)) return false;
 
-        int score = diff == "Easy" ? 10 : diff == "Medium" ? 20 : 30;
-        int penalty = diff == "Easy" ? 5 : diff == "Medium" ? 10 : 20;
+        int score = diff == "Easy" ? 100 : diff == "Medium" ? 150 : 200;
+        int penalty = diff == "Easy" ? 10 : diff == "Medium" ? 15 : 20;
+        int timeLimit = 20;
+        if (qType == "SpeedChallenge") timeLimit = 5;
 
         var q = new Question
         {
@@ -246,12 +267,13 @@ public class QuestionsController : ControllerBase
             Explanation = explanation,
             BaseScore = score,
             PenaltyHP = penalty,
-            TimeLimit = 20,
+            TimeLimit = timeLimit,
             Options = opts,
             ChallengePayloadJson = payload,
             QuestionType = qType
         };
         _context.Questions.Add(q);
         await _context.SaveChangesAsync();
+        return true;
     }
 }
