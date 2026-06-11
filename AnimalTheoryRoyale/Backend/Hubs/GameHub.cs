@@ -244,8 +244,8 @@ public class GameHub : Hub
             var scores = game.Players.Values.Select(p => new {
                 username = p.Username,
                 score = p.Score,
-                totalCorrect = p.TotalCorrectAnswers,
-                totalWrong = p.TotalWrongAnswers,
+                totalCorrectAnswers = p.TotalCorrectAnswers,
+                totalWrongAnswers = p.TotalWrongAnswers,
                 damageTaken = p.DamageTaken,
                 longestCombo = p.LongestCombo,
                 isDead = p.IsDead

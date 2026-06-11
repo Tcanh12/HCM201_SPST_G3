@@ -225,11 +225,36 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
                 <div key={req.connectionId} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '6px', marginBottom: '4px' }}>
                   <div style={{ fontSize: '13px', fontWeight: 'bold' }}>{req.username}</div>
                   <div style={{ display: 'flex', gap: '4px' }}>
-                    <button onClick={() => connection.invoke('ApproveLateJoin', roomCode, req.connectionId)} style={{ background: '#10B981', color: '#fff', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px', fontWeight: 'bold' }}>Approve</button>
-                    <button onClick={() => {
-                      connection.invoke('RejectLateJoin', roomCode, req.connectionId);
-                      setPendingJoins(prev => prev.filter(p => p.connectionId !== req.connectionId));
-                    }} style={{ background: '#EF4444', color: '#fff', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px', fontWeight: 'bold' }}>Reject</button>
+                    <button 
+                      onClick={async (e) => {
+                        e.stopPropagation();
+                        try {
+                          await connection.invoke('ApproveLateJoin', roomCode, req.connectionId);
+                          setPendingJoins(prev => prev.filter(p => p.connectionId !== req.connectionId));
+                        } catch (err) {
+                          console.error(err);
+                          alert("Lỗi khi chấp nhận: " + err.message);
+                        }
+                      }} 
+                      style={{ background: '#10B981', color: '#fff', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px', fontWeight: 'bold', pointerEvents: 'auto' }}
+                    >
+                      Approve
+                    </button>
+                    <button 
+                      onClick={async (e) => {
+                        e.stopPropagation();
+                        try {
+                          await connection.invoke('RejectLateJoin', roomCode, req.connectionId);
+                          setPendingJoins(prev => prev.filter(p => p.connectionId !== req.connectionId));
+                        } catch (err) {
+                          console.error(err);
+                          alert("Lỗi khi từ chối: " + err.message);
+                        }
+                      }} 
+                      style={{ background: '#EF4444', color: '#fff', border: 'none', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '11px', fontWeight: 'bold', pointerEvents: 'auto' }}
+                    >
+                      Reject
+                    </button>
                   </div>
                 </div>
               ))}

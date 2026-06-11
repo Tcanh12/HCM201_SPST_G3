@@ -275,49 +275,49 @@ function MatchingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
       <div className="text-[11px] font-bold text-pink-300/80 uppercase tracking-wider mb-1">
         Ghép nối cho đúng:
       </div>
-      <div className="flex gap-4">
-        {/* Left Column */}
-        <div className="flex-1 flex flex-col gap-2">
-          {leftItems.map(key => {
-            const isMatched = !!matches[key];
-            const isSelected = selectedLeft === key;
-            return (
-              <motion.button
-                key={`L-${key}`}
-                onClick={() => handleLeftClick(key)}
-                className="px-3 py-2 text-sm rounded-lg border-2 transition-all text-left truncate"
-                style={{
-                  background: isMatched ? 'rgba(16,185,129,0.2)' : isSelected ? 'rgba(236,72,153,0.3)' : 'rgba(255,255,255,0.05)',
-                  borderColor: isMatched ? '#10B981' : isSelected ? '#EC4899' : 'rgba(255,255,255,0.1)'
-                }}
-              >
-                {key}
-                {isMatched && <span className="float-right text-emerald-400">→</span>}
-              </motion.button>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Left Column */}
+          <div className="flex flex-col gap-2">
+            {leftItems.map(key => {
+              const isMatched = !!matches[key];
+              const isSelected = selectedLeft === key;
+              return (
+                <motion.button
+                  key={`L-${key}`}
+                  onClick={() => handleLeftClick(key)}
+                  className="w-full min-w-0 h-auto min-h-[48px] whitespace-normal break-words px-4 py-3 text-sm text-left leading-snug rounded-lg border-2 transition-all"
+                  style={{
+                    background: isMatched ? 'rgba(16,185,129,0.2)' : isSelected ? 'rgba(236,72,153,0.3)' : 'rgba(255,255,255,0.05)',
+                    borderColor: isMatched ? '#10B981' : isSelected ? '#EC4899' : 'rgba(255,255,255,0.1)'
+                  }}
+                >
+                  {key}
+                  {isMatched && <span className="float-right ml-2 text-emerald-400">→</span>}
+                </motion.button>
+              );
+            })}
+          </div>
+          {/* Right Column */}
+          <div className="flex flex-col gap-2">
+            {rightItems.map(val => {
+              const isMatched = Object.values(matches).includes(val);
+              return (
+                <motion.button
+                  key={`R-${val}`}
+                  onClick={() => handleRightClick(val)}
+                  className="w-full min-w-0 h-auto min-h-[48px] whitespace-normal break-words px-4 py-3 text-sm text-left leading-snug rounded-lg border-2 transition-all"
+                  style={{
+                    background: isMatched ? 'rgba(16,185,129,0.2)' : 'rgba(255,255,255,0.05)',
+                    borderColor: isMatched ? '#10B981' : 'rgba(255,255,255,0.1)',
+                    opacity: isMatched ? 0.5 : 1
+                  }}
+                >
+                  {val}
+                </motion.button>
+              );
+            })}
+          </div>
         </div>
-        {/* Right Column */}
-        <div className="flex-1 flex flex-col gap-2">
-          {rightItems.map(val => {
-            const isMatched = Object.values(matches).includes(val);
-            return (
-              <motion.button
-                key={`R-${val}`}
-                onClick={() => handleRightClick(val)}
-                className="px-3 py-2 text-sm rounded-lg border-2 transition-all text-left truncate"
-                style={{
-                  background: isMatched ? 'rgba(16,185,129,0.2)' : 'rgba(255,255,255,0.05)',
-                  borderColor: isMatched ? '#10B981' : 'rgba(255,255,255,0.1)',
-                  opacity: isMatched ? 0.5 : 1
-                }}
-              >
-                {val}
-              </motion.button>
-            );
-          })}
-        </div>
-      </div>
     </div>
   );
 }
@@ -371,11 +371,10 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 50 }}
-      className="absolute top-[3%] right-[2%] z-[100]"
-      style={{ pointerEvents: 'none' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] flex justify-center items-center px-4 py-6 pointer-events-none"
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
@@ -389,8 +388,11 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
           backdropFilter: 'blur(16px)',
           borderRadius: '20px',
           padding: '20px',
-          width: '400px',
-          maxWidth: '95vw',
+          width: '100%',
+          maxWidth: 'min(92vw, 760px)',
+          maxHeight: '88vh',
+          overflowY: 'auto',
+          boxSizing: 'border-box',
           border: `2px solid ${isDoubleActive ? 'rgba(212,168,67,0.4)' : 'rgba(139,26,26,0.3)'}`,
           boxShadow: isDoubleActive
             ? '0 0 60px rgba(212,168,67,0.25), inset 0 1px 0 rgba(255,255,255,0.05)'
