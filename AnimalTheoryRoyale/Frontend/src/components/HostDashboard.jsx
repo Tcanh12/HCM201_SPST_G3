@@ -91,6 +91,33 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
               <div style={{ fontSize: '9px', color: '#6B7280', textTransform: 'uppercase' }}>Zoom</div>
               <div style={{ fontSize: '14px', fontWeight: 700, color: '#A78BFA' }}>{zoom.toFixed(1)}x</div>
             </div>
+            {gameState?.status === 'Playing' && (
+              <button 
+                onClick={() => {
+                  if (window.confirm("Bạn có chắc muốn kết thúc trận đấu này không?")) {
+                    connection?.invoke("HostEndGame", roomCode).catch(err => console.error(err));
+                  }
+                }}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  background: '#DC2626',
+                  color: 'white',
+                  fontWeight: 'bold',
+                  fontSize: '13px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  marginLeft: '10px',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                  pointerEvents: 'auto',
+                  transition: 'background 0.2s'
+                }}
+                onMouseOver={(e) => e.target.style.background = '#B91C1C'}
+                onMouseOut={(e) => e.target.style.background = '#DC2626'}
+              >
+                Kết thúc trận
+              </button>
+            )}
           </div>
         </div>
 
