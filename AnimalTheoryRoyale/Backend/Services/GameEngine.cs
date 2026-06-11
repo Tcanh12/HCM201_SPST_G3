@@ -303,6 +303,9 @@ public class GameEngine : BackgroundService
                     timeRemaining = (int)remaining,
                     hostConnectionId = game.HostConnectionId,
                     cameraMode = game.CameraMode,
+                    mapId = game.MapId,
+                    dynamicLighting = game.DynamicLighting,
+                    startedAt = game.StartTime,
                     players = game.Players.Values.Select(p => new {
                         id = p.ConnectionId, username = p.Username, characterId = p.CharacterId,
                         x = p.X, y = p.Y, z = p.Z, rotationY = p.RotationY,
@@ -667,7 +670,10 @@ public class GameEngine : BackgroundService
 
         foreach (var kz in game.KnowledgeZones.Values)
         {
-            if (!kz.IsActive && kz.ClaimedByConnectionId == null && now >= kz.RespawnTime)
+            // Zone respawn: zone must be inactive AND respawn time passed
+            // Note: ClaimedByConnectionId is NOT checked here because SubmitAnswer 
+            // sets IsActive=false directly without using the claim system.
+            if (!kz.IsActive && now >= kz.RespawnTime)
             {
                 if (activeZones >= maxZones) continue;
                 activeZones++;

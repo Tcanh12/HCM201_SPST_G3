@@ -650,8 +650,8 @@ public class GameHub : Hub
 
         if (isCorrect)
         {
-            string comboMsg = comboCount > 1 ? $"Chính xác! Combo x{multiplier} 🔥" : "Chính xác! 🎉";
-            if (wasDouble) comboMsg = "🌟 " + comboMsg + " [DOUBLE REWARD!]";
+            string comboMsg = comboCount > 1 ? $"Chính xác! Combo x{multiplier}" : "Chính xác!";
+            if (wasDouble) comboMsg = comboMsg + " [DOUBLE REWARD!]";
             if (zoneType == "Boss") comboMsg += " [BOSS DEFEATED: x5 SCORE!]";
             if (zoneType == "LootBox" && !string.IsNullOrEmpty(lootReward)) comboMsg += $" [LOOT: {lootReward}]";
 
@@ -665,8 +665,8 @@ public class GameHub : Hub
         }
         else
         {
-            string msg = "Sai rồi! 😢";
-            if (wasDouble) msg = "💀 LỖ NẶNG! " + msg + " [DOUBLE PENALTY!]";
+            string msg = "Sai rồi!";
+            if (wasDouble) msg = "LỖ NẶNG! " + msg + " [DOUBLE PENALTY!]";
             if (isTrap) msg += " [TRAP ACTIVATED: STUNNED & x2 DAMAGE!]";
 
             await Clients.Caller.SendAsync("AnswerResult", new {

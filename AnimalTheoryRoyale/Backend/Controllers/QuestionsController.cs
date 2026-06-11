@@ -41,10 +41,33 @@ public class QuestionsController : ControllerBase
         return Ok(topics);
     }
 
+    /// <summary>
+    /// DELETE all questions, options, and topics from the database.
+    /// Call this before re-seeding with new data.
+    /// </summary>
+    [HttpPost("clear")]
+    public async Task<IActionResult> ClearAllQuestions()
+    {
+        var optionCount = await _context.QuestionOptions.CountAsync();
+        var questionCount = await _context.Questions.CountAsync();
+        var topicCount = await _context.Topics.CountAsync();
+
+        _context.QuestionOptions.RemoveRange(_context.QuestionOptions);
+        _context.Questions.RemoveRange(_context.Questions);
+        _context.Topics.RemoveRange(_context.Topics);
+        await _context.SaveChangesAsync();
+
+        return Ok(new { 
+            message = "Đã xoá toàn bộ dữ liệu câu hỏi.", 
+            deletedOptions = optionCount, 
+            deletedQuestions = questionCount, 
+            deletedTopics = topicCount 
+        });
+    }
+
     [HttpGet("seed")]
     public async Task<IActionResult> SeedSampleData()
     {
-        if (await _context.Questions.CountAsync() >= 50) return BadRequest("Data already seeded with enough questions.");
 
         var rawPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "questions_raw.txt");
         if (!System.IO.File.Exists(rawPath)) return BadRequest("Could not find questions_raw.txt");

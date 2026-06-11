@@ -15,8 +15,6 @@ public class SeedController : ControllerBase
     [HttpPost("questions")]
     public async Task<IActionResult> SeedQuestions()
     {
-        var existing = await _db.Questions.CountAsync();
-        if (existing >= 50) return Ok(new { message = $"Already have {existing} questions." });
 
         // Ensure topics
         var topicNames = new[] {

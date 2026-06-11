@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Copy, Check, Users, Play, X, Settings2, Hash, Wifi, Map, Shield, ChevronDown } from 'lucide-react';
+import { Copy, Check, Users, Play, X, Settings2, Hash, Wifi, Map, Shield, ChevronDown, Crown, Rabbit, Cat, Shell } from 'lucide-react';
 import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
 import { MAPS, getDefaultMap } from '../data/mapData';
+import { CHARACTER_ICONS } from '../data/characterData';
 
 export default function HostLobbyPage() {
   const { roomCode } = useParams();
@@ -158,7 +159,7 @@ export default function HostLobbyPage() {
     }
   };
 
-  const characterNames = { 1: 'Voi 🐘', 2: 'Thỏ 🐇', 3: 'Cáo 🦊', 4: 'Rùa 🐢' };
+  const characterNames = { 1: 'Voi', 2: 'Thỏ', 3: 'Cáo', 4: 'Rùa' };
   const characterColors = {
     1: '#8B1A1A',
     2: '#1B8C5A',
@@ -386,7 +387,10 @@ export default function HostLobbyPage() {
                       color: characterColors[p.characterId] || '#6366F1',
                     }}
                   >
+                  <span className="inline-flex items-center gap-1">
+                    {(() => { const CI = CHARACTER_ICONS[p.characterId]; return CI ? <CI size={12} strokeWidth={2} /> : null; })()}
                     {characterNames[p.characterId] || 'Chưa chọn'}
+                  </span>
                   </span>
                 </motion.div>
               ))}

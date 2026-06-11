@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Zap, Crosshair, CheckCircle2, Wifi, Star, Swords, Eye } from 'lucide-react';
+import { Shield, Zap, Crosshair, CheckCircle2, Wifi, Star, Swords, Eye, Wind, Dices, Orbit, Drum, Footprints, ScanEye, Blocks, ShieldHalf, Gamepad2 } from 'lucide-react';
 import axios from 'axios';
 import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
-import { CHARACTER_DATA, getCharacterData } from '../data/characterData';
+import { CHARACTER_DATA, CHARACTER_ICONS, getCharacterData } from '../data/characterData';
+
+// Skill icon lookup from iconName strings
+const SKILL_ICON_MAP = {
+  Shield, Wind, Dices, Orbit, Drum, Zap, Crosshair, Blocks, ScanEye, Footprints, ShieldHalf,
+};
 
 // Stat bar component
 function StatBar({ label, value, max, color, icon: Icon }) {
@@ -33,7 +38,7 @@ function StatBar({ label, value, max, color, icon: Icon }) {
 function SkillPill({ skill }) {
   return (
     <div className="flex items-center gap-1.5 px-2 py-1 bg-white/5 rounded-lg border border-white/5">
-      <span className="text-sm">{skill.icon}</span>
+      <span className="text-sm">{(() => { const IC = SKILL_ICON_MAP[skill.iconName]; return IC ? <IC size={14} /> : null; })()}</span>
       <div>
         <div className="text-[9px] font-bold text-amber-400/80">{skill.name}</div>
         <div className="text-[8px] text-white/30 leading-tight">{skill.desc}</div>
@@ -105,7 +110,7 @@ function CharacterCard({ char, charMeta, selected, onClick, index }) {
               boxShadow: selected ? `0 0 20px ${meta.colors.glow}` : 'none',
             }}
           >
-            {meta.emoji}
+            {(() => { const CharIcon = CHARACTER_ICONS[char.id]; return CharIcon ? <CharIcon size={28} strokeWidth={1.8} style={{ color: meta.colors.border }} /> : null; })()}
           </motion.div>
           <div className="flex-1 min-w-0">
             <h3 className="font-black text-lg" style={{ color: selected ? meta.colors.border : 'white' }}>
@@ -333,7 +338,7 @@ export default function PlayerLobbyPage() {
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               className="text-6xl mb-6"
             >
-              {selectedMeta?.emoji || '🎮'}
+              {(() => { const WaitIcon = CHARACTER_ICONS[selectedChar] || Gamepad2; return <WaitIcon size={48} strokeWidth={1.5} style={{ color: selectedMeta?.colors.border || '#D4A843' }} />; })()}
             </motion.div>
 
             <h2 className="text-2xl font-display font-black mb-2"
@@ -370,7 +375,7 @@ export default function PlayerLobbyPage() {
 
               {/* Knowledge tip while waiting */}
               <div className="mt-4 max-w-xs p-3 rounded-xl bg-white/3 border border-white/5 text-center">
-                <span className="text-[10px] text-amber-400/50 uppercase tracking-wider font-bold">💡 Mẹo</span>
+                <span className="text-[10px] text-amber-400/50 uppercase tracking-wider font-bold">Mẹo</span>
                 <p className="text-[11px] text-white/30 mt-1 leading-snug">
                   Trả lời đúng liên tiếp sẽ tăng combo và nhân điểm thưởng. Combo cao nhất sẽ được vinh danh!
                 </p>
