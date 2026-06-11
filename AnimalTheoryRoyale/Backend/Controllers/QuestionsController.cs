@@ -186,7 +186,8 @@ public class QuestionsController : ControllerBase
             BaseScore = score,
             PenaltyHP = penalty,
             TimeLimit = 15,
-            Options = opts
+            Options = opts,
+            ChallengePayloadJson = ""
         };
         _context.Questions.Add(q);
         await _context.SaveChangesAsync();
