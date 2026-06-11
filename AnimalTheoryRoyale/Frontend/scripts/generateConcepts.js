@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { conceptOverrides } from './conceptContentOverrides.js';
 
 const chapters = [
   { id: "chuong-1", title: "Chương 1", chapterTitle: "Khái niệm, đối tượng, phương pháp nghiên cứu và ý nghĩa học tập môn tư tưởng Hồ Chí Minh" },
@@ -396,6 +397,7 @@ const nodes = [];
 
 // Add Chapter nodes
 for (const ch of chapters) {
+  const over = conceptOverrides[ch.id] || {};
   nodes.push({
     id: ch.id,
     title: ch.title,
@@ -403,19 +405,20 @@ for (const ch of chapters) {
     chapterTitle: ch.chapterTitle,
     type: "chapter",
     level: 1,
-    shortDescription: `Tổng quan về ${ch.chapterTitle}`,
-    definition: `Nội dung cốt lõi của ${ch.chapterTitle}`,
-    whyImportant: `Giúp sinh viên nắm bắt cấu trúc học thuật của chương này.`,
-    explanation: `Nội dung này bao quát toàn bộ các khái niệm thuộc chương.`,
-    keyIdeas: [
+    shortDescription: over.shortDescription || `Tổng quan về ${ch.chapterTitle}`,
+    definition: over.definition || `Nội dung cốt lõi của ${ch.chapterTitle}`,
+    whyImportant: over.whyImportant || `Giúp sinh viên nắm bắt cấu trúc học thuật của chương này.`,
+    explanation: over.explanation || `Nội dung này bao quát toàn bộ các khái niệm thuộc chương.`,
+    keyIdeas: over.keyIdeas || [
       `Bối cảnh lịch sử.`,
       `Giá trị cốt lõi.`
     ],
     relatedConceptIds: conceptData.filter(c => c.chapterId === ch.id).map(c => c.id),
-    applications: [],
-    commonMisconceptions: [],
-    reflectionQuestions: [],
-    requiresVerification: false
+    applications: over.applications || [],
+    commonMisconceptions: over.commonMisconceptions || [],
+    reflectionQuestions: over.reflectionQuestions || [],
+    sourceReferences: over.sourceReferences || [],
+    requiresVerification: over.requiresVerification !== undefined ? over.requiresVerification : false
   });
 }
 
@@ -423,7 +426,7 @@ for (const ch of chapters) {
 for (const c of conceptData) {
   const ch = chapters.find(ch => ch.id === c.chapterId);
   const related = c.chapterId !== "core" ? [c.chapterId] : chapters.map(chap => chap.id);
-  const data = enrichedConcepts[c.id] || {
+  const data = conceptOverrides[c.id] || enrichedConcepts[c.id] || {
     shortDescription: `Mô tả ngắn gọn về ${c.title}.`,
     definition: `Định nghĩa cốt lõi của ${c.title} dựa trên giáo trình.`,
     whyImportant: `Giúp người học nhận thức sâu sắc về tầm quan trọng của ${c.title}.`,
@@ -448,9 +451,10 @@ for (const c of conceptData) {
     explanation: data.explanation,
     keyIdeas: data.keyIdeas,
     relatedConceptIds: related, // link back to chapter or all chapters
-    applications: data.applications,
-    commonMisconceptions: data.commonMisconceptions,
-    reflectionQuestions: data.reflectionQuestions,
+    applications: data.applications || [],
+    commonMisconceptions: data.commonMisconceptions || [],
+    reflectionQuestions: data.reflectionQuestions || [],
+    sourceReferences: data.sourceReferences || [],
     requiresVerification: data.requiresVerification !== undefined ? data.requiresVerification : false
   });
 }

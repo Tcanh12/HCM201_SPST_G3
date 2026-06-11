@@ -665,6 +665,57 @@ function ConceptMapContent() {
                       </div>
                     )}
 
+                    {/* Common Misconceptions */}
+                    {selectedNode.commonMisconceptions?.length > 0 && (
+                      <div className="bg-orange-50/50 p-4 rounded-xl border border-orange-100">
+                        <h4 className="text-[11px] font-bold text-orange-600 uppercase tracking-widest mb-3 flex items-center gap-2">
+                          <EyeOff className="w-3.5 h-3.5" /> Hiểu lầm thường gặp
+                        </h4>
+                        <ul className="space-y-2">
+                          {selectedNode.commonMisconceptions.map((mc, idx) => (
+                            <li key={idx} className="flex gap-3 text-sm text-gray-700">
+                              <span className="text-orange-500 font-bold">✗</span>
+                              <span className="leading-relaxed">{mc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Reflection Questions */}
+                    {selectedNode.reflectionQuestions?.length > 0 && (
+                      <div className="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                        <h4 className="text-[11px] font-bold text-blue-700 uppercase tracking-widest mb-3 flex items-center gap-2">
+                          <HelpCircle className="w-3.5 h-3.5" /> Câu hỏi suy ngẫm
+                        </h4>
+                        <ul className="space-y-2">
+                          {selectedNode.reflectionQuestions.map((rq, idx) => (
+                            <li key={idx} className="flex gap-3 text-sm text-gray-700 italic">
+                              <span className="text-blue-500 font-bold">?</span>
+                              <span className="leading-relaxed">{rq}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Source References */}
+                    {selectedNode.sourceReferences?.length > 0 && (
+                      <div className="pt-2">
+                        <h4 className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-2 flex items-center gap-2">
+                          <BookOpen className="w-3.5 h-3.5" /> Nguồn tham khảo giáo trình
+                        </h4>
+                        <div className="flex flex-col gap-1.5">
+                          {selectedNode.sourceReferences.map((ref, idx) => (
+                            <div key={idx} className="text-[12px] text-gray-500 bg-gray-50 px-3 py-2 rounded-lg border border-gray-100 flex items-start gap-2">
+                              <ChevronRight className="w-3 h-3 mt-0.5 shrink-0 text-gray-400" />
+                              <span>{ref.source} - {ref.chapter}{ref.section ? ` (${ref.section})` : ''}, Trang {ref.pages}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Related Concepts */}
                     {selectedNode.relatedConceptIds?.length > 0 && (
                       <div className="pt-4 border-t border-gray-100">
