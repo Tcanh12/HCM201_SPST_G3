@@ -74,7 +74,7 @@ function ConceptMapContent() {
   const [searchQuery, setSearchQuery] = useState('');
   const [chapterFilter, setChapterFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all'); 
-  const [showAllLabels, setShowAllLabels] = useState(false); // Changed to false by default for clean look
+  const [showAllLabels, setShowAllLabels] = useState(true); // Changed to true by user request
   const [isLegendOpen, setIsLegendOpen] = useState(true);
   
   const containerRef = useRef(null);
@@ -177,6 +177,12 @@ function ConceptMapContent() {
   };
 
   const handlePointerUp = () => setIsDragging(false);
+
+  const handleMarkUnderstood = () => {
+    if (selectedNode) {
+      markConceptViewed(selectedNode.id);
+    }
+  };
 
   // Safely map edges
   const conceptEdges = useMemo(() => {
