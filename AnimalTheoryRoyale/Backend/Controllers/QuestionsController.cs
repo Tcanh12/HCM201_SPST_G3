@@ -121,6 +121,35 @@ public class QuestionsController : ControllerBase
                 await AddParsedQuestion(currentTopic, currentDifficulty, currentContent, currentExplanation, currentCorrect, currentOptions);
             }
 
+            // --- SEED ADVANCED QUESTION TYPES ---
+            var advancedTopic = "Advanced HCM Theory";
+
+            // True/False
+            await AddAdvancedQuestion(advancedTopic, "TrueFalse", "Easy", "Hồ Chí Minh ra đi tìm đường cứu nước vào ngày 5 tháng 6 năm 1911 đúng hay sai?", "", 
+                new List<QuestionOption> { new QuestionOption{Text="Đúng", IsCorrect=true}, new QuestionOption{Text="Sai", IsCorrect=false} }, "Đúng. Tại bến Nhà Rồng.");
+            await AddAdvancedQuestion(advancedTopic, "TrueFalse", "Medium", "Tư tưởng Hồ Chí Minh là sự sao chép nguyên xi chủ nghĩa Mác-Lênin?", "", 
+                new List<QuestionOption> { new QuestionOption{Text="Đúng", IsCorrect=false}, new QuestionOption{Text="Sai", IsCorrect=true} }, "Sai. Là sự vận dụng sáng tạo.");
+
+            // Ordering
+            await AddAdvancedQuestion(advancedTopic, "Ordering", "Medium", "Sắp xếp các sự kiện sau theo thứ tự thời gian:", 
+                "[\"Bác Hồ ra đi tìm đường cứu nước\", \"Thành lập Đảng Cộng sản Việt Nam\", \"Đọc Tuyên ngôn Độc lập\", \"Chiến thắng Điện Biên Phủ\"]", 
+                new List<QuestionOption> { new QuestionOption{Text="Đúng", IsCorrect=true}, new QuestionOption{Text="Sai", IsCorrect=false} }, "1911 -> 1930 -> 1945 -> 1954");
+
+            // FillBlank
+            await AddAdvancedQuestion(advancedTopic, "FillBlank", "Hard", "Điền từ còn thiếu: 'Không có gì quý hơn ... và tự do'", 
+                "[\"Độc lập\", \"độc lập\", \"Doc lap\", \"doc lap\"]", 
+                new List<QuestionOption>(), "Độc lập là đáp án đúng.");
+
+            // Matching
+            await AddAdvancedQuestion(advancedTopic, "Matching", "Hard", "Nối các năm với sự kiện tương ứng:", 
+                "{\"1911\": \"Tìm đường cứu nước\", \"1930\": \"Thành lập Đảng\", \"1945\": \"Quốc khánh\"}", 
+                new List<QuestionOption>(), "Năm 1911 Bác ra đi, 1930 lập Đảng, 1945 Quốc khánh.");
+
+            // ShortAnswer
+            await AddAdvancedQuestion(advancedTopic, "ShortAnswer", "Medium", "Tên con tàu Pháp mà Bác Hồ đã làm phụ bếp khi ra đi tìm đường cứu nước là gì?", 
+                "[\"Amiral Latouche Tréville\", \"Latouche Treville\", \"Amiral\"]", 
+                new List<QuestionOption>(), "Đó là tàu Amiral Latouche Tréville.");
+
             // Add Characters
             if (!await _context.Characters.AnyAsync())
             {
@@ -187,7 +216,40 @@ public class QuestionsController : ControllerBase
             PenaltyHP = penalty,
             TimeLimit = 15,
             Options = opts,
-            ChallengePayloadJson = ""
+            ChallengePayloadJson = "",
+            QuestionType = "MultipleChoice"
+        };
+        _context.Questions.Add(q);
+        await _context.SaveChangesAsync();
+    }
+
+    private async Task AddAdvancedQuestion(string topicName, string qType, string diff, string content, string payload, List<QuestionOption> opts, string explanation)
+    {
+        var topic = await _context.Topics.FirstOrDefaultAsync(t => t.Name == topicName);
+        if (topic == null)
+        {
+            topic = new Topic { Name = topicName };
+            _context.Topics.Add(topic);
+            await _context.SaveChangesAsync();
+        }
+
+        if (await _context.Questions.AnyAsync(q => q.Content == content)) return;
+
+        int score = diff == "Easy" ? 10 : diff == "Medium" ? 20 : 30;
+        int penalty = diff == "Easy" ? 5 : diff == "Medium" ? 10 : 20;
+
+        var q = new Question
+        {
+            TopicId = topic.Id,
+            Difficulty = diff,
+            Content = content,
+            Explanation = explanation,
+            BaseScore = score,
+            PenaltyHP = penalty,
+            TimeLimit = 20,
+            Options = opts,
+            ChallengePayloadJson = payload,
+            QuestionType = qType
         };
         _context.Questions.Add(q);
         await _context.SaveChangesAsync();

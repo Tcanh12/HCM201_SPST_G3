@@ -499,7 +499,7 @@ public class GameHub : Hub
     /// Player submits answer. Server validates from in-memory pool.
     /// Zone is consumed and disappears for ALL players.
     /// </summary>
-    public async Task SubmitAnswer(string roomCode, int zoneId, int optionId)
+    public async Task SubmitAnswer(string roomCode, int zoneId, string answerPayload)
     {
         roomCode = roomCode?.Trim().ToUpper() ?? "";
         var game = _gameEngine.GetGame(roomCode);
@@ -543,8 +543,62 @@ public class GameHub : Hub
                         lootReward = zone.LootReward;
 
                         explanation = questionData.Explanation;
-                        var selectedOption = questionData.Options.FirstOrDefault(o => o.OptionId == optionId);
-                        isCorrect = selectedOption?.IsCorrect ?? false;
+                        
+                        string qType = string.IsNullOrEmpty(questionData.Type) ? "MultipleChoice" : questionData.Type;
+                        
+                        if (qType == "MultipleChoice")
+                        {
+                            if (int.TryParse(answerPayload, out int optId))
+                            {
+                                var selectedOption = questionData.Options.FirstOrDefault(o => o.OptionId == optId);
+                                isCorrect = selectedOption?.IsCorrect ?? false;
+                            }
+                        }
+                        else if (qType == "TrueFalse")
+                        {
+                            if (int.TryParse(answerPayload, out int optId))
+                            {
+                                var selectedOption = questionData.Options.FirstOrDefault(o => o.OptionId == optId);
+                                isCorrect = selectedOption?.IsCorrect ?? false;
+                            }
+                        }
+                        else if (qType == "Ordering")
+                        {
+                            // payload is a JSON array of strings
+                            try {
+                                var expected = System.Text.Json.JsonSerializer.Deserialize<List<string>>(questionData.ChallengePayloadJson ?? "[]");
+                                var actual = System.Text.Json.JsonSerializer.Deserialize<List<string>>(answerPayload ?? "[]");
+                                isCorrect = expected != null && actual != null && expected.SequenceEqual(actual);
+                            } catch { isCorrect = false; }
+                        }
+                        else if (qType == "FillBlank" || qType == "ShortAnswer")
+                        {
+                            // answerPayload is plain text
+                            try {
+                                var accepted = System.Text.Json.JsonSerializer.Deserialize<List<string>>(questionData.ChallengePayloadJson ?? "[]");
+                                isCorrect = accepted != null && accepted.Any(a => string.Equals(a.Trim(), answerPayload.Trim(), StringComparison.OrdinalIgnoreCase));
+                            } catch { isCorrect = false; }
+                        }
+                        else if (qType == "Matching")
+                        {
+                            // payload is JSON dictionary
+                            try {
+                                var expected = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(questionData.ChallengePayloadJson ?? "{}");
+                                var actual = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(answerPayload ?? "{}");
+                                isCorrect = true;
+                                if (expected == null || actual == null || expected.Count != actual.Count) isCorrect = false;
+                                else {
+                                    foreach(var kvp in expected) {
+                                        if(!actual.ContainsKey(kvp.Key) || actual[kvp.Key] != kvp.Value) { isCorrect = false; break; }
+                                    }
+                                }
+                            } catch { isCorrect = false; }
+                        }
+                        else
+                        {
+                            // fallback
+                            isCorrect = false;
+                        }
 
                         wasDouble = player.HasDoubleActive;
                         player.HasDoubleActive = false; // consume it

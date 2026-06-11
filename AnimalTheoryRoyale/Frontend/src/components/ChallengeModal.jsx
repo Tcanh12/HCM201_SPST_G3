@@ -212,6 +212,116 @@ function OrderingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
   );
 }
 
+// FillBlank / ShortAnswer layout
+function FillBlankLayout({ selectedOption, onSelect, submitted }) {
+  return (
+    <div className="flex flex-col gap-3 mb-4">
+      <div className="text-[11px] font-bold text-cyan-300/80 uppercase tracking-wider mb-1">
+        Nhập câu trả lời ngắn:
+      </div>
+      <input
+        type="text"
+        value={selectedOption || ''}
+        onChange={(e) => onSelect(e.target.value)}
+        disabled={submitted}
+        placeholder="Nhập đáp án của bạn..."
+        className="w-full px-4 py-3 bg-black/40 border-2 border-white/20 rounded-xl text-white outline-none focus:border-cyan-400 transition-all placeholder:text-white/20"
+      />
+    </div>
+  );
+}
+
+// Matching layout
+function MatchingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
+  const [leftItems, setLeftItems] = useState([]);
+  const [rightItems, setRightItems] = useState([]);
+  const [matches, setMatches] = useState({});
+  const [selectedLeft, setSelectedLeft] = useState(null);
+
+  useEffect(() => {
+    try {
+      const data = JSON.parse(payloadJson || '{}');
+      const keys = Object.keys(data).sort(() => Math.random() - 0.5);
+      const values = Object.values(data).sort(() => Math.random() - 0.5);
+      setLeftItems(keys);
+      setRightItems(values);
+    } catch {
+      setLeftItems(['Lỗi dữ liệu']); setRightItems(['Lỗi dữ liệu']);
+    }
+  }, [payloadJson]);
+
+  const handleLeftClick = (key) => {
+    if (submitted) return;
+    if (matches[key]) {
+      const newMatches = { ...matches };
+      delete newMatches[key];
+      setMatches(newMatches);
+      onSelect(Object.keys(newMatches).length === leftItems.length ? newMatches : null);
+    } else {
+      setSelectedLeft(key === selectedLeft ? null : key);
+    }
+  };
+
+  const handleRightClick = (val) => {
+    if (submitted || !selectedLeft) return;
+    const newMatches = { ...matches, [selectedLeft]: val };
+    setMatches(newMatches);
+    setSelectedLeft(null);
+    onSelect(Object.keys(newMatches).length === leftItems.length ? newMatches : null);
+  };
+
+  return (
+    <div className="flex flex-col gap-3 mb-4">
+      <div className="text-[11px] font-bold text-pink-300/80 uppercase tracking-wider mb-1">
+        Ghép nối cho đúng:
+      </div>
+      <div className="flex gap-4">
+        {/* Left Column */}
+        <div className="flex-1 flex flex-col gap-2">
+          {leftItems.map(key => {
+            const isMatched = !!matches[key];
+            const isSelected = selectedLeft === key;
+            return (
+              <motion.button
+                key={`L-${key}`}
+                onClick={() => handleLeftClick(key)}
+                className="px-3 py-2 text-sm rounded-lg border-2 transition-all text-left truncate"
+                style={{
+                  background: isMatched ? 'rgba(16,185,129,0.2)' : isSelected ? 'rgba(236,72,153,0.3)' : 'rgba(255,255,255,0.05)',
+                  borderColor: isMatched ? '#10B981' : isSelected ? '#EC4899' : 'rgba(255,255,255,0.1)'
+                }}
+              >
+                {key}
+                {isMatched && <span className="float-right text-emerald-400">→</span>}
+              </motion.button>
+            );
+          })}
+        </div>
+        {/* Right Column */}
+        <div className="flex-1 flex flex-col gap-2">
+          {rightItems.map(val => {
+            const isMatched = Object.values(matches).includes(val);
+            return (
+              <motion.button
+                key={`R-${val}`}
+                onClick={() => handleRightClick(val)}
+                className="px-3 py-2 text-sm rounded-lg border-2 transition-all text-left truncate"
+                style={{
+                  background: isMatched ? 'rgba(16,185,129,0.2)' : 'rgba(255,255,255,0.05)',
+                  borderColor: isMatched ? '#10B981' : 'rgba(255,255,255,0.1)',
+                  opacity: isMatched ? 0.5 : 1
+                }}
+              >
+                {val}
+              </motion.button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ChallengeModal({ question, onSubmit, onClose, isDoubleActive }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const maxTime = question?.timeLimit || 15;
@@ -239,31 +349,21 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
     setSubmitted(true);
 
     if (questionType === 'TrueFalse') {
-      // For T/F, we send the boolean value. Backend currently expects optionId,
-      // so we map true→first option, false→second option for backward compat
+      // Backend now expects 'true' or 'false' or the ID. Since we send ID in MC, let's just send the ID.
+      // Wait, backend TrueFalse check says `int.TryParse`.
+      // Let's find the correct Option ID.
       const options = question?.options || [];
       const correctOpt = options.find(o => (selectedOption === true && o.text?.match(/đúng|true/i)) || 
                                              (selectedOption === false && o.text?.match(/sai|false/i)));
-      onSubmit(correctOpt?.id || -1);
-    } else if (questionType === 'Ordering') {
-      // selectedOption is the array of ordered strings
-      let isCorrect = false;
-      try {
-        const correctOrder = JSON.parse(question.payloadJson || '[]');
-        isCorrect = JSON.stringify(selectedOption) === JSON.stringify(correctOrder);
-      } catch (e) { }
-
-      const options = question?.options || [];
-      // Hack: In backend, we can just map one of the options as correct and one as incorrect.
-      // If DB has an option with IsCorrect = true, we use that.
-      const correctOpt = options.find(o => o.isCorrect || o.text === 'Đúng');
-      const wrongOpt = options.find(o => !o.isCorrect || o.text === 'Sai');
-      
-      if (isCorrect && correctOpt) onSubmit(correctOpt.id);
-      else if (!isCorrect && wrongOpt) onSubmit(wrongOpt.id);
-      else onSubmit(options[0]?.id || -1); // Fallback
+      onSubmit((correctOpt?.id || -1).toString());
+    } else if (questionType === 'Ordering' || questionType === 'Matching') {
+      // Send the JSON payload directly to the backend
+      onSubmit(JSON.stringify(selectedOption));
+    } else if (questionType === 'FillBlank' || questionType === 'ShortAnswer') {
+      onSubmit(selectedOption?.toString() || '');
     } else {
-      onSubmit(selectedOption);
+      // MultipleChoice
+      onSubmit(selectedOption?.toString() || '-1');
     }
   }, [selectedOption, submitted, questionType, question, onSubmit]);
 
@@ -348,7 +448,13 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
         {questionType === 'Ordering' && (
           <OrderingLayout payloadJson={question.payloadJson} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
         )}
-        {(questionType === 'MultipleChoice' || (!['TrueFalse', 'Ordering'].includes(questionType))) && (
+        {(questionType === 'FillBlank' || questionType === 'ShortAnswer') && (
+          <FillBlankLayout selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
+        )}
+        {questionType === 'Matching' && (
+          <MatchingLayout payloadJson={question.payloadJson} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
+        )}
+        {(questionType === 'MultipleChoice' || (!['TrueFalse', 'Ordering', 'FillBlank', 'ShortAnswer', 'Matching'].includes(questionType))) && (
           <MultipleChoiceLayout options={question.options} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
         )}
 
