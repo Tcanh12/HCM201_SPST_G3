@@ -234,7 +234,7 @@ public class QuestionsController : ControllerBase
             PenaltyHP = penalty,
             TimeLimit = 15,
             Options = opts,
-            ChallengePayloadJson = "",
+            ChallengePayloadJson = "{}",
             QuestionType = "MultipleChoice"
         };
         _context.Questions.Add(q);
@@ -269,7 +269,7 @@ public class QuestionsController : ControllerBase
             PenaltyHP = penalty,
             TimeLimit = timeLimit,
             Options = opts,
-            ChallengePayloadJson = payload,
+            ChallengePayloadJson = string.IsNullOrWhiteSpace(payload) ? "{}" : payload,
             QuestionType = qType
         };
         _context.Questions.Add(q);
