@@ -707,13 +707,13 @@ public class GameEngine : BackgroundService
         return (safeZone.CenterX, safeZone.CenterZ);
     }
 
-    public int GetMaxActiveZones(float safeZoneRadius)
+    public int GetMaxActiveZones(float safeZoneRadius, int totalZones)
     {
-        if (safeZoneRadius > 200f) return 15;
-        if (safeZoneRadius > 150f) return 10;
-        if (safeZoneRadius > 80f) return 6;
-        if (safeZoneRadius > 35f) return 4;
-        return 3;
+        if (safeZoneRadius > 200f) return totalZones;
+        if (safeZoneRadius > 150f) return Math.Min(20, totalZones);
+        if (safeZoneRadius > 80f) return Math.Min(10, totalZones);
+        if (safeZoneRadius > 35f) return Math.Min(6, totalZones);
+        return Math.Min(3, totalZones);
     }
 
     public int GetRespawnCooldownSeconds(float safeZoneRadius)
@@ -742,7 +742,7 @@ public class GameEngine : BackgroundService
         }
 
         // 2. Tính số zone tối đa theo bo
-        int maxZones = GetMaxActiveZones(game.SafeZone.Radius);
+        int maxZones = GetMaxActiveZones(game.SafeZone.Radius, game.KnowledgeZones.Count);
 
         // 3. Chỉ đếm zone active nằm trong bo
         int activeZonesInSafeZone = game.KnowledgeZones.Values.Count(z =>
