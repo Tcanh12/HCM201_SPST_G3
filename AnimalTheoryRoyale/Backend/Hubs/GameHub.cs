@@ -545,39 +545,41 @@ public class GameHub : Hub
     /// </summary>
     public async Task SubmitAnswer(string roomCode, int zoneId, string answerPayload)
     {
-        roomCode = roomCode?.Trim().ToUpper() ?? "";
-        var game = _gameEngine.GetGame(roomCode);
-        if (game == null) return;
-        if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) return;
-        if (!game.KnowledgeZones.TryGetValue(zoneId, out var zone)) return;
-
-        bool isAlreadyAnswered = false;
-        bool isAlreadyAnsweredByMe = false;
-        bool isCorrect = false;
-        bool wasDouble = false;
-        int scoreGain = 0;
-        int hpLost = 0;
-        int comboCount = 0;
-        int multiplier = 1;
-        string explanation = "";
-        string zoneType = "Normal";
-        bool isTrap = false;
-        string? lootReward = null;
-
-        lock (zone)
+        try
         {
-            if (!zone.IsActive)
+            roomCode = roomCode?.Trim().ToUpper() ?? "";
+            var game = _gameEngine.GetGame(roomCode);
+            if (game == null) throw new HubException("Phòng không tồn tại hoặc đã kết thúc.");
+            if (!game.Players.TryGetValue(Context.ConnectionId, out var player)) throw new HubException("Bạn không ở trong phòng này.");
+            if (!game.KnowledgeZones.TryGetValue(zoneId, out var zone)) throw new HubException("Khu vực này đã hết hạn hoặc biến mất.");
+
+            bool isAlreadyAnswered = false;
+            bool isAlreadyAnsweredByMe = false;
+            bool isCorrect = false;
+            bool wasDouble = false;
+            int scoreGain = 0;
+            int hpLost = 0;
+            int comboCount = 0;
+            int multiplier = 1;
+            string explanation = "";
+            string zoneType = "Normal";
+            bool isTrap = false;
+            string? lootReward = null;
+
+            lock (zone)
             {
-                isAlreadyAnswered = true;
-            }
-            else
-            {
-                int currentQId = player.CurrentQuestionId ?? zone.QuestionId;
-                string answerKey = $"{Context.ConnectionId}_{currentQId}";
-                if (!game.AnsweredQuestions.TryAdd(answerKey, true))
+                if (!zone.IsActive)
                 {
-                    isAlreadyAnsweredByMe = true;
+                    isAlreadyAnswered = true;
                 }
+                else
+                {
+                    int currentQId = player.CurrentQuestionId ?? zone.QuestionId;
+                    string answerKey = $"{Context.ConnectionId}_{currentQId}";
+                    if (!game.AnsweredQuestions.TryAdd(answerKey, true))
+                    {
+                        isAlreadyAnsweredByMe = true;
+                    }
                 else
                 {
                     if (game.QuestionPool.TryGetValue(currentQId, out var questionData))
@@ -785,10 +787,8 @@ public class GameHub : Hub
 
         if (isAlreadyAnsweredByMe)
         {
-            await Clients.Caller.SendAsync("AnswerResult", new {
-                success = false, correct = false, message = "Bạn đã trả lời câu này rồi!"
-            });
-            return;
+            // Throw exception so the frontend promise rejects immediately
+            throw new HubException("Bạn đã gửi đáp án rồi, vui lòng đợi.");
         }
 
         if (isCorrect)

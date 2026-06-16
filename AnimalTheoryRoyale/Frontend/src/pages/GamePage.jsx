@@ -84,6 +84,12 @@ export default function GamePage() {
         setTimeout(() => { setAnswerResult(null); }, duration);
       });
 
+      conn.on('AnswerError', (err) => {
+        console.error('Answer Error from server:', err);
+        setTrapMessage(err.message || 'Lỗi gửi đáp án!');
+        setTimeout(() => setTrapMessage(null), 3000);
+      });
+
       conn.on('TrapTriggered', (data) => {
         if (data.connectionId === conn.connectionId) {
           let msg = "";
@@ -172,9 +178,9 @@ export default function GamePage() {
     }
   }, [roomCode, question]);
 
-  const handleSubmitAnswer = useCallback((optionId) => {
+  const handleSubmitAnswer = useCallback(async (optionId) => {
     if (connRef.current && question) {
-      connRef.current.invoke('SubmitAnswer', roomCode, question.zoneId, optionId).catch(() => {});
+      return await connRef.current.invoke('SubmitAnswer', roomCode, question.zoneId, optionId);
     }
   }, [roomCode, question]);
 

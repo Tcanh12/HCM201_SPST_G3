@@ -421,6 +421,7 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
   const maxTime = question?.timeLimit || 15;
   const [timeLeft, setTimeLeft] = useState(maxTime);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   // Determine question type (fallback to MultipleChoice for backward compat)
   const questionType = question?.type || question?.questionType || 'MultipleChoice';
@@ -438,26 +439,44 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
     return () => clearTimeout(timer);
   }, [timeLeft]);
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     if (selectedOption === null || submitted) return;
     setSubmitted(true);
+    setSubmitError(null);
 
+    let payload = '-1';
     if (questionType === 'TrueFalse') {
-      // Backend now expects 'true' or 'false' or the ID. Since we send ID in MC, let's just send the ID.
-      // Wait, backend TrueFalse check says `int.TryParse`.
-      // Let's find the correct Option ID.
       const options = question?.options || [];
       const correctOpt = options.find(o => (selectedOption === true && o.text?.match(/đúng|true/i)) || 
                                              (selectedOption === false && o.text?.match(/sai|false/i)));
-      onSubmit((correctOpt?.id || -1).toString());
+      payload = (correctOpt?.id || -1).toString();
     } else if (questionType === 'Ordering' || questionType === 'Matching') {
-      // Send the JSON payload directly to the backend
-      onSubmit(JSON.stringify(selectedOption));
+      payload = JSON.stringify(selectedOption);
     } else if (questionType === 'FillBlank' || questionType === 'ShortAnswer') {
-      onSubmit(selectedOption?.toString() || '');
+      payload = selectedOption?.toString() || '';
     } else {
-      // MultipleChoice
-      onSubmit(selectedOption?.toString() || '-1');
+      payload = selectedOption?.toString() || '-1';
+    }
+
+    try {
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error("Timeout")), 10000)
+      );
+      
+      await Promise.race([
+        onSubmit(payload),
+        timeoutPromise
+      ]);
+      
+      setTimeout(() => {
+        setSubmitted(false);
+        setSubmitError("Không nhận được kết quả từ máy chủ. Vui lòng thử lại hoặc bỏ qua.");
+      }, 10000);
+      
+    } catch (err) {
+      console.error("Submit error:", err);
+      setSubmitted(false);
+      setSubmitError("Lỗi gửi đáp án. Bạn có thể thử lại hoặc bỏ qua.");
     }
   }, [selectedOption, submitted, questionType, question, onSubmit]);
 
@@ -554,24 +573,47 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
           <MultipleChoiceLayout options={question.options} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
         )}
 
+        {/* Error Message */}
+        {submitError && (
+          <div className="mt-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-sm text-center">
+            {submitError}
+            <div className="mt-2 flex justify-center gap-2">
+              <button 
+                onClick={handleSubmit} 
+                className="px-4 py-1.5 bg-red-600 hover:bg-red-500 rounded font-semibold text-white text-xs transition-colors"
+              >
+                Thử lại
+              </button>
+              <button 
+                onClick={() => onClose()} 
+                className="px-4 py-1.5 bg-gray-600 hover:bg-gray-500 rounded font-semibold text-white text-xs transition-colors"
+              >
+                Bỏ qua
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Submit Button */}
-        <motion.button
-          whileHover={selectedOption !== null && !submitted ? { scale: 1.01 } : {}}
-          whileTap={selectedOption !== null && !submitted ? { scale: 0.98 } : {}}
-          onClick={handleSubmit}
-          disabled={selectedOption === null || submitted}
-          className="w-full py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-200"
-          style={{
-            background: selectedOption !== null && !submitted
-              ? 'linear-gradient(135deg, #8B1A1A, #D4A843)'
-              : '#374151',
-            color: selectedOption !== null && !submitted ? 'white' : '#6B7280',
-            cursor: selectedOption !== null && !submitted ? 'pointer' : 'not-allowed',
-            boxShadow: selectedOption !== null && !submitted ? '0 0 20px rgba(139,26,26,0.4)' : 'none',
-          }}
-        >
-          {submitted ? <span className="flex items-center justify-center gap-2"><Hourglass className="w-4 h-4" /> Đang xử lý...</span> : <span className="flex items-center justify-center gap-2"><CheckCircle className="w-4 h-4" /> Xác Nhận Đáp Án</span>}
-        </motion.button>
+        <div className="mt-6">
+          <motion.button
+            whileHover={selectedOption !== null && !submitted ? { scale: 1.01 } : {}}
+            whileTap={selectedOption !== null && !submitted ? { scale: 0.98 } : {}}
+            onClick={handleSubmit}
+            disabled={selectedOption === null || submitted}
+            className="w-full py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-200"
+            style={{
+              background: selectedOption !== null && !submitted
+                ? 'linear-gradient(135deg, #8B1A1A, #D4A843)'
+                : '#374151',
+              color: selectedOption !== null && !submitted ? 'white' : '#6B7280',
+              cursor: selectedOption !== null && !submitted ? 'pointer' : 'not-allowed',
+              boxShadow: selectedOption !== null && !submitted ? '0 0 20px rgba(139,26,26,0.4)' : 'none',
+            }}
+          >
+            {submitted ? <span className="flex items-center justify-center gap-2"><Hourglass className="w-4 h-4" /> Đang xử lý...</span> : <span className="flex items-center justify-center gap-2"><CheckCircle className="w-4 h-4" /> Xác Nhận Đáp Án</span>}
+          </motion.button>
+        </div>
       </motion.div>
     </motion.div>
   );
