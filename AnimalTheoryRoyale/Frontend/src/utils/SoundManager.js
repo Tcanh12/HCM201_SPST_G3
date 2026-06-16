@@ -86,7 +86,7 @@ export function playSound(key, volume = 0.5) {
   if (!path) {
     // No audio file yet — silently skip (placeholder mode)
     // Uncomment below for debugging:
-    // console.log(`[SoundManager] 🔇 "${key}" (no audio file)`);
+    // console.log(`[SoundManager] [MUTE] "${key}" (no audio file)`);
     return;
   }
 

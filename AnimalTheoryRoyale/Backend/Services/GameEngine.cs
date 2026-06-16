@@ -749,6 +749,17 @@ public class GameEngine : BackgroundService
             z.IsActive && IsZoneInsideSafeZone(z, game.SafeZone, 5f)
         );
 
+        _logger.LogInformation(
+            "[ZONE_STATUS] total={Total}, activeAll={ActiveAll}, activeInside={ActiveInside}, inactive={Inactive}, cooldown={Cooldown}, max={Max}, safeRadius={Radius}",
+            game.KnowledgeZones.Count,
+            game.KnowledgeZones.Values.Count(z => z.IsActive),
+            activeZonesInSafeZone,
+            game.KnowledgeZones.Values.Count(z => !z.IsActive),
+            game.KnowledgeZones.Values.Count(z => !z.IsActive && z.RespawnTime > now),
+            maxZones,
+            game.SafeZone.Radius
+        );
+
         // 4. Nếu trong bo thiếu câu hỏi thì spawn thêm
         foreach (var kz in game.KnowledgeZones.Values)
         {
@@ -804,6 +815,15 @@ public class GameEngine : BackgroundService
                 kz.Type = "Normal";
                 kz.LootReward = null;
             }
+
+            _logger.LogInformation(
+                "[ZONE_RESPAWN] zone={ZoneId}, question={QuestionId}, pos=({X},{Z}), safeRadius={Radius}",
+                kz.ZoneId,
+                kz.QuestionId,
+                kz.X,
+                kz.Z,
+                game.SafeZone.Radius
+            );
 
             activeZonesInSafeZone++;
         }

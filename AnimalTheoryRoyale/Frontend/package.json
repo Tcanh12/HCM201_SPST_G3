@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate:knowledge && vite build",
+    "build": "npm run check:emoji && npm run validate:knowledge && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "validate:knowledge": "node scripts/validateKnowledgeData.js"
+    "validate:knowledge": "node scripts/validateKnowledgeData.js",
+    "check:emoji": "node scripts/check-no-emoji.js"
   },
   "dependencies": {
     "@microsoft/signalr": "^8.0.0",

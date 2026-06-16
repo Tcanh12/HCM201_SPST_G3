@@ -24,6 +24,20 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
   const sorted = [...players].sort((a, b) => (b.score || 0) - (a.score || 0));
   const alive = players.filter(p => !p.isDead);
 
+  // Debug log for host
+  useEffect(() => {
+    if (zones.length > 0) {
+      const activeInsideSafeZone = zones.filter(z => z.isActive && (Math.sqrt(Math.pow(z.x - (safeZone.centerX || 0), 2) + Math.pow(z.z - (safeZone.centerZ || 0), 2)) <= (safeZone.radius || 500))).length;
+      console.log("[HOST_ZONE_DEBUG]", {
+        total: zones.length,
+        active: zones.filter(z => z.isActive).length,
+        activeInsideSafeZone,
+        cooldown: zones.filter(z => !z.isActive).length,
+        safeRadius: safeZone.radius || 500
+      });
+    }
+  }, [zones, safeZone.radius, safeZone.centerX, safeZone.centerZ]);
+
   // Follow focused player
   useEffect(() => {
     if (focusPlayer) {
