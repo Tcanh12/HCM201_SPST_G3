@@ -368,7 +368,7 @@ export default function GameScene({
       />
       <SafeZone radius={safeZone.radius} x={safeZone.centerX || 0} z={safeZone.centerZ || 0} />
 
-      {knowledgeZones.filter(z => z.isActive).map(z => (
+      {knowledgeZones.filter(z => (z.isActive ?? z.IsActive) === true).map(z => (
         <KnowledgeZone key={z.zoneId} x={z.x} z={z.z} topic={z.topicName} type={z.type} isTrap={z.isTrap} />
       ))}
 

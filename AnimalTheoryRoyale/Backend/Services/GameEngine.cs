@@ -663,25 +663,71 @@ public class GameEngine : BackgroundService
         }
     }
 
+    private bool IsZoneInsideSafeZone(KnowledgeZoneState zone, SafeZoneState safeZone, float margin = 0f)
+    {
+        float dx = zone.X - safeZone.CenterX;
+        float dz = zone.Z - safeZone.CenterZ;
+        float distSq = dx * dx + dz * dz;
+        float r = Math.Max(0, safeZone.Radius - margin);
+        return distSq <= r * r;
+    }
+
+    private (float x, float z) GetRandomPositionInsideSafeZone(SafeZoneState safeZone)
+    {
+        var random = new Random();
+        float radius = Math.Max(10f, safeZone.Radius - 10f);
+        
+        for (int i = 0; i < 20; i++)
+        {
+            float angle = (float)(random.NextDouble() * Math.PI * 2);
+            float distance = (float)Math.Sqrt(random.NextDouble()) * radius;
+
+            float rx = safeZone.CenterX + (float)Math.Cos(angle) * distance;
+            float rz = safeZone.CenterZ + (float)Math.Sin(angle) * distance;
+            
+            if (!Backend.Models.MapObstacles.IsPositionBlocked(rx, rz, 2f))
+            {
+                return (rx, rz);
+            }
+        }
+        
+        return (safeZone.CenterX, safeZone.CenterZ);
+    }
+
     private void UpdateKnowledgeZones(GameState game, DateTime now)
     {
-        int maxZones = game.SafeZone.Radius < 150 ? 5 : 15;
-        int activeZones = game.KnowledgeZones.Values.Count(z => z.IsActive);
+        int maxZones = game.SafeZone.Radius switch
+        {
+            > 200f => 15,
+            > 150f => 10,
+            > 80f => 6,
+            > 30f => 4,
+            _ => 3
+        };
 
         foreach (var kz in game.KnowledgeZones.Values)
         {
-            // Zone respawn: zone must be inactive AND respawn time passed
-            // Note: ClaimedByConnectionId is NOT checked here because SubmitAnswer 
-            // sets IsActive=false directly without using the claim system.
+            if (kz.IsActive && !IsZoneInsideSafeZone(kz, game.SafeZone, 5f))
+            {
+                kz.IsActive = false;
+                kz.RespawnTime = now.AddSeconds(3);
+                game.ActiveQuestionIds.TryRemove(kz.QuestionId, out _);
+                
+                _logger.LogInformation("Deactivate out-of-safe-zone challenge {ZoneId}. Zone=({X},{Z}), SafeCenter=({CenterX},{CenterZ}), Radius={Radius}",
+                    kz.ZoneId, kz.X, kz.Z, game.SafeZone.CenterX, game.SafeZone.CenterZ, game.SafeZone.Radius);
+            }
+        }
+
+        int activeZones = game.KnowledgeZones.Values.Count(z => z.IsActive && IsZoneInsideSafeZone(z, game.SafeZone, 5f));
+
+        foreach (var kz in game.KnowledgeZones.Values)
+        {
             if (!kz.IsActive && now >= kz.RespawnTime)
             {
                 if (activeZones >= maxZones) continue;
                 activeZones++;
 
-                // Respawn with a NEW unique question
                 int newQuestionId = PickUnusedQuestion(game);
-
-                // Remove old question from active tracking
                 game.ActiveQuestionIds.TryRemove(kz.QuestionId, out _);
 
                 kz.QuestionId = newQuestionId;
@@ -689,21 +735,18 @@ public class GameEngine : BackgroundService
                 kz.ClaimedByConnectionId = null;
                 kz.ClaimExpiry = null;
 
-                // Track new question as active
                 game.ActiveQuestionIds.TryAdd(newQuestionId, true);
 
-                // Update topic name
                 if (game.QuestionPool.TryGetValue(newQuestionId, out var qd))
                     kz.TopicName = qd.TopicName;
 
-                // Move zone slightly, keep inside safe zone
-                var rng = new Random();
-                kz.X += rng.Next(-20, 20);
-                kz.Z += rng.Next(-20, 20);
+                var pos = GetRandomPositionInsideSafeZone(game.SafeZone);
+                kz.X = pos.x;
+                kz.Z = pos.z;
 
-                // Randomize Type and Trap
+                var rng = new Random();
                 double roll = rng.NextDouble();
-                kz.IsTrap = (roll < 0.1); // 10% Trap
+                kz.IsTrap = (roll < 0.1);
                 if (roll >= 0.1 && roll < 0.25)
                 {
                     kz.Type = "LootBox";
@@ -719,15 +762,6 @@ public class GameEngine : BackgroundService
                 {
                     kz.Type = "Normal";
                     kz.LootReward = null;
-                }
-                float dx = kz.X - game.SafeZone.CenterX;
-                float dz = kz.Z - game.SafeZone.CenterZ;
-                float dist = MathF.Sqrt(dx * dx + dz * dz);
-                if (dist > game.SafeZone.Radius * 0.7f)
-                {
-                    float scale = game.SafeZone.Radius * 0.5f / dist;
-                    kz.X = game.SafeZone.CenterX + dx * scale;
-                    kz.Z = game.SafeZone.CenterZ + dz * scale;
                 }
             }
         }

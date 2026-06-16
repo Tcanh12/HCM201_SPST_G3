@@ -518,6 +518,15 @@ public class GameHub : Hub
         // Serve question from in-memory pool (NO DB call)
         if (!game.QuestionPool.TryGetValue(chosenQuestionId, out var questionData))
         {
+            await Clients.Caller.SendAsync("ChallengeError", new
+            {
+                message = "Không tải được câu hỏi cho zone này. Hệ thống sẽ thử tạo câu hỏi khác.",
+                challengeId = zoneId
+            });
+
+            zone.IsActive = false;
+            zone.RespawnTime = DateTime.UtcNow.AddSeconds(3);
+
             player.IsAnsweringQuestion = false;
             player.HasQuestionShield = false;
             return;
@@ -822,6 +831,12 @@ public class GameHub : Hub
         }
         player.HasQuestionShield = false;
         player.ShieldEndTime = null;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi SubmitAnswer");
+            await Clients.Caller.SendAsync("AnswerResult", new { success = false, correct = false, message = ex.Message });
+        }
     }
 
     private void ReleaseZone(KnowledgeZoneState zone, PlayerState player, GameState game)

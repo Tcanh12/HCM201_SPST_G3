@@ -90,6 +90,12 @@ export default function GamePage() {
         setTimeout(() => setTrapMessage(null), 3000);
       });
 
+      conn.on('ChallengeError', (err) => {
+        console.warn('ChallengeError:', err);
+        setTrapMessage(err.message || 'Lỗi tải câu hỏi!');
+        setTimeout(() => setTrapMessage(null), 3000);
+      });
+
       conn.on('TrapTriggered', (data) => {
         if (data.connectionId === conn.connectionId) {
           let msg = "";
