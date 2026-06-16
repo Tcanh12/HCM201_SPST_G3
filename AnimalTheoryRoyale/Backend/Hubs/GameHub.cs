@@ -733,7 +733,7 @@ public class GameHub : Hub
 
                             // Consume the zone!
                             zone.IsActive = false;
-                            zone.RespawnTime = DateTime.UtcNow.AddSeconds(25);
+                            zone.RespawnTime = DateTime.UtcNow.AddSeconds(_gameEngine.GetRespawnCooldownSeconds(game.SafeZone.Radius));
                             game.ActiveQuestionIds.TryRemove(zone.QuestionId, out _);
                         }
                         else
@@ -773,7 +773,7 @@ public class GameHub : Hub
 
                             // Consume the zone ALWAYS! (regardless of correct/wrong)
                             zone.IsActive = false;
-                            zone.RespawnTime = DateTime.UtcNow.AddSeconds(25);
+                            zone.RespawnTime = DateTime.UtcNow.AddSeconds(_gameEngine.GetRespawnCooldownSeconds(game.SafeZone.Radius));
                             game.ActiveQuestionIds.TryRemove(zone.QuestionId, out _);
                         }
                     }

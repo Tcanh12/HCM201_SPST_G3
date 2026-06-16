@@ -183,26 +183,34 @@ public class GameEngine : BackgroundService
         }
     }
 
-    /// <summary>
-    /// Pick a random question that is NOT currently active on any zone.
-    /// </summary>
     private int PickUnusedQuestion(GameState game)
     {
         var rng = new Random();
         if (game.QuestionPool.Count == 0) return -1; // Safe fallback if DB is empty
 
-        var candidates = game.QuestionPool.Keys
-            .Where(id => !game.ActiveQuestionIds.ContainsKey(id))
+        var unusedQuestions = game.QuestionPool.Keys
+            .Where(id => !game.UsedQuestionIds.ContainsKey(id))
             .ToList();
 
-        if (candidates.Count == 0)
+        if (unusedQuestions.Count > 0)
         {
-            // All questions are on the map or used; just pick any random one
-            var allIds = game.QuestionPool.Keys.ToList();
-            return allIds[rng.Next(allIds.Count)];
+            var id = unusedQuestions[rng.Next(unusedQuestions.Count)];
+            game.UsedQuestionIds.TryAdd(id, true);
+            return id;
         }
 
-        return candidates[rng.Next(candidates.Count)];
+        // Nếu đã dùng hết câu thì reset để cho phép lặp lại
+        game.UsedQuestionIds.Clear();
+
+        var allIds = game.QuestionPool.Keys.ToList();
+        if (allIds.Count > 0)
+        {
+            var id = allIds[rng.Next(allIds.Count)];
+            game.UsedQuestionIds.TryAdd(id, true);
+            return id;
+        }
+
+        return -1;
     }
 
     public GameState? GetGame(string roomCode)
@@ -337,8 +345,13 @@ public class GameEngine : BackgroundService
                     knowledgeZones = game.KnowledgeZones.Values.Select(kz => new {
                         zoneId = kz.ZoneId, x = kz.X, z = kz.Z, isActive = kz.IsActive, topicName = kz.TopicName,
                         type = kz.Type, isTrap = kz.IsTrap,
-                        isClaimed = kz.ClaimedByConnectionId != null
+                        isClaimed = kz.ClaimedByConnectionId != null,
+                        respawnTime = kz.RespawnTime.HasValue ? Math.Max(0, (kz.RespawnTime.Value - now).TotalSeconds) : 0
                     }).ToArray(),
+                    debugInfo = new {
+                        totalQuestions = game.QuestionPool.Count,
+                        usedQuestions = game.UsedQuestionIds.Count
+                    },
                     traps = game.Traps.Values.Select(t => new {
                         id = t.Id, x = t.X, z = t.Z, type = t.Type, isActive = t.IsActive
                     }).ToArray()
@@ -674,8 +687,8 @@ public class GameEngine : BackgroundService
 
     private (float x, float z) GetRandomPositionInsideSafeZone(SafeZoneState safeZone)
     {
-        var random = new Random();
-        float radius = Math.Max(10f, safeZone.Radius - 10f);
+        var random = Random.Shared;
+        float radius = Math.Max(8f, safeZone.Radius - 10f);
         
         for (int i = 0; i < 20; i++)
         {
@@ -694,23 +707,33 @@ public class GameEngine : BackgroundService
         return (safeZone.CenterX, safeZone.CenterZ);
     }
 
+    public int GetMaxActiveZones(float safeZoneRadius)
+    {
+        if (safeZoneRadius > 200f) return 15;
+        if (safeZoneRadius > 150f) return 10;
+        if (safeZoneRadius > 80f) return 6;
+        if (safeZoneRadius > 35f) return 4;
+        return 3;
+    }
+
+    public int GetRespawnCooldownSeconds(float safeZoneRadius)
+    {
+        if (safeZoneRadius > 200f) return 15;
+        if (safeZoneRadius > 150f) return 20;
+        if (safeZoneRadius > 80f) return 25;
+        if (safeZoneRadius > 35f) return 30;
+        return 40;
+    }
+
     private void UpdateKnowledgeZones(GameState game, DateTime now)
     {
-        int maxZones = game.SafeZone.Radius switch
-        {
-            > 200f => 15,
-            > 150f => 10,
-            > 80f => 6,
-            > 30f => 4,
-            _ => 3
-        };
-
+        // 1. Tắt zone nằm ngoài bo
         foreach (var kz in game.KnowledgeZones.Values)
         {
             if (kz.IsActive && !IsZoneInsideSafeZone(kz, game.SafeZone, 5f))
             {
                 kz.IsActive = false;
-                kz.RespawnTime = now.AddSeconds(3);
+                kz.RespawnTime = now.AddSeconds(5);
                 game.ActiveQuestionIds.TryRemove(kz.QuestionId, out _);
                 
                 _logger.LogInformation("Deactivate out-of-safe-zone challenge {ZoneId}. Zone=({X},{Z}), SafeCenter=({CenterX},{CenterZ}), Radius={Radius}",
@@ -718,52 +741,71 @@ public class GameEngine : BackgroundService
             }
         }
 
-        int activeZones = game.KnowledgeZones.Values.Count(z => z.IsActive && IsZoneInsideSafeZone(z, game.SafeZone, 5f));
+        // 2. Tính số zone tối đa theo bo
+        int maxZones = GetMaxActiveZones(game.SafeZone.Radius);
 
+        // 3. Chỉ đếm zone active nằm trong bo
+        int activeZonesInSafeZone = game.KnowledgeZones.Values.Count(z =>
+            z.IsActive && IsZoneInsideSafeZone(z, game.SafeZone, 5f)
+        );
+
+        // 4. Nếu trong bo thiếu câu hỏi thì spawn thêm
         foreach (var kz in game.KnowledgeZones.Values)
         {
-            if (!kz.IsActive && now >= kz.RespawnTime)
+            if (activeZonesInSafeZone >= maxZones)
+                break;
+
+            if (kz.IsActive)
+                continue;
+
+            if (kz.RespawnTime.HasValue && kz.RespawnTime.Value > now)
+                continue;
+
+            int newQuestionId = PickUnusedQuestion(game);
+
+            if (newQuestionId == -1)
             {
-                if (activeZones >= maxZones) continue;
-                activeZones++;
-
-                int newQuestionId = PickUnusedQuestion(game);
-                game.ActiveQuestionIds.TryRemove(kz.QuestionId, out _);
-
-                kz.QuestionId = newQuestionId;
-                kz.IsActive = true;
-                kz.ClaimedByConnectionId = null;
-                kz.ClaimExpiry = null;
-
-                game.ActiveQuestionIds.TryAdd(newQuestionId, true);
-
-                if (game.QuestionPool.TryGetValue(newQuestionId, out var qd))
-                    kz.TopicName = qd.TopicName;
-
-                var pos = GetRandomPositionInsideSafeZone(game.SafeZone);
-                kz.X = pos.x;
-                kz.Z = pos.z;
-
-                var rng = new Random();
-                double roll = rng.NextDouble();
-                kz.IsTrap = (roll < 0.1);
-                if (roll >= 0.1 && roll < 0.25)
-                {
-                    kz.Type = "LootBox";
-                    string[] buffs = { "Heal", "SpeedBoost", "Scorex2", "Shield", "Ammo" };
-                    kz.LootReward = buffs[rng.Next(buffs.Length)];
-                }
-                else if (roll >= 0.25 && roll < 0.3)
-                {
-                    kz.Type = "Boss";
-                    kz.LootReward = "LegendaryBuff";
-                }
-                else
-                {
-                    kz.Type = "Normal";
-                    kz.LootReward = null;
-                }
+                kz.RespawnTime = now.AddSeconds(10);
+                continue;
             }
+
+            game.ActiveQuestionIds.TryRemove(kz.QuestionId, out _);
+            kz.QuestionId = newQuestionId;
+            kz.IsActive = true;
+            kz.ClaimedByConnectionId = null;
+            kz.ClaimExpiry = null;
+            kz.RespawnTime = null;
+
+            game.ActiveQuestionIds.TryAdd(newQuestionId, true);
+
+            if (game.QuestionPool.TryGetValue(newQuestionId, out var qd))
+                kz.TopicName = qd.TopicName;
+
+            var pos = GetRandomPositionInsideSafeZone(game.SafeZone);
+            kz.X = pos.x;
+            kz.Z = pos.z;
+
+            var rng = new Random();
+            double roll = rng.NextDouble();
+            kz.IsTrap = (roll < 0.1);
+            if (roll >= 0.1 && roll < 0.25)
+            {
+                kz.Type = "LootBox";
+                string[] buffs = { "Heal", "SpeedBoost", "Scorex2", "Shield", "Ammo" };
+                kz.LootReward = buffs[rng.Next(buffs.Length)];
+            }
+            else if (roll >= 0.25 && roll < 0.3)
+            {
+                kz.Type = "Boss";
+                kz.LootReward = "LegendaryBuff";
+            }
+            else
+            {
+                kz.Type = "Normal";
+                kz.LootReward = null;
+            }
+
+            activeZonesInSafeZone++;
         }
     }
 

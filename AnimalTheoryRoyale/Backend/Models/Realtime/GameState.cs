@@ -30,6 +30,9 @@ public class GameState
     // Track which question IDs are currently active on the map
     public ConcurrentDictionary<int, bool> ActiveQuestionIds { get; set; } = new();
 
+    // Track which question IDs have been answered/spawned before
+    public ConcurrentDictionary<int, bool> UsedQuestionIds { get; set; } = new();
+
     public ConcurrentDictionary<string, PendingJoinRequest> PendingJoins { get; set; } = new();
 }
 

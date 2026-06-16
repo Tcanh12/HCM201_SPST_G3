@@ -326,6 +326,20 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
             <StatBox label="Zone R" value={Math.round(safeZone.radius || 0)} color="#F59E0B" />
           </div>
         </div>
+
+        {/* Debug: Question Spawn */}
+        <div style={{ padding: '12px 16px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '4px' }}><ZoomIn className="w-4 h-4" /> DEBUG: QUESTION SPAWN</div>
+          <div style={{ fontSize: '11px', color: '#E5E7EB', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div>Total Questions: <span style={{ color: '#3B82F6', fontWeight: 700 }}>{gameState?.debugInfo?.totalQuestions || 0}</span></div>
+            <div>Used Questions: <span style={{ color: '#F59E0B', fontWeight: 700 }}>{gameState?.debugInfo?.usedQuestions || 0}</span></div>
+            <div>Active Zones: <span style={{ color: '#10B981', fontWeight: 700 }}>{zones.filter(z => z.isActive).length}</span></div>
+            <div>Active Zones in SafeZone: <span style={{ color: '#10B981', fontWeight: 700 }}>{zones.filter(z => z.isActive && (Math.sqrt(Math.pow(z.x - (safeZone.centerX || 0), 2) + Math.pow(z.z - (safeZone.centerZ || 0), 2)) <= (safeZone.radius || 500))).length}</span></div>
+            <div>Cooldown Zones: <span style={{ color: '#EF4444', fontWeight: 700 }}>{zones.filter(z => !z.isActive).length}</span></div>
+            <div>Next Respawn: <span style={{ color: '#A855F7', fontWeight: 700 }}>{zones.filter(z => !z.isActive).length > 0 ? Math.round(Math.min(...zones.filter(z => !z.isActive).map(z => z.respawnTime || 0))) + 's' : 'N/A'}</span></div>
+            <div>SafeZone Radius: <span style={{ color: '#06B6D4', fontWeight: 700 }}>{Math.round(safeZone.radius || 500)}m</span></div>
+          </div>
+        </div>
       </div>
     </div>
   );
