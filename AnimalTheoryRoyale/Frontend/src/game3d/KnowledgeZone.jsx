@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text, Billboard } from '@react-three/drei';
+import { Text, Billboard, Html } from '@react-three/drei';
+import { Sword, Gift, AlertTriangle, Zap, ClipboardList } from 'lucide-react';
 import * as THREE from 'three';
 
 /**
@@ -40,7 +41,7 @@ function getZoneConfig(type, isTrap) {
       coreSize: 1.8,
       coreGeom: 'icosahedron',
       ringSize: 6,
-      prefix: '⚔ ',
+      prefix: <Sword className="w-4 h-4 text-red-300" />,
       label: 'BOSS',
       labelColor: '#FECACA',
       particles: true,
@@ -55,7 +56,7 @@ function getZoneConfig(type, isTrap) {
       coreSize: 1.2,
       coreGeom: 'box',
       ringSize: 4.5,
-      prefix: '🎁 ',
+      prefix: <Gift className="w-4 h-4 text-purple-200" />,
       label: 'LOOT',
       labelColor: '#E9D5FF',
       particles: false,
@@ -70,7 +71,7 @@ function getZoneConfig(type, isTrap) {
       coreSize: 0.8,
       coreGeom: 'tetrahedron',
       ringSize: 3.5,
-      prefix: '⚠️ ',
+      prefix: <AlertTriangle className="w-4 h-4 text-orange-200" />,
       label: 'BẪY',
       labelColor: '#FED7AA',
       particles: false,
@@ -86,7 +87,7 @@ function getZoneConfig(type, isTrap) {
       coreSize: 0.7,
       coreGeom: 'octahedron',
       ringSize: 3,
-      prefix: '⚡ ',
+      prefix: <Zap className="w-4 h-4 text-cyan-200" />,
       label: 'NHANH',
       labelColor: '#A5F3FC',
       particles: false,
@@ -101,7 +102,7 @@ function getZoneConfig(type, isTrap) {
       coreSize: 1.4,
       coreGeom: 'box',
       ringSize: 5,
-      prefix: '📋 ',
+      prefix: <ClipboardList className="w-4 h-4 text-purple-200" />,
       label: 'TÌNH HUỐNG',
       labelColor: '#DDD6FE',
       particles: false,
@@ -116,7 +117,7 @@ function getZoneConfig(type, isTrap) {
     coreSize: 1.0,
     coreGeom: 'octahedron',
     ringSize: 4,
-    prefix: '',
+    prefix: null,
     label: '',
     labelColor: '#FEF3C7',
     particles: false,
@@ -160,7 +161,7 @@ export default function KnowledgeZone({ x, z, topic, type, isTrap, chapter, chap
   });
 
   // Short, clean label
-  const chapterLabel = config.prefix + getChapterLabel(topic, chapter, chapterId);
+  const chapterLabel = getChapterLabel(topic, chapter, chapterId);
   const typeLabel = config.label;
 
   // Position the label well above the pillar top
@@ -242,9 +243,18 @@ export default function KnowledgeZone({ x, z, topic, type, isTrap, chapter, chap
       >
         {/* Dark background plate for readability */}
         <mesh position={[0, 0, -0.05]}>
-          <planeGeometry args={[chapterLabel.length * 0.5 + 1, typeLabel ? 1.8 : 1.2]} />
+          <planeGeometry args={[(chapterLabel.length * 0.5 + 1) + (config.prefix ? 1 : 0), typeLabel ? 1.8 : 1.2]} />
           <meshBasicMaterial color="#0A0E1A" transparent opacity={0.75} depthTest={false} />
         </mesh>
+
+        {/* Icon (Html) */}
+        {config.prefix && (
+          <Html position={[-chapterLabel.length * 0.2 - 0.2, typeLabel ? 0.25 : 0, 0]} center zIndexRange={[100, 0]} transform>
+            <div className="pointer-events-none opacity-90 drop-shadow-md">
+              {config.prefix}
+            </div>
+          </Html>
+        )}
         
         {/* Chapter label */}
         <Text

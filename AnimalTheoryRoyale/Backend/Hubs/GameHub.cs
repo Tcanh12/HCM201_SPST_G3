@@ -608,19 +608,64 @@ public class GameHub : Hub
                         }
                         else if (qType == "Ordering")
                         {
-                            // payload is a JSON array of strings
                             try {
-                                var expected = System.Text.Json.JsonSerializer.Deserialize<List<string>>(questionData.ChallengePayloadJson ?? "[]");
+                                List<string> expected = null;
+                                var payloadElement = System.Text.Json.JsonSerializer.Deserialize<System.Text.Json.JsonElement>(questionData.ChallengePayloadJson ?? "[]");
+                                if (payloadElement.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                    expected = System.Text.Json.JsonSerializer.Deserialize<List<string>>(questionData.ChallengePayloadJson ?? "[]");
+                                } else if (payloadElement.ValueKind == System.Text.Json.JsonValueKind.Object) {
+                                    if (payloadElement.TryGetProperty("correctOrder", out var coProp) && coProp.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                        expected = System.Text.Json.JsonSerializer.Deserialize<List<string>>(coProp.GetRawText());
+                                    } else if (payloadElement.TryGetProperty("items", out var itemsProp) && itemsProp.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                        expected = System.Text.Json.JsonSerializer.Deserialize<List<string>>(itemsProp.GetRawText());
+                                    }
+                                }
                                 var actual = System.Text.Json.JsonSerializer.Deserialize<List<string>>(answerPayload ?? "[]");
                                 isCorrect = expected != null && actual != null && expected.SequenceEqual(actual);
                             } catch { isCorrect = false; }
                         }
                         else if (qType == "FillBlank" || qType == "ShortAnswer")
                         {
-                            // answerPayload is plain text
                             try {
-                                var accepted = System.Text.Json.JsonSerializer.Deserialize<List<string>>(questionData.ChallengePayloadJson ?? "[]");
-                                isCorrect = accepted != null && accepted.Any(a => string.Equals(a.Trim(), answerPayload.Trim(), StringComparison.OrdinalIgnoreCase));
+                                var payloadElement = System.Text.Json.JsonSerializer.Deserialize<System.Text.Json.JsonElement>(questionData.ChallengePayloadJson ?? "[]");
+                                var accepted = new List<string>();
+                                
+                                if (payloadElement.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                    accepted = System.Text.Json.JsonSerializer.Deserialize<List<string>>(questionData.ChallengePayloadJson ?? "[]") ?? new List<string>();
+                                } else if (payloadElement.ValueKind == System.Text.Json.JsonValueKind.Object) {
+                                    if (payloadElement.TryGetProperty("expected", out var expProp)) {
+                                        accepted.Add(expProp.GetString() ?? "");
+                                    }
+                                    if (payloadElement.TryGetProperty("expectedKeywords", out var expKwProp) && expKwProp.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                        foreach(var kw in expKwProp.EnumerateArray()) accepted.Add(kw.GetString() ?? "");
+                                    }
+                                    if (payloadElement.TryGetProperty("acceptedAnswers", out var accProp) && accProp.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                        foreach(var ans in accProp.EnumerateArray()) accepted.Add(ans.GetString() ?? "");
+                                    }
+                                    if (payloadElement.TryGetProperty("answers", out var ansProp) && ansProp.ValueKind == System.Text.Json.JsonValueKind.Array) {
+                                        foreach(var ans in ansProp.EnumerateArray()) accepted.Add(ans.GetString() ?? "");
+                                    }
+                                }
+
+                                string NormalizeAnswer(string input) {
+                                    if (string.IsNullOrWhiteSpace(input)) return "";
+                                    var normalizedString = input.Normalize(System.Text.NormalizationForm.FormD);
+                                    var sb = new System.Text.StringBuilder();
+                                    foreach (var c in normalizedString) {
+                                        if (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) != System.Globalization.UnicodeCategory.NonSpacingMark) {
+                                            sb.Append(c);
+                                        }
+                                    }
+                                    string result = sb.ToString().Normalize(System.Text.NormalizationForm.FormC).ToLowerInvariant();
+                                    result = result.Replace("đ", "d").Trim();
+                                    return System.Text.RegularExpressions.Regex.Replace(result, @"[.,;:!?]", "").Trim();
+                                }
+
+                                string normalizedUser = NormalizeAnswer(answerPayload);
+                                isCorrect = accepted.Any(a => {
+                                    string normA = NormalizeAnswer(a);
+                                    return !string.IsNullOrEmpty(normA) && (normalizedUser == normA || normalizedUser.Contains(normA));
+                                });
                             } catch { isCorrect = false; }
                         }
                         else if (qType == "Matching")

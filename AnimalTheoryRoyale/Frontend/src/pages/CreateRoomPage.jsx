@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { User, Clock, BarChart3, Users, ArrowLeft, Loader2, Swords } from 'lucide-react';
+import { User, Clock, BarChart3, Users, ArrowLeft, Loader2, Swords, Gamepad2, Leaf, Flame } from 'lucide-react';
 import axios from 'axios';
 import API_HOST from '../config';
 
@@ -51,9 +51,9 @@ export default function CreateRoomPage() {
   };
 
   const difficultyOptions = [
-    { value: 'Mixed', label: 'Trộn Lẫn', desc: 'Đủ mọi cấp độ', icon: '🎲' },
-    { value: 'Easy', label: 'Dễ', desc: 'Cho người mới', icon: '🌱' },
-    { value: 'Hard', label: 'Khó', desc: 'Thử thách cao', icon: '🔥' },
+    { value: 'Mixed', label: 'Trộn Lẫn', desc: 'Đủ mọi cấp độ', icon: <Gamepad2 className="w-6 h-6 mx-auto" /> },
+    { value: 'Easy', label: 'Dễ', desc: 'Cho người mới', icon: <Leaf className="w-6 h-6 mx-auto" /> },
+    { value: 'Hard', label: 'Khó', desc: 'Thử thách cao', icon: <Flame className="w-6 h-6 mx-auto" /> },
   ];
 
   return (

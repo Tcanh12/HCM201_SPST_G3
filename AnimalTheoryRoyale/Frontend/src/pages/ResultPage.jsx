@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState, useMemo } from 'react';
-import { Home, Crown, Medal, Award, Star, TrendingUp, Target, ShieldAlert, Flame, User } from 'lucide-react';
+import { Home, Crown, Medal, Award, Star, TrendingUp, Target, ShieldAlert, Flame, User, Shield, Zap, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 // Helper component for Stat Row
@@ -133,9 +133,9 @@ function Podium({ players }) {
                 <motion.div
                   animate={{ rotate: [0, -5, 5, 0], y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="text-4xl mb-2 filter drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]"
+                  className="mb-2 filter drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] text-yellow-400"
                 >
-                  👑
+                  <Crown className="w-10 h-10" />
                 </motion.div>
               )}
               <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center text-3xl border-2 ${
@@ -143,7 +143,7 @@ function Podium({ players }) {
                 rank === 2 ? 'border-gray-300 bg-gray-400/20' :
                 'border-amber-700 bg-amber-700/20'
               }`}>
-                {player.characterId === 1 ? '🐘' : player.characterId === 2 ? '🐇' : player.characterId === 3 ? '🦊' : '🐢'}
+                {player.characterId === 1 ? <Shield className="w-8 h-8" /> : player.characterId === 2 ? <Zap className="w-8 h-8" /> : player.characterId === 3 ? <Sparkles className="w-8 h-8" /> : <Shield className="w-8 h-8" />}
               </div>
               
               <p className={`font-black text-sm md:text-base mt-3 uppercase tracking-wide truncate max-w-[80px] md:max-w-[120px] ${rank === 1 ? 'text-yellow-400 text-glow-sm' : 'text-white/90'}`}>

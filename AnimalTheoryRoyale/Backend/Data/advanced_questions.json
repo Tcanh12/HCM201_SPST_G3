@@ -41,7 +41,7 @@
     "Difficulty": "Easy",
     "Content": "Tác phẩm lý luận đầu tiên vạch ra đường lối cơ bản của cách mạng Việt Nam do Nguyễn Ái Quốc soạn thảo năm 1927 là gì?",
     "Explanation": "Đường Kách mệnh.",
-    "ChallengePayloadJson": "{\"expected\":\"Đường Kách mệnh.\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Đường Kách mệnh.\",\"acceptedAnswers\":[\"Đường Kách mệnh.\"],\"maxInputLength\":21,\"hint\":\"Nhập câu trả lời ngắn.\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -89,9 +89,9 @@
     "TopicName": "Cương lĩnh chính trị đầu tiên",
     "QuestionType": "ShortAnswer",
     "Difficulty": "Medium",
-    "Content": "Theo Cương lĩnh chính trị đầu tiên, giai cấp nào là lực lượng lãnh đạo cách mạng?",
+    "Content": "Theo Cương lĩnh chính trị đầu tiên, giai cấp lãnh đạo cách mạng là giai cấp nào?",
     "Explanation": "Giai cấp công nhân thông qua đội tiên phong là Đảng Cộng sản.",
-    "ChallengePayloadJson": "{\"expected\":\"Giai cấp công nhân thông qua đội tiên phong là Đảng Cộng sản.\"}",
+    "ChallengePayloadJson": "{\"expected\":\"công nhân\",\"acceptedAnswers\":[\"công nhân\",\"giai cấp công nhân\",\"cong nhan\",\"giai cap cong nhan\"],\"hint\":\"Nhập tên giai cấp, 2 từ.\",\"hintLevel1\":\"Đây là giai cấp gắn với nền sản xuất công nghiệp.\",\"maxInputLength\":20,\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -137,7 +137,7 @@
   },
   {
     "TopicName": "Luận cương chính trị tháng 10/1930",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "MultipleChoice",
     "Difficulty": "Easy",
     "Content": "Đại hội/Hội nghị nào đã thông qua Luận cương chính trị (10/1930)?",
     "Explanation": "Hội nghị lần thứ nhất Ban Chấp hành Trung ương Đảng (10/1930).",
@@ -173,7 +173,7 @@
     "Difficulty": "Hard",
     "Content": "Hình thái chính quyền nào được thành lập trong phong trào cách mạng 1930-1931 tại Nghệ An và Hà Tĩnh?",
     "Explanation": "Chính quyền Xô viết.",
-    "ChallengePayloadJson": "{\"expected\":\"Chính quyền Xô viết.\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Chính quyền Xô viết.\",\"acceptedAnswers\":[\"Chính quyền Xô viết.\"],\"maxInputLength\":25,\"hint\":\"Nhập câu trả lời ngắn.\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -205,7 +205,7 @@
     "Difficulty": "Medium",
     "Content": "Tên của mặt trận được thành lập trong giai đoạn 1936-1939 nhằm tập hợp rộng rãi lực lượng đấu tranh là gì?",
     "Explanation": "Mặt trận Dân chủ Đông Dương.",
-    "ChallengePayloadJson": "{\"expected\":\"Mặt trận Dân chủ Đông Dương.\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Mặt trận Dân chủ Đông Dương\",\"acceptedAnswers\":[\"Dân chủ Đông Dương\",\"Mặt trận Dân chủ\",\"MTDC\",\"Mặt trận Dân chủ Đông Dương\"],\"hint\":\"Nhập tên mặt trận.\",\"maxInputLength\":30,\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -237,7 +237,7 @@
     "Difficulty": "Medium",
     "Content": "Hội nghị Trung ương 8 (5/1941) quyết định thành lập Mặt trận ___________ nhằm tập hợp mọi lực lượng yêu nước.",
     "Explanation": "Việt Nam độc lập đồng minh (Việt Minh).",
-    "ChallengePayloadJson": "{\"expected\":\"Việt Nam độc lập đồng minh (Việt Minh).\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Việt Minh\",\"acceptedAnswers\":[\"Việt Minh\",\"Viet Minh\",\"VM\",\"Việt Nam độc lập đồng minh\"],\"hint\":\"Tên viết tắt gồm 2 từ, bắt đầu bằng V.\",\"hintLevel1\":\"Đây là mặt trận được thành lập năm 1941.\",\"maxInputLength\":30,\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -287,7 +287,7 @@
     "Difficulty": "Easy",
     "Content": "Khẩu hiệu nào được thay thế cho khẩu hiệu 'đánh đuổi Pháp - Nhật' sau sự kiện Nhật đảo chính Pháp?",
     "Explanation": "Đánh đuổi phát xít Nhật.",
-    "ChallengePayloadJson": "{\"expected\":\"Đánh đuổi phát xít Nhật.\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Đánh đuổi phát xít Nhật\",\"acceptedAnswers\":[\"Nhật\",\"phát xít Nhật\",\"đánh Nhật\",\"Đánh đuổi phát xít Nhật\"],\"hint\":\"Đánh đuổi thế lực nào?\",\"maxInputLength\":30,\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -337,7 +337,7 @@
     "Difficulty": "Easy",
     "Content": "Chiều ngày 16/8/1945, Quốc dân Đại hội Tân Trào đã bầu ra Ủy ban _________ do Hồ Chí Minh làm Chủ tịch.",
     "Explanation": "Dân tộc giải phóng Việt Nam.",
-    "ChallengePayloadJson": "{\"expected\":\"Dân tộc giải phóng Việt Nam.\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Tân Trào\",\"acceptedAnswers\":[\"Tân Trào\",\"Tan Trao\",\"Dân tộc giải phóng\",\"Dan toc giai phong\"],\"hint\":\"Nhập từ khóa ngắn.\",\"maxInputLength\":25,\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -401,11 +401,11 @@
   },
   {
     "TopicName": "Bài học kinh nghiệm 1930-1945",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
     "Content": "Cách mạng Tháng Tám 1945 là cuộc cách mạng giải phóng dân tộc mang tính chất gì?",
     "Explanation": "Mang tính chất dân chủ mới (vì một bộ phận nhiệm vụ dân chủ đã được thực hiện, là cách mạng do giai cấp công nhân lãnh đạo).",
-    "ChallengePayloadJson": "{\"expected\":\"Mang tính chất dân chủ mới (vì một bộ phận nhiệm vụ dân chủ đã được thực hiện, là cách mạng do giai cấp công nhân lãnh đạo).\"}",
+    "ChallengePayloadJson": "{\"expected\":\"Mang tính chất dân chủ mới (vì một bộ phận nhiệm vụ dân chủ đã được thực hiện, là cách mạng do giai cấp công nhân lãnh đạo).\",\"case\":\"Cách mạng Tháng Tám 1945 là cuộc cách mạng giải phóng dân tộc mang tính chất gì?\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem giải thích",
@@ -437,7 +437,7 @@
     "Difficulty": "Easy",
     "Content": "Hội Việt Nam Cách mạng Thanh niên được thành lập năm __________ nhằm chuẩn bị lực lượng cách mạng.",
     "Explanation": "Hội Việt Nam Cách mạng Thanh niên được Nguyễn Ái Quốc thành lập tháng 6/1925.",
-    "ChallengePayloadJson": "{\"sentence\": \"Hội Việt Nam Cách mạng Thanh niên được thành lập năm ____ nhằm chuẩn bị lực lượng cách mạng.\", \"answers\": [\"1925\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Hội Việt Nam Cách mạng Thanh niên được thành lập năm ____ nhằm chuẩn bị lực lượng cách mạng.\",\"answers\":[\"1925\"],\"acceptedAnswers\":[\"1925\"],\"hint\":\"Nhập 4 chữ số năm.\",\"maxInputLength\":4,\"expected\":\"1925\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "1925",
@@ -511,11 +511,11 @@
   },
   {
     "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Medium",
     "Content": "Vì sao sự ra đời của ba tổ chức cộng sản năm 1929 đặt ra yêu cầu hợp nhất?",
     "Explanation": "Ba tổ chức cộng sản cùng hoạt động cho thấy phong trào phát triển nhưng cũng có nguy cơ phân tán, nên cần một đảng thống nhất lãnh đạo.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"phân tán\", \"thống nhất\", \"lãnh đạo\", \"phong trào\"], \"sampleAnswer\": \"Ba tổ chức cộng sản cùng hoạt động cho thấy phong trào phát triển nhưng cũng có nguy cơ phân tán, nên cần một đảng thống nhất lãnh đạo.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"phân tán\",\"thống nhất\",\"lãnh đạo\",\"phong trào\"],\"sampleAnswer\":\"Ba tổ chức cộng sản cùng hoạt động cho thấy phong trào phát triển nhưng cũng có nguy cơ phân tán, nên cần một đảng thống nhất lãnh đạo.\",\"case\":\"Vì sao sự ra đời của ba tổ chức cộng sản năm 1929 đặt ra yêu cầu hợp nhất?\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -573,7 +573,7 @@
     "Difficulty": "Easy",
     "Content": "Tác phẩm Đường Kách mệnh gắn với quá trình chuẩn bị về __________ cho cách mạng Việt Nam.",
     "Explanation": "Đường Kách mệnh góp phần truyền bá lý luận cách mạng giải phóng dân tộc theo khuynh hướng vô sản.",
-    "ChallengePayloadJson": "{\"sentence\": \"Tác phẩm Đường Kách mệnh gắn với quá trình chuẩn bị về ____ cho cách mạng Việt Nam.\", \"answers\": [\"tư tưởng\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Tác phẩm Đường Kách mệnh gắn với quá trình chuẩn bị về ____ cho cách mạng Việt Nam.\",\"answers\":[\"tư tưởng\"],\"acceptedAnswers\":[\"Đường Kách mệnh\",\"Duong Kach menh\",\"DKM\"],\"hint\":\"Nhập tên tác phẩm, 3 từ.\",\"hintLevel1\":\"Tác phẩm xuất bản năm 1927.\",\"maxInputLength\":20,\"expected\":\"Đường Kách mệnh\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "tư tưởng",
@@ -595,11 +595,11 @@
   },
   {
     "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
     "Content": "Nêu ý nghĩa lịch sử của việc Đảng Cộng sản Việt Nam ra đời đầu năm 1930.",
     "Explanation": "Đảng ra đời chấm dứt khủng hoảng về đường lối và tổ chức lãnh đạo, mở ra thời kỳ cách mạng Việt Nam có một đảng thống nhất lãnh đạo.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"chấm dứt khủng hoảng\", \"đường lối\", \"lãnh đạo\", \"cách mạng Việt Nam\"], \"sampleAnswer\": \"Đảng ra đời chấm dứt khủng hoảng về đường lối và tổ chức lãnh đạo, mở ra thời kỳ cách mạng Việt Nam có một đảng thống nhất lãnh đạo.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"chấm dứt khủng hoảng\",\"đường lối\",\"lãnh đạo\",\"cách mạng Việt Nam\"],\"sampleAnswer\":\"Đảng ra đời chấm dứt khủng hoảng về đường lối và tổ chức lãnh đạo, mở ra thời kỳ cách mạng Việt Nam có một đảng thống nhất lãnh đạo.\",\"case\":\"Nêu ý nghĩa lịch sử của việc Đảng Cộng sản Việt Nam ra đời đầu năm 1930.\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -657,7 +657,7 @@
     "Difficulty": "Easy",
     "Content": "Cương lĩnh đầu tiên xác định cách mạng Việt Nam tiến tới xã hội __________.",
     "Explanation": "Cương lĩnh nêu phương hướng làm tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản.",
-    "ChallengePayloadJson": "{\"sentence\": \"Cương lĩnh đầu tiên xác định cách mạng Việt Nam tiến tới xã hội ____.\", \"answers\": [\"cộng sản\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Cương lĩnh đầu tiên xác định cách mạng Việt Nam tiến tới xã hội ____.\",\"answers\":[\"cộng sản\"],\"acceptedAnswers\":[\"cộng sản\",\"cong san\"],\"hint\":\"Xã hội gì?\",\"maxInputLength\":10,\"expected\":\"cộng sản\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "cộng sản",
@@ -731,11 +731,11 @@
   },
   {
     "TopicName": "Cương lĩnh chính trị đầu tiên",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Medium",
     "Content": "Vì sao nói Cương lĩnh đầu tiên có tính dân tộc sâu sắc?",
     "Explanation": "Vì Cương lĩnh đặt nhiệm vụ đánh đổ đế quốc, giành độc lập dân tộc lên vị trí quan trọng và tập hợp rộng rãi lực lượng yêu nước.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"độc lập\", \"chống đế quốc\", \"dân tộc\", \"lực lượng yêu nước\"], \"sampleAnswer\": \"Vì Cương lĩnh đặt nhiệm vụ đánh đổ đế quốc, giành độc lập dân tộc lên vị trí quan trọng và tập hợp rộng rãi lực lượng yêu nước.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"độc lập\",\"chống đế quốc\",\"dân tộc\",\"lực lượng yêu nước\"],\"sampleAnswer\":\"Vì Cương lĩnh đặt nhiệm vụ đánh đổ đế quốc, giành độc lập dân tộc lên vị trí quan trọng và tập hợp rộng rãi lực lượng yêu nước.\",\"case\":\"Vì sao nói Cương lĩnh đầu tiên có tính dân tộc sâu sắc?\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -793,7 +793,7 @@
     "Difficulty": "Medium",
     "Content": "Trong Cương lĩnh đầu tiên, phương pháp cách mạng được xác định là bạo lực cách mạng của __________.",
     "Explanation": "Cương lĩnh nhấn mạnh vai trò hành động cách mạng của quần chúng dưới sự lãnh đạo của Đảng.",
-    "ChallengePayloadJson": "{\"sentence\": \"Trong Cương lĩnh đầu tiên, phương pháp cách mạng được xác định là bạo lực cách mạng của ____.\", \"answers\": [\"quần chúng\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Trong Cương lĩnh đầu tiên, phương pháp cách mạng được xác định là bạo lực cách mạng của ____.\",\"answers\":[\"quần chúng\"],\"acceptedAnswers\":[\"quần chúng\",\"quan chung\",\"nhân dân\",\"nhan dan\"],\"hint\":\"Bạo lực của ai?\",\"maxInputLength\":15,\"expected\":\"quần chúng\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "quần chúng",
@@ -815,11 +815,11 @@
   },
   {
     "TopicName": "Cương lĩnh chính trị đầu tiên",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
     "Content": "Điểm sáng tạo của Cương lĩnh đầu tiên so với nhận thức giáo điều là gì?",
     "Explanation": "Điểm sáng tạo là đặt vấn đề dân tộc phù hợp xã hội thuộc địa Việt Nam và có sách lược tập hợp lực lượng yêu nước rộng rãi.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"thuộc địa\", \"dân tộc\", \"lực lượng rộng\", \"sáng tạo\"], \"sampleAnswer\": \"Điểm sáng tạo là đặt vấn đề dân tộc phù hợp xã hội thuộc địa Việt Nam và có sách lược tập hợp lực lượng yêu nước rộng rãi.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"thuộc địa\",\"dân tộc\",\"lực lượng rộng\",\"sáng tạo\"],\"sampleAnswer\":\"Điểm sáng tạo là đặt vấn đề dân tộc phù hợp xã hội thuộc địa Việt Nam và có sách lược tập hợp lực lượng yêu nước rộng rãi.\",\"case\":\"Điểm sáng tạo của Cương lĩnh đầu tiên so với nhận thức giáo điều là gì?\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -877,7 +877,7 @@
     "Difficulty": "Easy",
     "Content": "Hội nghị Trung ương tháng 10/1930 đã đổi tên Đảng Cộng sản Việt Nam thành Đảng Cộng sản __________.",
     "Explanation": "Hội nghị Trung ương lần thứ nhất tháng 10/1930 đổi tên Đảng thành Đảng Cộng sản Đông Dương.",
-    "ChallengePayloadJson": "{\"sentence\": \"Hội nghị Trung ương tháng 10/1930 đã đổi tên Đảng Cộng sản Việt Nam thành Đảng Cộng sản ____.\", \"answers\": [\"Đông Dương\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Hội nghị Trung ương tháng 10/1930 đã đổi tên Đảng Cộng sản Việt Nam thành Đảng Cộng sản ____.\",\"answers\":[\"Đông Dương\"],\"acceptedAnswers\":[\"Đông Dương\",\"Dong Duong\"],\"hint\":\"Tên gọi thay thế Việt Nam.\",\"maxInputLength\":15,\"expected\":\"Đông Dương\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Đông Dương",
@@ -955,7 +955,7 @@
     "Difficulty": "Medium",
     "Content": "Luận cương 10/1930 có ưu điểm cơ bản nào?",
     "Explanation": "Luận cương khẳng định tính chất cách mạng, vai trò lãnh đạo của giai cấp công nhân, liên minh công nông và nhiệm vụ phản đế, phản phong.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"cách mạng\", \"vô sản\", \"công nông\", \"phản đế\"], \"sampleAnswer\": \"Luận cương khẳng định tính chất cách mạng, vai trò lãnh đạo của giai cấp công nhân, liên minh công nông và nhiệm vụ phản đế, phản phong.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"cách mạng\",\"vô sản\",\"công nông\",\"phản đế\"],\"sampleAnswer\":\"Luận cương khẳng định tính chất cách mạng, vai trò lãnh đạo của giai cấp công nhân, liên minh công nông và nhiệm vụ phản đế, phản phong.\",\"acceptedAnswers\":[\"cách mạng\"],\"maxInputLength\":14,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"cách mạng\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1013,7 +1013,7 @@
     "Difficulty": "Medium",
     "Content": "Luận cương nhấn mạnh hai nhiệm vụ là phản đế và __________.",
     "Explanation": "Luận cương xác định cách mạng tư sản dân quyền có tính chất thổ địa và phản đế.",
-    "ChallengePayloadJson": "{\"sentence\": \"Luận cương nhấn mạnh hai nhiệm vụ là phản đế và ____.\", \"answers\": [\"thổ địa\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Luận cương nhấn mạnh hai nhiệm vụ là phản đế và ____.\",\"answers\":[\"thổ địa\"],\"acceptedAnswers\":[\"thổ địa\"],\"maxInputLength\":12,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"thổ địa\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "thổ địa",
@@ -1035,11 +1035,11 @@
   },
   {
     "TopicName": "Luận cương chính trị tháng 10/1930",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
     "Content": "Vì sao Luận cương bị xem là còn nặng về đấu tranh giai cấp?",
     "Explanation": "Vì Luận cương nhấn mạnh cách mạng ruộng đất, đánh giá hẹp lực lượng cách mạng và chưa làm nổi bật đầy đủ nhiệm vụ dân tộc trong xã hội thuộc địa.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"giai cấp\", \"ruộng đất\", \"lực lượng\", \"dân tộc\"], \"sampleAnswer\": \"Vì Luận cương nhấn mạnh cách mạng ruộng đất, đánh giá hẹp lực lượng cách mạng và chưa làm nổi bật đầy đủ nhiệm vụ dân tộc trong xã hội thuộc địa.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"giai cấp\",\"ruộng đất\",\"lực lượng\",\"dân tộc\"],\"sampleAnswer\":\"Vì Luận cương nhấn mạnh cách mạng ruộng đất, đánh giá hẹp lực lượng cách mạng và chưa làm nổi bật đầy đủ nhiệm vụ dân tộc trong xã hội thuộc địa.\",\"case\":\"Vì sao Luận cương bị xem là còn nặng về đấu tranh giai cấp?\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1097,7 +1097,7 @@
     "Difficulty": "Easy",
     "Content": "Xô viết Nghệ Tĩnh diễn ra tiêu biểu ở hai tỉnh Nghệ An và __________.",
     "Explanation": "Phong trào Xô viết Nghệ Tĩnh gắn với Nghệ An và Hà Tĩnh.",
-    "ChallengePayloadJson": "{\"sentence\": \"Xô viết Nghệ Tĩnh diễn ra tiêu biểu ở hai tỉnh Nghệ An và ____.\", \"answers\": [\"Hà Tĩnh\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Xô viết Nghệ Tĩnh diễn ra tiêu biểu ở hai tỉnh Nghệ An và ____.\",\"answers\":[\"Hà Tĩnh\"],\"acceptedAnswers\":[\"Xô viết\",\"Xo viet\",\"Chính quyền Xô viết\"],\"hint\":\"Mô hình chính quyền ở Nghệ Tĩnh.\",\"maxInputLength\":20,\"expected\":\"Xô viết\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Hà Tĩnh",
@@ -1175,7 +1175,7 @@
     "Difficulty": "Medium",
     "Content": "Vì sao Xô viết Nghệ Tĩnh được coi là cuộc tổng diễn tập đầu tiên?",
     "Explanation": "Vì phong trào rèn luyện quần chúng, kiểm nghiệm vai trò lãnh đạo của Đảng và xuất hiện hình thức chính quyền cách mạng ở cơ sở.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"quần chúng\", \"Đảng\", \"chính quyền\", \"kinh nghiệm\"], \"sampleAnswer\": \"Vì phong trào rèn luyện quần chúng, kiểm nghiệm vai trò lãnh đạo của Đảng và xuất hiện hình thức chính quyền cách mạng ở cơ sở.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"quần chúng\",\"Đảng\",\"chính quyền\",\"kinh nghiệm\"],\"sampleAnswer\":\"Vì phong trào rèn luyện quần chúng, kiểm nghiệm vai trò lãnh đạo của Đảng và xuất hiện hình thức chính quyền cách mạng ở cơ sở.\",\"acceptedAnswers\":[\"Xô viết\",\"Xo viet\",\"Chính quyền Xô viết\"],\"hint\":\"Mô hình chính quyền ở Nghệ Tĩnh.\",\"maxInputLength\":20,\"expected\":\"Xô viết\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1233,7 +1233,7 @@
     "Difficulty": "Medium",
     "Content": "Một trong những lực lượng chủ yếu của cao trào 1930–1931 là giai cấp __________.",
     "Explanation": "Công nhân và nông dân là hai lực lượng nổi bật trong cao trào.",
-    "ChallengePayloadJson": "{\"sentence\": \"Một trong những lực lượng chủ yếu của cao trào 1930–1931 là giai cấp ____.\", \"answers\": [\"nông dân\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Một trong những lực lượng chủ yếu của cao trào 1930–1931 là giai cấp ____.\",\"answers\":[\"nông dân\"],\"acceptedAnswers\":[\"nông dân\"],\"maxInputLength\":13,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"nông dân\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "nông dân",
@@ -1255,11 +1255,11 @@
   },
   {
     "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
-    "QuestionType": "ShortAnswer",
+    "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
     "Content": "Nêu một hạn chế hoặc bài học từ cao trào 1930–1931.",
     "Explanation": "Một bài học là cần đánh giá đúng tương quan lực lượng, bảo toàn tổ chức và chuẩn bị lâu dài để tránh tổn thất khi địch đàn áp.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"bảo toàn lực lượng\", \"tương quan lực lượng\", \"đàn áp\", \"tổ chức\"], \"sampleAnswer\": \"Một bài học là cần đánh giá đúng tương quan lực lượng, bảo toàn tổ chức và chuẩn bị lâu dài để tránh tổn thất khi địch đàn áp.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"bảo toàn lực lượng\",\"tương quan lực lượng\",\"đàn áp\",\"tổ chức\"],\"sampleAnswer\":\"Một bài học là cần đánh giá đúng tương quan lực lượng, bảo toàn tổ chức và chuẩn bị lâu dài để tránh tổn thất khi địch đàn áp.\",\"case\":\"Nêu một hạn chế hoặc bài học từ cao trào 1930–1931.\",\"criteria\":[\"từ khóa 1\",\"từ khóa 2\"]}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1317,7 +1317,7 @@
     "Difficulty": "Easy",
     "Content": "Đại hội đại biểu lần thứ nhất của Đảng họp tháng 3/1935 tại __________.",
     "Explanation": "Đại hội I họp tại Ma Cao, Trung Quốc.",
-    "ChallengePayloadJson": "{\"sentence\": \"Đại hội đại biểu lần thứ nhất của Đảng họp tháng 3/1935 tại ____.\", \"answers\": [\"Ma Cao\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Đại hội đại biểu lần thứ nhất của Đảng họp tháng 3/1935 tại ____.\",\"answers\":[\"Ma Cao\"],\"acceptedAnswers\":[\"Ma Cao\",\"Macau\"],\"hint\":\"Địa điểm họp Đại hội I.\",\"maxInputLength\":10,\"expected\":\"Ma Cao\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Ma Cao",
@@ -1395,7 +1395,7 @@
     "Difficulty": "Medium",
     "Content": "Ba nhiệm vụ trước mắt của Đại hội I năm 1935 có thể khái quát như thế nào?",
     "Explanation": "Đại hội tập trung củng cố và phát triển Đảng, vận động quần chúng, tuyên truyền chống đế quốc và chống chiến tranh.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"củng cố Đảng\", \"vận động quần chúng\", \"chống đế quốc\", \"chống chiến tranh\"], \"sampleAnswer\": \"Đại hội tập trung củng cố và phát triển Đảng, vận động quần chúng, tuyên truyền chống đế quốc và chống chiến tranh.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"củng cố Đảng\",\"vận động quần chúng\",\"chống đế quốc\",\"chống chiến tranh\"],\"sampleAnswer\":\"Đại hội tập trung củng cố và phát triển Đảng, vận động quần chúng, tuyên truyền chống đế quốc và chống chiến tranh.\",\"acceptedAnswers\":[\"củng cố Đảng\"],\"maxInputLength\":17,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"củng cố Đảng\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1453,7 +1453,7 @@
     "Difficulty": "Medium",
     "Content": "Giai đoạn 1932–1935 nhấn mạnh nhiệm vụ củng cố và phát triển __________.",
     "Explanation": "Nhiệm vụ trước mắt của Đại hội I là củng cố và phát triển Đảng.",
-    "ChallengePayloadJson": "{\"sentence\": \"Giai đoạn 1932–1935 nhấn mạnh nhiệm vụ củng cố và phát triển ____.\", \"answers\": [\"Đảng\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Giai đoạn 1932–1935 nhấn mạnh nhiệm vụ củng cố và phát triển ____.\",\"answers\":[\"Đảng\"],\"acceptedAnswers\":[\"Đảng\"],\"maxInputLength\":9,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"Đảng\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Đảng",
@@ -1479,7 +1479,7 @@
     "Difficulty": "Hard",
     "Content": "Ý nghĩa của việc phục hồi tổ chức Đảng trước năm 1936 là gì?",
     "Explanation": "Việc phục hồi giúp khôi phục cơ sở, rèn luyện cán bộ và chuẩn bị điều kiện tổ chức để bước vào phong trào dân chủ 1936–1939.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"cơ sở\", \"cán bộ\", \"quần chúng\", \"phong trào dân chủ\"], \"sampleAnswer\": \"Việc phục hồi giúp khôi phục cơ sở, rèn luyện cán bộ và chuẩn bị điều kiện tổ chức để bước vào phong trào dân chủ 1936–1939.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"cơ sở\",\"cán bộ\",\"quần chúng\",\"phong trào dân chủ\"],\"sampleAnswer\":\"Việc phục hồi giúp khôi phục cơ sở, rèn luyện cán bộ và chuẩn bị điều kiện tổ chức để bước vào phong trào dân chủ 1936–1939.\",\"acceptedAnswers\":[\"cơ sở\"],\"maxInputLength\":10,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"cơ sở\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1537,7 +1537,7 @@
     "Difficulty": "Easy",
     "Content": "Phong trào 1936–1939 đấu tranh chống phát xít, chống chiến tranh, đòi tự do, dân chủ, cơm áo và __________.",
     "Explanation": "Khẩu hiệu hòa bình là một nội dung nổi bật của phong trào dân chủ.",
-    "ChallengePayloadJson": "{\"sentence\": \"Phong trào 1936–1939 đấu tranh chống phát xít, chống chiến tranh, đòi tự do, dân chủ, cơm áo và ____.\", \"answers\": [\"hòa bình\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Phong trào 1936–1939 đấu tranh chống phát xít, chống chiến tranh, đòi tự do, dân chủ, cơm áo và ____.\",\"answers\":[\"hòa bình\"],\"acceptedAnswers\":[\"hòa bình\"],\"maxInputLength\":13,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"hòa bình\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "hòa bình",
@@ -1615,7 +1615,7 @@
     "Difficulty": "Medium",
     "Content": "Vì sao Đảng sử dụng hình thức đấu tranh công khai, hợp pháp trong giai đoạn 1936–1939?",
     "Explanation": "Vì bối cảnh chính trị mới tạo điều kiện nhất định, Đảng tận dụng hình thức công khai, hợp pháp để mở rộng ảnh hưởng và tập hợp quần chúng.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"điều kiện\", \"hợp pháp\", \"quần chúng\", \"sách lược\"], \"sampleAnswer\": \"Vì bối cảnh chính trị mới tạo điều kiện nhất định, Đảng tận dụng hình thức công khai, hợp pháp để mở rộng ảnh hưởng và tập hợp quần chúng.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"điều kiện\",\"hợp pháp\",\"quần chúng\",\"sách lược\"],\"sampleAnswer\":\"Vì bối cảnh chính trị mới tạo điều kiện nhất định, Đảng tận dụng hình thức công khai, hợp pháp để mở rộng ảnh hưởng và tập hợp quần chúng.\",\"acceptedAnswers\":[\"điều kiện\"],\"maxInputLength\":14,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"điều kiện\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1673,7 +1673,7 @@
     "Difficulty": "Medium",
     "Content": "Trong giai đoạn 1936–1939, Đảng cần phân biệt mục tiêu chiến lược lâu dài với nhiệm vụ __________.",
     "Explanation": "Đây là bài học quan trọng về sự linh hoạt sách lược.",
-    "ChallengePayloadJson": "{\"sentence\": \"Trong giai đoạn 1936–1939, Đảng cần phân biệt mục tiêu chiến lược lâu dài với nhiệm vụ ____.\", \"answers\": [\"trước mắt\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Trong giai đoạn 1936–1939, Đảng cần phân biệt mục tiêu chiến lược lâu dài với nhiệm vụ ____.\",\"answers\":[\"trước mắt\"],\"acceptedAnswers\":[\"trước mắt\"],\"maxInputLength\":14,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"trước mắt\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "trước mắt",
@@ -1699,7 +1699,7 @@
     "Difficulty": "Hard",
     "Content": "Nêu ý nghĩa của phong trào dân chủ 1936–1939 đối với quần chúng.",
     "Explanation": "Phong trào rèn luyện quần chúng, mở rộng mặt trận, nâng cao ý thức chính trị và chuẩn bị lực lượng cho giai đoạn sau.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"rèn luyện\", \"tập hợp\", \"quyền dân chủ\", \"mặt trận\"], \"sampleAnswer\": \"Phong trào rèn luyện quần chúng, mở rộng mặt trận, nâng cao ý thức chính trị và chuẩn bị lực lượng cho giai đoạn sau.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"rèn luyện\",\"tập hợp\",\"quyền dân chủ\",\"mặt trận\"],\"sampleAnswer\":\"Phong trào rèn luyện quần chúng, mở rộng mặt trận, nâng cao ý thức chính trị và chuẩn bị lực lượng cho giai đoạn sau.\",\"acceptedAnswers\":[\"rèn luyện\"],\"maxInputLength\":14,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"rèn luyện\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1757,7 +1757,7 @@
     "Difficulty": "Easy",
     "Content": "Hội nghị Trung ương 6 tháng 11/1939 họp tại Bà Điểm, Hóc Môn, __________.",
     "Explanation": "Hội nghị Trung ương 6 diễn ra tại Bà Điểm, Hóc Môn, Gia Định.",
-    "ChallengePayloadJson": "{\"sentence\": \"Hội nghị Trung ương 6 tháng 11/1939 họp tại Bà Điểm, Hóc Môn, ____.\", \"answers\": [\"Gia Định\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Hội nghị Trung ương 6 tháng 11/1939 họp tại Bà Điểm, Hóc Môn, ____.\",\"answers\":[\"Gia Định\"],\"acceptedAnswers\":[\"Gia Định\"],\"maxInputLength\":13,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"Gia Định\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Gia Định",
@@ -1835,7 +1835,7 @@
     "Difficulty": "Medium",
     "Content": "Nội dung cốt lõi của chuyển hướng chiến lược 1939–1941 là gì?",
     "Explanation": "Cốt lõi là đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, xây dựng mặt trận dân tộc thống nhất và chuẩn bị khởi nghĩa vũ trang.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"giải phóng dân tộc\", \"hàng đầu\", \"Việt Minh\", \"khởi nghĩa vũ trang\"], \"sampleAnswer\": \"Cốt lõi là đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, xây dựng mặt trận dân tộc thống nhất và chuẩn bị khởi nghĩa vũ trang.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"giải phóng dân tộc\",\"hàng đầu\",\"Việt Minh\",\"khởi nghĩa vũ trang\"],\"sampleAnswer\":\"Cốt lõi là đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, xây dựng mặt trận dân tộc thống nhất và chuẩn bị khởi nghĩa vũ trang.\",\"acceptedAnswers\":[\"giải phóng dân tộc\"],\"maxInputLength\":23,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"giải phóng dân tộc\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1893,7 +1893,7 @@
     "Difficulty": "Medium",
     "Content": "Sau khi chiến tranh bùng nổ, Đảng chủ trương rút vào hoạt động __________.",
     "Explanation": "Hoạt động bí mật phù hợp với điều kiện đàn áp của chính quyền thuộc địa.",
-    "ChallengePayloadJson": "{\"sentence\": \"Sau khi chiến tranh bùng nổ, Đảng chủ trương rút vào hoạt động ____.\", \"answers\": [\"bí mật\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Sau khi chiến tranh bùng nổ, Đảng chủ trương rút vào hoạt động ____.\",\"answers\":[\"bí mật\"],\"acceptedAnswers\":[\"bí mật\"],\"maxInputLength\":11,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"bí mật\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "bí mật",
@@ -1919,7 +1919,7 @@
     "Difficulty": "Hard",
     "Content": "Vì sao giải phóng dân tộc được đặt lên hàng đầu từ 1939–1941?",
     "Explanation": "Vì mâu thuẫn dân tộc với đế quốc, phát xít trở nên gay gắt; nếu không giành độc lập thì quyền lợi các giai cấp cũng không giải quyết được.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"mâu thuẫn dân tộc\", \"Pháp\", \"Nhật\", \"độc lập\"], \"sampleAnswer\": \"Vì mâu thuẫn dân tộc với đế quốc, phát xít trở nên gay gắt; nếu không giành độc lập thì quyền lợi các giai cấp cũng không giải quyết được.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"mâu thuẫn dân tộc\",\"Pháp\",\"Nhật\",\"độc lập\"],\"sampleAnswer\":\"Vì mâu thuẫn dân tộc với đế quốc, phát xít trở nên gay gắt; nếu không giành độc lập thì quyền lợi các giai cấp cũng không giải quyết được.\",\"acceptedAnswers\":[\"mâu thuẫn dân tộc\"],\"maxInputLength\":22,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"mâu thuẫn dân tộc\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -1977,7 +1977,7 @@
     "Difficulty": "Easy",
     "Content": "Nguyễn Ái Quốc về nước ngày 28/1/1941 tại khu vực Pác Bó, tỉnh __________.",
     "Explanation": "Nguyễn Ái Quốc về nước qua Cao Bằng, chuẩn bị cho Hội nghị Trung ương 8.",
-    "ChallengePayloadJson": "{\"sentence\": \"Nguyễn Ái Quốc về nước ngày 28/1/1941 tại khu vực Pác Bó, tỉnh ____.\", \"answers\": [\"Cao Bằng\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Nguyễn Ái Quốc về nước ngày 28/1/1941 tại khu vực Pác Bó, tỉnh ____.\",\"answers\":[\"Cao Bằng\"],\"acceptedAnswers\":[\"Cao Bằng\"],\"maxInputLength\":13,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"Cao Bằng\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Cao Bằng",
@@ -2055,7 +2055,7 @@
     "Difficulty": "Medium",
     "Content": "Vai trò của Nguyễn Ái Quốc trong Hội nghị Trung ương 8 thể hiện như thế nào?",
     "Explanation": "Nguyễn Ái Quốc trực tiếp về nước, chỉ đạo xác định nhiệm vụ giải phóng dân tộc, thành lập Việt Minh và chuẩn bị khởi nghĩa.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"về nước\", \"giải phóng dân tộc\", \"Việt Minh\", \"chuyển hướng\"], \"sampleAnswer\": \"Nguyễn Ái Quốc trực tiếp về nước, chỉ đạo xác định nhiệm vụ giải phóng dân tộc, thành lập Việt Minh và chuẩn bị khởi nghĩa.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"về nước\",\"giải phóng dân tộc\",\"Việt Minh\",\"chuyển hướng\"],\"sampleAnswer\":\"Nguyễn Ái Quốc trực tiếp về nước, chỉ đạo xác định nhiệm vụ giải phóng dân tộc, thành lập Việt Minh và chuẩn bị khởi nghĩa.\",\"acceptedAnswers\":[\"về nước\"],\"maxInputLength\":12,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"về nước\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -2113,7 +2113,7 @@
     "Difficulty": "Medium",
     "Content": "Mặt trận được Hội nghị Trung ương 8 chủ trương thành lập có tên viết tắt là __________.",
     "Explanation": "Việt Minh là Việt Nam Độc lập Đồng minh.",
-    "ChallengePayloadJson": "{\"sentence\": \"Mặt trận được Hội nghị Trung ương 8 chủ trương thành lập có tên viết tắt là ____.\", \"answers\": [\"Việt Minh\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Mặt trận được Hội nghị Trung ương 8 chủ trương thành lập có tên viết tắt là ____.\",\"answers\":[\"Việt Minh\"],\"acceptedAnswers\":[\"Việt Minh\",\"Viet Minh\",\"VM\",\"Việt Nam độc lập đồng minh\"],\"hint\":\"Tên viết tắt gồm 2 từ, bắt đầu bằng V.\",\"hintLevel1\":\"Đây là mặt trận được thành lập năm 1941.\",\"maxInputLength\":30,\"expected\":\"Việt Minh\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Việt Minh",
@@ -2139,7 +2139,7 @@
     "Difficulty": "Hard",
     "Content": "Vì sao Hội nghị Trung ương 8 được coi là hoàn chỉnh chuyển hướng chiến lược?",
     "Explanation": "Vì Hội nghị xác định rõ nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, tạm gác ruộng đất và chuẩn bị khởi nghĩa vũ trang.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"hoàn chỉnh\", \"giải phóng dân tộc\", \"Việt Minh\", \"khởi nghĩa\"], \"sampleAnswer\": \"Vì Hội nghị xác định rõ nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, tạm gác ruộng đất và chuẩn bị khởi nghĩa vũ trang.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"hoàn chỉnh\",\"giải phóng dân tộc\",\"Việt Minh\",\"khởi nghĩa\"],\"sampleAnswer\":\"Vì Hội nghị xác định rõ nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, tạm gác ruộng đất và chuẩn bị khởi nghĩa vũ trang.\",\"acceptedAnswers\":[\"8\",\"TW8\",\"Trung ương 8\",\"Hội nghị 8\"],\"hint\":\"Nhập số hội nghị, chỉ 1 ký tự.\",\"maxInputLength\":12,\"expected\":\"8\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -2197,7 +2197,7 @@
     "Difficulty": "Easy",
     "Content": "Việt Minh là tên viết tắt của Việt Nam Độc lập __________.",
     "Explanation": "Tên đầy đủ là Việt Nam Độc lập Đồng minh.",
-    "ChallengePayloadJson": "{\"sentence\": \"Việt Minh là tên viết tắt của Việt Nam Độc lập ____.\", \"answers\": [\"Đồng minh\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Việt Minh là tên viết tắt của Việt Nam Độc lập ____.\",\"answers\":[\"Đồng minh\"],\"acceptedAnswers\":[\"Việt Minh\",\"Viet Minh\",\"VM\",\"Việt Nam độc lập đồng minh\"],\"hint\":\"Tên viết tắt gồm 2 từ, bắt đầu bằng V.\",\"hintLevel1\":\"Đây là mặt trận được thành lập năm 1941.\",\"maxInputLength\":30,\"expected\":\"Việt Minh\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Đồng minh",
@@ -2275,7 +2275,7 @@
     "Difficulty": "Medium",
     "Content": "Vì sao Việt Minh có khả năng tập hợp lực lượng rộng rãi?",
     "Explanation": "Vì Việt Minh đặt mục tiêu độc lập dân tộc lên hàng đầu, thu hút mọi lực lượng yêu nước không phân biệt giai cấp, tôn giáo, nghề nghiệp.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"độc lập\", \"yêu nước\", \"không phân biệt\", \"dân tộc\"], \"sampleAnswer\": \"Vì Việt Minh đặt mục tiêu độc lập dân tộc lên hàng đầu, thu hút mọi lực lượng yêu nước không phân biệt giai cấp, tôn giáo, nghề nghiệp.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"độc lập\",\"yêu nước\",\"không phân biệt\",\"dân tộc\"],\"sampleAnswer\":\"Vì Việt Minh đặt mục tiêu độc lập dân tộc lên hàng đầu, thu hút mọi lực lượng yêu nước không phân biệt giai cấp, tôn giáo, nghề nghiệp.\",\"acceptedAnswers\":[\"Việt Minh\",\"Viet Minh\",\"VM\",\"Việt Nam độc lập đồng minh\"],\"hint\":\"Tên viết tắt gồm 2 từ, bắt đầu bằng V.\",\"hintLevel1\":\"Đây là mặt trận được thành lập năm 1941.\",\"maxInputLength\":30,\"expected\":\"Việt Minh\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -2333,7 +2333,7 @@
     "Difficulty": "Medium",
     "Content": "Các tổ chức quần chúng trong Việt Minh thường mang tên các hội __________.",
     "Explanation": "Các hội cứu quốc là hình thức tổ chức quần chúng trong Mặt trận Việt Minh.",
-    "ChallengePayloadJson": "{\"sentence\": \"Các tổ chức quần chúng trong Việt Minh thường mang tên các hội ____.\", \"answers\": [\"cứu quốc\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Các tổ chức quần chúng trong Việt Minh thường mang tên các hội ____.\",\"answers\":[\"cứu quốc\"],\"acceptedAnswers\":[\"Việt Minh\",\"Viet Minh\",\"VM\",\"Việt Nam độc lập đồng minh\"],\"hint\":\"Tên viết tắt gồm 2 từ, bắt đầu bằng V.\",\"hintLevel1\":\"Đây là mặt trận được thành lập năm 1941.\",\"maxInputLength\":30,\"expected\":\"Việt Minh\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "cứu quốc",
@@ -2359,7 +2359,7 @@
     "Difficulty": "Hard",
     "Content": "Nêu mối quan hệ giữa Việt Minh và thắng lợi Cách mạng Tháng Tám.",
     "Explanation": "Việt Minh tập hợp lực lượng chính trị, tổ chức quần chúng và góp phần chuẩn bị lực lượng cho Tổng khởi nghĩa tháng Tám.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"tập hợp\", \"lực lượng\", \"chính trị\", \"khởi nghĩa\"], \"sampleAnswer\": \"Việt Minh tập hợp lực lượng chính trị, tổ chức quần chúng và góp phần chuẩn bị lực lượng cho Tổng khởi nghĩa tháng Tám.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"tập hợp\",\"lực lượng\",\"chính trị\",\"khởi nghĩa\"],\"sampleAnswer\":\"Việt Minh tập hợp lực lượng chính trị, tổ chức quần chúng và góp phần chuẩn bị lực lượng cho Tổng khởi nghĩa tháng Tám.\",\"acceptedAnswers\":[\"Việt Minh\",\"Viet Minh\",\"VM\",\"Việt Nam độc lập đồng minh\"],\"hint\":\"Tên viết tắt gồm 2 từ, bắt đầu bằng V.\",\"hintLevel1\":\"Đây là mặt trận được thành lập năm 1941.\",\"maxInputLength\":30,\"expected\":\"Việt Minh\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -2417,7 +2417,7 @@
     "Difficulty": "Easy",
     "Content": "Sau ngày 9/3/1945, khẩu hiệu được nêu là đánh đuổi phát xít __________.",
     "Explanation": "Sau Nhật đảo chính Pháp, kẻ thù trước mắt được xác định là phát xít Nhật.",
-    "ChallengePayloadJson": "{\"sentence\": \"Sau ngày 9/3/1945, khẩu hiệu được nêu là đánh đuổi phát xít ____.\", \"answers\": [\"Nhật\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Sau ngày 9/3/1945, khẩu hiệu được nêu là đánh đuổi phát xít ____.\",\"answers\":[\"Nhật\"],\"acceptedAnswers\":[\"Nhật\"],\"maxInputLength\":9,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"Nhật\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Nhật",
@@ -2495,7 +2495,7 @@
     "Difficulty": "Medium",
     "Content": "Ý nghĩa của Chỉ thị Nhật - Pháp bắn nhau và hành động của chúng ta là gì?",
     "Explanation": "Chỉ thị xác định kẻ thù trước mắt là phát xít Nhật, phát động cao trào kháng Nhật và chuẩn bị thời cơ khởi nghĩa.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"kẻ thù\", \"Nhật\", \"cao trào\", \"khởi nghĩa\"], \"sampleAnswer\": \"Chỉ thị xác định kẻ thù trước mắt là phát xít Nhật, phát động cao trào kháng Nhật và chuẩn bị thời cơ khởi nghĩa.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"kẻ thù\",\"Nhật\",\"cao trào\",\"khởi nghĩa\"],\"sampleAnswer\":\"Chỉ thị xác định kẻ thù trước mắt là phát xít Nhật, phát động cao trào kháng Nhật và chuẩn bị thời cơ khởi nghĩa.\",\"acceptedAnswers\":[\"kẻ thù\"],\"maxInputLength\":11,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"kẻ thù\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",
@@ -2553,7 +2553,7 @@
     "Difficulty": "Medium",
     "Content": "Tổng khởi nghĩa tháng Tám thể hiện bài học chuẩn bị lực lượng và nắm bắt __________.",
     "Explanation": "Nắm bắt thời cơ là bài học nổi bật của Cách mạng Tháng Tám.",
-    "ChallengePayloadJson": "{\"sentence\": \"Tổng khởi nghĩa tháng Tám thể hiện bài học chuẩn bị lực lượng và nắm bắt ____.\", \"answers\": [\"thời cơ\"]}",
+    "ChallengePayloadJson": "{\"sentence\":\"Tổng khởi nghĩa tháng Tám thể hiện bài học chuẩn bị lực lượng và nắm bắt ____.\",\"answers\":[\"thời cơ\"],\"acceptedAnswers\":[\"thời cơ\",\"thoi co\"],\"hint\":\"Từ khóa gồm 2 chữ.\",\"maxInputLength\":10,\"expected\":\"thời cơ\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "thời cơ",
@@ -2579,7 +2579,7 @@
     "Difficulty": "Hard",
     "Content": "Nêu hai điều kiện chủ quan giúp Cách mạng Tháng Tám thắng lợi.",
     "Explanation": "Hai điều kiện chủ quan là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng chính trị, vũ trang, căn cứ địa thông qua Việt Minh.",
-    "ChallengePayloadJson": "{\"expectedKeywords\": [\"Đảng\", \"Việt Minh\", \"lực lượng\", \"căn cứ địa\"], \"sampleAnswer\": \"Hai điều kiện chủ quan là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng chính trị, vũ trang, căn cứ địa thông qua Việt Minh.\"}",
+    "ChallengePayloadJson": "{\"expectedKeywords\":[\"Đảng\",\"Việt Minh\",\"lực lượng\",\"căn cứ địa\"],\"sampleAnswer\":\"Hai điều kiện chủ quan là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng chính trị, vũ trang, căn cứ địa thông qua Việt Minh.\",\"acceptedAnswers\":[\"Đảng\"],\"maxInputLength\":9,\"hint\":\"Nhập câu trả lời ngắn.\",\"expected\":\"Đảng\",\"caseInsensitive\":true,\"ignoreDiacritics\":true}",
     "Options": [
       {
         "Text": "Xem gợi ý trả lời",

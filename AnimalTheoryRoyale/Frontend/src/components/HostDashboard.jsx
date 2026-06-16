@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { Gamepad2, Zap, Dices, Skull, Bell, Eye, Trophy, Crown, AlertTriangle, BarChart3, RefreshCcw, ZoomIn, ZoomOut, Thermometer, X } from 'lucide-react';
 
 export default function HostDashboard({ gameState, myConnectionId, connection, roomCode }) {
   const players = gameState?.players || [];
@@ -70,7 +71,7 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
         {/* Top Bar */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{ fontSize: '14px', fontWeight: 900, color: '#F59E0B', letterSpacing: '2px' }}>🎮 HOST TACTICAL</div>
+            <div style={{ fontSize: '14px', fontWeight: 900, color: '#F59E0B', letterSpacing: '2px', display: 'flex', alignItems: 'center', gap: '8px' }}><Gamepad2 className="w-5 h-5" /> HOST TACTICAL</div>
             <div style={{ padding: '4px 12px', borderRadius: '8px', background: gameState?.status === 'Playing' ? 'rgba(16,185,129,0.2)' : 'rgba(239,68,68,0.2)', color: gameState?.status === 'Playing' ? '#10B981' : '#EF4444', fontSize: '12px', fontWeight: 700 }}>{gameState?.status || 'Unknown'}</div>
           </div>
           <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
@@ -194,9 +195,9 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
                 </div>
 
                 {/* Status badges */}
-                {p.isStunned && <div style={{ position: 'absolute', top: -22, left: -4, fontSize: '10px' }}>💫</div>}
-                {p.hasDouble && <div style={{ position: 'absolute', top: -22, right: -4, fontSize: '10px' }}>🎲</div>}
-                {p.isDead && <div style={{ position: 'absolute', top: -6, left: -6, fontSize: '12px' }}>💀</div>}
+                {p.isStunned && <div style={{ position: 'absolute', top: -22, left: -4, fontSize: '10px' }}><Zap className="w-3 h-3 text-yellow-400" /></div>}
+                {p.hasDouble && <div style={{ position: 'absolute', top: -22, right: -4, fontSize: '10px' }}><Dices className="w-3 h-3 text-white" /></div>}
+                {p.isDead && <div style={{ position: 'absolute', top: -6, left: -6, fontSize: '12px' }}><Skull className="w-3 h-3 text-red-500" /></div>}
                 {lowHp && !p.isDead && <div style={{ position: 'absolute', top: -22, left: 6, fontSize: '8px', color: '#EF4444', fontWeight: 900, animation: 'pulse 0.5s infinite' }}>LOW</div>}
               </div>
             );
@@ -205,11 +206,11 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
 
         {/* Bottom Controls */}
         <div style={{ display: 'flex', gap: '8px', padding: '8px 16px', background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <button style={btnStyle('#3B82F6')} onClick={() => { setPanOffset({ x: 0, y: 0 }); setZoom(0.8); setFocusPlayer(null); }}>🔄 Reset</button>
-          <button style={btnStyle('#10B981')} onClick={() => setZoom(z => Math.min(4, z + 0.3))}>🔍+</button>
-          <button style={btnStyle('#F59E0B')} onClick={() => setZoom(z => Math.max(0.3, z - 0.3))}>🔍−</button>
-          <button style={btnStyle(showHeatmap ? '#EF4444' : '#6B7280')} onClick={() => setShowHeatmap(!showHeatmap)}>🌡 Heatmap</button>
-          {focusPlayer && <button style={btnStyle('#A855F7')} onClick={() => setFocusPlayer(null)}>❌ Unfollow</button>}
+          <button style={btnStyle('#3B82F6')} onClick={() => { setPanOffset({ x: 0, y: 0 }); setZoom(0.8); setFocusPlayer(null); }}><RefreshCcw className="w-4 h-4 inline-block mr-1" /> Reset</button>
+          <button style={btnStyle('#10B981')} onClick={() => setZoom(z => Math.min(4, z + 0.3))}><ZoomIn className="w-4 h-4" /></button>
+          <button style={btnStyle('#F59E0B')} onClick={() => setZoom(z => Math.max(0.3, z - 0.3))}><ZoomOut className="w-4 h-4" /></button>
+          <button style={btnStyle(showHeatmap ? '#EF4444' : '#6B7280')} onClick={() => setShowHeatmap(!showHeatmap)}><Thermometer className="w-4 h-4 inline-block mr-1" /> Heatmap</button>
+          {focusPlayer && <button style={btnStyle('#A855F7')} onClick={() => setFocusPlayer(null)}><X className="w-4 h-4 inline-block mr-1" /> Unfollow</button>}
         </div>
       </div>
 
@@ -219,7 +220,7 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
         {/* Pending Joins */}
         {pendingJoins.length > 0 && (
           <div style={{ padding: '12px 16px', background: 'rgba(59,130,246,0.1)', borderBottom: '1px solid rgba(59,130,246,0.3)' }}>
-            <div style={{ fontSize: '11px', color: '#3B82F6', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px' }}>🔔 PENDING LATE JOINS ({pendingJoins.length})</div>
+            <div style={{ fontSize: '11px', color: '#3B82F6', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '4px' }}><Bell className="w-4 h-4" /> PENDING LATE JOINS ({pendingJoins.length})</div>
             <div style={{ maxHeight: '150px', overflowY: 'auto' }}>
               {pendingJoins.map(req => (
                 <div key={req.connectionId} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '6px', marginBottom: '4px' }}>
@@ -265,7 +266,7 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
         {/* Focused Player Detail */}
         {focusedPlayer && (
           <div style={{ padding: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(245,158,11,0.05)' }}>
-            <div style={{ fontSize: '11px', color: '#F59E0B', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px' }}>👁 SPECTATING</div>
+            <div style={{ fontSize: '11px', color: '#F59E0B', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '4px' }}><Eye className="w-4 h-4" /> SPECTATING</div>
             <div style={{ fontSize: '18px', fontWeight: 900 }}>{focusedPlayer.username}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '12px' }}>
               <StatBox label="HP" value={`${focusedPlayer.hp}/${focusedPlayer.maxHP}`} color={getHpColor(focusedPlayer)} />
@@ -287,7 +288,7 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
 
         {/* Leaderboard */}
         <div style={{ flex: 1, overflow: 'auto', padding: '12px 16px' }}>
-          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px' }}>🏆 LIVE LEADERBOARD</div>
+          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '4px' }}><Trophy className="w-4 h-4" /> LIVE LEADERBOARD</div>
           {sorted.map((p, i) => {
             const isFocused = focusPlayer === p.id;
             const outside = isOutsideZone(p);
@@ -296,11 +297,11 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
               <div key={p.id} onClick={() => setFocusPlayer(focusPlayer === p.id ? null : p.id)}
                 style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 10px', marginBottom: '4px', borderRadius: '8px', cursor: 'pointer', background: isFocused ? 'rgba(245,158,11,0.1)' : 'rgba(255,255,255,0.02)', border: `1px solid ${isFocused ? 'rgba(245,158,11,0.3)' : 'transparent'}`, transition: 'all 0.2s' }}>
                 <div style={{ width: '22px', fontSize: '14px', fontWeight: 900, color: i === 0 ? '#FBBF24' : i === 1 ? '#94A3B8' : i === 2 ? '#CD7F32' : '#6B7280' }}>
-                  {i === 0 ? '👑' : `#${i + 1}`}
+                  {i === 0 ? <Crown className="w-4 h-4 text-yellow-400" /> : `#${i + 1}`}
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: '13px', fontWeight: 700, color: p.isDead ? '#6B7280' : '#E5E7EB', textDecoration: p.isDead ? 'line-through' : 'none', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    {p.username} {p.isDead && '💀'} {outside && !p.isDead && <span style={{ color: '#EF4444', fontSize: '10px' }}>⚠</span>}
+                    {p.username} {p.isDead && <Skull className="w-3 h-3 text-red-500" />} {outside && !p.isDead && <span style={{ color: '#EF4444', fontSize: '10px' }}><AlertTriangle className="w-3 h-3" /></span>}
                   </div>
                   {/* HP mini bar */}
                   <div style={{ width: '100%', height: '3px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', marginTop: '3px', overflow: 'hidden' }}>
@@ -318,7 +319,7 @@ export default function HostDashboard({ gameState, myConnectionId, connection, r
 
         {/* Match Stats */}
         <div style={{ padding: '12px 16px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px' }}>📊 MATCH STATS</div>
+          <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 700, marginBottom: '8px', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '4px' }}><BarChart3 className="w-4 h-4" /> MATCH STATS</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px' }}>
             <StatBox label="Questions" value={zones.filter(z => z.isActive).length} color="#3B82F6" />
             <StatBox label="Items" value={items.length} color="#10B981" />

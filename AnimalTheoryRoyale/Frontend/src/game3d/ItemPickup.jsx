@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
+import { Text, Html } from '@react-three/drei';
+import { Heart, Gem, Zap } from 'lucide-react';
 import * as THREE from 'three';
 
 export default function ItemPickup({ item }) {
@@ -20,9 +21,9 @@ export default function ItemPickup({ item }) {
   };
 
   const getIcon = () => {
-    if (item.type === 'HP') return '❤️';
-    if (item.type === 'Score') return '💎';
-    return '⚡';
+    if (item.type === 'HP') return <Heart className="w-5 h-5" fill="#10B981" color="#10B981" />;
+    if (item.type === 'Score') return <Gem className="w-5 h-5" fill="#F59E0B" color="#F59E0B" />;
+    return <Zap className="w-5 h-5" fill="#3B82F6" color="#3B82F6" />;
   };
 
   return (
@@ -39,9 +40,11 @@ export default function ItemPickup({ item }) {
           <octahedronGeometry args={[1, 0]} />
           <meshStandardMaterial color={getColor()} emissive={getColor()} emissiveIntensity={0.8} wireframe={item.type === 'Speed'} />
         </mesh>
-        <Text position={[0, 2, 0]} fontSize={1.5} outlineWidth={0.1}>
-          {getIcon()}
-        </Text>
+        <Html position={[0, 2, 0]} center>
+          <div className="flex items-center justify-center pointer-events-none drop-shadow-md">
+            {getIcon()}
+          </div>
+        </Html>
       </group>
     </group>
   );

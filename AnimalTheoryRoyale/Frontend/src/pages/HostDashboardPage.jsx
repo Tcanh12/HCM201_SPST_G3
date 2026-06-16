@@ -4,7 +4,7 @@ import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import API_HOST from '../config';
 import HostDashboard from '../components/HostDashboard';
-import { Home } from 'lucide-react';
+import { Home, AlertTriangle } from 'lucide-react';
 
 export default function HostDashboardPage() {
   const { roomCode } = useParams();
@@ -51,7 +51,7 @@ export default function HostDashboardPage() {
       {showConfirm && (
         <div className="absolute inset-0 z-[1000] bg-black/80 flex items-center justify-center backdrop-blur-sm pointer-events-auto">
           <div className="bg-gray-900 border border-gray-700 p-8 rounded-2xl max-w-md w-full text-center shadow-2xl">
-            <div className="text-6xl mb-4">⚠️</div>
+            <AlertTriangle className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
             <h2 className="text-2xl font-black text-red-500 mb-2">KẾT THÚC TRẬN ĐẤU?</h2>
             <p className="text-gray-300 mb-8">Bạn có chắc chắn muốn kết thúc trận đấu ngay bây giờ không? Mọi người sẽ được chuyển đến màn hình kết quả.</p>
             <div className="flex gap-4">

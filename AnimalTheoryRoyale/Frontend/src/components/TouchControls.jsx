@@ -1,4 +1,5 @@
 import { useRef, useCallback, useState } from 'react';
+import { Target, Rocket } from 'lucide-react';
 
 export default function TouchControls({ onMove, onRotate, onShoot, onJump }) {
   const joystickRef = useRef(null);
@@ -119,7 +120,7 @@ export default function TouchControls({ onMove, onRotate, onShoot, onJump }) {
         }}
         onTouchStart={(e) => { e.preventDefault(); onShoot(); }}
       >
-        🎯
+        <Target className="w-8 h-8 text-white/80" />
       </div>
 
       {/* Jump button */}
@@ -138,7 +139,7 @@ export default function TouchControls({ onMove, onRotate, onShoot, onJump }) {
         }}
         onTouchStart={(e) => { e.preventDefault(); if (onJump) onJump(); }}
       >
-        🚀
+        <Rocket className="w-6 h-6 text-white/80" />
       </div>
 
       {/* Labels */}

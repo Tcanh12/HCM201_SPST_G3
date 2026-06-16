@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Wind, RotateCcw, Flame, AlertTriangle, Skull } from 'lucide-react';
 
 /**
  * TrollFeed — A PUBG-style kill feed for troll skills and eliminations
@@ -26,12 +27,12 @@ export default function TrollFeed({ events = [] }) {
 
   const getIconForType = (type) => {
     switch (type) {
-      case 'push': return '💨';
-      case 'dizzy': return '🌀';
-      case 'ult': return '💥';
-      case 'trap': return '🪤';
-      case 'eliminate': return '💀';
-      default: return '⚠️';
+      case 'push': return <Wind className="w-4 h-4 inline-block" />;
+      case 'dizzy': return <RotateCcw className="w-4 h-4 inline-block" />;
+      case 'ult': return <Flame className="w-4 h-4 inline-block text-yellow-400" />;
+      case 'trap': return <AlertTriangle className="w-4 h-4 inline-block text-orange-400" />;
+      case 'eliminate': return <Skull className="w-4 h-4 inline-block text-red-500" />;
+      default: return <AlertTriangle className="w-4 h-4 inline-block text-yellow-500" />;
     }
   };
 

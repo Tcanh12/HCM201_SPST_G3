@@ -1,6 +1,32 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getRandomTips } from '../data/loadingTips';
+import { Link, Map, Wifi, Hourglass, CheckCircle, BookOpen, Brain, Scale, Flame, Shield, Landmark, RotateCcw, Heart, Users, Flag, MapPin, Star, Zap, Target, Clock, Puzzle, Lightbulb } from 'lucide-react';
+
+const iconMap = {
+  Link: <Link />,
+  Map: <Map />,
+  Wifi: <Wifi />,
+  Hourglass: <Hourglass />,
+  CheckCircle: <CheckCircle />,
+  BookOpen: <BookOpen />,
+  Brain: <Brain />,
+  Scale: <Scale />,
+  Flame: <Flame />,
+  Shield: <Shield />,
+  Landmark: <Landmark />,
+  RotateCcw: <RotateCcw />,
+  Heart: <Heart />,
+  Users: <Users />,
+  Flag: <Flag />,
+  MapPin: <MapPin />,
+  Star: <Star />,
+  Zap: <Zap />,
+  Target: <Target />,
+  Clock: <Clock />,
+  Puzzle: <Puzzle />,
+  Lightbulb: <Lightbulb />,
+};
 
 /**
  * Premium Loading Screen for VNR202 Theory Royale
@@ -41,11 +67,11 @@ export default function LoadingScreen({
   }, [tips.length]);
 
   const statusConfig = {
-    connecting: { label: 'Đang kết nối...', icon: '🔗', color: '#F59E0B' },
-    loading_map: { label: 'Đang tải bản đồ...', icon: '🗺️', color: '#06B6D4' },
-    syncing: { label: 'Đang đồng bộ dữ liệu trận...', icon: '📡', color: '#8B5CF6' },
-    waiting_host: { label: 'Đang chờ Host bắt đầu...', icon: '⏳', color: '#10B981' },
-    ready: { label: 'Sẵn sàng!', icon: '✅', color: '#10B981' },
+    connecting: { label: 'Đang kết nối...', icon: <Link />, color: '#F59E0B' },
+    loading_map: { label: 'Đang tải bản đồ...', icon: <Map />, color: '#06B6D4' },
+    syncing: { label: 'Đang đồng bộ dữ liệu trận...', icon: <Wifi />, color: '#8B5CF6' },
+    waiting_host: { label: 'Đang chờ Host bắt đầu...', icon: <Hourglass />, color: '#10B981' },
+    ready: { label: 'Sẵn sàng!', icon: <CheckCircle />, color: '#10B981' },
   };
 
   const config = statusConfig[status] || statusConfig.connecting;
@@ -172,7 +198,7 @@ export default function LoadingScreen({
               className="glass-panel rounded-xl p-4 border-white/10"
             >
               <div className="flex items-start gap-3">
-                <span className="text-xl shrink-0 mt-0.5">{currentTip?.icon}</span>
+                <span className="text-xl shrink-0 mt-0.5">{iconMap[currentTip?.iconName] || <BookOpen />}</span>
                 <div>
                   {currentTip?.chapter && (
                     <span className="text-[10px] text-amber-400/70 font-bold uppercase tracking-wider">

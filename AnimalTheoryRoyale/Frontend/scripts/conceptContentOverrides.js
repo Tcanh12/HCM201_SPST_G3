@@ -1,4 +1,4 @@
-export const conceptOverrides = {
+﻿export const conceptOverrides = {
   // CHAPTERS
   "chuong-1": {
     shortDescription: "Giới thiệu khái quát về đối tượng, phương pháp và ý nghĩa của việc học tập môn Tư tưởng Hồ Chí Minh.",

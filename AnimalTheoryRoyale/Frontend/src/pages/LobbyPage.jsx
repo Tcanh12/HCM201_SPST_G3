@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Users, Crown, ChevronLeft, Shield, Zap, Target } from 'lucide-react';
+import { Users, Crown, ChevronLeft, Shield, Zap, Target, Sparkles } from 'lucide-react';
 import axios from 'axios';
 import * as signalR from '@microsoft/signalr';
 import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
@@ -145,7 +145,7 @@ export default function LobbyPage() {
                     <span className="text-xs font-bold text-secondary uppercase tracking-wider">{char.animalType}</span>
                   </div>
                   <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl border border-white/10">
-                    {char.id === 1 ? '🐘' : char.id === 2 ? '🐇' : char.id === 3 ? '🦊' : '🐢'}
+                    {char.id === 1 ? <Shield /> : char.id === 2 ? <Zap /> : char.id === 3 ? <Sparkles /> : <Shield />}
                   </div>
                 </div>
 

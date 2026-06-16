@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Swords, Users, BookOpen, Compass, Shield, BookMarked, Map, ChevronRight } from 'lucide-react';
+import { Swords, Users, BookOpen, Compass, Shield, BookMarked, Map, ChevronRight, Zap, Sparkles } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { CHARACTER_DATA } from '../data/characterData';
 
@@ -323,10 +323,10 @@ export default function LandingPage() {
           transition={{ delay: 1.5 }}
           className="mt-4 flex gap-4 opacity-80"
         >
-          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm">🐘</div>
-          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm">🐇</div>
-          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm">🦊</div>
-          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm">🐢</div>
+          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm"><Shield className="w-8 h-8 text-white" /></div>
+          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm"><Zap className="w-8 h-8 text-white" /></div>
+          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm"><Sparkles className="w-8 h-8 text-white" /></div>
+          <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-3xl border border-yellow-400/30 backdrop-blur-sm"><Shield className="w-8 h-8 text-white" /></div>
         </motion.div>
 
       </div>

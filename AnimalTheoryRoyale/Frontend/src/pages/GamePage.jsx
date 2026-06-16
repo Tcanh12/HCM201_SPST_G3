@@ -14,6 +14,7 @@ import { MessagePackHubProtocol } from '@microsoft/signalr-protocol-msgpack';
 import { motion, AnimatePresence } from 'framer-motion';
 import API_HOST from '../config';
 import SettingsModal from '../components/SettingsModal';
+import { RotateCcw, XCircle, Settings, CheckCircle, AlertTriangle } from 'lucide-react';
 
 export default function GamePage() {
   const { roomCode } = useParams();
@@ -87,11 +88,11 @@ export default function GamePage() {
         if (data.connectionId === conn.connectionId) {
           let msg = "";
           switch (data.type) {
-            case 'Stun': msg = "🌀 BẠN ĐÃ ĐẠP TRÚNG BẪY CHOÁNG!"; break;
-            case 'Slow': msg = "❄️ BẠN ĐÃ ĐẠP TRÚNG BẪY LÀM CHẬM!"; break;
-            case 'Damage': msg = "💥 BẠN ĐÃ ĐẠP TRÚNG BẪY NỔ (-20 HP)!"; break;
-            case 'LoseScore': msg = "💸 BẠN ĐÃ ĐẠP TRÚNG BẪY MẤT ĐIỂM (-50 Điểm)!"; break;
-            default: msg = "⚠️ BẠN ĐÃ ĐẠP BẪY!"; break;
+            case 'Stun': msg = "BẠN ĐÃ ĐẠP TRÚNG BẪY CHOÁNG!"; break;
+            case 'Slow': msg = "BẠN ĐÃ ĐẠP TRÚNG BẪY LÀM CHẬM!"; break;
+            case 'Damage': msg = "BẠN ĐÃ ĐẠP TRÚNG BẪY NỔ (-20 HP)!"; break;
+            case 'LoseScore': msg = "BẠN ĐÃ ĐẠP TRÚNG BẪY MẤT ĐIỂM (-50 Điểm)!"; break;
+            default: msg = "BẠN ĐÃ ĐẠP BẪY!"; break;
           }
           setTrapMessage(msg);
           setTimeout(() => setTrapMessage(null), 3000);
@@ -237,8 +238,10 @@ export default function GamePage() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                className="text-5xl mb-4 inline-block"
-              >🔄</motion.div>
+                className="mb-4 inline-block text-amber-400"
+              >
+                <RotateCcw className="w-12 h-12" />
+              </motion.div>
               <h2 className="text-2xl font-black mb-2 text-amber-400">ĐANG KẾT NỐI LẠI...</h2>
               <p className="text-white/50 text-sm">Vui lòng chờ, hệ thống đang khôi phục phiên của bạn.</p>
             </div>
@@ -251,7 +254,7 @@ export default function GamePage() {
             style={{ background: 'rgba(10,14,26,0.95)', backdropFilter: 'blur(8px)' }}
           >
             <div className="text-center text-white">
-              <div className="text-5xl mb-4">❌</div>
+              <XCircle className="w-12 h-12 text-red-500 mb-4 mx-auto" />
               <h2 className="text-2xl font-black mb-2 text-red-500">MẤT KẾT NỐI</h2>
               <p className="text-white/50 mb-6 text-sm">Không thể duy trì kết nối với máy chủ.</p>
               <button 
@@ -322,7 +325,7 @@ export default function GamePage() {
         onClick={(e) => { e.stopPropagation(); setShowSettings(true); }}
         className="absolute top-4 right-4 z-[200] bg-black/60 hover:bg-black text-white p-2.5 rounded-xl backdrop-blur-sm border border-white/10 transition-all shadow-lg hover:border-white/20"
       >
-        <span className="text-lg">⚙️</span>
+        <Settings className="w-5 h-5" />
       </button>
 
       {/* Settings Modal */}
@@ -351,8 +354,8 @@ export default function GamePage() {
                 pointerEvents: 'auto'
               }}
             >
-              <div style={{ fontSize: '52px', marginBottom: '8px', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' }}>
-                {answerResult.correct ? '✅' : '❌'}
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px', filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' }}>
+                {answerResult.correct ? <CheckCircle className="w-12 h-12" /> : <XCircle className="w-12 h-12" />}
               </div>
               <div style={{ fontSize: '24px', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '2px', textShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>
                 {answerResult.correct ? 'CHÍNH XÁC!' : 'SAI RỒI!'}
@@ -414,6 +417,7 @@ export default function GamePage() {
                 boxShadow: '0 0 40px rgba(239,68,68,0.6)',
               }}
             >
+              <AlertTriangle className="w-6 h-6 inline-block mr-2" />
               {trapMessage}
             </div>
           </motion.div>

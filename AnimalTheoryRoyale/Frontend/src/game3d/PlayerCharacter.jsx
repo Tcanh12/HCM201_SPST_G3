@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text, Billboard } from '@react-three/drei';
+import { Text, Billboard, Html } from '@react-three/drei';
+import { RotateCcw } from 'lucide-react';
 import * as THREE from 'three';
 
 export default function PlayerCharacter({ player, isMe, localOverride, localRotationOverride, hideModel }) {
@@ -326,8 +327,12 @@ export default function PlayerCharacter({ player, isMe, localOverride, localRota
       {/* Skill: Dizzy Spin */}
       {player.isDizzy && (
         <group position={[0, 3, 0]}>
-          <Text position={[-1, 0, 0]} fontSize={1} color="#9333EA">🌀</Text>
-          <Text position={[1, 0, 0]} fontSize={1} color="#9333EA">🌀</Text>
+          <Html position={[-1, 0, 0]} center zIndexRange={[100, 0]}>
+            <RotateCcw className="w-8 h-8 text-purple-600 animate-spin" />
+          </Html>
+          <Html position={[1, 0, 0]} center zIndexRange={[100, 0]}>
+            <RotateCcw className="w-8 h-8 text-purple-600 animate-spin" />
+          </Html>
         </group>
       )}
 

@@ -1,4 +1,4 @@
-// TỰ ĐỘNG TẠO BỞI SCRIPT - DỮ LIỆU ĐÃ ĐƯỢC CHUẨN HOÁ
+﻿// TỰ ĐỘNG TẠO BỞI SCRIPT - DỮ LIỆU ĐÃ ĐƯỢC CHUẨN HOÁ
 export const canonicalConcepts = [
   {
     "id": "chuong-1",
@@ -919,7 +919,7 @@ export const canonicalConcepts = [
       "Xây dựng tinh thần tự lực, tự cường trong phát triển quốc gia hiện nay."
     ],
     "commonMisconceptions": [
-      "Cho rằng cách mạng thuộc địa hoàn toàn phụ thuộc vào cách mạng ở chính quốc."
+      ""
     ],
     "reflectionQuestions": [
       "Vì sao Hồ Chí Minh khẳng định cách mạng giải phóng dân tộc cần được tiến hành chủ động và có thể thắng lợi trước cách mạng ở chính quốc?"

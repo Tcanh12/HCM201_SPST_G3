@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Lightbulb, Target, Sword } from 'lucide-react';
 
 export default function SettingsModal({ onClose }) {
   const [activeTab, setActiveTab] = useState('camera');
@@ -37,7 +38,7 @@ export default function SettingsModal({ onClose }) {
           {activeTab === 'camera' && (
             <div className="space-y-6">
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <h4 className="font-bold text-yellow-400 mb-2">💡 Gợi ý Camera (Góc nhìn thứ ba)</h4>
+                <h4 className="font-bold text-yellow-400 mb-2 flex items-center gap-2"><Lightbulb className="w-5 h-5" /> Gợi ý Camera (Góc nhìn thứ ba)</h4>
                 <p className="text-sm leading-relaxed">Sử dụng chuột trái và kéo thả để xoay camera xung quanh nhân vật. Sử dụng con lăn chuột để phóng to/thu nhỏ tầm nhìn. Camera sẽ tự động theo dõi nhân vật của bạn.</p>
               </div>
             </div>
@@ -72,7 +73,7 @@ export default function SettingsModal({ onClose }) {
           {activeTab === 'guide' && (
             <div className="space-y-4 text-sm">
               <div className="bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-400">
-                <h3 className="font-bold text-yellow-400 mb-1 text-base">🎯 Mục Tiêu</h3>
+                <h3 className="font-bold text-yellow-400 mb-1 text-base flex items-center gap-2"><Target className="w-5 h-5" /> Mục Tiêu</h3>
                 <p>Sống sót, trả lời câu hỏi và chiến đấu để ghi điểm. Người sống sót lâu nhất và có nhiều điểm nhất sẽ chiến thắng!</p>
               </div>
               <ul className="list-disc pl-5 space-y-2">
@@ -83,7 +84,7 @@ export default function SettingsModal({ onClose }) {
                 <li><strong className="text-pink-400">Mạng (Lives):</strong> Mỗi người có tối đa 3 mạng. Khi hết HP sẽ mất 1 mạng và hồi sinh sau 8 giây. Hết mạng sẽ bị loại khỏi trò chơi!</li>
               </ul>
               
-              <h3 className="font-bold text-yellow-400 mt-4 mb-2">⚔️ Bảng Kỹ Năng</h3>
+              <h3 className="font-bold text-yellow-400 mt-4 mb-2 flex items-center gap-2"><Sword className="w-5 h-5" /> Bảng Kỹ Năng</h3>
               <ul className="space-y-3 bg-gray-800 p-4 rounded-lg border border-gray-700">
                 <li><strong className="text-yellow-300">Chiêu 1 (Đẩy lùi):</strong> Bắn một luồng sóng đẩy văng tất cả kẻ địch trước mặt ra xa.</li>
                 <li><strong className="text-yellow-300">Chiêu 2 (X2 Rủi Ro):</strong> Câu hỏi tiếp theo bạn trả lời sẽ được NHÂN ĐÔI điểm nếu đúng, nhưng cũng NHÂN ĐÔI SÁT THƯƠNG nếu sai.</li>

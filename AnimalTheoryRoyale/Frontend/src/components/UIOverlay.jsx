@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TrollFeed from './TrollFeed';
+import { AlertTriangle, TrendingUp, Heart, Flame, RotateCcw, Wind, Dices, Skull } from 'lucide-react';
 
 // Striped HP Bar Component
 function HPBar({ current, max, percent, color }) {
@@ -178,7 +179,7 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
           <div className="text-[8px] md:text-[9px] text-white/50 uppercase font-bold tracking-widest mb-0.5">Vòng bo</div>
           {safeZone.isShrinking ? (
             <div className="text-sm md:text-base font-black text-red-500 animate-pulse flex items-center justify-center gap-1">
-              <span>⚠️</span> ĐANG THU
+              <AlertTriangle className="w-4 h-4 inline-block" /> ĐANG THU
             </div>
           ) : (
             <div className="text-sm md:text-base font-black text-cyan-400">
@@ -215,7 +216,7 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
               exit={{ y: 0, opacity: 0, scale: 0.8 }}
               className="absolute left-1/2 -translate-x-1/2 bg-emerald-500/20 border border-emerald-400/50 rounded-xl px-4 py-1.5 flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.3)] backdrop-blur-md"
             >
-              <span className="animate-bounce">⬆️</span>
+              <TrendingUp className="w-4 h-4 animate-bounce text-emerald-400" />
               <span className="text-emerald-400 font-bold text-sm tracking-wide">BUFF: {myPlayer.activeBuff}</span>
             </motion.div>
           )}
@@ -229,7 +230,7 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
             <span className="text-[9px] md:text-[10px] text-white/40 font-bold uppercase tracking-widest mb-0.5 md:mb-1">Mạng</span>
             <div className="flex gap-1 mt-1">
               {[...Array(3)].map((_, i) => (
-                <span key={i} className={`text-sm md:text-lg ${i < myPlayer.lives ? 'text-rose-500' : 'text-white/20'}`}>❤️</span>
+                <Heart key={i} className={`w-4 h-4 md:w-5 md:h-5 ${i < myPlayer.lives ? 'text-rose-500 fill-rose-500' : 'text-white/20'}`} />
               ))}
             </div>
           </div>
@@ -262,7 +263,7 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
                   className="absolute bottom-full whitespace-nowrap pointer-events-none"
                 >
                   <span className="text-3xl font-black text-yellow-300 drop-shadow-[0_0_15px_rgba(239,68,68,0.8)] italic tracking-wider">
-                    🔥 COMBO x{(myPlayer.combo || 0)}
+                    <Flame className="w-6 h-6 inline-block mr-1 text-yellow-300" /> COMBO x{(myPlayer.combo || 0)}
                   </span>
                 </motion.div>
               )}
@@ -295,33 +296,33 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
             animate={{ opacity: 1, x: 0 }}
             className="absolute -top-12 right-0 bg-purple-500/20 border border-purple-500/50 text-purple-400 font-bold text-sm px-4 py-1.5 rounded-lg whitespace-nowrap shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-sm animate-pulse"
           >
-            🌀 CHÓANG VÁNG!
+            <RotateCcw className="w-4 h-4 inline-block mr-1" /> CHÓANG VÁNG!
           </motion.div>
         )}
         
         <SkillButton
-          name="Push" icon="💨" cd={myPlayer.pushCD || 0} keyBind="1" type="push" isSilenced={myPlayer.isSilenced}
+          name="Push" icon={<Wind />} cd={myPlayer.pushCD || 0} keyBind="1" type="push" isSilenced={myPlayer.isSilenced}
           tooltip="Đẩy văng kẻ địch trước mặt ra xa. Dùng để đẩy đối thủ khỏi bo hoặc cướp câu hỏi."
           onPointerDown={(e) => handlePointerDown(e, 'push', myPlayer.pushCD || 0)}
           onPointerUp={(e) => handlePointerUp(e, 'push', myPlayer.pushCD || 0)}
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
         <SkillButton
-          name="Double" icon="🎲" cd={myPlayer.doubleCD || 0} keyBind="2" type="double" isSilenced={myPlayer.isSilenced}
+          name="Double" icon={<Dices />} cd={myPlayer.doubleCD || 0} keyBind="2" type="double" isSilenced={myPlayer.isSilenced}
           tooltip="Bật TRƯỚC KHI trả lời. Đúng: x2 Điểm. Sai: Nhận x2 Sát thương. Liều ăn nhiều!"
           onPointerDown={(e) => handlePointerDown(e, 'double', myPlayer.doubleCD || 0)}
           onPointerUp={(e) => handlePointerUp(e, 'double', myPlayer.doubleCD || 0)}
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
         <SkillButton
-          name="Dizzy Spin" icon="🌀" cd={myPlayer.dizzyCD || 0} keyBind="3" type="dizzy" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
+          name="Dizzy Spin" icon={<RotateCcw />} cd={myPlayer.dizzyCD || 0} keyBind="3" type="dizzy" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
           tooltip="Gây choáng váng cho kẻ địch xung quanh trong 5s. Không thể di chuyển hoặc dùng kỹ năng."
           onPointerDown={(e) => handlePointerDown(e, 'dizzy', myPlayer.dizzyCD || 0)}
           onPointerUp={(e) => handlePointerUp(e, 'dizzy', myPlayer.dizzyCD || 0)}
           onPointerLeave={handlePointerCancel} onPointerCancel={handlePointerCancel}
         />
         <SkillButton
-          name="Ultimate" icon="🔥" cd={myPlayer.ultCD || 0} keyBind="4" type="ult" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
+          name="Ultimate" icon={<Flame />} cd={myPlayer.ultCD || 0} keyBind="4" type="ult" isSilenced={myPlayer.isStunned || myPlayer.isDizzy}
           tooltip={getUltTooltip(myPlayer.characterId)}
           onPointerDown={(e) => handlePointerDown(e, 'ult', myPlayer.ultCD || 0)}
           onPointerUp={(e) => handlePointerUp(e, 'ult', myPlayer.ultCD || 0)}
@@ -381,7 +382,7 @@ export default function UIOverlay({ gameState, myConnectionId, onSkill, onAiming
             className="absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none"
           >
             <div className="glass-panel border-red-500/50 bg-red-950/80 rounded-2xl p-6 shadow-[0_10px_40px_rgba(220,38,38,0.3)] flex flex-col items-center min-w-[320px]">
-              <div className="text-4xl mb-2 filter drop-shadow-[0_0_10px_rgba(220,38,38,0.8)]">💀</div>
+              <Skull className="w-12 h-12 mb-2 text-red-500 filter drop-shadow-[0_0_10px_rgba(220,38,38,0.8)]" />
               <h1 className="text-2xl font-display font-black text-red-500 tracking-wider text-glow-danger uppercase mb-3 text-center">
                 {myPlayer.isEliminated ? 'ĐÃ BỊ LOẠI' : 'BỊ HẠ GỤC'}
               </h1>

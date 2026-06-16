@@ -2,102 +2,102 @@ export const LOADING_TIPS = [
   {
     "text": "Cương lĩnh 1930 đặt độc lập dân tộc ở vị trí trung tâm.",
     "chapter": 1,
-    "icon": "📘"
+    "iconName": "BookOpen"
   },
   {
     "text": "Luận cương 10/1930 cần nhớ cả ưu điểm và hạn chế.",
     "chapter": 1,
-    "icon": "🧠"
+    "iconName": "Brain"
   },
   {
     "text": "So sánh Cương lĩnh và Luận cương là dạng câu rất hay gặp.",
     "chapter": 1,
-    "icon": "⚖️"
+    "iconName": "Scale"
   },
   {
     "text": "Xô viết Nghệ Tĩnh là đỉnh cao phong trào 1930–1931.",
     "chapter": 2,
-    "icon": "🔥"
+    "iconName": "Flame"
   },
   {
     "text": "Sau đàn áp, phục hồi tổ chức là nhiệm vụ sống còn.",
     "chapter": 2,
-    "icon": "🛡️"
+    "iconName": "Shield"
   },
   {
     "text": "Đại hội I năm 1935 đánh dấu sự phục hồi tổ chức Đảng.",
     "chapter": 2,
-    "icon": "🏛️"
+    "iconName": "Landmark"
   },
   {
     "text": "1936–1939 là bài học về điều chỉnh sách lược.",
     "chapter": 3,
-    "icon": "🔄"
+    "iconName": "RotateCcw"
   },
   {
     "text": "Dân sinh, dân chủ, hòa bình là khẩu hiệu trọng tâm 1936–1939.",
     "chapter": 3,
-    "icon": "🕊️"
+    "iconName": "Heart"
   },
   {
     "text": "Mặt trận Dân chủ giúp mở rộng lực lượng quần chúng.",
     "chapter": 3,
-    "icon": "🤝"
+    "iconName": "Users"
   },
   {
     "text": "Từ 1939, giải phóng dân tộc trở thành nhiệm vụ cấp bách.",
     "chapter": 4,
-    "icon": "🚩"
+    "iconName": "Flag"
   },
   {
     "text": "Hội nghị Trung ương 8 hoàn chỉnh chuyển hướng chiến lược.",
     "chapter": 4,
-    "icon": "📍"
+    "iconName": "MapPin"
   },
   {
     "text": "Nguyễn Ái Quốc về nước năm 1941 là mốc rất quan trọng.",
     "chapter": 4,
-    "icon": "🌟"
+    "iconName": "Star"
   },
   {
     "text": "Việt Minh là mặt trận đoàn kết toàn dân vì độc lập.",
     "chapter": 5,
-    "icon": "🇻🇳"
+    "iconName": "Flag"
   },
   {
     "text": "Ngày 12/3/1945, Đảng phát động cao trào kháng Nhật.",
     "chapter": 5,
-    "icon": "⚡"
+    "iconName": "Zap"
   },
   {
     "text": "Sau 9/3/1945, kẻ thù trước mắt là phát xít Nhật.",
     "chapter": 5,
-    "icon": "🎯"
+    "iconName": "Target"
   },
   {
     "text": "Tháng Tám 1945 thắng lợi nhờ chuẩn bị lâu dài và chớp thời cơ.",
     "chapter": 5,
-    "icon": "⏰"
+    "iconName": "Clock"
   },
   {
     "text": "Học theo chuỗi: bối cảnh → chủ trương → kết quả → bài học.",
     "chapter": null,
-    "icon": "🧩"
+    "iconName": "Puzzle"
   },
   {
     "text": "Đừng học mốc rời rạc; hãy nối mốc với sự thay đổi đường lối.",
     "chapter": null,
-    "icon": "🗺️"
+    "iconName": "Map"
   },
   {
     "text": "Câu nhận xét thường hỏi: đúng đắn, sáng tạo, linh hoạt, hạn chế.",
     "chapter": null,
-    "icon": "💡"
+    "iconName": "Lightbulb"
   },
   {
     "text": "Mỗi giai đoạn cần nhớ kẻ thù, nhiệm vụ, lực lượng, hình thức.",
     "chapter": null,
-    "icon": "✅"
+    "iconName": "CheckCircle"
   }
 ];
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle, XCircle, AlertTriangle, BookOpen, Hourglass } from 'lucide-react';
 
 /**
  * ChallengeModal — Enhanced multi-type question modal
@@ -109,8 +110,8 @@ function MultipleChoiceLayout({ options, selectedOption, onSelect, submitted }) 
 // True/False layout
 function TrueFalseLayout({ selectedOption, onSelect, submitted }) {
   const options = [
-    { value: true, label: 'ĐÚNG', icon: '✅', color: '#10B981' },
-    { value: false, label: 'SAI', icon: '❌', color: '#EF4444' },
+    { value: true, label: 'ĐÚNG', icon: <CheckCircle className="w-8 h-8" />, color: '#10B981' },
+    { value: false, label: 'SAI', icon: <XCircle className="w-8 h-8" />, color: '#EF4444' },
   ];
 
   return (
@@ -144,6 +145,53 @@ function TrueFalseLayout({ selectedOption, onSelect, submitted }) {
   );
 }
 
+function normalizeOrderingPayload(payloadRaw) {
+  if (!payloadRaw) return { items: [], correctOrder: [] };
+  
+  let payload = payloadRaw;
+  if (typeof payloadRaw === "string") {
+    try {
+      payload = JSON.parse(payloadRaw);
+    } catch (e) {
+      console.error("Invalid ChallengePayloadJson:", payloadRaw, e);
+      return { items: [], correctOrder: [] };
+    }
+  }
+
+  if (Array.isArray(payload)) {
+    return { items: payload, correctOrder: payload };
+  }
+
+  const items = payload.items ?? payload.orderItems ?? payload.options ?? payload.sequence ?? [];
+  const correctOrder = payload.correctOrder ?? payload.answer ?? payload.correctSequence ?? payload.correctItems ?? [];
+
+  const normalizedItems = Array.isArray(items)
+    ? items.map((item) => {
+        if (typeof item === "string") return item;
+        if (item?.text) return item.text;
+        if (item?.label) return item.label;
+        if (item?.value) return item.value;
+        return String(item);
+      })
+    : [];
+
+  const normalizedCorrectOrder = Array.isArray(correctOrder)
+    ? correctOrder.map((item) => {
+        if (typeof item === "string") return item;
+        if (typeof item === "number") return normalizedItems[item];
+        if (item?.text) return item.text;
+        if (item?.label) return item.label;
+        if (item?.value) return item.value;
+        return String(item);
+      }).filter(Boolean)
+    : [];
+
+  return {
+    items: normalizedItems,
+    correctOrder: normalizedCorrectOrder.length ? normalizedCorrectOrder : normalizedItems
+  };
+}
+
 // Ordering layout
 function OrderingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
   const [items, setItems] = useState([]);
@@ -151,9 +199,12 @@ function OrderingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
 
   useEffect(() => {
     try {
-      // payloadJson is the CORRECT order. We shuffle it for display.
-      const parsed = JSON.parse(payloadJson || '[]');
-      setItems([...parsed].sort(() => Math.random() - 0.5));
+      const normalized = normalizeOrderingPayload(payloadJson);
+      if (normalized.items.length === 0) {
+        setItems(['Lỗi tải dữ liệu sắp xếp']);
+      } else {
+        setItems([...normalized.items].sort(() => Math.random() - 0.5));
+      }
     } catch (e) {
       setItems(['Lỗi tải dữ liệu sắp xếp']);
     }
@@ -161,6 +212,8 @@ function OrderingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
 
   const handleItemClick = (item) => {
     if (submitted) return;
+    if (items.length === 1 && items[0] === 'Lỗi tải dữ liệu sắp xếp') return;
+
     if (currentOrder.includes(item)) {
       const newOrder = currentOrder.filter(i => i !== item);
       setCurrentOrder(newOrder);
@@ -213,7 +266,21 @@ function OrderingLayout({ payloadJson, selectedOption, onSelect, submitted }) {
 }
 
 // FillBlank / ShortAnswer layout
-function FillBlankLayout({ selectedOption, onSelect, submitted }) {
+function FillBlankLayout({ payloadJson, selectedOption, onSelect, submitted }) {
+  const [payload, setPayload] = useState({});
+  const [showHint2, setShowHint2] = useState(false);
+
+  useEffect(() => {
+    try {
+      const data = JSON.parse(payloadJson || '{}');
+      setPayload(data);
+    } catch {
+      setPayload({});
+    }
+  }, [payloadJson]);
+
+  const maxLength = payload.maxInputLength || 30;
+
   return (
     <div className="flex flex-col gap-3 mb-4">
       <div className="text-[11px] font-bold text-cyan-300/80 uppercase tracking-wider mb-1">
@@ -222,11 +289,38 @@ function FillBlankLayout({ selectedOption, onSelect, submitted }) {
       <input
         type="text"
         value={selectedOption || ''}
-        onChange={(e) => onSelect(e.target.value)}
+        onChange={(e) => onSelect(e.target.value.slice(0, maxLength))}
+        maxLength={maxLength}
         disabled={submitted}
-        placeholder="Nhập đáp án của bạn..."
+        placeholder={payload.hint || "Nhập đáp án của bạn..."}
         className="w-full px-4 py-3 bg-black/40 border-2 border-white/20 rounded-xl text-white outline-none focus:border-cyan-400 transition-all placeholder:text-white/20"
       />
+      
+      {/* Hints UI */}
+      {(payload.hintLevel1 || payload.hintLevel2) && (
+        <div className="mt-2 p-3 rounded-lg bg-cyan-900/20 border border-cyan-800/30">
+          <div className="text-xs text-cyan-200/80 mb-1 flex items-center gap-2">
+            <BookOpen className="w-3 h-3" /> 
+            <span>Gợi ý 1: {payload.hintLevel1 || "Gợi ý đã được bật"}</span>
+          </div>
+          
+          {payload.hintLevel2 && !showHint2 && (
+            <button
+              onClick={() => setShowHint2(true)}
+              className="text-[10px] text-amber-300/70 hover:text-amber-300 underline mt-1"
+            >
+              Mở thêm gợi ý 2
+            </button>
+          )}
+          
+          {payload.hintLevel2 && showHint2 && (
+            <div className="text-xs text-amber-200/80 mt-1 flex items-center gap-2 border-t border-cyan-800/30 pt-1">
+              <BookOpen className="w-3 h-3" /> 
+              <span>Gợi ý 2: {payload.hintLevel2}</span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -411,8 +505,8 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
                 borderColor: 'rgba(212,168,67,0.25)',
               }}
             >
-              <div className="text-amber-300 font-black text-sm tracking-widest animate-pulse">
-                ⚠️ LIỀU ĂN NHIỀU ⚠️
+              <div className="text-amber-300 font-black text-sm tracking-widest animate-pulse flex items-center justify-center gap-2">
+                <AlertTriangle className="w-4 h-4" /> LIỀU ĂN NHIỀU <AlertTriangle className="w-4 h-4" />
               </div>
               <div className="text-[11px] text-red-300 mt-0.5">
                 ĐÚNG ×2 ĐIỂM — SAI ×2 SÁT THƯƠNG
@@ -425,8 +519,8 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
         <div className="flex justify-between items-center mb-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[10px] text-white/40 uppercase font-bold tracking-wider">
-                📖 Thử thách tri thức
+              <span className="text-[10px] text-white/40 uppercase font-bold tracking-wider flex items-center gap-1">
+                <BookOpen className="w-3 h-3" /> Thử thách tri thức
               </span>
               {question.difficulty && <DifficultyBadge difficulty={question.difficulty} />}
             </div>
@@ -451,7 +545,7 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
           <OrderingLayout payloadJson={question.payloadJson} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
         )}
         {(questionType === 'FillBlank' || questionType === 'ShortAnswer') && (
-          <FillBlankLayout selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
+          <FillBlankLayout payloadJson={question.payloadJson} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
         )}
         {questionType === 'Matching' && (
           <MatchingLayout payloadJson={question.payloadJson} selectedOption={selectedOption} onSelect={setSelectedOption} submitted={submitted} />
@@ -476,7 +570,7 @@ export default function ChallengeModal({ question, onSubmit, onClose, isDoubleAc
             boxShadow: selectedOption !== null && !submitted ? '0 0 20px rgba(139,26,26,0.4)' : 'none',
           }}
         >
-          {submitted ? '⏳ Đang xử lý...' : '✅ Xác Nhận Đáp Án'}
+          {submitted ? <span className="flex items-center justify-center gap-2"><Hourglass className="w-4 h-4" /> Đang xử lý...</span> : <span className="flex items-center justify-center gap-2"><CheckCircle className="w-4 h-4" /> Xác Nhận Đáp Án</span>}
         </motion.button>
       </motion.div>
     </motion.div>

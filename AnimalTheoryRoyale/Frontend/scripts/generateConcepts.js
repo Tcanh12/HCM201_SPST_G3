@@ -1,4 +1,4 @@
-import fs from 'fs';
+﻿import fs from 'fs';
 import path from 'path';
 import { conceptOverrides } from './conceptContentOverrides.js';
 
@@ -142,7 +142,7 @@ const enrichedConcepts = {
     shortDescription: "Cách mạng giải phóng dân tộc muốn thắng lợi phải đi theo con đường cách mạng vô sản.",
     definition: "Là cuộc đấu tranh để đánh đổ ách thống trị của chủ nghĩa thực dân, giành độc lập dân tộc, do Đảng Cộng sản lãnh đạo.",
     whyImportant: "Vạch ra đường lối chiến lược, phương pháp đấu tranh đúng đắn để giành thắng lợi.",
-    explanation: "Cách mạng giải phóng dân tộc ở thuộc địa phải dựa vào sức mình là chính, có thể nổ ra và giành thắng lợi trước cách mạng vô sản ở chính quốc.",
+    explanation: "Cách mạng giải phóng dân tộc ở thuộc địa phải dựa vào sức mình là chính, có thể nổ ra và giành thắng lợi trước cách mạng vô sản ở nước ngoài.",
     keyIdeas: [
       "Đi theo con đường cách mạng vô sản.",
       "Do Đảng Cộng sản lãnh đạo.",
@@ -150,8 +150,8 @@ const enrichedConcepts = {
       "Tiến hành chủ động, sáng tạo."
     ],
     applications: ["Xây dựng tinh thần tự lực, tự cường trong phát triển quốc gia hiện nay."],
-    commonMisconceptions: ["Cho rằng cách mạng thuộc địa hoàn toàn phụ thuộc vào cách mạng ở chính quốc."],
-    reflectionQuestions: ["Vì sao Hồ Chí Minh khẳng định cách mạng giải phóng dân tộc cần được tiến hành chủ động và có thể thắng lợi trước cách mạng ở chính quốc?"]
+    commonMisconceptions: ["Cho rằng cách mạng thuộc địa hoàn toàn phụ thuộc vào cách mạng ở nước ngoài."],
+    reflectionQuestions: ["Vì sao Hồ Chí Minh khẳng định cách mạng giải phóng dân tộc cần được tiến hành chủ động và có thể thắng lợi trước cách mạng ở nước ngoài?"]
   },
   "chu-nghia-xa-hoi": {
     shortDescription: "Xã hội không có chế độ bóc lột người, một xã hội do nhân dân lao động làm chủ.",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AlertTriangle, BookOpen } from 'lucide-react';
 
 // Circular timer component
 function CircularTimer({ timeLeft, maxTime }) {
@@ -113,8 +114,8 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
                 borderRadius: '12px',
               }}
             >
-              <div style={{ color: '#FCD34D', fontWeight: 900, fontSize: '15px', letterSpacing: '2px', animation: 'flash 1.5s infinite' }}>
-                ⚠️ LIỀU ĂN NHIỀU ⚠️
+              <div style={{ color: '#FCD34D', fontWeight: 900, fontSize: '15px', letterSpacing: '2px', animation: 'flash 1.5s infinite', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                <AlertTriangle className="w-4 h-4" /> LIỀU ĂN NHIỀU <AlertTriangle className="w-4 h-4" />
               </div>
               <div style={{ fontSize: '11px', color: '#FCA5A5', marginTop: '2px' }}>
                 ĐÚNG ×2 ĐIỂM — SAI ×2 SÁT THƯƠNG
@@ -126,8 +127,8 @@ export default function QuestionModal({ question, onSubmit, onClose, isDoubleAct
         {/* Header with timer */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
           <div>
-            <div style={{ fontSize: '11px', color: '#9CA3AF', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1px', marginBottom: '2px' }}>
-              📖 Câu hỏi tri thức
+            <div style={{ fontSize: '11px', color: '#9CA3AF', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '1px', marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <BookOpen className="w-3 h-3" /> Câu hỏi tri thức
             </div>
             <div style={{ width: '40px', height: '3px', borderRadius: '2px', background: 'linear-gradient(90deg, #D91C1C, #F5C542)' }} />
           </div>
