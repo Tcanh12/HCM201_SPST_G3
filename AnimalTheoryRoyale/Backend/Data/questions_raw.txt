@@ -1,1100 +1,1099 @@
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
-### Câu ${qNum}
-**Chủ đề:** ${topic}
-**Độ khó:** ${diff}
-**Câu hỏi:** ${qText}
-A. ${opts[0]}
-B. ${opts[1]}
-C. ${opts[2]}
-D. ${opts[3]}
-**Đáp án đúng:** ${correctLetter}
-**Giải thích:** ${expl}
-
+### Câu 1
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** easy
+**Câu hỏi:** Tổ chức tiền thân của Đảng Cộng sản Việt Nam do Nguyễn Ái Quốc sáng lập năm 1925 là tổ chức nào?
+A. Hội Việt Nam Cách mạng Thanh niên
+B. Việt Nam Quốc dân Đảng
+C. Tân Việt Cách mạng Đảng
+D. Đông Dương Cộng sản Đảng
+**Đáp án đúng:** A
+**Giải thích:** Hội Việt Nam Cách mạng Thanh niên được Nguyễn Ái Quốc thành lập vào tháng 6/1925 tại Quảng Châu (Trung Quốc), đóng vai trò quan trọng trong việc chuẩn bị về tư tưởng, chính trị và tổ chức cho sự ra đời của Đảng.
+
+### Câu 2
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** medium
+**Câu hỏi:** Ý nghĩa to lớn nhất của việc thành lập Đảng Cộng sản Việt Nam đầu năm 1930 là gì?
+A. Chấm dứt hoàn toàn sự khủng hoảng về đường lối cứu nước và giai cấp lãnh đạo.
+B. Mang lại nền độc lập hoàn toàn cho dân tộc ngay lập tức.
+C. Lật đổ ách thống trị của thực dân Pháp và phong kiến.
+D. Đánh dấu bước ngoặt thiết lập chính quyền của giai cấp công nhân.
+**Đáp án đúng:** A
+**Giải thích:** Sự kiện thành lập Đảng đánh dấu bước ngoặt vĩ đại, chấm dứt thời kỳ khủng hoảng bế tắc về đường lối cứu nước và giai cấp lãnh đạo phong trào cách mạng Việt Nam.
+
+### Câu 3
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** easy
+**Câu hỏi:** Tác phẩm nào của Nguyễn Ái Quốc xuất bản năm 1927 đã chuẩn bị trực tiếp về chính trị cho việc thành lập Đảng?
+A. Đường Kách mệnh
+B. Bản án chế độ thực dân Pháp
+C. Đông Dương khổ cực
+D. Nhật ký trong tù
+**Đáp án đúng:** A
+**Giải thích:** Tác phẩm Đường Kách mệnh tập hợp các bài giảng của Nguyễn Ái Quốc tại các lớp huấn luyện cán bộ ở Quảng Châu, vạch ra phương hướng cơ bản của cách mạng Việt Nam.
+
+### Câu 4
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** medium
+**Câu hỏi:** Tổ chức cộng sản nào không tham gia Hội nghị hợp nhất thành lập Đảng đầu năm 1930?
+A. Đông Dương Cộng sản Liên đoàn
+B. Đông Dương Cộng sản Đảng
+C. An Nam Cộng sản Đảng
+D. Không có tổ chức nào
+**Đáp án đúng:** A
+**Giải thích:** Đông Dương Cộng sản Liên đoàn không kịp cử đại biểu tham dự Hội nghị hợp nhất. Ngày 24/2/1930 mới được chính thức gia nhập Đảng Cộng sản Việt Nam.
+
+### Câu 5
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** easy
+**Câu hỏi:** Nhiệm vụ chiến lược hàng đầu của cách mạng Đông Dương được xác định trong Cương lĩnh chính trị đầu tiên (2/1930) là gì?
+A. Đánh đổ đế quốc chủ nghĩa Pháp và bọn phong kiến, làm cho nước Nam được hoàn toàn độc lập.
+B. Đánh đổ giai cấp địa chủ phong kiến, giành ruộng đất cho dân cày.
+C. Xây dựng chủ nghĩa xã hội và chủ nghĩa cộng sản ở Đông Dương.
+D. Tiến hành cách mạng công nghiệp, xây dựng nền tảng kinh tế tư bản.
+**Đáp án đúng:** A
+**Giải thích:** Cương lĩnh chính trị đầu tiên đặt vấn đề giải phóng dân tộc lên hàng đầu, vì mâu thuẫn chủ yếu và gay gắt nhất của xã hội Việt Nam lúc bấy giờ là mâu thuẫn giữa toàn thể dân tộc Việt Nam với thực dân Pháp.
+
+### Câu 6
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** medium
+**Câu hỏi:** Lực lượng cách mạng được đề ra trong Cương lĩnh chính trị đầu tiên thể hiện tư tưởng gì của Nguyễn Ái Quốc?
+A. Tư tưởng đại đoàn kết toàn dân tộc.
+B. Tư tưởng chuyên chính vô sản nghiêm ngặt.
+C. Chỉ dựa vào giai cấp công nhân và nông dân.
+D. Dựa hoàn toàn vào tầng lớp trí thức tiểu tư sản.
+**Đáp án đúng:** A
+**Giải thích:** Cương lĩnh chủ trương đoàn kết công nông làm nòng cốt, đồng thời liên minh với tiểu tư sản, trí thức, trung nông và lôi kéo phú nông, trung tiểu địa chủ và tư sản dân tộc. Điều này phản ánh tư tưởng đại đoàn kết rộng rãi.
+
+### Câu 7
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** hard
+**Câu hỏi:** Điểm khác biệt cốt lõi nhất của Cương lĩnh chính trị đầu tiên so với các trào lưu cứu nước trước đó là gì?
+A. Chỉ rõ phương hướng tiến lên chủ nghĩa cộng sản sau khi hoàn thành cách mạng tư sản dân quyền.
+B. Nhấn mạnh vai trò của tầng lớp trí thức trong việc lãnh đạo cách mạng.
+C. Kêu gọi sự viện trợ tuyệt đối từ các nước xã hội chủ nghĩa.
+D. Từ bỏ phương pháp bạo lực cách mạng, chuyển sang đấu tranh nghị trường.
+**Đáp án đúng:** A
+**Giải thích:** Cương lĩnh vạch rõ phương hướng tiến lên chủ nghĩa cộng sản, bỏ qua giai đoạn phát triển tư bản chủ nghĩa, đây là điểm hoàn toàn mới và triệt để so với các trào lưu trước đó.
+
+### Câu 8
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** hard
+**Câu hỏi:** Hạn chế chủ yếu của Luận cương chính trị tháng 10/1930 so với Cương lĩnh chính trị đầu tiên là gì?
+A. Chưa đặt đúng vị trí của nhiệm vụ giải phóng dân tộc và đánh giá chưa đúng khả năng cách mạng của các tầng lớp ngoài công - nông.
+B. Không xác định được giai cấp lãnh đạo cách mạng là giai cấp công nhân.
+C. Không đề ra được phương hướng tiến lên chủ nghĩa xã hội.
+D. Phủ nhận hoàn toàn vai trò của đấu tranh vũ trang trong cách mạng.
+**Đáp án đúng:** A
+**Giải thích:** Do chịu ảnh hưởng của khuynh hướng "tả" trong Quốc tế Cộng sản, Luận cương nặng về đấu tranh giai cấp, không đặt nhiệm vụ giải phóng dân tộc lên hàng đầu và thu hẹp lực lượng cách mạng.
+
+### Câu 9
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** easy
+**Câu hỏi:** Ai là người khởi thảo Luận cương chính trị tháng 10/1930 của Đảng Cộng sản Đông Dương?
+A. Trần Phú
+B. Nguyễn Ái Quốc
+C. Lê Hồng Phong
+D. Hà Huy Tập
+**Đáp án đúng:** A
+**Giải thích:** Đồng chí Trần Phú (Tổng Bí thư đầu tiên của Đảng) là người khởi thảo Luận cương chính trị được thông qua tại Hội nghị Ban Chấp hành Trung ương Đảng tháng 10/1930.
+
+### Câu 10
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** medium
+**Câu hỏi:** Sự kiện nào là đỉnh cao của phong trào cách mạng 1930-1931?
+A. Sự ra đời của chính quyền Xô viết ở hai tỉnh Nghệ An và Hà Tĩnh.
+B. Cuộc bãi công của công nhân đồn điền cao su Phú Riềng.
+C. Cuộc biểu tình của nông dân huyện Hưng Nguyên (Nghệ An).
+D. Cuộc đấu tranh của công nhân nhà máy sợi Nam Định.
+**Đáp án đúng:** A
+**Giải thích:** Ở Nghệ An và Hà Tĩnh, phong trào phát triển mạnh mẽ đến mức làm tan rã bộ máy chính quyền thực dân, phong kiến ở cơ sở và lập ra chính quyền của nhân dân theo hình thức Xô viết.
+
+### Câu 11
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** hard
+**Câu hỏi:** Vì sao phong trào cách mạng 1930-1931 được xem là cuộc tập dượt đầu tiên cho Cách mạng Tháng Tám?
+A. Vì nó khẳng định quyền lãnh đạo của Đảng và hình thành khối liên minh công nông vững chắc.
+B. Vì nó lật đổ được sự thống trị của thực dân Pháp trên quy mô cả nước.
+C. Vì nó nhận được sự viện trợ quân sự to lớn từ Liên Xô và Quốc tế Cộng sản.
+D. Vì nó thiết lập thành công nền dân chủ cộng hòa trong cả nước.
+**Đáp án đúng:** A
+**Giải thích:** Phong trào đã để lại nhiều bài học kinh nghiệm về tổ chức, lãnh đạo quần chúng, đặc biệt là đã xây dựng được khối liên minh công nông, tạo tiền đề vững chắc cho các giai đoạn sau.
+
+### Câu 12
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** medium
+**Câu hỏi:** Văn kiện nào được công bố năm 1932 vạch ra chương trình hành động nhằm phục hồi phong trào cách mạng?
+A. Chương trình hành động của Đảng Cộng sản Đông Dương
+B. Chung quanh vấn đề chiến sách mới
+C. Tự chỉ trích
+D. Đường Kách mệnh
+**Đáp án đúng:** A
+**Giải thích:** Tháng 6/1932, Ban lãnh đạo của Trung ương Đảng công bố "Chương trình hành động của Đảng Cộng sản Đông Dương", đề ra các yêu sách cụ thể nhằm củng cố và phục hồi phong trào.
+
+### Câu 13
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** medium
+**Câu hỏi:** Kẻ thù trước mắt của cách mạng Đông Dương trong giai đoạn 1936-1939 được Đảng xác định là ai?
+A. Bọn phản động thuộc địa Pháp và tay sai.
+B. Tất cả thực dân Pháp và địa chủ phong kiến.
+C. Phát xít Nhật và thực dân Pháp.
+D. Đế quốc Mỹ và tay sai.
+**Đáp án đúng:** A
+**Giải thích:** Theo tinh thần Hội nghị Trung ương 7/1936, Đảng xác định kẻ thù cụ thể trước mắt lúc này là bọn phản động thuộc địa Pháp và tay sai không chịu thi hành chính sách của Mặt trận Nhân dân Pháp.
+
+### Câu 14
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** easy
+**Câu hỏi:** Tác phẩm "Tự chỉ trích" (1939) nhằm tổng kết kinh nghiệm phong trào dân chủ là của ai?
+A. Nguyễn Văn Cừ
+B. Lê Duẩn
+C. Trường Chinh
+D. Nguyễn Ái Quốc
+**Đáp án đúng:** A
+**Giải thích:** Tác phẩm "Tự chỉ trích" do Tổng Bí thư Nguyễn Văn Cừ viết tháng 7/1939 nhằm củng cố sự đoàn kết nhất trí trong Đảng, khắc phục những sai lầm "tả" khuynh và hữu khuynh.
+
+### Câu 15
+**Chủ đề:** Chuyển hướng chỉ đạo chiến lược 1939–1941
+**Độ khó:** medium
+**Câu hỏi:** Hội nghị nào đánh dấu sự hoàn chỉnh đường lối chuyển hướng chỉ đạo chiến lược, đặt nhiệm vụ giải phóng dân tộc lên hàng đầu?
+A. Hội nghị Trung ương 8 (5/1941)
+B. Hội nghị Trung ương 6 (11/1939)
+C. Hội nghị Trung ương 7 (11/1940)
+D. Đại hội đại biểu lần thứ I (3/1935)
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị Trung ương 8 (5/1941) do Nguyễn Ái Quốc chủ trì đã hoàn chỉnh chủ trương chuyển hướng chiến lược, khẳng định nhiệm vụ giải phóng dân tộc là nhiệm vụ bức thiết nhất.
+
+### Câu 16
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** hard
+**Câu hỏi:** Vì sao Hội nghị Trung ương 8 (1941) quyết định tạm gác khẩu hiệu "Cách mạng ruộng đất"?
+A. Để tập trung cao độ vào nhiệm vụ giải phóng dân tộc, phân hóa và cô lập kẻ thù.
+B. Vì nông dân đã có đủ ruộng đất canh tác.
+C. Vì giai cấp địa chủ đã hoàn toàn ủng hộ cách mạng.
+D. Vì Quốc tế Cộng sản yêu cầu từ bỏ nhiệm vụ chống phong kiến.
+**Đáp án đúng:** A
+**Giải thích:** Tạm gác khẩu hiệu "tịch thu ruộng đất của địa chủ chia cho dân cày", thay bằng "giảm tô, giảm tức" để lôi kéo địa chủ yêu nước, tập trung toàn bộ lực lượng cho chống đế quốc.
+
+### Câu 17
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** medium
+**Câu hỏi:** Khẩu hiệu chiến lược của Mặt trận Việt Minh nhằm lôi cuốn quần chúng tham gia kháng chiến là gì?
+A. Phản Pháp - kháng Nhật - liên Hoa - độc lập.
+B. Đánh đuổi thực dân Pháp, giành độc lập dân tộc.
+C. Tịch thu ruộng đất của địa chủ chia cho dân cày.
+D. Hòa bình, độc lập, ruộng đất và tự do.
+**Đáp án đúng:** A
+**Giải thích:** Khẩu hiệu "Phản Pháp - kháng Nhật - liên Hoa - độc lập" thể hiện rõ mục tiêu chiến lược chống phát xít Nhật và thực dân Pháp để giành độc lập.
+
+### Câu 18
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** easy
+**Câu hỏi:** Chỉ thị "Nhật - Pháp bắn nhau và hành động của chúng ta" (12/3/1945) xác định kẻ thù chính trước mắt là ai?
+A. Phát xít Nhật
+B. Thực dân Pháp
+C. Cả Nhật và Pháp
+D. Phong kiến tay sai
+**Đáp án đúng:** A
+**Giải thích:** Ngay sau khi Nhật đảo chính Pháp (9/3/1945), Đảng ta ra Chỉ thị xác định kẻ thù chính, cụ thể trước mắt duy nhất lúc này là phát xít Nhật và tay sai.
+
+### Câu 19
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** medium
+**Câu hỏi:** Hình thức đấu tranh nào được Đảng nhấn mạnh trong cao trào kháng Nhật cứu nước để chuẩn bị cho Tổng khởi nghĩa?
+A. Kết hợp đấu tranh chính trị với đấu tranh vũ trang, chuyển từ khởi nghĩa từng phần tiến tới Tổng khởi nghĩa.
+B. Đấu tranh nghị trường đòi các quyền dân sinh dân chủ.
+C. Bãi công, lãng công của công nhân ở các đô thị lớn.
+D. Thương lượng ngoại giao với phát xít Nhật.
+**Đáp án đúng:** A
+**Giải thích:** Chỉ thị ngày 12/3/1945 chủ trương phát động một cao trào kháng Nhật cứu nước mạnh mẽ, làm tiền đề cho Tổng khởi nghĩa, trong đó kết hợp chặt chẽ chính trị và vũ trang.
+
+### Câu 20
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** medium
+**Câu hỏi:** Sự kiện nào tạo ra "thời cơ ngàn năm có một" cho Cách mạng Tháng Tám 1945?
+A. Phát xít Nhật đầu hàng Đồng minh vô điều kiện.
+B. Nhật đảo chính Pháp trên toàn Đông Dương.
+C. Quân Đồng minh tiến vào Đông Dương tước khí giới quân Nhật.
+D. Hội nghị Potsdam quyết định việc phân chia giải giáp quân Nhật.
+**Đáp án đúng:** A
+**Giải thích:** Việc Nhật hoàng tuyên bố đầu hàng Đồng minh (15/8/1945) làm cho quân đội Nhật ở Đông Dương hoang mang, chính quyền Trần Trọng Kim rệu rã. Đây là thời cơ vô cùng thuận lợi.
+
+### Câu 21
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** easy
+**Câu hỏi:** Hội nghị toàn quốc của Đảng (13 - 15/8/1945) tại Tân Trào đã quyết định vấn đề quan trọng nào?
+A. Phát động Tổng khởi nghĩa giành chính quyền trong cả nước.
+B. Thành lập Mặt trận Việt Minh.
+C. Ban hành Chỉ thị "Nhật - Pháp bắn nhau và hành động của chúng ta".
+D. Công bố bản Tuyên ngôn Độc lập.
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị quyết định phát động Tổng khởi nghĩa, cử ra Ủy ban Khởi nghĩa toàn quốc và đề ra 3 nguyên tắc chỉ đạo khởi nghĩa: Tập trung, thống nhất, kịp thời.
+
+### Câu 22
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** hard
+**Câu hỏi:** Ba nguyên tắc chỉ đạo khởi nghĩa được Hội nghị toàn quốc của Đảng đề ra vào tháng 8/1945 là gì?
+A. Tập trung, thống nhất, kịp thời.
+B. Bí mật, bất ngờ, kiên quyết.
+C. Toàn dân, toàn diện, trường kỳ.
+D. Hòa bình, thương lượng, hiệp thương.
+**Đáp án đúng:** A
+**Giải thích:** Ba nguyên tắc này đảm bảo cho Tổng khởi nghĩa nổ ra nhanh chóng, đúng thời cơ và giành thắng lợi triệt để trên cả nước.
+
+### Câu 23
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** hard
+**Câu hỏi:** Bài học kinh nghiệm nổi bật nhất từ thắng lợi của Cách mạng Tháng Tám năm 1945 là gì?
+A. Giương cao ngọn cờ độc lập dân tộc, kết hợp đúng đắn hai nhiệm vụ chống đế quốc và chống phong kiến.
+B. Dựa hoàn toàn vào sự giúp đỡ của lực lượng Đồng minh.
+C. Tiến hành cách mạng ruộng đất triệt để ở nông thôn.
+D. Chỉ sử dụng đấu tranh chính trị hòa bình để giành chính quyền.
+**Đáp án đúng:** A
+**Giải thích:** Đảng ta đã luôn giương cao ngọn cờ giải phóng dân tộc, biết đặt nhiệm vụ chống đế quốc lên hàng đầu, vận dụng linh hoạt nhiệm vụ chống phong kiến phục vụ cho chống đế quốc.
+
+### Câu 24
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** medium
+**Câu hỏi:** Một trong những bài học quan trọng về xây dựng lực lượng của Cách mạng Tháng Tám 1945 là gì?
+A. Xây dựng khối đại đoàn kết toàn dân tộc trên nền tảng liên minh công nông.
+B. Tập trung xây dựng quân đội chính quy hiện đại.
+C. Dựa vào sự viện trợ tài chính từ quốc tế.
+D. Thu hút triệt để sự ủng hộ của giai cấp tư sản ngoại bản.
+**Đáp án đúng:** A
+**Giải thích:** Bài học lớn là toàn dân nổi dậy trên nền tảng liên minh công - nông, tập hợp trong Mặt trận dân tộc thống nhất rộng rãi.
+
+### Câu 25
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** hard
+**Câu hỏi:** Nghệ thuật khởi nghĩa trong Cách mạng Tháng Tám 1945 có đặc điểm gì nổi bật?
+A. Kết hợp khởi nghĩa ở cả nông thôn và thành thị, trong đó thành thị đóng vai trò quyết định.
+B. Chỉ khởi nghĩa ở thành thị để lật đổ đầu não kẻ thù.
+C. Chỉ khởi nghĩa ở nông thôn rồi bao vây thành thị.
+D. Dùng chiến tranh du kích kéo dài tiêu hao sinh lực địch.
+**Đáp án đúng:** A
+**Giải thích:** Cách mạng Tháng Tám nổ ra đồng loạt, kết hợp chặt chẽ giữa nổi dậy ở nông thôn và thành thị, đập tan chính quyền đầu não của địch ở các thành phố lớn.
+
+### Câu 26
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** easy
+**Câu hỏi:** Nguyễn Ái Quốc tiếp cận chủ nghĩa Mác - Lênin và lựa chọn con đường cách mạng vô sản nhằm giải quyết vấn đề gì của cách mạng Việt Nam?
+A. Khủng hoảng đường lối cứu nước
+B. Khủng hoảng tài chính ngân hàng
+C. Vấn đề cải cách chữ viết
+D. Vấn đề xây dựng công nghiệp nặng
+**Đáp án đúng:** A
+**Giải thích:** Việc Nguyễn Ái Quốc tìm thấy con đường cách mạng vô sản góp phần giải quyết cuộc khủng hoảng về đường lối cứu nước ở Việt Nam đầu thế kỷ XX.
+
+### Câu 27
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** medium
+**Câu hỏi:** Vì sao sự ra đời của ba tổ chức cộng sản năm 1929 vừa là bước phát triển, vừa đặt ra yêu cầu phải hợp nhất?
+A. Vì các tổ chức này đều không hoạt động.
+B. Vì phong trào cách mạng phát triển nhưng bị phân tán về tổ chức.
+C. Vì thực dân Pháp đã công nhận các tổ chức cộng sản.
+D. Vì phong trào yêu nước đã kết thúc hoàn toàn.
+**Đáp án đúng:** B
+**Giải thích:** Ba tổ chức cộng sản ra đời chứng tỏ khuynh hướng vô sản phát triển mạnh, nhưng sự tồn tại riêng rẽ dễ gây phân tán nên cần thống nhất thành một đảng.
+
+### Câu 28
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** medium
+**Câu hỏi:** Yếu tố nào dưới đây không phải là thành tố tạo nên sự ra đời của Đảng Cộng sản Việt Nam?
+A. Chủ nghĩa Mác - Lênin
+B. Phong trào công nhân
+C. Phong trào yêu nước Việt Nam
+D. Chủ nghĩa phát xít Nhật
+**Đáp án đúng:** D
+**Giải thích:** Đảng ra đời là kết quả kết hợp chủ nghĩa Mác - Lênin với phong trào công nhân và phong trào yêu nước Việt Nam, không phải sản phẩm của chủ nghĩa phát xít.
+
+### Câu 29
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** hard
+**Câu hỏi:** Khi phân tích vai trò của Nguyễn Ái Quốc đối với sự ra đời của Đảng, ý nào sau đây đầy đủ nhất?
+A. Chỉ truyền bá tư tưởng yêu nước truyền thống.
+B. Chỉ tổ chức hoạt động quân sự trong nước.
+C. Chuẩn bị về tư tưởng, chính trị, tổ chức và chủ trì Hội nghị hợp nhất.
+D. Chỉ viết Tuyên ngôn Độc lập năm 1945.
+**Đáp án đúng:** C
+**Giải thích:** Vai trò của Nguyễn Ái Quốc cần được nhìn như một quá trình chuẩn bị toàn diện, không chỉ gắn với một hành động riêng lẻ.
+
+### Câu 30
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** easy
+**Câu hỏi:** Hội nghị thành lập Đảng đầu năm 1930 thông qua nhóm văn kiện nào?
+A. Chánh cương vắn tắt, Sách lược vắn tắt và các văn kiện liên quan
+B. Tuyên ngôn Độc lập
+C. Chỉ thị Nhật - Pháp bắn nhau
+D. Nghị quyết Đại hội VI
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị thành lập Đảng đã thông qua các văn kiện nền tảng như Chánh cương vắn tắt, Sách lược vắn tắt, Chương trình tóm tắt.
+
+### Câu 31
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** easy
+**Câu hỏi:** Trong Cương lĩnh chính trị đầu tiên, nhiệm vụ đánh đổ đế quốc Pháp nhằm mục tiêu trực tiếp nào?
+A. Làm cho Việt Nam hoàn toàn độc lập
+B. Thành lập Mặt trận Dân chủ Đông Dương
+C. Phát động cao trào kháng Nhật
+D. Tổ chức Đại hội I
+**Đáp án đúng:** A
+**Giải thích:** Cương lĩnh đặt vấn đề giải phóng dân tộc, đánh đổ đế quốc Pháp để giành độc lập cho đất nước.
+
+### Câu 32
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** medium
+**Câu hỏi:** Chính sách lực lượng trong Cương lĩnh đầu tiên có điểm nổi bật nào?
+A. Chỉ dựa vào một tầng lớp nhỏ.
+B. Tập hợp rộng rãi các lực lượng yêu nước, công nông là nòng cốt.
+C. Loại bỏ hoàn toàn nông dân khỏi cách mạng.
+D. Chỉ dựa vào tầng lớp địa chủ.
+**Đáp án đúng:** B
+**Giải thích:** Cương lĩnh coi công nông là lực lượng cơ bản nhưng đồng thời tranh thủ, trung lập hoặc lôi kéo các lực lượng yêu nước khác.
+
+### Câu 33
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** hard
+**Câu hỏi:** Vì sao Cương lĩnh chính trị đầu tiên được đánh giá là phù hợp với thực tiễn thuộc địa Việt Nam?
+A. Vì đặt độc lập dân tộc lên vị trí nổi bật và biết tập hợp lực lượng rộng rãi.
+B. Vì chỉ nhấn mạnh đấu tranh nghị trường.
+C. Vì coi nhiệm vụ ruộng đất là nhiệm vụ duy nhất.
+D. Vì không đề cập đến vấn đề dân tộc.
+**Đáp án đúng:** A
+**Giải thích:** Trong xã hội thuộc địa, mâu thuẫn dân tộc rất gay gắt; Cương lĩnh đã xác định đúng nhiệm vụ độc lập dân tộc và sách lược lực lượng phù hợp.
+
+### Câu 34
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** medium
+**Câu hỏi:** Câu “làm tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản” nói về nội dung nào của Cương lĩnh?
+A. Phương hướng chiến lược của cách mạng Việt Nam
+B. Chính sách giáo dục phổ thông
+C. Hoạt động ngoại giao với Nhật
+D. Chủ trương đấu tranh nghị trường
+**Đáp án đúng:** A
+**Giải thích:** Đây là phương hướng chiến lược được xác định trong Cương lĩnh chính trị đầu tiên của Đảng.
+
+### Câu 35
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** hard
+**Câu hỏi:** Khi so sánh Cương lĩnh với Luận cương, điểm nào thường được xem là ưu thế của Cương lĩnh?
+A. Không quan tâm đến độc lập dân tộc.
+B. Có quan điểm dân tộc rõ hơn và sách lược lực lượng rộng hơn.
+C. Phủ nhận vai trò của giai cấp công nhân.
+D. Chỉ chủ trương cải cách ôn hòa.
+**Đáp án đúng:** B
+**Giải thích:** Cương lĩnh thể hiện tư duy đúng đắn khi đặt vấn đề dân tộc nổi bật và biết tập hợp nhiều lực lượng yêu nước.
+
+### Câu 36
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** easy
+**Câu hỏi:** Hội nghị Trung ương tháng 10/1930 đã thông qua văn kiện nào?
+A. Luận cương chính trị
+B. Tuyên ngôn Độc lập
+C. Chỉ thị Nhật - Pháp bắn nhau
+D. Chương trình Việt Minh
+**Đáp án đúng:** A
+**Giải thích:** Luận cương chính trị tháng 10/1930 được thông qua tại Hội nghị Ban Chấp hành Trung ương lần thứ nhất.
+
+### Câu 37
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** medium
+**Câu hỏi:** Luận cương tháng 10/1930 xác định hai nhiệm vụ cơ bản của cách mạng Đông Dương là gì?
+A. Phản đế và thổ địa
+B. Công nghiệp hóa và hiện đại hóa
+C. Đổi mới và hội nhập
+D. Nghị trường và cải lương
+**Đáp án đúng:** A
+**Giải thích:** Luận cương xác định cách mạng Đông Dương có tính chất thổ địa và phản đế.
+
+### Câu 38
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** hard
+**Câu hỏi:** Nguyên nhân chủ yếu dẫn đến hạn chế của Luận cương tháng 10/1930 là gì?
+A. Chưa nhận thức thật đầy đủ thực tiễn xã hội thuộc địa và chịu ảnh hưởng khuynh hướng “tả”.
+B. Do không biết đến chủ nghĩa Mác - Lênin.
+C. Do phủ nhận hoàn toàn vai trò của công nhân.
+D. Do không có bất kỳ nội dung chống đế quốc nào.
+**Đáp án đúng:** A
+**Giải thích:** Hạn chế của Luận cương thường được lý giải bởi nhận thức chưa đầy đủ về thực tiễn thuộc địa và ảnh hưởng giáo điều, “tả” khuynh.
+
+### Câu 39
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** medium
+**Câu hỏi:** Trong Luận cương, lực lượng động lực chính của cách mạng được nhấn mạnh là ai?
+A. Công nhân và nông dân
+B. Tư sản mại bản
+C. Quan lại phong kiến
+D. Quân Đồng minh
+**Đáp án đúng:** A
+**Giải thích:** Luận cương nhấn mạnh vai trò của giai cấp vô sản và nông dân trong cách mạng Đông Dương.
+
+### Câu 40
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** hard
+**Câu hỏi:** Nhận xét nào cân bằng nhất về Luận cương chính trị tháng 10/1930?
+A. Có lập trường cách mạng nhưng còn hạn chế về vấn đề dân tộc và lực lượng cách mạng.
+B. Hoàn toàn không có giá trị lịch sử.
+C. Hoàn toàn giống Cương lĩnh chính trị đầu tiên.
+D. Chỉ là văn kiện về giáo dục.
+**Đáp án đúng:** A
+**Giải thích:** Cần đánh giá Luận cương vừa có ưu điểm về lập trường cách mạng, vừa có hạn chế so với Cương lĩnh đầu tiên.
+
+### Câu 41
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** easy
+**Câu hỏi:** Cao trào cách mạng 1930–1931 diễn ra dưới sự lãnh đạo của tổ chức nào?
+A. Đảng Cộng sản Việt Nam/Đảng Cộng sản Đông Dương
+B. Mặt trận Việt Minh
+C. Mặt trận Dân chủ Đông Dương
+D. Chính phủ Trần Trọng Kim
+**Đáp án đúng:** A
+**Giải thích:** Cao trào 1930–1931 là phong trào cách mạng đầu tiên dưới sự lãnh đạo của Đảng sau khi Đảng ra đời.
+
+### Câu 42
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** medium
+**Câu hỏi:** Cuộc biểu tình ngày 12/9/1930 thường được nhắc đến trong phong trào Xô viết Nghệ Tĩnh gắn với địa phương nào?
+A. Hưng Nguyên, Nghệ An
+B. Pác Bó, Cao Bằng
+C. Tân Trào, Tuyên Quang
+D. Ma Cao, Trung Quốc
+**Đáp án đúng:** A
+**Giải thích:** Biểu tình Hưng Nguyên ngày 12/9/1930 là một mốc nổi bật của phong trào Xô viết Nghệ Tĩnh.
+
+### Câu 43
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** hard
+**Câu hỏi:** Ý nghĩa nổi bật của Xô viết Nghệ Tĩnh đối với đường lối cách mạng là gì?
+A. Kiểm nghiệm vai trò lãnh đạo của Đảng và sức mạnh quần chúng.
+B. Chứng minh đấu tranh nghị trường là con đường duy nhất.
+C. Kết thúc hoàn toàn ách thống trị thực dân.
+D. Thành lập ngay nhà nước Việt Nam Dân chủ Cộng hòa.
+**Đáp án đúng:** A
+**Giải thích:** Xô viết Nghệ Tĩnh có ý nghĩa như cuộc tập dượt, khẳng định vai trò lãnh đạo và rèn luyện quần chúng cách mạng.
+
+### Câu 44
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** medium
+**Câu hỏi:** Sau cao trào 1930–1931, tổ chức Đảng gặp khó khăn lớn chủ yếu do nguyên nhân nào?
+A. Sự đàn áp khốc liệt của thực dân Pháp
+B. Nhật đầu hàng Đồng minh
+C. Mặt trận Nhân dân Pháp thắng cử
+D. Hội nghị Trung ương 8 thành công
+**Đáp án đúng:** A
+**Giải thích:** Thực dân Pháp đàn áp mạnh phong trào, làm nhiều cơ sở Đảng và tổ chức quần chúng bị tổn thất.
+
+### Câu 45
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** hard
+**Câu hỏi:** Khi rút bài học từ cao trào 1930–1931, ý nào sau đây phù hợp nhất?
+A. Cần tổ chức, lãnh đạo quần chúng và biết bảo toàn lực lượng trước đàn áp.
+B. Chỉ cần tự phát quần chúng là đủ.
+C. Không cần tổ chức Đảng.
+D. Không cần phân tích tương quan lực lượng.
+**Đáp án đúng:** A
+**Giải thích:** Cao trào để lại bài học về tổ chức, lãnh đạo, bảo toàn lực lượng và đánh giá đúng tình hình.
+
+### Câu 46
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** easy
+**Câu hỏi:** Trọng tâm của giai đoạn 1932–1935 là gì?
+A. Phục hồi tổ chức Đảng và củng cố lực lượng
+B. Tổng khởi nghĩa giành chính quyền
+C. Đổi mới kinh tế
+D. Đàm phán với phát xít Nhật
+**Đáp án đúng:** A
+**Giải thích:** Sau tổn thất 1930–1931, nhiệm vụ quan trọng là khôi phục tổ chức, cán bộ và cơ sở quần chúng.
+
+### Câu 47
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** medium
+**Câu hỏi:** Đại hội đại biểu lần thứ nhất của Đảng tháng 3/1935 có nhiệm vụ quan trọng nào?
+A. Củng cố và phát triển Đảng, vận động quần chúng
+B. Thành lập Mặt trận Việt Minh
+C. Phát động Tổng khởi nghĩa
+D. Ban hành Tuyên ngôn Độc lập
+**Đáp án đúng:** A
+**Giải thích:** Đại hội I tập trung củng cố Đảng, vận động quần chúng và tuyên truyền chống đế quốc, chống chiến tranh.
+
+### Câu 48
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** hard
+**Câu hỏi:** Vai trò của các chi bộ trong nhà tù thời kỳ 1932–1935 là gì?
+A. Duy trì tổ chức, rèn luyện cán bộ và giữ vững ý chí cách mạng.
+B. Thay thế hoàn toàn Ban Chấp hành Trung ương.
+C. Tổ chức Tổng khởi nghĩa tháng Tám.
+D. Thành lập Chính phủ lâm thời.
+**Đáp án đúng:** A
+**Giải thích:** Trong hoàn cảnh bị đàn áp, nhà tù trở thành nơi rèn luyện, giáo dục và duy trì tinh thần, tổ chức cách mạng.
+
+### Câu 49
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** medium
+**Câu hỏi:** Vì sao giai đoạn 1932–1935 có ý nghĩa chuẩn bị cho phong trào 1936–1939?
+A. Vì Đảng khôi phục tổ chức, cán bộ và cơ sở quần chúng.
+B. Vì Đảng đã giành chính quyền toàn quốc.
+C. Vì Nhật đã đảo chính Pháp.
+D. Vì Việt Minh đã ra đời.
+**Đáp án đúng:** A
+**Giải thích:** Phục hồi tổ chức là điều kiện để Đảng có thể lãnh đạo phong trào dân chủ rộng rãi sau đó.
+
+### Câu 50
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** hard
+**Câu hỏi:** Nếu bỏ qua giai đoạn phục hồi 1932–1935 khi phân tích đường lối 1930–1945 thì bài làm thiếu điểm nào?
+A. Thiếu quá trình bảo toàn, khôi phục tổ chức và chuẩn bị lực lượng.
+B. Thiếu nội dung về Tuyên ngôn Độc lập.
+C. Thiếu phần Đổi mới năm 1986.
+D. Thiếu kháng chiến chống Mỹ.
+**Đáp án đúng:** A
+**Giải thích:** Giai đoạn 1932–1935 không nổi bật bằng khởi nghĩa nhưng rất quan trọng về tổ chức và lực lượng.
+
+### Câu 51
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** easy
+**Câu hỏi:** Khẩu hiệu nổi bật của phong trào dân chủ 1936–1939 là gì?
+A. Dân sinh, dân chủ, cơm áo, hòa bình
+B. Đánh đuổi phát xít Nhật
+C. Tổng khởi nghĩa ngay
+D. Đổi mới toàn diện
+**Đáp án đúng:** A
+**Giải thích:** Giai đoạn 1936–1939 tập trung đấu tranh đòi các quyền dân sinh, dân chủ, hòa bình.
+
+### Câu 52
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** medium
+**Câu hỏi:** Bối cảnh quốc tế nào tạo điều kiện cho Đảng điều chỉnh sách lược 1936–1939?
+A. Nguy cơ phát xít, chiến tranh và Mặt trận Nhân dân Pháp thắng cử
+B. Nhật đầu hàng Đồng minh
+C. Mỹ đưa quân vào miền Nam
+D. Liên Xô tan rã
+**Đáp án đúng:** A
+**Giải thích:** Tình hình chống phát xít và sự thay đổi chính trị ở Pháp tạo điều kiện để Đảng chuyển hình thức đấu tranh.
+
+### Câu 53
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** medium
+**Câu hỏi:** Hình thức đấu tranh trong phong trào 1936–1939 có đặc điểm nào?
+A. Kết hợp công khai, nửa công khai, hợp pháp, nửa hợp pháp với bí mật.
+B. Chỉ đấu tranh vũ trang.
+C. Chỉ hoạt động trong rừng núi.
+D. Chỉ đàm phán ngoại giao.
+**Đáp án đúng:** A
+**Giải thích:** Đây là sự linh hoạt về hình thức đấu tranh trong điều kiện chính trị mới.
+
+### Câu 54
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** hard
+**Câu hỏi:** Vì sao phong trào dân chủ 1936–1939 không thể hiểu là từ bỏ mục tiêu độc lập dân tộc?
+A. Vì đó là điều chỉnh nhiệm vụ trước mắt và hình thức đấu tranh, không thay đổi mục tiêu lâu dài.
+B. Vì Đảng đã giải tán tổ chức.
+C. Vì Đảng chỉ tập trung vào kinh tế.
+D. Vì phong trào không có quần chúng.
+**Đáp án đúng:** A
+**Giải thích:** Đảng linh hoạt sách lược theo bối cảnh, nhưng mục tiêu chiến lược lâu dài của cách mạng không bị từ bỏ.
+
+### Câu 55
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** hard
+**Câu hỏi:** Bài học nổi bật nhất từ phong trào dân chủ 1936–1939 là gì?
+A. Biết phân biệt mục tiêu chiến lược với nhiệm vụ trước mắt.
+B. Luôn dùng một hình thức đấu tranh duy nhất.
+C. Không cần mặt trận thống nhất.
+D. Không cần tranh thủ điều kiện quốc tế.
+**Đáp án đúng:** A
+**Giải thích:** Giai đoạn này thể hiện sự linh hoạt trong xác định nhiệm vụ trước mắt và hình thức đấu tranh phù hợp.
+
+### Câu 56
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** medium
+**Câu hỏi:** Mặt trận Dân chủ Đông Dương khác với Mặt trận Việt Minh ở điểm nào?
+A. Mặt trận Dân chủ gắn với đấu tranh dân chủ 1936–1939, còn Việt Minh gắn với giải phóng dân tộc từ 1941.
+B. Hai mặt trận hoàn toàn giống nhau.
+C. Việt Minh ra đời trước năm 1930.
+D. Mặt trận Dân chủ ra đời sau Cách mạng Tháng Tám.
+**Đáp án đúng:** A
+**Giải thích:** Cần phân biệt theo thời gian, mục tiêu trước mắt và bối cảnh lịch sử của từng mặt trận.
+
+### Câu 57
+**Chủ đề:** Chuyển hướng chỉ đạo chiến lược 1939–1941
+**Độ khó:** easy
+**Câu hỏi:** Hội nghị Trung ương 6 tháng 11/1939 có ý nghĩa gì?
+A. Mở đầu quá trình chuyển hướng chỉ đạo chiến lược
+B. Thành lập Đảng Cộng sản Việt Nam
+C. Tổ chức Đại hội Quốc dân Tân Trào
+D. Ban hành Tuyên ngôn Độc lập
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị Trung ương 6 là mốc mở đầu chuyển hướng chiến lược, đặt vấn đề giải phóng dân tộc lên cao.
+
+### Câu 58
+**Chủ đề:** Chuyển hướng chỉ đạo chiến lược 1939–1941
+**Độ khó:** medium
+**Câu hỏi:** Yếu tố nào làm nhiệm vụ giải phóng dân tộc trở nên cấp bách trong giai đoạn 1939–1941?
+A. Chiến tranh thế giới thứ hai, Pháp đàn áp và Nhật vào Đông Dương
+B. Mặt trận Nhân dân Pháp thắng cử
+C. Đại hội I năm 1935
+D. Phong trào Đông Du
+**Đáp án đúng:** A
+**Giải thích:** Chiến tranh và sự thống trị của Pháp - Nhật làm mâu thuẫn dân tộc gay gắt, thúc đẩy chuyển hướng chiến lược.
+
+### Câu 59
+**Chủ đề:** Chuyển hướng chỉ đạo chiến lược 1939–1941
+**Độ khó:** medium
+**Câu hỏi:** Sau khi Chiến tranh thế giới thứ hai bùng nổ, Đảng chuyển trọng tâm hoạt động theo hướng nào?
+A. Rút vào bí mật, chú trọng xây dựng lực lượng cách mạng
+B. Mở rộng đấu tranh nghị trường công khai như trước
+C. Ngừng hoàn toàn hoạt động
+D. Chỉ tập trung vào thương lượng với Nhật
+**Đáp án đúng:** A
+**Giải thích:** Điều kiện đàn áp buộc Đảng rút vào hoạt động bí mật, tập trung xây dựng lực lượng và chuẩn bị cho đấu tranh giải phóng dân tộc.
+
+### Câu 60
+**Chủ đề:** Chuyển hướng chỉ đạo chiến lược 1939–1941
+**Độ khó:** hard
+**Câu hỏi:** Nội dung nào thể hiện rõ nhất sự chuyển hướng chiến lược của Đảng giai đoạn 1939–1941?
+A. Đặt nhiệm vụ giải phóng dân tộc lên hàng đầu.
+B. Chỉ đòi dân sinh, dân chủ, hòa bình.
+C. Chỉ cải cách hành chính thuộc địa.
+D. Từ bỏ vai trò lãnh đạo của Đảng.
+**Đáp án đúng:** A
+**Giải thích:** Điểm cốt lõi của chuyển hướng là xác định giải phóng dân tộc là nhiệm vụ cấp bách, trung tâm.
+
+### Câu 61
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** easy
+**Câu hỏi:** Hội nghị Trung ương 8 tháng 5/1941 gắn với địa danh nào?
+A. Pác Bó, Cao Bằng
+B. Ma Cao, Trung Quốc
+C. Bà Điểm, Gia Định
+D. Hưng Nguyên, Nghệ An
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị Trung ương 8 họp tại Pác Bó, Cao Bằng, đánh dấu sự hoàn chỉnh chuyển hướng chiến lược.
+
+### Câu 62
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** medium
+**Câu hỏi:** Nguyễn Ái Quốc về nước năm 1941 có ý nghĩa gì đối với chuyển hướng chiến lược?
+A. Góp phần trực tiếp chỉ đạo hoàn chỉnh đường lối giải phóng dân tộc.
+B. Mở đầu công cuộc Đổi mới.
+C. Thành lập Mặt trận Dân chủ Đông Dương.
+D. Ký Hiệp định Genève.
+**Đáp án đúng:** A
+**Giải thích:** Nguyễn Ái Quốc về nước trực tiếp chỉ đạo Hội nghị Trung ương 8, góp phần hoàn chỉnh chủ trương giải phóng dân tộc.
+
+### Câu 63
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** medium
+**Câu hỏi:** Hội nghị Trung ương 8 quyết định thành lập mặt trận nào?
+A. Mặt trận Việt Minh
+B. Mặt trận Dân chủ Đông Dương
+C. Mặt trận Liên Việt
+D. Mặt trận Tổ quốc Việt Nam
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị Trung ương 8 chủ trương thành lập Việt Nam Độc lập Đồng minh, gọi tắt là Việt Minh.
+
+### Câu 64
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** hard
+**Câu hỏi:** Vì sao Hội nghị Trung ương 8 tạm gác khẩu hiệu cách mạng ruộng đất?
+A. Để tập trung vào nhiệm vụ giải phóng dân tộc và mở rộng khối đoàn kết.
+B. Vì nông dân không còn nhu cầu ruộng đất.
+C. Vì Đảng từ bỏ hoàn toàn quyền lợi nông dân.
+D. Vì phong kiến đã tự nguyện trao ruộng đất.
+**Đáp án đúng:** A
+**Giải thích:** Tạm gác không phải từ bỏ vĩnh viễn mà nhằm tập trung lực lượng cho nhiệm vụ độc lập dân tộc trong hoàn cảnh cấp bách.
+
+### Câu 65
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** hard
+**Câu hỏi:** Vì sao Hội nghị Trung ương 8 được coi là mốc rất quan trọng trong chủ đề đường lối 1930–1945?
+A. Vì hoàn chỉnh chuyển hướng giải phóng dân tộc, lập Việt Minh và chuẩn bị khởi nghĩa vũ trang.
+B. Vì thông qua Luận cương tháng 10/1930.
+C. Vì tổ chức phong trào dân chủ 1936–1939.
+D. Vì mở đầu công cuộc đổi mới.
+**Đáp án đúng:** A
+**Giải thích:** Hội nghị Trung ương 8 có vai trò hoàn chỉnh đường lối giải phóng dân tộc, trực tiếp chuẩn bị cho thắng lợi 1945.
+
+### Câu 66
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** easy
+**Câu hỏi:** Việt Minh là tên viết tắt của tổ chức nào?
+A. Việt Nam Độc lập Đồng minh
+B. Việt Nam Dân chủ Đồng minh
+C. Việt Nam Công nông Đồng minh
+D. Việt Nam Tự do Đồng minh
+**Đáp án đúng:** A
+**Giải thích:** Việt Minh là tên gọi tắt của Việt Nam Độc lập Đồng minh, mặt trận đoàn kết toàn dân vì độc lập.
+
+### Câu 67
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** medium
+**Câu hỏi:** Vai trò nổi bật của Mặt trận Việt Minh trong giai đoạn 1939–1945 là gì?
+A. Tập hợp lực lượng yêu nước rộng rãi để giành độc lập dân tộc.
+B. Thực hiện đấu tranh nghị trường là chủ yếu.
+C. Đại diện cho chính quyền thực dân.
+D. Tổ chức phong trào dân chủ 1936–1939.
+**Đáp án đúng:** A
+**Giải thích:** Việt Minh là hình thức tổ chức khối đại đoàn kết dân tộc, biến đường lối giải phóng dân tộc thành phong trào rộng rãi.
+
+### Câu 68
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** medium
+**Câu hỏi:** Các Hội Cứu quốc trong Việt Minh có ý nghĩa gì?
+A. Tổ chức quần chúng theo từng giới, từng tầng lớp để tham gia cứu nước.
+B. Thay thế hoàn toàn vai trò của Đảng.
+C. Chỉ hoạt động trong lĩnh vực thương mại.
+D. Chỉ dành cho một giai cấp duy nhất.
+**Đáp án đúng:** A
+**Giải thích:** Các Hội Cứu quốc là hình thức tổ chức quần chúng linh hoạt, giúp Việt Minh tập hợp lực lượng rộng rãi.
+
+### Câu 69
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** hard
+**Câu hỏi:** Bài học lớn rút ra từ việc thành lập và phát triển Việt Minh là gì?
+A. Xây dựng mặt trận dân tộc thống nhất rộng rãi trên cơ sở mục tiêu độc lập.
+B. Không cần tập hợp quần chúng.
+C. Chỉ dùng lực lượng quân sự chính quy.
+D. Từ bỏ nhiệm vụ giải phóng dân tộc.
+**Đáp án đúng:** A
+**Giải thích:** Việt Minh thể hiện bài học đại đoàn kết dân tộc, tập hợp mọi lực lượng yêu nước vì mục tiêu độc lập.
+
+### Câu 70
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** hard
+**Câu hỏi:** Khi phân tích nguyên nhân thắng lợi của Cách mạng Tháng Tám, vì sao cần nhắc tới Việt Minh?
+A. Vì Việt Minh tổ chức và tập hợp lực lượng chính trị quần chúng rộng rãi.
+B. Vì Việt Minh là tổ chức của phe Trục.
+C. Vì Việt Minh chỉ ra đời sau năm 1945.
+D. Vì Việt Minh không liên quan đến khởi nghĩa.
+**Đáp án đúng:** A
+**Giải thích:** Việt Minh là công cụ tổ chức lực lượng, giúp quần chúng tham gia vào cao trào cách mạng và Tổng khởi nghĩa.
+
+### Câu 71
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** easy
+**Câu hỏi:** Nhật đảo chính Pháp ở Đông Dương vào thời gian nào?
+A. Ngày 9/3/1945
+B. Ngày 12/3/1945
+C. Ngày 16/8/1945
+D. Ngày 2/9/1945
+**Đáp án đúng:** A
+**Giải thích:** Ngày 9/3/1945, Nhật đảo chính Pháp, làm tình hình chính trị Đông Dương thay đổi nhanh chóng.
+
+### Câu 72
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** medium
+**Câu hỏi:** Chỉ thị ngày 12/3/1945 xác định khẩu hiệu đấu tranh trực tiếp là gì?
+A. Đánh đuổi phát xít Nhật
+B. Dân sinh, dân chủ, hòa bình
+C. Tạm hoãn mọi hoạt động
+D. Chỉ đấu tranh nghị trường
+**Đáp án đúng:** A
+**Giải thích:** Sau khi Nhật đảo chính Pháp, kẻ thù trước mắt được xác định là phát xít Nhật nên khẩu hiệu trực tiếp là đánh đuổi phát xít Nhật.
+
+### Câu 73
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** medium
+**Câu hỏi:** Cao trào kháng Nhật cứu nước có vai trò gì đối với Tổng khởi nghĩa?
+A. Chuẩn bị trực tiếp về lực lượng, khí thế và hình thức đấu tranh.
+B. Kết thúc hoàn toàn phong trào cách mạng.
+C. Thay thế Hội nghị Trung ương 8.
+D. Chỉ là hoạt động tuyên truyền văn hóa.
+**Đáp án đúng:** A
+**Giải thích:** Cao trào kháng Nhật là bước tiền khởi nghĩa, tạo điều kiện trực tiếp cho Tổng khởi nghĩa tháng Tám.
+
+### Câu 74
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** hard
+**Câu hỏi:** Vì sao Chỉ thị "Nhật - Pháp bắn nhau và hành động của chúng ta" thể hiện sự nhạy bén của Đảng?
+A. Vì kịp thời xác định kẻ thù trước mắt và phát động cao trào hành động phù hợp.
+B. Vì chủ trương quay lại đấu tranh nghị trường như 1936–1939.
+C. Vì tuyên bố ngừng mọi hoạt động.
+D. Vì chỉ tập trung vào cải cách ruộng đất.
+**Đáp án đúng:** A
+**Giải thích:** Chỉ thị phản ứng kịp thời trước biến động Nhật đảo chính Pháp, chuyển khẩu hiệu và phương thức đấu tranh phù hợp.
+
+### Câu 75
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** hard
+**Câu hỏi:** Phong trào “phá kho thóc, giải quyết nạn đói” trong cao trào kháng Nhật có ý nghĩa gì?
+A. Gắn yêu cầu dân sinh cấp bách với nhiệm vụ chính trị chống Nhật.
+B. Tách rời quần chúng khỏi cách mạng.
+C. Chỉ là hoạt động cứu trợ không liên quan chính trị.
+D. Làm chậm quá trình Tổng khởi nghĩa.
+**Đáp án đúng:** A
+**Giải thích:** Khẩu hiệu này đáp ứng nhu cầu sống còn của nhân dân, đồng thời thúc đẩy quần chúng tham gia cao trào kháng Nhật.
+
+### Câu 76
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** easy
+**Câu hỏi:** Tuyên ngôn Độc lập được Chủ tịch Hồ Chí Minh đọc ngày nào?
+A. Ngày 2/9/1945
+B. Ngày 9/3/1945
+C. Ngày 12/3/1945
+D. Ngày 3/2/1930
+**Đáp án đúng:** A
+**Giải thích:** Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Ba Đình, khai sinh nước Việt Nam Dân chủ Cộng hòa.
+
+### Câu 77
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** medium
+**Câu hỏi:** Thời cơ Tổng khởi nghĩa tháng Tám xuất hiện trong khoảng thời gian nào?
+A. Sau khi Nhật đầu hàng Đồng minh và trước khi quân Đồng minh vào Đông Dương
+B. Trước khi Đảng ra đời
+C. Sau Hiệp định Genève
+D. Khi Mặt trận Nhân dân Pháp thắng cử
+**Đáp án đúng:** A
+**Giải thích:** Thời cơ cách mạng rất ngắn, đòi hỏi quyết định nhanh chóng, kịp thời để giành chính quyền.
+
+### Câu 78
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** medium
+**Câu hỏi:** Hội nghị toàn quốc của Đảng tháng 8/1945 đề ra nguyên tắc chỉ đạo khởi nghĩa nào?
+A. Tập trung, thống nhất, kịp thời
+B. Công khai, hợp pháp, nghị trường
+C. Trường kỳ, toàn diện, tự lực cánh sinh
+D. Đổi mới, hội nhập, phát triển
+**Đáp án đúng:** A
+**Giải thích:** Ba nguyên tắc tập trung, thống nhất, kịp thời giúp bảo đảm Tổng khởi nghĩa diễn ra nhanh và đúng thời cơ.
+
+### Câu 79
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** hard
+**Câu hỏi:** Nhận xét nào đúng nhất về nguyên nhân thắng lợi của Cách mạng Tháng Tám?
+A. Là kết quả của đường lối đúng, chuẩn bị lực lượng, đại đoàn kết và nắm bắt thời cơ.
+B. Chỉ do Nhật đầu hàng Đồng minh.
+C. Chỉ do may mắn quốc tế.
+D. Không cần sự lãnh đạo thống nhất.
+**Đáp án đúng:** A
+**Giải thích:** Thắng lợi tháng Tám cần được giải thích bằng cả điều kiện khách quan và chủ quan, đặc biệt là sự chuẩn bị lâu dài và lãnh đạo kịp thời.
+
+### Câu 80
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** hard
+**Câu hỏi:** Vì sao nói Cách mạng Tháng Tám là kết quả của cả quá trình 1930–1945?
+A. Vì có sự tích lũy đường lối, tổ chức, lực lượng, mặt trận và thời cơ qua nhiều giai đoạn.
+B. Vì chỉ diễn ra trong một ngày.
+C. Vì không liên quan đến giai đoạn trước 1945.
+D. Vì không cần cao trào kháng Nhật.
+**Đáp án đúng:** A
+**Giải thích:** Từ Đảng ra đời, Cương lĩnh, cao trào, phục hồi, dân chủ, chuyển hướng, Việt Minh đến Tổng khởi nghĩa là một quá trình chuẩn bị lâu dài.
+
+### Câu 81
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** easy
+**Câu hỏi:** Bài học nào sau đây gắn với việc thành lập và phát triển Mặt trận Việt Minh?
+A. Đại đoàn kết dân tộc
+B. Chỉ dựa vào một giai cấp duy nhất
+C. Không cần tổ chức quần chúng
+D. Từ bỏ mục tiêu độc lập
+**Đáp án đúng:** A
+**Giải thích:** Việt Minh thể hiện nghệ thuật xây dựng khối đại đoàn kết dân tộc để thực hiện nhiệm vụ giải phóng dân tộc.
+
+### Câu 82
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** medium
+**Câu hỏi:** Khi nhận xét đường lối đấu tranh 1930–1945, cần nêu những phương diện nào?
+A. Ưu điểm, hạn chế và bài học kinh nghiệm
+B. Chỉ nêu mốc thời gian
+C. Chỉ kể tên nhân vật
+D. Chỉ viết cảm nghĩ cá nhân
+**Đáp án đúng:** A
+**Giải thích:** Nhận xét đường lối cần có đánh giá cân bằng: tính đúng đắn, sáng tạo, linh hoạt, hạn chế và bài học.
+
+### Câu 83
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** hard
+**Câu hỏi:** Hạn chế nhận thức nổi bật ở giai đoạn đầu sau khi Đảng ra đời thường được gắn với văn kiện nào?
+A. Luận cương chính trị tháng 10/1930
+B. Chỉ thị Nhật - Pháp bắn nhau
+C. Tuyên ngôn Độc lập
+D. Chương trình Việt Minh
+**Đáp án đúng:** A
+**Giải thích:** Luận cương 10/1930 có hạn chế trong việc đánh giá vấn đề dân tộc và lực lượng cách mạng ngoài công nông.
+
+### Câu 84
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** medium
+**Câu hỏi:** Bài học “nắm bắt thời cơ” thể hiện rõ nhất ở sự kiện nào?
+A. Tổng khởi nghĩa tháng Tám 1945
+B. Đại hội I năm 1935
+C. Phong trào dân chủ 1936–1939
+D. Hội Việt Nam Cách mạng Thanh niên
+**Đáp án đúng:** A
+**Giải thích:** Tổng khởi nghĩa tháng Tám thể hiện quyết định kịp thời khi thời cơ Nhật đầu hàng xuất hiện.
+
+### Câu 85
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** hard
+**Câu hỏi:** Tính linh hoạt của đường lối 1930–1945 thể hiện rõ qua sự thay đổi nào?
+A. Từ đấu tranh dân chủ 1936–1939 sang chuyển hướng giải phóng dân tộc 1939–1945.
+B. Từ bỏ hoàn toàn vai trò quần chúng.
+C. Giữ nguyên một khẩu hiệu cho mọi giai đoạn.
+D. Chỉ tiến hành đấu tranh nghị trường.
+**Đáp án đúng:** A
+**Giải thích:** Đảng điều chỉnh nhiệm vụ, khẩu hiệu và hình thức đấu tranh theo bối cảnh lịch sử cụ thể.
+
+### Câu 86
+**Chủ đề:** Đảng ra đời và nền tảng đường lối năm 1930
+**Độ khó:** hard
+**Câu hỏi:** Nếu một bài làm nói Đảng ra đời “hoàn toàn do tác động bên ngoài”, cần sửa như thế nào?
+A. Bổ sung yếu tố phong trào công nhân và phong trào yêu nước Việt Nam.
+B. Giữ nguyên vì chỉ có yếu tố quốc tế.
+C. Bỏ vai trò Nguyễn Ái Quốc.
+D. Không cần phân tích xã hội Việt Nam.
+**Đáp án đúng:** A
+**Giải thích:** Đảng ra đời có yếu tố lý luận quốc tế nhưng phải gắn với phong trào công nhân và phong trào yêu nước trong nước.
+
+### Câu 87
+**Chủ đề:** Cương lĩnh chính trị đầu tiên
+**Độ khó:** medium
+**Câu hỏi:** Đáp án nào phản ánh đúng thái độ của Cương lĩnh đối với các lực lượng yêu nước ngoài công nông?
+A. Có sách lược tranh thủ, liên lạc, lôi kéo hoặc trung lập tùy từng lực lượng.
+B. Loại bỏ tất cả khỏi cách mạng.
+C. Trao quyền lãnh đạo cho tư sản mại bản.
+D. Không đề cập đến lực lượng xã hội.
+**Đáp án đúng:** A
+**Giải thích:** Cương lĩnh có sách lược lực lượng mềm dẻo, góp phần mở rộng mặt trận cách mạng.
+
+### Câu 88
+**Chủ đề:** Luận cương chính trị tháng 10/1930
+**Độ khó:** hard
+**Câu hỏi:** Khi nói Luận cương “chưa đặt đúng vị trí nhiệm vụ giải phóng dân tộc”, cần hiểu thế nào?
+A. Luận cương chưa làm nổi bật đầy đủ mâu thuẫn dân tộc trong xã hội thuộc địa.
+B. Luận cương không hề chống đế quốc.
+C. Luận cương chỉ nói về giáo dục.
+D. Luận cương được viết sau năm 1945.
+**Đáp án đúng:** A
+**Giải thích:** Nhận xét này không có nghĩa Luận cương không chống đế quốc, mà là chưa đặt vấn đề dân tộc nổi bật như Cương lĩnh.
+
+### Câu 89
+**Chủ đề:** Cao trào 1930–1931 và Xô viết Nghệ Tĩnh
+**Độ khó:** medium
+**Câu hỏi:** Trong cao trào 1930–1931, liên minh nào được rèn luyện và khẳng định?
+A. Liên minh công - nông
+B. Liên minh tư sản mại bản - địa chủ
+C. Liên minh phát xít - thực dân
+D. Liên minh quân Đồng minh
+**Đáp án đúng:** A
+**Giải thích:** Cao trào 1930–1931 thể hiện vai trò của công nhân, nông dân và rèn luyện liên minh công - nông.
+
+### Câu 90
+**Chủ đề:** Phục hồi tổ chức Đảng 1932–1935
+**Độ khó:** hard
+**Câu hỏi:** Bài học tổ chức từ giai đoạn 1932–1935 là gì?
+A. Phải kiên trì giữ vững tổ chức, đào tạo cán bộ và gắn với quần chúng.
+B. Không cần hoạt động bí mật khi bị đàn áp.
+C. Chỉ trông chờ thời cơ quốc tế.
+D. Không cần phục hồi cơ sở Đảng.
+**Đáp án đúng:** A
+**Giải thích:** Giai đoạn phục hồi cho thấy tổ chức, cán bộ và cơ sở quần chúng là điều kiện để phong trào cách mạng phát triển bền vững.
+
+### Câu 91
+**Chủ đề:** Phong trào dân chủ 1936–1939
+**Độ khó:** hard
+**Câu hỏi:** Khi so sánh phong trào 1930–1931 với 1936–1939, điểm khác về hình thức đấu tranh là gì?
+A. 1936–1939 tận dụng nhiều hình thức công khai, hợp pháp hơn.
+B. 1936–1939 chỉ đấu tranh vũ trang.
+C. 1930–1931 là phong trào nghị trường.
+D. Hai giai đoạn hoàn toàn giống nhau.
+**Đáp án đúng:** A
+**Giải thích:** Giai đoạn 1936–1939 có điều kiện sử dụng đấu tranh công khai, hợp pháp, nửa hợp pháp bên cạnh hoạt động bí mật.
+
+### Câu 92
+**Chủ đề:** Chuyển hướng chỉ đạo chiến lược 1939–1941
+**Độ khó:** hard
+**Câu hỏi:** Ý nghĩa của việc đặt giải phóng dân tộc lên hàng đầu là gì?
+A. Tập trung giải quyết mâu thuẫn chủ yếu và mở rộng lực lượng yêu nước.
+B. Từ bỏ vĩnh viễn mọi nhiệm vụ dân chủ.
+C. Chấm dứt vai trò lãnh đạo của Đảng.
+D. Chỉ phục vụ lợi ích một giai cấp.
+**Đáp án đúng:** A
+**Giải thích:** Trong hoàn cảnh mất nước, độc lập dân tộc là điều kiện để giải quyết các nhiệm vụ dân chủ và quyền lợi giai cấp.
+
+### Câu 93
+**Chủ đề:** Hội nghị Trung ương 6, 7, 8
+**Độ khó:** medium
+**Câu hỏi:** Điểm chung của Hội nghị Trung ương 6, 7, 8 là gì?
+A. Đều nằm trong quá trình chuyển hướng chiến lược giải phóng dân tộc.
+B. Đều diễn ra sau Cách mạng Tháng Tám.
+C. Đều nhằm phát triển công nghiệp hóa.
+D. Đều thông qua Tuyên ngôn Độc lập.
+**Đáp án đúng:** A
+**Giải thích:** Các hội nghị này nối tiếp nhau trong quá trình chuyển hướng từ đấu tranh dân chủ sang giải phóng dân tộc.
+
+### Câu 94
+**Chủ đề:** Mặt trận Việt Minh
+**Độ khó:** hard
+**Câu hỏi:** Vì sao Việt Minh là hình thức mặt trận phù hợp với giai đoạn 1939–1945?
+A. Vì mục tiêu độc lập dân tộc cho phép tập hợp rộng rãi các lực lượng yêu nước.
+B. Vì chỉ thu hút một tầng lớp duy nhất.
+C. Vì chỉ phục vụ đấu tranh nghị trường.
+D. Vì ra đời để thay thế nhiệm vụ giải phóng dân tộc.
+**Đáp án đúng:** A
+**Giải thích:** Trong bối cảnh giải phóng dân tộc là nhiệm vụ hàng đầu, Việt Minh giúp tập hợp lực lượng toàn dân.
+
+### Câu 95
+**Chủ đề:** Chỉ thị Nhật – Pháp bắn nhau
+**Độ khó:** medium
+**Câu hỏi:** Vì sao sau ngày 9/3/1945 không còn xác định kẻ thù trước mắt là “Nhật - Pháp” như trước?
+A. Vì Nhật đã đảo chính Pháp và độc chiếm Đông Dương.
+B. Vì Pháp đã trao độc lập hoàn toàn.
+C. Vì quân Đồng minh đã vào Đông Dương.
+D. Vì Việt Minh đã giải tán.
+**Đáp án đúng:** A
+**Giải thích:** Nhật đảo chính Pháp làm thay đổi tương quan chính trị, nên Đảng xác định kẻ thù trước mắt là phát xít Nhật.
+
+### Câu 96
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** hard
+**Câu hỏi:** Nếu chậm phát động Tổng khởi nghĩa sau khi Nhật đầu hàng, nguy cơ nào có thể xảy ra?
+A. Quân Đồng minh vào Đông Dương, tình hình chính trị phức tạp hơn.
+B. Cách mạng tự động thắng lợi dễ hơn.
+C. Việt Minh không cần lực lượng quần chúng.
+D. Không có bất kỳ thay đổi nào.
+**Đáp án đúng:** A
+**Giải thích:** Thời cơ tháng Tám rất ngắn, cần hành động trước khi các lực lượng bên ngoài vào Đông Dương làm tình hình thêm phức tạp.
+
+### Câu 97
+**Chủ đề:** Tổng khởi nghĩa tháng Tám 1945
+**Độ khó:** medium
+**Câu hỏi:** Cách mạng Tháng Tám thành công cho thấy vai trò nào của Đảng?
+A. Lãnh đạo tập trung, thống nhất và kịp thời.
+B. Không cần chỉ đạo thống nhất.
+C. Chỉ quan sát thời cuộc.
+D. Chỉ hoạt động tuyên truyền văn hóa.
+**Đáp án đúng:** A
+**Giải thích:** Thành công của Tổng khởi nghĩa gắn với sự lãnh đạo thống nhất, quyết đoán, kịp thời khi thời cơ xuất hiện.
+
+### Câu 98
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** medium
+**Câu hỏi:** Khi học chủ đề đường lối 1930–1945, cách học nào hiệu quả nhất?
+A. Gắn bối cảnh, chủ trương, kết quả, ý nghĩa và bài học của từng giai đoạn.
+B. Chỉ học thuộc ngày tháng rời rạc.
+C. Chỉ học tên nhân vật.
+D. Chỉ học một sự kiện năm 1945.
+**Đáp án đúng:** A
+**Giải thích:** Chủ đề này yêu cầu hiểu sự phát triển đường lối qua từng giai đoạn, không chỉ ghi nhớ mốc thời gian.
+
+### Câu 99
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** hard
+**Câu hỏi:** Nhận định nào thể hiện đúng sự phát triển của đường lối 1930–1945?
+A. Từ xác lập nền tảng, qua điều chỉnh sách lược, đến chuyển hướng giải phóng dân tộc và Tổng khởi nghĩa.
+B. Đường lối không thay đổi trong mọi giai đoạn.
+C. Chỉ có Cương lĩnh năm 1930 là đáng học.
+D. Chỉ có phong trào dân chủ 1936–1939.
+**Đáp án đúng:** A
+**Giải thích:** Đường lối phát triển qua nhiều giai đoạn, thể hiện tính đúng đắn, sáng tạo và linh hoạt.
+
+### Câu 100
+**Chủ đề:** Bài học kinh nghiệm 1930-1945
+**Độ khó:** hard
+**Câu hỏi:** Nếu đề thi yêu cầu “nhận xét đường lối đấu tranh 1930–1945”, kết luận nào phù hợp nhất?
+A. Đường lối cơ bản đúng đắn, sáng tạo, linh hoạt; có hạn chế giai đoạn đầu nhưng được điều chỉnh qua thực tiễn.
+B. Đường lối hoàn toàn không thay đổi và không có hạn chế.
+C. Đường lối chỉ có giá trị trong năm 1930.
+D. Đường lối chỉ là tập hợp các sự kiện rời rạc.
+**Đáp án đúng:** A
+**Giải thích:** Nhận xét cần cân bằng: khẳng định ưu điểm chủ đạo, chỉ ra hạn chế nhận thức ban đầu và nhấn mạnh quá trình điều chỉnh, phát triển qua thực tiễn.

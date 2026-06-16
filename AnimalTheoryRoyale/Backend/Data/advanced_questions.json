@@ -1,2488 +1,2614 @@
 [
   {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "TrueFalse",
-    "Difficulty": "Medium",
-    "Content": "Cương lĩnh chính trị đầu tiên (2/1930) xác định nhiệm vụ chống phong kiến quan trọng hơn chống đế quốc. Đúng hay sai?",
-    "Explanation": "Sai. Cương lĩnh xác định nhiệm vụ đánh đổ đế quốc Pháp và phong kiến tay sai, trong đó chống đế quốc được đặt lên hàng đầu.",
-    "ChallengePayloadJson": "{\"statement\":\"Cương lĩnh đặt nhiệm vụ chống phong kiến cao hơn chống đế quốc.\"}",
-    "Options": [
-      {
-        "Text": "False",
-        "IsCorrect": true
-      },
-      {
-        "Text": "True",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một bạn sinh viên nhầm Mặt trận Dân chủ Đông Dương với Mặt trận Việt Minh. Hãy phân tích điểm khác biệt cơ bản nhất về mục tiêu chiến lược.",
-    "Explanation": "Mặt trận Việt Minh giới hạn trong nước Việt Nam và lấy giải phóng dân tộc làm mục tiêu tối thượng. Mặt trận Dân chủ đòi dân sinh, dân chủ.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân biệt Mặt trận Dân chủ (1936) và Việt Minh (1941).\"}",
-    "Options": [
-      {
-        "Text": "Việt Minh giải quyết vấn đề dân tộc tự quyết, đặt giải phóng dân tộc lên hàng đầu",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Hai mặt trận này giống hệt nhau về mục tiêu",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Việt Minh chỉ đấu tranh đòi giảm tô giảm tức",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Mặt trận Dân chủ có quân đội vũ trang, Việt Minh thì không",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Hội Việt Nam Cách mạng Thanh niên là tổ chức tiền thân của Đảng Cộng sản Việt Nam.",
+    "Explanation": "Đúng. Hội được Nguyễn Ái Quốc thành lập tháng 6/1925 nhằm chuẩn bị các điều kiện cho sự ra đời của Đảng.",
+    "ChallengePayloadJson": "{\"statement\":\"Hội Việt Nam Cách mạng Thanh niên là tổ chức tiền thân của Đảng Cộng sản Việt Nam.\"}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "Matching",
-    "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
-    "Options": [
-      {
-        "Text": "A-1, B-2",
-        "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "Matching",
-    "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
-    "Options": [
-      {
-        "Text": "A-1, B-2",
-        "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "Matching",
-    "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
-    "Options": [
-      {
-        "Text": "A-1, B-2",
-        "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Nền tảng đường lối 1930",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Difficulty": "Medium",
+    "Content": "Sự ra đời của Đảng Cộng sản Việt Nam chỉ là kết quả của sự truyền bá chủ nghĩa Mác - Lênin. Ý kiến này đúng hay sai?",
+    "Explanation": "Sai. Sự ra đời của Đảng Cộng sản Việt Nam là sản phẩm của sự kết hợp giữa chủ nghĩa Mác - Lênin với phong trào công nhân và phong trào yêu nước Việt Nam.",
+    "ChallengePayloadJson": "{\"statement\":\"Sự ra đời của Đảng Cộng sản Việt Nam chỉ là kết quả của sự truyền bá chủ nghĩa Mác - Lênin. Ý kiến này đúng hay sai?\"}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Nhận định đúng",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Nhận định sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Easy",
+    "Content": "Tác phẩm lý luận đầu tiên vạch ra đường lối cơ bản của cách mạng Việt Nam do Nguyễn Ái Quốc soạn thảo năm 1927 là gì?",
+    "Explanation": "Đường Kách mệnh.",
+    "ChallengePayloadJson": "{\"expected\":\"Đường Kách mệnh.\"}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Xem giải thích",
         "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Cả 3 tổ chức cộng sản đều có đại biểu dự Hội nghị thành lập Đảng đầu năm 1930.",
+    "Explanation": "Sai. Chỉ có Đông Dương Cộng sản Đảng và An Nam Cộng sản Đảng tham dự.",
+    "ChallengePayloadJson": "{\"statement\":\"Cả 3 tổ chức cộng sản đều có đại biểu dự Hội nghị thành lập Đảng đầu năm 1930.\"}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
         "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Nền tảng đường lối 1930",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Cương lĩnh chính trị đầu tiên đặt nhiệm vụ chống phong kiến lên cao hơn nhiệm vụ chống đế quốc.",
+    "Explanation": "Sai. Cương lĩnh đặt nhiệm vụ chống đế quốc, giành độc lập dân tộc lên hàng đầu.",
+    "ChallengePayloadJson": "{\"statement\":\"Cương lĩnh chính trị đầu tiên đặt nhiệm vụ chống phong kiến lên cao hơn nhiệm vụ chống đế quốc.\"}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Theo Cương lĩnh chính trị đầu tiên, giai cấp nào là lực lượng lãnh đạo cách mạng?",
+    "Explanation": "Giai cấp công nhân thông qua đội tiên phong là Đảng Cộng sản.",
+    "ChallengePayloadJson": "{\"expected\":\"Giai cấp công nhân thông qua đội tiên phong là Đảng Cộng sản.\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Hard",
+    "Content": "Cương lĩnh chính trị đầu tiên chủ trương làm cách mạng tư sản dân quyền và thổ địa cách mạng để đi tới xã hội cộng sản.",
+    "Explanation": "Đúng. Đó là phương hướng chiến lược vạch ra từ đầu của cách mạng Việt Nam.",
+    "ChallengePayloadJson": "{\"statement\":\"Cương lĩnh chính trị đầu tiên chủ trương làm cách mạng tư sản dân quyền và thổ địa cách mạng để đi tới xã hội cộng sản.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Hard",
+    "Content": "Luận cương tháng 10/1930 đánh giá cao vai trò cách mạng của tư sản dân tộc và tiểu tư sản trí thức.",
+    "Explanation": "Sai. Luận cương đánh giá thấp hoặc phủ nhận vai trò của các tầng lớp này do nhận thức giáo điều về đấu tranh giai cấp.",
+    "ChallengePayloadJson": "{\"statement\":\"Luận cương tháng 10/1930 đánh giá cao vai trò cách mạng của tư sản dân tộc và tiểu tư sản trí thức.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Easy",
+    "Content": "Đại hội/Hội nghị nào đã thông qua Luận cương chính trị (10/1930)?",
+    "Explanation": "Hội nghị lần thứ nhất Ban Chấp hành Trung ương Đảng (10/1930).",
+    "ChallengePayloadJson": "{\"expected\":\"Hội nghị lần thứ nhất Ban Chấp hành Trung ương Đảng (10/1930).\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Chính quyền Xô viết Nghệ Tĩnh đã thực hiện chia lại ruộng đất cho nông dân và bãi bỏ các thứ thuế vô lý.",
+    "Explanation": "Đúng. Dù chỉ tồn tại trong thời gian ngắn, chính quyền Xô viết đã đem lại nhiều quyền lợi thiết thực về chính trị, kinh tế, văn hóa cho nhân dân.",
+    "ChallengePayloadJson": "{\"statement\":\"Chính quyền Xô viết Nghệ Tĩnh đã thực hiện chia lại ruộng đất cho nông dân và bãi bỏ các thứ thuế vô lý.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Hình thái chính quyền nào được thành lập trong phong trào cách mạng 1930-1931 tại Nghệ An và Hà Tĩnh?",
+    "Explanation": "Chính quyền Xô viết.",
+    "ChallengePayloadJson": "{\"expected\":\"Chính quyền Xô viết.\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Đại hội đại biểu lần thứ nhất của Đảng (3/1935) đánh dấu sự phục hồi hoàn toàn hệ thống tổ chức của Đảng.",
+    "Explanation": "Đúng. Đại hội I (tại Ma Cao) đã củng cố tổ chức và khẳng định sự khôi phục của hệ thống Đảng từ Trung ương đến địa phương sau thời kỳ khủng bố trắng.",
+    "ChallengePayloadJson": "{\"statement\":\"Đại hội đại biểu lần thứ nhất của Đảng (3/1935) đánh dấu sự phục hồi hoàn toàn hệ thống tổ chức của Đảng.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Tên của mặt trận được thành lập trong giai đoạn 1936-1939 nhằm tập hợp rộng rãi lực lượng đấu tranh là gì?",
+    "Explanation": "Mặt trận Dân chủ Đông Dương.",
+    "ChallengePayloadJson": "{\"expected\":\"Mặt trận Dân chủ Đông Dương.\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Phong trào 1936-1939 chỉ sử dụng phương pháp đấu tranh vũ trang bí mật.",
+    "Explanation": "Sai. Phong trào đã linh hoạt kết hợp đấu tranh công khai, bán công khai, hợp pháp và nửa hợp pháp.",
+    "ChallengePayloadJson": "{\"statement\":\"Phong trào 1936-1939 chỉ sử dụng phương pháp đấu tranh vũ trang bí mật.\"}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Hội nghị Trung ương 8 (5/1941) quyết định thành lập Mặt trận ___________ nhằm tập hợp mọi lực lượng yêu nước.",
+    "Explanation": "Việt Nam độc lập đồng minh (Việt Minh).",
+    "ChallengePayloadJson": "{\"expected\":\"Việt Nam độc lập đồng minh (Việt Minh).\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Việc Hội nghị Trung ương 8 nhấn mạnh giải phóng dân tộc có mâu thuẫn với Cương lĩnh 1930 không?",
+    "Explanation": "Không. Đây chính là sự trở lại và phát triển những quan điểm cốt lõi, đúng đắn của Cương lĩnh chính trị đầu tiên do Nguyễn Ái Quốc soạn thảo.",
+    "ChallengePayloadJson": "{\"statement\":\"Việc Hội nghị Trung ương 8 nhấn mạnh giải phóng dân tộc có mâu thuẫn với Cương lĩnh 1930 không?\"}",
+    "Options": [
+      {
+        "Text": "Nhận định đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Nhận định sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Mặt trận Việt Minh thu nhận tất cả mọi tổ chức và cá nhân người Việt Nam yêu nước không phân biệt giai cấp, tôn giáo.",
+    "Explanation": "Đúng. Cấu trúc tổ chức của Việt Minh rất linh hoạt với các Hội Cứu quốc, thu hút đông đảo mọi tầng lớp nhân dân.",
+    "ChallengePayloadJson": "{\"statement\":\"Mặt trận Việt Minh thu nhận tất cả mọi tổ chức và cá nhân người Việt Nam yêu nước không phân biệt giai cấp, tôn giáo.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Easy",
+    "Content": "Khẩu hiệu nào được thay thế cho khẩu hiệu 'đánh đuổi Pháp - Nhật' sau sự kiện Nhật đảo chính Pháp?",
+    "Explanation": "Đánh đuổi phát xít Nhật.",
+    "ChallengePayloadJson": "{\"expected\":\"Đánh đuổi phát xít Nhật.\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Cao trào kháng Nhật cứu nước là bước tập dượt cuối cùng, trực tiếp đưa tới thắng lợi của Cách mạng Tháng Tám 1945.",
+    "Explanation": "Đúng. Cao trào đã làm suy yếu kẻ thù và rèn luyện đội quân chính trị, vũ trang khổng lồ cho Tổng khởi nghĩa.",
+    "ChallengePayloadJson": "{\"statement\":\"Cao trào kháng Nhật cứu nước là bước tập dượt cuối cùng, trực tiếp đưa tới thắng lợi của Cách mạng Tháng Tám 1945.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Đảng ta quyết định phát động Tổng khởi nghĩa trước khi quân Đồng minh vào Đông Dương tước vũ khí quân Nhật.",
+    "Explanation": "Đúng. Đây là sự nhạy bén để nhân dân ta giành chính quyền, đứng trên tư thế người làm chủ đón tiếp quân Đồng minh.",
+    "ChallengePayloadJson": "{\"statement\":\"Đảng ta quyết định phát động Tổng khởi nghĩa trước khi quân Đồng minh vào Đông Dương tước vũ khí quân Nhật.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Chiều ngày 16/8/1945, Quốc dân Đại hội Tân Trào đã bầu ra Ủy ban _________ do Hồ Chí Minh làm Chủ tịch.",
+    "Explanation": "Dân tộc giải phóng Việt Nam.",
+    "ChallengePayloadJson": "{\"expected\":\"Dân tộc giải phóng Việt Nam.\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Hard",
+    "Content": "Khởi nghĩa trong Cách mạng Tháng Tám chủ yếu diễn ra và giành thắng lợi ở nông thôn rồi mới tiến vào thành thị.",
+    "Explanation": "Sai. Cách mạng Tháng Tám kết hợp khởi nghĩa ở cả nông thôn và thành thị, trong đó khởi nghĩa ở đô thị mang tính quyết định.",
+    "ChallengePayloadJson": "{\"statement\":\"Khởi nghĩa trong Cách mạng Tháng Tám chủ yếu diễn ra và giành thắng lợi ở nông thôn rồi mới tiến vào thành thị.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Bài học kinh nghiệm 1930-1945",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Việc xác định đúng \"thời cơ\" trong Cách mạng Tháng Tám có phải là yếu tố ngẫu nhiên không?",
+    "Explanation": "Không. Đó là kết quả của một quá trình chuẩn bị lâu dài (15 năm), chủ động tạo thế và lực, cùng nghệ thuật chớp thời cơ nhạy bén của Đảng.",
+    "ChallengePayloadJson": "{\"statement\":\"Việc xác định đúng \\\"thời cơ\\\" trong Cách mạng Tháng Tám có phải là yếu tố ngẫu nhiên không?\"}",
+    "Options": [
+      {
+        "Text": "Nhận định đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Nhận định sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Bài học kinh nghiệm 1930-1945",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Cách mạng tháng Tám là cuộc cách mạng bạo lực nhưng diễn ra hòa bình.",
+    "Explanation": "Sai. Cách mạng Tháng Tám là cách mạng bạo lực, kết hợp lực lượng chính trị và lực lượng vũ trang, dù ít đổ máu.",
+    "ChallengePayloadJson": "{\"statement\":\"Cách mạng tháng Tám là cuộc cách mạng bạo lực nhưng diễn ra hòa bình.\"}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Bài học kinh nghiệm 1930-1945",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Cách mạng Tháng Tám 1945 là cuộc cách mạng giải phóng dân tộc mang tính chất gì?",
+    "Explanation": "Mang tính chất dân chủ mới (vì một bộ phận nhiệm vụ dân chủ đã được thực hiện, là cách mạng do giai cấp công nhân lãnh đạo).",
+    "ChallengePayloadJson": "{\"expected\":\"Mang tính chất dân chủ mới (vì một bộ phận nhiệm vụ dân chủ đã được thực hiện, là cách mạng do giai cấp công nhân lãnh đạo).\"}",
+    "Options": [
+      {
+        "Text": "Xem giải thích",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Nguyễn Ái Quốc là người chủ trì Hội nghị hợp nhất các tổ chức cộng sản đầu năm 1930.",
+    "Explanation": "Đúng. Hội nghị thành lập Đảng đầu năm 1930 do Nguyễn Ái Quốc chủ trì nhằm thống nhất các tổ chức cộng sản.",
+    "ChallengePayloadJson": "{\"statement\": \"Nguyễn Ái Quốc là người chủ trì Hội nghị hợp nhất các tổ chức cộng sản đầu năm 1930.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
+    "Difficulty": "Easy",
+    "Content": "Hội Việt Nam Cách mạng Thanh niên được thành lập năm __________ nhằm chuẩn bị lực lượng cách mạng.",
+    "Explanation": "Hội Việt Nam Cách mạng Thanh niên được Nguyễn Ái Quốc thành lập tháng 6/1925.",
+    "ChallengePayloadJson": "{\"sentence\": \"Hội Việt Nam Cách mạng Thanh niên được thành lập năm ____ nhằm chuẩn bị lực lượng cách mạng.\", \"answers\": [\"1925\"]}",
     "Options": [
       {
-        "Text": "quần chúng",
+        "Text": "1925",
         "IsCorrect": true
       },
       {
-        "Text": "cá nhân",
+        "Text": "1930",
         "IsCorrect": false
       },
       {
-        "Text": "anh hùng",
+        "Text": "1935",
         "IsCorrect": false
       },
       {
-        "Text": "quốc tế",
+        "Text": "1941",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "Matching",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Ghép tổ chức/sự kiện với vai trò lịch sử phù hợp.",
+    "Explanation": "Các sự kiện này nối tiếp nhau trong quá trình chuẩn bị và thành lập Đảng.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Hội Việt Nam Cách mạng Thanh niên\", \"right\": \"Chuẩn bị tư tưởng và tổ chức\"}, {\"left\": \"Ba tổ chức cộng sản năm 1929\", \"right\": \"Đặt ra yêu cầu thống nhất\"}, {\"left\": \"Hội nghị thành lập Đảng\", \"right\": \"Hợp nhất lực lượng cộng sản\"}]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Hội Việt Nam Cách mạng Thanh niên - Chuẩn bị tư tưởng và tổ chức; Ba tổ chức cộng sản năm 1929 - Đặt ra yêu cầu thống nhất; Hội nghị thành lập Đảng - Hợp nhất lực lượng cộng sản",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Ghép ngược toàn bộ các cặp",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Chỉ có cặp đầu tiên đúng",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Không có cặp nào đúng",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "Matching",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "Ordering",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Sắp xếp tiến trình chuẩn bị thành lập Đảng.",
+    "Explanation": "Tiến trình này thể hiện sự chuẩn bị về tư tưởng, chính trị và tổ chức trước khi Đảng ra đời.",
+    "ChallengePayloadJson": "{\"items\": [\"Nguyễn Ái Quốc tìm đường cứu nước\", \"Truyền bá chủ nghĩa Mác - Lênin\", \"Thành lập Hội Việt Nam Cách mạng Thanh niên\", \"Hội nghị thành lập Đảng\"], \"correctOrder\": [\"Nguyễn Ái Quốc tìm đường cứu nước\", \"Truyền bá chủ nghĩa Mác - Lênin\", \"Thành lập Hội Việt Nam Cách mạng Thanh niên\", \"Hội nghị thành lập Đảng\"]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Nguyễn Ái Quốc tìm đường cứu nước → Truyền bá chủ nghĩa Mác - Lênin → Thành lập Hội Việt Nam Cách mạng Thanh niên → Hội nghị thành lập Đảng",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Hội nghị thành lập Đảng → Thành lập Hội Việt Nam Cách mạng Thanh niên → Truyền bá chủ nghĩa Mác - Lênin → Nguyễn Ái Quốc tìm đường cứu nước",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Truyền bá chủ nghĩa Mác - Lênin → Thành lập Hội Việt Nam Cách mạng Thanh niên → Hội nghị thành lập Đảng → Nguyễn Ái Quốc tìm đường cứu nước",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Nguyễn Ái Quốc tìm đường cứu nước → Thành lập Hội Việt Nam Cách mạng Thanh niên → Truyền bá chủ nghĩa Mác - Lênin → Hội nghị thành lập Đảng",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "Matching",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "ShortAnswer",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Vì sao sự ra đời của ba tổ chức cộng sản năm 1929 đặt ra yêu cầu hợp nhất?",
+    "Explanation": "Ba tổ chức cộng sản cùng hoạt động cho thấy phong trào phát triển nhưng cũng có nguy cơ phân tán, nên cần một đảng thống nhất lãnh đạo.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"phân tán\", \"thống nhất\", \"lãnh đạo\", \"phong trào\"], \"sampleAnswer\": \"Ba tổ chức cộng sản cùng hoạt động cho thấy phong trào phát triển nhưng cũng có nguy cơ phân tán, nên cần một đảng thống nhất lãnh đạo.\"}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Xem gợi ý trả lời",
         "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Một sinh viên cho rằng Đảng ra đời chỉ vì có ba tổ chức cộng sản năm 1929. Chọn cách nhận xét đầy đủ hơn.",
+    "Explanation": "Phải phân tích sự kết hợp giữa chủ nghĩa Mác - Lênin, phong trào công nhân, phong trào yêu nước và yêu cầu hợp nhất tổ chức.",
+    "ChallengePayloadJson": "{\"case\": \"Một sinh viên cho rằng Đảng ra đời chỉ vì có ba tổ chức cộng sản năm 1929. Chọn cách nhận xét đầy đủ hơn.\", \"criteria\": [\"Mác - Lênin\", \"phong trào công nhân\", \"phong trào yêu nước\", \"hợp nhất\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Đảng ra đời là kết quả của cả quá trình chuẩn bị tư tưởng, chính trị, tổ chức và yêu cầu thống nhất phong trào.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Hội nghị thành lập Đảng chỉ có nhiệm vụ đổi tên một tổ chức cộng sản đã có sẵn.",
+    "Explanation": "Sai. Hội nghị có ý nghĩa hợp nhất các tổ chức cộng sản và thông qua các văn kiện nền tảng.",
+    "ChallengePayloadJson": "{\"statement\": \"Hội nghị thành lập Đảng chỉ có nhiệm vụ đổi tên một tổ chức cộng sản đã có sẵn.\", \"answer\": false}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Tác phẩm Đường Kách mệnh gắn với quá trình chuẩn bị về __________ cho cách mạng Việt Nam.",
+    "Explanation": "Đường Kách mệnh góp phần truyền bá lý luận cách mạng giải phóng dân tộc theo khuynh hướng vô sản.",
+    "ChallengePayloadJson": "{\"sentence\": \"Tác phẩm Đường Kách mệnh gắn với quá trình chuẩn bị về ____ cho cách mạng Việt Nam.\", \"answers\": [\"tư tưởng\"]}",
+    "Options": [
+      {
+        "Text": "tư tưởng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "quân sự",
+        "IsCorrect": false
+      },
+      {
+        "Text": "ngoại giao",
+        "IsCorrect": false
+      },
+      {
+        "Text": "kinh tế",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Nêu ý nghĩa lịch sử của việc Đảng Cộng sản Việt Nam ra đời đầu năm 1930.",
+    "Explanation": "Đảng ra đời chấm dứt khủng hoảng về đường lối và tổ chức lãnh đạo, mở ra thời kỳ cách mạng Việt Nam có một đảng thống nhất lãnh đạo.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"chấm dứt khủng hoảng\", \"đường lối\", \"lãnh đạo\", \"cách mạng Việt Nam\"], \"sampleAnswer\": \"Đảng ra đời chấm dứt khủng hoảng về đường lối và tổ chức lãnh đạo, mở ra thời kỳ cách mạng Việt Nam có một đảng thống nhất lãnh đạo.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Đảng ra đời và nền tảng đường lối năm 1930",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Nếu trình bày nguyên nhân Đảng ra đời, có nên tách rời phong trào yêu nước khỏi phong trào công nhân không?",
+    "Explanation": "Không nên tách rời. Đảng ra đời là sản phẩm của sự kết hợp nhiều yếu tố trong điều kiện Việt Nam.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu trình bày nguyên nhân Đảng ra đời, có nên tách rời phong trào yêu nước khỏi phong trào công nhân không?\", \"criteria\": [\"kết hợp\", \"phong trào yêu nước\", \"phong trào công nhân\", \"Mác - Lênin\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Cần trình bày sự kết hợp giữa chủ nghĩa Mác - Lênin, phong trào công nhân và phong trào yêu nước Việt Nam.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Cao trào và phục hồi 1930-1935",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Cương lĩnh chính trị đầu tiên xác định nhiệm vụ làm cho nước Việt Nam được độc lập.",
+    "Explanation": "Đúng. Nhiệm vụ độc lập dân tộc là điểm nổi bật trong Cương lĩnh đầu tiên.",
+    "ChallengePayloadJson": "{\"statement\": \"Cương lĩnh chính trị đầu tiên xác định nhiệm vụ làm cho nước Việt Nam được độc lập.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Cương lĩnh đầu tiên xác định cách mạng Việt Nam tiến tới xã hội __________.",
+    "Explanation": "Cương lĩnh nêu phương hướng làm tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản.",
+    "ChallengePayloadJson": "{\"sentence\": \"Cương lĩnh đầu tiên xác định cách mạng Việt Nam tiến tới xã hội ____.\", \"answers\": [\"cộng sản\"]}",
+    "Options": [
+      {
+        "Text": "cộng sản",
+        "IsCorrect": true
+      },
+      {
+        "Text": "phong kiến",
+        "IsCorrect": false
+      },
+      {
+        "Text": "thuộc địa",
+        "IsCorrect": false
+      },
+      {
+        "Text": "quân chủ",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "Matching",
+    "Difficulty": "Medium",
+    "Content": "Ghép nội dung của Cương lĩnh với ý nghĩa phù hợp.",
+    "Explanation": "Cương lĩnh vừa nêu nhiệm vụ dân tộc vừa có sách lược tập hợp lực lượng rộng.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Đánh đổ đế quốc Pháp\", \"right\": \"Giành độc lập dân tộc\"}, {\"left\": \"Bỏ sưu thuế cho dân cày nghèo\", \"right\": \"Chăm lo quyền lợi quần chúng\"}, {\"left\": \"Liên lạc với tiểu tư sản, trí thức\", \"right\": \"Mở rộng lực lượng cách mạng\"}]}",
+    "Options": [
+      {
+        "Text": "Đánh đổ đế quốc Pháp - Giành độc lập dân tộc; Bỏ sưu thuế cho dân cày nghèo - Chăm lo quyền lợi quần chúng; Liên lạc với tiểu tư sản, trí thức - Mở rộng lực lượng cách mạng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Ghép ngược toàn bộ các cặp",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chỉ có cặp đầu tiên đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Không có cặp nào đúng",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "Ordering",
+    "Difficulty": "Medium",
+    "Content": "Sắp xếp logic phân tích Cương lĩnh chính trị đầu tiên.",
+    "Explanation": "Phân tích Cương lĩnh cần đi từ bối cảnh đến nội dung và lực lượng thực hiện.",
+    "ChallengePayloadJson": "{\"items\": [\"Bối cảnh ra đời\", \"Mục tiêu chiến lược\", \"Nhiệm vụ chủ yếu\", \"Lực lượng và phương pháp\"], \"correctOrder\": [\"Bối cảnh ra đời\", \"Mục tiêu chiến lược\", \"Nhiệm vụ chủ yếu\", \"Lực lượng và phương pháp\"]}",
+    "Options": [
+      {
+        "Text": "Bối cảnh ra đời → Mục tiêu chiến lược → Nhiệm vụ chủ yếu → Lực lượng và phương pháp",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Lực lượng và phương pháp → Nhiệm vụ chủ yếu → Mục tiêu chiến lược → Bối cảnh ra đời",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Mục tiêu chiến lược → Nhiệm vụ chủ yếu → Lực lượng và phương pháp → Bối cảnh ra đời",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Bối cảnh ra đời → Nhiệm vụ chủ yếu → Mục tiêu chiến lược → Lực lượng và phương pháp",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Vì sao nói Cương lĩnh đầu tiên có tính dân tộc sâu sắc?",
+    "Explanation": "Vì Cương lĩnh đặt nhiệm vụ đánh đổ đế quốc, giành độc lập dân tộc lên vị trí quan trọng và tập hợp rộng rãi lực lượng yêu nước.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"độc lập\", \"chống đế quốc\", \"dân tộc\", \"lực lượng yêu nước\"], \"sampleAnswer\": \"Vì Cương lĩnh đặt nhiệm vụ đánh đổ đế quốc, giành độc lập dân tộc lên vị trí quan trọng và tập hợp rộng rãi lực lượng yêu nước.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Một bạn nói Cương lĩnh đầu tiên chỉ quan tâm đến đấu tranh giai cấp. Nhận xét nào đúng hơn?",
+    "Explanation": "Nhận định đó phiến diện vì Cương lĩnh đặt độc lập dân tộc ở vị trí trung tâm và có sách lược lực lượng rộng.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn nói Cương lĩnh đầu tiên chỉ quan tâm đến đấu tranh giai cấp. Nhận xét nào đúng hơn?\", \"criteria\": [\"độc lập dân tộc\", \"lực lượng rộng\", \"chống đế quốc\", \"chống phong kiến\"]}",
+    "Options": [
+      {
+        "Text": "Cần khẳng định Cương lĩnh kết hợp nhiệm vụ dân tộc và dân chủ, trong đó độc lập dân tộc nổi bật.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Cương lĩnh đầu tiên xem công nhân và nông dân là lực lượng cơ bản của cách mạng.",
+    "Explanation": "Đúng. Công nông là lực lượng cơ bản, đồng thời Cương lĩnh còn chủ trương tranh thủ các lực lượng yêu nước khác.",
+    "ChallengePayloadJson": "{\"statement\": \"Cương lĩnh đầu tiên xem công nhân và nông dân là lực lượng cơ bản của cách mạng.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Trong Cương lĩnh đầu tiên, phương pháp cách mạng được xác định là bạo lực cách mạng của __________.",
+    "Explanation": "Cương lĩnh nhấn mạnh vai trò hành động cách mạng của quần chúng dưới sự lãnh đạo của Đảng.",
+    "ChallengePayloadJson": "{\"sentence\": \"Trong Cương lĩnh đầu tiên, phương pháp cách mạng được xác định là bạo lực cách mạng của ____.\", \"answers\": [\"quần chúng\"]}",
+    "Options": [
+      {
+        "Text": "quần chúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "thiểu số",
+        "IsCorrect": false
+      },
+      {
+        "Text": "quan lại",
+        "IsCorrect": false
+      },
+      {
+        "Text": "địa chủ",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Điểm sáng tạo của Cương lĩnh đầu tiên so với nhận thức giáo điều là gì?",
+    "Explanation": "Điểm sáng tạo là đặt vấn đề dân tộc phù hợp xã hội thuộc địa Việt Nam và có sách lược tập hợp lực lượng yêu nước rộng rãi.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"thuộc địa\", \"dân tộc\", \"lực lượng rộng\", \"sáng tạo\"], \"sampleAnswer\": \"Điểm sáng tạo là đặt vấn đề dân tộc phù hợp xã hội thuộc địa Việt Nam và có sách lược tập hợp lực lượng yêu nước rộng rãi.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Cương lĩnh chính trị đầu tiên",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Khi đề yêu cầu phân tích Cương lĩnh, người học chỉ liệt kê vài khẩu hiệu. Cần bổ sung gì để bài đầy đủ?",
+    "Explanation": "Cần phân tích bối cảnh, mục tiêu chiến lược, nhiệm vụ, lực lượng, phương pháp và ý nghĩa của văn kiện.",
+    "ChallengePayloadJson": "{\"case\": \"Khi đề yêu cầu phân tích Cương lĩnh, người học chỉ liệt kê vài khẩu hiệu. Cần bổ sung gì để bài đầy đủ?\", \"criteria\": [\"bối cảnh\", \"mục tiêu\", \"nhiệm vụ\", \"lực lượng\", \"ý nghĩa\"]}",
+    "Options": [
+      {
+        "Text": "Bài làm phải hệ thống hóa Cương lĩnh theo bối cảnh → nội dung → điểm sáng tạo → ý nghĩa.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Luận cương chính trị tháng 10/1930 do Trần Phú khởi thảo.",
+    "Explanation": "Đúng. Luận cương tháng 10/1930 gắn với Tổng Bí thư Trần Phú.",
+    "ChallengePayloadJson": "{\"statement\": \"Luận cương chính trị tháng 10/1930 do Trần Phú khởi thảo.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Hội nghị Trung ương tháng 10/1930 đã đổi tên Đảng Cộng sản Việt Nam thành Đảng Cộng sản __________.",
+    "Explanation": "Hội nghị Trung ương lần thứ nhất tháng 10/1930 đổi tên Đảng thành Đảng Cộng sản Đông Dương.",
+    "ChallengePayloadJson": "{\"sentence\": \"Hội nghị Trung ương tháng 10/1930 đã đổi tên Đảng Cộng sản Việt Nam thành Đảng Cộng sản ____.\", \"answers\": [\"Đông Dương\"]}",
+    "Options": [
+      {
+        "Text": "Đông Dương",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Việt Minh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "An Nam",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Liên Việt",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "Matching",
+    "Difficulty": "Medium",
+    "Content": "Ghép văn kiện năm 1930 với đặc điểm nổi bật.",
+    "Explanation": "So sánh hai văn kiện giúp nhận diện ưu điểm và hạn chế của từng văn kiện.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Cương lĩnh đầu tiên\", \"right\": \"Đặt độc lập dân tộc nổi bật\"}, {\"left\": \"Luận cương 10/1930\", \"right\": \"Nhấn mạnh thổ địa và phản đế\"}, {\"left\": \"Hội nghị Trung ương 10/1930\", \"right\": \"Thông qua Luận cương\"}]}",
+    "Options": [
+      {
+        "Text": "Cương lĩnh đầu tiên - Đặt độc lập dân tộc nổi bật; Luận cương 10/1930 - Nhấn mạnh thổ địa và phản đế; Hội nghị Trung ương 10/1930 - Thông qua Luận cương",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Ghép ngược toàn bộ các cặp",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chỉ có cặp đầu tiên đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Không có cặp nào đúng",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "Ordering",
+    "Difficulty": "Medium",
+    "Content": "Sắp xếp các nội dung khi phân tích Luận cương 10/1930.",
+    "Explanation": "Phân tích Luận cương cần trình bày cả nội dung và nhận xét cân bằng.",
+    "ChallengePayloadJson": "{\"items\": [\"Bối cảnh Hội nghị Trung ương\", \"Nội dung về nhiệm vụ\", \"Đánh giá lực lượng\", \"Nhận xét ưu điểm và hạn chế\"], \"correctOrder\": [\"Bối cảnh Hội nghị Trung ương\", \"Nội dung về nhiệm vụ\", \"Đánh giá lực lượng\", \"Nhận xét ưu điểm và hạn chế\"]}",
+    "Options": [
+      {
+        "Text": "Bối cảnh Hội nghị Trung ương → Nội dung về nhiệm vụ → Đánh giá lực lượng → Nhận xét ưu điểm và hạn chế",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Nhận xét ưu điểm và hạn chế → Đánh giá lực lượng → Nội dung về nhiệm vụ → Bối cảnh Hội nghị Trung ương",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Nội dung về nhiệm vụ → Đánh giá lực lượng → Nhận xét ưu điểm và hạn chế → Bối cảnh Hội nghị Trung ương",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Bối cảnh Hội nghị Trung ương → Đánh giá lực lượng → Nội dung về nhiệm vụ → Nhận xét ưu điểm và hạn chế",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Luận cương 10/1930 có ưu điểm cơ bản nào?",
+    "Explanation": "Luận cương khẳng định tính chất cách mạng, vai trò lãnh đạo của giai cấp công nhân, liên minh công nông và nhiệm vụ phản đế, phản phong.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"cách mạng\", \"vô sản\", \"công nông\", \"phản đế\"], \"sampleAnswer\": \"Luận cương khẳng định tính chất cách mạng, vai trò lãnh đạo của giai cấp công nhân, liên minh công nông và nhiệm vụ phản đế, phản phong.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Một bạn kết luận Luận cương 10/1930 'sai hoàn toàn'. Cách nhận xét nào cân bằng hơn?",
+    "Explanation": "Cần đánh giá cả ưu điểm về lập trường cách mạng và hạn chế trong nhận thức vấn đề dân tộc, lực lượng cách mạng.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn kết luận Luận cương 10/1930 'sai hoàn toàn'. Cách nhận xét nào cân bằng hơn?\", \"criteria\": [\"ưu điểm\", \"hạn chế\", \"bối cảnh\", \"lực lượng\"]}",
+    "Options": [
+      {
+        "Text": "Luận cương có ưu điểm nhưng còn hạn chế; không nên phủ định tuyệt đối hoặc ca ngợi một chiều.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Hạn chế của Luận cương là chưa đánh giá đầy đủ khả năng cách mạng của tiểu tư sản, tư sản dân tộc và một bộ phận địa chủ vừa, nhỏ.",
+    "Explanation": "Đúng. Đây là hạn chế thường được nêu khi so sánh với Cương lĩnh đầu tiên.",
+    "ChallengePayloadJson": "{\"statement\": \"Hạn chế của Luận cương là chưa đánh giá đầy đủ khả năng cách mạng của tiểu tư sản, tư sản dân tộc và một bộ phận địa chủ vừa, nhỏ.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Luận cương nhấn mạnh hai nhiệm vụ là phản đế và __________.",
+    "Explanation": "Luận cương xác định cách mạng tư sản dân quyền có tính chất thổ địa và phản đế.",
+    "ChallengePayloadJson": "{\"sentence\": \"Luận cương nhấn mạnh hai nhiệm vụ là phản đế và ____.\", \"answers\": [\"thổ địa\"]}",
+    "Options": [
+      {
+        "Text": "thổ địa",
+        "IsCorrect": true
+      },
+      {
+        "Text": "dân chủ nghị trường",
+        "IsCorrect": false
+      },
+      {
+        "Text": "hòa bình",
+        "IsCorrect": false
+      },
+      {
+        "Text": "cải lương",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Vì sao Luận cương bị xem là còn nặng về đấu tranh giai cấp?",
+    "Explanation": "Vì Luận cương nhấn mạnh cách mạng ruộng đất, đánh giá hẹp lực lượng cách mạng và chưa làm nổi bật đầy đủ nhiệm vụ dân tộc trong xã hội thuộc địa.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"giai cấp\", \"ruộng đất\", \"lực lượng\", \"dân tộc\"], \"sampleAnswer\": \"Vì Luận cương nhấn mạnh cách mạng ruộng đất, đánh giá hẹp lực lượng cách mạng và chưa làm nổi bật đầy đủ nhiệm vụ dân tộc trong xã hội thuộc địa.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Luận cương chính trị tháng 10/1930",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Nếu đề yêu cầu so sánh Cương lĩnh và Luận cương, điểm nào phải làm rõ nhất?",
+    "Explanation": "Điểm cần làm rõ là Cương lĩnh đặt vấn đề dân tộc và lực lượng rộng hơn, còn Luận cương nhấn mạnh thổ địa, phản đế và có hạn chế về lực lượng.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu đề yêu cầu so sánh Cương lĩnh và Luận cương, điểm nào phải làm rõ nhất?\", \"criteria\": [\"nhiệm vụ dân tộc\", \"lực lượng\", \"ruộng đất\", \"hạn chế\"]}",
+    "Options": [
+      {
+        "Text": "Phải so sánh theo tiêu chí: nhiệm vụ, lực lượng, phương pháp, ưu điểm và hạn chế.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Cao trào 1930–1931 diễn ra trong bối cảnh khủng hoảng kinh tế 1929–1933 tác động mạnh đến đời sống nhân dân.",
+    "Explanation": "Đúng. Khủng hoảng kinh tế làm mâu thuẫn xã hội gay gắt, thúc đẩy phong trào đấu tranh.",
+    "ChallengePayloadJson": "{\"statement\": \"Cao trào 1930–1931 diễn ra trong bối cảnh khủng hoảng kinh tế 1929–1933 tác động mạnh đến đời sống nhân dân.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
     "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
+    "Difficulty": "Easy",
+    "Content": "Xô viết Nghệ Tĩnh diễn ra tiêu biểu ở hai tỉnh Nghệ An và __________.",
+    "Explanation": "Phong trào Xô viết Nghệ Tĩnh gắn với Nghệ An và Hà Tĩnh.",
+    "ChallengePayloadJson": "{\"sentence\": \"Xô viết Nghệ Tĩnh diễn ra tiêu biểu ở hai tỉnh Nghệ An và ____.\", \"answers\": [\"Hà Tĩnh\"]}",
     "Options": [
       {
-        "Text": "quần chúng",
+        "Text": "Hà Tĩnh",
         "IsCorrect": true
       },
       {
-        "Text": "cá nhân",
+        "Text": "Thanh Hóa",
         "IsCorrect": false
       },
       {
-        "Text": "anh hùng",
+        "Text": "Bắc Ninh",
         "IsCorrect": false
       },
       {
-        "Text": "quốc tế",
+        "Text": "Cao Bằng",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
     "QuestionType": "Matching",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Ghép sự kiện với ý nghĩa trong cao trào 1930–1931.",
+    "Explanation": "Cao trào phát triển qua nhiều hình thức đấu tranh của công nông.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Bãi công công nhân\", \"right\": \"Thể hiện vai trò giai cấp công nhân\"}, {\"left\": \"Biểu tình nông dân\", \"right\": \"Mở rộng phong trào quần chúng\"}, {\"left\": \"Xô viết Nghệ Tĩnh\", \"right\": \"Đỉnh cao của cao trào\"}]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Bãi công công nhân - Thể hiện vai trò giai cấp công nhân; Biểu tình nông dân - Mở rộng phong trào quần chúng; Xô viết Nghệ Tĩnh - Đỉnh cao của cao trào",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Ghép ngược toàn bộ các cặp",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Chỉ có cặp đầu tiên đúng",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Không có cặp nào đúng",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "Matching",
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "Ordering",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Sắp xếp logic cao trào 1930–1931.",
+    "Explanation": "Trình tự này cho thấy phong trào từ nguyên nhân đến phát triển và bị đàn áp.",
+    "ChallengePayloadJson": "{\"items\": [\"Khủng hoảng kinh tế và đàn áp\", \"Đấu tranh công nông lan rộng\", \"Xô viết Nghệ Tĩnh phát triển\", \"Thực dân Pháp đàn áp mạnh\"], \"correctOrder\": [\"Khủng hoảng kinh tế và đàn áp\", \"Đấu tranh công nông lan rộng\", \"Xô viết Nghệ Tĩnh phát triển\", \"Thực dân Pháp đàn áp mạnh\"]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Khủng hoảng kinh tế và đàn áp → Đấu tranh công nông lan rộng → Xô viết Nghệ Tĩnh phát triển → Thực dân Pháp đàn áp mạnh",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Thực dân Pháp đàn áp mạnh → Xô viết Nghệ Tĩnh phát triển → Đấu tranh công nông lan rộng → Khủng hoảng kinh tế và đàn áp",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Đấu tranh công nông lan rộng → Xô viết Nghệ Tĩnh phát triển → Thực dân Pháp đàn áp mạnh → Khủng hoảng kinh tế và đàn áp",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Khủng hoảng kinh tế và đàn áp → Xô viết Nghệ Tĩnh phát triển → Đấu tranh công nông lan rộng → Thực dân Pháp đàn áp mạnh",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "Matching",
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "ShortAnswer",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Vì sao Xô viết Nghệ Tĩnh được coi là cuộc tổng diễn tập đầu tiên?",
+    "Explanation": "Vì phong trào rèn luyện quần chúng, kiểm nghiệm vai trò lãnh đạo của Đảng và xuất hiện hình thức chính quyền cách mạng ở cơ sở.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"quần chúng\", \"Đảng\", \"chính quyền\", \"kinh nghiệm\"], \"sampleAnswer\": \"Vì phong trào rèn luyện quần chúng, kiểm nghiệm vai trò lãnh đạo của Đảng và xuất hiện hình thức chính quyền cách mạng ở cơ sở.\"}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Xem gợi ý trả lời",
         "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Một bạn đánh giá Xô viết Nghệ Tĩnh chỉ là thất bại vì bị đàn áp. Nhận xét nào đầy đủ hơn?",
+    "Explanation": "Cần đánh giá cả kết quả trước mắt, ý nghĩa rèn luyện lực lượng và bài học về tổ chức, bảo toàn lực lượng.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn đánh giá Xô viết Nghệ Tĩnh chỉ là thất bại vì bị đàn áp. Nhận xét nào đầy đủ hơn?\", \"criteria\": [\"ý nghĩa\", \"bài học\", \"rèn luyện\", \"hạn chế\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Dù bị đàn áp, Xô viết Nghệ Tĩnh có ý nghĩa lớn trong rèn luyện lực lượng và để lại kinh nghiệm cho cách mạng.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Xô viết Nghệ Tĩnh cho thấy phong trào quần chúng có thể tạo ra hình thức chính quyền cách mạng ở cơ sở.",
+    "Explanation": "Đúng. Đây là ý nghĩa quan trọng của phong trào 1930–1931.",
+    "ChallengePayloadJson": "{\"statement\": \"Xô viết Nghệ Tĩnh cho thấy phong trào quần chúng có thể tạo ra hình thức chính quyền cách mạng ở cơ sở.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Một trong những lực lượng chủ yếu của cao trào 1930–1931 là giai cấp __________.",
+    "Explanation": "Công nhân và nông dân là hai lực lượng nổi bật trong cao trào.",
+    "ChallengePayloadJson": "{\"sentence\": \"Một trong những lực lượng chủ yếu của cao trào 1930–1931 là giai cấp ____.\", \"answers\": [\"nông dân\"]}",
+    "Options": [
+      {
+        "Text": "nông dân",
+        "IsCorrect": true
+      },
+      {
+        "Text": "tư sản mại bản",
+        "IsCorrect": false
+      },
+      {
+        "Text": "quan lại",
+        "IsCorrect": false
+      },
+      {
+        "Text": "địa chủ phong kiến",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Nêu một hạn chế hoặc bài học từ cao trào 1930–1931.",
+    "Explanation": "Một bài học là cần đánh giá đúng tương quan lực lượng, bảo toàn tổ chức và chuẩn bị lâu dài để tránh tổn thất khi địch đàn áp.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"bảo toàn lực lượng\", \"tương quan lực lượng\", \"đàn áp\", \"tổ chức\"], \"sampleAnswer\": \"Một bài học là cần đánh giá đúng tương quan lực lượng, bảo toàn tổ chức và chuẩn bị lâu dài để tránh tổn thất khi địch đàn áp.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Cao trào 1930–1931 và Xô viết Nghệ Tĩnh",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Nếu dùng Xô viết Nghệ Tĩnh để chứng minh vai trò của quần chúng, cần nêu những ý nào?",
+    "Explanation": "Cần nêu sự tham gia của công nhân, nông dân, hình thức đấu tranh và việc xuất hiện chính quyền cách mạng ở cơ sở.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu dùng Xô viết Nghệ Tĩnh để chứng minh vai trò của quần chúng, cần nêu những ý nào?\", \"criteria\": [\"công nhân\", \"nông dân\", \"đấu tranh\", \"chính quyền cơ sở\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Phải chỉ ra phong trào không chỉ là mốc thời gian mà còn thể hiện sức mạnh tổ chức và hành động của quần chúng.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Phong trào dân chủ 1936-1939",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Sau cao trào 1930–1931, tổ chức Đảng bị tổn thất nặng nề và cần phục hồi.",
+    "Explanation": "Đúng. Sự đàn áp của thực dân Pháp làm nhiều cơ sở Đảng bị phá vỡ.",
+    "ChallengePayloadJson": "{\"statement\": \"Sau cao trào 1930–1931, tổ chức Đảng bị tổn thất nặng nề và cần phục hồi.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Đại hội đại biểu lần thứ nhất của Đảng họp tháng 3/1935 tại __________.",
+    "Explanation": "Đại hội I họp tại Ma Cao, Trung Quốc.",
+    "ChallengePayloadJson": "{\"sentence\": \"Đại hội đại biểu lần thứ nhất của Đảng họp tháng 3/1935 tại ____.\", \"answers\": [\"Ma Cao\"]}",
+    "Options": [
+      {
+        "Text": "Ma Cao",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Pác Bó",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tân Trào",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Hà Nội",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "Matching",
+    "Difficulty": "Medium",
+    "Content": "Ghép hoạt động phục hồi với ý nghĩa.",
+    "Explanation": "Giai đoạn 1932–1935 là thời kỳ khôi phục tổ chức và chuẩn bị cho phong trào mới.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Chi bộ trong nhà tù\", \"right\": \"Duy trì ý chí và tổ chức\"}, {\"left\": \"Tuyên truyền bí mật\", \"right\": \"Khôi phục liên hệ quần chúng\"}, {\"left\": \"Đại hội I năm 1935\", \"right\": \"Củng cố tổ chức Đảng\"}]}",
+    "Options": [
+      {
+        "Text": "Chi bộ trong nhà tù - Duy trì ý chí và tổ chức; Tuyên truyền bí mật - Khôi phục liên hệ quần chúng; Đại hội I năm 1935 - Củng cố tổ chức Đảng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Ghép ngược toàn bộ các cặp",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chỉ có cặp đầu tiên đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Không có cặp nào đúng",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "Ordering",
+    "Difficulty": "Medium",
+    "Content": "Sắp xếp tiến trình phục hồi tổ chức Đảng.",
+    "Explanation": "Trình tự thể hiện sự khôi phục từng bước của hệ thống tổ chức.",
+    "ChallengePayloadJson": "{\"items\": [\"Đàn áp sau cao trào 1930–1931\", \"Duy trì hoạt động bí mật\", \"Thành lập Ban Chỉ huy ở ngoài\", \"Đại hội I năm 1935\"], \"correctOrder\": [\"Đàn áp sau cao trào 1930–1931\", \"Duy trì hoạt động bí mật\", \"Thành lập Ban Chỉ huy ở ngoài\", \"Đại hội I năm 1935\"]}",
+    "Options": [
+      {
+        "Text": "Đàn áp sau cao trào 1930–1931 → Duy trì hoạt động bí mật → Thành lập Ban Chỉ huy ở ngoài → Đại hội I năm 1935",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Đại hội I năm 1935 → Thành lập Ban Chỉ huy ở ngoài → Duy trì hoạt động bí mật → Đàn áp sau cao trào 1930–1931",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Duy trì hoạt động bí mật → Thành lập Ban Chỉ huy ở ngoài → Đại hội I năm 1935 → Đàn áp sau cao trào 1930–1931",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Đàn áp sau cao trào 1930–1931 → Thành lập Ban Chỉ huy ở ngoài → Duy trì hoạt động bí mật → Đại hội I năm 1935",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Ba nhiệm vụ trước mắt của Đại hội I năm 1935 có thể khái quát như thế nào?",
+    "Explanation": "Đại hội tập trung củng cố và phát triển Đảng, vận động quần chúng, tuyên truyền chống đế quốc và chống chiến tranh.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"củng cố Đảng\", \"vận động quần chúng\", \"chống đế quốc\", \"chống chiến tranh\"], \"sampleAnswer\": \"Đại hội tập trung củng cố và phát triển Đảng, vận động quần chúng, tuyên truyền chống đế quốc và chống chiến tranh.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Một bạn bỏ qua giai đoạn 1932–1935 khi phân tích đường lối 1930–1945. Vì sao đó là thiếu sót?",
+    "Explanation": "Vì đây là giai đoạn phục hồi tổ chức, cán bộ và cơ sở quần chúng, tạo tiền đề cho phong trào 1936–1939.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn bỏ qua giai đoạn 1932–1935 khi phân tích đường lối 1930–1945. Vì sao đó là thiếu sót?\", \"criteria\": [\"phục hồi\", \"tổ chức\", \"cán bộ\", \"tiền đề\"]}",
+    "Options": [
+      {
+        "Text": "Không có phục hồi tổ chức thì khó có điều kiện để mở rộng phong trào ở giai đoạn sau.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Các nhà tù thực dân cũng trở thành nơi rèn luyện, giáo dục và duy trì tổ chức của nhiều chiến sĩ cách mạng.",
+    "Explanation": "Đúng. Chi bộ trong nhà tù là một nét quan trọng của quá trình phục hồi lực lượng.",
+    "ChallengePayloadJson": "{\"statement\": \"Các nhà tù thực dân cũng trở thành nơi rèn luyện, giáo dục và duy trì tổ chức của nhiều chiến sĩ cách mạng.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Giai đoạn 1932–1935 nhấn mạnh nhiệm vụ củng cố và phát triển __________.",
+    "Explanation": "Nhiệm vụ trước mắt của Đại hội I là củng cố và phát triển Đảng.",
+    "ChallengePayloadJson": "{\"sentence\": \"Giai đoạn 1932–1935 nhấn mạnh nhiệm vụ củng cố và phát triển ____.\", \"answers\": [\"Đảng\"]}",
+    "Options": [
+      {
+        "Text": "Đảng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Việt Minh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Mặt trận Dân chủ",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chính phủ lâm thời",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Ý nghĩa của việc phục hồi tổ chức Đảng trước năm 1936 là gì?",
+    "Explanation": "Việc phục hồi giúp khôi phục cơ sở, rèn luyện cán bộ và chuẩn bị điều kiện tổ chức để bước vào phong trào dân chủ 1936–1939.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"cơ sở\", \"cán bộ\", \"quần chúng\", \"phong trào dân chủ\"], \"sampleAnswer\": \"Việc phục hồi giúp khôi phục cơ sở, rèn luyện cán bộ và chuẩn bị điều kiện tổ chức để bước vào phong trào dân chủ 1936–1939.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Phục hồi tổ chức Đảng 1932–1935",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Nếu phân tích bài học tổ chức từ giai đoạn 1932–1935, cần nhấn mạnh điều gì?",
+    "Explanation": "Cần nhấn mạnh sự bền bỉ giữ vững tổ chức, huấn luyện cán bộ và gắn bó với quần chúng trong điều kiện bị đàn áp.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu phân tích bài học tổ chức từ giai đoạn 1932–1935, cần nhấn mạnh điều gì?\", \"criteria\": [\"bí mật\", \"cán bộ\", \"quần chúng\", \"bền bỉ\"]}",
+    "Options": [
+      {
+        "Text": "Bài học là phong trào cách mạng muốn phát triển phải có tổ chức được bảo toàn và phục hồi.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Phong trào dân chủ 1936–1939 gắn với khẩu hiệu dân sinh, dân chủ, hòa bình.",
+    "Explanation": "Đúng. Đây là nhiệm vụ trước mắt trong bối cảnh chống phát xít, chống chiến tranh.",
+    "ChallengePayloadJson": "{\"statement\": \"Phong trào dân chủ 1936–1939 gắn với khẩu hiệu dân sinh, dân chủ, hòa bình.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Phong trào 1936–1939 đấu tranh chống phát xít, chống chiến tranh, đòi tự do, dân chủ, cơm áo và __________.",
+    "Explanation": "Khẩu hiệu hòa bình là một nội dung nổi bật của phong trào dân chủ.",
+    "ChallengePayloadJson": "{\"sentence\": \"Phong trào 1936–1939 đấu tranh chống phát xít, chống chiến tranh, đòi tự do, dân chủ, cơm áo và ____.\", \"answers\": [\"hòa bình\"]}",
+    "Options": [
+      {
+        "Text": "hòa bình",
+        "IsCorrect": true
+      },
+      {
+        "Text": "khởi nghĩa",
+        "IsCorrect": false
+      },
+      {
+        "Text": "ruộng đất triệt để",
+        "IsCorrect": false
+      },
+      {
+        "Text": "độc quyền",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "Matching",
+    "Difficulty": "Medium",
+    "Content": "Ghép yếu tố bối cảnh với tác động đến phong trào 1936–1939.",
+    "Explanation": "Bối cảnh quốc tế tác động trực tiếp đến sự điều chỉnh sách lược của Đảng.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Nguy cơ phát xít\", \"right\": \"Đặt nhiệm vụ chống chiến tranh\"}, {\"left\": \"Mặt trận Nhân dân Pháp\", \"right\": \"Mở điều kiện đấu tranh hợp pháp hơn\"}, {\"left\": \"Quốc tế Cộng sản\", \"right\": \"Chủ trương mặt trận rộng rãi\"}]}",
+    "Options": [
+      {
+        "Text": "Nguy cơ phát xít - Đặt nhiệm vụ chống chiến tranh; Mặt trận Nhân dân Pháp - Mở điều kiện đấu tranh hợp pháp hơn; Quốc tế Cộng sản - Chủ trương mặt trận rộng rãi",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Ghép ngược toàn bộ các cặp",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chỉ có cặp đầu tiên đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Không có cặp nào đúng",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "Ordering",
+    "Difficulty": "Medium",
+    "Content": "Sắp xếp logic phong trào dân chủ 1936–1939.",
+    "Explanation": "Logic này thể hiện sự điều chỉnh sách lược phù hợp với tình hình.",
+    "ChallengePayloadJson": "{\"items\": [\"Nguy cơ phát xít và chiến tranh\", \"Điều chỉnh nhiệm vụ trước mắt\", \"Thành lập mặt trận rộng rãi\", \"Đấu tranh công khai, hợp pháp\"], \"correctOrder\": [\"Nguy cơ phát xít và chiến tranh\", \"Điều chỉnh nhiệm vụ trước mắt\", \"Thành lập mặt trận rộng rãi\", \"Đấu tranh công khai, hợp pháp\"]}",
+    "Options": [
+      {
+        "Text": "Nguy cơ phát xít và chiến tranh → Điều chỉnh nhiệm vụ trước mắt → Thành lập mặt trận rộng rãi → Đấu tranh công khai, hợp pháp",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Đấu tranh công khai, hợp pháp → Thành lập mặt trận rộng rãi → Điều chỉnh nhiệm vụ trước mắt → Nguy cơ phát xít và chiến tranh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Điều chỉnh nhiệm vụ trước mắt → Thành lập mặt trận rộng rãi → Đấu tranh công khai, hợp pháp → Nguy cơ phát xít và chiến tranh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Nguy cơ phát xít và chiến tranh → Thành lập mặt trận rộng rãi → Điều chỉnh nhiệm vụ trước mắt → Đấu tranh công khai, hợp pháp",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Vì sao Đảng sử dụng hình thức đấu tranh công khai, hợp pháp trong giai đoạn 1936–1939?",
+    "Explanation": "Vì bối cảnh chính trị mới tạo điều kiện nhất định, Đảng tận dụng hình thức công khai, hợp pháp để mở rộng ảnh hưởng và tập hợp quần chúng.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"điều kiện\", \"hợp pháp\", \"quần chúng\", \"sách lược\"], \"sampleAnswer\": \"Vì bối cảnh chính trị mới tạo điều kiện nhất định, Đảng tận dụng hình thức công khai, hợp pháp để mở rộng ảnh hưởng và tập hợp quần chúng.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Một bạn nhầm Mặt trận Dân chủ Đông Dương với Mặt trận Việt Minh. Cách phân biệt đúng là gì?",
+    "Explanation": "Mặt trận Dân chủ Đông Dương gắn với đấu tranh dân chủ 1936–1939; Việt Minh gắn với giải phóng dân tộc từ năm 1941.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn nhầm Mặt trận Dân chủ Đông Dương với Mặt trận Việt Minh. Cách phân biệt đúng là gì?\", \"criteria\": [\"1936–1939\", \"1941\", \"dân chủ\", \"giải phóng dân tộc\"]}",
+    "Options": [
+      {
+        "Text": "Cần phân biệt theo thời gian, mục tiêu trước mắt và bối cảnh lịch sử.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Phong trào dân chủ 1936–1939 thể hiện sự điều chỉnh sách lược chứ không phải từ bỏ mục tiêu cách mạng lâu dài.",
+    "Explanation": "Đúng. Đảng thay đổi nhiệm vụ trước mắt và hình thức đấu tranh theo bối cảnh, không từ bỏ mục tiêu chiến lược.",
+    "ChallengePayloadJson": "{\"statement\": \"Phong trào dân chủ 1936–1939 thể hiện sự điều chỉnh sách lược chứ không phải từ bỏ mục tiêu cách mạng lâu dài.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Trong giai đoạn 1936–1939, Đảng cần phân biệt mục tiêu chiến lược lâu dài với nhiệm vụ __________.",
+    "Explanation": "Đây là bài học quan trọng về sự linh hoạt sách lược.",
+    "ChallengePayloadJson": "{\"sentence\": \"Trong giai đoạn 1936–1939, Đảng cần phân biệt mục tiêu chiến lược lâu dài với nhiệm vụ ____.\", \"answers\": [\"trước mắt\"]}",
+    "Options": [
+      {
+        "Text": "trước mắt",
+        "IsCorrect": true
+      },
+      {
+        "Text": "sau cùng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "duy nhất",
+        "IsCorrect": false
+      },
+      {
+        "Text": "ngoại giao",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Nêu ý nghĩa của phong trào dân chủ 1936–1939 đối với quần chúng.",
+    "Explanation": "Phong trào rèn luyện quần chúng, mở rộng mặt trận, nâng cao ý thức chính trị và chuẩn bị lực lượng cho giai đoạn sau.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"rèn luyện\", \"tập hợp\", \"quyền dân chủ\", \"mặt trận\"], \"sampleAnswer\": \"Phong trào rèn luyện quần chúng, mở rộng mặt trận, nâng cao ý thức chính trị và chuẩn bị lực lượng cho giai đoạn sau.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Phong trào dân chủ 1936–1939",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Nếu đề hỏi 'tính linh hoạt của Đảng', vì sao phong trào 1936–1939 là dẫn chứng tốt?",
+    "Explanation": "Vì Đảng đã điều chỉnh nhiệm vụ và hình thức đấu tranh phù hợp bối cảnh chống phát xít, tận dụng điều kiện công khai hợp pháp.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu đề hỏi 'tính linh hoạt của Đảng', vì sao phong trào 1936–1939 là dẫn chứng tốt?\", \"criteria\": [\"linh hoạt\", \"bối cảnh\", \"hình thức\", \"nhiệm vụ trước mắt\"]}",
+    "Options": [
+      {
+        "Text": "Đây là dẫn chứng về khả năng thay đổi sách lược mà vẫn giữ mục tiêu lâu dài.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Chiến tranh thế giới thứ hai bùng nổ là một nguyên nhân quan trọng khiến Đảng chuyển hướng chiến lược.",
+    "Explanation": "Đúng. Chiến tranh làm tình hình thuộc địa thay đổi và nhiệm vụ giải phóng dân tộc trở nên cấp bách.",
+    "ChallengePayloadJson": "{\"statement\": \"Chiến tranh thế giới thứ hai bùng nổ là một nguyên nhân quan trọng khiến Đảng chuyển hướng chiến lược.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
     "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
+    "Difficulty": "Easy",
+    "Content": "Hội nghị Trung ương 6 tháng 11/1939 họp tại Bà Điểm, Hóc Môn, __________.",
+    "Explanation": "Hội nghị Trung ương 6 diễn ra tại Bà Điểm, Hóc Môn, Gia Định.",
+    "ChallengePayloadJson": "{\"sentence\": \"Hội nghị Trung ương 6 tháng 11/1939 họp tại Bà Điểm, Hóc Môn, ____.\", \"answers\": [\"Gia Định\"]}",
     "Options": [
       {
-        "Text": "quần chúng",
+        "Text": "Gia Định",
         "IsCorrect": true
       },
       {
-        "Text": "cá nhân",
+        "Text": "Cao Bằng",
         "IsCorrect": false
       },
       {
-        "Text": "anh hùng",
+        "Text": "Tân Trào",
         "IsCorrect": false
       },
       {
-        "Text": "quốc tế",
+        "Text": "Ma Cao",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
     "QuestionType": "Matching",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Ghép hội nghị với điểm chính trong chuyển hướng chiến lược.",
+    "Explanation": "Ba hội nghị 6, 7, 8 tạo thành quá trình chuyển hướng chiến lược 1939–1941.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Trung ương 6\", \"right\": \"Mở đầu chuyển hướng\"}, {\"left\": \"Trung ương 7\", \"right\": \"Tiếp tục bổ sung chuyển hướng\"}, {\"left\": \"Trung ương 8\", \"right\": \"Hoàn chỉnh chuyển hướng\"}]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Trung ương 6 - Mở đầu chuyển hướng; Trung ương 7 - Tiếp tục bổ sung chuyển hướng; Trung ương 8 - Hoàn chỉnh chuyển hướng",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Ghép ngược toàn bộ các cặp",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Chỉ có cặp đầu tiên đúng",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Không có cặp nào đúng",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "Matching",
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
+    "QuestionType": "Ordering",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Sắp xếp các mốc chuyển hướng 1939–1941.",
+    "Explanation": "Đây là trục thời gian quan trọng trong chuyển hướng chiến lược.",
+    "ChallengePayloadJson": "{\"items\": [\"Hội nghị Trung ương 6\", \"Hội nghị Trung ương 7\", \"Nguyễn Ái Quốc về nước\", \"Hội nghị Trung ương 8\"], \"correctOrder\": [\"Hội nghị Trung ương 6\", \"Hội nghị Trung ương 7\", \"Nguyễn Ái Quốc về nước\", \"Hội nghị Trung ương 8\"]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Hội nghị Trung ương 6 → Hội nghị Trung ương 7 → Nguyễn Ái Quốc về nước → Hội nghị Trung ương 8",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Hội nghị Trung ương 8 → Nguyễn Ái Quốc về nước → Hội nghị Trung ương 7 → Hội nghị Trung ương 6",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Hội nghị Trung ương 7 → Nguyễn Ái Quốc về nước → Hội nghị Trung ương 8 → Hội nghị Trung ương 6",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Hội nghị Trung ương 6 → Nguyễn Ái Quốc về nước → Hội nghị Trung ương 7 → Hội nghị Trung ương 8",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "Matching",
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
+    "QuestionType": "ShortAnswer",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Nội dung cốt lõi của chuyển hướng chiến lược 1939–1941 là gì?",
+    "Explanation": "Cốt lõi là đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, xây dựng mặt trận dân tộc thống nhất và chuẩn bị khởi nghĩa vũ trang.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"giải phóng dân tộc\", \"hàng đầu\", \"Việt Minh\", \"khởi nghĩa vũ trang\"], \"sampleAnswer\": \"Cốt lõi là đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, xây dựng mặt trận dân tộc thống nhất và chuẩn bị khởi nghĩa vũ trang.\"}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Xem gợi ý trả lời",
         "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Một bạn nói chuyển hướng 1939–1941 là thay đổi mục tiêu cuối cùng của cách mạng. Nhận xét đúng là gì?",
+    "Explanation": "Chuyển hướng là xác định nhiệm vụ cấp bách trong bối cảnh mới, không phải từ bỏ mục tiêu lâu dài.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn nói chuyển hướng 1939–1941 là thay đổi mục tiêu cuối cùng của cách mạng. Nhận xét đúng là gì?\", \"criteria\": [\"chiến lược\", \"nhiệm vụ trước mắt\", \"độc lập\", \"bối cảnh\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Đảng tập trung giải phóng dân tộc vì đó là nhiệm vụ trung tâm trong hoàn cảnh mất nước và chiến tranh.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Sau năm 1939, hoạt động công khai hợp pháp như giai đoạn 1936–1939 vẫn là hình thức chủ yếu.",
+    "Explanation": "Sai. Khi chiến tranh bùng nổ và Pháp đàn áp, Đảng rút vào hoạt động bí mật, chuyển trọng tâm phù hợp tình hình.",
+    "ChallengePayloadJson": "{\"statement\": \"Sau năm 1939, hoạt động công khai hợp pháp như giai đoạn 1936–1939 vẫn là hình thức chủ yếu.\", \"answer\": false}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Sau khi chiến tranh bùng nổ, Đảng chủ trương rút vào hoạt động __________.",
+    "Explanation": "Hoạt động bí mật phù hợp với điều kiện đàn áp của chính quyền thuộc địa.",
+    "ChallengePayloadJson": "{\"sentence\": \"Sau khi chiến tranh bùng nổ, Đảng chủ trương rút vào hoạt động ____.\", \"answers\": [\"bí mật\"]}",
+    "Options": [
+      {
+        "Text": "bí mật",
+        "IsCorrect": true
+      },
+      {
+        "Text": "nghị trường",
+        "IsCorrect": false
+      },
+      {
+        "Text": "công khai toàn bộ",
+        "IsCorrect": false
+      },
+      {
+        "Text": "ngoại giao",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Vì sao giải phóng dân tộc được đặt lên hàng đầu từ 1939–1941?",
+    "Explanation": "Vì mâu thuẫn dân tộc với đế quốc, phát xít trở nên gay gắt; nếu không giành độc lập thì quyền lợi các giai cấp cũng không giải quyết được.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"mâu thuẫn dân tộc\", \"Pháp\", \"Nhật\", \"độc lập\"], \"sampleAnswer\": \"Vì mâu thuẫn dân tộc với đế quốc, phát xít trở nên gay gắt; nếu không giành độc lập thì quyền lợi các giai cấp cũng không giải quyết được.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Chuyển hướng chỉ đạo chiến lược 1939–1941",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Nếu phân tích chuyển hướng chiến lược, vì sao không nên chỉ học Hội nghị Trung ương 8?",
+    "Explanation": "Vì chuyển hướng là một quá trình từ TW6, TW7 đến TW8; TW8 hoàn chỉnh nhưng không phải mốc duy nhất.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu phân tích chuyển hướng chiến lược, vì sao không nên chỉ học Hội nghị Trung ương 8?\", \"criteria\": [\"TW6\", \"TW7\", \"TW8\", \"quá trình\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Cần trình bày cả quá trình mở đầu, bổ sung và hoàn chỉnh chuyển hướng.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Chuyển hướng chiến lược 1939-1941",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
-    "Options": [
-      {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Hội nghị Trung ương 8 tháng 5/1941 diễn ra tại Pác Bó, Cao Bằng.",
+    "Explanation": "Đúng. Đây là địa điểm gắn với việc hoàn chỉnh chuyển hướng chiến lược.",
+    "ChallengePayloadJson": "{\"statement\": \"Hội nghị Trung ương 8 tháng 5/1941 diễn ra tại Pác Bó, Cao Bằng.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Nguyễn Ái Quốc về nước ngày 28/1/1941 tại khu vực Pác Bó, tỉnh __________.",
+    "Explanation": "Nguyễn Ái Quốc về nước qua Cao Bằng, chuẩn bị cho Hội nghị Trung ương 8.",
+    "ChallengePayloadJson": "{\"sentence\": \"Nguyễn Ái Quốc về nước ngày 28/1/1941 tại khu vực Pác Bó, tỉnh ____.\", \"answers\": [\"Cao Bằng\"]}",
+    "Options": [
+      {
+        "Text": "Cao Bằng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Nghệ An",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Hà Tĩnh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Gia Định",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "Matching",
+    "Difficulty": "Medium",
+    "Content": "Ghép nội dung Hội nghị Trung ương 8 với ý nghĩa.",
+    "Explanation": "Các quyết định của TW8 trực tiếp chuẩn bị cho Cách mạng Tháng Tám.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Đặt giải phóng dân tộc lên hàng đầu\", \"right\": \"Xác định nhiệm vụ trung tâm\"}, {\"left\": \"Thành lập Việt Minh\", \"right\": \"Tập hợp lực lượng rộng rãi\"}, {\"left\": \"Chuẩn bị khởi nghĩa vũ trang\", \"right\": \"Hướng tới giành chính quyền\"}]}",
+    "Options": [
+      {
+        "Text": "Đặt giải phóng dân tộc lên hàng đầu - Xác định nhiệm vụ trung tâm; Thành lập Việt Minh - Tập hợp lực lượng rộng rãi; Chuẩn bị khởi nghĩa vũ trang - Hướng tới giành chính quyền",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Ghép ngược toàn bộ các cặp",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chỉ có cặp đầu tiên đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Không có cặp nào đúng",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "Ordering",
+    "Difficulty": "Medium",
+    "Content": "Sắp xếp các nội dung phân tích Hội nghị Trung ương 8.",
+    "Explanation": "Phân tích TW8 cần gắn bối cảnh, vai trò lãnh đạo và nội dung quyết định.",
+    "ChallengePayloadJson": "{\"items\": [\"Bối cảnh Pháp - Nhật\", \"Vai trò Nguyễn Ái Quốc\", \"Chủ trương giải phóng dân tộc\", \"Thành lập Việt Minh và chuẩn bị khởi nghĩa\"], \"correctOrder\": [\"Bối cảnh Pháp - Nhật\", \"Vai trò Nguyễn Ái Quốc\", \"Chủ trương giải phóng dân tộc\", \"Thành lập Việt Minh và chuẩn bị khởi nghĩa\"]}",
+    "Options": [
+      {
+        "Text": "Bối cảnh Pháp - Nhật → Vai trò Nguyễn Ái Quốc → Chủ trương giải phóng dân tộc → Thành lập Việt Minh và chuẩn bị khởi nghĩa",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Thành lập Việt Minh và chuẩn bị khởi nghĩa → Chủ trương giải phóng dân tộc → Vai trò Nguyễn Ái Quốc → Bối cảnh Pháp - Nhật",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Vai trò Nguyễn Ái Quốc → Chủ trương giải phóng dân tộc → Thành lập Việt Minh và chuẩn bị khởi nghĩa → Bối cảnh Pháp - Nhật",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Bối cảnh Pháp - Nhật → Chủ trương giải phóng dân tộc → Vai trò Nguyễn Ái Quốc → Thành lập Việt Minh và chuẩn bị khởi nghĩa",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Vai trò của Nguyễn Ái Quốc trong Hội nghị Trung ương 8 thể hiện như thế nào?",
+    "Explanation": "Nguyễn Ái Quốc trực tiếp về nước, chỉ đạo xác định nhiệm vụ giải phóng dân tộc, thành lập Việt Minh và chuẩn bị khởi nghĩa.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"về nước\", \"giải phóng dân tộc\", \"Việt Minh\", \"chuyển hướng\"], \"sampleAnswer\": \"Nguyễn Ái Quốc trực tiếp về nước, chỉ đạo xác định nhiệm vụ giải phóng dân tộc, thành lập Việt Minh và chuẩn bị khởi nghĩa.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Một sinh viên hỏi: 'Tạm gác cách mạng ruộng đất có phải bỏ quyền lợi nông dân không?' Chọn cách giải thích đúng.",
+    "Explanation": "Không phải bỏ quyền lợi nông dân vĩnh viễn, mà là tạm gác khẩu hiệu dễ chia rẽ để tập trung nhiệm vụ độc lập dân tộc.",
+    "ChallengePayloadJson": "{\"case\": \"Một sinh viên hỏi: 'Tạm gác cách mạng ruộng đất có phải bỏ quyền lợi nông dân không?' Chọn cách giải thích đúng.\", \"criteria\": [\"tạm gác\", \"độc lập\", \"đoàn kết\", \"nông dân\"]}",
+    "Options": [
+      {
+        "Text": "Trong hoàn cảnh mất nước, độc lập dân tộc là điều kiện để giải quyết các quyền lợi dân chủ về sau.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Hội nghị Trung ương 8 xác định chuẩn bị khởi nghĩa vũ trang là nhiệm vụ trung tâm.",
+    "Explanation": "Đúng. Chuẩn bị khởi nghĩa vũ trang là nội dung quan trọng của Hội nghị TW8.",
+    "ChallengePayloadJson": "{\"statement\": \"Hội nghị Trung ương 8 xác định chuẩn bị khởi nghĩa vũ trang là nhiệm vụ trung tâm.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Mặt trận được Hội nghị Trung ương 8 chủ trương thành lập có tên viết tắt là __________.",
+    "Explanation": "Việt Minh là Việt Nam Độc lập Đồng minh.",
+    "ChallengePayloadJson": "{\"sentence\": \"Mặt trận được Hội nghị Trung ương 8 chủ trương thành lập có tên viết tắt là ____.\", \"answers\": [\"Việt Minh\"]}",
+    "Options": [
+      {
+        "Text": "Việt Minh",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Dân chủ",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Liên Việt",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Phản đế",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Vì sao Hội nghị Trung ương 8 được coi là hoàn chỉnh chuyển hướng chiến lược?",
+    "Explanation": "Vì Hội nghị xác định rõ nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, tạm gác ruộng đất và chuẩn bị khởi nghĩa vũ trang.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"hoàn chỉnh\", \"giải phóng dân tộc\", \"Việt Minh\", \"khởi nghĩa\"], \"sampleAnswer\": \"Vì Hội nghị xác định rõ nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, tạm gác ruộng đất và chuẩn bị khởi nghĩa vũ trang.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Hội nghị Trung ương 6, 7, 8",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Nếu đề thi yêu cầu chứng minh 'Đảng biết xác định đúng mâu thuẫn chủ yếu', nên dùng Hội nghị nào làm dẫn chứng trọng tâm?",
+    "Explanation": "Nên dùng Hội nghị Trung ương 8 vì hội nghị đặt giải phóng dân tộc lên hàng đầu trong bối cảnh Pháp - Nhật.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu đề thi yêu cầu chứng minh 'Đảng biết xác định đúng mâu thuẫn chủ yếu', nên dùng Hội nghị nào làm dẫn chứng trọng tâm?\", \"criteria\": [\"TW8\", \"mâu thuẫn dân tộc\", \"giải phóng dân tộc\", \"Việt Minh\"]}",
+    "Options": [
+      {
+        "Text": "TW8 là dẫn chứng tiêu biểu về xác định đúng mâu thuẫn chủ yếu và nhiệm vụ trung tâm.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Mặt trận Việt Minh được thành lập nhằm tập hợp lực lượng yêu nước để giành độc lập dân tộc.",
+    "Explanation": "Đúng. Việt Minh là mặt trận đoàn kết toàn dân trong thời kỳ giải phóng dân tộc.",
+    "ChallengePayloadJson": "{\"statement\": \"Mặt trận Việt Minh được thành lập nhằm tập hợp lực lượng yêu nước để giành độc lập dân tộc.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Easy",
+    "Content": "Việt Minh là tên viết tắt của Việt Nam Độc lập __________.",
+    "Explanation": "Tên đầy đủ là Việt Nam Độc lập Đồng minh.",
+    "ChallengePayloadJson": "{\"sentence\": \"Việt Minh là tên viết tắt của Việt Nam Độc lập ____.\", \"answers\": [\"Đồng minh\"]}",
+    "Options": [
+      {
+        "Text": "Đồng minh",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Dân chủ",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Cứu quốc",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Liên hiệp",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "Matching",
+    "Difficulty": "Medium",
+    "Content": "Ghép tổ chức/lực lượng với vai trò trong giai đoạn chuẩn bị khởi nghĩa.",
+    "Explanation": "Việt Minh gắn với việc tổ chức lực lượng chính trị, vũ trang và căn cứ địa.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"Việt Minh\", \"right\": \"Tập hợp lực lượng chính trị\"}, {\"left\": \"Cứu quốc quân\", \"right\": \"Lực lượng vũ trang cách mạng\"}, {\"left\": \"Căn cứ địa Việt Bắc\", \"right\": \"Địa bàn xây dựng lực lượng\"}]}",
+    "Options": [
+      {
+        "Text": "Việt Minh - Tập hợp lực lượng chính trị; Cứu quốc quân - Lực lượng vũ trang cách mạng; Căn cứ địa Việt Bắc - Địa bàn xây dựng lực lượng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Ghép ngược toàn bộ các cặp",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Chỉ có cặp đầu tiên đúng",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Không có cặp nào đúng",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "Ordering",
+    "Difficulty": "Medium",
+    "Content": "Sắp xếp quá trình xây dựng lực lượng trước Tổng khởi nghĩa.",
+    "Explanation": "Quá trình chuẩn bị lực lượng diễn ra từng bước trước tháng Tám 1945.",
+    "ChallengePayloadJson": "{\"items\": [\"Thành lập Việt Minh\", \"Xây dựng hội cứu quốc\", \"Phát triển lực lượng vũ trang\", \"Mở rộng căn cứ địa\"], \"correctOrder\": [\"Thành lập Việt Minh\", \"Xây dựng hội cứu quốc\", \"Phát triển lực lượng vũ trang\", \"Mở rộng căn cứ địa\"]}",
+    "Options": [
+      {
+        "Text": "Thành lập Việt Minh → Xây dựng hội cứu quốc → Phát triển lực lượng vũ trang → Mở rộng căn cứ địa",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Mở rộng căn cứ địa → Phát triển lực lượng vũ trang → Xây dựng hội cứu quốc → Thành lập Việt Minh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Xây dựng hội cứu quốc → Phát triển lực lượng vũ trang → Mở rộng căn cứ địa → Thành lập Việt Minh",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Thành lập Việt Minh → Phát triển lực lượng vũ trang → Xây dựng hội cứu quốc → Mở rộng căn cứ địa",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Medium",
+    "Content": "Vì sao Việt Minh có khả năng tập hợp lực lượng rộng rãi?",
+    "Explanation": "Vì Việt Minh đặt mục tiêu độc lập dân tộc lên hàng đầu, thu hút mọi lực lượng yêu nước không phân biệt giai cấp, tôn giáo, nghề nghiệp.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"độc lập\", \"yêu nước\", \"không phân biệt\", \"dân tộc\"], \"sampleAnswer\": \"Vì Việt Minh đặt mục tiêu độc lập dân tộc lên hàng đầu, thu hút mọi lực lượng yêu nước không phân biệt giai cấp, tôn giáo, nghề nghiệp.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Một bạn cho rằng Việt Minh chỉ là tổ chức quân sự. Nhận xét nào đúng hơn?",
+    "Explanation": "Việt Minh là mặt trận chính trị rộng rãi, đồng thời góp phần xây dựng lực lượng vũ trang và căn cứ địa.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn cho rằng Việt Minh chỉ là tổ chức quân sự. Nhận xét nào đúng hơn?\", \"criteria\": [\"mặt trận\", \"chính trị\", \"quân sự\", \"đoàn kết\"]}",
+    "Options": [
+      {
+        "Text": "Không nên thu hẹp Việt Minh thành tổ chức quân sự; vai trò lớn nhất là tập hợp lực lượng dân tộc.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Việt Minh là minh chứng cho bài học đại đoàn kết dân tộc trong đường lối 1930–1945.",
+    "Explanation": "Đúng. Việt Minh thể hiện nghệ thuật tập hợp lực lượng rộng rãi vì mục tiêu độc lập.",
+    "ChallengePayloadJson": "{\"statement\": \"Việt Minh là minh chứng cho bài học đại đoàn kết dân tộc trong đường lối 1930–1945.\", \"answer\": true}",
+    "Options": [
+      {
+        "Text": "Đúng",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Sai",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Các tổ chức quần chúng trong Việt Minh thường mang tên các hội __________.",
+    "Explanation": "Các hội cứu quốc là hình thức tổ chức quần chúng trong Mặt trận Việt Minh.",
+    "ChallengePayloadJson": "{\"sentence\": \"Các tổ chức quần chúng trong Việt Minh thường mang tên các hội ____.\", \"answers\": [\"cứu quốc\"]}",
+    "Options": [
+      {
+        "Text": "cứu quốc",
+        "IsCorrect": true
+      },
+      {
+        "Text": "nghị trường",
+        "IsCorrect": false
+      },
+      {
+        "Text": "thuộc địa",
+        "IsCorrect": false
+      },
+      {
+        "Text": "địa chủ",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "ShortAnswer",
+    "Difficulty": "Hard",
+    "Content": "Nêu mối quan hệ giữa Việt Minh và thắng lợi Cách mạng Tháng Tám.",
+    "Explanation": "Việt Minh tập hợp lực lượng chính trị, tổ chức quần chúng và góp phần chuẩn bị lực lượng cho Tổng khởi nghĩa tháng Tám.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"tập hợp\", \"lực lượng\", \"chính trị\", \"khởi nghĩa\"], \"sampleAnswer\": \"Việt Minh tập hợp lực lượng chính trị, tổ chức quần chúng và góp phần chuẩn bị lực lượng cho Tổng khởi nghĩa tháng Tám.\"}",
+    "Options": [
+      {
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Mặt trận Việt Minh",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Nếu phân tích nguyên nhân thắng lợi 1945, vì sao không thể bỏ qua Việt Minh?",
+    "Explanation": "Vì Việt Minh là hình thức tổ chức đại đoàn kết dân tộc, giúp biến đường lối giải phóng dân tộc thành lực lượng quần chúng rộng rãi.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu phân tích nguyên nhân thắng lợi 1945, vì sao không thể bỏ qua Việt Minh?\", \"criteria\": [\"mặt trận\", \"đoàn kết\", \"quần chúng\", \"lực lượng\"]}",
+    "Options": [
+      {
+        "Text": "Việt Minh là cầu nối giữa chủ trương của Đảng và hành động cách mạng của toàn dân.",
+        "IsCorrect": true
+      },
+      {
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
+        "IsCorrect": false
+      },
+      {
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
+        "IsCorrect": false
+      }
+    ]
+  },
+  {
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
     "QuestionType": "TrueFalse",
     "Difficulty": "Easy",
-    "Content": "Nhận định sau đây đúng hay sai: Sự kiện trong giai đoạn ${topic} mang tính quyết định đến lịch sử Việt Nam? (Phiên bản ${i+1})",
-    "Explanation": "Mỗi giai đoạn lịch sử đều có ý nghĩa quan trọng trong tiến trình cách mạng.",
-    "ChallengePayloadJson": "{\"statement\":\"Cách mạng luôn là quá trình tiệm tiến và đột biến.\"}",
+    "Content": "Ngày 9/3/1945, Nhật đảo chính Pháp ở Đông Dương.",
+    "Explanation": "Đúng. Sự kiện này làm tình hình chính trị thay đổi nhanh chóng.",
+    "ChallengePayloadJson": "{\"statement\": \"Ngày 9/3/1945, Nhật đảo chính Pháp ở Đông Dương.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "True",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "False",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
     "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
+    "Difficulty": "Easy",
+    "Content": "Sau ngày 9/3/1945, khẩu hiệu được nêu là đánh đuổi phát xít __________.",
+    "Explanation": "Sau Nhật đảo chính Pháp, kẻ thù trước mắt được xác định là phát xít Nhật.",
+    "ChallengePayloadJson": "{\"sentence\": \"Sau ngày 9/3/1945, khẩu hiệu được nêu là đánh đuổi phát xít ____.\", \"answers\": [\"Nhật\"]}",
     "Options": [
       {
-        "Text": "quần chúng",
+        "Text": "Nhật",
         "IsCorrect": true
       },
       {
-        "Text": "cá nhân",
+        "Text": "Pháp",
         "IsCorrect": false
       },
       {
-        "Text": "anh hùng",
+        "Text": "Anh",
         "IsCorrect": false
       },
       {
-        "Text": "quốc tế",
+        "Text": "Mỹ",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "FillBlank",
-    "Difficulty": "Medium",
-    "Content": "Điền từ còn thiếu vào chỗ trống về ${topic}: (Biến thể ${i+1})",
-    "Explanation": "Các văn kiện Đảng đã ghi rõ đường lối chiến lược và sách lược.",
-    "ChallengePayloadJson": "{\"text\":\"Cách mạng là sự nghiệp của [1].\",\"blanks\":[\"quần chúng\"]}",
-    "Options": [
-      {
-        "Text": "quần chúng",
-        "IsCorrect": true
-      },
-      {
-        "Text": "cá nhân",
-        "IsCorrect": false
-      },
-      {
-        "Text": "anh hùng",
-        "IsCorrect": false
-      },
-      {
-        "Text": "quốc tế",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
     "QuestionType": "Matching",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Ghép mốc năm 1945 với nội dung phù hợp.",
+    "Explanation": "Các mốc này mở đầu giai đoạn tiền khởi nghĩa trực tiếp.",
+    "ChallengePayloadJson": "{\"pairs\": [{\"left\": \"9/3/1945\", \"right\": \"Nhật đảo chính Pháp\"}, {\"left\": \"12/3/1945\", \"right\": \"Chỉ thị Nhật - Pháp bắn nhau\"}, {\"left\": \"Cao trào kháng Nhật\", \"right\": \"Chuẩn bị trực tiếp Tổng khởi nghĩa\"}]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "9/3/1945 - Nhật đảo chính Pháp; 12/3/1945 - Chỉ thị Nhật - Pháp bắn nhau; Cao trào kháng Nhật - Chuẩn bị trực tiếp Tổng khởi nghĩa",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Ghép ngược toàn bộ các cặp",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Chỉ có cặp đầu tiên đúng",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Không có cặp nào đúng",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "Matching",
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
+    "QuestionType": "Ordering",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Sắp xếp các sự kiện sau Nhật đảo chính Pháp.",
+    "Explanation": "Đây là trình tự cơ bản của cao trào kháng Nhật cứu nước.",
+    "ChallengePayloadJson": "{\"items\": [\"Nhật đảo chính Pháp\", \"Ra chỉ thị Nhật - Pháp bắn nhau\", \"Phát động cao trào kháng Nhật\", \"Chuẩn bị Tổng khởi nghĩa\"], \"correctOrder\": [\"Nhật đảo chính Pháp\", \"Ra chỉ thị Nhật - Pháp bắn nhau\", \"Phát động cao trào kháng Nhật\", \"Chuẩn bị Tổng khởi nghĩa\"]}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Nhật đảo chính Pháp → Ra chỉ thị Nhật - Pháp bắn nhau → Phát động cao trào kháng Nhật → Chuẩn bị Tổng khởi nghĩa",
         "IsCorrect": true
       },
       {
-        "Text": "A-2, B-1",
+        "Text": "Chuẩn bị Tổng khởi nghĩa → Phát động cao trào kháng Nhật → Ra chỉ thị Nhật - Pháp bắn nhau → Nhật đảo chính Pháp",
         "IsCorrect": false
       },
       {
-        "Text": "A-1, B-3",
+        "Text": "Ra chỉ thị Nhật - Pháp bắn nhau → Phát động cao trào kháng Nhật → Chuẩn bị Tổng khởi nghĩa → Nhật đảo chính Pháp",
         "IsCorrect": false
       },
       {
-        "Text": "A-3, B-2",
+        "Text": "Nhật đảo chính Pháp → Phát động cao trào kháng Nhật → Ra chỉ thị Nhật - Pháp bắn nhau → Chuẩn bị Tổng khởi nghĩa",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "Matching",
+    "TopicName": "Chỉ thị Nhật – Pháp bắn nhau",
+    "QuestionType": "ShortAnswer",
     "Difficulty": "Medium",
-    "Content": "Nối các dữ kiện lịch sử sao cho phù hợp với ${topic}. (Phần ${i+1})",
-    "Explanation": "Các sự kiện lịch sử luôn gắn liền với nhân vật và thời gian.",
-    "ChallengePayloadJson": "{\"pairs\":[{\"left\":\"A\",\"right\":\"1\"},{\"left\":\"B\",\"right\":\"2\"}]}",
+    "Content": "Ý nghĩa của Chỉ thị Nhật - Pháp bắn nhau và hành động của chúng ta là gì?",
+    "Explanation": "Chỉ thị xác định kẻ thù trước mắt là phát xít Nhật, phát động cao trào kháng Nhật và chuẩn bị thời cơ khởi nghĩa.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"kẻ thù\", \"Nhật\", \"cao trào\", \"khởi nghĩa\"], \"sampleAnswer\": \"Chỉ thị xác định kẻ thù trước mắt là phát xít Nhật, phát động cao trào kháng Nhật và chuẩn bị thời cơ khởi nghĩa.\"}",
     "Options": [
       {
-        "Text": "A-1, B-2",
+        "Text": "Xem gợi ý trả lời",
         "IsCorrect": true
-      },
-      {
-        "Text": "A-2, B-1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-1, B-3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "A-3, B-2",
-        "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "Ordering",
-    "Difficulty": "Hard",
-    "Content": "Sắp xếp các sự kiện sau theo trình tự thời gian liên quan đến ${topic}. (Chuỗi ${i+1})",
-    "Explanation": "Trình tự thời gian cho thấy bước phát triển logic của đường lối Đảng.",
-    "ChallengePayloadJson": "{\"items\":[\"Sự kiện 1\",\"Sự kiện 2\",\"Sự kiện 3\"]}",
-    "Options": [
-      {
-        "Text": "1 -> 2 -> 3",
-        "IsCorrect": true
-      },
-      {
-        "Text": "2 -> 1 -> 3",
-        "IsCorrect": false
-      },
-      {
-        "Text": "3 -> 2 -> 1",
-        "IsCorrect": false
-      },
-      {
-        "Text": "1 -> 3 -> 2",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "ShortAnswer",
-    "Difficulty": "Hard",
-    "Content": "Nêu khái quát bài học lớn nhất rút ra từ ${topic}? (Câu ${i+1})",
-    "Explanation": "Việc tổng kết bài học giúp Đảng ngày càng trưởng thành.",
-    "ChallengePayloadJson": "{\"expectedKeywords\":[\"đoàn kết\",\"đường lối\"]}",
-    "Options": [
-      {
-        "Text": "Giữ vững độc lập tự chủ và đoàn kết",
-        "IsCorrect": true
-      },
-      {
-        "Text": "Chỉ dựa vào sự viện trợ từ bên ngoài",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Từ bỏ đấu tranh bạo lực",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Đợi thời cơ tự đến",
-        "IsCorrect": false
-      }
-    ]
-  },
-  {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
     "QuestionType": "CaseStudy",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Một bạn cho rằng thắng lợi tháng Tám chỉ do Nhật đầu hàng. Phản biện đúng là gì?",
+    "Explanation": "Nhật đầu hàng tạo thời cơ khách quan, nhưng thắng lợi cần sự chuẩn bị lực lượng lâu dài, Việt Minh và quyết định lãnh đạo kịp thời.",
+    "ChallengePayloadJson": "{\"case\": \"Một bạn cho rằng thắng lợi tháng Tám chỉ do Nhật đầu hàng. Phản biện đúng là gì?\", \"criteria\": [\"thời cơ\", \"chuẩn bị\", \"Việt Minh\", \"lãnh đạo\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Phải kết hợp điều kiện khách quan và chủ quan khi giải thích thắng lợi.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "TrueFalse",
+    "Difficulty": "Medium",
+    "Content": "Tuyên ngôn Độc lập ngày 2/9/1945 đánh dấu sự ra đời của nước Việt Nam Dân chủ Cộng hòa.",
+    "Explanation": "Đúng. Đây là kết quả chính trị quan trọng của Cách mạng Tháng Tám.",
+    "ChallengePayloadJson": "{\"statement\": \"Tuyên ngôn Độc lập ngày 2/9/1945 đánh dấu sự ra đời của nước Việt Nam Dân chủ Cộng hòa.\", \"answer\": true}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Đúng",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
-        "IsCorrect": false
-      },
-      {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Sai",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "CaseStudy",
-    "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "FillBlank",
+    "Difficulty": "Medium",
+    "Content": "Tổng khởi nghĩa tháng Tám thể hiện bài học chuẩn bị lực lượng và nắm bắt __________.",
+    "Explanation": "Nắm bắt thời cơ là bài học nổi bật của Cách mạng Tháng Tám.",
+    "ChallengePayloadJson": "{\"sentence\": \"Tổng khởi nghĩa tháng Tám thể hiện bài học chuẩn bị lực lượng và nắm bắt ____.\", \"answers\": [\"thời cơ\"]}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "thời cơ",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "nghị trường",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "thỏa hiệp",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "cấm vận",
         "IsCorrect": false
       }
     ]
   },
   {
-    "TopicName": "Việt Minh và Cách mạng Tháng Tám 1945",
-    "QuestionType": "CaseStudy",
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "ShortAnswer",
     "Difficulty": "Hard",
-    "Content": "Tình huống: Một nhóm nghiên cứu cho rằng ${topic} có những quyết định sai lầm. Bạn hãy phân tích bối cảnh để làm rõ tính đúng đắn. (Tình huống ${i+1})",
-    "Explanation": "Mỗi quyết định đều bị chi phối bởi hoàn cảnh lịch sử cụ thể, không thể phán xét bằng góc nhìn hiện đại.",
-    "ChallengePayloadJson": "{\"caseBrief\":\"Phân tích tình huống lịch sử dựa trên nguyên tắc khách quan.\",\"questions\":[\"Tại sao Đảng ra quyết định đó?\"]}",
+    "Content": "Nêu hai điều kiện chủ quan giúp Cách mạng Tháng Tám thắng lợi.",
+    "Explanation": "Hai điều kiện chủ quan là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng chính trị, vũ trang, căn cứ địa thông qua Việt Minh.",
+    "ChallengePayloadJson": "{\"expectedKeywords\": [\"Đảng\", \"Việt Minh\", \"lực lượng\", \"căn cứ địa\"], \"sampleAnswer\": \"Hai điều kiện chủ quan là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng chính trị, vũ trang, căn cứ địa thông qua Việt Minh.\"}",
     "Options": [
       {
-        "Text": "Phân tích khách quan đặt trong hoàn cảnh lịch sử cụ thể",
+        "Text": "Xem gợi ý trả lời",
+        "IsCorrect": true
+      }
+    ]
+  },
+  {
+    "TopicName": "Tổng khởi nghĩa tháng Tám 1945",
+    "QuestionType": "CaseStudy",
+    "Difficulty": "Hard",
+    "Content": "Nếu đề yêu cầu 'nguyên nhân thắng lợi Cách mạng Tháng Tám', cần tránh lỗi nào?",
+    "Explanation": "Cần tránh chỉ nêu Nhật đầu hàng hoặc chỉ kể sự kiện; phải phân tích cả nguyên nhân khách quan, chủ quan và quá trình chuẩn bị.",
+    "ChallengePayloadJson": "{\"case\": \"Nếu đề yêu cầu 'nguyên nhân thắng lợi Cách mạng Tháng Tám', cần tránh lỗi nào?\", \"criteria\": [\"một chiều\", \"khách quan\", \"chủ quan\", \"quá trình\"]}",
+    "Options": [
+      {
+        "Text": "Bài làm tốt phải nêu đường lối đúng, đại đoàn kết, chuẩn bị lực lượng và chớp thời cơ.",
         "IsCorrect": true
       },
       {
-        "Text": "Chỉ trích bằng góc nhìn hiện đại",
+        "Text": "Chỉ liệt kê mốc thời gian, không phân tích bối cảnh.",
         "IsCorrect": false
       },
       {
-        "Text": "Ủng hộ vô điều kiện không cần lý lẽ",
+        "Text": "Kết luận theo cảm tính, không dựa vào nội dung đường lối.",
         "IsCorrect": false
       },
       {
-        "Text": "Bỏ qua yếu tố hoàn cảnh quốc tế",
+        "Text": "Tách sự kiện khỏi quá trình chuẩn bị lực lượng.",
         "IsCorrect": false
       }
     ]
