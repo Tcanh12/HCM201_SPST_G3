@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Network, X, BookOpen, ChevronRight, Maximize2, Minimize2, CheckCircle, Search, Filter, ZoomIn, ZoomOut, Target, Star, RotateCcw, HelpCircle, Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useLearningProgress } from '../../components/theory/ProgressContext';
-import { canonicalConcepts } from '../../data/canonicalConcepts';
+import { conceptNodes, conceptEdges as predefinedEdges } from '../../data/conceptMapData';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -186,28 +186,13 @@ function ConceptMapContent() {
 
   // Safely map edges
   const conceptEdges = useMemo(() => {
-    try {
-      const edges = [];
-      (canonicalConcepts || []).forEach(node => {
-        if (node.relatedConceptIds) {
-          node.relatedConceptIds.forEach(targetId => {
-            if (canonicalConcepts.some(c => c.id === targetId)) {
-              edges.push({ source: node.id, target: targetId });
-            }
-          });
-        }
-      });
-      return edges;
-    } catch(err) {
-      console.error("Error creating edges", err);
-      return [];
-    }
+    return predefinedEdges || [];
   }, []);
 
   // Compute positions
   const nodesWithPositions = useMemo(() => {
     try {
-      const positioned = JSON.parse(JSON.stringify(canonicalConcepts || []));
+      const positioned = JSON.parse(JSON.stringify(conceptNodes || []));
       
       // Root
       const root = positioned.find(n => n.level === 0);
@@ -215,24 +200,24 @@ function ConceptMapContent() {
       
       // Chapters (level 1)
       const chapters = positioned.filter(n => n.level === 1);
-      const radius1 = 450; // Increased significantly
+      const radius1 = 480; 
       chapters.forEach((chap, i) => {
         const angle = (i / chapters.length) * 2 * Math.PI - Math.PI/2;
         chap.x = centerX + radius1 * Math.cos(angle);
         chap.y = centerY + radius1 * Math.sin(angle);
-        chap.angle = angle; // Store angle to fan out concepts
+        chap.angle = angle; 
       });
       
       // Concepts (level 2)
       chapters.forEach((chap) => {
         const conceptsL2 = positioned.filter(n => n.chapterId === chap.chapterId && n.level === 2);
-        const radius2 = 280; // Distance from chapter
+        const radius2 = 320; 
         const baseAngle = chap.angle;
         
         conceptsL2.forEach((concept, j) => {
           let spread = 0;
           if (conceptsL2.length > 1) {
-              const maxSpread = Math.PI * 1.3; // Spread outward 1.3 PI
+              const maxSpread = Math.PI * 1.4; 
               const step = maxSpread / (conceptsL2.length - 1); 
               spread = -(maxSpread / 2) + j * step;
           }
@@ -331,8 +316,8 @@ function ConceptMapContent() {
             <Star className="w-5 h-5 text-yellow-300 fill-current" />
           </div>
           <div className="hidden sm:block">
-            <h2 className="m-0 text-[17px] font-bold text-red-900 leading-tight">Bản đồ tri thức</h2>
-            <p className="m-0 text-[12px] text-gray-500 font-medium">Hệ thống hóa trọng tâm môn Tư tưởng Hồ Chí Minh</p>
+            <h2 className="m-0 text-[17px] font-bold text-red-900 leading-tight">Bản đồ khái niệm VNR202</h2>
+            <p className="m-0 text-[12px] text-gray-500 font-medium">Liên kết các giai đoạn, văn kiện, phong trào và bài học trong đường lối đấu tranh cách mạng của Đảng giai đoạn 1930–1945.</p>
           </div>
         </div>
 
@@ -489,15 +474,6 @@ function ConceptMapContent() {
                   const isDimmed = selectedNode && !isSelected && !(selectedNode.level === 1 && node.chapterId === selectedNode.chapterId);
                   
                   const baseColor = getNodeColor(node);
-                  const radius = getNodeSize(node.level);
-                  
-                  // Label Logic
-                  const shouldShowLabel = 
-                    node.level === 0 || 
-                    node.level === 1 || 
-                    isSelected || 
-                    isHovered || 
-                    showAllLabels;
                   
                   return (
                     <g 
@@ -508,49 +484,28 @@ function ConceptMapContent() {
                       onPointerLeave={() => setHoveredNode(null)}
                       onPointerDown={(e) => e.stopPropagation()} 
                     >
-                      {/* Outer Glow */}
-                      {(isSelected || isHovered) && (
-                        <circle cx={node.x} cy={node.y} r={radius + (isSelected ? 16 : 10)} fill={baseColor} opacity={0.15} className="animate-pulse" />
-                      )}
-                      
-                      {/* Node Circle */}
-                      <circle
-                        cx={node.x} cy={node.y} r={radius}
-                        fill={baseColor}
-                        className="transition-all duration-300 drop-shadow-md hover:drop-shadow-xl"
-                        stroke={isSelected ? "#111827" : isViewed ? "#16a34a" : "#ffffff"}
-                        strokeWidth={isSelected ? 5 : isViewed ? 4 : 2}
-                      />
-                      
-                      {/* Center Node Icon */}
-                      {node.level === 0 && (
-                        <Star x={node.x - 18} y={node.y - 18} width={36} height={36} className="text-yellow-300 fill-current" />
-                      )}
-
-                      {/* Viewed Badge */}
-                      {isViewed && node.level > 0 && !isSelected && (
-                        <circle cx={node.x + radius - 4} cy={node.y - radius + 4} r={8} fill="#16a34a" stroke="#fff" strokeWidth={2} />
-                      )}
-
-                      {/* Wrapped Label */}
-                      {shouldShowLabel && (
-                        <text
-                          x={node.x} 
-                          y={node.y + radius + (node.level === 0 ? 24 : 18)}
-                          textAnchor="middle"
-                          className={`transition-all duration-300 pointer-events-none select-none ${isSelected || isHovered ? 'font-bold fill-gray-900 drop-shadow-sm' : 'font-semibold fill-gray-700'}`}
-                          fontSize={node.level === 0 ? "20px" : node.level === 1 ? "16px" : "14px"}
-                        >
-                          {wrapLabel(node.title, node.level === 0 ? 28 : node.level === 1 ? 20 : 16).map((line, index) => (
-                            <tspan
-                              key={index}
-                              x={node.x}
-                              dy={index === 0 ? 0 : (node.level === 0 ? 22 : 18)}
-                            >
-                              {line}
-                            </tspan>
-                          ))}
-                        </text>
+                      {node.level === 0 ? (
+                        <foreignObject x={node.x - 85} y={node.y - 85} width={170} height={170} className="overflow-visible">
+                          <div className={`w-full h-full rounded-full flex flex-col items-center justify-center text-center p-4 border-[4px] shadow-[0_0_24px_rgba(220,38,38,0.4)] transition-all ${isSelected ? 'border-white scale-110' : 'border-[#FACC15] hover:scale-105'}`} style={{ backgroundColor: '#DC2626', color: '#fff' }}>
+                            <Star className="w-10 h-10 text-[#FACC15] fill-current mb-1" />
+                            <span className="text-[18px] font-black uppercase tracking-wide leading-tight">VNR202</span>
+                            <span className="text-[11px] font-semibold opacity-95 mt-1 leading-tight">Đường lối 1930-1945</span>
+                          </div>
+                        </foreignObject>
+                      ) : node.level === 1 ? (
+                        <foreignObject x={node.x - 85} y={node.y - 35} width={170} height={70} className="overflow-visible">
+                          <div className={`w-full h-full flex flex-col items-center justify-center rounded-2xl border-2 px-3 text-center shadow-lg transition-all ${isSelected ? 'border-gray-900 scale-110 shadow-2xl z-10' : 'border-white hover:scale-105'}`} style={{ backgroundColor: baseColor, color: '#fff' }}>
+                            <span className="text-[14px] font-bold leading-snug">{node.title}</span>
+                            {isViewed && <CheckCircle className="w-5 h-5 text-green-400 absolute -top-2 -right-2 bg-white rounded-full shadow-sm" />}
+                          </div>
+                        </foreignObject>
+                      ) : (
+                        <foreignObject x={node.x - 70} y={node.y - 25} width={140} height={50} className="overflow-visible">
+                          <div className={`w-full h-full flex items-center justify-center rounded-xl px-2 text-center shadow-md transition-all ${isSelected ? 'border-gray-900 scale-110 shadow-xl z-10' : 'hover:scale-105'}`} style={{ backgroundColor: '#ffffff', color: baseColor, border: `2px solid ${baseColor}` }}>
+                            <span className="text-[12px] font-bold leading-tight line-clamp-2">{node.title}</span>
+                            {isViewed && <CheckCircle className="w-4 h-4 text-green-500 absolute -top-1.5 -right-1.5 bg-white rounded-full shadow-sm" />}
+                          </div>
+                        </foreignObject>
                       )}
                     </g>
                   );
@@ -614,20 +569,24 @@ function ConceptMapContent() {
                 <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
                   <div className="space-y-6">
                     {/* Definition / Description */}
-                    {(selectedNode.shortDescription || selectedNode.definition || selectedNode.explanation) && (
-                      <div className="bg-red-50/60 p-5 rounded-2xl border border-red-100 text-gray-800 leading-relaxed text-sm">
-                        {selectedNode.shortDescription && <p className="font-semibold text-gray-900 mb-2">{selectedNode.shortDescription}</p>}
-                        <p>{selectedNode.definition || selectedNode.explanation}</p>
+                    {(selectedNode.shortDescription || selectedNode.coreContent) && (
+                      <div className="bg-red-50/60 p-5 rounded-2xl border border-red-100 text-gray-800 text-sm">
+                        {selectedNode.shortDescription && <p className="font-bold text-red-800 mb-3 text-base leading-snug">{selectedNode.shortDescription}</p>}
+                        
+                        <h4 className="text-[11px] font-bold text-red-600 uppercase tracking-widest mb-2 mt-4 flex items-center gap-2">
+                          <BookOpen className="w-3.5 h-3.5" /> Nội dung cốt lõi
+                        </h4>
+                        <p className="leading-relaxed text-gray-700 whitespace-pre-line">{selectedNode.coreContent}</p>
                       </div>
                     )}
 
                     {/* Why Important */}
-                    {selectedNode.whyImportant && (
+                    {selectedNode.importance && (
                       <div>
                         <h4 className="text-[11px] font-bold text-orange-600 uppercase tracking-widest mb-3 flex items-center gap-2">
                           <Star className="w-3.5 h-3.5" /> Vì sao quan trọng?
                         </h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">{selectedNode.whyImportant}</p>
+                        <p className="text-gray-600 text-sm leading-relaxed">{selectedNode.importance}</p>
                       </div>
                     )}
 
@@ -717,12 +676,12 @@ function ConceptMapContent() {
                     )}
 
                     {/* Related Concepts */}
-                    {selectedNode.relatedConceptIds?.length > 0 && (
+                    {selectedNode.relatedConcepts?.length > 0 && (
                       <div className="pt-4 border-t border-gray-100">
                         <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-3">Khái niệm liên quan</h4>
                         <div className="flex flex-wrap gap-2">
-                          {selectedNode.relatedConceptIds.map(id => {
-                            const relatedNode = canonicalConcepts.find(n => n.id === id);
+                          {selectedNode.relatedConcepts.map(id => {
+                            const relatedNode = conceptNodes.find(n => n.id === id);
                             return relatedNode ? (
                               <button
                                 key={id}

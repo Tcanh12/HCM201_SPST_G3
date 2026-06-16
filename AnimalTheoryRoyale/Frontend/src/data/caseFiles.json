@@ -1,171 +1,434 @@
 [
   {
-    "id": "hoc-that-thi-that",
-    "title": "Học thật, thi thật",
-    "summary": "Một tình huống về trung thực trong học tập.",
-    "chapterIds": ["chuong-6"],
-    "lessonIds": ["hcm-ch06-dao-duc-cach-mang"],
-    "conceptIds": ["dao-duc-cach-mang", "noi-di-doi-voi-lam"],
-    "difficulty": "easy",
-    "tags": ["Đạo đức cách mạng", "Nói đi đôi với làm", "Trung thực"],
-    "situation": "Một sinh viên chuẩn bị thi cuối kỳ. Bạn bè gửi đáp án và rủ sử dụng tài liệu trái quy định. Sinh viên đứng trước lựa chọn: làm theo để có điểm cao hoặc trung thực với kết quả học tập của mình.",
-    "analysis": "Theo tư tưởng Hồ Chí Minh về đạo đức cách mạng, người học cần rèn luyện sự trung thực, trách nhiệm và tự giác. Học thật, thi thật là biểu hiện cụ thể của việc nói đi đôi với làm, không chạy theo thành tích giả. Chạy theo điểm số bằng cách gian lận là biểu hiện của sự suy thoái về đạo đức cá nhân.",
-    "lesson": "Trung thực trong học tập là nền tảng để hình thành nhân cách, năng lực thật và trách nhiệm với bản thân, gia đình, xã hội.",
-    "reflectionQuestion": "Nếu là sinh viên trong tình huống này, bạn sẽ chọn cách xử lý nào? Vì sao?",
+    "id": "case-cuong-linh-vs-luan-cuong",
+    "title": "So sánh Cương lĩnh 1930 và Luận cương 10/1930",
+    "summary": "Người học phân biệt hai văn kiện, nhận diện điểm đúng đắn của Cương lĩnh và hạn chế của Luận cương.",
+    "situation": "Có ý kiến cho rằng Luận cương chính trị tháng 10/1930 đã thay thế hoàn toàn Cương lĩnh chính trị đầu tiên vì Cương lĩnh còn nhiều hạn chế về giai cấp. Bạn hãy đóng vai một nhà nghiên cứu lịch sử Đảng để giải quyết vấn đề này.",
+    "analysis": "Cần phân tích sự khác biệt về bối cảnh, nhiệm vụ, lực lượng và quan điểm dân tộc - giai cấp giữa hai văn kiện.",
+    "lesson": "Nhận thức đường lối cách mạng là một quá trình. Cương lĩnh đã xác định đúng đắn vấn đề dân tộc, trong khi Luận cương nhấn mạnh đấu tranh giai cấp do bối cảnh bấy giờ.",
+    "reflectionQuestion": "Vì sao Cương lĩnh chính trị đầu tiên được đánh giá là đúng đắn, sáng tạo và phù hợp với thực tiễn Việt Nam hơn Luận cương tháng 10/1930?",
+    "suggestedAnswer": "Vì Cương lĩnh đặt nhiệm vụ chống đế quốc, giải phóng dân tộc lên hàng đầu, phù hợp với mâu thuẫn cơ bản của xã hội thuộc địa. Cương lĩnh cũng tập hợp được đông đảo lực lượng (kể cả tư sản dân tộc, địa chủ vừa và nhỏ).",
+    "teacherNote": "Nhấn mạnh với sinh viên: Sự khác biệt lớn nhất nằm ở việc xử lý mối quan hệ giữa dân tộc và giai cấp, và thái độ đối với các giai cấp tầng lớp trên.",
+    "chapterIds": ["chuong-1"],
+    "lessonIds": ["vnr-ch1-cuong-linh-luan-cuong"],
+    "conceptIds": ["cuong-linh-1930", "luan-cuong-1930"],
+    "tags": ["Văn kiện", "1930–1945", "đường lối", "So sánh"],
     "discussionPrompts": [
-      "Nếu là bạn, bạn sẽ làm gì?",
-      "Hành vi gian lận ảnh hưởng thế nào đến năng lực thật?",
-      "Tình huống này liên hệ với nguyên tắc đạo đức nào?"
+      "Bối cảnh ra đời của Cương lĩnh có gì khác Luận cương?",
+      "Thái độ của Nguyễn Ái Quốc và Trần Phú đối với tư sản dân tộc khác nhau như thế nào?"
     ],
-    "suggestedAnswer": "Sinh viên nên từ chối tham gia gian lận và tự làm bài bằng thực lực của mình. Việc này thể hiện tính trung thực, đạo đức và tôn trọng kỷ luật.",
-    "teacherNote": "Giáo viên có thể sử dụng tình huống này để thảo luận về tính trung thực, liên hệ tới nguyên tắc 'Nói đi đôi với làm'.",
-    "requiresVerification": false
-  },
-  {
-    "id": "doan-ket-thoi-dai-so",
-    "title": "Đoàn kết trong thời đại số",
-    "summary": "Mạng xã hội và những thách thức về tinh thần đại đoàn kết.",
-    "chapterIds": ["chuong-5"],
-    "lessonIds": ["hcm-ch05-dai-doan-ket"],
-    "conceptIds": ["dai-doan-ket", "van-hoa-so"],
     "difficulty": "medium",
-    "tags": ["Đại đoàn kết toàn dân tộc", "Văn hóa số", "Trách nhiệm công dân"],
-    "situation": "Trên mạng xã hội xuất hiện một bài viết gây chia rẽ vùng miền và kích động tranh cãi. Nhiều người hùa theo, bình luận công kích và chia sẻ lại mà không kiểm chứng thông tin, gây hoang mang trong dư luận.",
-    "analysis": "Tinh thần đại đoàn kết trong thời đại số thể hiện qua việc tôn trọng khác biệt, không lan truyền thông tin gây chia rẽ, không kích động thù ghét và biết xây dựng môi trường mạng tích cực. Việc hùa theo các nội dung kích động là vi phạm nghiêm trọng nguyên tắc xây dựng khối đại đoàn kết của Hồ Chí Minh.",
-    "lesson": "Đoàn kết không chỉ thể hiện trong đời sống trực tiếp, mà còn thể hiện qua cách mỗi người hành xử trên không gian mạng.",
-    "reflectionQuestion": "Bạn nên làm gì khi gặp nội dung có khả năng gây chia rẽ cộng đồng?",
-    "discussionPrompts": [
-      "Thông tin sai lệch trên mạng ảnh hưởng thế nào đến khối đại đoàn kết?",
-      "Trách nhiệm của công dân trên không gian mạng là gì?"
+    "requiresVerification": false,
+    "interactiveTasks": [
+      {
+        "type": "choice",
+        "question": "Điểm nổi bật của Cương lĩnh chính trị đầu tiên là gì?",
+        "options": [
+          "Nhấn mạnh đấu tranh nghị trường.",
+          "Đặt vấn đề độc lập dân tộc lên trung tâm.",
+          "Chủ trương tạm gác mọi hình thức đấu tranh.",
+          "Chỉ đề cao nhiệm vụ ruộng đất."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Cương lĩnh do Nguyễn Ái Quốc soạn thảo đã đánh giá đúng mâu thuẫn chủ yếu ở một nước thuộc địa là mâu thuẫn dân tộc, do đó đặt độc lập dân tộc làm nhiệm vụ hàng đầu."
+      }
     ],
-    "suggestedAnswer": "Không chia sẻ, không bình luận kích động, và báo cáo nội dung xấu độc nếu cần thiết.",
-    "teacherNote": "Nhấn mạnh tác động của mạng xã hội đến xã hội thực tế và vai trò của người trẻ.",
-    "requiresVerification": false
+    "evidenceCards": [
+      {
+        "title": "Dữ kiện 1: Bối cảnh",
+        "content": "Cương lĩnh ra đời đầu 1930 khi phong trào yêu nước đang cần một định hướng. Luận cương ra đời cuối 1930 khi cao trào cách mạng đang lên cao và có sự chỉ đạo sát sao từ Quốc tế Cộng sản."
+      },
+      {
+        "title": "Dữ kiện 2: Lực lượng",
+        "content": "Cương lĩnh chủ trương lôi kéo cả tư sản dân tộc, trung nông, tiểu địa chủ. Luận cương chỉ nhấn mạnh công nhân và nông dân."
+      }
+    ],
+    "analysisSteps": [
+      {
+        "title": "Bước 1",
+        "content": "Xác định bối cảnh ra đời của từng văn kiện."
+      },
+      {
+        "title": "Bước 2",
+        "content": "So sánh nhiệm vụ cách mạng."
+      },
+      {
+        "title": "Bước 3",
+        "content": "So sánh lực lượng cách mạng."
+      },
+      {
+        "title": "Bước 4",
+        "content": "So sánh cách nhìn về vấn đề dân tộc và vấn đề giai cấp."
+      },
+      {
+        "title": "Bước 5",
+        "content": "Rút nhận xét về sự phát triển nhận thức đường lối."
+      }
+    ],
+    "keyTakeaways": [
+      "Cương lĩnh 1930 đúng đắn và sáng tạo vì giương cao ngọn cờ dân tộc.",
+      "Luận cương 10/1930 có hạn chế do chưa đánh giá đúng khả năng cách mạng của các tầng lớp trên và nhấn mạnh quá mức đấu tranh giai cấp."
+    ],
+    "category": "Văn kiện và đường lối"
   },
   {
-    "id": "can-bo-phuc-vu",
-    "title": "Cán bộ phục vụ nhân dân",
-    "summary": "Tình huống về thái độ làm việc của cán bộ công chức.",
+    "id": "case-xo-viet",
+    "title": "Xô viết Nghệ Tĩnh và bài học bảo toàn lực lượng",
+    "summary": "Phân tích nguyên nhân bùng nổ Xô viết Nghệ Tĩnh và rút bài học về tổ chức, bảo toàn lực lượng.",
+    "situation": "Nhiều ý kiến cho rằng Xô viết Nghệ Tĩnh nổ ra là do sự xúi giục của Quốc tế Cộng sản, đồng thời đây là một phong trào thất bại vì bị dập tắt nhanh chóng. Hãy phân tích bối cảnh để phản biện ý kiến này.",
+    "analysis": "Phân tích dựa trên nguyên nhân sâu xa (áp bức bóc lột) và trực tiếp (khủng hoảng kinh tế 1929-1933, khủng bố trắng). Đánh giá phong trào là cuộc tổng diễn tập chứ không phải sự thất bại.",
+    "lesson": "Xô viết Nghệ Tĩnh để lại bài học lớn về liên minh công nông, xây dựng mặt trận, và đặc biệt là nghệ thuật bảo toàn lực lượng khi thoái trào.",
+    "reflectionQuestion": "Theo bạn, nếu không có cuộc khủng hoảng kinh tế 1929-1933, Xô viết Nghệ Tĩnh có bùng nổ mạnh mẽ như vậy không?",
+    "suggestedAnswer": "Có thể vẫn nổ ra nhưng khó đạt đỉnh cao như vậy. Khủng hoảng kinh tế làm đời sống nhân dân, đặc biệt là công nhân và nông dân Nghệ-Tĩnh, vô cùng cực khổ, tạo thành 'thùng thuốc súng' chỉ chờ mồi lửa.",
+    "teacherNote": "Hướng dẫn sinh viên nhận diện: Đỉnh cao phong trào là việc lập chính quyền Xô viết sơ khai. Bài học lớn nhất cho giai đoạn sau là phải biết cách rút lui để bảo toàn lực lượng.",
+    "chapterIds": ["chuong-2"],
+    "lessonIds": ["vnr-ch2-xo-viet-phuc-hoi"],
+    "conceptIds": ["xo-viet-nghe-tinh", "phuc-hoi-to-chuc"],
+    "tags": ["Phong trào", "1930–1945", "bảo toàn lực lượng"],
+    "discussionPrompts": [
+      "Tại sao Nghệ An và Hà Tĩnh lại là nơi phong trào phát triển mạnh nhất?",
+      "Phong trào đã để lại những kinh nghiệm gì về tổ chức chính quyền?"
+    ],
+    "difficulty": "easy",
+    "requiresVerification": false,
+    "interactiveTasks": [
+      {
+        "type": "choice",
+        "question": "Vì sao Xô viết Nghệ Tĩnh có ý nghĩa như một cuộc tổng diễn tập đầu tiên?",
+        "options": [
+          "Vì phong trào chỉ diễn ra trong nghị trường.",
+          "Vì phong trào rèn luyện quần chúng, cán bộ và kiểm nghiệm năng lực lãnh đạo của Đảng.",
+          "Vì phong trào không gặp đàn áp.",
+          "Vì phong trào chỉ có trí thức tham gia."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Xô viết Nghệ Tĩnh tuy thất bại nhưng đã khẳng định vai trò lãnh đạo của Đảng, rèn luyện liên minh công nông, là cuộc diễn tập đầu tiên chuẩn bị cho Cách mạng Tháng Tám."
+      }
+    ],
+    "evidenceCards": [
+      {
+        "title": "Dữ kiện 1: Nguyên nhân",
+        "content": "Khủng hoảng kinh tế 1929-1933 làm nông nghiệp phá sản, công nhân thất nghiệp, cộng với chính sách khủng bố trắng của Pháp."
+      },
+      {
+        "title": "Dữ kiện 2: Diễn biến",
+        "content": "Từ các cuộc đấu tranh đòi quyền lợi dân sinh, phong trào chuyển sang bạo động chính trị, đỉnh cao là thành lập chính quyền Xô viết ở một số xã."
+      }
+    ],
+    "analysisSteps": [
+      {
+        "title": "Bước 1",
+        "content": "Xác định nguyên nhân kinh tế – xã hội."
+      },
+      {
+        "title": "Bước 2",
+        "content": "Phân tích vai trò công nhân, nông dân."
+      },
+      {
+        "title": "Bước 3",
+        "content": "Nhận diện điểm mạnh của phong trào."
+      },
+      {
+        "title": "Bước 4",
+        "content": "Phân tích nguyên nhân bị đàn áp."
+      },
+      {
+        "title": "Bước 5",
+        "content": "Rút bài học cho giai đoạn 1932–1935."
+      }
+    ],
+    "keyTakeaways": [
+      "Khẳng định sức mạnh dời non lấp biển của quần chúng khi được tổ chức.",
+      "Bài học xương máu về khởi nghĩa vũ trang, lập chính quyền và bảo toàn lực lượng."
+    ],
+    "category": "Phong trào và tổ chức lực lượng"
+  },
+  {
+    "id": "case-phuc-hoi",
+    "title": "Phục hồi tổ chức sau đàn áp 1931",
+    "summary": "Hiểu cách Đảng khôi phục lực lượng sau tổn thất, vai trò của chi bộ nhà tù và hoạt động bí mật.",
+    "situation": "Sau năm 1931, phần lớn Ban Chấp hành Trung ương bị bắt, các cơ sở Đảng bị phá vỡ. Làm thế nào một đảng vừa mới thành lập lại có thể phục hồi nhanh chóng và tiến tới Đại hội I (1935)?",
+    "analysis": "Cần phân tích các phương thức hoạt động linh hoạt: đấu tranh trong nhà tù, hoạt động hải ngoại, và sự hỗ trợ của Quốc tế Cộng sản.",
+    "lesson": "Sức sống mãnh liệt của cách mạng không chỉ ở những cao trào mà còn ở khả năng kiên trì bám trụ, huấn luyện cán bộ ngay trong hoàn cảnh ngặt nghèo nhất.",
+    "reflectionQuestion": "Vai trò của các 'trường học cộng sản' trong nhà tù đế quốc có ý nghĩa như thế nào đối với sự phục hồi của Đảng?",
+    "suggestedAnswer": "Nhà tù đế quốc vô tình trở thành nơi rèn luyện bản lĩnh chính trị, truyền bá lý luận và kinh nghiệm hoạt động bí mật. Nhiều cán bộ nòng cốt cho các giai đoạn sau trưởng thành từ đây.",
+    "teacherNote": "Liên hệ đến Chương trình hành động (6/1932) và sự kiện Đại hội lần thứ I (3/1935) ở Ma Cao.",
+    "chapterIds": ["chuong-2"],
+    "lessonIds": ["vnr-ch2-xo-viet-phuc-hoi"],
+    "conceptIds": ["phuc-hoi-to-chuc"],
+    "tags": ["Phục hồi", "1932–1935", "Đại hội I"],
+    "discussionPrompts": [
+      "Trung ương Đảng hải ngoại đã làm gì để nối lại liên lạc với cơ sở trong nước?",
+      "Những hạn chế của Đại hội I năm 1935 là gì?"
+    ],
+    "difficulty": "medium",
+    "requiresVerification": false,
+    "interactiveTasks": [
+      {
+        "type": "choice",
+        "question": "Sự kiện nào đánh dấu hệ thống tổ chức của Đảng đã được phục hồi từ Trung ương đến địa phương?",
+        "options": [
+          "Ban hành Chương trình hành động (1932)",
+          "Thành lập Ban Lãnh đạo Trung ương hải ngoại (1934)",
+          "Đại hội đại biểu lần thứ I của Đảng (3/1935)",
+          "Hội nghị Ban Chấp hành Trung ương (7/1936)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Đại hội I (3/1935) đã bầu ra Ban Chấp hành Trung ương mới, chính thức đánh dấu tổ chức Đảng đã được khôi phục hoàn toàn."
+      }
+    ],
+    "evidenceCards": [
+      {
+        "title": "Dữ kiện 1: Tổn thất",
+        "content": "Hàng vạn đảng viên và quần chúng bị bắt, bị tù đày. Hệ thống liên lạc bị đứt gãy hoàn toàn."
+      },
+      {
+        "title": "Dữ kiện 2: Giải pháp",
+        "content": "Chương trình hành động (1932) đề ra các khẩu hiệu đấu tranh linh hoạt, chuyển vào hoạt động bí mật, biến nhà tù thành trường học."
+      }
+    ],
+    "analysisSteps": [
+      {
+        "title": "Bước 1",
+        "content": "Xác định mức độ tổn thất sau 1931."
+      },
+      {
+        "title": "Bước 2",
+        "content": "Tìm các hình thức phục hồi tổ chức."
+      },
+      {
+        "title": "Bước 3",
+        "content": "Phân tích vai trò của cán bộ và cơ sở quần chúng."
+      },
+      {
+        "title": "Bước 4",
+        "content": "Giải thích ý nghĩa Đại hội I năm 1935."
+      },
+      {
+        "title": "Bước 5",
+        "content": "Rút bài học về xây dựng tổ chức cách mạng."
+      }
+    ],
+    "keyTakeaways": [
+      "Khẳng định bản lĩnh và sức sống kiên cường của Đảng.",
+      "Bài học về công tác cán bộ, giữ vững niềm tin và tận dụng mọi không gian đấu tranh."
+    ],
+    "category": "Phong trào và tổ chức lực lượng"
+  },
+  {
+    "id": "case-dan-chu",
+    "title": "Phong trào dân chủ có phải từ bỏ mục tiêu độc lập?",
+    "summary": "Phân biệt chiến lược và sách lược, hiểu sự chuyển hướng linh hoạt của Đảng trong giai đoạn 1936-1939.",
+    "situation": "Năm 1936, Đảng đề ra khẩu hiệu đòi quyền dân sinh, dân chủ, chống phát xít, tạm gác khẩu hiệu 'Độc lập dân tộc' và 'Tịch thu ruộng đất'. Có người cho rằng Đảng đã thỏa hiệp và đi chệch hướng Cương lĩnh.",
+    "analysis": "Cần phân tích bối cảnh thế giới (phát xít đe dọa) và trong nước (Mặt trận bình dân Pháp cầm quyền) để thấy việc thay đổi khẩu hiệu là sách lược tạm thời nhằm tập hợp lực lượng rộng rãi nhất.",
+    "lesson": "Nguyên tắc kiên định về chiến lược (độc lập dân tộc), nhưng vô cùng linh hoạt về sách lược (nhiệm vụ trước mắt, khẩu hiệu, hình thức đấu tranh).",
+    "reflectionQuestion": "Theo bạn, nếu Đảng vẫn giữ nguyên khẩu hiệu 'Đánh đổ đế quốc Pháp' trong giai đoạn 1936-1939 thì hậu quả sẽ là gì?",
+    "suggestedAnswer": "Nếu giữ nguyên khẩu hiệu đó, Đảng sẽ không tận dụng được không gian hợp pháp do chính phủ Mặt trận bình dân Pháp tạo ra, tự cô lập mình, không tập hợp được các lực lượng dân chủ, tiến bộ, và có thể bị đàn áp khốc liệt.",
+    "teacherNote": "Làm rõ sự khác nhau giữa nhiệm vụ chiến lược (lâu dài) và nhiệm vụ trực tiếp, trước mắt (sách lược).",
+    "chapterIds": ["chuong-3"],
+    "lessonIds": ["vnr-ch3-phong-trao-dan-chu"],
+    "conceptIds": ["mat-tran-dan-chu"],
+    "tags": ["Dân chủ", "Sách lược", "1936-1939"],
+    "discussionPrompts": [
+      "Tại sao gọi phong trào 1936-1939 là 'cuộc diễn tập lần thứ hai'?",
+      "Hình thức đấu tranh công khai, hợp pháp mang lại lợi thế gì?"
+    ],
+    "difficulty": "medium",
+    "requiresVerification": false,
+    "interactiveTasks": [
+      {
+        "type": "choice",
+        "question": "Vì sao phong trào dân chủ 1936–1939 không phải là từ bỏ mục tiêu cách mạng?",
+        "options": [
+          "Vì mục tiêu chiến lược không thay đổi, chỉ điều chỉnh nhiệm vụ trước mắt và hình thức đấu tranh.",
+          "Vì Đảng ngừng hoạt động.",
+          "Vì Đảng chỉ hoạt động nghị trường.",
+          "Vì phong trào không có quần chúng."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Đảng vẫn kiên định mục tiêu chiến lược là độc lập dân tộc và CNXH, việc đấu tranh đòi dân chủ chỉ là sách lược trước mắt để đối phó với nguy cơ phát xít."
+      }
+    ],
+    "evidenceCards": [
+      {
+        "title": "Dữ kiện 1: Bối cảnh thế giới",
+        "content": "Chủ nghĩa phát xít xuất hiện, Quốc tế Cộng sản chủ trương lập Mặt trận nhân dân chống phát xít. Ở Pháp, Mặt trận bình dân lên nắm quyền."
+      },
+      {
+        "title": "Dữ kiện 2: Chủ trương của Đảng",
+        "content": "Hội nghị tháng 7/1936 xác định kẻ thù trước mắt là bọn phản động thuộc địa; nhiệm vụ trước mắt là chống phát xít, đòi tự do, dân sinh, dân chủ."
+      }
+    ],
+    "analysisSteps": [
+      {
+        "title": "Bước 1",
+        "content": "Xác định bối cảnh chống phát xít."
+      },
+      {
+        "title": "Bước 2",
+        "content": "Xác định kẻ thù trước mắt."
+      },
+      {
+        "title": "Bước 3",
+        "content": "Phân biệt nhiệm vụ trước mắt với mục tiêu lâu dài."
+      },
+      {
+        "title": "Bước 4",
+        "content": "Phân tích hình thức đấu tranh công khai, hợp pháp."
+      },
+      {
+        "title": "Bước 5",
+        "content": "Rút bài học về linh hoạt sách lược."
+      }
+    ],
+    "keyTakeaways": [
+      "Nghệ thuật phân hóa kẻ thù: chỉ tập trung mũi nhọn vào kẻ thù nguy hiểm nhất.",
+      "Tận dụng tối đa điều kiện hợp pháp, nửa hợp pháp để giác ngộ quần chúng."
+    ],
+    "category": "Điều chỉnh sách lược"
+  },
+  {
+    "id": "case-tw8",
+    "title": "Hội nghị Trung ương 8 và nhiệm vụ giải phóng dân tộc",
+    "summary": "Hiểu vì sao Hội nghị TW8 là mốc hoàn chỉnh chuyển hướng chiến lược, vai trò của lãnh tụ Nguyễn Ái Quốc.",
+    "situation": "Năm 1941, Nguyễn Ái Quốc về nước và chủ trì Hội nghị TW8. Hội nghị đã quyết định tạm gác khẩu hiệu 'cách mạng ruộng đất' và thành lập Mặt trận Việt Minh. Hãy phân tích vì sao đây là bước ngoặt quyết định cho thắng lợi Tháng Tám.",
+    "analysis": "Phân tích quá trình chuyển hướng chiến lược từ Hội nghị TW6 (1939) đến TW8 (1941), trong đó TW8 đã giải quyết triệt để vấn đề dân tộc trong khuôn khổ từng nước Đông Dương.",
+    "lesson": "Khi vận mệnh dân tộc nguy vong, quyền lợi của bộ phận, giai cấp phải phục tùng sự sinh tồn của quốc gia, dân tộc.",
+    "reflectionQuestion": "Việc thành lập Mặt trận Việt Minh khác biệt như thế nào so với Mặt trận Dân chủ Đông Dương (1936-1939)?",
+    "suggestedAnswer": "Việt Minh (Việt Nam độc lập đồng minh) giới hạn khuôn khổ trong nước Việt Nam, với mục tiêu duy nhất và tối thượng là đánh đuổi Pháp-Nhật, giành độc lập. Tên gọi các hội cứu quốc thể hiện tính chất dân tộc sâu sắc.",
+    "teacherNote": "Nhấn mạnh 'chuyển hướng hoàn chỉnh': giải quyết vấn đề dân tộc tự quyết, hình thức chính quyền (VNDCCH), và phương pháp khởi nghĩa vũ trang.",
     "chapterIds": ["chuong-4"],
-    "lessonIds": ["hcm-ch04-nha-nuoc"],
-    "conceptIds": ["nha-nuoc-cua-dan", "can-bo"],
-    "difficulty": "medium",
-    "tags": ["Nhà nước của dân", "Đạo đức công vụ", "Cán bộ"],
-    "situation": "Một người dân đến làm thủ tục hành chính nhưng bị cán bộ hướng dẫn qua loa, gây khó dễ và yêu cầu bổ sung giấy tờ không rõ ràng. Người dân cảm thấy bức xúc và mất niềm tin vào cơ quan công quyền.",
-    "analysis": "Theo tư tưởng Hồ Chí Minh, cán bộ là người phục vụ nhân dân, không phải người đứng trên nhân dân. Cán bộ cần gần dân, hiểu dân, trọng dân và giải quyết công việc minh bạch, đúng quy định. Thái độ quan liêu, hách dịch là căn bệnh nguy hiểm làm suy yếu mối quan hệ giữa Đảng, Nhà nước và nhân dân.",
-    "lesson": "Tinh thần phục vụ nhân dân phải được thể hiện qua trách nhiệm, thái độ và hiệu quả công việc.",
-    "reflectionQuestion": "Một cán bộ đúng tinh thần 'vì dân' cần xử lý tình huống này như thế nào?",
+    "lessonIds": ["vnr-ch4-hoi-nghi-tw6"],
+    "conceptIds": ["hoi-nghi-tw8", "viet-minh"],
+    "tags": ["Chuyển hướng chiến lược", "TW8", "Việt Minh"],
     "discussionPrompts": [
-      "Thái độ của cán bộ ảnh hưởng thế nào đến niềm tin của nhân dân?",
-      "Làm sao để phòng chống quan liêu, hách dịch?"
+      "Tại sao lại gác khẩu hiệu cách mạng ruộng đất ở thời điểm này?",
+      "Vai trò của Nguyễn Ái Quốc tại Hội nghị TW8 thể hiện như thế nào?"
     ],
-    "suggestedAnswer": "Cần hướng dẫn tận tình, giải thích rõ ràng và giúp người dân hoàn thành thủ tục một cách thuận lợi nhất.",
-    "teacherNote": "Gợi ý thảo luận về mối quan hệ giữa công dân và nhà nước pháp quyền XHCN.",
-    "requiresVerification": false
-  },
-  {
-    "id": "chong-chu-nghia-ca-nhan",
-    "title": "Chống chủ nghĩa cá nhân",
-    "summary": "Làm việc nhóm và sự trốn tránh trách nhiệm.",
-    "chapterIds": ["chuong-6"],
-    "lessonIds": ["hcm-ch06-dao-duc-cach-mang"],
-    "conceptIds": ["dao-duc-cach-mang", "chu-nghia-ca-nhan"],
-    "difficulty": "easy",
-    "tags": ["Đạo đức cách mạng", "Chống chủ nghĩa cá nhân", "Trách nhiệm tập thể"],
-    "situation": "Trong một nhóm làm việc đại học, một thành viên chỉ muốn nhận phần việc dễ, thường xuyên lấy lý do cá nhân để né tránh trách nhiệm nhưng đến khi nộp bài lại muốn được ghi tên ở vị trí đóng góp cao nhất.",
-    "analysis": "Chủ nghĩa cá nhân biểu hiện ở lối sống ích kỷ, đặt lợi ích riêng lên trên lợi ích chung và thiếu trách nhiệm với tập thể. Hồ Chí Minh coi chủ nghĩa cá nhân là 'kẻ thù hung ác', là mẹ đẻ ra mọi thói hư tật xấu. Chống chủ nghĩa cá nhân là yêu cầu quan trọng trong rèn luyện đạo đức.",
-    "lesson": "Mỗi cá nhân cần biết đặt lợi ích chung lên trên lợi ích riêng, có trách nhiệm với tập thể và trung thực với kết quả chung.",
-    "reflectionQuestion": "Nếu bạn là nhóm trưởng, bạn sẽ xử lý tình huống này như thế nào?",
-    "discussionPrompts": [
-      "Tại sao chủ nghĩa cá nhân lại gây hại cho tập thể?",
-      "Làm thế nào để gắn kết lợi ích cá nhân và tập thể?"
-    ],
-    "suggestedAnswer": "Cần góp ý thẳng thắn với bạn đó, phân công công việc rõ ràng và đánh giá công bằng dựa trên đóng góp thực tế.",
-    "teacherNote": "Áp dụng vào thực tế học đường để sinh viên dễ dàng liên hệ.",
-    "requiresVerification": false
-  },
-  {
-    "id": "ban-sac-van-hoa-so",
-    "title": "Giữ gìn bản sắc văn hóa trong thời đại số",
-    "summary": "Xung đột giữa việc tiếp thu văn hóa nước ngoài và giữ gìn văn hóa truyền thống.",
-    "chapterIds": ["chuong-6"],
-    "lessonIds": ["hcm-ch06-van-hoa"],
-    "conceptIds": ["van-hoa", "ban-sac-dan-toc"],
-    "difficulty": "medium",
-    "tags": ["Văn hóa", "Bản sắc dân tộc", "Tiếp thu tinh hoa"],
-    "situation": "Nhiều bạn trẻ sử dụng mạng xã hội để chạy theo xu hướng, trào lưu của các nước phương Tây và Hàn Quốc, nhưng lại tỏ ra thờ ơ, ít quan tâm đến ngôn ngữ, lịch sử, văn hóa và các giá trị truyền thống của dân tộc Việt Nam.",
-    "analysis": "Hồ Chí Minh chỉ rõ: Giữ gìn bản sắc văn hóa không có nghĩa là khép kín với thế giới. Điều quan trọng là biết trân trọng giá trị cốt lõi của dân tộc (yêu nước, nhân nghĩa, hiếu học), đồng thời tiếp thu cái mới của nhân loại một cách có chọn lọc, không mù quáng, lai căng.",
-    "lesson": "Trong thời đại số, mỗi người có thể góp phần lan tỏa văn hóa Việt Nam bằng cách sử dụng công nghệ một cách sáng tạo và có trách nhiệm.",
-    "reflectionQuestion": "Bạn có thể làm gì để lan tỏa văn hóa Việt Nam trên môi trường số?",
-    "discussionPrompts": [
-      "Làm thế nào để hòa nhập mà không hòa tan?",
-      "Tiếp thu tinh hoa văn hóa nhân loại cần tuân thủ nguyên tắc nào?"
-    ],
-    "suggestedAnswer": "Tôn trọng lịch sử dân tộc, chọn lọc các trào lưu tích cực, và dùng mạng xã hội để quảng bá nét đẹp văn hóa Việt Nam.",
-    "teacherNote": "Nhấn mạnh nguyên tắc tiếp thu có chọn lọc.",
-    "requiresVerification": false
-  },
-  {
-    "id": "noi-di-doi-voi-lam",
-    "title": "Nói đi đôi với làm",
-    "summary": "Lời hứa và thực hiện cam kết trong môi trường học thuật.",
-    "chapterIds": ["chuong-6"],
-    "lessonIds": ["hcm-ch06-dao-duc-cach-mang"],
-    "conceptIds": ["noi-di-doi-voi-lam", "dao-duc-cach-mang"],
-    "difficulty": "easy",
-    "tags": ["Nói đi đôi với làm", "Đạo đức cách mạng", "Trách nhiệm cá nhân"],
-    "situation": "Một sinh viên thường xuyên hứa trước tập thể lớp sẽ hoàn thành phần việc được giao đúng hạn và đạt chất lượng tốt, nhưng liên tục trễ deadline, viện cớ và cuối cùng nộp một sản phẩm rất cẩu thả, khiến cả nhóm bị trừ điểm.",
-    "analysis": "Nói đi đôi với làm là một trong những nguyên tắc quan trọng nhất trong rèn luyện đạo đức theo tư tưởng Hồ Chí Minh. Lời nói chỉ có giá trị khi đi cùng hành động cụ thể và trách nhiệm thực hiện. Việc hứa suông là biểu hiện của sự thiếu trung thực và vô trách nhiệm.",
-    "lesson": "Uy tín cá nhân được xây dựng từ việc giữ lời hứa và có trách nhiệm với cam kết của chính mình.",
-    "reflectionQuestion": "Bạn sẽ làm gì để thể hiện tinh thần 'nói đi đôi với làm' trong học tập và công việc hàng ngày?",
-    "discussionPrompts": [
-      "Tại sao nói đi đôi với làm lại khó?",
-      "Hậu quả của việc hứa mà không làm là gì?"
-    ],
-    "suggestedAnswer": "Cần suy nghĩ kỹ trước khi hứa và nỗ lực hết mình để thực hiện những gì đã cam kết.",
-    "teacherNote": "Hướng dẫn sinh viên cách lập kế hoạch và quản lý thời gian để thực hiện lời hứa.",
-    "requiresVerification": false
-  },
-  {
-    "id": "trach-nhiem-cong-dan",
-    "title": "Sinh viên và trách nhiệm công dân",
-    "summary": "Ứng xử trước thông tin sai lệch về xã hội.",
-    "chapterIds": ["chuong-3", "chuong-6"],
-    "lessonIds": ["hcm-ch03-doc-lap-dan-toc", "hcm-ch06-con-nguoi"],
-    "conceptIds": ["trach-nhiem-cong-dan", "doc-lap-dan-toc"],
     "difficulty": "hard",
-    "tags": ["Trách nhiệm công dân", "Tư duy lý luận", "Lòng yêu nước"],
-    "situation": "Một nhóm sinh viên chứng kiến một đoạn video chứa thông tin sai lệch, xuyên tạc về một chính sách xã hội được lan truyền trên mạng. Một số người chọn im lặng cho qua, một số người vì tò mò nên chia sẻ lại mà không hề kiểm chứng nguồn tin.",
-    "analysis": "Trách nhiệm công dân không chỉ thể hiện qua những hành động vĩ mô, mà còn qua cách tiếp nhận, kiểm chứng và chia sẻ thông tin. Theo tư tưởng Hồ Chí Minh, lòng yêu nước đi liền với việc bảo vệ lẽ phải. Việc chia sẻ thông tin sai lệch là đang tiếp tay cho cái xấu làm hại đất nước.",
-    "lesson": "Một công dân có trách nhiệm cần biết kiểm chứng thông tin, không lan truyền tin giả và góp phần xây dựng môi trường xã hội thông tin lành mạnh.",
-    "reflectionQuestion": "Khi gặp một thông tin nhạy cảm chưa được kiểm chứng, bạn nên làm gì trước khi nhấn nút chia sẻ?",
-    "discussionPrompts": [
-      "Tại sao thông tin sai lệch lại lan truyền nhanh?",
-      "Làm sao để nhận biết tin giả?"
+    "requiresVerification": false,
+    "interactiveTasks": [
+      {
+        "type": "choice",
+        "question": "Nội dung nào dưới đây KHÔNG phải là quyết định của Hội nghị Trung ương 8 (5/1941)?",
+        "options": [
+          "Đặt nhiệm vụ giải phóng dân tộc lên hàng đầu.",
+          "Thành lập Mặt trận Việt Minh.",
+          "Chuẩn bị khởi nghĩa vũ trang là nhiệm vụ trung tâm.",
+          "Phát động phong trào 'Đông Dương đại hội'."
+        ],
+        "correctAnswer": 3,
+        "explanation": "'Đông Dương đại hội' là phong trào của thời kỳ 1936-1939, không liên quan đến Hội nghị Trung ương 8."
+      }
     ],
-    "suggestedAnswer": "Kiểm tra nguồn tin, tìm hiểu thông tin từ các cơ quan báo chí chính thống trước khi quyết định chia sẻ hay bình luận.",
-    "teacherNote": "Rèn luyện tư duy phản biện cho sinh viên.",
-    "requiresVerification": false
+    "evidenceCards": [
+      {
+        "title": "Dữ kiện 1: Bối cảnh",
+        "content": "Thế giới thế chiến 2 khốc liệt. Ở Đông Dương, Pháp - Nhật câu kết bóc lột nhân dân ta (chính sách một cổ hai tròng)."
+      },
+      {
+        "title": "Dữ kiện 2: Chủ trương",
+        "content": "Nhiệm vụ giải phóng dân tộc là cao nhất. Thành lập Việt Minh. Đề ra phương pháp khởi nghĩa đi từ khởi nghĩa từng phần tiến lên tổng khởi nghĩa."
+      }
+    ],
+    "analysisSteps": [
+      {
+        "title": "Bước 1",
+        "content": "Xác định bối cảnh 1939–1941."
+      },
+      {
+        "title": "Bước 2",
+        "content": "Phân tích mâu thuẫn chủ yếu."
+      },
+      {
+        "title": "Bước 3",
+        "content": "Giải thích vì sao đặt giải phóng dân tộc lên hàng đầu."
+      },
+      {
+        "title": "Bước 4",
+        "content": "Phân tích vai trò của Việt Minh."
+      },
+      {
+        "title": "Bước 5",
+        "content": "Rút bài học về xác định đúng nhiệm vụ trung tâm."
+      }
+    ],
+    "keyTakeaways": [
+      "Độc lập dân tộc là mục tiêu cốt lõi, xuyên suốt.",
+      "Sự lãnh đạo nhạy bén, sáng tạo của Đảng và lãnh tụ Nguyễn Ái Quốc."
+    ],
+    "category": "Chuyển hướng và thời cơ"
   },
   {
-    "id": "van-hoa-ung-xu-mang",
-    "title": "Văn hóa ứng xử trên mạng xã hội",
-    "summary": "Tranh luận trên mạng và ranh giới của sự xúc phạm.",
-    "chapterIds": ["chuong-6"],
-    "lessonIds": ["hcm-ch06-van-hoa"],
-    "conceptIds": ["van-hoa", "van-hoa-so"],
-    "difficulty": "medium",
-    "tags": ["Văn hóa", "Đạo đức", "Con người", "Văn hóa số"],
-    "situation": "Trong một cuộc tranh luận về một chủ đề đời sống trên Facebook, thay vì phân tích vấn đề bằng lý lẽ và dẫn chứng, nhiều người bắt đầu dùng lời lẽ xúc phạm, miệt thị ngoại hình và công kích cá nhân đối phương.",
-    "analysis": "Văn hóa ứng xử thể hiện qua cách con người giao tiếp, tôn trọng người khác và xử lý sự khác biệt. Hồ Chí Minh dạy 'Đối với người, phải khoan dung, nhân ái'. Trên không gian mạng ảo, đạo đức và văn hóa càng cần được thể hiện qua sự bình tĩnh, sự tôn trọng và chịu trách nhiệm với phát ngôn của mình.",
-    "lesson": "Ứng xử văn minh, lịch sự trên mạng là một biểu hiện rõ nét của văn hóa và đạo đức con người trong thời đại số.",
-    "reflectionQuestion": "Bạn sẽ phản ứng thế nào khi gặp một bình luận xúc phạm cá nhân trên mạng xã hội?",
+    "id": "case-thoi-co-thang-tam",
+    "title": "Thời cơ tháng Tám 1945",
+    "summary": "Phân tích điều kiện khách quan, chủ quan và nghệ thuật chớp thời cơ trong Cách mạng Tháng Tám.",
+    "situation": "Có học giả phương Tây cho rằng Cách mạng Tháng Tám thành công chẳng qua là một sự 'ăn may' do Nhật Bản đầu hàng Đồng minh, tạo ra khoảng trống quyền lực. Hãy dùng các dữ kiện lịch sử để phản bác quan điểm này.",
+    "analysis": "Thời cơ khách quan (Nhật đầu hàng) là vô cùng quan trọng, nhưng nếu không có sự chuẩn bị chủ quan (lực lượng chính trị, vũ trang, căn cứ địa) và nghệ thuật chớp thời cơ (chỉ trong 15 ngày) thì không thể thành công.",
+    "lesson": "Thời cơ không tự nhiên mang lại thắng lợi. Phải có sự chuẩn bị chu đáo và quyết đoán hành động khi thời cơ đến.",
+    "reflectionQuestion": "Điều gì sẽ xảy ra nếu chúng ta khởi nghĩa quá sớm (trước 15/8) hoặc quá muộn (sau 5/9 khi Đồng minh vào)?",
+    "suggestedAnswer": "Nếu quá sớm: Quân Nhật còn mạnh, ta sẽ bị tổn thất nặng nề. Nếu quá muộn: Quân Đồng minh (Tưởng, Anh) kéo vào tước vũ khí Nhật, ta sẽ mất quyền chủ động và các thế lực phản động sẽ ngóc đầu dậy.",
+    "teacherNote": "Làm rõ khái niệm 'Thời cơ ngàn năm có một' - sự kết hợp hoàn hảo giữa điều kiện khách quan chín muồi và sự chuẩn bị chủ quan đầy đủ.",
+    "chapterIds": ["chuong-5"],
+    "lessonIds": ["vnr-ch5-viet-minh-tong-khoi-nghia"],
+    "conceptIds": ["nam-bat-thoi-co", "tong-khoi-nghia"],
+    "tags": ["Thời cơ", "Cách mạng Tháng Tám"],
     "discussionPrompts": [
-      "Tự do ngôn luận có bao gồm quyền xúc phạm người khác không?",
-      "Làm thế nào để tranh luận một cách văn minh?"
+      "Hãy trình bày sự chuẩn bị lực lượng của Đảng trước khi thời cơ đến.",
+      "Chỉ thị 'Nhật - Pháp bắn nhau và hành động của chúng ta' thể hiện điều gì?"
     ],
-    "suggestedAnswer": "Giữ bình tĩnh, không đáp trả bằng những lời lẽ tương tự, có thể báo cáo bình luận hoặc ngừng tham gia tranh luận tiêu cực.",
-    "teacherNote": "Kết nối giữa đạo đức truyền thống và ứng xử hiện đại.",
-    "requiresVerification": true
+    "difficulty": "hard",
+    "requiresVerification": false,
+    "interactiveTasks": [
+      {
+        "type": "choice",
+        "question": "Yếu tố nào cho thấy thắng lợi tháng Tám không chỉ do Nhật đầu hàng?",
+        "options": [
+          "Có sự chuẩn bị lực lượng lâu dài và quyết định lãnh đạo kịp thời.",
+          "Không có tổ chức chính trị nào tham gia.",
+          "Không có quần chúng tham gia.",
+          "Không có bối cảnh quốc tế."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Khách quan chỉ tạo điều kiện thuận lợi. Lực lượng của Việt Minh và chỉ thị Tổng khởi nghĩa chính là yếu tố quyết định để giành quyền lực trên cả nước."
+      }
+    ],
+    "evidenceCards": [
+      {
+        "title": "Dữ kiện 1: Khách quan",
+        "content": "Nhật tuyên bố đầu hàng Đồng minh không điều kiện (15/8/1945). Quân Nhật ở Đông Dương tê liệt, chính phủ Trần Trọng Kim hoang mang."
+      },
+      {
+        "title": "Dữ kiện 2: Chủ quan",
+        "content": "Hội nghị toàn quốc của Đảng (14-15/8) và Đại hội Quốc dân Tân Trào (16/8) tán thành chủ trương Tổng khởi nghĩa. Lực lượng quần chúng đã sẵn sàng."
+      }
+    ],
+    "analysisSteps": [
+      {
+        "title": "Bước 1",
+        "content": "Xác định điều kiện khách quan: Nhật đầu hàng, chính quyền tay sai hoang mang."
+      },
+      {
+        "title": "Bước 2",
+        "content": "Xác định điều kiện chủ quan: Việt Minh, lực lượng chính trị, vũ trang."
+      },
+      {
+        "title": "Bước 3",
+        "content": "Phân tích quyết định phát động Tổng khởi nghĩa."
+      },
+      {
+        "title": "Bước 4",
+        "content": "Giải thích vì sao phải hành động trước khi quân Đồng minh vào Đông Dương."
+      },
+      {
+        "title": "Bước 5",
+        "content": "Rút bài học về nắm bắt thời cơ."
+      }
+    ],
+    "keyTakeaways": [
+      "Bài học về dự báo chiến lược và chuẩn bị lực lượng chủ động.",
+      "Quyết đoán chớp thời cơ - nghệ thuật lãnh đạo kiệt xuất."
+    ],
+    "category": "Chuyển hướng và thời cơ"
   }
 ]

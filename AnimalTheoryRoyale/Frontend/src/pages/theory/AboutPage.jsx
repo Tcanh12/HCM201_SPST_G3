@@ -19,10 +19,10 @@ export default function AboutPage() {
             <BookOpen className="w-4 h-4" /> Giới thiệu môn học
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-black text-[#1F2937] mb-6 leading-tight">
-            Tư tưởng Hồ Chí Minh
+            VNR202 – Lịch sử Đảng Cộng sản Việt Nam
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta.
+            Học và ôn tập quá trình Đảng Cộng sản Việt Nam xác lập, điều chỉnh và hoàn thiện đường lối đấu tranh cách mạng từ năm 1930 đến năm 1945.
           </p>
         </div>
 
@@ -39,15 +39,15 @@ export default function AboutPage() {
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-2 flex-shrink-0" />
-                Trang bị hệ thống tri thức cơ bản về tư tưởng Hồ Chí Minh.
+                Nắm vững đường lối đấu tranh cách mạng của Đảng 1930-1945.
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-2 flex-shrink-0" />
-                Nâng cao năng lực tư duy lý luận và phương pháp công tác.
+                Hiểu rõ sự chuyển hướng chiến lược qua các thời kỳ lịch sử.
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-2 flex-shrink-0" />
-                Bồi dưỡng đạo đức cách mạng, bản lĩnh chính trị.
+                Rút ra bài học kinh nghiệm từ quá trình lãnh đạo của Đảng.
               </li>
             </ul>
           </motion.div>
@@ -64,15 +64,15 @@ export default function AboutPage() {
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
-                Hệ thống quan điểm của Hồ Chí Minh trong di sản của Người.
+                Cương lĩnh, Luận cương chính trị năm 1930.
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
-                Quá trình vận dụng tư tưởng đó trong thực tiễn cách mạng Việt Nam.
+                Phong trào Xô viết Nghệ Tĩnh và quá trình phục hồi tổ chức.
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
-                Sự phát triển sáng tạo của Đảng qua các thời kỳ.
+                Phong trào dân chủ 1936-1939 và cao trào tiến tới Tổng khởi nghĩa tháng Tám.
               </li>
             </ul>
           </motion.div>

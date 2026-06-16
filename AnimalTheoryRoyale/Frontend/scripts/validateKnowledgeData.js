@@ -31,22 +31,22 @@ async function validateData() {
 
     // Read JS files via string parsing (since they are ES modules and running this as a script might have module issues)
     // We'll use dynamic import since we set "type": "module" in package.json
-    const { canonicalConcepts } = await import(pathToFileURL(path.join(DATA_DIR, 'canonicalConcepts.js')).href);
+    const { conceptNodes } = await import(pathToFileURL(path.join(DATA_DIR, 'conceptMapData.js')).href);
     const { lessons } = await import(pathToFileURL(path.join(DATA_DIR, 'lessons.js')).href);
     const { reviewQuestions } = await import(pathToFileURL(path.join(DATA_DIR, 'reviewQuestions.js')).href);
     
     // Build sets for quick lookup
     const chapterIds = new Set(chapters.map(c => c.id));
-    const conceptIds = new Set(canonicalConcepts.map(c => c.id));
-    const lessonIds = new Set(lessons.map(l => l.lessonId));
+    const conceptIds = new Set(conceptNodes.map(c => c.id));
+    const lessonIds = new Set(lessons.map(l => l.lessonId || l.id));
     const caseIds = new Set(caseFiles.map(c => c.id));
     const questionIds = new Set(reviewQuestions.map(q => q.id));
 
-    // 1. Check duplicate canonical concepts
+    // 1. Check duplicate concept nodes
     const seenConcepts = new Set();
-    for (const concept of canonicalConcepts) {
+    for (const concept of conceptNodes) {
       if (seenConcepts.has(concept.id)) {
-        error(`Duplicate conceptId in canonicalConcepts: ${concept.id}`);
+        error(`Duplicate conceptId in conceptNodes: ${concept.id}`);
       }
       seenConcepts.add(concept.id);
       if (concept.requiresVerification === undefined) {
@@ -57,27 +57,28 @@ async function validateData() {
     // 2. Validate lessons
     const seenLessons = new Set();
     for (const lesson of lessons) {
-      if (seenLessons.has(lesson.lessonId)) {
-        error(`Duplicate lessonId: ${lesson.lessonId}`);
+      const lessonId = lesson.lessonId || lesson.id;
+      if (seenLessons.has(lessonId)) {
+        error(`Duplicate lessonId: ${lessonId}`);
       }
-      seenLessons.add(lesson.lessonId);
+      seenLessons.add(lessonId);
 
       if (!chapterIds.has(lesson.chapterId)) {
-        error(`Invalid chapterId in lesson ${lesson.lessonId}: ${lesson.chapterId}`);
+        error(`Invalid chapterId in lesson ${lessonId}: ${lesson.chapterId}`);
       }
 
       for (const conceptId of lesson.conceptIds || []) {
         if (!conceptIds.has(conceptId)) {
-          error(`Missing conceptId: ${conceptId} in lesson ${lesson.lessonId}`);
+          error(`Missing conceptId: ${conceptId} in lesson ${lessonId}`);
         }
       }
 
       if (lesson.requiresVerification === undefined) {
-        warn(`requiresVerification missing in lesson ${lesson.lessonId}`);
+        warn(`requiresVerification missing in lesson ${lessonId}`);
       }
 
       if (!lesson.title || !lesson.coreTheory) {
-        error(`Lesson missing required fields: ${lesson.lessonId}`);
+        error(`Lesson missing required fields: ${lessonId}`);
       }
     }
 
@@ -144,21 +145,21 @@ async function validateData() {
     // 5. Additional Validation Rules
     
     // Concept Map Constraints
-    if (canonicalConcepts.length <= 1) {
+    if (conceptNodes.length <= 1) {
       error(`Concept map must have more than 1 node.`);
     }
-    const rootNode = canonicalConcepts.find(c => c.level === 0);
+    const rootNode = conceptNodes.find(c => c.level === 0);
     if (!rootNode) {
       error(`Concept map must have a root node (level 0).`);
     }
-    const chapterNodes = canonicalConcepts.filter(c => c.level === 1);
-    if (chapterNodes.length < 6) {
-      error(`Concept map must have at least 6 chapter nodes (level 1).`);
+    const chapterNodes = conceptNodes.filter(c => c.level === 1);
+    if (chapterNodes.length < 5) {
+      error(`Concept map must have at least 5 chapter nodes (level 1).`);
     }
 
-    for (const c of canonicalConcepts) {
-      if (!c.id || !c.title || !c.chapterId || !c.shortDescription || (!c.definition && !c.explanation) || !c.whyImportant) {
-        error(`Concept missing required fields (id, title, chapterId, shortDescription, definition/explanation, whyImportant): ${c.id}`);
+    for (const c of conceptNodes) {
+      if (!c.id || !c.title || !c.chapterId || !c.shortDescription || !c.coreContent || !c.importance) {
+        error(`Concept missing required fields (id, title, chapterId, shortDescription, coreContent, importance): ${c.id}`);
       }
     }
 
@@ -207,7 +208,7 @@ async function validateData() {
       }
     }
 
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 5; i++) {
       const chapterId = `chuong-${i}`;
       const count = chaptersVisualMap[chapterId]?.length || 0;
       if (count < 3) {
@@ -234,3 +235,4 @@ async function validateData() {
 }
 
 validateData();
+

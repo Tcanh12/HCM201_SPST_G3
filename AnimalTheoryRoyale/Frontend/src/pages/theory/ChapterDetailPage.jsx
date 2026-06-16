@@ -56,12 +56,19 @@ export default function ChapterDetailPage() {
     );
   }
 
+  const dynamicSections = (chapterData.sections || []).map(s => ({
+    id: s.id || s.title.toLowerCase().replace(/\s+/g, '-'),
+    title: s.title
+  }));
+
   const displaySections = newLessonData 
     ? [
         { id: 'overview', title: 'Tổng quan & Mục tiêu' },
-        { id: 'theory', title: 'Lý thuyết cốt lõi' },
+        { id: 'theory', title: 'Lý thuyết chuyên sâu' },
         { id: 'concepts', title: 'Phân tích Khái niệm' },
-        { id: 'visual', title: 'Sơ đồ tư duy & Hình ảnh' }
+        { id: 'visual', title: 'Sơ đồ tư duy & Hình ảnh' },
+        ...dynamicSections,
+        ...(chapterData.quiz && chapterData.quiz.length > 0 ? [{ id: 'quiz', title: 'Quiz cuối chương' }] : [])
       ]
     : chapterData.sections || [];
 
@@ -224,7 +231,7 @@ export default function ChapterDetailPage() {
         {/* Hero */}
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#FEE2E2] text-[#B91C1C] rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-            Chương {chapterData.chapterNumber}
+            Chương {chapterData.chapterNumber || chapterMeta.chapterNumber}
           </div>
           <h1 className="text-3xl md:text-5xl font-display font-black text-[#1F2937] leading-tight mb-6">
             {chapterData.title}
@@ -233,6 +240,7 @@ export default function ChapterDetailPage() {
           {newLessonData ? (
             <LessonDetailView 
               lesson={newLessonData} 
+              chapterData={chapterData}
               completedSections={completedSections}
               onSectionComplete={handleSectionComplete}
             />

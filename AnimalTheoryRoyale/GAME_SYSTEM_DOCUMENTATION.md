@@ -8,7 +8,7 @@
 
 * **Tên game:** Animal Theory Royale
 * **Thể loại:** Gamification EdTech / 3D Multiplayer Battle Royale kết hợp Trắc nghiệm (Quiz).
-* **Mục tiêu người chơi:** Người chơi (sinh viên) chọn nhân vật đại diện (Voi, Thỏ, Cáo, Rùa), sinh tồn trong môi trường 3D với vòng bo ngày càng thu hẹp. Để sống sót và chiến thắng, người chơi phải tìm kiếm các "Cột sáng kiến thức", trả lời đúng các câu hỏi lý luận chính trị (Tư tưởng Hồ Chí Minh) để nhận điểm số sinh tồn, né bẫy sát thương và chiến đấu với người chơi khác.
+* **Mục tiêu người chơi:** Người chơi (sinh viên) chọn nhân vật đại diện (Voi, Thỏ, Cáo, Rùa), sinh tồn trong môi trường 3D với vòng bo ngày càng thu hẹp. Để sống sót và chiến thắng, người chơi phải tìm kiếm các "Cột sáng kiến thức", trả lời đúng các câu hỏi lý luận chính trị (Lịch sử Đảng) để nhận điểm số sinh tồn, né bẫy sát thương và chiến đấu với người chơi khác.
 * **Đối tượng người dùng:** 
   * *Giảng viên (Host):* Quản lý phòng chơi, kiểm tra tiến độ, theo dõi qua màn hình radar.
   * *Sinh viên (Player):* Trực tiếp tham gia thi đấu sinh tồn và học tập.

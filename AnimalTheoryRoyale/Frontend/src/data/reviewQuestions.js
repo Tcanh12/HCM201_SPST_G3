@@ -1,347 +1,2512 @@
 export const reviewQuestions = [
   {
-    id: "q-hcm-ch01-001",
-    question: "Tư tưởng Hồ Chí Minh là gì?",
-    type: "multiple-choice",
-    options: [
-      "Là sự sao chép nguyên xi chủ nghĩa Mác - Lênin",
-      "Là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam",
-      "Là sự tổng hợp các luồng tư tưởng phương Đông",
-      "Là chủ trương của Đảng Cộng sản Đông Dương"
+    "id": "rq-vnr-001",
+    "question": "Sự kiện nào đánh dấu chấm dứt tình trạng khủng hoảng về đường lối cứu nước ở Việt Nam đầu thế kỷ XX? (Biến thể 1)",
+    "explanation": "Sự ra đời của Đảng Cộng sản Việt Nam đầu năm 1930 với Cương lĩnh chính trị đầu tiên đã chấm dứt hoàn toàn sự khủng hoảng về đường lối cứu nước.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thành lập Hội VN Cách mạng Thanh niên",
+      "Khởi nghĩa Yên Bái thất bại",
+      "Đảng Cộng sản Việt Nam ra đời",
+      "Phong trào Xô viết Nghệ Tĩnh"
     ],
-    correctAnswer: 1,
-    explanation: "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta.",
-    chapterId: "chuong-1",
-    lessonId: "hcm-ch01-khai-niem-tu-tuong-hcm",
-    conceptIds: ["khai-niem-tu-tuong-ho-chi-minh"],
-    difficulty: "easy",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Chính xác. Đây là định nghĩa nền tảng của môn học.",
-    feedbackIncorrect: "Chưa đúng. Cần nhớ Tư tưởng Hồ Chí Minh là một hệ thống quan điểm, không phải sự sao chép hoặc tập hợp rời rạc.",
-    requiresVerification: false
+    "correctAnswer": 2,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch04-001",
-    question: "Nội dung nào thể hiện đúng tư tưởng Nhà nước của dân, do dân, vì dân?",
-    type: "multiple-choice",
-    options: [
-      "Nhà nước là công cụ trấn áp giai cấp bóc lột",
-      "Nhà nước do nhân dân làm chủ và phục vụ lợi ích của nhân dân",
-      "Nhà nước tập trung toàn bộ quyền lực vào trung ương",
-      "Nhà nước hoạt động độc lập với sự giám sát của nhân dân"
+    "id": "rq-vnr-002",
+    "question": "Vì sao Cương lĩnh chính trị đầu tiên được đánh giá là đúng đắn và sáng tạo? (Phân tích 1)",
+    "explanation": "Cương lĩnh kết hợp đúng đắn vấn đề dân tộc và giai cấp, nhưng đặt độc lập dân tộc lên hàng đầu, phù hợp với hoàn cảnh một nước thuộc địa nửa phong kiến.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập trung vào đấu tranh giai cấp",
+      "Giải quyết được vấn đề dân tộc và đặt độc lập dân tộc lên hàng đầu",
+      "Hoàn toàn sao chép lý luận của Quốc tế Cộng sản",
+      "Bỏ qua vấn đề ruộng đất của nông dân"
     ],
-    correctAnswer: 1,
-    explanation: "Nhà nước trong tư tưởng Hồ Chí Minh là Nhà nước của nhân dân, do nhân dân xây dựng, kiểm soát và hoạt động vì lợi ích của nhân dân.",
-    chapterId: "chuong-4",
-    lessonId: "hcm-ch04-nha-nuoc",
-    conceptIds: ["nha-nuoc-cua-dan", "nha-nuoc-do-dan", "nha-nuoc-vi-dan"],
-    difficulty: "medium",
-    bloomLevel: "understand",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng. Nhân dân là người làm chủ Nhà nước.",
-    feedbackIncorrect: "Sai. Nhà nước của dân, do dân, vì dân có nghĩa là nhân dân làm chủ và nhà nước phục vụ lợi ích của nhân dân.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930",
+      "luan-cuong-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch06-001",
-    question: "Cần, kiệm, liêm, chính thuộc nội dung nào trong tư tưởng Hồ Chí Minh?",
-    type: "multiple-choice",
-    options: [
-      "Tư tưởng về văn hóa",
-      "Tư tưởng về xây dựng Đảng",
-      "Tư tưởng về đạo đức cách mạng",
-      "Tư tưởng về đại đoàn kết toàn dân tộc"
+    "id": "rq-vnr-003",
+    "question": "Lực lượng cách mạng được đề ra trong Cương lĩnh chính trị đầu tiên (2/1930) thể hiện tư tưởng nào? (Góc nhìn 1)",
+    "explanation": "Cương lĩnh chủ trương đoàn kết công nông, đồng thời lôi kéo cả tiểu tư sản, trí thức, phú nông, trung tiểu địa chủ... thể hiện tư tưởng đại đoàn kết dân tộc.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chuyên chính vô sản triệt để",
+      "Đại đoàn kết toàn dân tộc",
+      "Dựa hoàn toàn vào quốc tế",
+      "Loại bỏ hoàn toàn tư sản và địa chủ"
     ],
-    correctAnswer: 2,
-    explanation: "Cần, kiệm, liêm, chính, chí công vô tư là những chuẩn mực đạo đức cốt lõi của người cách mạng theo tư tưởng Hồ Chí Minh.",
-    chapterId: "chuong-6",
-    lessonId: "hcm-ch06-dao-duc-cach-mang",
-    conceptIds: ["dao-duc-cach-mang", "can-kiem-liem-chinh"],
-    difficulty: "easy",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Chưa đúng. Đây là những chuẩn mực đạo đức.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch05-001",
-    question: "Đại đoàn kết toàn dân tộc có vai trò gì trong tư tưởng Hồ Chí Minh?",
-    type: "multiple-choice",
-    options: [
-      "Tạo nên sức mạnh tổng hợp để thực hiện mục tiêu chung của dân tộc",
-      "Giúp giải quyết các mâu thuẫn nội bộ trong một đảng",
-      "Là phương pháp để duy trì quyền lực nhà nước",
-      "Là hình thức ngoại giao để kêu gọi quốc tế ủng hộ"
+    "id": "rq-vnr-004",
+    "question": "Điểm hạn chế của Luận cương chính trị tháng 10/1930 bắt nguồn từ đâu? (Góc nhìn 1)",
+    "explanation": "Luận cương chưa đánh giá đúng khả năng cách mạng của các giai cấp khác ngoài công nông và nhấn mạnh quá mức đấu tranh giai cấp do ảnh hưởng khuynh hướng tả của Quốc tế CS.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sự chỉ đạo của Nguyễn Ái Quốc",
+      "Không nhận thức được mâu thuẫn giai cấp",
+      "Ảnh hưởng tư tưởng giáo điều, tả khuynh của Quốc tế Cộng sản",
+      "Do phong trào cách mạng trong nước đi xuống"
     ],
-    correctAnswer: 0,
-    explanation: "Đoàn kết là sức mạnh vô địch. 'Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công'.",
-    chapterId: "chuong-5",
-    lessonId: "hcm-ch05-dai-doan-ket",
-    conceptIds: ["dai-doan-ket", "luc-luong-dai-doan-ket"],
-    difficulty: "medium",
-    bloomLevel: "understand",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng. Đoàn kết tạo nên sức mạnh vô địch.",
-    feedbackIncorrect: "Sai. Đoàn kết toàn dân tộc là sức mạnh tổng hợp để thực hiện mục tiêu chung.",
-    requiresVerification: false
+    "correctAnswer": 2,
+    "conceptIds": [
+      "luan-cuong-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch02-001",
-    question: "Theo Hồ Chí Minh, ưu điểm lớn nhất của chủ nghĩa Mác - Lênin là gì?",
-    type: "multiple-choice",
-    options: [
-      "Phương pháp làm việc biện chứng",
-      "Bản chất nhân đạo",
-      "Tính hệ thống và tính quy luật",
-      "Cốt lõi lịch sử"
+    "id": "rq-vnr-005",
+    "question": "Nhiệm vụ hàng đầu của cách mạng Đông Dương được xác định trong Cương lĩnh 2/1930 là gì và vì sao? (Phân tích 1)",
+    "explanation": "Đánh đổ đế quốc Pháp và phong kiến tay sai để giành độc lập dân tộc, vì mâu thuẫn dân tộc là mâu thuẫn gay gắt nhất.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cách mạng ruộng đất để đem lại cơm no áo ấm",
+      "Đánh đổ đế quốc để giành độc lập dân tộc",
+      "Xây dựng ngay chủ nghĩa xã hội",
+      "Phát triển kinh tế tư bản chủ nghĩa"
     ],
-    correctAnswer: 0,
-    explanation: "Hồ Chí Minh từng khẳng định: Ưu điểm lớn nhất của chủ nghĩa Mác là phương pháp làm việc biện chứng.",
-    chapterId: "chuong-2",
-    lessonId: "hcm-ch02-co-so-hinh-thanh",
-    conceptIds: ["chu-nghia-mac-lenin"],
-    difficulty: "hard",
-    bloomLevel: "analyze",
-    points: 15,
-    timeLimit: 30,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Chưa đúng. Hồ Chí Minh nhấn mạnh ưu điểm lớn nhất là phương pháp làm việc biện chứng.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "analyze",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch02-002",
-    question: "Hồ Chí Minh đã tiếp thu những giá trị văn hóa nào của phương Đông?",
-    type: "multiple-choice",
-    options: [
-      "Khoa học tự nhiên và công nghệ",
-      "Chủ nghĩa duy lý",
-      "Những mặt tích cực của Nho giáo, Phật giáo",
-      "Tư tưởng tự do cá nhân tuyệt đối"
+    "id": "rq-vnr-006",
+    "question": "Sự kiện nào đánh dấu chấm dứt tình trạng khủng hoảng về đường lối cứu nước ở Việt Nam đầu thế kỷ XX? (Biến thể 2)",
+    "explanation": "Sự ra đời của Đảng Cộng sản Việt Nam đầu năm 1930 với Cương lĩnh chính trị đầu tiên đã chấm dứt hoàn toàn sự khủng hoảng về đường lối cứu nước.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thành lập Hội VN Cách mạng Thanh niên",
+      "Khởi nghĩa Yên Bái thất bại",
+      "Đảng Cộng sản Việt Nam ra đời",
+      "Phong trào Xô viết Nghệ Tĩnh"
     ],
-    correctAnswer: 2,
-    explanation: "Bác đã gạn đục khơi trong, tiếp thu tinh thần từ bi hỉ xả của Phật giáo và tinh thần tu thân tề gia của Nho giáo để làm giàu tư tưởng của mình.",
-    chapterId: "chuong-2",
-    lessonId: "hcm-ch02-co-so-hinh-thanh",
-    conceptIds: ["tinh-hoa-van-hoa-nhan-loai"],
-    difficulty: "medium",
-    bloomLevel: "understand",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng. Nho giáo và Phật giáo là những nguồn tư tưởng phương Đông tiêu biểu.",
-    feedbackIncorrect: "Sai. Bác tiếp thu những mặt tích cực của Nho giáo và Phật giáo.",
-    requiresVerification: false
+    "correctAnswer": 2,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch05-002",
-    question: "Theo tư tưởng Hồ Chí Minh, lực lượng nòng cốt của khối đại đoàn kết dân tộc là khối liên minh:",
-    type: "multiple-choice",
-    options: [
-      "Công nhân, nông dân và trí thức",
-      "Giai cấp công nhân và tư sản dân tộc",
-      "Nông dân và địa chủ yêu nước",
-      "Thanh niên, sinh viên và học sinh"
+    "id": "rq-vnr-007",
+    "question": "Vì sao Cương lĩnh chính trị đầu tiên được đánh giá là đúng đắn và sáng tạo? (Phân tích 2)",
+    "explanation": "Cương lĩnh kết hợp đúng đắn vấn đề dân tộc và giai cấp, nhưng đặt độc lập dân tộc lên hàng đầu, phù hợp với hoàn cảnh một nước thuộc địa nửa phong kiến.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập trung vào đấu tranh giai cấp",
+      "Giải quyết được vấn đề dân tộc và đặt độc lập dân tộc lên hàng đầu",
+      "Hoàn toàn sao chép lý luận của Quốc tế Cộng sản",
+      "Bỏ qua vấn đề ruộng đất của nông dân"
     ],
-    correctAnswer: 0,
-    explanation: "Hồ Chí Minh luôn nhấn mạnh: Đại đoàn kết phải lấy liên minh công - nông - trí thức làm nền tảng.",
-    chapterId: "chuong-5",
-    lessonId: "hcm-ch05-dai-doan-ket",
-    conceptIds: ["luc-luong-dai-doan-ket", "mat-tran-dan-toc-thong-nhat"],
-    difficulty: "medium",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Sai. Liên minh công - nông - trí thức là nòng cốt.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930",
+      "luan-cuong-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch02-003",
-    question: "Hồ Chí Minh xác định con đường cứu nước của dân tộc Việt Nam là con đường nào?",
-    type: "multiple-choice",
-    options: [
-      "Con đường cách mạng tư sản",
-      "Con đường cách mạng vô sản",
-      "Con đường cải lương",
-      "Con đường thỏa hiệp với đế quốc"
+    "id": "rq-vnr-008",
+    "question": "Lực lượng cách mạng được đề ra trong Cương lĩnh chính trị đầu tiên (2/1930) thể hiện tư tưởng nào? (Góc nhìn 2)",
+    "explanation": "Cương lĩnh chủ trương đoàn kết công nông, đồng thời lôi kéo cả tiểu tư sản, trí thức, phú nông, trung tiểu địa chủ... thể hiện tư tưởng đại đoàn kết dân tộc.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chuyên chính vô sản triệt để",
+      "Đại đoàn kết toàn dân tộc",
+      "Dựa hoàn toàn vào quốc tế",
+      "Loại bỏ hoàn toàn tư sản và địa chủ"
     ],
-    correctAnswer: 1,
-    explanation: "Năm 1920, Bác đọc Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và thuộc địa của V.I.Lênin và tìm ra con đường cứu nước: Cách mạng vô sản.",
-    chapterId: "chuong-2",
-    lessonId: "hcm-ch02-co-so-hinh-thanh",
-    conceptIds: ["qua-trinh-hinh-thanh-phat-trien", "chu-nghia-mac-lenin"],
-    difficulty: "easy",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng.",
-    feedbackIncorrect: "Sai. Bác đã chọn con đường cách mạng vô sản.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch05-003",
-    question: "\"Non sông gấm vóc Việt Nam do phụ nữ ta, trẻ cũng như già, ra sức dệt thêu mà thêm tốt đẹp, rực rỡ\". Câu nói này của Bác đề cao vai trò của ai?",
-    type: "multiple-choice",
-    options: [
-      "Thanh niên",
-      "Phụ nữ",
-      "Nông dân",
-      "Trí thức"
+    "id": "rq-vnr-009",
+    "question": "Điểm hạn chế của Luận cương chính trị tháng 10/1930 bắt nguồn từ đâu? (Góc nhìn 2)",
+    "explanation": "Luận cương chưa đánh giá đúng khả năng cách mạng của các giai cấp khác ngoài công nông và nhấn mạnh quá mức đấu tranh giai cấp do ảnh hưởng khuynh hướng tả của Quốc tế CS.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sự chỉ đạo của Nguyễn Ái Quốc",
+      "Không nhận thức được mâu thuẫn giai cấp",
+      "Ảnh hưởng tư tưởng giáo điều, tả khuynh của Quốc tế Cộng sản",
+      "Do phong trào cách mạng trong nước đi xuống"
     ],
-    correctAnswer: 1,
-    explanation: "Đây là lời Bác tôn vinh vai trò và sự đóng góp to lớn của phụ nữ Việt Nam trong công cuộc xây dựng và bảo vệ Tổ quốc.",
-    chapterId: "chuong-5",
-    lessonId: "hcm-ch05-dai-doan-ket",
-    conceptIds: ["luc-luong-dai-doan-ket"],
-    difficulty: "easy",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Sai. Câu nói nhắc trực tiếp đến phụ nữ.",
-    requiresVerification: false
+    "correctAnswer": 2,
+    "conceptIds": [
+      "luan-cuong-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch03-001",
-    question: "Mục tiêu cao nhất của chủ nghĩa xã hội theo tư tưởng Hồ Chí Minh là gì?",
-    type: "multiple-choice",
-    options: [
-      "Xây dựng quân đội hùng mạnh nhất khu vực",
-      "Mở rộng lãnh thổ quốc gia",
-      "Nâng cao không ngừng đời sống vật chất và tinh thần của nhân dân",
-      "Phát triển công nghiệp nặng vượt bậc"
+    "id": "rq-vnr-010",
+    "question": "Nhiệm vụ hàng đầu của cách mạng Đông Dương được xác định trong Cương lĩnh 2/1930 là gì và vì sao? (Phân tích 2)",
+    "explanation": "Đánh đổ đế quốc Pháp và phong kiến tay sai để giành độc lập dân tộc, vì mâu thuẫn dân tộc là mâu thuẫn gay gắt nhất.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cách mạng ruộng đất để đem lại cơm no áo ấm",
+      "Đánh đổ đế quốc để giành độc lập dân tộc",
+      "Xây dựng ngay chủ nghĩa xã hội",
+      "Phát triển kinh tế tư bản chủ nghĩa"
     ],
-    correctAnswer: 2,
-    explanation: "Theo Bác, CNXH không có gì khác hơn là làm cho nhân dân lao động thoát nạn bần cùng, có công ăn việc làm, được ấm no và sống một đời hạnh phúc.",
-    chapterId: "chuong-3",
-    lessonId: "hcm-ch03-cnxh",
-    conceptIds: ["chu-nghia-xa-hoi"],
-    difficulty: "medium",
-    bloomLevel: "understand",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng.",
-    feedbackIncorrect: "Sai. Mục tiêu cao nhất là cuộc sống của nhân dân.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "analyze",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch03-002",
-    question: "Đâu là đặc trưng cơ bản về chính trị của chủ nghĩa xã hội trong tư tưởng Hồ Chí Minh?",
-    type: "multiple-choice",
-    options: [
-      "Do giai cấp tư sản làm chủ",
-      "Do nhân dân lao động làm chủ",
-      "Chế độ phong kiến được duy trì nhưng cải cách",
-      "Nhà nước được kiểm soát bởi tầng lớp tinh hoa"
+    "id": "rq-vnr-011",
+    "question": "Sự kiện nào đánh dấu chấm dứt tình trạng khủng hoảng về đường lối cứu nước ở Việt Nam đầu thế kỷ XX? (Biến thể 3)",
+    "explanation": "Sự ra đời của Đảng Cộng sản Việt Nam đầu năm 1930 với Cương lĩnh chính trị đầu tiên đã chấm dứt hoàn toàn sự khủng hoảng về đường lối cứu nước.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thành lập Hội VN Cách mạng Thanh niên",
+      "Khởi nghĩa Yên Bái thất bại",
+      "Đảng Cộng sản Việt Nam ra đời",
+      "Phong trào Xô viết Nghệ Tĩnh"
     ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh chỉ rõ: Chủ nghĩa xã hội là một xã hội do nhân dân lao động làm chủ.",
-    chapterId: "chuong-3",
-    lessonId: "hcm-ch03-cnxh",
-    conceptIds: ["chu-nghia-xa-hoi", "nhan-dan-lam-chu"],
-    difficulty: "easy",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Sai. Xã hội XHCN do nhân dân làm chủ.",
-    requiresVerification: false
+    "correctAnswer": 2,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch06-002",
-    question: "Động lực quan trọng và quyết định nhất để xây dựng chủ nghĩa xã hội theo Hồ Chí Minh là gì?",
-    type: "multiple-choice",
-    options: [
-      "Viện trợ và sự giúp đỡ của quốc tế",
-      "Nguồn tài nguyên thiên nhiên dồi dào",
-      "Sức mạnh của con người, của nhân dân lao động",
-      "Vị trí địa lý thuận lợi của đất nước"
+    "id": "rq-vnr-012",
+    "question": "Vì sao Cương lĩnh chính trị đầu tiên được đánh giá là đúng đắn và sáng tạo? (Phân tích 3)",
+    "explanation": "Cương lĩnh kết hợp đúng đắn vấn đề dân tộc và giai cấp, nhưng đặt độc lập dân tộc lên hàng đầu, phù hợp với hoàn cảnh một nước thuộc địa nửa phong kiến.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập trung vào đấu tranh giai cấp",
+      "Giải quyết được vấn đề dân tộc và đặt độc lập dân tộc lên hàng đầu",
+      "Hoàn toàn sao chép lý luận của Quốc tế Cộng sản",
+      "Bỏ qua vấn đề ruộng đất của nông dân"
     ],
-    correctAnswer: 2,
-    explanation: "Con người vừa là mục tiêu, vừa là động lực quan trọng nhất của sự nghiệp xây dựng chủ nghĩa xã hội.",
-    chapterId: "chuong-6",
-    lessonId: "hcm-ch06-con-nguoi",
-    conceptIds: ["con-nguoi"],
-    difficulty: "medium",
-    bloomLevel: "understand",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng.",
-    feedbackIncorrect: "Sai. Con người mới là động lực quan trọng nhất.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930",
+      "luan-cuong-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch06-003",
-    question: "Chữ \"Người\" trong tư tưởng Hồ Chí Minh được hiểu theo nghĩa rộng nhất là gì?",
-    type: "multiple-choice",
-    options: [
-      "Gia đình, anh em, họ hàng",
-      "Chỉ những người cùng giai cấp vô sản",
-      "Chỉ những người theo chủ nghĩa Mác-Lênin",
-      "Đồng bào cả nước và cả nhân loại bị áp bức"
+    "id": "rq-vnr-013",
+    "question": "Lực lượng cách mạng được đề ra trong Cương lĩnh chính trị đầu tiên (2/1930) thể hiện tư tưởng nào? (Góc nhìn 3)",
+    "explanation": "Cương lĩnh chủ trương đoàn kết công nông, đồng thời lôi kéo cả tiểu tư sản, trí thức, phú nông, trung tiểu địa chủ... thể hiện tư tưởng đại đoàn kết dân tộc.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chuyên chính vô sản triệt để",
+      "Đại đoàn kết toàn dân tộc",
+      "Dựa hoàn toàn vào quốc tế",
+      "Loại bỏ hoàn toàn tư sản và địa chủ"
     ],
-    correctAnswer: 3,
-    explanation: "Chữ Người (viết hoa) trong tư tưởng Bác mang ý nghĩa nhân văn sâu sắc, bao hàm tình yêu thương đồng bào và nhân loại tiến bộ.",
-    chapterId: "chuong-6",
-    lessonId: "hcm-ch06-con-nguoi",
-    conceptIds: ["con-nguoi"],
-    difficulty: "hard",
-    bloomLevel: "analyze",
-    points: 15,
-    timeLimit: 30,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Sai. Chữ Người bao hàm ý nghĩa nhân văn sâu sắc với cả nhân loại bị áp bức.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch06-004",
-    question: "Chức năng cơ bản của văn hóa theo Hồ Chí Minh là gì?",
-    type: "multiple-choice",
-    options: [
-      "Bồi dưỡng tư tưởng đúng đắn và tình cảm cao đẹp",
-      "Mở rộng quan hệ ngoại giao",
-      "Phát triển nền kinh tế thị trường",
-      "Tăng cường sức mạnh quân sự"
+    "id": "rq-vnr-014",
+    "question": "Điểm hạn chế của Luận cương chính trị tháng 10/1930 bắt nguồn từ đâu? (Góc nhìn 3)",
+    "explanation": "Luận cương chưa đánh giá đúng khả năng cách mạng của các giai cấp khác ngoài công nông và nhấn mạnh quá mức đấu tranh giai cấp do ảnh hưởng khuynh hướng tả của Quốc tế CS.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sự chỉ đạo của Nguyễn Ái Quốc",
+      "Không nhận thức được mâu thuẫn giai cấp",
+      "Ảnh hưởng tư tưởng giáo điều, tả khuynh của Quốc tế Cộng sản",
+      "Do phong trào cách mạng trong nước đi xuống"
     ],
-    correctAnswer: 0,
-    explanation: "Bác cho rằng văn hóa phải thiết thực phục vụ nhân dân, góp phần bồi dưỡng con người có tư tưởng và tình cảm đúng đắn.",
-    chapterId: "chuong-6",
-    lessonId: "hcm-ch06-van-hoa",
-    conceptIds: ["van-hoa"],
-    difficulty: "medium",
-    bloomLevel: "understand",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Đúng.",
-    feedbackIncorrect: "Sai. Chức năng chính của văn hóa là bồi dưỡng tư tưởng và tình cảm.",
-    requiresVerification: false
+    "correctAnswer": 2,
+    "conceptIds": [
+      "luan-cuong-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
   },
   {
-    id: "q-hcm-ch06-005",
-    question: "Hồ Chí Minh cho rằng, muốn xây dựng chủ nghĩa xã hội, trước hết cần có gì?",
-    type: "multiple-choice",
-    options: [
-      "Cơ sở vật chất kỹ thuật hiện đại",
-      "Nguồn vốn đầu tư khổng lồ từ nước ngoài",
-      "Những con người xã hội chủ nghĩa",
-      "Sự ủng hộ tuyệt đối của các cường quốc"
+    "id": "rq-vnr-015",
+    "question": "Nhiệm vụ hàng đầu của cách mạng Đông Dương được xác định trong Cương lĩnh 2/1930 là gì và vì sao? (Phân tích 3)",
+    "explanation": "Đánh đổ đế quốc Pháp và phong kiến tay sai để giành độc lập dân tộc, vì mâu thuẫn dân tộc là mâu thuẫn gay gắt nhất.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cách mạng ruộng đất để đem lại cơm no áo ấm",
+      "Đánh đổ đế quốc để giành độc lập dân tộc",
+      "Xây dựng ngay chủ nghĩa xã hội",
+      "Phát triển kinh tế tư bản chủ nghĩa"
     ],
-    correctAnswer: 2,
-    explanation: "Câu nói nổi tiếng: 'Muốn xây dựng chủ nghĩa xã hội, trước hết cần có những con người xã hội chủ nghĩa'.",
-    chapterId: "chuong-6",
-    lessonId: "hcm-ch06-con-nguoi",
-    conceptIds: ["con-nguoi", "chu-nghia-xa-hoi"],
-    difficulty: "easy",
-    bloomLevel: "remember",
-    points: 10,
-    timeLimit: 20,
-    feedbackCorrect: "Chính xác.",
-    feedbackIncorrect: "Sai. Cần có con người xã hội chủ nghĩa trước.",
-    requiresVerification: false
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "analyze",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-016",
+    "question": "Sự kiện nào đánh dấu chấm dứt tình trạng khủng hoảng về đường lối cứu nước ở Việt Nam đầu thế kỷ XX? (Biến thể 4)",
+    "explanation": "Sự ra đời của Đảng Cộng sản Việt Nam đầu năm 1930 với Cương lĩnh chính trị đầu tiên đã chấm dứt hoàn toàn sự khủng hoảng về đường lối cứu nước.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thành lập Hội VN Cách mạng Thanh niên",
+      "Khởi nghĩa Yên Bái thất bại",
+      "Đảng Cộng sản Việt Nam ra đời",
+      "Phong trào Xô viết Nghệ Tĩnh"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-017",
+    "question": "Vì sao Cương lĩnh chính trị đầu tiên được đánh giá là đúng đắn và sáng tạo? (Phân tích 4)",
+    "explanation": "Cương lĩnh kết hợp đúng đắn vấn đề dân tộc và giai cấp, nhưng đặt độc lập dân tộc lên hàng đầu, phù hợp với hoàn cảnh một nước thuộc địa nửa phong kiến.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập trung vào đấu tranh giai cấp",
+      "Giải quyết được vấn đề dân tộc và đặt độc lập dân tộc lên hàng đầu",
+      "Hoàn toàn sao chép lý luận của Quốc tế Cộng sản",
+      "Bỏ qua vấn đề ruộng đất của nông dân"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930",
+      "luan-cuong-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-018",
+    "question": "Lực lượng cách mạng được đề ra trong Cương lĩnh chính trị đầu tiên (2/1930) thể hiện tư tưởng nào? (Góc nhìn 4)",
+    "explanation": "Cương lĩnh chủ trương đoàn kết công nông, đồng thời lôi kéo cả tiểu tư sản, trí thức, phú nông, trung tiểu địa chủ... thể hiện tư tưởng đại đoàn kết dân tộc.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chuyên chính vô sản triệt để",
+      "Đại đoàn kết toàn dân tộc",
+      "Dựa hoàn toàn vào quốc tế",
+      "Loại bỏ hoàn toàn tư sản và địa chủ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-019",
+    "question": "Điểm hạn chế của Luận cương chính trị tháng 10/1930 bắt nguồn từ đâu? (Góc nhìn 4)",
+    "explanation": "Luận cương chưa đánh giá đúng khả năng cách mạng của các giai cấp khác ngoài công nông và nhấn mạnh quá mức đấu tranh giai cấp do ảnh hưởng khuynh hướng tả của Quốc tế CS.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sự chỉ đạo của Nguyễn Ái Quốc",
+      "Không nhận thức được mâu thuẫn giai cấp",
+      "Ảnh hưởng tư tưởng giáo điều, tả khuynh của Quốc tế Cộng sản",
+      "Do phong trào cách mạng trong nước đi xuống"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "luan-cuong-1930"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-020",
+    "question": "Nhiệm vụ hàng đầu của cách mạng Đông Dương được xác định trong Cương lĩnh 2/1930 là gì và vì sao? (Phân tích 4)",
+    "explanation": "Đánh đổ đế quốc Pháp và phong kiến tay sai để giành độc lập dân tộc, vì mâu thuẫn dân tộc là mâu thuẫn gay gắt nhất.",
+    "chapterId": "chuong-1",
+    "lessonId": "vnr-ch1-cuong-linh-luan-cuong",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cách mạng ruộng đất để đem lại cơm no áo ấm",
+      "Đánh đổ đế quốc để giành độc lập dân tộc",
+      "Xây dựng ngay chủ nghĩa xã hội",
+      "Phát triển kinh tế tư bản chủ nghĩa"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "cuong-linh-1930"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "analyze",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-021",
+    "question": "Đỉnh cao của phong trào cách mạng 1930-1931 là sự kiện nào? (Biến thể 1)",
+    "explanation": "Đó là sự ra đời của các chính quyền Xô viết ở Nghệ An và Hà Tĩnh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cuộc khởi nghĩa Yên Bái",
+      "Sự ra đời chính quyền Xô viết Nghệ - Tĩnh",
+      "Cuộc bãi công của công nhân Phú Riềng",
+      "Phong trào đòi tự do dân chủ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-022",
+    "question": "Vì sao nói Xô viết Nghệ Tĩnh là cuộc \"tổng diễn tập\" đầu tiên chuẩn bị cho Cách mạng tháng Tám? (Phân tích 1)",
+    "explanation": "Qua phong trào, khối liên minh công nông được hình thành, năng lực lãnh đạo của Đảng được khẳng định và quần chúng được tập dượt đấu tranh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó đã lật đổ hoàn toàn chính quyền thực dân Pháp",
+      "Vì nó rèn luyện khối liên minh công nông và năng lực lãnh đạo của Đảng",
+      "Vì nó nhận được viện trợ vũ khí từ quốc tế",
+      "Vì nó chỉ nổ ra ở thành phố"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-023",
+    "question": "Sau năm 1931, Đảng đã sử dụng biện pháp nào để phục hồi tổ chức? (Góc nhìn 1)",
+    "explanation": "Đảng triệt để tận dụng các hình thức đấu tranh công khai, bán công khai và biến nhà tù thành trường học cách mạng.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Phát động tổng khởi nghĩa ngay lập tức",
+      "Chỉ hoạt động ở nước ngoài",
+      "Biến nhà tù đế quốc thành trường học cách mạng và củng cố cơ sở bí mật",
+      "Đầu hàng thỏa hiệp với thực dân"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-024",
+    "question": "Sự kiện nào đánh dấu hệ thống tổ chức của Đảng đã được khôi phục từ Trung ương đến địa phương? (Phân tích 1)",
+    "explanation": "Đại hội đại biểu lần thứ nhất của Đảng (tháng 3/1935) tại Ma Cao đánh dấu sự phục hồi hệ thống tổ chức.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị tháng 10/1930",
+      "Đại hội Đảng lần I (3/1935)",
+      "Hội nghị tháng 7/1936",
+      "Hội nghị Trung ương 8"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-025",
+    "question": "Nguyên nhân sâu xa bùng nổ phong trào cách mạng 1930-1931 là gì? (Góc nhìn 1)",
+    "explanation": "Mâu thuẫn cơ bản giữa dân tộc Việt Nam với thực dân Pháp ngày càng gay gắt, cộng với hậu quả của khủng hoảng kinh tế.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mâu thuẫn gay gắt giữa dân tộc Việt Nam và thực dân Pháp",
+      "Sự xúi giục của bên ngoài",
+      "Pháp mở rộng khai thác thuộc địa lần 3",
+      "Ảnh hưởng trực tiếp từ Cách mạng tháng Mười Nga"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-026",
+    "question": "Đỉnh cao của phong trào cách mạng 1930-1931 là sự kiện nào? (Biến thể 2)",
+    "explanation": "Đó là sự ra đời của các chính quyền Xô viết ở Nghệ An và Hà Tĩnh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cuộc khởi nghĩa Yên Bái",
+      "Sự ra đời chính quyền Xô viết Nghệ - Tĩnh",
+      "Cuộc bãi công của công nhân Phú Riềng",
+      "Phong trào đòi tự do dân chủ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-027",
+    "question": "Vì sao nói Xô viết Nghệ Tĩnh là cuộc \"tổng diễn tập\" đầu tiên chuẩn bị cho Cách mạng tháng Tám? (Phân tích 2)",
+    "explanation": "Qua phong trào, khối liên minh công nông được hình thành, năng lực lãnh đạo của Đảng được khẳng định và quần chúng được tập dượt đấu tranh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó đã lật đổ hoàn toàn chính quyền thực dân Pháp",
+      "Vì nó rèn luyện khối liên minh công nông và năng lực lãnh đạo của Đảng",
+      "Vì nó nhận được viện trợ vũ khí từ quốc tế",
+      "Vì nó chỉ nổ ra ở thành phố"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-028",
+    "question": "Sau năm 1931, Đảng đã sử dụng biện pháp nào để phục hồi tổ chức? (Góc nhìn 2)",
+    "explanation": "Đảng triệt để tận dụng các hình thức đấu tranh công khai, bán công khai và biến nhà tù thành trường học cách mạng.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Phát động tổng khởi nghĩa ngay lập tức",
+      "Chỉ hoạt động ở nước ngoài",
+      "Biến nhà tù đế quốc thành trường học cách mạng và củng cố cơ sở bí mật",
+      "Đầu hàng thỏa hiệp với thực dân"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-029",
+    "question": "Sự kiện nào đánh dấu hệ thống tổ chức của Đảng đã được khôi phục từ Trung ương đến địa phương? (Phân tích 2)",
+    "explanation": "Đại hội đại biểu lần thứ nhất của Đảng (tháng 3/1935) tại Ma Cao đánh dấu sự phục hồi hệ thống tổ chức.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị tháng 10/1930",
+      "Đại hội Đảng lần I (3/1935)",
+      "Hội nghị tháng 7/1936",
+      "Hội nghị Trung ương 8"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-030",
+    "question": "Nguyên nhân sâu xa bùng nổ phong trào cách mạng 1930-1931 là gì? (Góc nhìn 2)",
+    "explanation": "Mâu thuẫn cơ bản giữa dân tộc Việt Nam với thực dân Pháp ngày càng gay gắt, cộng với hậu quả của khủng hoảng kinh tế.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mâu thuẫn gay gắt giữa dân tộc Việt Nam và thực dân Pháp",
+      "Sự xúi giục của bên ngoài",
+      "Pháp mở rộng khai thác thuộc địa lần 3",
+      "Ảnh hưởng trực tiếp từ Cách mạng tháng Mười Nga"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-031",
+    "question": "Đỉnh cao của phong trào cách mạng 1930-1931 là sự kiện nào? (Biến thể 3)",
+    "explanation": "Đó là sự ra đời của các chính quyền Xô viết ở Nghệ An và Hà Tĩnh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cuộc khởi nghĩa Yên Bái",
+      "Sự ra đời chính quyền Xô viết Nghệ - Tĩnh",
+      "Cuộc bãi công của công nhân Phú Riềng",
+      "Phong trào đòi tự do dân chủ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-032",
+    "question": "Vì sao nói Xô viết Nghệ Tĩnh là cuộc \"tổng diễn tập\" đầu tiên chuẩn bị cho Cách mạng tháng Tám? (Phân tích 3)",
+    "explanation": "Qua phong trào, khối liên minh công nông được hình thành, năng lực lãnh đạo của Đảng được khẳng định và quần chúng được tập dượt đấu tranh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó đã lật đổ hoàn toàn chính quyền thực dân Pháp",
+      "Vì nó rèn luyện khối liên minh công nông và năng lực lãnh đạo của Đảng",
+      "Vì nó nhận được viện trợ vũ khí từ quốc tế",
+      "Vì nó chỉ nổ ra ở thành phố"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-033",
+    "question": "Sau năm 1931, Đảng đã sử dụng biện pháp nào để phục hồi tổ chức? (Góc nhìn 3)",
+    "explanation": "Đảng triệt để tận dụng các hình thức đấu tranh công khai, bán công khai và biến nhà tù thành trường học cách mạng.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Phát động tổng khởi nghĩa ngay lập tức",
+      "Chỉ hoạt động ở nước ngoài",
+      "Biến nhà tù đế quốc thành trường học cách mạng và củng cố cơ sở bí mật",
+      "Đầu hàng thỏa hiệp với thực dân"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-034",
+    "question": "Sự kiện nào đánh dấu hệ thống tổ chức của Đảng đã được khôi phục từ Trung ương đến địa phương? (Phân tích 3)",
+    "explanation": "Đại hội đại biểu lần thứ nhất của Đảng (tháng 3/1935) tại Ma Cao đánh dấu sự phục hồi hệ thống tổ chức.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị tháng 10/1930",
+      "Đại hội Đảng lần I (3/1935)",
+      "Hội nghị tháng 7/1936",
+      "Hội nghị Trung ương 8"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-035",
+    "question": "Nguyên nhân sâu xa bùng nổ phong trào cách mạng 1930-1931 là gì? (Góc nhìn 3)",
+    "explanation": "Mâu thuẫn cơ bản giữa dân tộc Việt Nam với thực dân Pháp ngày càng gay gắt, cộng với hậu quả của khủng hoảng kinh tế.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mâu thuẫn gay gắt giữa dân tộc Việt Nam và thực dân Pháp",
+      "Sự xúi giục của bên ngoài",
+      "Pháp mở rộng khai thác thuộc địa lần 3",
+      "Ảnh hưởng trực tiếp từ Cách mạng tháng Mười Nga"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-036",
+    "question": "Đỉnh cao của phong trào cách mạng 1930-1931 là sự kiện nào? (Biến thể 4)",
+    "explanation": "Đó là sự ra đời của các chính quyền Xô viết ở Nghệ An và Hà Tĩnh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Cuộc khởi nghĩa Yên Bái",
+      "Sự ra đời chính quyền Xô viết Nghệ - Tĩnh",
+      "Cuộc bãi công của công nhân Phú Riềng",
+      "Phong trào đòi tự do dân chủ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-037",
+    "question": "Vì sao nói Xô viết Nghệ Tĩnh là cuộc \"tổng diễn tập\" đầu tiên chuẩn bị cho Cách mạng tháng Tám? (Phân tích 4)",
+    "explanation": "Qua phong trào, khối liên minh công nông được hình thành, năng lực lãnh đạo của Đảng được khẳng định và quần chúng được tập dượt đấu tranh.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó đã lật đổ hoàn toàn chính quyền thực dân Pháp",
+      "Vì nó rèn luyện khối liên minh công nông và năng lực lãnh đạo của Đảng",
+      "Vì nó nhận được viện trợ vũ khí từ quốc tế",
+      "Vì nó chỉ nổ ra ở thành phố"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-038",
+    "question": "Sau năm 1931, Đảng đã sử dụng biện pháp nào để phục hồi tổ chức? (Góc nhìn 4)",
+    "explanation": "Đảng triệt để tận dụng các hình thức đấu tranh công khai, bán công khai và biến nhà tù thành trường học cách mạng.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Phát động tổng khởi nghĩa ngay lập tức",
+      "Chỉ hoạt động ở nước ngoài",
+      "Biến nhà tù đế quốc thành trường học cách mạng và củng cố cơ sở bí mật",
+      "Đầu hàng thỏa hiệp với thực dân"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-039",
+    "question": "Sự kiện nào đánh dấu hệ thống tổ chức của Đảng đã được khôi phục từ Trung ương đến địa phương? (Phân tích 4)",
+    "explanation": "Đại hội đại biểu lần thứ nhất của Đảng (tháng 3/1935) tại Ma Cao đánh dấu sự phục hồi hệ thống tổ chức.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị tháng 10/1930",
+      "Đại hội Đảng lần I (3/1935)",
+      "Hội nghị tháng 7/1936",
+      "Hội nghị Trung ương 8"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "phuc-hoi-to-chuc"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-040",
+    "question": "Nguyên nhân sâu xa bùng nổ phong trào cách mạng 1930-1931 là gì? (Góc nhìn 4)",
+    "explanation": "Mâu thuẫn cơ bản giữa dân tộc Việt Nam với thực dân Pháp ngày càng gay gắt, cộng với hậu quả của khủng hoảng kinh tế.",
+    "chapterId": "chuong-2",
+    "lessonId": "vnr-ch2-xo-viet-phuc-hoi",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mâu thuẫn gay gắt giữa dân tộc Việt Nam và thực dân Pháp",
+      "Sự xúi giục của bên ngoài",
+      "Pháp mở rộng khai thác thuộc địa lần 3",
+      "Ảnh hưởng trực tiếp từ Cách mạng tháng Mười Nga"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "xo-viet-nghe-tinh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-041",
+    "question": "Nhiệm vụ trực tiếp, trước mắt của cách mạng Đông Dương giai đoạn 1936-1939 là gì? (Góc nhìn 1)",
+    "explanation": "Chống chế độ phản động thuộc địa, chống phát xít, đòi tự do, dân sinh, dân chủ, cơm áo và hòa bình.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đánh đổ thực dân Pháp giành độc lập",
+      "Tịch thu ruộng đất của địa chủ",
+      "Chống phát xít, chống chiến tranh, đòi tự do dân chủ",
+      "Tổng khởi nghĩa vũ trang"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-042",
+    "question": "Vì sao Đảng tạm gác khẩu hiệu độc lập dân tộc và cách mạng ruộng đất trong giai đoạn 1936-1939? (Phân tích 1)",
+    "explanation": "Đây là sự điều chỉnh sách lược linh hoạt để tập hợp lực lượng rộng rãi nhất chống lại nguy cơ phát xít.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì Đảng đã từ bỏ mục tiêu giải phóng dân tộc",
+      "Vì sách lược tạm thời nhằm tập trung mũi nhọn vào kẻ thù nguy hiểm nhất là phát xít",
+      "Vì nông dân không còn nhu cầu ruộng đất",
+      "Vì Quốc tế Cộng sản cấm đấu tranh vũ trang"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-043",
+    "question": "Một bạn cho rằng phong trào 1936-1939 là một bước lùi vì không dùng bạo lực vũ trang. Phản biện nào đúng? (Tình huống 1)",
+    "explanation": "Đấu tranh chính trị hòa bình là hình thức phù hợp nhất lúc bấy giờ (khi Pháp có chính phủ bình dân) để giác ngộ quần chúng.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hoàn toàn đúng, cách mạng phải có đổ máu",
+      "Đó không phải bước lùi mà là nghệ thuật linh hoạt hình thức đấu tranh phù hợp hoàn cảnh",
+      "Sai, vì bạo lực đã được bí mật chuẩn bị nhưng chưa dùng",
+      "Đúng, vì phong trào này đã thất bại"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-044",
+    "question": "Mặt trận nào được thành lập năm 1938 để tập hợp lực lượng dân chủ? (Biến thể 1)",
+    "explanation": "Hội nghị Trung ương 1938 quyết định thành lập Mặt trận Dân chủ Đông Dương thay thế cho tên gọi trước đó.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mặt trận Thống nhất nhân dân phản đế",
+      "Mặt trận Dân chủ Đông Dương",
+      "Mặt trận Việt Minh",
+      "Mặt trận Liên Việt"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-045",
+    "question": "Sự kiện nào trên thế giới tạo điều kiện khách quan thuận lợi cho phong trào dân chủ 1936-1939? (Góc nhìn 1)",
+    "explanation": "Mặt trận Bình dân Pháp lên cầm quyền ban hành một số chính sách tiến bộ ở thuộc địa.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chiến tranh thế giới 2 bùng nổ",
+      "Mặt trận Bình dân Pháp lên cầm quyền",
+      "Nhật Bản đầu hàng Đồng minh",
+      "Cách mạng tháng Mười Nga thành công"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-046",
+    "question": "Nhiệm vụ trực tiếp, trước mắt của cách mạng Đông Dương giai đoạn 1936-1939 là gì? (Góc nhìn 2)",
+    "explanation": "Chống chế độ phản động thuộc địa, chống phát xít, đòi tự do, dân sinh, dân chủ, cơm áo và hòa bình.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đánh đổ thực dân Pháp giành độc lập",
+      "Tịch thu ruộng đất của địa chủ",
+      "Chống phát xít, chống chiến tranh, đòi tự do dân chủ",
+      "Tổng khởi nghĩa vũ trang"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-047",
+    "question": "Vì sao Đảng tạm gác khẩu hiệu độc lập dân tộc và cách mạng ruộng đất trong giai đoạn 1936-1939? (Phân tích 2)",
+    "explanation": "Đây là sự điều chỉnh sách lược linh hoạt để tập hợp lực lượng rộng rãi nhất chống lại nguy cơ phát xít.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì Đảng đã từ bỏ mục tiêu giải phóng dân tộc",
+      "Vì sách lược tạm thời nhằm tập trung mũi nhọn vào kẻ thù nguy hiểm nhất là phát xít",
+      "Vì nông dân không còn nhu cầu ruộng đất",
+      "Vì Quốc tế Cộng sản cấm đấu tranh vũ trang"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-048",
+    "question": "Một bạn cho rằng phong trào 1936-1939 là một bước lùi vì không dùng bạo lực vũ trang. Phản biện nào đúng? (Tình huống 2)",
+    "explanation": "Đấu tranh chính trị hòa bình là hình thức phù hợp nhất lúc bấy giờ (khi Pháp có chính phủ bình dân) để giác ngộ quần chúng.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hoàn toàn đúng, cách mạng phải có đổ máu",
+      "Đó không phải bước lùi mà là nghệ thuật linh hoạt hình thức đấu tranh phù hợp hoàn cảnh",
+      "Sai, vì bạo lực đã được bí mật chuẩn bị nhưng chưa dùng",
+      "Đúng, vì phong trào này đã thất bại"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-049",
+    "question": "Mặt trận nào được thành lập năm 1938 để tập hợp lực lượng dân chủ? (Biến thể 2)",
+    "explanation": "Hội nghị Trung ương 1938 quyết định thành lập Mặt trận Dân chủ Đông Dương thay thế cho tên gọi trước đó.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mặt trận Thống nhất nhân dân phản đế",
+      "Mặt trận Dân chủ Đông Dương",
+      "Mặt trận Việt Minh",
+      "Mặt trận Liên Việt"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-050",
+    "question": "Sự kiện nào trên thế giới tạo điều kiện khách quan thuận lợi cho phong trào dân chủ 1936-1939? (Góc nhìn 2)",
+    "explanation": "Mặt trận Bình dân Pháp lên cầm quyền ban hành một số chính sách tiến bộ ở thuộc địa.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chiến tranh thế giới 2 bùng nổ",
+      "Mặt trận Bình dân Pháp lên cầm quyền",
+      "Nhật Bản đầu hàng Đồng minh",
+      "Cách mạng tháng Mười Nga thành công"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-051",
+    "question": "Nhiệm vụ trực tiếp, trước mắt của cách mạng Đông Dương giai đoạn 1936-1939 là gì? (Góc nhìn 3)",
+    "explanation": "Chống chế độ phản động thuộc địa, chống phát xít, đòi tự do, dân sinh, dân chủ, cơm áo và hòa bình.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đánh đổ thực dân Pháp giành độc lập",
+      "Tịch thu ruộng đất của địa chủ",
+      "Chống phát xít, chống chiến tranh, đòi tự do dân chủ",
+      "Tổng khởi nghĩa vũ trang"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-052",
+    "question": "Vì sao Đảng tạm gác khẩu hiệu độc lập dân tộc và cách mạng ruộng đất trong giai đoạn 1936-1939? (Phân tích 3)",
+    "explanation": "Đây là sự điều chỉnh sách lược linh hoạt để tập hợp lực lượng rộng rãi nhất chống lại nguy cơ phát xít.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì Đảng đã từ bỏ mục tiêu giải phóng dân tộc",
+      "Vì sách lược tạm thời nhằm tập trung mũi nhọn vào kẻ thù nguy hiểm nhất là phát xít",
+      "Vì nông dân không còn nhu cầu ruộng đất",
+      "Vì Quốc tế Cộng sản cấm đấu tranh vũ trang"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-053",
+    "question": "Một bạn cho rằng phong trào 1936-1939 là một bước lùi vì không dùng bạo lực vũ trang. Phản biện nào đúng? (Tình huống 3)",
+    "explanation": "Đấu tranh chính trị hòa bình là hình thức phù hợp nhất lúc bấy giờ (khi Pháp có chính phủ bình dân) để giác ngộ quần chúng.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hoàn toàn đúng, cách mạng phải có đổ máu",
+      "Đó không phải bước lùi mà là nghệ thuật linh hoạt hình thức đấu tranh phù hợp hoàn cảnh",
+      "Sai, vì bạo lực đã được bí mật chuẩn bị nhưng chưa dùng",
+      "Đúng, vì phong trào này đã thất bại"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-054",
+    "question": "Mặt trận nào được thành lập năm 1938 để tập hợp lực lượng dân chủ? (Biến thể 3)",
+    "explanation": "Hội nghị Trung ương 1938 quyết định thành lập Mặt trận Dân chủ Đông Dương thay thế cho tên gọi trước đó.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mặt trận Thống nhất nhân dân phản đế",
+      "Mặt trận Dân chủ Đông Dương",
+      "Mặt trận Việt Minh",
+      "Mặt trận Liên Việt"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-055",
+    "question": "Sự kiện nào trên thế giới tạo điều kiện khách quan thuận lợi cho phong trào dân chủ 1936-1939? (Góc nhìn 3)",
+    "explanation": "Mặt trận Bình dân Pháp lên cầm quyền ban hành một số chính sách tiến bộ ở thuộc địa.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chiến tranh thế giới 2 bùng nổ",
+      "Mặt trận Bình dân Pháp lên cầm quyền",
+      "Nhật Bản đầu hàng Đồng minh",
+      "Cách mạng tháng Mười Nga thành công"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-056",
+    "question": "Nhiệm vụ trực tiếp, trước mắt của cách mạng Đông Dương giai đoạn 1936-1939 là gì? (Góc nhìn 4)",
+    "explanation": "Chống chế độ phản động thuộc địa, chống phát xít, đòi tự do, dân sinh, dân chủ, cơm áo và hòa bình.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đánh đổ thực dân Pháp giành độc lập",
+      "Tịch thu ruộng đất của địa chủ",
+      "Chống phát xít, chống chiến tranh, đòi tự do dân chủ",
+      "Tổng khởi nghĩa vũ trang"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-057",
+    "question": "Vì sao Đảng tạm gác khẩu hiệu độc lập dân tộc và cách mạng ruộng đất trong giai đoạn 1936-1939? (Phân tích 4)",
+    "explanation": "Đây là sự điều chỉnh sách lược linh hoạt để tập hợp lực lượng rộng rãi nhất chống lại nguy cơ phát xít.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì Đảng đã từ bỏ mục tiêu giải phóng dân tộc",
+      "Vì sách lược tạm thời nhằm tập trung mũi nhọn vào kẻ thù nguy hiểm nhất là phát xít",
+      "Vì nông dân không còn nhu cầu ruộng đất",
+      "Vì Quốc tế Cộng sản cấm đấu tranh vũ trang"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-058",
+    "question": "Một bạn cho rằng phong trào 1936-1939 là một bước lùi vì không dùng bạo lực vũ trang. Phản biện nào đúng? (Tình huống 4)",
+    "explanation": "Đấu tranh chính trị hòa bình là hình thức phù hợp nhất lúc bấy giờ (khi Pháp có chính phủ bình dân) để giác ngộ quần chúng.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hoàn toàn đúng, cách mạng phải có đổ máu",
+      "Đó không phải bước lùi mà là nghệ thuật linh hoạt hình thức đấu tranh phù hợp hoàn cảnh",
+      "Sai, vì bạo lực đã được bí mật chuẩn bị nhưng chưa dùng",
+      "Đúng, vì phong trào này đã thất bại"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-059",
+    "question": "Mặt trận nào được thành lập năm 1938 để tập hợp lực lượng dân chủ? (Biến thể 4)",
+    "explanation": "Hội nghị Trung ương 1938 quyết định thành lập Mặt trận Dân chủ Đông Dương thay thế cho tên gọi trước đó.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Mặt trận Thống nhất nhân dân phản đế",
+      "Mặt trận Dân chủ Đông Dương",
+      "Mặt trận Việt Minh",
+      "Mặt trận Liên Việt"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-060",
+    "question": "Sự kiện nào trên thế giới tạo điều kiện khách quan thuận lợi cho phong trào dân chủ 1936-1939? (Góc nhìn 4)",
+    "explanation": "Mặt trận Bình dân Pháp lên cầm quyền ban hành một số chính sách tiến bộ ở thuộc địa.",
+    "chapterId": "chuong-3",
+    "lessonId": "vnr-ch3-phong-trao-dan-chu",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chiến tranh thế giới 2 bùng nổ",
+      "Mặt trận Bình dân Pháp lên cầm quyền",
+      "Nhật Bản đầu hàng Đồng minh",
+      "Cách mạng tháng Mười Nga thành công"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "mat-tran-dan-chu"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-061",
+    "question": "Vì sao Hội nghị Trung ương 8 (5/1941) được coi là hoàn chỉnh chủ trương chuyển hướng chiến lược? (Phân tích 1)",
+    "explanation": "TW8 đã khắc phục triệt để hạn chế của Luận cương 1930, đặt lợi ích dân tộc lên trên hết, giải quyết vấn đề dân tộc trong khuôn khổ từng nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó bắt đầu đề ra khởi nghĩa vũ trang",
+      "Vì giải quyết triệt để vấn đề dân tộc tự quyết và lập mặt trận dân tộc thống nhất rộng rãi",
+      "Vì có sự tham gia của nhiều đại biểu quốc tế",
+      "Vì đã thành lập được quân đội chính quy"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw6",
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-062",
+    "question": "Điểm khác biệt của Mặt trận Việt Minh (1941) so với các mặt trận trước đó là gì? (Góc nhìn 1)",
+    "explanation": "Việt Minh giới hạn trong khuôn khổ nước Việt Nam, tôn trọng quyền tự quyết của các dân tộc Đông Dương và giương cao ngọn cờ dân tộc.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập hợp công nhân",
+      "Mang tính chất Đông Dương rộng lớn",
+      "Giới hạn trong nước Việt Nam và các hội cứu quốc đều mang tên 'Cứu quốc'",
+      "Chỉ hoạt động hợp pháp"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "viet-minh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-063",
+    "question": "Khẩu hiệu nào được Hội nghị Trung ương 8 (5/1941) tạm gác lại? (Góc nhìn 1)",
+    "explanation": "Khẩu hiệu 'Cách mạng ruộng đất' (tịch thu ruộng đất của địa chủ) được tạm gác để phân hóa kẻ thù, lôi kéo địa chủ yêu nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Độc lập dân tộc",
+      "Cách mạng ruộng đất (Tịch thu ruộng đất của địa chủ)",
+      "Đánh đổ đế quốc Pháp",
+      "Chống phát xít Nhật"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-064",
+    "question": "Hội nghị nào đánh dấu sự mở đầu quá trình chuyển hướng chỉ đạo chiến lược của Đảng thời kỳ 1939-1945? (Biến thể 1)",
+    "explanation": "Hội nghị Trung ương 6 (11/1939) do Nguyễn Văn Cừ chủ trì đã đánh dấu sự mở đầu chuyển hướng.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 6 (11/1939)",
+      "Hội nghị Trung ương 7 (11/1940)",
+      "Hội nghị Trung ương 8 (5/1941)",
+      "Hội nghị toàn quốc (8/1945)"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "hoi-nghi-tw6"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-065",
+    "question": "Nếu Hội nghị Trung ương 8 vẫn kiên quyết tiến hành cách mạng ruộng đất đồng thời với giải phóng dân tộc thì hệ quả sẽ ra sao? (Tình huống 1)",
+    "explanation": "Sẽ đẩy tầng lớp địa chủ, phong kiến yêu nước về phía kẻ thù, làm suy yếu mặt trận dân tộc thống nhất.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sẽ làm cách mạng thành công nhanh hơn",
+      "Sẽ chia rẽ khối đại đoàn kết toàn dân tộc, đẩy một bộ phận địa chủ về phía kẻ thù",
+      "Không ảnh hưởng gì đến lực lượng cách mạng",
+      "Được sự ủng hộ mạnh mẽ từ tư sản"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-066",
+    "question": "Vì sao Hội nghị Trung ương 8 (5/1941) được coi là hoàn chỉnh chủ trương chuyển hướng chiến lược? (Phân tích 2)",
+    "explanation": "TW8 đã khắc phục triệt để hạn chế của Luận cương 1930, đặt lợi ích dân tộc lên trên hết, giải quyết vấn đề dân tộc trong khuôn khổ từng nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó bắt đầu đề ra khởi nghĩa vũ trang",
+      "Vì giải quyết triệt để vấn đề dân tộc tự quyết và lập mặt trận dân tộc thống nhất rộng rãi",
+      "Vì có sự tham gia của nhiều đại biểu quốc tế",
+      "Vì đã thành lập được quân đội chính quy"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw6",
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-067",
+    "question": "Điểm khác biệt của Mặt trận Việt Minh (1941) so với các mặt trận trước đó là gì? (Góc nhìn 2)",
+    "explanation": "Việt Minh giới hạn trong khuôn khổ nước Việt Nam, tôn trọng quyền tự quyết của các dân tộc Đông Dương và giương cao ngọn cờ dân tộc.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập hợp công nhân",
+      "Mang tính chất Đông Dương rộng lớn",
+      "Giới hạn trong nước Việt Nam và các hội cứu quốc đều mang tên 'Cứu quốc'",
+      "Chỉ hoạt động hợp pháp"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "viet-minh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-068",
+    "question": "Khẩu hiệu nào được Hội nghị Trung ương 8 (5/1941) tạm gác lại? (Góc nhìn 2)",
+    "explanation": "Khẩu hiệu 'Cách mạng ruộng đất' (tịch thu ruộng đất của địa chủ) được tạm gác để phân hóa kẻ thù, lôi kéo địa chủ yêu nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Độc lập dân tộc",
+      "Cách mạng ruộng đất (Tịch thu ruộng đất của địa chủ)",
+      "Đánh đổ đế quốc Pháp",
+      "Chống phát xít Nhật"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-069",
+    "question": "Hội nghị nào đánh dấu sự mở đầu quá trình chuyển hướng chỉ đạo chiến lược của Đảng thời kỳ 1939-1945? (Biến thể 2)",
+    "explanation": "Hội nghị Trung ương 6 (11/1939) do Nguyễn Văn Cừ chủ trì đã đánh dấu sự mở đầu chuyển hướng.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 6 (11/1939)",
+      "Hội nghị Trung ương 7 (11/1940)",
+      "Hội nghị Trung ương 8 (5/1941)",
+      "Hội nghị toàn quốc (8/1945)"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "hoi-nghi-tw6"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-070",
+    "question": "Nếu Hội nghị Trung ương 8 vẫn kiên quyết tiến hành cách mạng ruộng đất đồng thời với giải phóng dân tộc thì hệ quả sẽ ra sao? (Tình huống 2)",
+    "explanation": "Sẽ đẩy tầng lớp địa chủ, phong kiến yêu nước về phía kẻ thù, làm suy yếu mặt trận dân tộc thống nhất.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sẽ làm cách mạng thành công nhanh hơn",
+      "Sẽ chia rẽ khối đại đoàn kết toàn dân tộc, đẩy một bộ phận địa chủ về phía kẻ thù",
+      "Không ảnh hưởng gì đến lực lượng cách mạng",
+      "Được sự ủng hộ mạnh mẽ từ tư sản"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-071",
+    "question": "Vì sao Hội nghị Trung ương 8 (5/1941) được coi là hoàn chỉnh chủ trương chuyển hướng chiến lược? (Phân tích 3)",
+    "explanation": "TW8 đã khắc phục triệt để hạn chế của Luận cương 1930, đặt lợi ích dân tộc lên trên hết, giải quyết vấn đề dân tộc trong khuôn khổ từng nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó bắt đầu đề ra khởi nghĩa vũ trang",
+      "Vì giải quyết triệt để vấn đề dân tộc tự quyết và lập mặt trận dân tộc thống nhất rộng rãi",
+      "Vì có sự tham gia của nhiều đại biểu quốc tế",
+      "Vì đã thành lập được quân đội chính quy"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw6",
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-072",
+    "question": "Điểm khác biệt của Mặt trận Việt Minh (1941) so với các mặt trận trước đó là gì? (Góc nhìn 3)",
+    "explanation": "Việt Minh giới hạn trong khuôn khổ nước Việt Nam, tôn trọng quyền tự quyết của các dân tộc Đông Dương và giương cao ngọn cờ dân tộc.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập hợp công nhân",
+      "Mang tính chất Đông Dương rộng lớn",
+      "Giới hạn trong nước Việt Nam và các hội cứu quốc đều mang tên 'Cứu quốc'",
+      "Chỉ hoạt động hợp pháp"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "viet-minh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-073",
+    "question": "Khẩu hiệu nào được Hội nghị Trung ương 8 (5/1941) tạm gác lại? (Góc nhìn 3)",
+    "explanation": "Khẩu hiệu 'Cách mạng ruộng đất' (tịch thu ruộng đất của địa chủ) được tạm gác để phân hóa kẻ thù, lôi kéo địa chủ yêu nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Độc lập dân tộc",
+      "Cách mạng ruộng đất (Tịch thu ruộng đất của địa chủ)",
+      "Đánh đổ đế quốc Pháp",
+      "Chống phát xít Nhật"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-074",
+    "question": "Hội nghị nào đánh dấu sự mở đầu quá trình chuyển hướng chỉ đạo chiến lược của Đảng thời kỳ 1939-1945? (Biến thể 3)",
+    "explanation": "Hội nghị Trung ương 6 (11/1939) do Nguyễn Văn Cừ chủ trì đã đánh dấu sự mở đầu chuyển hướng.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 6 (11/1939)",
+      "Hội nghị Trung ương 7 (11/1940)",
+      "Hội nghị Trung ương 8 (5/1941)",
+      "Hội nghị toàn quốc (8/1945)"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "hoi-nghi-tw6"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-075",
+    "question": "Nếu Hội nghị Trung ương 8 vẫn kiên quyết tiến hành cách mạng ruộng đất đồng thời với giải phóng dân tộc thì hệ quả sẽ ra sao? (Tình huống 3)",
+    "explanation": "Sẽ đẩy tầng lớp địa chủ, phong kiến yêu nước về phía kẻ thù, làm suy yếu mặt trận dân tộc thống nhất.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sẽ làm cách mạng thành công nhanh hơn",
+      "Sẽ chia rẽ khối đại đoàn kết toàn dân tộc, đẩy một bộ phận địa chủ về phía kẻ thù",
+      "Không ảnh hưởng gì đến lực lượng cách mạng",
+      "Được sự ủng hộ mạnh mẽ từ tư sản"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-076",
+    "question": "Vì sao Hội nghị Trung ương 8 (5/1941) được coi là hoàn chỉnh chủ trương chuyển hướng chiến lược? (Phân tích 4)",
+    "explanation": "TW8 đã khắc phục triệt để hạn chế của Luận cương 1930, đặt lợi ích dân tộc lên trên hết, giải quyết vấn đề dân tộc trong khuôn khổ từng nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Vì nó bắt đầu đề ra khởi nghĩa vũ trang",
+      "Vì giải quyết triệt để vấn đề dân tộc tự quyết và lập mặt trận dân tộc thống nhất rộng rãi",
+      "Vì có sự tham gia của nhiều đại biểu quốc tế",
+      "Vì đã thành lập được quân đội chính quy"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw6",
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-077",
+    "question": "Điểm khác biệt của Mặt trận Việt Minh (1941) so với các mặt trận trước đó là gì? (Góc nhìn 4)",
+    "explanation": "Việt Minh giới hạn trong khuôn khổ nước Việt Nam, tôn trọng quyền tự quyết của các dân tộc Đông Dương và giương cao ngọn cờ dân tộc.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Chỉ tập hợp công nhân",
+      "Mang tính chất Đông Dương rộng lớn",
+      "Giới hạn trong nước Việt Nam và các hội cứu quốc đều mang tên 'Cứu quốc'",
+      "Chỉ hoạt động hợp pháp"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "viet-minh"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-078",
+    "question": "Khẩu hiệu nào được Hội nghị Trung ương 8 (5/1941) tạm gác lại? (Góc nhìn 4)",
+    "explanation": "Khẩu hiệu 'Cách mạng ruộng đất' (tịch thu ruộng đất của địa chủ) được tạm gác để phân hóa kẻ thù, lôi kéo địa chủ yêu nước.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Độc lập dân tộc",
+      "Cách mạng ruộng đất (Tịch thu ruộng đất của địa chủ)",
+      "Đánh đổ đế quốc Pháp",
+      "Chống phát xít Nhật"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-079",
+    "question": "Hội nghị nào đánh dấu sự mở đầu quá trình chuyển hướng chỉ đạo chiến lược của Đảng thời kỳ 1939-1945? (Biến thể 4)",
+    "explanation": "Hội nghị Trung ương 6 (11/1939) do Nguyễn Văn Cừ chủ trì đã đánh dấu sự mở đầu chuyển hướng.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 6 (11/1939)",
+      "Hội nghị Trung ương 7 (11/1940)",
+      "Hội nghị Trung ương 8 (5/1941)",
+      "Hội nghị toàn quốc (8/1945)"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "hoi-nghi-tw6"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-080",
+    "question": "Nếu Hội nghị Trung ương 8 vẫn kiên quyết tiến hành cách mạng ruộng đất đồng thời với giải phóng dân tộc thì hệ quả sẽ ra sao? (Tình huống 4)",
+    "explanation": "Sẽ đẩy tầng lớp địa chủ, phong kiến yêu nước về phía kẻ thù, làm suy yếu mặt trận dân tộc thống nhất.",
+    "chapterId": "chuong-4",
+    "lessonId": "vnr-ch4-hoi-nghi-tw6",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Sẽ làm cách mạng thành công nhanh hơn",
+      "Sẽ chia rẽ khối đại đoàn kết toàn dân tộc, đẩy một bộ phận địa chủ về phía kẻ thù",
+      "Không ảnh hưởng gì đến lực lượng cách mạng",
+      "Được sự ủng hộ mạnh mẽ từ tư sản"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "hoi-nghi-tw8"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-081",
+    "question": "Thắng lợi của Cách mạng tháng Tám (1945) có phải chỉ do sự đầu hàng của phát xít Nhật? (Phân tích 1)",
+    "explanation": "Nhật đầu hàng chỉ là điều kiện khách quan thuận lợi. Sự chuẩn bị lâu dài về lực lượng và quyết đoán chớp thời cơ của Đảng mới là nguyên nhân chủ quan quyết định.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đúng, vì nhờ đó mà không tốn một viên đạn",
+      "Sai, nguyên nhân quyết định là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng ròng rã 15 năm",
+      "Đúng, vì lúc đó Việt Minh chưa có quân đội",
+      "Sai, do quân Đồng minh trực tiếp giúp đỡ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-082",
+    "question": "Chỉ thị \"Nhật - Pháp bắn nhau và hành động của chúng ta\" (12/3/1945) đã xác định kẻ thù chính của cách mạng Đông Dương lúc này là ai? (Góc nhìn 1)",
+    "explanation": "Sau đảo chính, Pháp bị loại, phát xít Nhật trở thành kẻ thù chính cụ thể và trước mắt.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thực dân Pháp",
+      "Phát xít Nhật",
+      "Đế quốc Mỹ và Tưởng Giới Thạch",
+      "Phong kiến tay sai"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-083",
+    "question": "Phương châm khởi nghĩa của Cách mạng tháng Tám được đề ra là gì? (Góc nhìn 1)",
+    "explanation": "Khởi nghĩa đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa",
+      "Tổng khởi nghĩa ngay lập tức trên toàn quốc",
+      "Chờ Đồng minh vào giải giáp mới khởi nghĩa",
+      "Dùng ngoại giao để đàm phán chính quyền"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-084",
+    "question": "Một bạn cho rằng thời cơ ngàn năm có một chỉ tồn tại từ sau ngày 15/8/1945. Phản biện nào đúng nhất? (Tình huống 1)",
+    "explanation": "Thời cơ bắt đầu khi Nhật đầu hàng (15/8) và kết thúc trước khi quân Đồng minh vào tước vũ khí (đầu tháng 9), tức là chỉ tồn tại trong vòng khoảng 15 ngày.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thời cơ kéo dài mãi đến năm 1946",
+      "Thời cơ chỉ tồn tại từ 15/8 đến trước 5/9 khi quân Đồng minh chưa vào Đông Dương",
+      "Thời cơ có từ khi Nhật đảo chính Pháp 9/3",
+      "Thời cơ do quân Đồng minh tạo ra và trao cho Việt Nam"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-085",
+    "question": "Đại hội nào đã quyết định phát động toàn dân Tổng khởi nghĩa giành chính quyền? (Biến thể 1)",
+    "explanation": "Đại hội Quốc dân Tân Trào (16/8/1945) đã tán thành chủ trương Tổng khởi nghĩa và cử ra Ủy ban dân tộc giải phóng Việt Nam.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 8",
+      "Hội nghị toàn quốc của Đảng (14-15/8/1945)",
+      "Đại hội Quốc dân Tân Trào (16/8/1945)",
+      "Đại hội Đảng lần I"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-086",
+    "question": "Thắng lợi của Cách mạng tháng Tám (1945) có phải chỉ do sự đầu hàng của phát xít Nhật? (Phân tích 2)",
+    "explanation": "Nhật đầu hàng chỉ là điều kiện khách quan thuận lợi. Sự chuẩn bị lâu dài về lực lượng và quyết đoán chớp thời cơ của Đảng mới là nguyên nhân chủ quan quyết định.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đúng, vì nhờ đó mà không tốn một viên đạn",
+      "Sai, nguyên nhân quyết định là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng ròng rã 15 năm",
+      "Đúng, vì lúc đó Việt Minh chưa có quân đội",
+      "Sai, do quân Đồng minh trực tiếp giúp đỡ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-087",
+    "question": "Chỉ thị \"Nhật - Pháp bắn nhau và hành động của chúng ta\" (12/3/1945) đã xác định kẻ thù chính của cách mạng Đông Dương lúc này là ai? (Góc nhìn 2)",
+    "explanation": "Sau đảo chính, Pháp bị loại, phát xít Nhật trở thành kẻ thù chính cụ thể và trước mắt.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thực dân Pháp",
+      "Phát xít Nhật",
+      "Đế quốc Mỹ và Tưởng Giới Thạch",
+      "Phong kiến tay sai"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-088",
+    "question": "Phương châm khởi nghĩa của Cách mạng tháng Tám được đề ra là gì? (Góc nhìn 2)",
+    "explanation": "Khởi nghĩa đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa",
+      "Tổng khởi nghĩa ngay lập tức trên toàn quốc",
+      "Chờ Đồng minh vào giải giáp mới khởi nghĩa",
+      "Dùng ngoại giao để đàm phán chính quyền"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-089",
+    "question": "Một bạn cho rằng thời cơ ngàn năm có một chỉ tồn tại từ sau ngày 15/8/1945. Phản biện nào đúng nhất? (Tình huống 2)",
+    "explanation": "Thời cơ bắt đầu khi Nhật đầu hàng (15/8) và kết thúc trước khi quân Đồng minh vào tước vũ khí (đầu tháng 9), tức là chỉ tồn tại trong vòng khoảng 15 ngày.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thời cơ kéo dài mãi đến năm 1946",
+      "Thời cơ chỉ tồn tại từ 15/8 đến trước 5/9 khi quân Đồng minh chưa vào Đông Dương",
+      "Thời cơ có từ khi Nhật đảo chính Pháp 9/3",
+      "Thời cơ do quân Đồng minh tạo ra và trao cho Việt Nam"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-090",
+    "question": "Đại hội nào đã quyết định phát động toàn dân Tổng khởi nghĩa giành chính quyền? (Biến thể 2)",
+    "explanation": "Đại hội Quốc dân Tân Trào (16/8/1945) đã tán thành chủ trương Tổng khởi nghĩa và cử ra Ủy ban dân tộc giải phóng Việt Nam.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 8",
+      "Hội nghị toàn quốc của Đảng (14-15/8/1945)",
+      "Đại hội Quốc dân Tân Trào (16/8/1945)",
+      "Đại hội Đảng lần I"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-091",
+    "question": "Thắng lợi của Cách mạng tháng Tám (1945) có phải chỉ do sự đầu hàng của phát xít Nhật? (Phân tích 3)",
+    "explanation": "Nhật đầu hàng chỉ là điều kiện khách quan thuận lợi. Sự chuẩn bị lâu dài về lực lượng và quyết đoán chớp thời cơ của Đảng mới là nguyên nhân chủ quan quyết định.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đúng, vì nhờ đó mà không tốn một viên đạn",
+      "Sai, nguyên nhân quyết định là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng ròng rã 15 năm",
+      "Đúng, vì lúc đó Việt Minh chưa có quân đội",
+      "Sai, do quân Đồng minh trực tiếp giúp đỡ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-092",
+    "question": "Chỉ thị \"Nhật - Pháp bắn nhau và hành động của chúng ta\" (12/3/1945) đã xác định kẻ thù chính của cách mạng Đông Dương lúc này là ai? (Góc nhìn 3)",
+    "explanation": "Sau đảo chính, Pháp bị loại, phát xít Nhật trở thành kẻ thù chính cụ thể và trước mắt.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thực dân Pháp",
+      "Phát xít Nhật",
+      "Đế quốc Mỹ và Tưởng Giới Thạch",
+      "Phong kiến tay sai"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-093",
+    "question": "Phương châm khởi nghĩa của Cách mạng tháng Tám được đề ra là gì? (Góc nhìn 3)",
+    "explanation": "Khởi nghĩa đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa",
+      "Tổng khởi nghĩa ngay lập tức trên toàn quốc",
+      "Chờ Đồng minh vào giải giáp mới khởi nghĩa",
+      "Dùng ngoại giao để đàm phán chính quyền"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-094",
+    "question": "Một bạn cho rằng thời cơ ngàn năm có một chỉ tồn tại từ sau ngày 15/8/1945. Phản biện nào đúng nhất? (Tình huống 3)",
+    "explanation": "Thời cơ bắt đầu khi Nhật đầu hàng (15/8) và kết thúc trước khi quân Đồng minh vào tước vũ khí (đầu tháng 9), tức là chỉ tồn tại trong vòng khoảng 15 ngày.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thời cơ kéo dài mãi đến năm 1946",
+      "Thời cơ chỉ tồn tại từ 15/8 đến trước 5/9 khi quân Đồng minh chưa vào Đông Dương",
+      "Thời cơ có từ khi Nhật đảo chính Pháp 9/3",
+      "Thời cơ do quân Đồng minh tạo ra và trao cho Việt Nam"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-095",
+    "question": "Đại hội nào đã quyết định phát động toàn dân Tổng khởi nghĩa giành chính quyền? (Biến thể 3)",
+    "explanation": "Đại hội Quốc dân Tân Trào (16/8/1945) đã tán thành chủ trương Tổng khởi nghĩa và cử ra Ủy ban dân tộc giải phóng Việt Nam.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 8",
+      "Hội nghị toàn quốc của Đảng (14-15/8/1945)",
+      "Đại hội Quốc dân Tân Trào (16/8/1945)",
+      "Đại hội Đảng lần I"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-096",
+    "question": "Thắng lợi của Cách mạng tháng Tám (1945) có phải chỉ do sự đầu hàng của phát xít Nhật? (Phân tích 4)",
+    "explanation": "Nhật đầu hàng chỉ là điều kiện khách quan thuận lợi. Sự chuẩn bị lâu dài về lực lượng và quyết đoán chớp thời cơ của Đảng mới là nguyên nhân chủ quan quyết định.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đúng, vì nhờ đó mà không tốn một viên đạn",
+      "Sai, nguyên nhân quyết định là sự lãnh đạo của Đảng và quá trình chuẩn bị lực lượng ròng rã 15 năm",
+      "Đúng, vì lúc đó Việt Minh chưa có quân đội",
+      "Sai, do quân Đồng minh trực tiếp giúp đỡ"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-097",
+    "question": "Chỉ thị \"Nhật - Pháp bắn nhau và hành động của chúng ta\" (12/3/1945) đã xác định kẻ thù chính của cách mạng Đông Dương lúc này là ai? (Góc nhìn 4)",
+    "explanation": "Sau đảo chính, Pháp bị loại, phát xít Nhật trở thành kẻ thù chính cụ thể và trước mắt.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thực dân Pháp",
+      "Phát xít Nhật",
+      "Đế quốc Mỹ và Tưởng Giới Thạch",
+      "Phong kiến tay sai"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "analyze",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-098",
+    "question": "Phương châm khởi nghĩa của Cách mạng tháng Tám được đề ra là gì? (Góc nhìn 4)",
+    "explanation": "Khởi nghĩa đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa",
+      "Tổng khởi nghĩa ngay lập tức trên toàn quốc",
+      "Chờ Đồng minh vào giải giáp mới khởi nghĩa",
+      "Dùng ngoại giao để đàm phán chính quyền"
+    ],
+    "correctAnswer": 0,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "medium",
+    "bloomLevel": "understand",
+    "points": 15,
+    "timeLimit": 45,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-099",
+    "question": "Một bạn cho rằng thời cơ ngàn năm có một chỉ tồn tại từ sau ngày 15/8/1945. Phản biện nào đúng nhất? (Tình huống 4)",
+    "explanation": "Thời cơ bắt đầu khi Nhật đầu hàng (15/8) và kết thúc trước khi quân Đồng minh vào tước vũ khí (đầu tháng 9), tức là chỉ tồn tại trong vòng khoảng 15 ngày.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Thời cơ kéo dài mãi đến năm 1946",
+      "Thời cơ chỉ tồn tại từ 15/8 đến trước 5/9 khi quân Đồng minh chưa vào Đông Dương",
+      "Thời cơ có từ khi Nhật đảo chính Pháp 9/3",
+      "Thời cơ do quân Đồng minh tạo ra và trao cho Việt Nam"
+    ],
+    "correctAnswer": 1,
+    "conceptIds": [
+      "nam-bat-thoi-co"
+    ],
+    "difficulty": "hard",
+    "bloomLevel": "evaluate",
+    "points": 20,
+    "timeLimit": 60,
+    "requiresVerification": false
+  },
+  {
+    "id": "rq-vnr-100",
+    "question": "Đại hội nào đã quyết định phát động toàn dân Tổng khởi nghĩa giành chính quyền? (Biến thể 4)",
+    "explanation": "Đại hội Quốc dân Tân Trào (16/8/1945) đã tán thành chủ trương Tổng khởi nghĩa và cử ra Ủy ban dân tộc giải phóng Việt Nam.",
+    "chapterId": "chuong-5",
+    "lessonId": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "feedbackCorrect": "Chính xác. Bạn đã hiểu đúng bản chất sự kiện.",
+    "feedbackIncorrect": "Chưa đúng. Hãy xem lại bối cảnh và ý nghĩa lịch sử.",
+    "type": "multiple-choice",
+    "options": [
+      "Hội nghị Trung ương 8",
+      "Hội nghị toàn quốc của Đảng (14-15/8/1945)",
+      "Đại hội Quốc dân Tân Trào (16/8/1945)",
+      "Đại hội Đảng lần I"
+    ],
+    "correctAnswer": 2,
+    "conceptIds": [
+      "tong-khoi-nghia"
+    ],
+    "difficulty": "easy",
+    "bloomLevel": "remember",
+    "points": 10,
+    "timeLimit": 30,
+    "requiresVerification": false
   }
 ];
+
+export default reviewQuestions;

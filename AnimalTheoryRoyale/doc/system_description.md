@@ -1,8 +1,8 @@
-# 🎮 Animal Theory Royale — Mô Tả Hệ Thống Chi Tiết
+# 🎮 Đấu Trường Lịch Sử VNR202 — Mô Tả Hệ Thống Chi Tiết
 
 ## 1. Tổng Quan
 
-**Animal Theory Royale** là một game multiplayer real-time kết hợp giữa **Battle Royale 3D** và **Quiz (trả lời câu hỏi lý thuyết)**. Người chơi chọn nhân vật động vật, di chuyển trên bản đồ 3D, trả lời câu hỏi để ghi điểm, bắn nhau, sử dụng kỹ năng, và sống sót trong vùng bo ngày càng thu hẹp.
+**Đấu Trường Lịch Sử VNR202** là một game multiplayer real-time kết hợp giữa **Battle Royale 3D** và **Quiz (trả lời câu hỏi lý thuyết)**. Người chơi chọn nhân vật động vật, di chuyển trên bản đồ 3D, trả lời câu hỏi để ghi điểm, bắn nhau, sử dụng kỹ năng, và sống sót trong vùng bo ngày càng thu hẹp.
 
 > [!IMPORTANT]
 > **Mục đích giáo dục:** Game được thiết kế cho giảng viên tổ chức thi đấu kiến thức trong lớp học. Host (giảng viên) tạo phòng, sinh viên vào chơi và trả lời câu hỏi môn học.

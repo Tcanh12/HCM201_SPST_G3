@@ -26,10 +26,10 @@ export default function ChaptersPage() {
             <LayoutGrid className="w-4 h-4" /> Nội dung giáo trình
           </div>
           <h1 className="text-4xl md:text-5xl font-display font-black text-[#1F2937] mb-6">
-            Khám phá tư tưởng Hồ Chí Minh
+            Khám phá đường lối cách mạng của Đảng
           </h1>
           <p className="text-gray-600 max-w-3xl text-lg">
-            Khám phá môn Tư tưởng Hồ Chí Minh theo từng chương, với nội dung được trình bày bằng sơ đồ, thẻ khái niệm, timeline, ví dụ thực tế và câu hỏi ôn tập.
+            Khám phá môn VNR202 theo từng chương, với nội dung được trình bày bằng sơ đồ, thẻ khái niệm, timeline, ví dụ thực tế và câu hỏi ôn tập.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function ChaptersPage() {
             <div className="flex justify-between items-end mb-4">
               <div>
                 <h3 className="text-[#1F2937] font-bold text-xl mb-1">Tiến độ học tập của bạn</h3>
-                <p className="text-gray-500 text-sm">Số chương đã hoàn thành: <span className="font-bold text-[#1F2937]">{completedCount}/6</span></p>
+                <p className="text-gray-500 text-sm">Số chương đã hoàn thành: <span className="font-bold text-[#1F2937]">{completedCount}/{chapters.length}</span></p>
               </div>
               <span className="text-3xl font-black text-[#B91C1C]">{totalProgress}%</span>
             </div>

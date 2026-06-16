@@ -1,143 +1,263 @@
-/**
- * Enhanced character data for premium lobby display
- * Contains role descriptions, outfit info, skill details, and visual config
- * This is client-side presentation data — actual stats come from the API
- */
-import { Crown, Rabbit, Cat, Shell, Shield, Wind, Dices, Orbit, Drum, Zap, Crosshair, Blocks, ScanEye, Footprints, ShieldHalf } from 'lucide-react';
+import { Shield, Zap, Brain, BookOpen, Clock, Flag } from 'lucide-react';
 
-/** Icon lookup for rendering - use getCharacterIcon(id) */
 export const CHARACTER_ICONS = {
-  1: Crown,       // Voi (Crown = power/strength)
-  2: Rabbit,     // Thỏ
-  3: Cat,        // Cáo
-  4: Shell,      // Rùa
+  1: Shield,
+  2: Zap,
+  3: Brain,
+  4: Shield,
 };
 
 export const CHARACTER_DATA = {
-  1: {
-    id: 1,
-    name: 'Voi',
-    animalType: 'Elephant',
-    role: 'Tanker',
-    roleVi: 'Cận Chiến',
-    iconName: 'Crown',
-    description: 'Người bảo vệ kiên cường với sức mạnh phi thường. Voi mang hình ảnh sức mạnh, bền bỉ — tượng trưng cho ý chí kiên cường của dân tộc.',
-    shortDesc: 'Máu cao, chậm nhưng vững chãi.',
-    outfit: 'Giáp nhẹ phong cách trống đồng, tông đỏ/vàng',
-    colors: {
-      primary: '#8B1A1A',
-      secondary: '#D4A843',
-      glow: 'rgba(139, 26, 26, 0.4)',
-      bg: 'rgba(139, 26, 26, 0.12)',
-      border: '#D4A843',
-      gradient: 'linear-gradient(135deg, #8B1A1A, #D4A843)',
+  "1": {
+    "id": 1,
+    "name": "Trâu Kiên Định",
+    "animalType": "Trâu",
+    "role": "Tanker",
+    "roleVi": "Đỡ đòn / nhiều máu",
+    "iconName": "Shield",
+    "description": "Đại diện cho sự bền bỉ của phong trào quần chúng, chịu áp lực tốt và bảo vệ đội trong thử thách kiến thức.",
+    "shortDesc": "Nhiều máu, giữ đội hình tốt.",
+    "outfit": "Trang phục học giả cách mạng, có sổ tay, huy hiệu và phụ kiện theo chủ đề VNR202.",
+    "colors": {
+      "primary": "#7C2D12",
+      "secondary": "#F97316",
+      "glow": "#FDBA74",
+      "bg": "#FFF7ED",
+      "border": "#EA580C",
+      "gradient": "linear-gradient(135deg, #7C2D12, #F97316)"
     },
-    skills: {
-      passive: { name: 'Bền Bỉ', desc: 'Giảm sát thương nhận từ bo 20%', iconName: 'Shield' },
-      push: { name: 'Đẩy Lùi', desc: 'Đẩy văng đối thủ trước mặt ra xa', iconName: 'Wind' },
-      double: { name: 'Liều Ăn Nhiều', desc: 'Đúng x2 điểm, Sai x2 sát thương', iconName: 'Dices' },
-      dizzy: { name: 'Chóng Mặt', desc: 'Gây choáng kẻ địch xung quanh 5s', iconName: 'Orbit' },
-      ultimate: { name: 'Dậm Đất', desc: 'Sóng chấn động hình trống đồng, gây sát thương và làm chậm', iconName: 'Drum', visualDesc: 'Sóng xung kích hình trống đồng / ánh sáng vàng' },
+    "skills": {
+      "passive": {
+        "name": "Ghi nhớ nền tảng",
+        "desc": "Tăng lợi thế nhỏ khi trả lời đúng câu hỏi cùng chương.",
+        "iconName": "BookOpen",
+        "visualDesc": "Vòng sáng kiến thức hiện quanh nhân vật."
+      },
+      "push": {
+        "name": "Đẩy lùi sai lệch",
+        "desc": "Đẩy nhẹ đối thủ khỏi vùng tranh chấp câu hỏi.",
+        "iconName": "Zap",
+        "visualDesc": "Làn sóng ánh sáng phóng ra phía trước."
+      },
+      "double": {
+        "name": "Lập luận kép",
+        "desc": "Nhân đôi điểm cho câu trả lời đúng tiếp theo.",
+        "iconName": "Brain",
+        "visualDesc": "Hai thẻ kiến thức xoay quanh nhân vật."
+      },
+      "dizzy": {
+        "name": "Nhiễu mốc thời gian",
+        "desc": "Làm chậm đối thủ trong thời gian ngắn.",
+        "iconName": "Clock",
+        "visualDesc": "Các mốc năm xoay quanh đối thủ."
+      },
+      "ultimate": {
+        "name": "Thành lũy Nghệ Tĩnh",
+        "desc": "Tạo hiệu ứng mạnh hỗ trợ đội trong thử thách kế tiếp.",
+        "iconName": "Flag",
+        "visualDesc": "Lá cờ phát sáng và tạo vùng hỗ trợ."
+      }
     },
-    statLabels: { hp: 'Rất Cao', speed: 'Chậm', damage: 'Trung Bình' },
-    accessories: ['Mặt nạ trống đồng mini', 'Vòng cổ vàng khắc hoa văn'],
+    "statLabels": {
+      "hp": "Máu rất cao",
+      "speed": "Tốc độ thấp",
+      "damage": "Sát thương vừa"
+    },
+    "accessories": [
+      "huy hiệu 1930",
+      "túi tài liệu",
+      "khăn đỏ"
+    ]
   },
-  2: {
-    id: 2,
-    name: 'Thỏ',
-    animalType: 'Rabbit',
-    role: 'Speedster',
-    roleVi: 'Tốc Độ',
-    iconName: 'Rabbit',
-    description: 'Nhanh như gió, linh hoạt và khó bắt. Thỏ đại diện cho sự nhanh nhẹn, thông minh — tượng trưng cho tinh thần sáng tạo.',
-    shortDesc: 'Cực nhanh, máu thấp, farm điểm hiệu quả.',
-    outfit: 'Áo choàng nhỏ phong cách trinh sát, tông xanh ngọc/trắng',
-    colors: {
-      primary: '#1B8C5A',
-      secondary: '#A7F3D0',
-      glow: 'rgba(27, 140, 90, 0.4)',
-      bg: 'rgba(27, 140, 90, 0.12)',
-      border: '#34D399',
-      gradient: 'linear-gradient(135deg, #1B8C5A, #A7F3D0)',
+  "2": {
+    "id": 2,
+    "name": "Sóc Tốc Ký",
+    "animalType": "Sóc",
+    "role": "Speedster",
+    "roleVi": "Tốc độ cao",
+    "iconName": "Zap",
+    "description": "Đại diện cho khả năng nắm bắt thời cơ, di chuyển nhanh và phù hợp thử thách timeline.",
+    "shortDesc": "Nhanh, linh hoạt, chớp thời cơ.",
+    "outfit": "Trang phục học giả cách mạng, có sổ tay, huy hiệu và phụ kiện theo chủ đề VNR202.",
+    "colors": {
+      "primary": "#1D4ED8",
+      "secondary": "#60A5FA",
+      "glow": "#BFDBFE",
+      "bg": "#EFF6FF",
+      "border": "#2563EB",
+      "gradient": "linear-gradient(135deg, #1D4ED8, #60A5FA)"
     },
-    skills: {
-      passive: { name: 'Linh Hoạt', desc: 'Di chuyển nhanh hơn 15% khi máu dưới 50%', iconName: 'Zap' },
-      push: { name: 'Đẩy Lùi', desc: 'Đẩy văng đối thủ trước mặt ra xa', iconName: 'Wind' },
-      double: { name: 'Liều Ăn Nhiều', desc: 'Đúng x2 điểm, Sai x2 sát thương', iconName: 'Dices' },
-      dizzy: { name: 'Chóng Mặt', desc: 'Gây choáng kẻ địch xung quanh 5s', iconName: 'Orbit' },
-      ultimate: { name: 'Lướt Nhanh', desc: 'Lao cực nhanh theo hướng nhìn để né đòn', iconName: 'Footprints', visualDesc: 'Vệt sáng xanh/vàng khi chạy' },
+    "skills": {
+      "passive": {
+        "name": "Ghi nhớ nền tảng",
+        "desc": "Tăng lợi thế nhỏ khi trả lời đúng câu hỏi cùng chương.",
+        "iconName": "BookOpen",
+        "visualDesc": "Vòng sáng kiến thức hiện quanh nhân vật."
+      },
+      "push": {
+        "name": "Đẩy lùi sai lệch",
+        "desc": "Đẩy nhẹ đối thủ khỏi vùng tranh chấp câu hỏi.",
+        "iconName": "Zap",
+        "visualDesc": "Làn sóng ánh sáng phóng ra phía trước."
+      },
+      "double": {
+        "name": "Lập luận kép",
+        "desc": "Nhân đôi điểm cho câu trả lời đúng tiếp theo.",
+        "iconName": "Brain",
+        "visualDesc": "Hai thẻ kiến thức xoay quanh nhân vật."
+      },
+      "dizzy": {
+        "name": "Nhiễu mốc thời gian",
+        "desc": "Làm chậm đối thủ trong thời gian ngắn.",
+        "iconName": "Clock",
+        "visualDesc": "Các mốc năm xoay quanh đối thủ."
+      },
+      "ultimate": {
+        "name": "Lệnh Tổng khởi nghĩa",
+        "desc": "Tạo hiệu ứng mạnh hỗ trợ đội trong thử thách kế tiếp.",
+        "iconName": "Flag",
+        "visualDesc": "Lá cờ phát sáng và tạo vùng hỗ trợ."
+      }
     },
-    statLabels: { hp: 'Thấp', speed: 'Rất Nhanh', damage: 'Thấp' },
-    accessories: ['Khăn quàng cổ gió', 'Kính phi công jade'],
+    "statLabels": {
+      "hp": "Máu thấp",
+      "speed": "Tốc độ rất cao",
+      "damage": "Sát thương thấp"
+    },
+    "accessories": [
+      "cuộn timeline",
+      "bút tốc ký",
+      "kính học giả"
+    ]
   },
-  3: {
-    id: 3,
-    name: 'Cáo',
-    animalType: 'Fox',
-    role: 'Strategist',
-    roleVi: 'Chiến Thuật',
-    iconName: 'Cat',
-    description: 'Khôn ngoan, sắc sảo và đầy mưu lược. Cáo là bộ óc chiến thuật — tượng trưng cho trí tuệ và tầm nhìn xa.',
-    shortDesc: 'Cân bằng mọi chỉ số, kỹ năng đa dạng.',
-    outfit: 'Áo vest học giả với kính trí tuệ, tông cam/vàng',
-    colors: {
-      primary: '#D97706',
-      secondary: '#FCD34D',
-      glow: 'rgba(217, 119, 6, 0.4)',
-      bg: 'rgba(217, 119, 6, 0.12)',
-      border: '#F59E0B',
-      gradient: 'linear-gradient(135deg, #D97706, #FCD34D)',
+  "3": {
+    "id": 3,
+    "name": "Mèo Biện Luận",
+    "animalType": "Mèo",
+    "role": "Balanced",
+    "roleVi": "Cân bằng",
+    "iconName": "Brain",
+    "description": "Đại diện cho tư duy phân tích văn kiện, phù hợp câu hỏi so sánh và nhận xét.",
+    "shortDesc": "Cân bằng, phân tích tốt.",
+    "outfit": "Trang phục học giả cách mạng, có sổ tay, huy hiệu và phụ kiện theo chủ đề VNR202.",
+    "colors": {
+      "primary": "#4C1D95",
+      "secondary": "#A78BFA",
+      "glow": "#DDD6FE",
+      "bg": "#F5F3FF",
+      "border": "#7C3AED",
+      "gradient": "linear-gradient(135deg, #4C1D95, #A78BFA)"
     },
-    skills: {
-      passive: { name: 'Nhạy Bén', desc: 'Thấy được bẫy trong phạm vi gần', iconName: 'ScanEye' },
-      push: { name: 'Đẩy Lùi', desc: 'Đẩy văng đối thủ trước mặt ra xa', iconName: 'Wind' },
-      double: { name: 'Liều Ăn Nhiều', desc: 'Đúng x2 điểm, Sai x2 sát thương', iconName: 'Dices' },
-      dizzy: { name: 'Chóng Mặt', desc: 'Gây choáng kẻ địch xung quanh 5s', iconName: 'Orbit' },
-      ultimate: { name: 'Bẫy Ảo Ảnh', desc: 'Đặt bẫy tàng hình, địch dẫm phải sẽ mất máu và bị chậm', iconName: 'Crosshair', visualDesc: 'Hologram, ảo ảnh, nhiễu điều khiển' },
+    "skills": {
+      "passive": {
+        "name": "Ghi nhớ nền tảng",
+        "desc": "Tăng lợi thế nhỏ khi trả lời đúng câu hỏi cùng chương.",
+        "iconName": "BookOpen",
+        "visualDesc": "Vòng sáng kiến thức hiện quanh nhân vật."
+      },
+      "push": {
+        "name": "Đẩy lùi sai lệch",
+        "desc": "Đẩy nhẹ đối thủ khỏi vùng tranh chấp câu hỏi.",
+        "iconName": "Zap",
+        "visualDesc": "Làn sóng ánh sáng phóng ra phía trước."
+      },
+      "double": {
+        "name": "So sánh văn kiện",
+        "desc": "Nhân đôi điểm cho câu trả lời đúng tiếp theo.",
+        "iconName": "Brain",
+        "visualDesc": "Hai thẻ kiến thức xoay quanh nhân vật."
+      },
+      "dizzy": {
+        "name": "Nhiễu mốc thời gian",
+        "desc": "Làm chậm đối thủ trong thời gian ngắn.",
+        "iconName": "Clock",
+        "visualDesc": "Các mốc năm xoay quanh đối thủ."
+      },
+      "ultimate": {
+        "name": "Chớp thời cơ",
+        "desc": "Tạo hiệu ứng mạnh hỗ trợ đội trong thử thách kế tiếp.",
+        "iconName": "Flag",
+        "visualDesc": "Lá cờ phát sáng và tạo vùng hỗ trợ."
+      }
     },
-    statLabels: { hp: 'Trung Bình', speed: 'Nhanh', damage: 'Trung Bình' },
-    accessories: ['Kính tròn học giả', 'Cuốn sách nhỏ bên hông'],
+    "statLabels": {
+      "hp": "Máu vừa",
+      "speed": "Tốc độ vừa",
+      "damage": "Sát thương vừa"
+    },
+    "accessories": [
+      "sổ Cương lĩnh",
+      "bút máy",
+      "nơ học giả"
+    ]
   },
-  4: {
-    id: 4,
-    name: 'Rùa',
-    animalType: 'Turtle',
-    role: 'Defender',
-    roleVi: 'Phòng Thủ',
-    iconName: 'Shell',
-    description: 'Kiên nhẫn và bất khả xâm phạm. Rùa là biểu tượng của sự trường tồn — tượng trưng cho trí tuệ và sự bền vững.',
-    shortDesc: 'Phòng thủ cao, khiên bảo vệ mạnh.',
-    outfit: 'Mai có họa tiết mạch công nghệ phát sáng, tông xanh dương/ngọc',
-    colors: {
-      primary: '#1E3A5F',
-      secondary: '#67E8F9',
-      glow: 'rgba(30, 58, 95, 0.4)',
-      bg: 'rgba(30, 58, 95, 0.12)',
-      border: '#06B6D4',
-      gradient: 'linear-gradient(135deg, #1E3A5F, #67E8F9)',
+  "4": {
+    "id": 4,
+    "name": "Rùa Hộ Mệnh",
+    "animalType": "Rùa",
+    "role": "Defender",
+    "roleVi": "Phòng thủ",
+    "iconName": "Shield",
+    "description": "Đại diện cho bài học xây dựng tổ chức và bảo toàn lực lượng, mạnh về hỗ trợ và phòng thủ.",
+    "shortDesc": "Phòng thủ, hỗ trợ, giữ điểm.",
+    "outfit": "Trang phục học giả cách mạng, có sổ tay, huy hiệu và phụ kiện theo chủ đề VNR202.",
+    "colors": {
+      "primary": "#166534",
+      "secondary": "#22C55E",
+      "glow": "#BBF7D0",
+      "bg": "#F0FDF4",
+      "border": "#16A34A",
+      "gradient": "linear-gradient(135deg, #166534, #22C55E)"
     },
-    skills: {
-      passive: { name: 'Bất Khuất', desc: 'Giảm 30% thời gian bị choáng', iconName: 'Blocks' },
-      push: { name: 'Đẩy Lùi', desc: 'Đẩy văng đối thủ trước mặt ra xa', iconName: 'Wind' },
-      double: { name: 'Liều Ăn Nhiều', desc: 'Đúng x2 điểm, Sai x2 sát thương', iconName: 'Dices' },
-      dizzy: { name: 'Chóng Mặt', desc: 'Gây choáng kẻ địch xung quanh 5s', iconName: 'Orbit' },
-      ultimate: { name: 'Mai Rùa', desc: 'Tạo khiên năng lượng hình vòng tròn bảo vệ', iconName: 'ShieldHalf', visualDesc: 'Khiên năng lượng hình vòng tròn phát sáng' },
+    "skills": {
+      "passive": {
+        "name": "Ghi nhớ nền tảng",
+        "desc": "Tăng lợi thế nhỏ khi trả lời đúng câu hỏi cùng chương.",
+        "iconName": "BookOpen",
+        "visualDesc": "Vòng sáng kiến thức hiện quanh nhân vật."
+      },
+      "push": {
+        "name": "Đẩy lùi sai lệch",
+        "desc": "Đẩy nhẹ đối thủ khỏi vùng tranh chấp câu hỏi.",
+        "iconName": "Zap",
+        "visualDesc": "Làn sóng ánh sáng phóng ra phía trước."
+      },
+      "double": {
+        "name": "Lập luận kép",
+        "desc": "Nhân đôi điểm cho câu trả lời đúng tiếp theo.",
+        "iconName": "Brain",
+        "visualDesc": "Hai thẻ kiến thức xoay quanh nhân vật."
+      },
+      "dizzy": {
+        "name": "Nhiễu mốc thời gian",
+        "desc": "Làm chậm đối thủ trong thời gian ngắn.",
+        "iconName": "Clock",
+        "visualDesc": "Các mốc năm xoay quanh đối thủ."
+      },
+      "ultimate": {
+        "name": "Pác Pó phòng tuyến",
+        "desc": "Tạo hiệu ứng mạnh hỗ trợ đội trong thử thách kế tiếp.",
+        "iconName": "Flag",
+        "visualDesc": "Lá cờ phát sáng và tạo vùng hỗ trợ."
+      }
     },
-    statLabels: { hp: 'Cao', speed: 'Chậm', damage: 'Thấp' },
-    accessories: ['Mai phát sáng mạch tri thức', 'Vòng tay năng lượng xanh'],
-  },
+    "statLabels": {
+      "hp": "Máu cao",
+      "speed": "Tốc độ thấp",
+      "damage": "Sát thương thấp"
+    },
+    "accessories": [
+      "mai bản đồ",
+      "sách nhỏ",
+      "đèn học"
+    ]
+  }
 };
 
-/**
- * Get character data by ID with fallback
- */
 export function getCharacterData(id) {
   return CHARACTER_DATA[id] || CHARACTER_DATA[1];
 }
 
-/**
- * Get all characters as array
- */
 export function getAllCharacters() {
   return Object.values(CHARACTER_DATA);
 }

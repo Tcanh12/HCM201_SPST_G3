@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { getRandomTips } from '../data/loadingTips';
 
 /**
- * Premium Loading Screen for Animal Theory Royale
+ * Premium Loading Screen for VNR202 Theory Royale
  * Shows animated background, rotating tips, and connection status
  */
 
@@ -206,7 +206,7 @@ export default function LoadingScreen({
       {/* Footer */}
       <div className="absolute bottom-4 text-center">
         <span className="text-[11px] text-white/15 font-mono">
-          Học Tư tưởng Hồ Chí Minh qua đấu trường sinh tồn tri thức
+          Học VNR202 qua đấu trường sinh tồn tri thức
         </span>
       </div>
     </div>

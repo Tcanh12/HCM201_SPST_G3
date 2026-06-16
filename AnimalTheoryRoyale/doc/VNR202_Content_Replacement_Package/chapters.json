@@ -1,0 +1,72 @@
+[
+  {
+    "id": "chuong-1",
+    "chapterNumber": 1,
+    "title": "Đảng ra đời và nền tảng đường lối 1930",
+    "summary": "Bối cảnh thành lập Đảng, Cương lĩnh chính trị đầu tiên và Luận cương chính trị tháng 10/1930 như nền tảng của đường lối đấu tranh cách mạng 1930–1945.",
+    "tags": [
+      "Đảng ra đời",
+      "Cương lĩnh 1930",
+      "Luận cương 1930",
+      "đường lối"
+    ],
+    "conceptCount": 3,
+    "color": "bg-red-600"
+  },
+  {
+    "id": "chuong-2",
+    "chapterNumber": 2,
+    "title": "Cao trào 1930–1931 và phục hồi 1932–1935",
+    "summary": "Phong trào cách mạng 1930–1931, Xô viết Nghệ Tĩnh, tổn thất sau đàn áp và quá trình phục hồi tổ chức Đảng đến Đại hội I năm 1935.",
+    "tags": [
+      "Xô viết Nghệ Tĩnh",
+      "1930–1931",
+      "phục hồi tổ chức",
+      "Đại hội I"
+    ],
+    "conceptCount": 3,
+    "color": "bg-orange-600"
+  },
+  {
+    "id": "chuong-3",
+    "chapterNumber": 3,
+    "title": "Phong trào dân chủ 1936–1939",
+    "summary": "Sự điều chỉnh sách lược của Đảng trong bối cảnh chống phát xít, chống chiến tranh, đòi dân sinh, dân chủ, hòa bình và xây dựng Mặt trận Dân chủ Đông Dương.",
+    "tags": [
+      "dân chủ",
+      "dân sinh",
+      "Mặt trận Dân chủ",
+      "chống phát xít"
+    ],
+    "conceptCount": 2,
+    "color": "bg-blue-600"
+  },
+  {
+    "id": "chuong-4",
+    "chapterNumber": 4,
+    "title": "Chuyển hướng chiến lược 1939–1941",
+    "summary": "Tác động của Chiến tranh thế giới thứ hai, các Hội nghị Trung ương 6, 7, 8 và sự hoàn chỉnh đường lối giải phóng dân tộc dưới vai trò của Nguyễn Ái Quốc.",
+    "tags": [
+      "chuyển hướng",
+      "Trung ương 6",
+      "Trung ương 8",
+      "Nguyễn Ái Quốc"
+    ],
+    "conceptCount": 3,
+    "color": "bg-emerald-600"
+  },
+  {
+    "id": "chuong-5",
+    "chapterNumber": 5,
+    "title": "Việt Minh, kháng Nhật và Cách mạng Tháng Tám",
+    "summary": "Thành lập Việt Minh, xây dựng lực lượng, cao trào kháng Nhật cứu nước, nắm bắt thời cơ và Tổng khởi nghĩa tháng Tám năm 1945.",
+    "tags": [
+      "Việt Minh",
+      "kháng Nhật",
+      "Tổng khởi nghĩa",
+      "Cách mạng Tháng Tám"
+    ],
+    "conceptCount": 4,
+    "color": "bg-yellow-600"
+  }
+]

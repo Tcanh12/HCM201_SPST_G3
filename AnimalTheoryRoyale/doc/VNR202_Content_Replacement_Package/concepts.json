@@ -1,0 +1,200 @@
+[
+  {
+    "id": "vnr-1930-1945",
+    "label": "Đường lối 1930–1945",
+    "description": "Trục kiến thức trung tâm về quá trình Đảng xác lập, điều chỉnh và hoàn chỉnh đường lối giành chính quyền.",
+    "type": "root",
+    "x": 500,
+    "y": 80,
+    "connections": [
+      "cn-chuong-1",
+      "cn-chuong-2",
+      "cn-chuong-3",
+      "cn-chuong-4",
+      "cn-chuong-5"
+    ]
+  },
+  {
+    "id": "cn-chuong-1",
+    "label": "Nền tảng 1930",
+    "description": "Đảng ra đời, Cương lĩnh đầu tiên và Luận cương tháng 10/1930.",
+    "type": "chapter",
+    "x": 120,
+    "y": 220,
+    "connections": [
+      "cuong-linh-1930",
+      "luan-cuong-1930"
+    ]
+  },
+  {
+    "id": "cn-chuong-2",
+    "label": "Cao trào và phục hồi",
+    "description": "Phong trào 1930–1931, Xô viết Nghệ Tĩnh và phục hồi 1932–1935.",
+    "type": "chapter",
+    "x": 320,
+    "y": 220,
+    "connections": [
+      "xo-viet-nghe-tinh",
+      "phuc-hoi-to-chuc"
+    ]
+  },
+  {
+    "id": "cn-chuong-3",
+    "label": "Dân chủ 1936–1939",
+    "description": "Điều chỉnh sách lược đấu tranh đòi dân sinh, dân chủ, hòa bình.",
+    "type": "chapter",
+    "x": 520,
+    "y": 220,
+    "connections": [
+      "sach-luoc-dan-chu"
+    ]
+  },
+  {
+    "id": "cn-chuong-4",
+    "label": "Chuyển hướng 1939–1941",
+    "description": "Đặt giải phóng dân tộc lên hàng đầu, hoàn chỉnh qua Hội nghị Trung ương 8.",
+    "type": "chapter",
+    "x": 720,
+    "y": 220,
+    "connections": [
+      "chuyen-huong-chien-luoc"
+    ]
+  },
+  {
+    "id": "cn-chuong-5",
+    "label": "Khởi nghĩa 1945",
+    "description": "Việt Minh, cao trào kháng Nhật và Tổng khởi nghĩa tháng Tám.",
+    "type": "chapter",
+    "x": 920,
+    "y": 220,
+    "connections": [
+      "viet-minh"
+    ]
+  },
+  {
+    "id": "cuong-linh-1930",
+    "label": "Cương lĩnh 1930",
+    "description": "Văn kiện nền tảng đặt nhiệm vụ độc lập dân tộc ở vị trí trung tâm.",
+    "type": "concept",
+    "x": 80,
+    "y": 390,
+    "connections": [
+      "luan-cuong-1930"
+    ]
+  },
+  {
+    "id": "luan-cuong-1930",
+    "label": "Luận cương 10/1930",
+    "description": "Văn kiện nhấn mạnh cách mạng tư sản dân quyền, thổ địa và phản đế.",
+    "type": "concept",
+    "x": 220,
+    "y": 390,
+    "connections": []
+  },
+  {
+    "id": "xo-viet-nghe-tinh",
+    "label": "Xô viết Nghệ Tĩnh",
+    "description": "Đỉnh cao phong trào cách mạng 1930–1931 tại Nghệ An và Hà Tĩnh.",
+    "type": "concept",
+    "x": 320,
+    "y": 390,
+    "connections": [
+      "phuc-hoi-to-chuc"
+    ]
+  },
+  {
+    "id": "phuc-hoi-to-chuc",
+    "label": "Phục hồi tổ chức",
+    "description": "Quá trình khôi phục hệ thống Đảng sau đàn áp 1931.",
+    "type": "concept",
+    "x": 450,
+    "y": 390,
+    "connections": []
+  },
+  {
+    "id": "sach-luoc-dan-chu",
+    "label": "Sách lược dân chủ",
+    "description": "Điều chỉnh nhiệm vụ, khẩu hiệu và hình thức đấu tranh 1936–1939.",
+    "type": "concept",
+    "x": 560,
+    "y": 390,
+    "connections": [
+      "mat-tran-dan-chu"
+    ]
+  },
+  {
+    "id": "mat-tran-dan-chu",
+    "label": "Mặt trận Dân chủ",
+    "description": "Hình thức tập hợp lực lượng trong phong trào 1936–1939.",
+    "type": "concept",
+    "x": 690,
+    "y": 390,
+    "connections": [
+      "chuyen-huong-chien-luoc"
+    ]
+  },
+  {
+    "id": "chuyen-huong-chien-luoc",
+    "label": "Chuyển hướng chiến lược",
+    "description": "Từ 1939, giải phóng dân tộc trở thành nhiệm vụ hàng đầu.",
+    "type": "concept",
+    "x": 760,
+    "y": 390,
+    "connections": [
+      "hoi-nghi-tw-8"
+    ]
+  },
+  {
+    "id": "hoi-nghi-tw-8",
+    "label": "Hội nghị TW 8",
+    "description": "Hội nghị tháng 5/1941 tại Pác Pó hoàn chỉnh chuyển hướng giải phóng dân tộc.",
+    "type": "concept",
+    "x": 900,
+    "y": 390,
+    "connections": [
+      "viet-minh"
+    ]
+  },
+  {
+    "id": "viet-minh",
+    "label": "Việt Minh",
+    "description": "Mặt trận đoàn kết toàn dân phục vụ mục tiêu độc lập dân tộc.",
+    "type": "concept",
+    "x": 820,
+    "y": 560,
+    "connections": [
+      "cao-trao-khang-nhat"
+    ]
+  },
+  {
+    "id": "cao-trao-khang-nhat",
+    "label": "Cao trào kháng Nhật",
+    "description": "Phong trào sau chỉ thị ngày 12/3/1945, chuẩn bị trực tiếp cho Tổng khởi nghĩa.",
+    "type": "concept",
+    "x": 970,
+    "y": 560,
+    "connections": [
+      "tong-khoi-nghia"
+    ]
+  },
+  {
+    "id": "tong-khoi-nghia",
+    "label": "Tổng khởi nghĩa",
+    "description": "Quyết định giành chính quyền trong thời cơ tháng Tám năm 1945.",
+    "type": "concept",
+    "x": 1120,
+    "y": 560,
+    "connections": [
+      "bai-hoc-kinh-nghiem"
+    ]
+  },
+  {
+    "id": "bai-hoc-kinh-nghiem",
+    "label": "Bài học kinh nghiệm",
+    "description": "Bài học về mục tiêu, lực lượng, phương pháp, thời cơ và lãnh đạo.",
+    "type": "concept",
+    "x": 980,
+    "y": 720,
+    "connections": []
+  }
+]

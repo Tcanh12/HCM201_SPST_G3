@@ -38,7 +38,7 @@ export default function TimelinePage() {
           <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden mb-4">
             <div className="h-full bg-[#1E3A8A] rounded-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
           </div>
-          <h2 className="text-2xl font-bold text-[#1F2937] leading-tight">Dòng chảy hình thành tư tưởng Hồ Chí Minh</h2>
+          <h2 className="text-2xl font-bold text-[#1F2937] leading-tight">Dòng chảy hình thành đường lối cách mạng của Đảng 1930-1945</h2>
         </div>
 
         <div className="relative border-l-2 border-gray-200 ml-4 space-y-6 pb-8">

@@ -39,7 +39,7 @@ export default function TheoryHomePage() {
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B91C1C] to-red-500">Trực quan hóa</span>
             <br />
-            <span className="text-[#1F2937]">Tư tưởng Hồ Chí Minh</span>
+            <span className="text-[#1F2937]">Lịch sử Đảng Cộng sản Việt Nam</span>
           </motion.h1>
 
           <motion.p
@@ -79,7 +79,7 @@ export default function TheoryHomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-[#1F2937]">Từ học thuộc sang <span className="text-[#F59E0B]">khám phá</span></h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-              Môn Tư tưởng Hồ Chí Minh có nhiều khái niệm quan trọng, nhưng nếu chỉ học bằng văn bản dài hoặc slide gạch đầu dòng, người học dễ cảm thấy khô khan và khó ghi nhớ. Concept Explorer chuyển nội dung giáo trình thành các lớp trực quan, giúp người học nhìn thấy cấu trúc, hiểu mối liên hệ và ghi nhớ bằng trải nghiệm.
+              VNR202 – Lịch sử Đảng Cộng sản Việt Nam là không gian học tập tương tác giúp sinh viên ôn tập chủ đề đường lối đấu tranh cách mạng của Đảng giai đoạn 1930–1945. Website kết hợp lý thuyết, timeline, mindmap, case study, quiz và game hóa để người học hiểu bối cảnh, chủ trương, kết quả, ý nghĩa và bài học kinh nghiệm.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function TheoryHomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FEE2E2]/50 rounded-full blur-3xl group-hover:bg-[#FEE2E2] transition-all" />
               <BookOpen className="w-10 h-10 text-[#B91C1C] mb-6 relative z-10" />
               <h3 className="text-2xl font-bold mb-3 text-[#1F2937] relative z-10">Học theo giáo trình</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Nội dung được chia theo từng chương, bám sát cấu trúc môn Tư tưởng Hồ Chí Minh.</p>
+              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Khám phá các giai đoạn phát triển đường lối đấu tranh cách mạng từ Cương lĩnh chính trị đầu tiên năm 1930 đến thắng lợi của Cách mạng Tháng Tám năm 1945.</p>
               <button onClick={() => navigate('/theory/chapters')} className="text-[#B91C1C] font-bold flex items-center gap-2 group-hover:gap-3 transition-all relative z-10">Khám phá ngay <ChevronRight className="w-4 h-4" /></button>
             </div>
 
@@ -134,7 +134,7 @@ export default function TheoryHomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FEF3C7]/50 rounded-full blur-3xl group-hover:bg-[#FEF3C7] transition-all" />
               <Network className="w-10 h-10 text-[#F59E0B] mb-6 relative z-10" />
               <h3 className="text-2xl font-bold mb-3 text-[#1F2937] relative z-10">Bản đồ tri thức</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Khám phá các khái niệm như một hệ thống node liên kết với nhau một cách trực quan.</p>
+              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Bản đồ khái niệm giúp liên kết các nội dung: mục tiêu chiến lược, nhiệm vụ trước mắt, lực lượng cách mạng, hình thức đấu tranh, mặt trận dân tộc thống nhất, thời cơ cách mạng và bài học kinh nghiệm.</p>
               <button onClick={() => navigate('/theory/concept-map')} className="text-[#F59E0B] font-bold flex items-center gap-2 group-hover:gap-3 transition-all relative z-10">Khám phá ngay <ChevronRight className="w-4 h-4" /></button>
             </div>
 
@@ -142,7 +142,7 @@ export default function TheoryHomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#DBEAFE]/50 rounded-full blur-3xl group-hover:bg-[#DBEAFE] transition-all" />
               <Clock className="w-10 h-10 text-[#1E3A8A] mb-6 relative z-10" />
               <h3 className="text-2xl font-bold mb-3 text-[#1F2937] relative z-10">Timeline lịch sử</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Theo dõi quá trình hình thành và phát triển tư tưởng Hồ Chí Minh qua các giai đoạn.</p>
+              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Theo dõi các mốc quan trọng: thành lập Đảng, Cương lĩnh đầu tiên, Luận cương 10/1930, Xô viết Nghệ Tĩnh, Đại hội I, phong trào dân chủ 1936–1939, Hội nghị Trung ương 6–7–8, Việt Minh, cao trào kháng Nhật và Tổng khởi nghĩa tháng Tám.</p>
               <button onClick={() => navigate('/theory/timeline')} className="text-[#1E3A8A] font-bold flex items-center gap-2 group-hover:gap-3 transition-all relative z-10">Khám phá ngay <ChevronRight className="w-4 h-4" /></button>
             </div>
 
@@ -150,7 +150,7 @@ export default function TheoryHomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#DCFCE7]/50 rounded-full blur-3xl group-hover:bg-[#DCFCE7] transition-all" />
               <FileText className="w-10 h-10 text-[#15803d] mb-6 relative z-10" />
               <h3 className="text-2xl font-bold mb-3 text-[#1F2937] relative z-10">Case Files</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Biến lý thuyết thành tình huống thực tế, ví dụ hiện đại và câu hỏi ứng dụng thực tiễn.</p>
+              <p className="text-gray-600 mb-8 leading-relaxed relative z-10">Phân tích tình huống lịch sử để hiểu vì sao Đảng điều chỉnh đường lối qua từng giai đoạn và cách mỗi quyết định gắn với bối cảnh cụ thể.</p>
               <button onClick={() => navigate('/theory/case-files')} className="text-[#15803d] font-bold flex items-center gap-2 group-hover:gap-3 transition-all relative z-10">Khám phá ngay <ChevronRight className="w-4 h-4" /></button>
             </div>
 
@@ -164,7 +164,7 @@ export default function TheoryHomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-[#1F2937]">Học sâu theo từng chương giáo trình</h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-              Website tổ chức nội dung theo các chương chính của môn Tư tưởng Hồ Chí Minh. Mỗi chương được trình bày bằng nhiều dạng giao diện khác nhau như tóm tắt trực quan, sơ đồ hóa, thẻ khái niệm, timeline, ví dụ thực tế và câu hỏi ôn tập.
+              Website tổ chức nội dung theo các chương chính của VNR202. Mỗi chương được trình bày bằng nhiều dạng giao diện khác nhau như tóm tắt trực quan, sơ đồ hóa, thẻ khái niệm, timeline, ví dụ thực tế và câu hỏi ôn tập.
             </p>
           </div>
 
@@ -223,7 +223,7 @@ export default function TheoryHomePage() {
 
       {/* Footer */}
       <footer className="py-8 text-center text-gray-500 text-sm border-t border-gray-200 bg-white">
-        <p>Concept Explorer © 2026. Trực quan hóa môn Tư tưởng Hồ Chí Minh.</p>
+        <p>VNR202 Explorer © 2026. Học lịch sử Đảng qua trực quan hóa.</p>
       </footer>
     </div>
   );

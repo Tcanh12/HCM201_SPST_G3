@@ -1,1367 +1,753 @@
 export const lessons = [
   {
-    "lessonId": "hcm-ch01-khai-niem-tu-tuong-hcm",
+    "id": "vnr-ch1-cuong-linh-luan-cuong",
     "chapterId": "chuong-1",
-    "moduleId": "tu-tuong-ho-chi-minh",
-    "title": "Khái niệm Tư tưởng Hồ Chí Minh",
-    "difficulty": "beginner",
-    "durationMinutes": 15,
-    "order": 1,
+    "title": "Đảng ra đời và nền tảng đường lối 1930",
+    "readingTime": 25,
+    "type": "theory",
+    "difficulty": "Intermediate",
     "tags": [
-      "Tư tưởng Hồ Chí Minh",
-      "Khái niệm",
-      "Nhập môn"
-    ],
-    "conceptIds": [
-      "khai-niem-tu-tuong-ho-chi-minh",
-      "chu-nghia-mac-lenin",
-      "truyen-thong-dan-toc",
-      "tinh-hoa-van-hoa-nhan-loai"
-    ],
-    "learningObjectives": [
-      "Trình bày được khái niệm Tư tưởng Hồ Chí Minh.",
-      "Nhận diện được các nguồn gốc hình thành tư tưởng Hồ Chí Minh.",
-      "Phân biệt Tư tưởng Hồ Chí Minh với tiểu sử Hồ Chí Minh hoặc các khẩu hiệu rời rạc.",
-      "Giải thích được vì sao Tư tưởng Hồ Chí Minh là nền tảng quan trọng để học các chương sau.",
-      "Vận dụng khái niệm để phân tích một tình huống học tập hoặc đời sống."
-    ],
-    "whyThisMatters": "Nếu không hiểu đúng khái niệm Tư tưởng Hồ Chí Minh, sinh viên rất dễ học môn này theo kiểu học thuộc lòng từng câu riêng lẻ. Bài học này giúp người học hiểu rằng Tư tưởng Hồ Chí Minh là một hệ thống quan điểm có cấu trúc, có nguồn gốc lý luận, có cơ sở thực tiễn và gắn chặt với cách mạng Việt Nam. Trong game Muông Thú Thông Thái, đây là bài nền tảng. Nếu người chơi hiểu đúng khái niệm trung tâm, họ sẽ dễ liên kết các chương sau như độc lập dân tộc, chủ nghĩa xã hội, Đảng, Nhà nước, đại đoàn kết, văn hóa, đạo đức và con người.",
-    "quickOverview": "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam. Tư tưởng đó được hình thành từ sự vận dụng và phát triển sáng tạo chủ nghĩa Mác – Lênin vào điều kiện cụ thể của Việt Nam, đồng thời kế thừa truyền thống tốt đẹp của dân tộc và tiếp thu tinh hoa văn hóa nhân loại. Nói đơn giản: Đây không phải là một vài câu nói nổi tiếng của Bác. Đây là một hệ thống tư tưởng giúp định hướng nhận thức và hành động trong cách mạng Việt Nam.",
-    "coreTheory": {
-      "beginner": "Ở mức cơ bản, sinh viên cần nhớ 3 ý:\n1. Tư tưởng Hồ Chí Minh là một hệ thống quan điểm.\n2. Hệ thống đó tập trung vào những vấn đề cơ bản của cách mạng Việt Nam.\n3. Tư tưởng này được hình thành từ nhiều nguồn: chủ nghĩa Mác – Lênin, truyền thống dân tộc, tinh hoa văn hóa nhân loại và hoạt động thực tiễn của Hồ Chí Minh.",
-      "intermediate": "Ở mức trung bình, sinh viên cần hiểu rằng Tư tưởng Hồ Chí Minh không hình thành ngẫu nhiên. Nó là kết quả của quá trình quan sát thực tiễn, tìm đường cứu nước, tiếp thu lý luận tiến bộ và vận dụng sáng tạo vào hoàn cảnh Việt Nam.\n\nTư tưởng này có tính hệ thống vì các nội dung không tách rời nhau. Ví dụ:\n- Độc lập dân tộc gắn với chủ nghĩa xã hội.\n- Nhà nước phải là của dân, do dân, vì dân.\n- Đại đoàn kết là sức mạnh để thực hiện mục tiêu dân tộc.\n- Đạo đức cách mạng là nền tảng của người cách mạng.",
-      "advanced": "Ở mức nâng cao, sinh viên cần nhìn Tư tưởng Hồ Chí Minh như một hệ thống lý luận có tính định hướng. Hệ thống này vừa kế thừa chủ nghĩa Mác – Lênin, vừa phát triển sáng tạo theo điều kiện lịch sử, văn hóa và xã hội Việt Nam.\n\nĐiểm quan trọng là không được hiểu Tư tưởng Hồ Chí Minh theo cách máy móc. Khi học, cần đặt từng luận điểm vào bối cảnh lịch sử cụ thể và liên hệ với thực tiễn hiện nay."
-    },
-    "conceptBreakdown": [
-      {
-        "conceptId": "khai-niem-tu-tuong-ho-chi-minh",
-        "definition": "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam.",
-        "explanation": "Đây là khái niệm trung tâm của môn học. Khi nói đến Tư tưởng Hồ Chí Minh, không chỉ nói đến tiểu sử, câu chuyện cuộc đời hay các câu nói nổi tiếng, mà là nói đến một hệ thống quan điểm có nội dung, logic và giá trị định hướng.",
-        "importance": "Nếu hiểu đúng khái niệm này, sinh viên sẽ học các chương sau dễ hơn vì biết cách kết nối các nội dung rời rạc thành một hệ thống.",
-        "examples": "Khi học về 'Nhà nước của dân, do dân, vì dân', sinh viên không nên chỉ học thuộc câu chữ. Cần hiểu đây là một phần trong hệ thống tư tưởng về quyền làm chủ của nhân dân.",
-        "applications": "Có thể dùng khái niệm này để phân tích các tình huống như trách nhiệm công dân, trung thực trong học tập, ứng xử trên mạng xã hội, tinh thần đoàn kết trong lớp học.",
-        "commonMistakes": [
-          "Nghĩ Tư tưởng Hồ Chí Minh chỉ là tiểu sử Hồ Chí Minh.",
-          "Nghĩ môn học chỉ cần học thuộc câu nói.",
-          "Tách từng nội dung khỏi bối cảnh lịch sử.",
-          "Không liên hệ lý luận với thực tiễn."
-        ],
-        "memoryTips": "Hãy nhớ công thức học nhanh: 'Hệ thống quan điểm → Cách mạng Việt Nam → Mác – Lênin + Dân tộc + Nhân loại + Thực tiễn.'"
-      },
-      {
-        "conceptId": "co-so-hinh-thanh",
-        "definition": "Nguồn gốc hình thành Tư tưởng Hồ Chí Minh gồm chủ nghĩa Mác – Lênin, truyền thống tốt đẹp của dân tộc Việt Nam, tinh hoa văn hóa nhân loại và phẩm chất, hoạt động thực tiễn của Hồ Chí Minh.",
-        "explanation": "Tư tưởng Hồ Chí Minh vừa có cơ sở lý luận, vừa có cơ sở thực tiễn. Người không sao chép máy móc bất kỳ học thuyết nào, mà tiếp thu có chọn lọc và vận dụng sáng tạo vào điều kiện Việt Nam.",
-        "importance": "Phần này giúp sinh viên hiểu vì sao Tư tưởng Hồ Chí Minh vừa mang tính dân tộc, vừa mang tính khoa học, vừa có giá trị thực tiễn.",
-        "examples": "Truyền thống yêu nước của dân tộc Việt Nam là nền tảng ban đầu. Chủ nghĩa Mác – Lênin cung cấp thế giới quan và phương pháp luận khoa học. Tinh hoa văn hóa nhân loại giúp mở rộng tầm nhìn. Hoạt động thực tiễn giúp kiểm nghiệm và phát triển tư tưởng.",
-        "applications": "Khi phân tích một quan điểm của Hồ Chí Minh, sinh viên cần xem quan điểm đó liên quan đến nguồn gốc nào và được vận dụng trong bối cảnh nào.",
-        "commonMistakes": [
-          "Chỉ nhấn mạnh một nguồn gốc và bỏ qua các nguồn khác.",
-          "Hiểu 'tiếp thu tinh hoa văn hóa nhân loại' là tiếp thu tất cả một cách không chọn lọc.",
-          "Hiểu chủ nghĩa Mác – Lênin như sự sao chép nguyên xi."
-        ],
-        "memoryTips": "Nhớ 4 nguồn: 'Mác – Dân tộc – Nhân loại – Thực tiễn.'"
-      }
-    ],
-    "realLifeScenarios": [
-      {
-        "title": "Học môn chính trị để qua môn",
-        "scenario": "Một sinh viên nghĩ rằng môn Tư tưởng Hồ Chí Minh chỉ cần học thuộc đáp án trắc nghiệm. Khi vào game, bạn ấy trả lời đúng một vài câu nhớ máy móc nhưng gặp câu hỏi tình huống thì không biết phân tích.",
-        "analysis": "Bạn ấy chưa hiểu môn học như một hệ thống tư tưởng. Cần học theo concept và mối quan hệ giữa các concept, không chỉ học thuộc đáp án."
-      },
-      {
-        "title": "Chia sẻ thông tin trên mạng",
-        "scenario": "Một nhóm sinh viên thấy một bài viết xuyên tạc chính sách xã hội và chia sẻ lại vì nghĩ 'mình chỉ share thôi, không ảnh hưởng gì'.",
-        "analysis": "Khi học Tư tưởng Hồ Chí Minh, sinh viên cần liên hệ với trách nhiệm công dân, lòng yêu nước và tư duy lý luận. Học không chỉ để thi mà để biết hành xử có trách nhiệm trong đời sống số."
-      },
-      {
-        "title": "Làm việc nhóm",
-        "scenario": "Một sinh viên luôn nói sẽ hoàn thành việc nhóm nhưng liên tục trễ deadline. Khi nhóm bị trừ điểm, bạn ấy lại đổ lỗi cho hoàn cảnh.",
-        "analysis": "Có thể liên hệ với nguyên tắc 'nói đi đôi với làm' và đạo đức cách mạng. Đây là ví dụ cho thấy tư tưởng không nằm xa đời sống mà có thể áp dụng vào học tập hằng ngày."
-      }
-    ],
-    "visualLearning": [
-      {
-        "id": "v-c1-1",
-        "chapterId": "chuong-1",
-        "type": "mindmap",
-        "title": "Tư tưởng Hồ Chí Minh là gì?",
-        "subtitle": "Hệ thống quan điểm toàn diện và sâu sắc",
-        "purpose": "Giúp sinh viên hiểu cấu trúc khái niệm Tư tưởng Hồ Chí Minh, không phải một câu định nghĩa rời rạc.",
-        "learningValue": "Sau khi xem sơ đồ, sinh viên có thể phân biệt Tư tưởng Hồ Chí Minh với tiểu sử, khẩu hiệu hoặc các câu nói rời rạc.",
-        "nodes": [
-          "Hệ thống quan điểm",
-          "Cách mạng Việt Nam",
-          "Chủ nghĩa Mác – Lênin",
-          "Truyền thống dân tộc",
-          "Tinh hoa nhân loại"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Tư tưởng Hồ Chí Minh cần được học như một hệ thống, không học rời rạc từng câu."
-        ],
-        "commonMistakes": [
-          "Chỉ nhớ các câu nói nổi tiếng mà không hiểu tư duy hệ thống."
-        ],
-        "reflectionQuestions": [
-          "Bạn áp dụng tư duy hệ thống này vào học tập như thế nào?"
-        ],
-        "relatedConceptIds": [
-          "khai-niem-tu-tuong-ho-chi-minh",
-          "chu-nghia-mac-lenin",
-          "truyen-thong-dan-toc"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch01-khai-niem-tu-tuong-hcm"
-      },
-      {
-        "id": "v-c1-2",
-        "chapterId": "chuong-1",
-        "type": "flowchart",
-        "title": "Cách học luận điểm Tư tưởng Hồ Chí Minh",
-        "subtitle": "Tránh học thuộc vẹt",
-        "purpose": "Giúp sinh viên biết cách tiếp cận một bài học về tư tưởng Hồ Chí Minh.",
-        "learningValue": "Cung cấp phương pháp luận chuẩn xác để không bị lạc lối trong lượng kiến thức lớn.",
-        "nodes": [],
-        "steps": [
-          "Đọc khái niệm",
-          "Xác định bối cảnh lịch sử",
-          "Tìm cơ sở lý luận",
-          "Liên hệ thực tiễn CMVN",
-          "Vận dụng vào đời sống hiện nay"
-        ],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Không tách rời luận điểm với hoàn cảnh ra đời của nó."
-        ],
-        "commonMistakes": [
-          "Học vẹt thuộc lòng mà không hiểu bối cảnh."
-        ],
-        "reflectionQuestions": [
-          "Tại sao phải đặt tư tưởng Bác vào hoàn cảnh lịch sử?"
-        ],
-        "relatedConceptIds": [
-          "phuong-phap-nghien-cuu",
-          "quan-diem-lich-su-cu-the"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch01-khai-niem-tu-tuong-hcm"
-      },
-      {
-        "id": "v-c1-3",
-        "chapterId": "chuong-1",
-        "type": "comparison",
-        "title": "Học đúng và Học sai",
-        "subtitle": "Phân biệt tư duy máy móc và tư duy hệ thống",
-        "purpose": "Chỉ ra sai lầm phổ biến khi tiếp cận môn học.",
-        "learningValue": "Giúp sinh viên điều chỉnh thái độ học tập ngay từ đầu.",
-        "nodes": [],
-        "steps": [],
-        "comparisons": [
-          {
-            "topic": "Phương pháp",
-            "wrong": "Học thuộc câu chữ",
-            "correct": "Hiểu bản chất và quan hệ"
-          },
-          {
-            "topic": "Hoàn cảnh",
-            "wrong": "Tách khỏi bối cảnh",
-            "correct": "Đặt vào hoàn cảnh lịch sử cụ thể"
-          },
-          {
-            "topic": "Mục đích",
-            "wrong": "Chỉ học để thi",
-            "correct": "Học để rèn tư duy và trách nhiệm"
-          },
-          {
-            "topic": "Kiến thức",
-            "wrong": "Nhớ khái niệm rời rạc",
-            "correct": "Kết nối khái niệm thành hệ thống"
-          }
-        ],
-        "keyTakeaways": [
-          "Mục đích cuối cùng là hình thành tư duy và thái độ đúng đắn."
-        ],
-        "commonMistakes": [
-          "Nghĩ môn lý thuyết chính trị chỉ là môn học thuộc lòng."
-        ],
-        "reflectionQuestions": [
-          "Bạn đã mắc phải lỗi nào trong số các lỗi hiểu sai trên?"
-        ],
-        "relatedConceptIds": [
-          "y-nghia-hoc-tap"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch01-khai-niem-tu-tuong-hcm"
-      }
-    ],
-    "interactiveLearning": [
-      {
-        "type": "Reflection",
-        "questions": [
-          "Vì sao không nên học Tư tưởng Hồ Chí Minh bằng cách học thuộc từng câu rời rạc?",
-          "Theo bạn, học môn này có thể giúp gì cho sinh viên trong đời sống hiện nay?",
-          "Khi gặp một thông tin gây tranh cãi trên mạng, việc học Tư tưởng Hồ Chí Minh có thể giúp bạn suy nghĩ thận trọng hơn như thế nào?"
-        ]
-      },
-      {
-        "type": "Matching",
-        "instruction": "Ghép nội dung bên trái với ý nghĩa bên phải:",
-        "pairs": [
-          {
-            "left": "Chủ nghĩa Mác – Lênin",
-            "right": "Cơ sở thế giới quan và phương pháp luận"
-          },
-          {
-            "left": "Truyền thống dân tộc",
-            "right": "Lòng yêu nước, nhân nghĩa, đoàn kết"
-          },
-          {
-            "left": "Tinh hoa văn hóa nhân loại",
-            "right": "Tiếp thu có chọn lọc giá trị tiến bộ"
-          },
-          {
-            "left": "Hoạt động thực tiễn",
-            "right": "Kiểm nghiệm và phát triển tư tưởng"
-          }
-        ]
-      },
-      {
-        "type": "DragDrop",
-        "instruction": "Sắp xếp quá trình học đúng:",
-        "correctOrder": [
-          "Đọc khái niệm",
-          "Xác định nguồn gốc",
-          "Hiểu mối quan hệ với chương sau",
-          "Vận dụng vào tình huống thực tế",
-          "Làm quiz kiểm tra"
-        ]
-      }
-    ],
-    "knowledgeCheck": {
-      "easy": [
-        "Tư tưởng Hồ Chí Minh là gì?",
-        "Tư tưởng Hồ Chí Minh tập trung vào những vấn đề cơ bản của lĩnh vực nào?",
-        "Kể tên 2 nguồn gốc hình thành Tư tưởng Hồ Chí Minh."
-      ],
-      "medium": [
-        "Vì sao không thể xem Tư tưởng Hồ Chí Minh là sự sao chép nguyên xi chủ nghĩa Mác – Lênin?",
-        "Vì sao cần học Tư tưởng Hồ Chí Minh theo hệ thống?",
-        "Hãy giải thích vai trò của truyền thống dân tộc trong sự hình thành tư tưởng Hồ Chí Minh."
-      ],
-      "hard": [
-        "Phân tích vì sao Tư tưởng Hồ Chí Minh vừa mang tính dân tộc vừa mang tính khoa học.",
-        "Hãy lấy một tình huống trong đời sống sinh viên để chứng minh việc học Tư tưởng Hồ Chí Minh có ý nghĩa thực tiễn.",
-        "Vì sao khi học Tư tưởng Hồ Chí Minh cần gắn lý luận với thực tiễn?"
-      ]
-    },
-    "challengeSection": [
-      {
-        "title": "Học thuộc hay học hiểu?",
-        "situation": "Một sinh viên nói: 'Em chỉ cần học thuộc đáp án quiz là đủ, không cần hiểu bản chất Tư tưởng Hồ Chí Minh.' Hãy viết phản hồi ngắn từ 3–5 câu để giải thích vì sao cách học này chưa đúng.",
-        "suggestedAnswer": "Cách học thuộc đáp án có thể giúp trả lời một số câu hỏi đơn giản nhưng không giúp hiểu bản chất môn học. Tư tưởng Hồ Chí Minh là một hệ thống quan điểm, vì vậy cần học theo mối liên hệ giữa các khái niệm. Nếu không hiểu, sinh viên sẽ khó vận dụng vào tình huống thực tế như trách nhiệm công dân, đạo đức học tập hoặc ứng xử trên mạng xã hội."
-      },
-      {
-        "title": "Liên hệ thực tế",
-        "situation": "Hãy chọn một tình huống trong đời sống sinh viên và chỉ ra tình huống đó có thể liên hệ với nội dung nào trong Tư tưởng Hồ Chí Minh.",
-        "hints": [
-          "Gian lận trong thi cử",
-          "Chia sẻ tin giả",
-          "Làm việc nhóm thiếu trách nhiệm",
-          "Gây chia rẽ vùng miền trên mạng",
-          "Thờ ơ với văn hóa dân tộc"
-        ]
-      }
-    ],
-    "keyTakeaways": [
-      "Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc.",
-      "Nội dung này tập trung vào những vấn đề cơ bản của cách mạng Việt Nam.",
-      "Tư tưởng Hồ Chí Minh không phải là tiểu sử hoặc tập hợp câu nói rời rạc.",
-      "Tư tưởng này được hình thành từ chủ nghĩa Mác – Lênin, truyền thống dân tộc, tinh hoa văn hóa nhân loại và thực tiễn cách mạng.",
-      "Cần học theo hệ thống, có bối cảnh và biết vận dụng.",
-      "Bài học này là nền tảng để hiểu các chương sau.",
-      "Học Tư tưởng Hồ Chí Minh không chỉ để thi, mà còn để rèn tư duy, đạo đức và trách nhiệm công dân."
-    ],
-    "furtherReading": [],
-    "instructorNotes": [
-      "Sinh viên thường nhầm Tư tưởng Hồ Chí Minh với tiểu sử Hồ Chí Minh. Khi dạy, cần nhấn mạnh đây là hệ thống quan điểm.",
-      "Sinh viên dễ học thuộc định nghĩa nhưng không hiểu ý nghĩa. Nên yêu cầu sinh viên diễn đạt lại bằng ngôn ngữ của mình.",
-      "Nên dùng ví dụ đời sống sinh viên như thi cử, làm việc nhóm, mạng xã hội để tăng tính gần gũi.",
-      "Không nên biến bài học thành phần đọc lại giáo trình dài. Hãy dùng sơ đồ, tình huống và câu hỏi tương tác.",
-      "Khi dạy, cần kết nối bài này với các chương sau: độc lập dân tộc, CNXH, Đảng, Nhà nước, đại đoàn kết, văn hóa, đạo đức, con người."
-    ],
-    "developerNotes": {
-      "lessonId": "hcm-ch01-khai-niem-tu-tuong-hcm",
-      "chapterId": "chuong-1",
-      "moduleId": "tu-tuong-ho-chi-minh",
-      "conceptIds": [
-        "khai-niem-tu-tuong-ho-chi-minh",
-        "chu-nghia-mac-lenin",
-        "truyen-thong-dan-toc",
-        "tinh-hoa-van-hoa-nhan-loai"
-      ],
-      "relatedCaseIds": [
-        "hoc-that-thi-that",
-        "trach-nhiem-cong-dan",
-        "noi-di-doi-voi-lam"
-      ],
-      "relatedTimelineIds": [
-        "coi-nguon-tu-tuong",
-        "ra-di-tim-duong-cuu-nuoc",
-        "tiep-can-chu-nghia-mac-lenin"
-      ],
-      "suggestedGameZone": "chuong-1",
-      "requiresVerification": false
-    },
-    "sourceReferences": [],
-    "requiresVerification": false
-  },
-  {
-    "lessonId": "hcm-ch02-co-so-hinh-thanh",
-    "chapterId": "chuong-2",
-    "moduleId": "tu-tuong-ho-chi-minh",
-    "title": "Cơ sở hình thành và phát triển Tư tưởng Hồ Chí Minh",
-    "difficulty": "intermediate",
-    "durationMinutes": 20,
-    "order": 2,
-    "tags": [
-      "Cơ sở hình thành",
       "Lịch sử",
-      "Mác-Lênin"
+      "Cương lĩnh",
+      "1930"
     ],
-    "conceptIds": [
-      "co-so-hinh-thanh",
-      "chu-nghia-mac-lenin",
-      "truyen-thong-dan-toc",
-      "nhan-to-chu-quan",
-      "tinh-hoa-van-hoa-nhan-loai"
-    ],
+    "description": "Bối cảnh thành lập Đảng, Cương lĩnh chính trị đầu tiên và Luận cương chính trị tháng 10/1930 như nền tảng của đường lối đấu tranh cách mạng 1930–1945.",
     "learningObjectives": [
-      "Hiểu rõ 3 cơ sở khách quan hình thành Tư tưởng HCM.",
-      "Phân tích vai trò quyết định của nhân tố chủ quan.",
-      "Nắm được các giai đoạn phát triển của Tư tưởng HCM."
+      "Phân tích bối cảnh thế giới và trong nước dẫn đến sự ra đời của Đảng.",
+      "Hiểu rõ nội dung cốt lõi của Cương lĩnh chính trị đầu tiên do Nguyễn Ái Quốc soạn thảo.",
+      "So sánh sự khác biệt và đánh giá ưu/khuyết điểm giữa Cương lĩnh đầu tiên và Luận cương tháng 10/1930.",
+      "Rút ra ý nghĩa lịch sử của việc thành lập Đảng đối với tiến trình cách mạng Việt Nam."
     ],
-    "whyThisMatters": "Hiểu được cơ sở hình thành giúp nhận thức rõ Tư tưởng HCM không phải là sản phẩm chủ quan, duy ý chí mà là sự kết tinh của lịch sử, văn hóa dân tộc, trí tuệ nhân loại và quy luật khách quan.",
-    "quickOverview": "Tư tưởng Hồ Chí Minh được hình thành dựa trên cơ sở thực tiễn (bối cảnh lịch sử dân tộc và thời đại), cơ sở lý luận (truyền thống văn hóa dân tộc, tinh hoa văn hóa nhân loại, chủ nghĩa Mác-Lênin) và nhân tố chủ quan (tài năng, phẩm chất của Người).",
-    "coreTheory": {
-      "beginner": "Tư tưởng Hồ Chí Minh bắt nguồn từ truyền thống yêu nước của dân tộc, tiếp thu văn hóa Đông - Tây, và đặc biệt là chủ nghĩa Mác - Lênin. Phẩm chất cá nhân xuất chúng của Bác đóng vai trò quyết định.",
-      "intermediate": "Cơ sở hình thành gồm 3 yếu tố khách quan: bối cảnh lịch sử, truyền thống dân tộc, tinh hoa nhân loại và chủ nghĩa Mác-Lênin. Trong đó, chủ nghĩa Mác-Lênin là cơ sở thế giới quan và phương pháp luận quyết định bản chất cách mạng, khoa học của Tư tưởng HCM.",
-      "advanced": "Sự chuyển biến từ chủ nghĩa yêu nước đến chủ nghĩa Mác-Lênin là bước ngoặt quyết định. Nhân tố chủ quan của Hồ Chí Minh (tư duy độc lập, sáng tạo, thực tiễn) đã giúp Người không sao chép giáo điều mà vận dụng sáng tạo Mác-Lênin vào thực tiễn Việt Nam."
-    },
-    "conceptBreakdown": [
+    "coreTheory": [
       {
-        "conceptId": "truyen-thong-dan-toc",
-        "definition": "Là những giá trị văn hóa, tinh thần tốt đẹp của dân tộc, cốt lõi là chủ nghĩa yêu nước.",
-        "explanation": "Chủ nghĩa yêu nước là động lực, là chuẩn mực đạo đức cao nhất. Nó thúc đẩy Hồ Chí Minh ra đi tìm đường cứu nước.",
-        "importance": "Là tiền đề tư tưởng, cơ sở xuất phát điểm của Tư tưởng HCM.",
-        "examples": "Tinh thần bất khuất chống ngoại xâm, truyền thống đoàn kết, tương thân tương ái.",
-        "applications": "Phát huy lòng yêu nước trong xây dựng và bảo vệ đất nước hiện nay.",
-        "commonMistakes": [
-          "Cho rằng Tư tưởng HCM chỉ bắt nguồn từ chủ nghĩa Mác-Lênin mà bỏ qua truyền thống dân tộc."
-        ],
-        "memoryTips": "Yêu nước là cội nguồn."
+        "title": "1. Bối cảnh lịch sử",
+        "content": [
+          "Cuối thế kỷ XIX - đầu thế kỷ XX, chủ nghĩa tư bản chuyển sang giai đoạn đế quốc chủ nghĩa. Sự bóc lột của các nước đế quốc làm mâu thuẫn giữa các dân tộc thuộc địa và chủ nghĩa đế quốc ngày càng gay gắt.",
+          "Cách mạng Tháng Mười Nga (1917) thành công, mở ra thời đại mới, cổ vũ mạnh mẽ phong trào giải phóng dân tộc. Quốc tế Cộng sản ra đời (1919) đã thúc đẩy phong trào cộng sản và công nhân quốc tế.",
+          "Trong nước, thực dân Pháp tiến hành khai thác thuộc địa, làm biến đổi cơ cấu xã hội Việt Nam. Các giai cấp mới như công nhân, tư sản, tiểu tư sản xuất hiện. Mâu thuẫn cơ bản của xã hội Việt Nam là mâu thuẫn giữa toàn thể dân tộc Việt Nam với thực dân Pháp và tay sai.",
+          "Các phong trào yêu nước theo khuynh hướng phong kiến và tư sản (như phong trào Cần Vương, Phan Bội Châu, Phan Châu Trinh) đều thất bại, đặt ra yêu cầu bức thiết phải có một đường lối cứu nước mới."
+        ]
       },
       {
-        "conceptId": "chu-nghia-mac-lenin",
-        "definition": "Hệ thống lý luận khoa học và cách mạng của giai cấp công nhân.",
-        "explanation": "Cung cấp thế giới quan duy vật biện chứng và phương pháp luận khoa học để Hồ Chí Minh giải quyết các vấn đề cách mạng VN.",
-        "importance": "Cơ sở lý luận quyết định bước ngoặt trong tư tưởng Hồ Chí Minh.",
-        "examples": "Vận dụng lý luận về đấu tranh giai cấp và cách mạng vô sản vào thực tiễn thuộc địa.",
-        "applications": "Áp dụng phương pháp luận Mác-Lênin để giải quyết các vấn đề đương đại.",
-        "commonMistakes": [
-          "Đồng nhất hoàn toàn Tư tưởng HCM với chủ nghĩa Mác-Lênin (sao chép)."
-        ],
-        "memoryTips": "Mác-Lênin là kim chỉ nam."
+        "title": "2. Nguyễn Ái Quốc chuẩn bị thành lập Đảng",
+        "content": [
+          "Về tư tưởng: Nguyễn Ái Quốc truyền bá chủ nghĩa Mác - Lênin vào Việt Nam, nhấn mạnh cách mạng giải phóng dân tộc phải đi theo con đường cách mạng vô sản.",
+          "Về chính trị: Chỉ rõ kẻ thù là chủ nghĩa đế quốc và phong kiến tay sai. Lực lượng cách mạng là quần chúng nhân dân, nòng cốt là công nông.",
+          "Về tổ chức: Lập Hội Việt Nam Cách mạng Thanh niên (1925), mở các lớp huấn luyện cán bộ, xuất bản báo Thanh niên và tác phẩm Đường Kách mệnh (1927)."
+        ]
       },
       {
-        "conceptId": "nhan-to-chu-quan",
-        "definition": "Phẩm chất, năng lực và hoạt động thực tiễn của chính Hồ Chí Minh.",
-        "explanation": "Khả năng tư duy độc lập, tự chủ, sáng tạo; sự khổ công học tập và rèn luyện; tâm hồn và ý chí vĩ đại.",
-        "importance": "Yếu tố quyết định để tiếp thu và vận dụng sáng tạo các điều kiện khách quan.",
-        "examples": "Quyết định ra đi tìm đường cứu nước bằng con đường lao động thực tiễn.",
-        "applications": "Tinh thần tự học, tự rèn luyện của thanh niên.",
-        "commonMistakes": [
-          "Chỉ nhấn mạnh hoàn cảnh lịch sử mà bỏ qua vai trò cá nhân lãnh tụ."
-        ],
-        "memoryTips": "Khách quan là điều kiện, chủ quan là quyết định."
-      }
-    ],
-    "visualLearning": [
-      {
-        "id": "v-c2-1",
-        "chapterId": "chuong-2",
-        "type": "relationship",
-        "title": "Vì sao cần tìm con đường cứu nước mới?",
-        "subtitle": "Sự bế tắc của các phong trào yêu nước cuối thế kỷ XIX",
-        "purpose": "Hiểu được bối cảnh lịch sử ép buộc phải có một sự chuyển hướng cách mạng.",
-        "learningValue": "Sinh viên nhận thức được việc ra đi tìm đường cứu nước của Bác là sự đáp ứng đòi hỏi khách quan của lịch sử.",
-        "nodes": [
-          "Việt Nam bị thực dân Pháp xâm lược",
-          "Phong trào cũ thất bại",
-          "Yêu cầu tìm đường cứu nước mới",
-          "Nguyễn Tất Thành ra đi",
-          "Tiếp cận Chủ nghĩa Mác-Lênin"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Không có sự khủng hoảng đường lối thì không có sự ra đi tìm đường cứu nước."
-        ],
-        "commonMistakes": [
-          "Cho rằng Bác ra đi tìm đường cứu nước chỉ vì tò mò về phương Tây."
-        ],
-        "reflectionQuestions": [
-          "Điều gì khiến con đường của Nguyễn Tất Thành khác biệt so với các bậc tiền bối?"
-        ],
-        "relatedConceptIds": [
-          "boi-canh-dan-toc",
-          "boi-canh-thoi-dai"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch02-co-so-hinh-thanh"
+        "title": "3. Hội nghị thành lập Đảng và Cương lĩnh chính trị đầu tiên",
+        "content": [
+          "Sự phát triển mạnh mẽ của phong trào công nhân đã dẫn đến sự ra đời của ba tổ chức cộng sản trong năm 1929: Đông Dương Cộng sản Đảng, An Nam Cộng sản Đảng, và Đông Dương Cộng sản Liên đoàn. Tuy nhiên, sự chia rẽ giữa các tổ chức này gây trở ngại cho phong trào.",
+          "Từ ngày 6/1 đến 7/2/1930 tại Cửu Long (Hương Cảng, Trung Quốc), Nguyễn Ái Quốc chủ trì Hội nghị hợp nhất các tổ chức cộng sản thành Đảng Cộng sản Việt Nam.",
+          "Cương lĩnh chính trị đầu tiên (Chính cương vắn tắt, Sách lược vắn tắt) xác định phương hướng chiến lược: 'Làm tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản'.",
+          "Nhiệm vụ: Đánh đổ đế quốc Pháp, phong kiến và tư sản phản cách mạng, làm cho nước Việt Nam được hoàn toàn độc lập.",
+          "Lực lượng: Công nhân, nông dân là gốc của cách mạng; đồng thời liên lạc với tiểu tư sản, trí thức, trung nông; lôi kéo hoặc trung lập phú nông, trung tiểu địa chủ, tư sản dân tộc."
+        ]
       },
       {
-        "id": "v-c2-2",
-        "chapterId": "chuong-2",
-        "type": "mindmap",
-        "title": "4 Nguồn gốc hình thành Tư tưởng Hồ Chí Minh",
-        "subtitle": "Sự hội tụ tinh hoa dân tộc và thời đại",
-        "purpose": "Làm rõ các yếu tố cấu thành nên hệ tư tưởng Hồ Chí Minh.",
-        "learningValue": "Hiểu rằng Tư tưởng Hồ Chí Minh không tự nhiên sinh ra, mà là một sự kết hợp khoa học.",
-        "nodes": [
-          "Truyền thống tốt đẹp của dân tộc VN",
-          "Tinh hoa văn hóa nhân loại",
-          "Chủ nghĩa Mác – Lênin",
-          "Nhân tố chủ quan Hồ Chí Minh"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Chủ nghĩa Mác - Lênin là cơ sở lý luận quyết định nhất.",
-          "Nhân tố chủ quan là điều kiện hiện thực hóa."
-        ],
-        "commonMistakes": [
-          "Quên mất nhân tố chủ quan, chỉ coi trọng hoàn cảnh khách quan."
-        ],
-        "reflectionQuestions": [
-          "Trong 4 nguồn gốc, nguồn gốc nào là quan trọng nhất đối với bạn?"
-        ],
-        "relatedConceptIds": [
-          "truyen-thong-dan-toc",
-          "chu-nghia-mac-lenin",
-          "nhan-to-chu-quan",
-          "tinh-hoa-van-hoa-nhan-loai"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch02-co-so-hinh-thanh"
+        "title": "4. Luận cương chính trị tháng 10/1930",
+        "content": [
+          "Tháng 10/1930, Hội nghị Ban Chấp hành Trung ương lần thứ nhất quyết định đổi tên Đảng thành Đảng Cộng sản Đông Dương và thông qua Luận cương chính trị do Trần Phú khởi thảo.",
+          "Nội dung: Tính chất của cách mạng Đông Dương lúc đầu là cách mạng tư sản dân quyền, có tính chất thổ địa và phản đế. Động lực chính là công nhân và nông dân.",
+          "Hạn chế: Chưa vạch rõ mâu thuẫn chủ yếu của xã hội Đông Dương thuộc địa, không đặt nhiệm vụ giải phóng dân tộc lên hàng đầu mà nặng về đấu tranh giai cấp và cách mạng ruộng đất. Đánh giá không đúng khả năng cách mạng của tầng lớp tiểu tư sản, tư sản dân tộc."
+        ]
       },
       {
-        "id": "v-c2-3",
-        "chapterId": "chuong-2",
-        "type": "timeline",
-        "title": "Quá trình hình thành và phát triển",
-        "subtitle": "Các mốc lịch sử quan trọng trong cuộc đời cách mạng",
-        "purpose": "Tóm tắt các giai đoạn hình thành tư tưởng của Bác.",
-        "learningValue": "Nắm được sự vận động và phát triển không ngừng của Tư tưởng Hồ Chí Minh.",
-        "nodes": [],
-        "steps": [
-          "Trước 1911: Hình thành lòng yêu nước",
-          "1911: Ra đi tìm đường cứu nước",
-          "1920: Tiếp cận chủ nghĩa Mác - Lênin",
-          "1930: Thành lập Đảng Cộng sản",
-          "1945: Khai sinh nước Việt Nam DCCH",
-          "1969: Di chúc Hồ Chí Minh"
-        ],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Tư tưởng Hồ Chí Minh liên tục phát triển qua các thời kỳ cách mạng."
-        ],
-        "commonMistakes": [
-          "Nghĩ rằng Tư tưởng Hồ Chí Minh hoàn thiện ngay từ năm 1911."
-        ],
-        "reflectionQuestions": [
-          "Bước ngoặt quan trọng nhất trong hành trình của Bác là gì?"
-        ],
-        "relatedConceptIds": [
-          "qua-trinh-hinh-thanh-phat-trien"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch02-co-so-hinh-thanh"
-      }
-    ],
-    "interactiveLearning": [
-      {
-        "type": "Reflection",
-        "questions": [
-          "Nếu không có chủ nghĩa Mác-Lênin, con đường cứu nước của Bác sẽ ra sao?",
-          "Nhân tố chủ quan nào của Bác mà bạn thấy ấn tượng nhất?",
-          "Bạn áp dụng tinh thần tự học của Bác như thế nào?"
+        "title": "5. Ý nghĩa lịch sử",
+        "content": [
+          "Đảng ra đời chấm dứt thời kỳ khủng hoảng về đường lối cứu nước và giai cấp lãnh đạo.",
+          "Chứng tỏ giai cấp công nhân Việt Nam đã trưởng thành và đủ sức lãnh đạo cách mạng.",
+          "Cách mạng Việt Nam trở thành một bộ phận khăng khít của cách mạng thế giới."
         ]
       }
     ],
-    "knowledgeCheck": {
-      "easy": [
-        "Có bao nhiêu cơ sở khách quan hình thành tư tưởng HCM?",
-        "Truyền thống quý báu nhất của dân tộc Việt Nam là gì?",
-        "Bác Hồ ra đi tìm đường cứu nước năm nào?"
-      ],
-      "medium": [
-        "Vì sao nói chủ nghĩa Mác-Lênin là cơ sở lý luận quan trọng nhất?",
-        "Nhân tố chủ quan đóng vai trò gì?",
-        "Sự khác biệt giữa việc tiếp thu văn hóa phương Đông và phương Tây của Bác?"
-      ],
-      "hard": []
-    },
-    "challengeSection": [
-      {
-        "title": "Vận dụng nhân tố chủ quan",
-        "situation": "Hãy đề xuất một phương pháp học tập/làm việc dựa trên phẩm chất 'tư duy độc lập, sáng tạo' của Bác.",
-        "suggestedAnswer": "Không sao chép máy móc, luôn đặt câu hỏi 'tại sao', tìm cách giải quyết vấn đề phù hợp với điều kiện thực tế của bản thân."
-      }
-    ],
-    "keyTakeaways": [
-      "Cơ sở hình thành bao gồm: Thực tiễn, Lý luận, Nhân tố chủ quan.",
-      "Chủ nghĩa Mác-Lênin là nguồn gốc lý luận quyết định bản chất.",
-      "Nhân tố chủ quan đóng vai trò quyết định trong việc vận dụng sáng tạo.",
-      "Quá trình hình thành là một quá trình liên tục qua nhiều giai đoạn lịch sử."
-    ],
-    "requiresVerification": true
-  },
-  {
-    "lessonId": "hcm-ch03-doc-lap-dan-toc",
-    "chapterId": "chuong-3",
-    "moduleId": "tu-tuong-ho-chi-minh",
-    "title": "Độc lập dân tộc gắn liền với Chủ nghĩa xã hội",
-    "difficulty": "intermediate",
-    "durationMinutes": 25,
-    "order": 3,
-    "tags": [
-      "Độc lập",
-      "CNXH",
-      "Mục tiêu"
-    ],
-    "conceptIds": [
-      "doc-lap-dan-toc",
-      "chu-nghia-xa-hoi",
-      "doc-lap-dan-toc-gan-lien-cnxh"
-    ],
-    "learningObjectives": [
-      "Hiểu rõ quan điểm của HCM về độc lập dân tộc.",
-      "Nắm vững đặc trưng của CNXH theo Tư tưởng HCM.",
-      "Phân tích mối quan hệ hữu cơ giữa Độc lập dân tộc và CNXH."
-    ],
-    "whyThisMatters": "Đây là tư tưởng cốt lõi, xuyên suốt của cách mạng Việt Nam, là sợi chỉ đỏ chỉ đường cho mọi thắng lợi của Đảng và nhân dân ta.",
-    "quickOverview": "Độc lập dân tộc là mục tiêu trước mắt, là tiền đề; CNXH là mục tiêu lâu dài, là điều kiện bảo đảm cho độc lập dân tộc được vững chắc. Hai mục tiêu này gắn bó chặt chẽ, không thể tách rời.",
-    "coreTheory": {
-      "beginner": "Độc lập dân tộc phải hoàn toàn, triệt để. Nước độc lập mà dân không được hưởng tự do, hạnh phúc thì độc lập cũng không có ý nghĩa. Do đó, phải tiến lên CNXH để mang lại ấm no cho dân.",
-      "intermediate": "Cách mạng giải phóng dân tộc phải đi theo con đường cách mạng vô sản. Sau khi giành độc lập, phải tiến hành cách mạng XHCN. CNXH là một chế độ xã hội do nhân dân làm chủ, có nền kinh tế phát triển cao, văn hóa tiên tiến, con người được giải phóng.",
-      "advanced": "Tính tất yếu của sự gắn kết: Độc lập dân tộc tạo tiền đề chính trị, vật chất cho CNXH. Ngược lại, CNXH tạo cơ sở vững chắc để giữ vững độc lập. Đây là sự sáng tạo của HCM so với lý luận Mác-Lênin đương thời khi áp dụng vào một nước thuộc địa."
-    },
     "conceptBreakdown": [
       {
-        "conceptId": "doc-lap-dan-toc",
-        "definition": "Quyền thiêng liêng, bất khả xâm phạm của dân tộc.",
-        "explanation": "Độc lập phải gắn với tự do, hạnh phúc của nhân dân, gắn với hòa bình và toàn vẹn lãnh thổ.",
-        "importance": "Là khát vọng lớn nhất và mục tiêu đấu tranh trực tiếp của cách mạng giải phóng dân tộc.",
-        "examples": "Bản Tuyên ngôn Độc lập năm 1945.",
-        "applications": "Bảo vệ chủ quyền toàn vẹn lãnh thổ trong bối cảnh toàn cầu hóa.",
+        "conceptId": "cuong-linh-1930",
+        "title": "Cương lĩnh chính trị đầu tiên (2/1930)",
+        "description": "Văn kiện nền tảng do Nguyễn Ái Quốc soạn thảo.",
+        "definition": "Bản cương lĩnh xác định đường lối chiến lược, nhiệm vụ, lực lượng và phương pháp cách mạng của Đảng Cộng sản Việt Nam.",
+        "explanation": "Điểm sáng tạo nhất là đặt vấn đề giải phóng dân tộc lên hàng đầu và đánh giá đúng vai trò của các tầng lớp trung gian (tiểu tư sản, tư sản dân tộc).",
+        "importance": "Làm kim chỉ nam cho toàn bộ tiến trình đấu tranh cách mạng, giải quyết triệt để cuộc khủng hoảng đường lối.",
         "commonMistakes": [
-          "Cho rằng độc lập dân tộc chỉ là việc đuổi ngoại xâm mà quên đi quyền lợi của nhân dân."
-        ],
-        "memoryTips": "Độc lập = Không có ngoại xâm + Dân có tự do hạnh phúc."
+          "Nhầm lẫn người soạn thảo: Cương lĩnh đầu tiên do Nguyễn Ái Quốc soạn, còn Luận cương tháng 10 do Trần Phú soạn.",
+          "Nhầm lẫn mục tiêu cốt lõi: Cương lĩnh 1930 nhấn mạnh độc lập dân tộc, trong khi Luận cương 10/1930 nhấn mạnh đấu tranh giai cấp."
+        ]
       },
       {
-        "conceptId": "chu-nghia-xa-hoi",
-        "definition": "Chế độ xã hội ưu việt nhất, không còn bóc lột, do nhân dân làm chủ.",
-        "explanation": "Mục đích cao nhất của CNXH là nâng cao đời sống vật chất và tinh thần của nhân dân.",
-        "importance": "Là tương lai tươi sáng của dân tộc, bảo đảm cho độc lập bền vững.",
-        "examples": "Chính sách an sinh xã hội, giáo dục miễn phí, y tế toàn dân.",
-        "applications": "Phấn đấu xây dựng xã hội công bằng, dân chủ, văn minh.",
+        "conceptId": "luan-cuong-1930",
+        "title": "Luận cương chính trị (10/1930)",
+        "description": "Văn kiện do Trần Phú khởi thảo.",
+        "definition": "Xác định cách mạng Đông Dương là cách mạng tư sản dân quyền, có tính chất thổ địa và phản đế.",
+        "explanation": "Chịu ảnh hưởng của khuynh hướng 'tả khuynh' từ Quốc tế Cộng sản, chưa đặt giải phóng dân tộc lên trên hết.",
+        "importance": "Vẫn khẳng định được tính tất yếu của sự lãnh đạo của Đảng và con đường tiến lên CNXH, định hướng phong trào 1930-1931.",
         "commonMistakes": [
-          "Đồng nhất CNXH với sự nghèo nợ, cào bằng."
-        ],
-        "memoryTips": "CNXH = Dân giàu, nước mạnh, dân chủ, công bằng, văn minh."
-      },
-      {
-        "conceptId": "doc-lap-dan-toc-gan-lien-cnxh",
-        "definition": "Mối quan hệ biện chứng, tất yếu giữa hai mục tiêu chiến lược.",
-        "explanation": "Giải phóng dân tộc là tiền đề. Xây dựng CNXH là để giữ vững độc lập.",
-        "importance": "Là sợi chỉ đỏ xuyên suốt đường lối của Đảng.",
-        "examples": "Kháng chiến chống Pháp, chống Mỹ song song với xây dựng miền Bắc XHCN.",
-        "applications": "Kiên định mục tiêu độc lập dân tộc và CNXH trong đổi mới.",
-        "commonMistakes": [
-          "Tách rời hai mục tiêu này."
-        ],
-        "memoryTips": "Độc lập là tiền đề, CNXH là đích đến."
+          "Cho rằng Luận cương hoàn toàn sai lầm (Sai: Luận cương có hạn chế nhưng về cơ bản vẫn giữ vững định hướng vô sản)."
+        ]
       }
     ],
     "visualLearning": [
       {
-        "id": "v-c3-1",
-        "chapterId": "chuong-3",
-        "type": "relationship",
-        "title": "Độc lập dân tộc gắn liền với Chủ nghĩa xã hội",
-        "subtitle": "Sợi chỉ đỏ xuyên suốt của cách mạng Việt Nam",
-        "purpose": "Hiểu mối quan hệ biện chứng giữa độc lập dân tộc và CNXH.",
-        "learningValue": "Thấy được lý do vì sao Việt Nam không đi theo con đường tư bản chủ nghĩa.",
-        "nodes": [
-          "Độc lập dân tộc là tiền đề",
-          "CNXH là con đường bảo đảm độc lập",
-          "Độc lập phải gắn với tự do hạnh phúc"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Mất độc lập thì không có CNXH, không có CNXH thì độc lập không vững chắc."
-        ],
-        "commonMistakes": [
-          "Cho rằng chỉ cần giành được độc lập là hoàn thành nhiệm vụ cách mạng."
-        ],
-        "reflectionQuestions": [
-          "Tại sao Bác nói độc lập mà dân không có tự do hạnh phúc thì độc lập không có ý nghĩa?"
-        ],
-        "relatedConceptIds": [
-          "doc-lap-dan-toc",
-          "chu-nghia-xa-hoi",
-          "doc-lap-dan-toc-gan-lien-cnxh"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch03-doc-lap-dan-toc"
-      },
-      {
-        "id": "v-c3-2",
-        "chapterId": "chuong-3",
-        "type": "flowchart",
-        "title": "Logic cách mạng giải phóng dân tộc",
-        "subtitle": "Các bước thực hiện thắng lợi mục tiêu giải phóng",
-        "purpose": "Vạch ra quy trình cách mạng theo hệ tư tưởng Hồ Chí Minh.",
-        "learningValue": "Hiểu tính logic và tính quy luật của lịch sử cách mạng Việt Nam.",
-        "nodes": [],
+        "id": "vl-ch1-1",
+        "chapterId": "chuong-1",
+        "title": "Tiến trình thành lập Đảng",
+        "type": "timeline",
+        "description": "Từ khi Nguyễn Ái Quốc ra đi tìm đường cứu nước đến Hội nghị thành lập Đảng đầu năm 1930.",
+        "detailContent": "Timeline này giúp người học thấy quá trình hình thành đường lối cách mạng không diễn ra đột ngột mà là kết quả của nhiều bước chuẩn bị. Từ khủng hoảng đường lối cứu nước cuối thế kỷ XIX – đầu thế kỷ XX, Nguyễn Ái Quốc tiếp cận chủ nghĩa Mác – Lênin, truyền bá tư tưởng cách mạng vô sản, chuẩn bị tổ chức thông qua Hội Việt Nam Cách mạng Thanh niên, rồi tiến tới thống nhất các tổ chức cộng sản đầu năm 1930.",
         "steps": [
-          "Dân tộc bị áp bức",
-          "Nhiệm vụ giải phóng đặt lên hàng đầu",
-          "Tập hợp lực lượng toàn dân",
-          "Đảng lãnh đạo đúng đắn",
-          "Giành độc lập",
-          "Xây dựng xã hội mới"
-        ],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Cách mạng giải phóng dân tộc phải do Đảng Cộng sản lãnh đạo và là sự nghiệp của toàn dân."
-        ],
-        "commonMistakes": [
-          "Nghĩ rằng cách mạng chỉ là việc của tầng lớp tinh hoa."
-        ],
-        "reflectionQuestions": [
-          "Vai trò của toàn dân trong cách mạng giải phóng dân tộc là gì?"
-        ],
-        "relatedConceptIds": [
-          "cach-mang-giai-phong-dan-toc"
+          "1911: Ra đi tìm đường cứu nước",
+          "1920: Đọc Sơ thảo Luận cương Lênin",
+          "1925: Lập Hội VN Cách mạng Thanh niên",
+          "1929: Sự ra đời 3 tổ chức cộng sản",
+          "2/1930: Hội nghị thành lập Đảng"
         ],
         "requiresVerification": false,
-        "lessonId": "hcm-ch03-doc-lap-dan-toc"
+        "purpose": "Tiến trình thành lập Đảng",
+        "learningValue": "Timeline này giúp người học thấy quá trình hình thành đường lối cách mạng không diễn ra đột ngột mà là kết quả của nhiều bước chuẩn bị. Từ khủng hoảng đường lối cứu nước cuối thế kỷ XIX – đầu thế kỷ XX, Nguyễn Ái Quốc tiếp cận chủ nghĩa Mác – Lênin, truyền bá tư tưởng cách mạng vô sản, chuẩn bị tổ chức thông qua Hội Việt Nam Cách mạng Thanh niên, rồi tiến tới thống nhất các tổ chức cộng sản đầu năm 1930.",
+        "keyTakeaways": []
       },
       {
-        "id": "v-c3-3",
-        "chapterId": "chuong-3",
+        "id": "vl-ch1-2",
+        "chapterId": "chuong-1",
+        "title": "So sánh Cương lĩnh và Luận cương",
         "type": "comparison",
-        "title": "Độc lập hình thức và Độc lập thực chất",
-        "subtitle": "Nhận diện giá trị cốt lõi của độc lập dân tộc",
-        "purpose": "Phân biệt khái niệm độc lập theo tư tưởng Hồ Chí Minh với tư duy cũ.",
-        "learningValue": "Nhận thức rõ giá trị thực sự của độc lập dân tộc là phải đem lại quyền làm chủ cho nhân dân.",
-        "nodes": [],
-        "steps": [],
+        "description": "So sánh hai văn kiện quan trọng của năm 1930.",
+        "detailContent": "Cương lĩnh chính trị đầu tiên đặt vấn đề độc lập dân tộc lên trung tâm và có sách lược tập hợp lực lượng rộng rãi. Luận cương tháng 10/1930 nhấn mạnh tính chất thổ địa và phản đế, đề cao vai trò công nông nhưng còn hạn chế trong đánh giá vấn đề dân tộc và các lực lượng yêu nước ngoài công nông. Đây là nội dung rất dễ xuất hiện trong bài kiểm tra.",
         "comparisons": [
           {
-            "topic": "Chủ quyền",
-            "wrong": "Chỉ có trên danh nghĩa (puppet state)",
-            "correct": "Hoàn toàn và thật sự"
+            "topic": "Nhiệm vụ",
+            "correct": "Cương lĩnh: Độc lập dân tộc",
+            "wrong": "Luận cương: Cách mạng ruộng đất"
           },
           {
-            "topic": "Đời sống nhân dân",
-            "wrong": "Không được quan tâm",
-            "correct": "Nhân dân có tự do, hạnh phúc"
-          },
-          {
-            "topic": "Phát triển",
-            "wrong": "Dễ phụ thuộc trở lại",
-            "correct": "Phát triển bền vững, tự chủ"
+            "topic": "Lực lượng",
+            "correct": "Cương lĩnh: Công, nông, trí thức, tiểu tư sản...",
+            "wrong": "Luận cương: Chỉ công nhân và nông dân"
           }
         ],
-        "keyTakeaways": [
-          "Độc lập thực chất phải gắn chặt với lợi ích sinh tồn và phát triển của nhân dân."
-        ],
-        "commonMistakes": [
-          "Hiểu độc lập đơn thuần là không có ngoại xâm."
-        ],
-        "reflectionQuestions": [
-          "Trách nhiệm của công dân trong việc bảo vệ độc lập thực chất là gì?"
-        ],
-        "relatedConceptIds": [
-          "doc-lap-dan-toc"
-        ],
         "requiresVerification": false,
-        "lessonId": "hcm-ch03-doc-lap-dan-toc"
+        "purpose": "So sánh Cương lĩnh và Luận cương",
+        "learningValue": "Cương lĩnh chính trị đầu tiên đặt vấn đề độc lập dân tộc lên trung tâm và có sách lược tập hợp lực lượng rộng rãi. Luận cương tháng 10/1930 nhấn mạnh tính chất thổ địa và phản đế, đề cao vai trò công nông nhưng còn hạn chế trong đánh giá vấn đề dân tộc và các lực lượng yêu nước ngoài công nông. Đây là nội dung rất dễ xuất hiện trong bài kiểm tra.",
+        "keyTakeaways": []
+      },
+      {
+        "id": "vl-ch1-3",
+        "chapterId": "chuong-1",
+        "title": "Nguyễn Ái Quốc năm 1920",
+        "type": "image",
+        "description": "Ảnh Nguyễn Ái Quốc tại Pháp, thời kỳ tìm thấy con đường cứu nước.",
+        "detailContent": "Bức ảnh Nguyễn Ái Quốc (sau này là Chủ tịch Hồ Chí Minh) tại Đại hội Tours (Pháp) năm 1920. Tại đây, Người đã bỏ phiếu tán thành gia nhập Quốc tế III (Quốc tế Cộng sản) và tham gia sáng lập Đảng Cộng sản Pháp.",
+        "imageUrl": "/images/vnr202/nguyen-ai-quoc.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_1921.jpg",
+        "caption": "Nguyễn Ái Quốc tại Đại hội Tours, Pháp (1920)",
+        "credit": "Wikimedia Commons / Agence de presse Meurisse",
+        "licenseNote": "Public Domain",
+        "requiresVerification": false,
+        "purpose": "Nguyễn Ái Quốc năm 1920",
+        "learningValue": "Bức ảnh Nguyễn Ái Quốc (sau này là Chủ tịch Hồ Chí Minh) tại Đại hội Tours (Pháp) năm 1920. Tại đây, Người đã bỏ phiếu tán thành gia nhập Quốc tế III (Quốc tế Cộng sản) và tham gia sáng lập Đảng Cộng sản Pháp.",
+        "keyTakeaways": []
       }
     ],
-    "interactiveLearning": [
+    "requiresVerification": false,
+    "keyTakeaways": [
+      "Đảng Cộng sản Việt Nam ra đời là kết quả của sự kết hợp giữa chủ nghĩa Mác – Lênin, phong trào công nhân và phong trào yêu nước Việt Nam.",
+      "Cương lĩnh chính trị đầu tiên đặt nhiệm vụ độc lập dân tộc lên vị trí trung tâm, phù hợp với yêu cầu của xã hội thuộc địa Việt Nam.",
+      "Nguyễn Ái Quốc có vai trò quan trọng trong chuẩn bị tư tưởng, chính trị, tổ chức và chủ trì Hội nghị thành lập Đảng.",
+      "Điểm sáng tạo của Cương lĩnh là xác định đúng mục tiêu, lực lượng và phương pháp cách mạng trong điều kiện Việt Nam.",
+      "Khi ôn thi, cần so sánh Cương lĩnh đầu tiên với Luận cương tháng 10/1930 để thấy sự khác nhau về nhiệm vụ dân tộc và lực lượng cách mạng."
+    ]
+  },
+  {
+    "id": "vnr-ch2-xo-viet-phuc-hoi",
+    "chapterId": "chuong-2",
+    "title": "Cao trào 1930–1931, Xô viết Nghệ Tĩnh và Phục hồi tổ chức",
+    "readingTime": 25,
+    "type": "theory",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Lịch sử",
+      "Xô viết Nghệ Tĩnh",
+      "1930-1935"
+    ],
+    "description": "Đỉnh cao phong trào đấu tranh 1930-1931, sự ra đời của chính quyền Xô viết và chặng đường gian nan phục hồi tổ chức Đảng 1932-1935.",
+    "learningObjectives": [
+      "Phân tích nguyên nhân bùng nổ cao trào cách mạng 1930-1931.",
+      "Hiểu rõ bản chất, hoạt động và ý nghĩa của chính quyền Xô viết Nghệ Tĩnh.",
+      "Đánh giá những khó khăn, thử thách và quá trình phục hồi tổ chức Đảng từ 1932 đến 1935.",
+      "Nhận thức ý nghĩa của Đại hội lần thứ nhất của Đảng (1935)."
+    ],
+    "coreTheory": [
       {
-        "type": "Reflection",
-        "questions": [
-          "Tại sao nói 'Độc lập mà dân không hưởng hạnh phúc thì độc lập không có ý nghĩa'?",
-          "Bạn hiểu thế nào là 'nhân dân làm chủ'?",
-          "Mục tiêu xây dựng đất nước hiện nay của chúng ta là gì?"
+        "title": "1. Nguyên nhân bùng nổ cao trào 1930-1931",
+        "content": [
+          "Khủng hoảng kinh tế thế giới (1929-1933) đã tác động nặng nề đến kinh tế Đông Dương. Nông nghiệp suy sụp, công nghiệp đình đốn, xuất nhập khẩu đình trệ.",
+          "Thực dân Pháp tăng cường bóc lột, trút gánh nặng khủng hoảng lên vai nhân dân lao động. Sau khởi nghĩa Yên Bái, thực dân Pháp tiến hành khủng bố trắng, làm mâu thuẫn xã hội trở nên gay gắt chưa từng thấy.",
+          "Sự ra đời của Đảng Cộng sản Việt Nam (1930) với đường lối đúng đắn đã kịp thời lãnh đạo quần chúng đứng lên đấu tranh."
+        ]
+      },
+      {
+        "title": "2. Phong trào đấu tranh và đỉnh cao Xô viết Nghệ Tĩnh",
+        "content": [
+          "Phong trào bắt đầu từ tháng 2 đến tháng 4/1930 với các cuộc bãi công của công nhân (đồn điền cao su Phú Riềng, nhà máy sợi Nam Định).",
+          "Từ tháng 5/1930, phong trào bùng nổ mạnh mẽ nhân ngày Quốc tế Lao động. Hàng chục cuộc đấu tranh của công nhân và nông dân nổ ra khắp cả nước.",
+          "Tháng 9/1930, phong trào đạt đến đỉnh cao ở Nghệ An và Hà Tĩnh. Quần chúng vũ trang tự vệ biểu tình, tấn công huyện lỵ, phá nhà giam.",
+          "Hệ thống chính quyền địch ở nhiều thôn xã bị tê liệt, tan rã. Ban Chấp hành Nông hội xã do chi bộ Đảng lãnh đạo đã đứng ra quản lý mọi mặt đời sống nông thôn, làm chức năng của một chính quyền - chính quyền Xô viết."
+        ]
+      },
+      {
+        "title": "3. Hoạt động của Xô viết Nghệ Tĩnh",
+        "content": [
+          "Về chính trị: Thực hiện quyền tự do dân chủ, lập các đội tự vệ đỏ, tòa án nhân dân.",
+          "Về kinh tế: Tịch thu ruộng đất công chia cho dân nghèo, bãi bỏ các thứ thuế vô lý, bắt địa chủ giảm tô.",
+          "Về văn hóa - xã hội: Mở lớp dạy chữ Quốc ngữ, bài trừ hủ tục mê tín dị đoan, tổ chức đời sống mới."
+        ]
+      },
+      {
+        "title": "4. Đàn áp và quá trình phục hồi tổ chức (1932-1935)",
+        "content": [
+          "Trước sức mạnh của phong trào, thực dân Pháp tiến hành đàn áp dã man (ném bom đoàn biểu tình Hưng Nguyên, điều động binh lính càn quét).",
+          "Nhiều cơ quan lãnh đạo của Đảng bị phá vỡ, hàng vạn cán bộ, đảng viên bị bắt, tù đày hoặc hy sinh. Cách mạng bước vào thời kỳ thoái trào.",
+          "Từ năm 1932, những đảng viên trong nhà tù và những người hoạt động bí mật bên ngoài đã kiên trì khôi phục tổ chức. Các văn kiện như 'Chương trình hành động của Đảng Cộng sản Đông Dương' (6/1932) đã vạch ra con đường phục hồi.",
+          "Tháng 3/1935, Đại hội đại biểu lần thứ nhất của Đảng họp tại Ma Cao (Trung Quốc). Đại hội đánh dấu tổ chức Đảng đã được phục hồi trên quy mô cả nước."
+        ]
+      },
+      {
+        "title": "5. Ý nghĩa và bài học kinh nghiệm",
+        "content": [
+          "Khẳng định đường lối cách mạng của Đảng là đúng đắn, chứng minh sức mạnh của liên minh công nông.",
+          "Là cuộc diễn tập đầu tiên của Đảng và quần chúng cho Tổng khởi nghĩa tháng Tám sau này.",
+          "Để lại bài học sâu sắc về xây dựng khối liên minh công nông, về phương pháp bạo lực cách mạng và xây dựng chính quyền."
         ]
       }
     ],
-    "knowledgeCheck": {
-      "easy": [
-        "Mục tiêu trước mắt của cách mạng Việt Nam theo tư tưởng HCM là gì?",
-        "Sợi chỉ đỏ xuyên suốt của cách mạng VN là gì?"
-      ],
-      "medium": [
-        "Giải thích vì sao cách mạng giải phóng dân tộc phải đi theo con đường cách mạng vô sản?",
-        "Nêu đặc trưng nổi bật nhất của CNXH theo HCM."
-      ],
-      "hard": []
-    },
-    "challengeSection": [
-      {
-        "title": "Phân tích tình huống",
-        "situation": "Có quan điểm cho rằng trong bối cảnh toàn cầu hóa, chỉ cần kinh tế phát triển, không cần quan tâm đến định hướng XHCN. Bạn nghĩ sao?",
-        "suggestedAnswer": "Phát triển kinh tế mà bỏ qua định hướng XHCN sẽ dẫn đến phân hóa giàu nghèo, bất công xã hội, mất đi bản chất tốt đẹp của chế độ, cuối cùng có thể đe dọa cả độc lập dân tộc."
-      }
-    ],
-    "keyTakeaways": [
-      "Độc lập dân tộc phải gắn liền với tự do, hạnh phúc của nhân dân.",
-      "Cách mạng giải phóng dân tộc phải theo quỹ đạo cách mạng vô sản.",
-      "CNXH là xã hội do nhân dân làm chủ, mục tiêu cao nhất là giải phóng con người.",
-      "Độc lập dân tộc và CNXH có mối quan hệ biện chứng, là sợi chỉ đỏ của cách mạng VN."
-    ],
-    "requiresVerification": true
-  },
-  {
-    "lessonId": "hcm-ch04-dang-nha-nuoc",
-    "chapterId": "chuong-4",
-    "moduleId": "tu-tuong-ho-chi-minh",
-    "title": "Đảng Cộng sản và Nhà nước của dân",
-    "difficulty": "advanced",
-    "durationMinutes": 30,
-    "order": 4,
-    "tags": [
-      "Đảng",
-      "Nhà nước",
-      "Quyền lực"
-    ],
-    "conceptIds": [
-      "dang-cong-san-viet-nam",
-      "xay-dung-dang",
-      "nha-nuoc-cua-dan",
-      "nha-nuoc-do-dan",
-      "nha-nuoc-vi-dan",
-      "can-bo"
-    ],
-    "learningObjectives": [
-      "Hiểu bản chất và vai trò lãnh đạo của Đảng Cộng sản Việt Nam.",
-      "Nắm được các nguyên tắc xây dựng Đảng.",
-      "Phân tích bản chất của Nhà nước của dân, do dân, vì dân.",
-      "Nhận thức đúng về vai trò, đạo đức của người cán bộ."
-    ],
-    "whyThisMatters": "Đây là hệ thống tổ chức đảm bảo thực hiện mục tiêu cách mạng. Hiểu về Đảng và Nhà nước giúp công dân nhận thức rõ quyền lợi, nghĩa vụ và cách thức vận hành của hệ thống chính trị.",
-    "quickOverview": "Đảng Cộng sản VN là lực lượng lãnh đạo cách mạng, mang bản chất giai cấp công nhân và đại diện cho lợi ích dân tộc. Nhà nước Việt Nam là nhà nước pháp quyền XHCN của dân, do dân, vì dân. Cán bộ là công bộc của nhân dân.",
-    "coreTheory": {
-      "beginner": "Đảng lãnh đạo, Nhà nước quản lý, Nhân dân làm chủ. Nhà nước của ta phục vụ lợi ích của nhân dân, không có đặc quyền đặc lợi.",
-      "intermediate": "Đảng ra đời là sự kết hợp: Chủ nghĩa Mác-Lênin + Phong trào công nhân + Phong trào yêu nước. Nhà nước thể hiện quyền lực của nhân dân (Của dân), do dân lập ra và đóng thuế (Do dân), phục vụ lợi ích của dân (Vì dân).",
-      "advanced": "Xây dựng Đảng là quy luật tồn tại và phát triển của Đảng. Phải thường xuyên chỉnh đốn Đảng. Về Nhà nước, phải kết hợp quản lý bằng pháp luật (pháp trị) với giáo dục đạo đức (đức trị). Cán bộ phải 'Cần, kiệm, liêm, chính', chống tham ô, lãng phí, quan liêu."
-    },
     "conceptBreakdown": [
       {
-        "conceptId": "dang-cong-san-viet-nam",
-        "definition": "Đội tiên phong của giai cấp công nhân, nhân dân lao động và toàn dân tộc.",
-        "explanation": "Đảng không có lợi ích nào khác ngoài lợi ích của dân tộc. Sự lãnh đạo của Đảng là nhân tố quyết định mọi thắng lợi.",
-        "importance": "Lực lượng tổ chức, lãnh đạo cách mạng.",
-        "examples": "Đảng đề ra đường lối đổi mới.",
-        "applications": "Tin tưởng vào sự lãnh đạo của Đảng, tham gia xây dựng Đảng.",
+        "conceptId": "xo-viet-nghe-tinh",
+        "title": "Xô viết Nghệ Tĩnh",
+        "description": "Đỉnh cao của phong trào 1930-1931.",
+        "definition": "Là hình thức chính quyền cách mạng sơ khai của nhân dân, do giai cấp công nhân lãnh đạo, xuất hiện ở các làng xã Nghệ Tĩnh.",
+        "explanation": "Đây là lần đầu tiên nhân dân lao động Việt Nam thực sự nắm quyền làm chủ ở địa phương.",
+        "importance": "Minh chứng cho khả năng lật đổ chính quyền địch và tổ chức đời sống mới của quần chúng nhân dân.",
         "commonMistakes": [
-          "Cho rằng Đảng đứng trên nhân dân."
-        ],
-        "memoryTips": "Đảng là người đầy tớ thật trung thành của nhân dân."
+          "Nhầm lẫn Xô viết Nghệ Tĩnh là cuộc khởi nghĩa giành chính quyền toàn quốc (Chỉ là khởi nghĩa từng phần, chính quyền sơ khai ở cấp xã/thôn)."
+        ]
       },
       {
-        "conceptId": "nha-nuoc-cua-dan",
-        "definition": "Mọi quyền lực nhà nước đều thuộc về nhân dân.",
-        "explanation": "Nhân dân có quyền bầu cử, ứng cử, kiểm soát, bãi miễn đại biểu nếu họ không xứng đáng.",
-        "importance": "Bản chất dân chủ của chế độ.",
-        "examples": "Bầu cử Quốc hội.",
-        "applications": "Thực hiện quyền và nghĩa vụ công dân.",
-        "commonMistakes": [
-          "Cho rằng nhà nước là công cụ cai trị dân."
-        ],
-        "memoryTips": "Dân là chủ."
-      },
-      {
-        "conceptId": "can-bo",
-        "definition": "Những người làm việc trong bộ máy Đảng, Nhà nước, đoàn thể.",
-        "explanation": "Cán bộ là cái gốc của mọi công việc. Phải có đức và tài, tận tụy phục vụ nhân dân.",
-        "importance": "Khâu then chốt để đưa đường lối vào thực tiễn.",
-        "examples": "Cán bộ y tế chống dịch cứu dân.",
-        "applications": "Phấn đấu trở thành cán bộ tốt, người có ích cho xã hội.",
-        "commonMistakes": [
-          "Coi cán bộ là 'quan cách mạng' hưởng đặc quyền."
-        ],
-        "memoryTips": "Cán bộ là công bộc."
+        "conceptId": "phuc-hoi-to-chuc",
+        "title": "Phục hồi tổ chức 1932-1935",
+        "description": "Giai đoạn giữ lửa phong trào.",
+        "definition": "Quá trình kiên trì xây dựng lại cơ sở Đảng sau đợt khủng bố trắng của thực dân Pháp.",
+        "importance": "Giúp Đảng không bị tiêu diệt, tạo tiền đề tổ chức để bước vào cao trào dân chủ 1936-1939."
       }
     ],
     "visualLearning": [
       {
-        "id": "v-c4-1",
-        "chapterId": "chuong-4",
-        "type": "relationship",
-        "title": "Đảng, Nhà nước và Nhân dân",
-        "subtitle": "Cơ chế vận hành của hệ thống chính trị Việt Nam",
-        "purpose": "Hiểu vai trò và chức năng của từng chủ thể trong xã hội.",
-        "learningValue": "Sinh viên không bị nhầm lẫn giữa chức năng lãnh đạo của Đảng và chức năng quản lý của Nhà nước.",
-        "nodes": [
-          "Đảng lãnh đạo",
-          "Nhà nước quản lý",
-          "Nhân dân làm chủ",
-          "Cán bộ là công bộc"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Quyền lực nhà nước thuộc về nhân dân, cán bộ là người phục vụ nhân dân."
-        ],
-        "commonMistakes": [
-          "Nhầm lẫn rằng cán bộ là 'quan cách mạng' đứng trên nhân dân."
-        ],
-        "reflectionQuestions": [
-          "Khi nào cán bộ thoái hóa biến chất và làm hỏng mối quan hệ này?"
-        ],
-        "relatedConceptIds": [
-          "dang-cong-san-viet-nam",
-          "nha-nuoc-cua-dan",
-          "can-bo"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch04-dang-nha-nuoc"
-      },
-      {
-        "id": "v-c4-2",
-        "chapterId": "chuong-4",
-        "type": "diagram",
-        "title": "Nhà nước Của dân, Do dân, Vì dân",
-        "subtitle": "Bản chất của nhà nước pháp quyền XHCN",
-        "purpose": "Phân tách rõ ba đặc tính cơ bản của Nhà nước kiểu mới.",
-        "learningValue": "Hiểu được nền tảng dân chủ sâu sắc trong tư tưởng Hồ Chí Minh về xây dựng nhà nước.",
-        "nodes": [
-          "Của dân: Quyền lực tối cao thuộc về nhân dân",
-          "Do dân: Dân tham gia xây dựng và kiểm soát",
-          "Vì dân: Mọi hoạt động phục vụ lợi ích của dân"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Nhà nước không có lợi ích nào khác ngoài lợi ích của nhân dân."
-        ],
-        "commonMistakes": [
-          "Cho rằng 'do dân' chỉ là việc dân đóng thuế."
-        ],
-        "reflectionQuestions": [
-          "Làm thế nào để phát huy thực chất quyền 'do dân' trong thực tế?"
-        ],
-        "relatedConceptIds": [
-          "nha-nuoc-do-dan",
-          "nha-nuoc-vi-dan"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch04-dang-nha-nuoc"
-      },
-      {
-        "id": "v-c4-3",
-        "chapterId": "chuong-4",
-        "type": "flowchart",
-        "title": "Một cán bộ đúng tinh thần phục vụ",
-        "subtitle": "Quy trình làm việc chuẩn của người công bộc",
-        "purpose": "Rèn luyện phẩm chất và thái độ làm việc công.",
-        "learningValue": "Hình dung rõ ràng thế nào là một cán bộ 'vừa hồng vừa chuyên'.",
-        "nodes": [],
+        "id": "vl-ch2-1",
+        "chapterId": "chuong-2",
+        "title": "Cao trào 1930–1931",
+        "type": "timeline",
+        "description": "Các bước phát triển từ bãi công, biểu tình đến Xô viết Nghệ Tĩnh.",
+        "detailContent": "Timeline cần thể hiện sự phát triển từ các cuộc đấu tranh của công nhân, nông dân đầu năm 1930, cao trào tháng 5/1930, đỉnh cao ở Nghệ An – Hà Tĩnh và sự đàn áp của thực dân Pháp. Qua đó người học hiểu Xô viết Nghệ Tĩnh vừa là kết quả của phong trào quần chúng vừa là bài học về tổ chức và tương quan lực lượng.",
         "steps": [
-          "Gần dân",
-          "Hiểu dân",
-          "Tôn trọng dân",
-          "Giải quyết minh bạch",
-          "Chịu trách nhiệm trước dân"
-        ],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Cán bộ không gần dân là cán bộ quan liêu."
-        ],
-        "commonMistakes": [
-          "Cho rằng chỉ cần giỏi chuyên môn là đủ để làm cán bộ."
-        ],
-        "reflectionQuestions": [
-          "Bạn sẽ rèn luyện những đức tính này thế nào trong môi trường sinh viên?"
-        ],
-        "relatedConceptIds": [
-          "can-bo",
-          "dao-duc-cong-vu"
+          "2/1930: Bãi công Phú Riềng",
+          "5/1930: Bùng nổ dịp Quốc tế Lao động",
+          "9/1930: Đỉnh cao Xô viết Nghệ Tĩnh",
+          "1931: Khủng bố trắng",
+          "1932: Phong trào tạm lắng"
         ],
         "requiresVerification": false,
-        "lessonId": "hcm-ch04-dang-nha-nuoc"
-      }
-    ],
-    "interactiveLearning": [
+        "purpose": "Cao trào 1930–1931",
+        "learningValue": "Timeline cần thể hiện sự phát triển từ các cuộc đấu tranh của công nhân, nông dân đầu năm 1930, cao trào tháng 5/1930, đỉnh cao ở Nghệ An – Hà Tĩnh và sự đàn áp của thực dân Pháp. Qua đó người học hiểu Xô viết Nghệ Tĩnh vừa là kết quả của phong trào quần chúng vừa là bài học về tổ chức và tương quan lực lượng.",
+        "keyTakeaways": []
+      },
       {
-        "type": "Reflection",
-        "questions": [
-          "Thế nào là 'Đảng viên đi trước, làng nước theo sau'?",
-          "Theo bạn, điều gì làm nên sức mạnh của Nhà nước?",
-          "Tại sao cần phải phòng chống tham nhũng, lãng phí?"
-        ]
-      }
-    ],
-    "knowledgeCheck": {
-      "easy": [
-        "Sự ra đời của Đảng Cộng sản Việt Nam là kết hợp của mấy yếu tố?",
-        "Bản chất của nhà nước ta là gì?"
-      ],
-      "medium": [
-        "Giải thích khái niệm 'Nhà nước do dân'.",
-        "Vì sao Bác nói 'Cán bộ là cái gốc của mọi công việc'?"
-      ],
-      "hard": []
-    },
-    "challengeSection": [
+        "id": "vl-ch2-2",
+        "chapterId": "chuong-2",
+        "title": "Sơ đồ phục hồi tổ chức 1932–1935",
+        "type": "mindmap",
+        "description": "Sơ đồ quá trình phục hồi sau đàn áp.",
+        "detailContent": "Sơ đồ gồm các nhánh: hoạt động bí mật, chi bộ trong nhà tù, tuyên truyền – huấn luyện, Ban Chỉ huy ở ngoài và Đại hội I năm 1935. Nội dung giúp người học thấy cách Đảng khôi phục lực lượng để chuẩn bị cho phong trào dân chủ sau đó.",
+        "nodes": [
+          "Phục hồi tổ chức",
+          "Chi bộ nhà tù",
+          "Hoạt động bí mật",
+          "Ban chỉ huy ở ngoài",
+          "Đại hội I (1935)"
+        ],
+        "requiresVerification": false,
+        "purpose": "Sơ đồ phục hồi tổ chức 1932–1935",
+        "learningValue": "Sơ đồ gồm các nhánh: hoạt động bí mật, chi bộ trong nhà tù, tuyên truyền – huấn luyện, Ban Chỉ huy ở ngoài và Đại hội I năm 1935. Nội dung giúp người học thấy cách Đảng khôi phục lực lượng để chuẩn bị cho phong trào dân chủ sau đó.",
+        "keyTakeaways": []
+      },
       {
-        "title": "Trách nhiệm công bộc",
-        "situation": "Có ý kiến cho rằng cán bộ có quyền lực nên được hưởng nhiều đặc quyền. Bạn sử dụng tư tưởng HCM để phản biện thế nào?",
-        "suggestedAnswer": "Theo HCM, quyền lực của cán bộ là do nhân dân ủy thác. Cán bộ là 'công bộc' (người phục vụ) của dân, chứ không phải 'quan cách mạng'. Do đó, họ phải tận tụy phục vụ, không được lạm quyền, đặc quyền đặc lợi."
+        "id": "vl-ch2-3",
+        "chapterId": "chuong-2",
+        "title": "Nông dân biểu tình tại Nghệ An",
+        "type": "image",
+        "description": "Cuộc đấu tranh của quần chúng trong phong trào Xô viết Nghệ Tĩnh.",
+        "detailContent": "Phong trào Xô viết Nghệ Tĩnh là minh chứng lịch sử đầu tiên cho sức mạnh dời non lấp biển của liên minh công - nông Việt Nam dưới sự lãnh đạo của Đảng Cộng sản.",
+        "imageUrl": "/images/vnr202/xo-viet-nghe-tinh.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Demonstrations_of_peasants_in_Nghe_An_province.jpg",
+        "caption": "Nông dân biểu tình trong phong trào Xô viết Nghệ Tĩnh (1930)",
+        "credit": "Wikimedia Commons",
+        "licenseNote": "Public Domain",
+        "requiresVerification": false,
+        "purpose": "Nông dân biểu tình tại Nghệ An",
+        "learningValue": "Phong trào Xô viết Nghệ Tĩnh là minh chứng lịch sử đầu tiên cho sức mạnh dời non lấp biển của liên minh công - nông Việt Nam dưới sự lãnh đạo của Đảng Cộng sản.",
+        "keyTakeaways": []
       }
     ],
+    "requiresVerification": false,
     "keyTakeaways": [
-      "Đảng CSVN là lực lượng lãnh đạo, ra đời từ sự kết hợp của 3 yếu tố.",
-      "Xây dựng Đảng là nhiệm vụ thường xuyên, then chốt.",
-      "Nhà nước VN là nhà nước của dân, do dân, vì dân.",
-      "Cán bộ phải là người đầy tớ thật trung thành của nhân dân, có đủ đức và tài."
-    ],
-    "requiresVerification": true
+      "Phong trào 1930–1931 chứng minh năng lực lãnh đạo của Đảng và sức mạnh đấu tranh của công nhân, nông dân.",
+      "Xô viết Nghệ Tĩnh là đỉnh cao của cao trào 1930–1931, thể hiện hình thức chính quyền cách mạng ở cơ sở.",
+      "Luận cương chính trị tháng 10/1930 có ưu điểm về lập trường cách mạng nhưng còn hạn chế khi chưa đánh giá đầy đủ vấn đề dân tộc và lực lượng cách mạng rộng rãi.",
+      "Sau đàn áp, Đảng phục hồi tổ chức qua hoạt động bí mật, nhà tù, huấn luyện cán bộ và xây dựng cơ sở quần chúng.",
+      "Đại hội I năm 1935 đánh dấu sự phục hồi quan trọng về tổ chức, tạo tiền đề cho giai đoạn 1936–1939."
+    ]
   },
   {
-    "lessonId": "hcm-ch05-dai-doan-ket",
-    "chapterId": "chuong-5",
-    "moduleId": "tu-tuong-ho-chi-minh",
-    "title": "Đại đoàn kết toàn dân tộc và Đoàn kết quốc tế",
-    "difficulty": "beginner",
-    "durationMinutes": 20,
-    "order": 5,
+    "id": "vnr-ch3-phong-trao-dan-chu",
+    "chapterId": "chuong-3",
+    "title": "Phong trào dân chủ 1936–1939",
+    "readingTime": 25,
+    "type": "theory",
+    "difficulty": "Intermediate",
     "tags": [
-      "Đoàn kết",
-      "Quốc tế",
+      "Lịch sử",
+      "Phong trào Dân chủ",
       "Mặt trận"
     ],
-    "conceptIds": [
-      "dai-doan-ket",
-      "luc-luong-dai-doan-ket",
-      "mat-tran-dan-toc-thong-nhat",
-      "doan-ket-quoc-te",
-      "ket-hop-suc-manh-dan-toc-quoc-te"
-    ],
+    "description": "Sự điều chỉnh sách lược của Đảng trong bối cảnh nguy cơ chiến tranh thế giới, đòi quyền dân sinh, dân chủ và xây dựng Mặt trận.",
     "learningObjectives": [
-      "Trình bày quan điểm của HCM về vai trò của đại đoàn kết.",
-      "Xác định lực lượng và hình thức tổ chức của đại đoàn kết.",
-      "Hiểu sự cần thiết của đoàn kết quốc tế."
+      "Nhận biết sự thay đổi của tình hình thế giới và trong nước dẫn đến thay đổi đường lối của Đảng.",
+      "Phân tích chủ trương chuyển hướng chỉ đạo chiến lược của Đảng giai đoạn 1936-1939.",
+      "Mô tả các hình thức đấu tranh phong phú, linh hoạt trong phong trào dân chủ.",
+      "Đánh giá ý nghĩa và bài học kinh nghiệm của phong trào 1936-1939."
     ],
-    "whyThisMatters": "Trong bối cảnh hội nhập, việc phát huy sức mạnh khối đại đoàn kết toàn dân và kết hợp sức mạnh thời đại là chìa khóa để Việt Nam phát triển và bảo vệ tổ quốc.",
-    "quickOverview": "Đoàn kết là sức mạnh vô địch. Đại đoàn kết toàn dân tộc là một chiến lược lâu dài. Cần kết hợp sức mạnh dân tộc với sức mạnh thời đại (đoàn kết quốc tế) để giành thắng lợi.",
-    "coreTheory": {
-      "beginner": "Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công. Sức mạnh của nhiều người gộp lại sẽ làm được việc lớn.",
-      "intermediate": "Đại đoàn kết là chiến lược cơ bản của cách mạng. Lực lượng đoàn kết là toàn thể nhân dân Việt Nam, không phân biệt tôn giáo, dân tộc, giai cấp. Hình thức tổ chức là Mặt trận dân tộc thống nhất.",
-      "advanced": "Để đoàn kết thành công, phải có lòng khoan dung độ lượng, lấy lợi ích chung (độc lập, thống nhất, giàu mạnh) làm điểm tương đồng. Phải kết hợp sức mạnh dân tộc (nội lực) với sức mạnh thời đại (ngoại lực), trong đó nội lực là quyết định."
-    },
-    "conceptBreakdown": [
+    "coreTheory": [
       {
-        "conceptId": "dai-doan-ket",
-        "definition": "Sự tập hợp, liên kết chặt chẽ mọi lực lượng trong xã hội.",
-        "explanation": "Là nguyên nhân của mọi thắng lợi, là động lực chủ yếu của cách mạng.",
-        "importance": "Quyết định sự sống còn của dân tộc.",
-        "examples": "Mặt trận Việt Minh, tinh thần đoàn kết chống dịch Covid-19.",
-        "applications": "Xây dựng môi trường học tập, làm việc đoàn kết, hỗ trợ nhau.",
-        "commonMistakes": [
-          "Đoàn kết chỉ là thủ đoạn chính trị tạm thời."
-        ],
-        "memoryTips": "Đoàn kết là sức mạnh."
+        "title": "1. Hoàn cảnh lịch sử",
+        "content": [
+          "Thế giới: Chủ nghĩa phát xít xuất hiện và lên cầm quyền ở Đức, Ý, Nhật, đe dọa hòa bình thế giới. Đại hội VII Quốc tế Cộng sản (7/1935) xác định kẻ thù nguy hiểm nhất là chủ nghĩa phát xít, chủ trương lập Mặt trận nhân dân chống phát xít. Ở Pháp, Mặt trận nhân dân Pháp lên cầm quyền, ban hành một số quyền tự do dân chủ cho thuộc địa.",
+          "Trong nước: Hậu quả khủng hoảng kinh tế và chính sách bóc lột của Pháp làm đời sống các tầng lớp nhân dân cực khổ. Yêu cầu bức thiết lúc này là tự do, dân chủ, cải thiện đời sống."
+        ]
       },
       {
-        "conceptId": "doan-ket-quoc-te",
-        "definition": "Tập hợp lực lượng tiến bộ thế giới ủng hộ Việt Nam.",
-        "explanation": "Cách mạng VN là một bộ phận của cách mạng thế giới. Cần tranh thủ sự đồng tình, ủng hộ của nhân dân yêu chuộng hòa bình.",
-        "importance": "Tạo thêm sức mạnh tổng hợp, đánh bại kẻ thù lớn mạnh.",
-        "examples": "Phong trào phản chiến ủng hộ VN trên thế giới.",
-        "applications": "Chính sách đối ngoại đa phương hóa, làm bạn với tất cả các nước.",
-        "commonMistakes": [
-          "Trông chờ ỷ lại hoàn toàn vào quốc tế."
-        ],
-        "memoryTips": "Nội lực là chính, ngoại lực là quan trọng."
-      }
-    ],
-    "visualLearning": [
-      {
-        "id": "v-c5-1",
-        "chapterId": "chuong-5",
-        "type": "mindmap",
-        "title": "Đại đoàn kết toàn dân tộc",
-        "subtitle": "Chiến lược sống còn của cách mạng Việt Nam",
-        "purpose": "Cung cấp cái nhìn toàn diện về sức mạnh của khối đại đoàn kết.",
-        "learningValue": "Nhận thức được ý nghĩa của câu nói 'Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công'.",
-        "nodes": [
-          "Nền tảng sức mạnh dân tộc",
-          "Tập hợp mọi lực lượng",
-          "Lấy lợi ích chung làm điểm tựa",
-          "Tôn trọng sự khác biệt",
-          "Hướng tới độc lập, phát triển"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Đại đoàn kết không phải là sách lược nhất thời mà là chiến lược cốt lõi."
-        ],
-        "commonMistakes": [
-          "Đại đoàn kết là phải xóa bỏ mọi sự khác biệt cá nhân."
-        ],
-        "reflectionQuestions": [
-          "Vì sao cần phải tôn trọng điểm khác biệt trong khi xây dựng khối đại đoàn kết?"
-        ],
-        "relatedConceptIds": [
-          "dai-doan-ket",
-          "luc-luong-dai-doan-ket"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch05-dai-doan-ket"
+        "title": "2. Chủ trương của Đảng",
+        "content": [
+          "Tháng 7/1936, Hội nghị Ban Chấp hành Trung ương Đảng họp tại Thượng Hải xác định:",
+          "Kẻ thù trước mắt: Không phải là thực dân Pháp nói chung, mà là bọn phản động thuộc địa Pháp và tay sai không chịu thi hành chính sách của Mặt trận nhân dân Pháp.",
+          "Nhiệm vụ trước mắt: Chống phát xít, chống chiến tranh đế quốc, đòi tự do, dân chủ, cơm áo và hòa bình. (Tạm gác khẩu hiệu độc lập dân tộc và cách mạng ruộng đất).",
+          "Mặt trận: Thành lập Mặt trận nhân dân phản đế Đông Dương (đến tháng 3/1938 đổi thành Mặt trận dân chủ Đông Dương).",
+          "Hình thức đấu tranh: Kết hợp công khai, nửa công khai, hợp pháp, nửa hợp pháp với bí mật, bất hợp pháp."
+        ]
       },
       {
-        "id": "v-c5-2",
-        "chapterId": "chuong-5",
-        "type": "diagram",
-        "title": "Mặt trận dân tộc thống nhất",
-        "subtitle": "Nơi quy tụ lòng yêu nước",
-        "purpose": "Hiểu cơ chế tổ chức thực hiện đại đoàn kết.",
-        "learningValue": "Phân biệt được chủ trương đoàn kết và tổ chức thực hiện đoàn kết.",
-        "nodes": [
-          "Là hình thức tổ chức của khối đại đoàn kết",
-          "Tập hợp mọi giai cấp, tôn giáo",
-          "Hoạt động dựa trên hiệp thương dân chủ",
-          "Gắn đoàn kết với hành động thực tiễn"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Đảng Cộng sản vừa là người lãnh đạo, vừa là một thành viên của Mặt trận."
-        ],
-        "commonMistakes": [
-          "Cho rằng Mặt trận chỉ là tổ chức hình thức, không có thực quyền."
-        ],
-        "reflectionQuestions": [
-          "Vai trò giám sát, phản biện xã hội của Mặt trận hiện nay là gì?"
-        ],
-        "relatedConceptIds": [
-          "mat-tran-dan-toc-thong-nhat"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch05-dai-doan-ket"
+        "title": "3. Các phong trào đấu tranh tiêu biểu",
+        "content": [
+          "Đấu tranh đòi tự do, dân chủ: Phong trào Đông Dương đại hội (1936) nhằm thu thập dân nguyện gửi phái viên chính phủ Pháp; Phong trào đón rước phái viên Gô-đa và Toàn quyền Bơ-rê-vi-ê.",
+          "Đấu tranh báo chí: Xuất bản nhiều tờ báo công khai (Tiền phong, Dân chúng, Tin tức...) để tuyên truyền đường lối của Đảng, đấu tranh tư tưởng.",
+          "Đấu tranh nghị trường: Đưa người của Mặt trận ra ứng cử vào các cơ quan Viện dân biểu, Hội đồng thành phố để đấu tranh công khai, vạch mặt bọn phản động."
+        ]
       },
       {
-        "id": "v-c5-3",
-        "chapterId": "chuong-5",
-        "type": "relationship",
-        "title": "Đoàn kết dân tộc và Đoàn kết quốc tế",
-        "subtitle": "Kết hợp sức mạnh dân tộc và thời đại",
-        "purpose": "Làm rõ mối liên hệ hữu cơ giữa cách mạng Việt Nam và thế giới.",
-        "learningValue": "Hiểu được nghệ thuật ngoại giao của Hồ Chí Minh: làm bạn với mọi quốc gia yêu chuộng hòa bình.",
-        "nodes": [
-          "Sức mạnh dân tộc là nền tảng",
-          "Sức mạnh thời đại là hỗ trợ",
-          "Không ỷ lại, dựa dẫm",
-          "Kết hợp để thực hiện mục tiêu chung"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Tự lực tự cường là chính, nhưng không bao giờ tự cô lập mình."
-        ],
-        "commonMistakes": [
-          "Đoàn kết quốc tế là phụ thuộc vào nước ngoài."
-        ],
-        "reflectionQuestions": [
-          "Sự kết hợp này được thể hiện thế nào trong công cuộc Đổi mới hiện nay?"
-        ],
-        "relatedConceptIds": [
-          "doan-ket-quoc-te",
-          "ket-hop-suc-manh-dan-toc-quoc-te"
-        ],
-        "requiresVerification": false,
-        "lessonId": "hcm-ch05-dai-doan-ket"
-      }
-    ],
-    "interactiveLearning": [
+        "title": "4. Kết quả và ý nghĩa",
+        "content": [
+          "Buộc chính quyền thực dân phải nhượng bộ một số yêu sách: thả tù chính trị, ban hành luật lao động, nới lỏng quyền tự do báo chí.",
+          "Đảng đã tập hợp, giáo dục và tổ chức được một đạo quân chính trị quần chúng rộng lớn.",
+          "Đây là cuộc diễn tập thứ hai chuẩn bị cho Cách mạng Tháng Tám."
+        ]
+      },
       {
-        "type": "Reflection",
-        "questions": [
-          "Vì sao Bác Hồ lại nhấn mạnh chữ 'Đại' trong 'Đại đoàn kết'?",
-          "Trong môi trường mạng xã hội hiện nay, làm sao để giữ gìn khối đại đoàn kết?",
-          "Ví dụ về sức mạnh của sự kết hợp dân tộc và quốc tế hiện nay?"
+        "title": "5. Bài học kinh nghiệm",
+        "content": [
+          "Bài học về linh hoạt thay đổi sách lược: Biết phân biệt nhiệm vụ chiến lược dài hạn và nhiệm vụ trước mắt.",
+          "Bài học về xây dựng mặt trận dân tộc thống nhất: Tập hợp rộng rãi các lực lượng trên cơ sở mục tiêu chung.",
+          "Bài học về tận dụng mọi hình thức đấu tranh hợp pháp, công khai để phát triển lực lượng."
         ]
       }
     ],
-    "knowledgeCheck": {
-      "easy": [
-        "Điền vào chỗ trống: 'Đoàn kết, đoàn kết, ... / Thành công, thành công, ...'",
-        "Hình thức tổ chức của khối đại đoàn kết là gì?"
-      ],
-      "medium": [
-        "Vì sao nói nội lực là yếu tố quyết định?",
-        "Nguyên tắc cơ bản để xây dựng khối đại đoàn kết là gì?"
-      ],
-      "hard": []
-    },
-    "challengeSection": [
-      {
-        "title": "Văn hóa ứng xử",
-        "situation": "Trên mạng xã hội có những cuộc tranh cãi gây chia rẽ vùng miền. Bạn áp dụng tư tưởng Đại đoàn kết để nhìn nhận vấn đề này ra sao?",
-        "suggestedAnswer": "Phân biệt vùng miền đi ngược lại tư tưởng đại đoàn kết của Bác ('Nước Việt Nam là một, dân tộc Việt Nam là một'). Cần tôn trọng sự đa dạng, lấy điểm chung là tình yêu quê hương đất nước để gắn kết, tránh bị lợi dụng kích động."
-      }
-    ],
-    "keyTakeaways": [
-      "Đại đoàn kết là chiến lược cơ bản, lâu dài, là nguyên nhân của mọi thắng lợi.",
-      "Lực lượng đại đoàn kết bao gồm mọi người Việt Nam yêu nước.",
-      "Mặt trận dân tộc thống nhất là nơi quy tụ sức mạnh đại đoàn kết.",
-      "Kết hợp sức mạnh dân tộc và sức mạnh thời đại tạo nên sức mạnh tổng hợp."
-    ],
-    "requiresVerification": true
-  },
-  {
-    "lessonId": "hcm-ch06-van-hoa-dao-duc",
-    "chapterId": "chuong-6",
-    "moduleId": "tu-tuong-ho-chi-minh",
-    "title": "Văn hóa, Đạo đức và Con người",
-    "difficulty": "intermediate",
-    "durationMinutes": 25,
-    "order": 6,
-    "tags": [
-      "Văn hóa",
-      "Đạo đức",
-      "Con người"
-    ],
-    "conceptIds": [
-      "van-hoa",
-      "ban-sac-dan-toc",
-      "dao-duc-cach-mang",
-      "can-kiem-liem-chinh",
-      "noi-di-doi-voi-lam",
-      "chu-nghia-ca-nhan",
-      "con-nguoi"
-    ],
-    "learningObjectives": [
-      "Trình bày quan điểm của HCM về vai trò của văn hóa.",
-      "Nắm vững các chuẩn mực đạo đức cách mạng.",
-      "Hiểu rõ tầm quan trọng của việc xây dựng con người mới."
-    ],
-    "whyThisMatters": "Đây là phần gần gũi nhất với sinh viên, cung cấp kim chỉ nam cho việc rèn luyện đạo đức, lối sống, trách nhiệm cá nhân trong xã hội.",
-    "quickOverview": "Văn hóa soi đường cho quốc dân đi. Đạo đức là cái gốc của người cách mạng. Con người vừa là mục tiêu, vừa là động lực của cách mạng. Xây dựng con người là nhiệm vụ chiến lược 'trồng người'.",
-    "coreTheory": {
-      "beginner": "Văn hóa rất quan trọng, nó định hướng xã hội. Người cách mạng phải có đạo đức, cụ thể là Cần, Kiệm, Liêm, Chính. Con người là trung tâm của mọi sự phát triển.",
-      "intermediate": "Văn hóa là nền tảng tinh thần, phải giữ bản sắc dân tộc và tiếp thu tinh hoa nhân loại. Đạo đức cách mạng không phải là đạo đức thủ cựu, mà là vì nước vì dân, chống chủ nghĩa cá nhân. Trồng người là chiến lược lâu dài.",
-      "advanced": "Hồ Chí Minh nhấn mạnh sự thống nhất giữa lời nói và việc làm. Đạo đức phải được rèn luyện bền bỉ suốt đời. Chủ nghĩa cá nhân là thứ vi trùng độc hại nhất sinh ra mọi căn bệnh. Xây dựng con người phải toàn diện: Đức, Trí, Thể, Mỹ."
-    },
     "conceptBreakdown": [
       {
-        "conceptId": "dao-duc-cach-mang",
-        "definition": "Phẩm chất tốt đẹp của người tham gia cách mạng.",
-        "explanation": "Là cái gốc, nền tảng. Có tài mà không có đức là vô dụng.",
-        "importance": "Giữ vững bản chất cách mạng, không bị cám dỗ.",
-        "examples": "Cán bộ từ chối nhận hối lộ.",
-        "applications": "Sinh viên trung thực trong thi cử, trung thực trong nghiên cứu.",
+        "conceptId": "mat-tran-dan-chu",
+        "title": "Mặt trận Dân chủ Đông Dương",
+        "description": "Hình thức mặt trận linh hoạt.",
+        "definition": "Là tổ chức liên minh chính trị rộng rãi tập hợp mọi lực lượng yêu nước, dân chủ, tiến bộ để đòi quyền sống.",
+        "explanation": "Đảng đã tạm gác khẩu hiệu đánh đổ Pháp để tập hợp cả những người Pháp tiến bộ ở Đông Dương.",
+        "importance": "Minh chứng cho nghệ thuật sách lược mềm dẻo của Đảng.",
         "commonMistakes": [
-          "Đồng nhất đạo đức cách mạng với sự khổ hạnh."
-        ],
-        "memoryTips": "Đạo đức là gốc."
-      },
-      {
-        "conceptId": "can-kiem-liem-chinh",
-        "definition": "Bốn đức tính cơ bản của con người.",
-        "explanation": "Cần cù lao động, tiết kiệm, trong sạch, ngay thẳng.",
-        "importance": "Thước đo nhân cách.",
-        "examples": "Tiết kiệm điện nước, chi tiêu hợp lý.",
-        "applications": "Rèn luyện nếp sống sinh hoạt hằng ngày.",
-        "commonMistakes": [
-          "Cho rằng chỉ cán bộ mới cần liêm chính."
-        ],
-        "memoryTips": "Giống như 4 mùa của trời, 4 phương của đất."
-      },
-      {
-        "conceptId": "chu-nghia-ca-nhan",
-        "definition": "Đấu tranh loại bỏ thói hư tật xấu vì lợi ích riêng.",
-        "explanation": "Chủ nghĩa cá nhân là mẹ đẻ ra mọi thứ bệnh: tham ô, lãng phí, quan liêu, kiêu ngạo.",
-        "importance": "Bảo vệ sự trong sạch của tổ chức.",
-        "examples": "Tham nhũng, lạm quyền.",
-        "applications": "Đặt lợi ích tập thể lên trên lợi ích cá nhân.",
-        "commonMistakes": [
-          "Đồng nhất chủ nghĩa cá nhân với lợi ích cá nhân chính đáng."
-        ],
-        "memoryTips": "Kẻ thù hung ác nhất."
+          "Nhầm lẫn Mặt trận Dân chủ Đông Dương (1938) với Mặt trận Việt Minh (1941)."
+        ]
       }
     ],
     "visualLearning": [
       {
-        "id": "v-c6-1",
-        "chapterId": "chuong-6",
-        "type": "mindmap",
-        "title": "Đạo đức cách mạng",
-        "subtitle": "Gốc rễ của người cách mạng",
-        "purpose": "Hệ thống hóa các phẩm chất đạo đức cốt lõi theo tư tưởng Hồ Chí Minh.",
-        "learningValue": "Nhận thức được vai trò sống còn của đạo đức trong việc xây dựng con người mới.",
-        "nodes": [
-          "Cần, Kiệm, Liêm, Chính",
-          "Chí công vô tư",
-          "Trung với nước, hiếu với dân",
-          "Nói đi đôi với làm",
-          "Chống chủ nghĩa cá nhân"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Có tài mà không có đức là người vô dụng."
-        ],
-        "commonMistakes": [
-          "Đạo đức cách mạng là khổ hạnh, tiêu diệt mọi nhu cầu cá nhân."
-        ],
-        "reflectionQuestions": [
-          "Đạo đức cách mạng khác đạo đức phong kiến ở điểm nào?"
-        ],
-        "relatedConceptIds": [
-          "dao-duc-cach-mang",
-          "can-kiem-liem-chinh"
+        "id": "vl-ch3-1",
+        "chapterId": "chuong-3",
+        "title": "Bối cảnh dân chủ 1936–1939",
+        "type": "timeline",
+        "description": "Từ nguy cơ phát xít đến phong trào dân chủ Đông Dương.",
+        "detailContent": "Timeline cần thể hiện mối liên hệ giữa nguy cơ phát xít, chủ trương của Quốc tế Cộng sản, Mặt trận Nhân dân Pháp thắng cử và sự điều chỉnh sách lược của Đảng ở Đông Dương. Trọng tâm là hiểu vì sao Đảng chuyển sang đấu tranh dân sinh, dân chủ, hòa bình.",
+        "steps": [
+          "1933: Phát xít lên cầm quyền ở Đức",
+          "7/1935: Đại hội VII Quốc tế Cộng sản",
+          "1936: Mặt trận ND Pháp thắng cử",
+          "7/1936: Đảng quyết định chuyển hướng",
+          "1938: Lập Mặt trận Dân chủ Đông Dương"
         ],
         "requiresVerification": false,
-        "lessonId": "hcm-ch06-van-hoa-dao-duc"
+        "purpose": "Bối cảnh dân chủ 1936–1939",
+        "learningValue": "Timeline cần thể hiện mối liên hệ giữa nguy cơ phát xít, chủ trương của Quốc tế Cộng sản, Mặt trận Nhân dân Pháp thắng cử và sự điều chỉnh sách lược của Đảng ở Đông Dương. Trọng tâm là hiểu vì sao Đảng chuyển sang đấu tranh dân sinh, dân chủ, hòa bình.",
+        "keyTakeaways": []
       },
       {
-        "id": "v-c6-2",
-        "chapterId": "chuong-6",
+        "id": "vl-ch3-2",
+        "chapterId": "chuong-3",
+        "title": "Chiến lược và sách lược",
         "type": "comparison",
-        "title": "Chủ nghĩa cá nhân vs Đạo đức cách mạng",
-        "subtitle": "Kẻ thù nguy hiểm nhất ở bên trong mỗi con người",
-        "purpose": "Giúp sinh viên nhận diện và bài trừ các biểu hiện của chủ nghĩa cá nhân.",
-        "learningValue": "Cảnh giác trước sự tha hóa đạo đức và lối sống thực dụng.",
-        "nodes": [],
-        "steps": [],
+        "description": "Phân biệt mục tiêu lâu dài và nhiệm vụ trước mắt.",
+        "detailContent": "Mục tiêu chiến lược của cách mạng không thay đổi, nhưng nhiệm vụ trước mắt trong giai đoạn 1936–1939 là chống phát xít, chống chiến tranh, chống phản động thuộc địa, đòi quyền dân sinh, dân chủ. Đây là ví dụ rõ về sự linh hoạt trong lãnh đạo.",
         "comparisons": [
           {
-            "topic": "Lợi ích",
-            "wrong": "Cá nhân trên tập thể",
-            "correct": "Hài hòa cá nhân và tập thể"
+            "topic": "Mục tiêu chiến lược (Lâu dài)",
+            "correct": "Giành độc lập dân tộc & XHCN",
+            "wrong": "Chỉ đòi dân chủ"
           },
           {
-            "topic": "Trách nhiệm",
-            "wrong": "Né tránh, đùn đẩy",
-            "correct": "Dám nhận và chịu trách nhiệm"
-          },
-          {
-            "topic": "Hành động",
-            "wrong": "Nói không đi đôi với làm",
-            "correct": "Thống nhất lời nói và việc làm"
-          },
-          {
-            "topic": "Thái độ",
-            "wrong": "Chạy theo thành tích giả",
-            "correct": "Học thật, làm thật"
+            "topic": "Nhiệm vụ sách lược (Trước mắt)",
+            "correct": "Đòi dân sinh, dân chủ, chống phát xít",
+            "wrong": "Đánh đổ đế quốc Pháp ngay lập tức"
           }
         ],
-        "keyTakeaways": [
-          "Chủ nghĩa cá nhân là 'giặc nội xâm' tàn phá thành quả cách mạng."
-        ],
-        "commonMistakes": [
-          "Cho rằng chủ nghĩa cá nhân đồng nghĩa với quyền lợi chính đáng của cá nhân."
-        ],
-        "reflectionQuestions": [
-          "Làm thế nào để đấu tranh chống chủ nghĩa cá nhân trong thời đại mạng xã hội?"
-        ],
-        "relatedConceptIds": [
-          "chu-nghia-ca-nhan",
-          "noi-di-doi-voi-lam"
-        ],
         "requiresVerification": false,
-        "lessonId": "hcm-ch06-van-hoa-dao-duc"
+        "purpose": "Chiến lược và sách lược",
+        "learningValue": "Mục tiêu chiến lược của cách mạng không thay đổi, nhưng nhiệm vụ trước mắt trong giai đoạn 1936–1939 là chống phát xít, chống chiến tranh, chống phản động thuộc địa, đòi quyền dân sinh, dân chủ. Đây là ví dụ rõ về sự linh hoạt trong lãnh đạo.",
+        "keyTakeaways": []
       },
       {
-        "id": "v-c6-3",
-        "chapterId": "chuong-6",
-        "type": "relationship",
-        "title": "Văn hóa, Đạo đức và Con người",
-        "subtitle": "Mục tiêu và động lực của phát triển",
-        "purpose": "Hiểu mối quan hệ biện chứng giữa các yếu tố thượng tầng kiến trúc.",
-        "learningValue": "Thấy được chiến lược 'trồng người' của Hồ Chí Minh là vì sự phát triển bền vững.",
-        "nodes": [
-          "Văn hóa soi đường",
-          "Đạo đức là cái gốc",
-          "Con người là mục tiêu & động lực",
-          "Phát triển toàn diện"
-        ],
-        "steps": [],
-        "comparisons": [],
-        "keyTakeaways": [
-          "Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người."
-        ],
-        "commonMistakes": [
-          "Chỉ chăm lo phát triển kinh tế mà bỏ qua văn hóa, đạo đức."
-        ],
-        "reflectionQuestions": [
-          "Bạn đánh giá thế nào về tầm quan trọng của 'văn hóa số' hiện nay?"
-        ],
-        "relatedConceptIds": [
-          "van-hoa",
-          "con-nguoi",
-          "van-hoa-so"
-        ],
+        "id": "vl-ch3-3",
+        "chapterId": "chuong-3",
+        "title": "Báo Dân Chúng (1938)",
+        "type": "image",
+        "description": "Báo Dân Chúng - Cơ quan ngôn luận của Trung ương Đảng Cộng sản Đông Dương.",
+        "detailContent": "Báo Dân Chúng ra mắt lần đầu ngày 22/7/1938 tại Sài Gòn, là tiếng nói đấu tranh công khai trực diện của Đảng Cộng sản nhằm vạch trần tội ác của thực dân, bảo vệ quyền lợi của giai cấp công nhân và nhân dân lao động.",
+        "imageUrl": "/images/vnr202/bao-dan-chung.jpg",
+        "sourceUrl": "https://vi.wikipedia.org/wiki/T%E1%BA%ADp_tin:Trang_nhat_bao_Dan_Chung.jpg",
+        "caption": "Trang nhất Báo Dân Chúng xuất bản công khai năm 1938",
+        "credit": "Wikipedia",
+        "licenseNote": "Public Domain (Tài liệu lịch sử)",
         "requiresVerification": false,
-        "lessonId": "hcm-ch06-van-hoa-dao-duc"
+        "purpose": "Báo Dân Chúng (1938)",
+        "learningValue": "Báo Dân Chúng ra mắt lần đầu ngày 22/7/1938 tại Sài Gòn, là tiếng nói đấu tranh công khai trực diện của Đảng Cộng sản nhằm vạch trần tội ác của thực dân, bảo vệ quyền lợi của giai cấp công nhân và nhân dân lao động.",
+        "keyTakeaways": []
       }
     ],
-    "interactiveLearning": [
+    "requiresVerification": false,
+    "keyTakeaways": [
+      "Giai đoạn 1936–1939 thể hiện sự linh hoạt của Đảng trong điều chỉnh sách lược đấu tranh.",
+      "Nhiệm vụ trước mắt chuyển sang chống phát xít, chống chiến tranh, đòi tự do, dân chủ, cơm áo và hòa bình.",
+      "Mặt trận Dân chủ Đông Dương giúp tập hợp lực lượng rộng rãi hơn trong điều kiện mới.",
+      "Hình thức đấu tranh công khai, nửa công khai, hợp pháp, nửa hợp pháp giúp rèn luyện quần chúng và cán bộ.",
+      "Bài học quan trọng là phải phân biệt mục tiêu chiến lược lâu dài với nhiệm vụ trước mắt."
+    ]
+  },
+  {
+    "id": "vnr-ch4-hoi-nghi-tw6",
+    "chapterId": "chuong-4",
+    "title": "Chuyển hướng chiến lược 1939–1941",
+    "readingTime": 30,
+    "type": "theory",
+    "difficulty": "Advanced",
+    "tags": [
+      "Lịch sử",
+      "TW8",
+      "Chuyển hướng chiến lược"
+    ],
+    "description": "Quá trình Đảng chuyển hướng chỉ đạo chiến lược, đặt giải phóng dân tộc lên hàng đầu khi Chiến tranh thế giới II bùng nổ.",
+    "learningObjectives": [
+      "Hiểu rõ tác động của Chiến tranh thế giới II đến tình hình Đông Dương.",
+      "Phân tích quá trình chuyển hướng chiến lược qua các Hội nghị TW 6 (1939) và TW 8 (1941).",
+      "Đánh giá vai trò của Nguyễn Ái Quốc trong việc hoàn thiện đường lối giải phóng dân tộc.",
+      "Nhận thức ý nghĩa quyết định của Hội nghị TW 8 đối với thắng lợi của Cách mạng Tháng Tám."
+    ],
+    "coreTheory": [
       {
-        "type": "Reflection",
-        "questions": [
-          "Thế nào là 'Có tài mà không có đức là người vô dụng'?",
-          "Chủ nghĩa cá nhân biểu hiện thế nào trong môi trường học đường?",
-          "Bạn đánh giá thế nào về sự lan truyền của 'tin giả' dưới góc độ văn hóa?"
+        "title": "1. Bối cảnh lịch sử",
+        "content": [
+          "Tháng 9/1939, Chiến tranh thế giới thứ hai bùng nổ. Ở Pháp, chính phủ phản động lên cầm quyền, đàn áp phong trào dân chủ. Tại Đông Dương, thực dân Pháp thủ tiêu mọi quyền tự do dân chủ, thi hành chính sách kinh tế chỉ huy nhằm vơ vét sức người, sức của phục vụ chiến tranh.",
+          "Tháng 9/1940, Nhật Bản nhảy vào Đông Dương. Nhân dân ta chịu cảnh 'một cổ hai tròng' áp bức của Pháp và Nhật.",
+          "Mâu thuẫn giữa dân tộc Việt Nam với đế quốc, phát xít Pháp - Nhật trở nên gay gắt tột độ. Vấn đề sống còn là phải giải phóng dân tộc."
+        ]
+      },
+      {
+        "title": "2. Hội nghị Trung ương 6 (11/1939)",
+        "content": [
+          "Họp tại Bà Điểm (Hóc Môn, Gia Định) do Tổng Bí thư Nguyễn Văn Cừ chủ trì.",
+          "Quyết định chuyển hướng chỉ đạo chiến lược: Đặt nhiệm vụ giải phóng dân tộc lên hàng đầu. Tạm gác khẩu hiệu 'cách mạng ruộng đất', thay bằng khẩu hiệu 'tịch thu ruộng đất của đế quốc và Việt gian', 'giảm tô, giảm tức'.",
+          "Thành lập Mặt trận Thống nhất Dân tộc Phản đế Đông Dương.",
+          "Chuyển phương pháp đấu tranh từ công khai, hợp pháp sang hoạt động bí mật, bất hợp pháp, chuẩn bị điều kiện tiến tới khởi nghĩa vũ trang."
+        ]
+      },
+      {
+        "title": "3. Hội nghị Trung ương 8 (5/1941) và sự hoàn chỉnh đường lối",
+        "content": [
+          "Đầu năm 1941, Nguyễn Ái Quốc về nước (Pác Bó, Cao Bằng) trực tiếp lãnh đạo cách mạng.",
+          "Tháng 5/1941, Người chủ trì Hội nghị Trung ương 8. Hội nghị tiếp tục khẳng định nhiệm vụ giải phóng dân tộc là nhiệm vụ bức thiết nhất.",
+          "Những điểm mới phát triển hoàn thiện đường lối:",
+          "Thứ nhất, giải quyết vấn đề dân tộc trong khuôn khổ từng nước Đông Dương. Quyết định thành lập Mặt trận Việt Nam độc lập đồng minh (Việt Minh).",
+          "Thứ hai, tạm gác hoàn toàn khẩu hiệu đánh đổ địa chủ, chia ruộng đất cho dân cày.",
+          "Thứ ba, xác định hình thái khởi nghĩa ở nước ta là đi từ khởi nghĩa từng phần tiến lên Tổng khởi nghĩa.",
+          "Thứ tư, chú trọng xây dựng lực lượng vũ trang và căn cứ địa cách mạng (chọn Cao Bằng làm căn cứ địa đầu tiên)."
+        ]
+      },
+      {
+        "title": "4. Ý nghĩa của sự chuyển hướng chiến lược",
+        "content": [
+          "Hoàn thành việc khắc phục những hạn chế của Luận cương chính trị tháng 10/1930, trở lại đúng với tư tưởng của Cương lĩnh chính trị đầu tiên do Nguyễn Ái Quốc soạn thảo.",
+          "Giương cao ngọn cờ dân tộc, tập hợp được rộng rãi mọi tầng lớp nhân dân vào Mặt trận Việt Minh.",
+          "Chuẩn bị trực tiếp mọi điều kiện về chính trị, vũ trang, căn cứ địa cho Tổng khởi nghĩa."
         ]
       }
     ],
-    "knowledgeCheck": {
-      "easy": [
-        "Điền vào chỗ trống: 'Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải ...'",
-        "Theo HCM, cái gì là 'gốc' của người cách mạng?"
-      ],
-      "medium": [
-        "Phân biệt chủ nghĩa cá nhân và lợi ích cá nhân chính đáng.",
-        "Nguyên tắc quan trọng nhất trong thực hành đạo đức là gì?"
-      ],
-      "hard": []
-    },
-    "challengeSection": [
+    "conceptBreakdown": [
       {
-        "title": "Văn hóa không gian mạng",
-        "situation": "Trên mạng có người ẩn danh dùng lời lẽ nhục mạ người khác. Bạn liên hệ hiện tượng này với tư tưởng HCM về văn hóa và đạo đức như thế nào?",
-        "suggestedAnswer": "Hành vi nhục mạ người khác thiếu 'văn hóa' và 'đạo đức'. Hồ Chí Minh đề cao lòng nhân ái, khoan dung và tình yêu thương con người. Dù ở không gian mạng hay thực tế, vẫn cần tuân thủ các chuẩn mực đạo đức, ứng xử văn minh."
+        "conceptId": "hoi-nghi-tw8",
+        "title": "Hội nghị Trung ương 8 (5/1941)",
+        "description": "Cột mốc hoàn chỉnh chuyển hướng chiến lược.",
+        "definition": "Hội nghị do Nguyễn Ái Quốc chủ trì, đặt giải phóng dân tộc cao hơn hết và thành lập Mặt trận Việt Minh.",
+        "explanation": "Hội nghị giải quyết triệt để mối quan hệ giữa hai nhiệm vụ chống đế quốc và chống phong kiến, khắc phục hoàn toàn sự 'tả khuynh' trước đây.",
+        "importance": "Là ngọn cờ dẫn đường trực tiếp đến Cách mạng Tháng Tám 1945.",
+        "commonMistakes": [
+          "Nhầm lẫn thời điểm chuyển hướng chiến lược: Bắt đầu từ TW6 (11/1939), hoàn chỉnh tại TW8 (5/1941)."
+        ]
       }
     ],
-    "keyTakeaways": [
-      "Văn hóa soi đường cho quốc dân đi, cần giữ bản sắc và tiếp thu tinh hoa nhân loại.",
-      "Đạo đức cách mạng là gốc, cốt lõi là trung với nước, hiếu với dân, Cần, Kiệm, Liêm, Chính.",
-      "Phải nói đi đôi với làm, rèn luyện đạo đức suốt đời.",
-      "Con người là mục tiêu, động lực của cách mạng, phải được giáo dục toàn diện."
+    "visualLearning": [
+      {
+        "id": "vl-ch4-1",
+        "chapterId": "chuong-4",
+        "title": "Ba hội nghị chuyển hướng",
+        "type": "timeline",
+        "description": "Hội nghị Trung ương 6, 7, 8 trong quá trình chuyển hướng chiến lược.",
+        "detailContent": "Timeline cần thể hiện Hội nghị Trung ương 6 mở đầu chuyển hướng, Hội nghị Trung ương 7 tiếp tục bổ sung, và Hội nghị Trung ương 8 hoàn chỉnh đường lối giải phóng dân tộc. Đây là trục kiến thức quan trọng nhất của giai đoạn 1939–1941.",
+        "steps": [
+          "9/1939: Chiến tranh TG II bùng nổ",
+          "11/1939: Hội nghị TW 6 (Bắt đầu chuyển hướng)",
+          "11/1940: Hội nghị TW 7 (Phát triển)",
+          "5/1941: Hội nghị TW 8 (Hoàn chỉnh)"
+        ],
+        "requiresVerification": false,
+        "purpose": "Ba hội nghị chuyển hướng",
+        "learningValue": "Timeline cần thể hiện Hội nghị Trung ương 6 mở đầu chuyển hướng, Hội nghị Trung ương 7 tiếp tục bổ sung, và Hội nghị Trung ương 8 hoàn chỉnh đường lối giải phóng dân tộc. Đây là trục kiến thức quan trọng nhất của giai đoạn 1939–1941.",
+        "keyTakeaways": []
+      },
+      {
+        "id": "vl-ch4-2",
+        "chapterId": "chuong-4",
+        "title": "Sơ đồ Hội nghị Trung ương 8",
+        "type": "mindmap",
+        "description": "Độc lập dân tộc, Việt Minh, tạm gác ruộng đất, chuẩn bị khởi nghĩa.",
+        "detailContent": "Sơ đồ cần đặt Hội nghị Trung ương 8 ở trung tâm, nối với các nhánh: nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, chuẩn bị khởi nghĩa vũ trang, vai trò Nguyễn Ái Quốc và ý nghĩa hoàn chỉnh chuyển hướng chiến lược.",
+        "nodes": [
+          "Hội nghị TW 8 (5/1941)",
+          "Giải phóng dân tộc là số 1",
+          "Thành lập Mặt trận Việt Minh",
+          "Tạm gác CM ruộng đất",
+          "Chuẩn bị khởi nghĩa vũ trang"
+        ],
+        "requiresVerification": false,
+        "purpose": "Sơ đồ Hội nghị Trung ương 8",
+        "learningValue": "Sơ đồ cần đặt Hội nghị Trung ương 8 ở trung tâm, nối với các nhánh: nhiệm vụ giải phóng dân tộc, thành lập Việt Minh, chuẩn bị khởi nghĩa vũ trang, vai trò Nguyễn Ái Quốc và ý nghĩa hoàn chỉnh chuyển hướng chiến lược.",
+        "keyTakeaways": []
+      },
+      {
+        "id": "vl-ch4-3",
+        "chapterId": "chuong-4",
+        "title": "Hang Cốc Bó, Pác Bó",
+        "type": "image",
+        "description": "Nơi Nguyễn Ái Quốc làm việc khi về nước năm 1941.",
+        "detailContent": "Tháng 1/1941, lãnh tụ Nguyễn Ái Quốc về nước sau 30 năm bôn ba hải ngoại. Người đã chọn hang Cốc Bó (Pác Bó, Cao Bằng) làm nơi hoạt động bí mật, trực tiếp lãnh đạo cách mạng và chủ trì Hội nghị Trung ương 8 lịch sử.",
+        "imageUrl": "/images/vnr202/coc-bo.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coc_Bo_cave.jpg",
+        "caption": "Hang Cốc Bó (Pác Bó, Cao Bằng) - Nguồn cội của Mặt trận Việt Minh",
+        "credit": "Wikimedia Commons / Nuntius",
+        "licenseNote": "CC BY-SA 4.0",
+        "requiresVerification": false,
+        "purpose": "Hang Cốc Bó, Pác Bó",
+        "learningValue": "Tháng 1/1941, lãnh tụ Nguyễn Ái Quốc về nước sau 30 năm bôn ba hải ngoại. Người đã chọn hang Cốc Bó (Pác Bó, Cao Bằng) làm nơi hoạt động bí mật, trực tiếp lãnh đạo cách mạng và chủ trì Hội nghị Trung ương 8 lịch sử.",
+        "keyTakeaways": []
+      }
     ],
-    "requiresVerification": true
+    "requiresVerification": false,
+    "keyTakeaways": [
+      "Chiến tranh thế giới thứ hai làm tình hình Đông Dương thay đổi, khiến nhiệm vụ giải phóng dân tộc trở nên cấp bách.",
+      "Hội nghị Trung ương 6 mở đầu chuyển hướng chiến lược từ đấu tranh dân chủ sang giải phóng dân tộc.",
+      "Hội nghị Trung ương 8 hoàn chỉnh chuyển hướng chiến lược, đặt độc lập dân tộc lên hàng đầu.",
+      "Nguyễn Ái Quốc có vai trò quan trọng trong việc xác định nhiệm vụ giải phóng dân tộc, thành lập Việt Minh và chuẩn bị khởi nghĩa vũ trang.",
+      "Bài học lớn là phải xác định đúng mâu thuẫn chủ yếu và nhiệm vụ trung tâm trong từng hoàn cảnh lịch sử."
+    ]
+  },
+  {
+    "id": "vnr-ch5-viet-minh-tong-khoi-nghia",
+    "chapterId": "chuong-5",
+    "title": "Việt Minh, Kháng Nhật và Cách mạng Tháng Tám",
+    "readingTime": 35,
+    "type": "theory",
+    "difficulty": "Advanced",
+    "tags": [
+      "Lịch sử",
+      "Cách mạng Tháng Tám",
+      "1945"
+    ],
+    "description": "Quá trình chuẩn bị lực lượng, chớp thời cơ và tiến hành Tổng khởi nghĩa tháng Tám năm 1945 lập ra nước VNDCCH.",
+    "learningObjectives": [
+      "Hiểu rõ quá trình xây dựng lực lượng chính trị, vũ trang và căn cứ địa cách mạng từ 1941 đến 1945.",
+      "Phân tích sự nhạy bén của Đảng trong việc nhận định thời cơ và phát động Cao trào kháng Nhật cứu nước.",
+      "Nắm vững diễn biến chính của Tổng khởi nghĩa tháng Tám.",
+      "Đánh giá nguyên nhân thắng lợi, ý nghĩa lịch sử và bài học kinh nghiệm của Cách mạng Tháng Tám."
+    ],
+    "coreTheory": [
+      {
+        "title": "1. Xây dựng lực lượng tiến tới khởi nghĩa",
+        "content": [
+          "Xây dựng lực lượng chính trị: Phát triển các hội Cứu quốc trong Mặt trận Việt Minh (Nông dân cứu quốc, Công nhân cứu quốc, Phụ nữ cứu quốc...). Việt Minh phát triển rộng khắp từ Cao Bằng đến các tỉnh đồng bằng.",
+          "Xây dựng lực lượng vũ trang: Thành lập các đội Cứu quốc quân. Ngày 22/12/1944, Đội Việt Nam Tuyên truyền Giải phóng quân được thành lập theo chỉ thị của Hồ Chí Minh.",
+          "Xây dựng căn cứ địa: Xây dựng căn cứ Cao Bằng, Bắc Sơn - Võ Nhai. Tháng 6/1945, thành lập Khu giải phóng Việt Bắc gồm 6 tỉnh."
+        ]
+      },
+      {
+        "title": "2. Cao trào kháng Nhật cứu nước",
+        "content": [
+          "Ngày 9/3/1945, Nhật đảo chính Pháp độc chiếm Đông Dương. Ngày 12/3/1945, Ban Thường vụ TW Đảng ra Chỉ thị 'Nhật - Pháp bắn nhau và hành động của chúng ta'.",
+          "Xác định kẻ thù chính, cụ thể trước mắt là phát xít Nhật. Phát động Cao trào kháng Nhật cứu nước làm tiền đề cho Tổng khởi nghĩa.",
+          "Khởi nghĩa từng phần nổ ra ở nhiều nơi. Đặc biệt, phong trào 'Phá kho thóc, giải quyết nạn đói' đã thu hút hàng triệu nông dân tham gia."
+        ]
+      },
+      {
+        "title": "3. Tổng khởi nghĩa tháng Tám",
+        "content": [
+          "Giữa tháng 8/1945, Nhật đầu hàng Đồng minh không điều kiện. Thời cơ ngàn năm có một đã đến: Kẻ thù đã ngã gục, quần chúng đã sẵn sàng, lực lượng cách mạng đã chuẩn bị chu đáo.",
+          "Từ 13 đến 15/8/1945, Hội nghị toàn quốc của Đảng họp tại Tân Trào (Tuyên Quang) quyết định phát động Tổng khởi nghĩa.",
+          "Ngày 16/8/1945, Đại hội Quốc dân Tân Trào tán thành chủ trương khởi nghĩa, cử ra Ủy ban Dân tộc giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch.",
+          "Diễn biến chính: Quần chúng giành chính quyền tại Hà Nội (19/8), Huế (23/8), Sài Gòn (25/8). Chỉ trong 15 ngày, chính quyền trong cả nước về tay nhân dân.",
+          "Ngày 2/9/1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa."
+        ]
+      },
+      {
+        "title": "4. Nguyên nhân thắng lợi",
+        "content": [
+          "Khách quan: Chiến thắng của quân Đồng minh và Liên Xô trong việc đánh bại phát xít Nhật tạo thời cơ thuận lợi.",
+          "Chủ quan: Sự lãnh đạo đúng đắn, sáng suốt của Đảng và Hồ Chí Minh. Khối đại đoàn kết toàn dân tộc vững chắc. Sự chuẩn bị chu đáo về mọi mặt suốt 15 năm (1930-1945)."
+        ]
+      },
+      {
+        "title": "5. Ý nghĩa và Bài học kinh nghiệm",
+        "content": [
+          "Ý nghĩa: Đập tan ách thống trị của thực dân Pháp và phát xít Nhật, lật đổ chế độ phong kiến, lập ra nước VNDCCH. Đưa nhân dân ta từ thân phận nô lệ lên làm chủ đất nước.",
+          "Bài học về giương cao ngọn cờ độc lập dân tộc, kết hợp đúng đắn hai nhiệm vụ chống đế quốc và phong kiến.",
+          "Bài học về xây dựng mặt trận dân tộc thống nhất trên nền tảng liên minh công nông.",
+          "Bài học về nghệ thuật khởi nghĩa vũ trang: Nắm bắt đúng thời cơ, kết hợp đấu tranh chính trị với vũ trang."
+        ]
+      }
+    ],
+    "conceptBreakdown": [
+      {
+        "conceptId": "viet-minh",
+        "title": "Mặt trận Việt Minh",
+        "description": "Tổ chức nòng cốt tập hợp lực lượng.",
+        "definition": "Việt Nam độc lập đồng minh, thành lập tháng 5/1941, tập hợp mọi lực lượng không phân biệt giai cấp, tôn giáo nhằm mục tiêu giành độc lập.",
+        "importance": "Là trung tâm đoàn kết dân tộc, đóng vai trò quyết định trong việc huy động toàn dân khởi nghĩa.",
+        "commonMistakes": [
+          "Nhầm lẫn Việt Minh là một lực lượng quân sự (Sai: Việt Minh là mặt trận chính trị, còn Việt Nam Tuyên truyền Giải phóng quân mới là lực lượng quân sự)."
+        ]
+      },
+      {
+        "conceptId": "nam-bat-thoi-co",
+        "title": "Nghệ thuật chớp thời cơ",
+        "description": "Điều kiện sống còn của khởi nghĩa.",
+        "definition": "Sự nhạy bén của Đảng khi quyết định phát động Tổng khởi nghĩa đúng vào khoảng trống quyền lực (Nhật đầu hàng Đồng minh, quân Đồng minh chưa vào Đông Dương).",
+        "explanation": "Nếu khởi nghĩa trước ngày 15/8 (khi Nhật chưa đầu hàng) thì lực lượng ta sẽ bị thiệt hại nặng. Nếu khởi nghĩa sau ngày 5/9 (khi quân Đồng minh vào giải giáp Nhật) thì sẽ mất tính chính danh.",
+        "importance": "Quyết định tính không đổ máu nhiều và thành công nhanh chóng của Cách mạng Tháng Tám."
+      }
+    ],
+    "visualLearning": [
+      {
+        "id": "vl-ch5-1",
+        "chapterId": "chuong-5",
+        "title": "Từ kháng Nhật đến Tổng khởi nghĩa",
+        "type": "timeline",
+        "description": "Chuỗi sự kiện từ 9/3/1945 đến 2/9/1945.",
+        "detailContent": "Timeline cần thể hiện: Nhật đảo chính Pháp, Chỉ thị ngày 12/3/1945, cao trào kháng Nhật cứu nước, khởi nghĩa từng phần, Hội nghị toàn quốc của Đảng, Đại hội Quốc dân Tân Trào, Tổng khởi nghĩa và Tuyên ngôn Độc lập. Đây là chuỗi mốc phải nhớ để làm bài phân tích.",
+        "steps": [
+          "9/3/1945: Nhật đảo chính Pháp",
+          "12/3/1945: Chỉ thị Nhật - Pháp bắn nhau",
+          "13-15/8/1945: Hội nghị toàn quốc Đảng",
+          "16/8/1945: Đại hội Quốc dân Tân Trào",
+          "19/8/1945: Khởi nghĩa tại Hà Nội",
+          "2/9/1945: Tuyên ngôn Độc lập"
+        ],
+        "requiresVerification": false,
+        "purpose": "Từ kháng Nhật đến Tổng khởi nghĩa",
+        "learningValue": "Timeline cần thể hiện: Nhật đảo chính Pháp, Chỉ thị ngày 12/3/1945, cao trào kháng Nhật cứu nước, khởi nghĩa từng phần, Hội nghị toàn quốc của Đảng, Đại hội Quốc dân Tân Trào, Tổng khởi nghĩa và Tuyên ngôn Độc lập. Đây là chuỗi mốc phải nhớ để làm bài phân tích.",
+        "keyTakeaways": []
+      },
+      {
+        "id": "vl-ch5-2",
+        "chapterId": "chuong-5",
+        "title": "Bài học Cách mạng Tháng Tám",
+        "type": "comparison",
+        "description": "Các bài học có thể vận dụng khi nhận xét đường lối 1930–1945.",
+        "detailContent": "Bảng cần hệ thống các bài học: xác định mục tiêu chiến lược, xây dựng đại đoàn kết dân tộc, chuẩn bị lực lượng lâu dài, kết hợp đấu tranh chính trị và vũ trang, nắm bắt thời cơ và giữ vai trò lãnh đạo thống nhất của Đảng.",
+        "comparisons": [
+          {
+            "topic": "Xác định mục tiêu",
+            "correct": "Giải phóng dân tộc là trên hết",
+            "wrong": "Đấu tranh giai cấp chung chung"
+          },
+          {
+            "topic": "Tập hợp lực lượng",
+            "correct": "Đại đoàn kết qua Mặt trận Việt Minh",
+            "wrong": "Chỉ dựa vào công nhân"
+          },
+          {
+            "topic": "Chớp thời cơ",
+            "correct": "Nhật ngã gục, Đồng minh chưa vào",
+            "wrong": "Nổi dậy tự phát sớm hoặc quá muộn"
+          }
+        ],
+        "requiresVerification": false,
+        "purpose": "Bài học Cách mạng Tháng Tám",
+        "learningValue": "Bảng cần hệ thống các bài học: xác định mục tiêu chiến lược, xây dựng đại đoàn kết dân tộc, chuẩn bị lực lượng lâu dài, kết hợp đấu tranh chính trị và vũ trang, nắm bắt thời cơ và giữ vai trò lãnh đạo thống nhất của Đảng.",
+        "keyTakeaways": []
+      },
+      {
+        "id": "vl-ch5-3",
+        "chapterId": "chuong-5",
+        "title": "Cuộc mít tinh tại Quảng trường Ba Đình",
+        "type": "image",
+        "description": "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập ngày 2/9/1945.",
+        "detailContent": "Sự kiện lịch sử trọng đại, chấm dứt hàng ngàn năm phong kiến và hơn 80 năm ách đô hộ của thực dân Pháp, khai sinh ra nước Việt Nam Dân chủ Cộng hòa - nhà nước công nông đầu tiên ở Đông Nam Á.",
+        "imageUrl": "/images/vnr202/ba-dinh-1945.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_declares_independence_1945.jpg",
+        "caption": "Biển người tại Quảng trường Ba Đình ngày 2/9/1945",
+        "credit": "Wikimedia Commons / Nguồn tài liệu lịch sử quốc gia",
+        "licenseNote": "Public Domain",
+        "requiresVerification": false,
+        "purpose": "Cuộc mít tinh tại Quảng trường Ba Đình",
+        "learningValue": "Sự kiện lịch sử trọng đại, chấm dứt hàng ngàn năm phong kiến và hơn 80 năm ách đô hộ của thực dân Pháp, khai sinh ra nước Việt Nam Dân chủ Cộng hòa - nhà nước công nông đầu tiên ở Đông Nam Á.",
+        "keyTakeaways": []
+      }
+    ],
+    "requiresVerification": false,
+    "keyTakeaways": [
+      "Mặt trận Việt Minh là hình thức tổ chức khối đại đoàn kết dân tộc để giành độc lập.",
+      "Cao trào kháng Nhật cứu nước là bước chuẩn bị trực tiếp cho Tổng khởi nghĩa tháng Tám.",
+      "Chỉ thị “Nhật – Pháp bắn nhau và hành động của chúng ta” thể hiện khả năng nhạy bén của Đảng trước biến động thời cuộc.",
+      "Tổng khởi nghĩa tháng Tám thắng lợi nhờ đường lối đúng đắn, lực lượng được chuẩn bị và thời cơ được nắm bắt kịp thời.",
+      "Bài học trọng tâm là độc lập dân tộc, đại đoàn kết, chuẩn bị lực lượng, nắm bắt thời cơ và vai trò lãnh đạo của Đảng."
+    ]
   }
 ];

@@ -1,227 +1,173 @@
 [
   {
-    "id": "root",
-    "label": "Tư tưởng Hồ Chí Minh",
+    "id": "vnr202-root",
+    "label": "VNR202",
+    "description": "Đường lối cách mạng 1930–1945.",
     "type": "root",
-    "x": 400,
-    "y": 300,
-    "connections": ["chuong-1", "chuong-2", "chuong-3", "chuong-4", "chuong-5", "chuong-6"],
-    "description": "Hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam."
-  },
-  {
-    "id": "chuong-1",
-    "label": "Khái niệm & Phương pháp",
-    "type": "chapter",
-    "x": 400,
-    "y": 150,
-    "connections": ["khai-niem", "doi-tuong-nc", "phuong-phap-nc"],
-    "description": "Chương 1: Khái niệm, đối tượng, phương pháp nghiên cứu."
-  },
-  {
-    "id": "chuong-2",
-    "label": "Cơ sở hình thành",
-    "type": "chapter",
-    "x": 650,
-    "y": 200,
-    "connections": ["truyen-thong-dan-toc", "chu-nghia-mac-lenin", "nhan-to-chu-quan"],
-    "description": "Chương 2: Cơ sở, quá trình hình thành và phát triển."
-  },
-  {
-    "id": "chuong-3",
-    "label": "Độc lập dân tộc & CNXH",
-    "type": "chapter",
-    "x": 700,
-    "y": 400,
-    "connections": ["doc-lap-dan-toc", "chu-nghia-xa-hoi", "giai-phong-dan-toc"],
-    "description": "Chương 3: Tư tưởng Hồ Chí Minh về độc lập dân tộc và chủ nghĩa xã hội."
-  },
-  {
-    "id": "chuong-4",
-    "label": "Đảng & Nhà nước",
-    "type": "chapter",
-    "x": 400,
-    "y": 480,
-    "connections": ["dang-cong-san", "nha-nuoc-cua-dan", "can-bo"],
-    "description": "Chương 4: Về Đảng Cộng sản và Nhà nước của nhân dân, do nhân dân, vì nhân dân."
-  },
-  {
-    "id": "chuong-5",
-    "label": "Đại đoàn kết",
-    "type": "chapter",
-    "x": 150,
-    "y": 400,
-    "connections": ["luc-luong-doan-ket", "mat-tran-dan-toc", "doan-ket-quoc-te"],
-    "description": "Chương 5: Đại đoàn kết toàn dân tộc và đoàn kết quốc tế."
-  },
-  {
-    "id": "chuong-6",
-    "label": "Văn hóa, Đạo đức",
-    "type": "chapter",
-    "x": 150,
-    "y": 200,
-    "connections": ["van-hoa", "dao-duc-cach-mang", "con-nguoi"],
-    "description": "Chương 6: Tư tưởng về văn hóa, đạo đức, con người."
-  },
-  {
-    "id": "khai-niem",
-    "label": "Hệ thống quan điểm",
-    "type": "concept",
-    "x": 300,
-    "y": 80,
-    "connections": [],
-    "description": "Hệ thống quan điểm toàn diện, sâu sắc về cách mạng Việt Nam."
-  },
-  {
-    "id": "doi-tuong-nc",
-    "label": "Đối tượng nghiên cứu",
-    "type": "concept",
-    "x": 400,
-    "y": 60,
-    "connections": [],
-    "description": "Di sản tư tưởng, bài viết, bài nói và hoạt động thực tiễn."
-  },
-  {
-    "id": "phuong-phap-nc",
-    "label": "Phương pháp luận",
-    "type": "concept",
     "x": 500,
     "y": 80,
-    "connections": [],
-    "description": "Thống nhất lý luận và thực tiễn, quan điểm lịch sử cụ thể."
+    "connections": ["chuong-1-node", "chuong-2-node", "chuong-3-node", "chuong-4-node", "chuong-5-node"]
   },
   {
-    "id": "truyen-thong-dan-toc",
-    "label": "Truyền thống VN",
-    "type": "concept",
-    "x": 750,
-    "y": 100,
-    "connections": [],
-    "description": "Yêu nước, nhân nghĩa, đoàn kết."
+    "id": "chuong-1-node",
+    "label": "Nền tảng 1930",
+    "description": "Cương lĩnh đầu tiên.",
+    "type": "chapter",
+    "x": 120,
+    "y": 220,
+    "connections": ["cuong-linh-1930", "doc-lap-dan-toc"]
   },
   {
-    "id": "chu-nghia-mac-lenin",
-    "label": "Mác - Lênin",
-    "type": "concept",
-    "x": 800,
-    "y": 200,
-    "connections": [],
-    "description": "Cơ sở thế giới quan, phương pháp luận khoa học."
+    "id": "chuong-2-node",
+    "label": "1930–1931",
+    "description": "Xô viết Nghệ Tĩnh.",
+    "type": "chapter",
+    "x": 320,
+    "y": 220,
+    "connections": ["luan-cuong-1930", "xo-viet-nghe-tinh"]
   },
   {
-    "id": "nhan-to-chu-quan",
-    "label": "Phẩm chất cá nhân",
+    "id": "chuong-3-node",
+    "label": "1932–1935",
+    "description": "Phục hồi tổ chức.",
+    "type": "chapter",
+    "x": 520,
+    "y": 220,
+    "connections": ["dai-hoi-i-1935", "phuc-hoi-to-chuc"]
+  },
+  {
+    "id": "chuong-4-node",
+    "label": "1936–1939",
+    "description": "Phong trào dân chủ.",
+    "type": "chapter",
+    "x": 720,
+    "y": 220,
+    "connections": ["mat-tran-dan-chu", "dau-tranh-dan-chu"]
+  },
+  {
+    "id": "chuong-5-node",
+    "label": "1939–1945",
+    "description": "Khởi nghĩa giành chính quyền.",
+    "type": "chapter",
+    "x": 920,
+    "y": 220,
+    "connections": ["hoi-nghi-tw6", "hoi-nghi-tw8", "viet-minh"]
+  },
+  {
+    "id": "cuong-linh-1930",
+    "label": "Cương lĩnh 1930",
+    "description": "Đặt mục tiêu độc lập dân tộc lên trên hết.",
     "type": "concept",
-    "x": 750,
-    "y": 280,
-    "connections": [],
-    "description": "Lòng yêu nước, tư duy độc lập, tự học."
+    "x": 80,
+    "y": 390,
+    "connections": []
   },
   {
     "id": "doc-lap-dan-toc",
     "label": "Độc lập dân tộc",
+    "description": "Nhiệm vụ cốt lõi của VNR202.",
     "type": "concept",
-    "x": 850,
-    "y": 380,
-    "connections": ["chu-nghia-xa-hoi"],
-    "description": "Quyền thiêng liêng, bất khả xâm phạm. Gắn với tự do hạnh phúc."
+    "x": 220,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "chu-nghia-xa-hoi",
-    "label": "Chủ nghĩa xã hội",
+    "id": "luan-cuong-1930",
+    "label": "Luận cương 10/1930",
+    "description": "Nhấn mạnh đấu tranh giai cấp và cách mạng ruộng đất.",
     "type": "concept",
-    "x": 800,
-    "y": 480,
-    "connections": [],
-    "description": "Nhân dân làm chủ, kinh tế phát triển, xã hội công bằng."
+    "x": 320,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "giai-phong-dan-toc",
-    "label": "Cách mạng giải phóng",
+    "id": "xo-viet-nghe-tinh",
+    "label": "Xô viết Nghệ Tĩnh",
+    "description": "Đỉnh cao phong trào 1930-1931.",
     "type": "concept",
-    "x": 700,
-    "y": 520,
-    "connections": [],
-    "description": "Đi theo con đường cách mạng vô sản."
+    "x": 450,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "dang-cong-san",
-    "label": "Đảng Cộng sản",
+    "id": "dai-hoi-i-1935",
+    "label": "Đại hội I 1935",
+    "description": "Mốc đánh dấu sự khôi phục hoàn toàn của Đảng.",
     "type": "concept",
-    "x": 500,
-    "y": 580,
-    "connections": [],
-    "description": "Nhân tố lãnh đạo quyết định thắng lợi."
+    "x": 560,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "nha-nuoc-cua-dan",
-    "label": "Nhà nước của dân",
+    "id": "phuc-hoi-to-chuc",
+    "label": "Phục hồi tổ chức",
+    "description": "Hoạt động bí mật duy trì cơ sở.",
     "type": "concept",
-    "x": 400,
-    "y": 600,
-    "connections": [],
-    "description": "Nhà nước của nhân dân, do nhân dân, vì nhân dân."
+    "x": 690,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "can-bo",
-    "label": "Đạo đức công vụ",
+    "id": "mat-tran-dan-chu",
+    "label": "Mặt trận Dân chủ",
+    "description": "Tập hợp lực lượng công khai, hợp pháp.",
     "type": "concept",
-    "x": 300,
-    "y": 580,
-    "connections": [],
-    "description": "Cán bộ là công bộc của dân."
+    "x": 760,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "luc-luong-doan-ket",
-    "label": "Toàn dân tộc",
+    "id": "dau-tranh-dan-chu",
+    "label": "Đấu tranh dân chủ",
+    "description": "Đòi dân sinh, dân chủ, cơm áo, hòa bình.",
     "type": "concept",
-    "x": 50,
-    "y": 500,
-    "connections": [],
-    "description": "Công, nông, trí thức, các dân tộc, tôn giáo."
+    "x": 900,
+    "y": 390,
+    "connections": []
   },
   {
-    "id": "mat-tran-dan-toc",
-    "label": "Mặt trận thống nhất",
+    "id": "hoi-nghi-tw6",
+    "label": "Hội nghị TW 6",
+    "description": "Mở đầu sự chuyển hướng chiến lược (1939).",
     "type": "concept",
-    "x": 50,
-    "y": 400,
-    "connections": [],
-    "description": "Hình thức tổ chức khối đại đoàn kết."
+    "x": 820,
+    "y": 560,
+    "connections": []
   },
   {
-    "id": "doan-ket-quoc-te",
-    "label": "Đoàn kết quốc tế",
+    "id": "hoi-nghi-tw8",
+    "label": "Hội nghị TW 8",
+    "description": "Hoàn chỉnh đường lối giải phóng dân tộc (1941).",
     "type": "concept",
-    "x": 80,
-    "y": 300,
-    "connections": [],
-    "description": "Kết hợp sức mạnh dân tộc và sức mạnh thời đại."
+    "x": 970,
+    "y": 560,
+    "connections": []
   },
   {
-    "id": "van-hoa",
-    "label": "Mặt trận văn hóa",
+    "id": "viet-minh",
+    "label": "Việt Minh",
+    "description": "Mặt trận đoàn kết toàn dân tộc.",
     "type": "concept",
-    "x": 50,
-    "y": 150,
-    "connections": [],
-    "description": "Văn hóa phải soi đường cho quốc dân đi."
+    "x": 1120,
+    "y": 560,
+    "connections": ["cao-trao-khang-nhat", "tong-khoi-nghia"]
   },
   {
-    "id": "dao-duc-cach-mang",
-    "label": "Cần, kiệm, liêm, chính",
+    "id": "cao-trao-khang-nhat",
+    "label": "Kháng Nhật",
+    "description": "Tiền đề trực tiếp cho Tổng khởi nghĩa.",
     "type": "concept",
-    "x": 100,
-    "y": 80,
-    "connections": [],
-    "description": "Đạo đức là gốc của người cách mạng."
+    "x": 980,
+    "y": 720,
+    "connections": []
   },
   {
-    "id": "con-nguoi",
-    "label": "Con người mới",
+    "id": "tong-khoi-nghia",
+    "label": "Tổng khởi nghĩa",
+    "description": "Giành chính quyền tháng 8/1945.",
     "type": "concept",
-    "x": 200,
-    "y": 60,
-    "connections": [],
-    "description": "Mục tiêu và động lực của cách mạng."
+    "x": 1150,
+    "y": 720,
+    "connections": []
   }
 ]
